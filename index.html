@@ -13,9 +13,6 @@
         :root {
             --bg-color: #F5F5F3;
             --text-main: #202020;
-            --text-muted: #555555;
-            --tracking-wide: 0.12em;
-            --tracking-tight: 0.02em;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,98 +21,44 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            line-height: 1.8;
-            letter-spacing: var(--tracking-tight);
-            -webkit-font-smoothing: antialiased;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 80px 24px 140px 24px;
+            max-width: 500px;
+            text-align: center;
         }
 
         .hero-container {
-            width: 100%;
-            margin: 0 auto 60px auto;
-            display: flex;
-            justify-content: center;
+            margin-bottom: 40px;
         }
 
         .hero-image {
             width: 100%;
-            max-width: 380px;
+            max-width: 320px;
             height: auto;
             display: block;
+            margin: 0 auto;
             filter: grayscale(10%) contrast(90%);
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
-            margin-bottom: 50px;
-            text-align: center;
-            letter-spacing: var(--tracking-wide);
         }
 
         .manifesto {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-style: italic;
-            text-align: center;
-            margin-bottom: 70px;
             color: var(--text-main);
             line-height: 1.4;
         }
-
-        .section-pillar { margin-bottom: 60px; }
-
-        .section-pillar h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-bottom: 20px;
-            color: var(--text-muted);
-        }
-
-        .section-pillar p {
-            font-size: 1.05rem;
-            color: var(--text-main);
-        }
-
-        .footer-navigation {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(245, 245, 243, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(0,0,0,0.06);
-            padding: 24px;
-        }
-
-        .footer-content { max-width: 680px; margin: 0 auto; }
-        
-        .secure-contact-link {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            text-decoration: none;
-            color: var(--text-main);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .secure-contact-link::after { content: " ↗"; }
     </style>
 </head>
 <body>
 
     <div class="container">
         
-        <h1 class="brand-title">Psiquiatria Privada</h1>
-
         <div class="hero-container">
             <img src="foto-perfil.jpg" alt="Psiquiatria Privada" class="hero-image">
         </div>
@@ -124,27 +67,7 @@
             "Algumas pessoas precisam de psiquiatra. Outras precisam de psiquiatra sem serem vistas entrando em uma clínica."
         </div>
 
-        <div class="section-pillar">
-            <h3>Discrição Absoluta</h3>
-            <p>O seu tratamento é um assunto estritamente entre nós. Operamos sob um modelo que elimina salas de espera, exposições públicas ou registros desnecessários, garantindo que o seu bem-estar nunca comprometa a sua vida social ou profissional.</p>
-        </div>
-
-        <div class="section-pillar">
-            <h3>Atendimento Sob Medida</h3>
-            <p>Mais do que uma consulta, um protocolo de suporte desenhado para a sua realidade. Com uma agenda restrita, dedicamos o tempo necessário para o seu caso, em um ambiente de total confidencialidade e atenção integral.</p>
-        </div>
-
     </div>
-
-    <footer class="footer-navigation">
-        <div class="footer-content">
-            <a href="https://wa.me/5511977335683?text=Ol%C3%A1.%20Gostaria%20de%20iniciar%20um%20atendimento%20privado%20com%20total%20discre%C3%A7%C3%A3o." 
-               target="_blank" 
-               class="secure-contact-link">
-               Iniciar Atendimento Discreto
-            </a>
-        </div>
-    </footer>
 
 </body>
 </html>
