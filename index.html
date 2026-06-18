@@ -1,3 +1,8 @@
+Entendido perfeitamente. O aviso "HTML" que aparece no topo do bloco de código é apenas uma etiqueta do sistema, mas compreendo que o ícone de copiar pode acabar incluindo formatações indesejadas dependendo de como é processado.
+
+Para evitar qualquer erro ao colar no GitHub, aqui está o código limpo. O título "Quiet Psychiatry" já está devidamente centralizado, as fontes estão calibradas nos padrões que definimos e a sua foto (`foto-perfil.jpg`) está configurada com o alinhamento correto:
+
+```
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiet Psychiatry</title>
     
+    <!-- Fontes Conectadas: Cormorant Garamond e Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -48,18 +54,21 @@
             padding: 80px 24px 140px 24px;
         }
 
-        /* Moldura de Imagem Inspirada em Galerias */
+        /* Moldura de Imagem Inspirada em Galerias - Centralizada */
         .hero-container {
             width: 100%;
-            margin-bottom: 64px;
+            margin: 0 auto 64px auto;
             overflow: hidden;
             opacity: 0;
             transform: translateY(10px);
             animation: fadeInElement 2s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
+            display: flex;
+            justify-content: center;
         }
 
         .hero-image {
             width: 100%;
+            max-width: 100%;
             height: auto;
             display: block;
             filter: grayscale(10%) contrast(95%);
@@ -81,10 +90,12 @@
             line-height: 1.3;
         }
 
+        /* Alinhamento Centralizado para o Título Principal */
         .brand-title {
             font-size: 2.2rem;
             margin-bottom: 48px;
             text-transform: none;
+            text-align: center;
         }
 
         .section-pillar {
@@ -191,12 +202,15 @@
 
     <div class="container">
         
+        <!-- Título Principal Centralizado -->
         <h1 class="brand-title">Quiet Psychiatry</h1>
 
+        <!-- Imagem com Entrada Suave (foto-perfil.jpg) -->
         <div class="hero-container">
             <img src="foto-perfil.jpg" alt="Quiet Psychiatry" class="hero-image">
         </div>
 
+        <!-- Manifesto Clínico -->
         <div class="section-pillar">
             <h3>Rigor Clínico</h3>
             <p>Abordagem médica pautada pela excelência científica e atualização constante. Um modelo de prática focado na precisão diagnóstica e no desenho de protocolos terapêuticos estritamente customizados, onde a ciência encontra a individualidade.</p>
@@ -204,11 +218,12 @@
 
         <div class="section-pillar">
             <h3>Atendimento Privado</h3>
-            <p>Preservação absoluta da individualidade e conveniência do paciente. Consultas conduzidas com tempo estendido, dedicação integral e um número estritamente limitado de casos ativos, assegurando suporte contínuo de alta fidelidade.</p>
+            <p>Preservação absoluta da individualidade e conveniência do paciente. Consultas conduzidas com tempo estendido, dedicação integral e um número estritamente limitado de casos activos, assegurando suporte contínuo de alta fidelidade.</p>
         </div>
 
     </div>
 
+    <!-- Rodapé Estilo Aesop: Informativo e Ponto de Contato Fixo -->
     <footer class="footer-navigation">
         <div class="footer-content">
             <div class="footer-meta">Quiet Psychiatry — Atendimento Privado</div>
@@ -225,3 +240,5 @@
 
 </body>
 </html>
+
+```
