@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -38,6 +39,22 @@
             max-width: 720px;
             margin: 0 auto;
             padding: 80px 24px 140px 24px;
+        }
+
+        /* Moldura da Imagem (Centralizada) */
+        .hero-container {
+            width: 100%;
+            margin: 0 auto 64px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 400px; /* Ajuste o tamanho da foto aqui se quiser maior ou menor */
+            height: auto;
+            display: block;
+            filter: grayscale(10%) contrast(95%);
         }
 
         h1, h2, h3 {
@@ -123,10 +140,6 @@
         @media (max-width: 768px) {
             .container { padding: 48px 20px 160px 20px; }
             .brand-title { font-size: 1.8rem; margin-bottom: 36px; }
-            .section-pillar { margin-bottom: 40px; }
-            .section-pillar h3 { font-size: 1.35rem; margin-bottom: 12px; }
-            .section-pillar p { font-size: 0.95rem; }
-            .footer-content { align-items: flex-start; }
         }
     </style>
 </head>
@@ -135,6 +148,10 @@
     <div class="container">
         
         <h1 class="brand-title">Psiquiatria Privada</h1>
+
+        <div class="hero-container">
+            <img src="foto-perfil.jpg" alt="Psiquiatria Privada" class="hero-image">
+        </div>
 
         <div class="section-pillar">
             <h3>Rigor Clínico</h3>
