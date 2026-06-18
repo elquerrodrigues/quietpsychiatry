@@ -10,20 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
-        /* Paleta Temática Aesop & Filosofia Nórdica */
         :root {
-            --bg-color: #F5F5F3;      /* Off-white caloroso (estilo linho/concreto claro) */
-            --text-main: #202020;     /* Grafite profundo, mais suave que o preto puro */
-            --text-muted: #666666;    /* Cinza pedra para subtextos */
-            --tracking-wide: 0.12em;  /* Espaçamento nobre para títulos */
-            --tracking-tight: 0.02em; /* Espaçamento elegante para leitura */
+            --bg-color: #F5F5F3;
+            --text-main: #202020;
+            --text-muted: #666666;
+            --tracking-wide: 0.12em;
+            --tracking-tight: 0.02em;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
@@ -37,10 +32,7 @@
             animation: fadeInPage 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
-        /* Animação de Surgimento Fluido */
-        @keyframes fadeInPage {
-            to { opacity: 1; }
-        }
+        @keyframes fadeInPage { to { opacity: 1; } }
 
         .container {
             max-width: 720px;
@@ -48,35 +40,6 @@
             padding: 80px 24px 140px 24px;
         }
 
-        /* Moldura de Imagem Inspirada em Galerias - Agora Centralizada */
-        .hero-container {
-            width: 100%;
-            margin: 0 auto 64px auto;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeInElement 2s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(10%) contrast(95%);
-            transition: transform 1.5s ease;
-        }
-
-        @keyframes fadeInElement {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Tipografia de Luxo - Estilo Manifesto */
         h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 300;
@@ -84,7 +47,6 @@
             line-height: 1.3;
         }
 
-        /* Alinhamento Centralizado para o Título Principal */
         .brand-title {
             font-size: 2.2rem;
             margin-bottom: 48px;
@@ -92,9 +54,7 @@
             text-align: center;
         }
 
-        .section-pillar {
-            margin-bottom: 56px;
-        }
+        .section-pillar { margin-bottom: 56px; }
 
         .section-pillar h3 {
             font-size: 1.5rem;
@@ -109,7 +69,6 @@
             text-justify: inter-word;
         }
 
-        /* Rodapé Fixo e Minimalista (Mobile & Desktop) */
         .footer-navigation {
             position: fixed;
             bottom: 0;
@@ -137,7 +96,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* O Link de Contato "Invisível" e Sofisticado */
         .secure-contact-link {
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
@@ -159,36 +117,16 @@
             transition: transform 0.3s ease;
         }
 
-        .secure-contact-link:hover {
-            opacity: 0.7;
-        }
+        .secure-contact-link:hover { opacity: 0.7; }
+        .secure-contact-link:hover::after { transform: translate(2px, -2px); }
 
-        .secure-contact-link:hover::after {
-            transform: translate(2px, -2px);
-        }
-
-        /* Ajustes Finos para Telas Mobile */
         @media (max-width: 768px) {
-            .container {
-                padding: 48px 20px 160px 20px;
-            }
-            .brand-title {
-                font-size: 1.8rem;
-                margin-bottom: 36px;
-            }
-            .section-pillar {
-                margin-bottom: 40px;
-            }
-            .section-pillar h3 {
-                font-size: 1.35rem;
-                margin-bottom: 12px;
-            }
-            .section-pillar p {
-                font-size: 0.95rem;
-            }
-            .footer-content {
-                align-items: flex-start;
-            }
+            .container { padding: 48px 20px 160px 20px; }
+            .brand-title { font-size: 1.8rem; margin-bottom: 36px; }
+            .section-pillar { margin-bottom: 40px; }
+            .section-pillar h3 { font-size: 1.35rem; margin-bottom: 12px; }
+            .section-pillar p { font-size: 0.95rem; }
+            .footer-content { align-items: flex-start; }
         }
     </style>
 </head>
@@ -197,10 +135,6 @@
     <div class="container">
         
         <h1 class="brand-title">Psiquiatria Privada</h1>
-
-        <div class="hero-container">
-            <img src="foto-perfil.jpg" alt="Psiquiatria Privada" class="hero-image">
-        </div>
 
         <div class="section-pillar">
             <h3>Rigor Clínico</h3>
