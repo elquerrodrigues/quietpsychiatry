@@ -4,62 +4,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiet Psychiatry</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #FFFFFF; color: #111111; font-family: 'Inter', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 40px 100px 40px; }
-        
-        /* Imagem no Topo - Sem filtros de cor */
-        .hero-image { width: 100%; margin-bottom: 60px; border: 1px solid #E5E5E5; overflow: hidden; }
-        .hero-image img { width: 100%; height: auto; display: block; }
+    
+    <!-- Fontes Conectadas: Cormorant Garamond e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 400; color: #000000; margin-bottom: 20px; letter-spacing: -0.02em; }
-        .subtitle { font-size: 1.15rem; color: #444444; margin-bottom: 40px; line-height: 1.6; }
-        .manifesto { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #222222; border-left: 2px solid #111111; padding-left: 30px; margin: 60px 0; }
-        h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: #000000; margin-bottom: 30px; border-bottom: 1px solid #E5E5E5; padding-bottom: 15px; }
-        
-        .pillar-item { margin-bottom: 35px; }
-        .pillar-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #000000; margin-bottom: 8px; }
-        .pillar-item p { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #444444; line-height: 1.6; }
-        
-        /* Botão de Contato */
-        .btn-whatsapp { display: inline-block; background: #000000; color: #FFFFFF; padding: 18px 40px; text-transform: uppercase; text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; transition: 0.4s; margin-top: 20px; }
-        .btn-whatsapp:hover { background: #FFFFFF; color: #000000; border: 1px solid #000000; }
-        
-        footer { margin-top: 100px; border-top: 1px solid #E5E5E5; padding-top: 40px; font-size: 0.8rem; color: #777777; line-height: 1.5; }
+    <style>
+        /* Paleta Temática Aesop & Filosofia Nórdica */
+        :root {
+            --bg-color: #F5F5F3;      /* Off-white caloroso (estilo linho/concreto claro) */
+            --text-main: #202020;     /* Grafite profundo, mais suave que o preto puro */
+            --text-muted: #666666;    /* Cinza pedra para subtextos */
+            --tracking-wide: 0.12em;  /* Espaçamento nobre para títulos */
+            --tracking-tight: 0.02em; /* Espaçamento elegante para leitura */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            letter-spacing: var(--tracking-tight);
+            -webkit-font-smoothing: antialiased;
+            opacity: 0;
+            animation: fadeInPage 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        /* Animação de Surgimento Fluido */
+        @keyframes fadeInPage {
+            to { opacity: 1; }
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 140px 24px;
+        }
+
+        /* Moldura de Imagem Inspirada em Galerias */
+        .hero-container {
+            width: 100%;
+            margin-bottom: 64px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInElement 2s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(10%) contrast(95%);
+            transition: transform 1.5s ease;
+        }
+
+        @keyframes fadeInElement {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tipografia de Luxo - Estilo Manifesto */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: var(--tracking-wide);
+            line-height: 1.3;
+        }
+
+        .brand-title {
+            font-size: 2.2rem;
+            margin-bottom: 48px;
+            text-transform: none;
+        }
+
+        .section-pillar {
+            margin-bottom: 56px;
+        }
+
+        .section-pillar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            color: var(--text-main);
+        }
+
+        .section-pillar p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Rodapé Fixo e Minimalista (Mobile & Desktop) */
+        .footer-navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(245, 245, 243, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 24px;
+            z-index: 1000;
+        }
+
+        .footer-content {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* O Link de Contato "Invisível" e Sofisticado */
+        .secure-contact-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 4px;
+            transition: color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .secure-contact-link::after {
+            content: " ↗";
+            font-size: 0.8rem;
+            margin-left: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .secure-contact-link:hover {
+            opacity: 0.7;
+        }
+
+        .secure-contact-link:hover::after {
+            transform: translate(2px, -2px);
+        }
+
+        /* Ajustes Finos para Telas Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 48px 20px 160px 20px;
+            }
+            .brand-title {
+                font-size: 1.8rem;
+                margin-bottom: 36px;
+            }
+            .section-pillar {
+                margin-bottom: 40px;
+            }
+            .section-pillar h3 {
+                font-size: 1.35rem;
+                margin-bottom: 12px;
+            }
+            .section-pillar p {
+                font-size: 0.95rem;
+            }
+            .footer-content {
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="hero-image">
-            <img src="foto-perfil.jpg" alt="Quiet Psychiatry Header">
-        </div>
-
-        <h1>Quiet Psychiatry.</h1>
-        <p class="subtitle">Medicina psiquiátrica de alta performance baseada em absoluta discrição, conveniência e rigor clínico.</p>
         
-        <div class="manifesto">
-            "Proteger a esfera privada não é um luxo, é uma necessidade clínica para quem lidera em alta complexidade."
+        <!-- Título Principal -->
+        <h1 class="brand-title">Quiet Psychiatry</h1>
+
+        <!-- Imagem com Entrada Suave -->
+        <div class="hero-container">
+            <img src="image.png" alt="Quiet Psychiatry" class="hero-image">
         </div>
 
-        <section>
-            <h2>Disponibilidade Exclusiva</h2>
-            <div class="pillar-item">
-                <h3>Modelo Concierge</h3>
-                <p>Um número estritamente limitado de pacientes ativos para assegurar respostas imediatas, coordenação de cuidados em tempo integral e consultas sem pressa.</p>
-            </div>
-            <div class="pillar-item">
-                <h3>Rigor Clínico</h3>
-                <p>Abordagem médica pautada pela excelência científica e neurobiológica. O foco terapêutico é direcionado à otimização neuroquímica, regulação de circuitos de estresse de alta carga e restauração de ativos cognitivos, respeitando a complexidade de tomadas de decisão no ecossistema de alta governança.</p>
-            </div>
-        </section>
+        <!-- Manifesto Clínico -->
+        <div class="section-pillar">
+            <h3>Rigor Clínico</h3>
+            <p>Abordagem médica pautada pela excelência científica e atualização constante. Um modelo de prática focado na precisão diagnóstica e no desenho de protocolos terapêuticos estritamente customizados, onde a ciência encontra a individualidade.</p>
+        </div>
 
-       <a href="https://wa.me/5511977335683?text=Ol%C3%A1.%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20agenda%20da%20Quiet%20Psychiatry%20para%20uma%20avalia%C3%A7%C3%A3o%20inicial%20e%20compreender%20como%20funciona%20o%20protocolo%20de%20atendimento%20de%20voc%C3%AAs." target="_blank" class="btn-whatsapp">Iniciar Contato Seguro</a>
-        <footer>
-            <p>Quiet Psychiatry — Atendimento Privado</p>
-            <p>São Paulo, SP</p>
-        </footer>
+        <div class="section-pillar">
+            <h3>Atendimento Privado</h3>
+            <p>Preservação absoluta da individualidade e conveniência do paciente. Consultas conduzidas com tempo estendido, dedicação integral e um número estritamente limitado de casos ativos, assegurando suporte contínuo de alta fidelidade.</p>
+        </div>
+
     </div>
+
+    <!-- Rodapé Estilo Aesop: Informativo e Ponto de Contato Fixo -->
+    <footer class="footer-navigation">
+        <div class="footer-content">
+            <div class="footer-meta">Quiet Psychiatry — Atendimento Privado</div>
+            <div class="footer-meta">São Paulo, SP</div>
+            <div>
+                <a href="https://wa.me/5511977335683?text=Ol%C3%A1.%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20agenda%20da%20Quiet%20Psychiatry%20para%20uma%20avalia%C3%A7%C3%A3o%20inicial%20e%20compreender%20como%20funciona%20o%20protocolo%20de%20atendimento%20de%20voc%C3%AAs." 
+                   target="_blank" 
+                   class="secure-contact-link">
+                   Iniciar Contato Seguro
+                </a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
+O que você vai notar após salvar:
