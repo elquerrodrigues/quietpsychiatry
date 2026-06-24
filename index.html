@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,8 @@
 
     <style>
         :root {
-            --bg-color: #F5F5F3;
-            --text-main: #202020;
+            --bg-color: #000000;      /* Fundo preto absoluto */
+            --text-main: #E0E0E0;     /* Cinza claro para leitura confortável e elegante */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +26,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            animation: fadeIn 1.5s ease-in;
+            animation: fadeIn 1.5s ease-in; /* Transição suave ao carregar a página */
         }
 
         @keyframes fadeIn {
@@ -49,13 +49,13 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            filter: grayscale(100%) brightness(1.1) contrast(0.8);
+            filter: grayscale(100%) brightness(0.8) contrast(1.2); /* Integração perfeita ao tema escuro */
             opacity: 0.85;
             transition: opacity 0.5s;
         }
 
         .hero-image:hover {
-            opacity: 1;
+            opacity: 1; /* Ganha destaque ao passar o mouse */
         }
 
         .manifesto {
@@ -91,6 +91,7 @@
     <div class="container">
         
         <div class="hero-container">
+            <!-- Certifique-se de que o arquivo de imagem está na mesma pasta com este nome -->
             <img src="foto-perfil.jpg" alt="Psiquiatria Privada" class="hero-image">
         </div>
 
@@ -98,6 +99,7 @@
             "Algumas pessoas precisam de um psiquiatra. Outras precisam de um psiquiatra sem serem vistas entrando em uma clínica."
         </div>
 
+        <!-- Substitua o link abaixo pelo seu e-mail ou link de contato real -->
         <a href="mailto:contato@exemplo.com" class="cta-button">
             SOLICITAR ADMISSÃO
         </a>
