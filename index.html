@@ -1,110 +1,411 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psiquiatria Privada</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Privée | Psiquiatria Domiciliar e Confidencial</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --ink: #1f211c;
+      --muted: #6f7169;
+      --line: #d8cbb8;
+      --gold: #9a7b45;
+      --deep: #18201a;
+      --card: #fbf7ef;
+    }
 
-    <style>
-        :root {
-            --bg-color: #000000;      /* Fundo preto absoluto */
-            --text-main: #E0E0E0;     /* Cinza claro para leitura confortável e elegante */
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            animation: fadeIn 1.5s ease-in; /* Transição suave ao carregar a página */
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    header {
+      min-height: 100vh;
+      padding: 32px 7vw;
+      background:
+        linear-gradient(rgba(246,241,232,.78), rgba(246,241,232,.92)),
+        url("https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .container {
-            max-width: 500px;
-            text-align: center;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
 
-        .hero-container {
-            margin-bottom: 40px;
-        }
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      letter-spacing: .12em;
+      color: var(--deep);
+    }
 
-        .hero-image {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            filter: grayscale(100%) brightness(0.8) contrast(1.2); /* Integração perfeita ao tema escuro */
-            opacity: 0.85;
-            transition: opacity 0.5s;
-        }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+    }
 
-        .hero-image:hover {
-            opacity: 1; /* Ganha destaque ao passar o mouse */
-        }
+    .hero {
+      max-width: 820px;
+      margin-top: auto;
+      margin-bottom: 10vh;
+    }
 
-        .manifesto {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--text-main);
-            line-height: 1.4;
-        }
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
 
-        .cta-button {
-            display: inline-block;
-            margin-top: 30px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 0.2rem;
-            border: 1px solid var(--text-main);
-            padding: 12px 30px;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
+    h1 {
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: .98;
+      font-weight: 400;
+      letter-spacing: -.04em;
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
 
-        .cta-button:hover {
-            background-color: var(--text-main);
-            color: var(--bg-color);
-        }
-    </style>
+    .hero p {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #3e423a;
+      max-width: 620px;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      padding: 16px 28px;
+      border: 1px solid var(--deep);
+      background: var(--deep);
+      color: #fff;
+      transition: .25s ease;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--deep);
+    }
+
+    main {
+      padding: 80px 7vw;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 110px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -.03em;
+      margin-bottom: 24px;
+    }
+
+    .text {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 42px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .service {
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    .service h3 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .dark {
+      background: var(--deep);
+      color: #f5efe4;
+      padding: 90px 7vw;
+      margin: 0 -7vw 110px;
+    }
+
+    .dark p {
+      color: #c9c2b5;
+      max-width: 760px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+      font-family: Arial, sans-serif;
+    }
+
+    .step span {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: .18em;
+    }
+
+    .step h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      margin: 14px 0 8px;
+      font-size: 23px;
+    }
+
+    .step p {
+      font-size: 15px;
+    }
+
+    .quote {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 110px;
+      font-size: clamp(30px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      color: var(--deep);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid var(--line);
+      background: #fffaf2;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 34px 7vw;
+      border-top: 1px solid var(--line);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .note {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links { display: none; }
+      .grid, .contact, .services, .steps {
+        grid-template-columns: 1fr;
+      }
+      header { min-height: 86vh; }
+      .card { padding: 28px; }
+      footer { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <div class="brand">CLÍNICA PRIVÉE</div>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#privacidade">Privacidade</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
 
-    <div class="container">
-        
-        <div class="hero-container">
-            <!-- Certifique-se de que o arquivo de imagem está na mesma pasta com este nome -->
-            <img src="foto-perfil.jpg" alt="Psiquiatria Privada" class="hero-image">
+    <section class="hero">
+      <div class="eyebrow">Psiquiatria discreta · Atendimento reservado</div>
+      <h1>Cuidado mental com absoluta discrição.</h1>
+      <p>
+        Atendimento psiquiátrico individualizado para pessoas que valorizam privacidade,
+        conforto e confidencialidade — inclusive em domicílio, quando indicado.
+      </p>
+      <a class="btn" href="#contato">Solicitar contato reservado</a>
+    </section>
+  </header>
+
+  <main>
+    <section class="grid" id="sobre">
+      <div>
+        <div class="eyebrow">Quiet care</div>
+        <h2>Uma experiência clínica pensada para quem precisa de sigilo.</h2>
+      </div>
+      <div class="card">
+        <p class="text">
+          A Clínica Privée oferece avaliação e acompanhamento psiquiátrico em formato
+          reservado, com agenda seletiva, comunicação discreta e possibilidade de atendimento
+          em residência, hotel ou local privado previamente combinado.
+        </p>
+        <p class="note">
+          O atendimento segue critérios médicos, éticos e legais. Casos de emergência devem
+          procurar serviço de urgência imediatamente.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Serviços</div>
+      <h2>Atendimento sob medida, sem exposição desnecessária.</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Consulta reservada</h3>
+          <p>Avaliação psiquiátrica com escuta clínica, diagnóstico e plano terapêutico individual.</p>
         </div>
-
-        <div class="manifesto">
-            "Algumas pessoas precisam de um psiquiatra. Outras precisam de um psiquiatra sem serem vistas entrando em uma clínica."
+        <div class="service">
+          <h3>Domiciliar premium</h3>
+          <p>Atendimento em ambiente privado, mediante análise de viabilidade clínica e logística.</p>
         </div>
+        <div class="service">
+          <h3>Continuidade do cuidado</h3>
+          <p>Acompanhamento discreto, prescrição quando indicada e coordenação com outros profissionais.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Substitua o link abaixo pelo seu e-mail ou link de contato real -->
-        <a href="mailto:contato@exemplo.com" class="cta-button">
-            SOLICITAR ADMISSÃO
-        </a>
+    <section class="dark" id="privacidade">
+      <div class="eyebrow">Confidencialidade</div>
+      <h2>Privacidade não é luxo. É parte do cuidado.</h2>
+      <p class="text">
+        Do primeiro contato ao acompanhamento, cada etapa é desenhada para reduzir exposição:
+        comunicação objetiva, horários selecionados, confirmação discreta e registros protegidos
+        conforme as normas aplicáveis.
+      </p>
 
+      <div class="steps">
+        <div class="step">
+          <span>01</span>
+          <h3>Contato inicial</h3>
+          <p>Você envia uma solicitação breve por canal reservado.</p>
+        </div>
+        <div class="step">
+          <span>02</span>
+          <h3>Triagem</h3>
+          <p>Avaliamos a necessidade, urgência e formato adequado.</p>
+        </div>
+        <div class="step">
+          <span>03</span>
+          <h3>Agendamento</h3>
+          <p>Definição de horário e local com máxima discrição.</p>
+        </div>
+        <div class="step">
+          <span>04</span>
+          <h3>Consulta</h3>
+          <p>Atendimento médico individualizado e confidencial.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote">
+      “Um espaço silencioso para cuidar do que não precisa ser público.”
     </div>
 
+    <section class="contact" id="contato">
+      <div>
+        <div class="eyebrow">Contato reservado</div>
+        <h2>Solicite uma avaliação inicial.</h2>
+        <p class="text">
+          Preencha apenas o necessário. A resposta será feita com discrição pelo canal informado.
+        </p>
+      </div>
+
+      <form>
+        <input type="text" placeholder="Nome ou iniciais" />
+        <input type="tel" placeholder="Telefone / WhatsApp" />
+        <input type="email" placeholder="E-mail" />
+        <select>
+          <option>Preferência de atendimento</option>
+          <option>Consulta online</option>
+          <option>Consulta em consultório reservado</option>
+          <option>Atendimento domiciliar</option>
+        </select>
+        <textarea placeholder="Mensagem breve"></textarea>
+        <button class="btn" type="button">Enviar solicitação</button>
+        <p class="note">
+          Este formulário é apenas demonstrativo. Para uso real, recomenda-se implementar
+          segurança, LGPD, consentimento e política de privacidade.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Clínica Privée — Psiquiatria Confidencial</span>
+    <span>CRM 000000 · RQE 00000 · Política de Privacidade</span>
+  </footer>
 </body>
 </html>
