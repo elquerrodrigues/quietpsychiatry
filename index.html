@@ -1,191 +1,145 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Houzel–Lutz | Psiquiatria Clínica de Alta Precisão</title>
-
-<meta name="description" content="Psiquiatria Clínica de Alta Precisão. Atendimento domiciliar, executivo e por telemedicina.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style> :root{ --bg:#FAFAF8; --text:#1A1A1A; --muted:#6B6B6B; --accent:#4A4A3A; --border:#DDD8CF; } *{ margin:0; padding:0; box-sizing:border-box; } html{ scroll-behavior:smooth; } body{ background-color:var(--bg); background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.02) 1px, transparent 0); background-size:32px 32px; color:var(--text); font-family:'Inter',sans-serif; font-weight:300; line-height:1.95; -webkit-font-smoothing:antialiased; } header{ max-width:1200px; margin:auto; padding:42px 40px; display:flex; justify-content:space-between; align-items:flex-start; } .brand{ display:flex; gap:18px; } .monogram{ font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:600; letter-spacing:2px; color:var(--accent); } .brand-name{ font-size:14px; letter-spacing:3px; text-transform:uppercase; } .brand-subtitle{ font-size:12px; margin-top:6px; max-width:420px; color:var(--muted); } nav{ display:flex; gap:30px; } nav a{ text-decoration:none; color:var(--text); font-size:14px; transition:.25s; } nav a:hover{ opacity:.5; } .hero{ min-height:100vh; display:flex; align-items:center; padding:0 40px; } .hero-content{ max-width:760px; margin:auto; } .hero h1{ font-family:'Cormorant Garamond',serif; font-size:82px; line-height:0.95; font-weight:500; margin-bottom:35px; } .hero p{ font-size:21px; color:#444; max-width:700px; margin-bottom:50px; } .button-link{ text-decoration:none; color:var(--text); border-bottom:1px solid var(--text); padding-bottom:4px; transition:.25s; } .button-link:hover{ opacity:.55; } .section{ padding:130px 40px; } .content{ max-width:760px; margin:auto; } .content.narrow{ max-width:620px; } .border-top{ border-top:1px solid var(--border); } h2{ font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:500; margin-bottom:45px; } p{ margin-bottom:26px; } .service{ padding:26px 0; border-bottom:1px solid var(--border); font-size:18px; } .protocol{ margin-top:45px; } .protocol div{ padding:28px 0; border-bottom:1px solid var(--border); } .protocol h3{ font-weight:500; margin-bottom:8px; } input, textarea{ width:100%; background:transparent; border:none; border-bottom:1px solid var(--border); padding:18px 0; margin-bottom:22px; font-size:16px; font-family:inherit; } textarea{ resize:vertical; } button{ background:none; border:none; border-bottom:1px solid var(--text); font-size:16px; padding-bottom:5px; cursor:pointer; } footer{ border-top:1px solid var(--border); padding:70px 40px; } .footer-content{ max-width:760px; margin:auto; display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--muted); } @media(max-width:900px){ header{ flex-direction:column; gap:30px; } nav{ flex-wrap:wrap; } .hero h1{ font-size:52px; } .hero p{ font-size:18px; } h2{ font-size:40px; } } </style>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#18221B;
+--text:#F4F2EC;
+--body:#D7D4CC;
+--line:rgba(255,255,255,.12);
+--accent:#A89B6E;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+background:var(--bg);
+color:var(--body);
+font-family:Inter,sans-serif;
+line-height:1.9;
+}
+.container{width:min(900px,90%);margin:auto}
+header{
+padding:40px 0;border-bottom:1px solid var(--line);
+display:flex;justify-content:space-between;align-items:flex-start
+}
+.monogram,h1,h2,h3,.brand{
+font-family:"Cormorant Garamond",serif;color:var(--text)
+}
+.monogram{font-size:44px}
+.brand{font-size:22px;letter-spacing:2px}
+.small{font-size:12px;color:var(--body);opacity:.8;margin-top:6px}
+nav a{color:var(--body);text-decoration:none;margin-left:24px}
+.hero{min-height:88vh;display:flex;align-items:center}
+h1{font-size:84px;line-height:.95;font-weight:500;margin-bottom:30px}
+h2{font-size:54px;font-weight:500;margin-bottom:35px}
+h3{font-size:28px;font-weight:500;margin-bottom:8px}
+p{font-size:18px;margin-bottom:22px}
+section{padding:110px 0;border-top:1px solid var(--line)}
+.hero section{border:none}
+.cta{
+display:inline-block;color:var(--text);text-decoration:none;
+border-bottom:1px solid var(--accent);padding-bottom:4px
+}
+.item{padding:22px 0;border-bottom:1px solid var(--line)}
+form input,form textarea{
+width:100%;background:transparent;color:var(--text);
+border:none;border-bottom:1px solid var(--line);
+padding:18px 0;margin-bottom:18px;font-family:Inter,sans-serif
+}
+button{
+background:none;color:var(--text);border:none;
+border-bottom:1px solid var(--accent);padding-bottom:4px;cursor:pointer
+}
+footer{padding:60px 0;border-top:1px solid var(--line);font-size:13px}
+@media(max-width:900px){
+header{flex-direction:column;gap:20px}
+h1{font-size:52px}
+h2{font-size:40px}
+}
+</style>
 </head>
-
 <body>
-
+<div class="container">
 <header>
-
-<div class="brand">
-
-<div class="monogram">HL</div>
-
 <div>
-
-<div class="brand-name"> Houzel–Lutz </div>
-
-<div class="brand-subtitle"> Prática privada dedicada à estabilidade clínica de lideranças e famílias. Agenda limitada. Atendimento exclusivamente sob solicitação. </div>
-
+<div class="monogram">HL</div>
+<div class="brand">HOUZEL–LUTZ</div>
+<div class="small">Prática privada dedicada à estabilidade clínica de lideranças e famílias.</div>
 </div>
-
-</div>
-
-<nav> <a href="#sobre">Sobre</a> <a href="#mandato">Mandato</a> <a href="#atendimento">Atendimento</a> <a href="#discricao">Discrição</a> <a href="#contato">Contato</a> </nav>
-
+<nav>
+<a href="#sobre">Sobre</a>
+<a href="#mandato">Mandato</a>
+<a href="#discricao">Discrição</a>
+<a href="#contato">Contato</a>
+</nav>
 </header>
 
-<section class="hero">
-
-<div class="hero-content">
-
-<h1> Psiquiatria Clínica de Alta Precisão. <br> Atendimento Domiciliar e Executivo. </h1>
-
-<p> Experiência clínica rigorosa dedicada à estabilidade de lideranças, famílias e indivíduos submetidos a elevados níveis de responsabilidade. Sigilo médico, discrição operacional e acompanhamento personalizado. </p>
-
-<a href="#contato" class="button-link"> Solicitar acesso </a>
-
+<div class="hero">
+<div>
+<h1>Psiquiatria Clínica de Alta Precisão.<br>Atendimento Domiciliar e Executivo.</h1>
+<p>Experiência clínica rigorosa dedicada à estabilidade de lideranças, famílias e indivíduos submetidos a elevados níveis de responsabilidade.</p>
+<a class="cta" href="#contato">Solicitar acesso</a>
+</div>
 </div>
 
-</section>
-
-<section id="sobre" class="section border-top">
-
-<div class="content">
-
+<section id="sobre">
 <h2>Sobre a prática</h2>
-
-<p> A Houzel–Lutz é uma prática médica privada dedicada à psiquiatria clínica baseada em evidências, neurobiologia e avaliação diagnóstica rigorosa. </p>
-
-<p> Seu modelo foi concebido para indivíduos cuja capacidade de decisão, desempenho cognitivo e estabilidade emocional exercem impacto direto sobre empresas, patrimônios, instituições e estruturas familiares complexas. </p>
-
-<p> O acompanhamento é conduzido de forma individualizada, integrando avaliação clínica aprofundada, intervenção farmacológica quando indicada e monitoramento contínuo da evolução do quadro. </p>
-
-<p> O médico responsável possui Registro de Qualificação de Especialista (RQE) em Psiquiatria e atuação dedicada ao tratamento do Transtorno Obsessivo-Compulsivo (TOC), incluindo apresentações complexas e refratárias. </p>
-
-</div>
-
+<p>A Houzel–Lutz é uma prática médica privada dedicada à psiquiatria baseada em evidências, neurobiologia e avaliação diagnóstica rigorosa.</p>
+<p>O médico responsável possui RQE em Psiquiatria e atuação dedicada ao tratamento do TOC, incluindo apresentações complexas e refratárias.</p>
+<p>O acompanhamento integra avaliação clínica aprofundada, intervenção farmacológica quando indicada e monitoramento contínuo da evolução do quadro.</p>
 </section>
 
-<section id="mandato" class="section border-top">
-
-<div class="content">
-
+<section id="mandato">
 <h2>Mandato Clínico</h2>
-
-<p> Para determinadas pessoas, o cérebro representa o principal ativo gerador de valor. Decisões estratégicas, liderança, negociação, gestão patrimonial e desempenho intelectual dependem diretamente da estabilidade do funcionamento cerebral. </p>
-
-<p> A Houzel–Lutz foi concebida para atuar precisamente nesse ponto. A prática oferece acompanhamento psiquiátrico rigoroso para indivíduos cuja capacidade de julgamento e desempenho possui repercussões que ultrapassam a esfera pessoal. </p>
-
-<p> O objetivo não é apenas tratar sintomas quando eles surgem, mas preservar estabilidade clínica, capacidade funcional e previsibilidade ao longo do tempo. </p>
-
-</div>
-
+<p>Para determinadas pessoas, o cérebro representa o principal ativo gerador de valor. Decisões estratégicas, liderança, negociação e desempenho intelectual dependem diretamente da estabilidade do funcionamento cerebral.</p>
+<p>O objetivo não é apenas tratar sintomas quando surgem, mas preservar estabilidade clínica, capacidade funcional e previsibilidade ao longo do tempo.</p>
 </section>
 
-<section id="atendimento" class="section border-top">
-
-<div class="content">
-
-<h2>Modalidades de atendimento</h2>
-
-<div class="service"> Residência privada </div>
-
-<div class="service"> Escritório corporativo </div>
-
-<div class="service"> Hotel </div>
-
-<div class="service"> Telemedicina executiva </div>
-
-</div>
-
+<section>
+<h2>Modalidades de Atendimento</h2>
+<div class="item">Residência privada</div>
+<div class="item">Escritório corporativo</div>
+<div class="item">Hotel</div>
+<div class="item">Telemedicina executiva</div>
 </section>
 
-<section id="discricao" class="section border-top">
-
-<div class="content">
-
-<h2>Protocolo de discrição</h2>
-
-<p> A confidencialidade constitui elemento central da prática. Cada interação é conduzida com atenção à proteção das informações clínicas, à privacidade do paciente e à adequação dos canais de comunicação. </p>
-
-<div class="protocol">
-
-<div> <h3>Confidencialidade</h3> <p>Sigilo médico integral e respeito absoluto à privacidade.</p> </div>
-
-<div> <h3>Comunicação Reservada</h3> <p>Fluxos de contato definidos individualmente conforme a necessidade de cada caso.</p> </div>
-
-<div> <h3>Proteção de Informações</h3> <p>Práticas compatíveis com elevados padrões de segurança da informação.</p> </div>
-
-<div> <h3>Coordenação Discreta</h3> <p>Planejamento cuidadoso de atendimentos presenciais em residências, hotéis e ambientes corporativos.</p> </div>
-
-</div>
-
-</div>
-
+<section id="discricao">
+<h2>Protocolo de Discrição</h2>
+<div class="item"><h3>Confidencialidade</h3><p>Sigilo médico integral e respeito absoluto à privacidade.</p></div>
+<div class="item"><h3>Comunicação Reservada</h3><p>Fluxos de contato definidos individualmente.</p></div>
+<div class="item"><h3>Proteção de Informações</h3><p>Práticas compatíveis com elevados padrões de segurança da informação.</p></div>
+<div class="item"><h3>Coordenação Discreta</h3><p>Planejamento cuidadoso de atendimentos presenciais.</p></div>
 </section>
 
-<section class="section border-top">
-
-<div class="content">
-
+<section>
 <h2>Disponibilidade</h2>
-
-<p> A Houzel–Lutz mantém agenda deliberadamente limitada. O número reduzido de acompanhamentos permite elevado grau de personalização e continuidade assistencial. </p>
-
-<p> Novas solicitações são avaliadas individualmente de acordo com disponibilidade e adequação ao modelo da prática. </p>
-
-<p> A prioridade é preservar excelência clínica, não ampliar volume de atendimentos. </p>
-
-</div>
-
+<p>A agenda é deliberadamente limitada para permitir elevado grau de personalização e continuidade assistencial.</p>
 </section>
 
-<section id="contato" class="section border-top">
-
-<div class="content narrow">
-
-<h2>Solicitação de acesso</h2>
-
-<p> O primeiro contato é confidencial. Solicitações são analisadas individualmente e respondidas por canal apropriado. </p>
-
+<section id="contato">
+<h2>Solicitação de Acesso</h2>
+<p>O primeiro contato é confidencial. Solicitações são analisadas individualmente.</p>
 <form>
-
-<input type="text" placeholder="Nome (opcional)">
-
-<input type="email" placeholder="E-mail">
-
-<input type="tel" placeholder="Telefone">
-
+<input placeholder="Nome (opcional)">
+<input placeholder="E-mail">
+<input placeholder="Telefone">
 <textarea rows="6" placeholder="Mensagem"></textarea>
-
-<button type="submit"> Iniciar conversa </button>
-
+<button type="submit">Iniciar conversa</button>
 </form>
-
-</div>
-
 </section>
 
 <footer>
-
-<div class="footer-content">
-
-<div>Houzel–Lutz</div>
-
-<div>Dr. Nome Sobrenome</div>
-
-<div>CRM XX.XXX-SP · RQE XXXXX</div>
-
-<div>Atendimento exclusivamente privado.</div>
-
-<div>São Paulo · Brasil</div>
-
-<div>© 2026 Houzel–Lutz. Todos os direitos reservados.</div>
-
-</div>
-
+<p>Houzel–Lutz</p>
+<p>Dr. Nome Sobrenome · CRM XX.XXX-SP · RQE XXXXX</p>
+<p>Atendimento exclusivamente privado.</p>
+<p>© 2026 Houzel–Lutz</p>
 </footer>
-
-</body> </html> ```
+</div>
+</body>
+</html>
