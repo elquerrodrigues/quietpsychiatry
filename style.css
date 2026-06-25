@@ -1,0 +1,38 @@
+/* Definição de Variáveis de Cores */
+:root {
+  --bg-color: #F4F3F2;      /* Background: Papel de alta gramatura */
+  --heading-color: #2C3539; /* Títulos: Grafite Profundo */
+  --text-color: #4A4A4A;    /* Texto: Cinza Médio para leitura */
+  --accent-color: #1B2631;  /* Destaque/Botões: Azul-Marinho Oxford */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Georgia', serif; /* Exemplo de fonte editorial elegante */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: var(--heading-color);
+  font-weight: 600;
+  letter-spacing: -0.5px; /* Ajuste para elegância */
+}
+
+/* Botão de "Iniciar Conversa" */
+.btn-contato {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-family: 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-contato:hover {
+  opacity: 0.85; /* Efeito discreto ao passar o mouse */
+}
