@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAUS MERKEL</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #f8f6f2;
@@ -12,11 +16,16 @@
     
     body {
       margin: 0;
-      font-family: 'Georgia', 'Times New Roman', serif;
+      font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    h1, h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
     }
 
     header {
@@ -30,15 +39,15 @@
     }
 
     h1 {
-      font-size: 3.4rem;
+      font-size: 3.35rem;
       margin: 0 0 14px 0;
-      font-weight: 400;
       letter-spacing: -2.5px;
       color: #1f1f1f;
     }
 
     .subtitle {
-      font-size: 1.15rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.12rem;
       letter-spacing: 4.5px;
       color: #666;
       font-weight: 400;
@@ -81,11 +90,10 @@
     .content h2 {
       font-size: 2.25rem;
       margin: 0 0 22px 0;
-      font-weight: 400;
     }
 
     .content p {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       max-width: 520px;
       margin: 0 auto;
       color: #444;
@@ -100,6 +108,7 @@
       border-radius: 4px;
       text-decoration: none;
       font-size: 1.1rem;
+      font-family: 'Inter', sans-serif;
       transition: all 0.4s;
     }
 
@@ -118,80 +127,7 @@
 </head>
 <body>
 
-  <!-- Header Compacto -->
+  <!-- Header -->
   <header>
     <h1>HAUS-MERKEL</h1>
     <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
-  </header>
-
-  <section>
-    <div class="card">
-      <img src="foto1.png" alt="HAUS MERKEL">
-      <div class="content">
-        <h2>Sigilo Absoluto</h2>
-        <p>Atendimento psiquiátrico domiciliar e em hotéis com discrição total. O psiquiatra vai até você.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="card">
-      <img src="foto2.png" alt="Concierge Médico">
-      <div class="content">
-        <h2>Concierge Médico</h2>
-        <p>Atendimento onde você estiver: residência, escritório ou hotel. Sem identificação institucional.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="card">
-      <img src="foto3.png" alt="Excelência Técnica">
-      <div class="content">
-        <h2>Excelência Técnica</h2>
-        <p>Prática baseada exclusivamente em evidências científicas. Equipe composta apenas por psiquiatras com RQE.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="card">
-      <img src="foto4.png" alt="Conveniência">
-      <div class="content">
-        <h2>Conveniência</h2>
-        <p>O cuidado psiquiátrico no local onde você se sente mais confortável e seguro.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="card">
-      <img src="foto5.png" alt="Confidencialidade">
-      <div class="content">
-        <h2>Confidencialidade</h2>
-        <p>Segurança para proteger sua privacidade e reputação. Sigilo absoluto é inegociável.</p>
-        <a href="#" class="btn">Iniciar Atendimento Confidencial</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>HAUS MERKEL • MEDICAL LUXURY CONCIERGE • 2026</p>
-  </footer>
-
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
-
-</body>
-</html>
