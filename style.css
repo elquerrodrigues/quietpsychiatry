@@ -28,17 +28,25 @@ header {
     margin-bottom: 50px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 30px;
+    text-align: center; /* Centraliza tudo dentro do bloco */
 }
 
 h2 {
     font-size: 20px;
     margin-bottom: 10px;
+    text-align: center; /* Garante o título no meio */
 }
 
+/* Ajuste do tamanho das fotos */
 img {
-    width: 100%;
+    width: 80%; /* Reduz a largura para 80% da tela */
+    max-width: 400px; /* Limita o tamanho máximo para não ficarem gigantes */
+    height: auto;
     margin-top: 20px;
     border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centraliza a foto horizontalmente */
 }
 
 .cta-button {
