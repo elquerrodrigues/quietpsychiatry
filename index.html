@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> <link rel="stylesheet" href="style.css">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Houzel–Lutz | Psiquiatria Clínica de Alta Precisão</title>
@@ -9,58 +9,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
---bg:#18221B;
---text:#F4F2EC;
---body:#D7D4CC;
---line:rgba(255,255,255,.12);
---accent:#A89B6E;
+  --bg-color: #F4F3F2;      /* Papel de alta gramatura */
+  --heading-color: #2C3539; /* Grafite Profundo */
+  --text-color: #4A4A4A;    /* Cinza Médio */
+  --accent-color: #1B2631;  /* Azul-Marinho Oxford */
+  --line: rgba(44, 53, 57, 0.15);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-background:var(--bg);
-color:var(--body);
-font-family:Inter,sans-serif;
-line-height:1.9;
+  background:var(--bg-color);
+  color:var(--text-color);
+  font-family:'Inter', sans-serif;
+  line-height:1.8;
 }
 .container{width:min(900px,90%);margin:auto}
 header{
-padding:40px 0;border-bottom:1px solid var(--line);
-display:flex;justify-content:space-between;align-items:flex-start
+  padding:40px 0; border-bottom:1px solid var(--line);
+  display:flex; justify-content:space-between; align-items:flex-start
 }
 .monogram,h1,h2,h3,.brand{
-font-family:"Cormorant Garamond",serif;color:var(--text)
+  font-family:"Cormorant Garamond",serif; color:var(--heading-color)
 }
-.monogram{font-size:44px}
-.brand{font-size:22px;letter-spacing:2px}
-.small{font-size:12px;color:var(--body);opacity:.8;margin-top:6px}
-nav a{color:var(--body);text-decoration:none;margin-left:24px}
-.hero{min-height:88vh;display:flex;align-items:center}
-h1{font-size:84px;line-height:.95;font-weight:500;margin-bottom:30px}
-h2{font-size:54px;font-weight:500;margin-bottom:35px}
-h3{font-size:28px;font-weight:500;margin-bottom:8px}
-p{font-size:18px;margin-bottom:22px}
-section{padding:110px 0;border-top:1px solid var(--line)}
+.monogram{font-size:44px; margin-bottom: 5px;}
+.brand{font-size:22px; letter-spacing:2px}
+.small{font-size:12px; color:var(--text-color); opacity:.7; margin-top:6px}
+nav a{color:var(--text-color); text-decoration:none; margin-left:24px; font-size: 14px; opacity: 0.8;}
+.hero{min-height:80vh; display:flex; align-items:center}
+h1{font-size:68px; line-height:1.1; font-weight:400; margin-bottom:30px}
+h2{font-size:48px; font-weight:400; margin-bottom:35px}
+h3{font-size:24px; font-weight:500; margin-bottom:8px}
+p{font-size:18px; margin-bottom:22px}
+section{padding:100px 0; border-top:1px solid var(--line)}
 .hero section{border:none}
 .cta{
-display:inline-block;color:var(--text);text-decoration:none;
-border-bottom:1px solid var(--accent);padding-bottom:4px
+  display:inline-block; color:var(--accent-color); text-decoration:none;
+  border-bottom:1px solid var(--accent-color); padding-bottom:4px; font-weight: 500;
 }
-.item{padding:22px 0;border-bottom:1px solid var(--line)}
-form input,form textarea{
-width:100%;background:transparent;color:var(--text);
-border:none;border-bottom:1px solid var(--line);
-padding:18px 0;margin-bottom:18px;font-family:Inter,sans-serif
+.item{padding:20px 0; border-bottom:1px solid var(--line)}
+/* Contato discreto */
+#contato a{
+  display:inline-block; color:var(--accent-color); text-decoration:none;
+  border: 1px solid var(--accent-color); padding: 15px 30px; margin-top: 20px;
+  transition: all 0.3s;
 }
-button{
-background:none;color:var(--text);border:none;
-border-bottom:1px solid var(--accent);padding-bottom:4px;cursor:pointer
-}
-footer{padding:60px 0;border-top:1px solid var(--line);font-size:13px}
+#contato a:hover{ background: var(--accent-color); color: #fff; }
+footer{padding:60px 0; border-top:1px solid var(--line); font-size:12px; opacity: 0.7;}
 @media(max-width:900px){
-header{flex-direction:column;gap:20px}
-h1{font-size:52px}
-h2{font-size:40px}
+  header{flex-direction:column; gap:20px}
+  h1{font-size:42px}
+  h2{font-size:36px}
 }
 </style>
 </head>
@@ -74,7 +72,6 @@ h2{font-size:40px}
 </div>
 <nav>
 <a href="#sobre">Sobre</a>
-<a href="#mandato">Mandato</a>
 <a href="#discricao">Discrição</a>
 <a href="#contato">Contato</a>
 </nav>
@@ -82,63 +79,35 @@ h2{font-size:40px}
 
 <div class="hero">
 <div>
-<h1>Psiquiatria Clínica de Alta Precisão.<br>Atendimento Domiciliar e Executivo.</h1>
-<p>Experiência clínica rigorosa dedicada à estabilidade de lideranças, famílias e indivíduos submetidos a elevados níveis de responsabilidade.</p>
-<a class="cta" href="#contato">Solicitar acesso</a>
+<h1>Excelência clínica com<br>absoluta discrição.</h1>
+<p>Psiquiatria clínica de alta precisão. Atendimento domiciliar e executivo para quem exige o mais alto padrão em saúde e bem-estar.</p>
+<a class="cta" href="#contato">Solicitar acesso privativo</a>
 </div>
 </div>
 
 <section id="sobre">
 <h2>Sobre a prática</h2>
-<p>A Houzel–Lutz é uma prática médica privada dedicada à psiquiatria baseada em evidências, neurobiologia e avaliação diagnóstica rigorosa.</p>
-<p>O médico responsável possui RQE em Psiquiatria e atuação dedicada ao tratamento do TOC, incluindo apresentações complexas e refratárias.</p>
-<p>O acompanhamento integra avaliação clínica aprofundada, intervenção farmacológica quando indicada e monitoramento contínuo da evolução do quadro.</p>
-</section>
-
-<section id="mandato">
-<h2>Mandato Clínico</h2>
-<p>Para determinadas pessoas, o cérebro representa o principal ativo gerador de valor. Decisões estratégicas, liderança, negociação e desempenho intelectual dependem diretamente da estabilidade do funcionamento cerebral.</p>
-<p>O objetivo não é apenas tratar sintomas quando surgem, mas preservar estabilidade clínica, capacidade funcional e previsibilidade ao longo do tempo.</p>
-</section>
-
-<section>
-<h2>Modalidades de Atendimento</h2>
-<div class="item">Residência privada</div>
-<div class="item">Escritório corporativo</div>
-<div class="item">Hotel</div>
-<div class="item">Telemedicina executiva</div>
+<p>A sofisticação reside na sutileza. Meu trabalho é oferecer cuidado psiquiátrico de alta complexidade diretamente no ambiente em que você vive ou trabalha, eliminando deslocamentos e garantindo a privacidade que a sua rotina exige.</p>
+<p>Combinando rigor técnico em neurofisiologia e psiquiatria baseada em evidências, desenvolvi uma prática desenhada para indivíduos que valorizam tempo, sigilo e excelência clínica.</p>
 </section>
 
 <section id="discricao">
 <h2>Protocolo de Discrição</h2>
-<div class="item"><h3>Confidencialidade</h3><p>Sigilo médico integral e respeito absoluto à privacidade.</p></div>
-<div class="item"><h3>Comunicação Reservada</h3><p>Fluxos de contato definidos individualmente.</p></div>
-<div class="item"><h3>Proteção de Informações</h3><p>Práticas compatíveis com elevados padrões de segurança da informação.</p></div>
-<div class="item"><h3>Coordenação Discreta</h3><p>Planejamento cuidadoso de atendimentos presenciais.</p></div>
-</section>
-
-<section>
-<h2>Disponibilidade</h2>
-<p>A agenda é deliberadamente limitada para permitir elevado grau de personalização e continuidade assistencial.</p>
+<div class="item"><h3>Confidencialidade</h3><p>O sigilo médico é tratado como princípio fundamental. Cada interação é conduzida sob rigorosos padrões de confidencialidade.</p></div>
+<div class="item"><h3>Logística Invisível</h3><p>Atendimento realizado no seu espaço, sem salas de espera, sem exposição e sem burocracias.</p></div>
+<div class="item"><h3>Segurança de Dados</h3><p>Prontuários e comunicações protegidos por protocolos avançados de segurança digital.</p></div>
 </section>
 
 <section id="contato">
 <h2>Solicitação de Acesso</h2>
-<p>O primeiro contato é confidencial. Solicitações são analisadas individualmente.</p>
-<form>
-<input placeholder="Nome (opcional)">
-<input placeholder="E-mail">
-<input placeholder="Telefone">
-<textarea rows="6" placeholder="Mensagem"></textarea>
-<button type="submit">Iniciar conversa</button>
-</form>
+<p>O atendimento é restrito e personalizado. O primeiro contato é confidencial e direcionado a canais privados.</p>
+<a href="mailto:seu-email@exemplo.com">Iniciar conversa segura via e-mail</a>
 </section>
 
 <footer>
-<p>Houzel–Lutz</p>
+<p>Houzel–Lutz · Medicina Psiquiátrica Privativa</p>
 <p>Dr. Nome Sobrenome · CRM XX.XXX-SP · RQE XXXXX</p>
-<p>Atendimento exclusivamente privado.</p>
-<p>© 2026 Houzel–Lutz</p>
+<p>© 2026 Houzel–Lutz. Todos os direitos reservados.</p>
 </footer>
 </div>
 </body>
