@@ -1,114 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Houzel–Lutz | Psiquiatria Clínica de Alta Precisão</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg-color: #F4F3F2;      /* Papel de alta gramatura */
-  --heading-color: #2C3539; /* Grafite Profundo */
-  --text-color: #4A4A4A;    /* Cinza Médio */
-  --accent-color: #1B2631;  /* Azul-Marinho Oxford */
-  --line: rgba(44, 53, 57, 0.15);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg-color);
-  color:var(--text-color);
-  font-family:'Inter', sans-serif;
-  line-height:1.8;
-}
-.container{width:min(900px,90%);margin:auto}
-header{
-  padding:40px 0; border-bottom:1px solid var(--line);
-  display:flex; justify-content:space-between; align-items:flex-start
-}
-.monogram,h1,h2,h3,.brand{
-  font-family:"Cormorant Garamond",serif; color:var(--heading-color)
-}
-.monogram{font-size:44px; margin-bottom: 5px;}
-.brand{font-size:22px; letter-spacing:2px}
-.small{font-size:12px; color:var(--text-color); opacity:.7; margin-top:6px}
-nav a{color:var(--text-color); text-decoration:none; margin-left:24px; font-size: 14px; opacity: 0.8;}
-.hero{min-height:80vh; display:flex; align-items:center}
-h1{font-size:68px; line-height:1.1; font-weight:400; margin-bottom:30px}
-h2{font-size:48px; font-weight:400; margin-bottom:35px}
-h3{font-size:24px; font-weight:500; margin-bottom:8px}
-p{font-size:18px; margin-bottom:22px}
-section{padding:100px 0; border-top:1px solid var(--line)}
-.hero section{border:none}
-.cta{
-  display:inline-block; color:var(--accent-color); text-decoration:none;
-  border-bottom:1px solid var(--accent-color); padding-bottom:4px; font-weight: 500;
-}
-.item{padding:20px 0; border-bottom:1px solid var(--line)}
-/* Contato discreto */
-#contato a{
-  display:inline-block; color:var(--accent-color); text-decoration:none;
-  border: 1px solid var(--accent-color); padding: 15px 30px; margin-top: 20px;
-  transition: all 0.3s;
-}
-#contato a:hover{ background: var(--accent-color); color: #fff; }
-footer{padding:60px 0; border-top:1px solid var(--line); font-size:12px; opacity: 0.7;}
-@media(max-width:900px){
-  header{flex-direction:column; gap:20px}
-  h1{font-size:42px}
-  h2{font-size:36px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HL - Houzel-Lutz | Medical Luxury Concierge</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9; }
+        .container { max-width: 800px; margin: auto; padding: 40px 20px; }
+        header { text-align: center; padding-bottom: 40px; }
+        h1 { font-size: 2.5em; color: #1a1a1a; margin-bottom: 5px; letter-spacing: 2px; }
+        .subtitle { font-size: 1.2em; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #b8860b; padding-bottom: 10px; margin-top: 40px; }
+        .feature-box { background: #fff; padding: 25px; border-left: 5px solid #b8860b; margin: 20px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .highlight { font-weight: bold; color: #b8860b; display: block; margin-bottom: 5px; }
+        .cta-container { text-align: center; margin-top: 50px; }
+        .cta-button { 
+            display: inline-block; 
+            padding: 18px 35px; 
+            background-color: #25D366; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+        .cta-button:hover { background-color: #128C7E; }
+    </style>
 </head>
 <body>
+
 <div class="container">
-<header>
-<div>
-<div class="monogram">HL</div>
-<div class="brand">HOUZEL–LUTZ</div>
-<div class="small">Prática privada dedicada à estabilidade clínica de lideranças e famílias.</div>
+    <header>
+        <h1>HL – HOUZEL-LUTZ</h1>
+        <p class="subtitle">Medical Luxury Concierge</p>
+    </header>
+
+    <section>
+        <p style="text-align: center; font-size: 1.2em;">Atendimento psiquiátrico domiciliar com absoluta discrição.</p>
+    </section>
+
+    <section>
+        <h2>Nossos Diferenciais</h2>
+        
+        <div class="feature-box">
+            <span class="highlight">Excelência Clínica</span>
+            Sigilo absoluto e exclusividade em cada etapa do atendimento.
+        </div>
+        
+        <div class="feature-box">
+            <span class="highlight">Concierge Médico</span>
+            Atendimento onde você estiver: em sua casa, local de trabalho ou hotel.
+        </div>
+        
+        <div class="feature-box">
+            <span class="highlight">Conveniência</span>
+            Nosso serviço se molda à sua agenda. Você no controle do seu tempo.
+        </div>
+        
+        <div class="feature-box">
+            <span class="highlight">Segurança Jurídica</span>
+            Contrato de confidencialidade focado na sua segurança reputacional.
+        </div>
+        
+        <div class="feature-box">
+            <span class="highlight">Excelência Técnica</span>
+            Baseada em ciência. Nossa equipe é composta apenas por psiquiatras com RQE.
+        </div>
+    </section>
+
+    <div class="cta-container">
+        <a href="https://wa.me/5511977335683" class="cta-button" target="_blank">
+            Iniciar Atendimento via WhatsApp
+        </a>
+    </div>
 </div>
-<nav>
-<a href="#sobre">Sobre</a>
-<a href="#discricao">Discrição</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
 
-<div class="hero">
-<div>
-<h1>Excelência clínica com<br>absoluta discrição.</h1>
-<p>Psiquiatria clínica de alta precisão. Atendimento domiciliar e executivo para quem exige o mais alto padrão em saúde e bem-estar.</p>
-<a class="cta" href="#contato">Solicitar acesso privativo</a>
-</div>
-</div>
-
-<section id="sobre">
-<h2>Sobre a prática</h2>
-<p>A sofisticação reside na sutileza. Meu trabalho é oferecer cuidado psiquiátrico de alta complexidade diretamente no ambiente em que você vive ou trabalha, eliminando deslocamentos e garantindo a privacidade que a sua rotina exige.</p>
-<p>Combinando rigor técnico em neurofisiologia e psiquiatria baseada em evidências, desenvolvi uma prática desenhada para indivíduos que valorizam tempo, sigilo e excelência clínica.</p>
-</section>
-
-<section id="discricao">
-<h2>Protocolo de Discrição</h2>
-<div class="item"><h3>Confidencialidade</h3><p>O sigilo médico é tratado como princípio fundamental. Cada interação é conduzida sob rigorosos padrões de confidencialidade.</p></div>
-<div class="item"><h3>Logística Invisível</h3><p>Atendimento realizado no seu espaço, sem salas de espera, sem exposição e sem burocracias.</p></div>
-<div class="item"><h3>Segurança de Dados</h3><p>Prontuários e comunicações protegidos por protocolos avançados de segurança digital.</p></div>
-</section>
-
-<section id="contato">
-<h2>Solicitação de Acesso</h2>
-<p>O atendimento é restrito e personalizado. O primeiro contato é confidencial e direcionado a canais privados.</p>
-<a href="mailto:seu-email@exemplo.com">Iniciar conversa segura via e-mail</a>
-</section>
-
-<footer>
-<p>Houzel–Lutz · Medicina Psiquiátrica Privativa</p>
-<p>Dr. Nome Sobrenome · CRM XX.XXX-SP · RQE XXXXX</p>
-<p>© 2026 Houzel–Lutz. Todos os direitos reservados.</p>
-</footer>
-</div>
 </body>
 </html>
