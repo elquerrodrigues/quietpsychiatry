@@ -1,195 +1,51 @@
-```html
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haus-Merkel | Medical Luxury Concierge</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Georgia", serif;
-            line-height: 1.8;
-            color: #2E2E2E;
-            background-color: #F5F3EF;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 80px 30px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 400;
-            color: #111111;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 0.85rem;
-            color: #8A8A8A;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-        }
-
-        .intro {
-            text-align: center;
-            font-size: 1.45rem;
-            color: #444444;
-            margin-bottom: 80px;
-            line-height: 1.7;
-        }
-
-        .feature-box {
-            background: transparent;
-            padding: 35px 0;
-            border-bottom: 1px solid #D9D6D1;
-        }
-
-        .highlight {
-            display: block;
-            margin-bottom: 12px;
-            font-size: 1.18rem;
-            font-family: "Georgia", serif;
-            font-weight: 500;
-            color: #111111;
-            text-transform: none;
-            letter-spacing: 0.3px;
-        }
-
-        .feature-text {
-            font-size: 1.08rem;
-            color: #444444;
-        }
-
-        .cta-container {
-            text-align: center;
-            margin-top: 90px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 20px 60px;
-            background-color: #111111;
-            color: #FFFFFF;
-            text-decoration: none;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #222222;
-            transform: translateY(-1px);
-        }
-
-        @media (max-width: 768px) {
-
-            .container {
-                padding: 60px 24px;
-            }
-
-            h1 {
-                font-size: 2.4rem;
-            }
-
-            .intro {
-                font-size: 1.25rem;
-            }
-
-            .highlight {
-                font-size: 1.12rem;
-            }
-
-            .feature-text {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                width: 100%;
-                padding: 18px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="container">
+    <header>
+        <div class="logo">HAUS-MERKEL</div>
+        <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
+    </header>
 
-        <header>
-            <h1>HAUS-MERKEL</h1>
-            <p class="subtitle">Medical Luxury Concierge</p>
-        </header>
-
-        <section class="intro">
-            Atendimento psiquiátrico domiciliar com absoluta competência e discrição.
-        </section>
-
-        <section>
-
-            <div class="feature-box">
-                <span class="highlight">Excelência clínica</span>
-                <div class="feature-text">
-                    Sigilo absoluto e exclusividade em cada etapa do atendimento.
-                </div>
-            </div>
-
-            <div class="feature-box">
-                <span class="highlight">Concierge médico</span>
-                <div class="feature-text">
-                    Atendimento onde você estiver: residência, escritório ou hotel.
-                </div>
-            </div>
-
-            <div class="feature-box">
-                <span class="highlight">Conveniência</span>
-                <div class="feature-text">
-                    Nosso serviço se adapta à sua agenda. Você permanece no controle do seu tempo.
-                </div>
-            </div>
-
-            <div class="feature-box">
-                <span class="highlight">Segurança jurídica</span>
-                <div class="feature-text">
-                    Contrato de confidencialidade estruturado para proteger sua privacidade e reputação.
-                </div>
-            </div>
-
-            <div class="feature-box">
-                <span class="highlight">Excelência técnica</span>
-                <div class="feature-text">
-                    Prática baseada exclusivamente em evidências científicas. Equipe composta apenas por psiquiatras com RQE.
-                </div>
-            </div>
-
-        </section>
-
-        <div class="cta-container">
-            <a href="https://wa.me/5511977335683" class="cta-button" target="_blank">
-                Iniciar atendimento
-            </a>
+    <section class="content">
+        <div class="block">
+            <h2>Excelência clínica</h2>
+            <p>Sigilo absoluto e exclusividade em cada etapa do atendimento.</p>
+            <img src="foto1.png" alt="Excelência Clínica">
         </div>
 
-    </div>
+        <div class="block">
+            <h2>Concierge médico</h2>
+            <p>Atendimento onde você estiver: residência, escritório ou hotel.</p>
+            <img src="foto2.png" alt="Concierge Médico">
+        </div>
+
+        <div class="block">
+            <h2>Conveniência</h2>
+            <p>Nosso serviço se adapta à sua agenda. Você permanece no controle do seu tempo.</p>
+            <img src="foto3.png" alt="Conveniência">
+        </div>
+
+        <div class="block">
+            <h2>Confidencialidade</h2>
+            <p>Segurança para proteger sua privacidade e reputação.</p>
+            <img src="foto4.png" alt="Confidencialidade">
+        </div>
+
+        <div class="block">
+            <h2>Excelência técnica</h2>
+            <p>Prática baseada exclusivamente em evidências científicas. Equipe composta apenas por psiquiatras com RQE.</p>
+            <img src="foto5.png" alt="Excelência Técnica">
+        </div>
+    </section>
+
+    <button class="cta-button">INICIAR ATENDIMENTO</button>
 
 </body>
 </html>
-```
