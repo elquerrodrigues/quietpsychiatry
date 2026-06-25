@@ -1,61 +1,102 @@
+/* --- ESTILO GERAL --- */
 body {
-    background-color: #f6f3f0;
+    background-color: #f6f3f0; /* Fundo creme acolhedor */
     color: #2d2d2d;
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', serif; /* Fonte clássica e nobre */
     margin: 0;
     padding: 20px;
-    line-height: 1.6;
+    line-height: 1.8; /* Mais espaço entre as linhas para leitura calma */
+    overflow-x: hidden; /* Evita barras de rolagem horizontais */
 }
 
+/* --- CABEÇALHO --- */
 header {
     text-align: center;
-    padding: 40px 0;
+    padding: 60px 0 40px; /* Mais espaço no topo */
 }
 
 .logo {
-    font-size: 28px;
-    letter-spacing: 4px;
+    font-size: 32px;
+    letter-spacing: 5px; /* Mais espaçamento entre letras (luxo) */
     font-weight: 400;
+    margin-bottom: 5px;
 }
 
 .subtitle {
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: #777;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #888;
+    text-transform: uppercase;
 }
 
+/* --- BLOCOS DE CONTEÚDO --- */
 .block {
-    margin-bottom: 50px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 30px;
-    text-align: center; /* Centraliza tudo dentro do bloco */
+    margin-bottom: 70px; /* Mais espaço entre as seções */
+    padding-bottom: 40px;
+    text-align: center;
 }
 
 h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center; /* Garante o título no meio */
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
-/* Ajuste do tamanho das fotos */
+.block p {
+    max-width: 600px; /* Limita a largura do texto para centralizar melhor */
+    margin-left: auto;
+    margin-right: auto;
+    color: #444;
+}
+
+/* --- AJUSTE E ANIMAÇÃO DAS FOTOS --- */
 img {
-    width: 80%; /* Reduz a largura para 80% da tela */
-    max-width: 400px; /* Limita o tamanho máximo para não ficarem gigantes */
+    width: 80%; /* Tamanho menor, igual à foto 3 */
+    max-width: 420px; /* Limite elegante */
     height: auto;
-    margin-top: 20px;
+    margin-top: 30px;
     border-radius: 4px;
     display: block;
     margin-left: auto;
-    margin-right: auto; /* Centraliza a foto horizontalmente */
+    margin-right: auto;
+    
+    /* A MÁGICA DA SUAVIDADE (Animação nativa) */
+    /* Começa ligeiramente transparente e um pouco mais abaixo */
+    opacity: 0.1; 
+    transform: translateY(20px); 
+    
+    /* Configuração da Transição: Lenta, Suave e Chique */
+    transition: opacity 2s ease-out, transform 1.5s ease-out;
+    
+    /* Garante que a animação ocorra quando a imagem for carregada */
+    animation: fade_in_chique 2s ease-out forwards;
 }
 
+/* Define a animação para quando a página carrega */
+@keyframes fade_in_chique {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- BOTÃO FINAL --- */
 .cta-button {
-    background-color: #000;
+    background-color: #1a1a1a;
     color: #fff;
     width: 100%;
+    max-width: 400px; /* Botão não ocupa a tela toda, mais elegante */
     padding: 20px;
     border: none;
     font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     cursor: pointer;
+    display: block;
+    margin: 40px auto 60px; /* Centraliza e dá espaço */
+    transition: background-color 0.5s;
+}
+
+.cta-button:hover {
+    background-color: #333; /* Mudança sutil no hover */
 }
