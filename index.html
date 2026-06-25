@@ -17,29 +17,31 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     header {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 120px 20px 80px;
     }
 
     h1 {
-      font-size: 3.2rem;
-      margin: 0 0 8px 0;
+      font-size: 3.8rem;
+      margin: 0 0 12px 0;
       font-weight: 400;
-      letter-spacing: -1px;
+      letter-spacing: -2px;
+      color: #1f1f1f;
     }
 
     .subtitle {
-      font-size: 1.35rem;
-      color: #555;
-      margin-bottom: 60px;
-      font-style: italic;
+      font-size: 1.25rem;
+      letter-spacing: 4px;
+      color: #666;
+      font-weight: 400;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 100px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -48,8 +50,16 @@
       background: white;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      margin-bottom: 70px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+      margin-bottom: 90px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .card img {
@@ -59,18 +69,18 @@
     }
 
     .content {
-      padding: 50px 40px;
+      padding: 55px 45px;
       text-align: center;
     }
 
     .content h2 {
-      font-size: 2.1rem;
-      margin: 0 0 20px 0;
+      font-size: 2.25rem;
+      margin: 0 0 22px 0;
       font-weight: 400;
     }
 
     .content p {
-      font-size: 1.18rem;
+      font-size: 1.2rem;
       max-width: 520px;
       margin: 0 auto;
       color: #444;
@@ -78,24 +88,24 @@
 
     .btn {
       display: inline-block;
-      margin-top: 35px;
+      margin-top: 40px;
       background: #1f1f1f;
       color: white;
-      padding: 16px 48px;
+      padding: 18px 52px;
       border-radius: 4px;
       text-decoration: none;
       font-size: 1.1rem;
-      transition: all 0.3s;
+      transition: all 0.4s;
     }
 
     .btn:hover {
       background: #000;
-      transform: translateY(-3px);
+      transform: translateY(-4px);
     }
 
     footer {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       font-size: 0.95rem;
       color: #666;
     }
@@ -104,8 +114,8 @@
 <body>
 
   <header>
-    <h1>HAUS MERKEL</h1>
-    <p class="subtitle">Psychiatry Luxury Concierge</p>
+    <h1>HAUS-MERKEL</h1>
+    <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
   </header>
 
   <section>
@@ -160,8 +170,28 @@
   </section>
 
   <footer>
-    <p>HAUS MERKEL • Psychiatry Luxury Concierge • 2026</p>
+    <p>HAUS MERKEL • MEDICAL LUXURY CONCIERGE • 2026</p>
   </footer>
+
+  <script>
+    // Efeito de aparição elegante ao rolar a página
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 
 </body>
 </html>
