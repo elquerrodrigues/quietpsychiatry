@@ -8,7 +8,6 @@
     :root {
       --bg: #f8f6f2;
       --text: #2c2c2c;
-      --accent: #8c6f4e;
     }
     
     body {
@@ -22,22 +21,28 @@
 
     header {
       text-align: center;
-      padding: 120px 20px 80px;
+      padding: 140px 20px 100px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     h1 {
-      font-size: 3.8rem;
-      margin: 0 0 12px 0;
+      font-size: 4.2rem;
+      margin: 0 0 16px 0;
       font-weight: 400;
-      letter-spacing: -2px;
+      letter-spacing: -3px;
       color: #1f1f1f;
     }
 
     .subtitle {
       font-size: 1.25rem;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       color: #666;
       font-weight: 400;
+      margin: 0;
     }
 
     section {
@@ -113,6 +118,7 @@
 </head>
 <body>
 
+  <!-- Header - Estilo limpo como na foto IMG_2082.jpg -->
   <header>
     <h1>HAUS-MERKEL</h1>
     <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
@@ -174,7 +180,6 @@
   </footer>
 
   <script>
-    // Efeito de aparição elegante ao rolar a página
     const cards = document.querySelectorAll('.card');
 
     const observer = new IntersectionObserver((entries) => {
@@ -184,13 +189,10 @@
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
+      threshold: 0.15
     });
 
-    cards.forEach(card => {
-      observer.observe(card);
-    });
+    cards.forEach(card => observer.observe(card));
   </script>
 
 </body>
