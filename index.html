@@ -21,8 +21,8 @@
 
     header {
       text-align: center;
-      padding: 140px 20px 100px;
-      min-height: 100vh;
+      padding: 100px 20px 80px;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -30,16 +30,16 @@
     }
 
     h1 {
-      font-size: 4.2rem;
-      margin: 0 0 16px 0;
+      font-size: 3.4rem;
+      margin: 0 0 14px 0;
       font-weight: 400;
-      letter-spacing: -3px;
+      letter-spacing: -2.5px;
       color: #1f1f1f;
     }
 
     .subtitle {
-      font-size: 1.25rem;
-      letter-spacing: 5px;
+      font-size: 1.15rem;
+      letter-spacing: 4.5px;
       color: #666;
       font-weight: 400;
       margin: 0;
@@ -118,7 +118,7 @@
 </head>
 <body>
 
-  <!-- Header - Estilo limpo como na foto IMG_2082.jpg -->
+  <!-- Header Compacto -->
   <header>
     <h1>HAUS-MERKEL</h1>
     <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
@@ -188,9 +188,7 @@
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.15
-    });
+    }, { threshold: 0.15 });
 
     cards.forEach(card => observer.observe(card));
   </script>
