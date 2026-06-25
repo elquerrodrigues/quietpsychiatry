@@ -1,55 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haus-Merkel | Medical Luxury Concierge</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAUS MERKEL | Psiquiatria de Excelência</title>
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #2c2c2c;
+      --accent: #a38c6b;
+    }
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin: 0 0 16px 0;
+      font-weight: 400;
+      letter-spacing: -1px;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      max-width: 580px;
+      margin: 0 auto;
+      color: #555;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      margin-bottom: 60px;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .content {
+      padding: 50px 40px;
+      text-align: center;
+    }
+    .content h2 {
+      font-size: 1.95rem;
+      margin: 0 0 18px 0;
+      font-weight: 400;
+    }
+    .content p {
+      font-size: 1.15rem;
+      max-width: 520px;
+      margin: 0 auto;
+      color: #444;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: var(--text);
+      color: white;
+      padding: 16px 42px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #000;
+      transform: translateY(-2px);
+    }
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.3rem; }
+      section { padding: 60px 15px; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">HAUS-MERKEL</div>
-        <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
-    </header>
+  <header>
+    <h1>HAUS MERKEL</h1>
+    <p class="tagline">Sigilo absoluto. Excelência clínica. Atendimento onde você estiver.</p>
+  </header>
 
-    <section class="intro">
-        <p>Atendimento psiquiátrico domiciliar para pessoas que valorizam privacidade, conforto e excelência médica. O psiquiatra vai até você.
+  <section>
+    <div class="card">
+      <img src="IMG_2077.jpg" alt="Sala de estar elegante">
+      <div class="content">
+        <h2>Concierge Médico</h2>
+        <p>Atendimento psiquiátrico no local que você escolher: residência, escritório ou hotel. Sem identificação institucional. Sem exposição.</p>
+      </div>
+    </div>
+  </section>
 
-            
-    <section class="content">
-        <div class="block">
-            <h2>Excelência clínica</h2>
-            <p>Sigilo absoluto e exclusividade em cada etapa do atendimento.</p>
-            <img src="foto1.png" alt="Excelência Clínica">
-        </div>
+  <section>
+    <div class="card">
+      <img src="IMG_2080.jpg" alt="Sala com vista">
+      <div class="content">
+        <h2>Excelência Técnica</h2>
+        <p>Prática baseada exclusivamente em evidências científicas. Equipe composta apenas por psiquiatras com RQE e formação de alto nível.</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="block">
-            <h2>Concierge médico</h2>
-            <p>Atendimento onde você estiver: residência, escritório ou hotel.</p>
-            <img src="foto2.png" alt="Concierge Médico">
-        </div>
+  <section>
+    <div class="card">
+      <img src="IMG_2079.jpg" alt="Quarto moderno">
+      <div class="content">
+        <h2>Conveniência</h2>
+        <p>O cuidado psiquiátrico no local onde você se sente mais confortável e seguro.</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="block">
-            <h2>Conveniência</h2>
-            <p>O cuidado psiquiátrico no local onde você se sente mais confortável.</p>
-            <img src="foto3.png" alt="Conveniência">
-        </div>
+  <section>
+    <div class="card">
+      <img src="IMG_2078.jpg" alt="Detalhe de arquitetura">
+      <div class="content">
+        <h2>Confidencialidade</h2>
+        <p>Segurança para proteger sua privacidade e reputação em todos os níveis. Sigilo absoluto é inegociável.</p>
+        <a href="#" class="btn">Iniciar Atendimento Confidencial</a>
+      </div>
+    </div>
+  </section>
 
-        <div class="block">
-            <h2>Confidencialidade</h2>
-            <p>Segurança para proteger sua privacidade e reputação.</p>
-            <img src="foto4.png" alt="Confidencialidade">
-        </div>
-
-        <div class="block">
-            <h2>Excelência técnica</h2>
-            <p>Prática baseada exclusivamente em evidências científicas. Equipe composta apenas por psiquiatras com RQE.</p>
-            <img src="foto5.png" alt="Excelência Técnica">
-        </div>
-    </section>
-
-    <button class="cta-button">INICIAR ATENDIMENTO</button>
+  <footer>
+    <p>HAUS MERKEL • Psiquiatria de Excelência • Atendimento Exclusivo</p>
+  </footer>
 
 </body>
 </html>
