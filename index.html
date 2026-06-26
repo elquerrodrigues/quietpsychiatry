@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAUS MERKEL</title>
   
-  <!-- Google Fonts - Luxuoso -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
 
   <style>
@@ -30,8 +30,8 @@
 
     header {
       text-align: center;
-      padding: 110px 20px 90px;
-      min-height: 92vh;
+      padding: 100px 20px 80px;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,21 +39,19 @@
     }
 
     h1 {
-      font-size: 3.85rem;
-      margin: 0 0 18px 0;
-      letter-spacing: -3px;
+      font-size: 3.35rem;
+      margin: 0 0 14px 0;
+      letter-spacing: -2.5px;
       color: #1f1f1f;
-      line-height: 1.05;
     }
 
     .subtitle {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.28rem;
-      letter-spacing: 6px;
-      color: #555;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.12rem;
+      letter-spacing: 4.5px;
+      color: #666;
       font-weight: 400;
       margin: 0;
-      text-transform: uppercase;
     }
 
     section {
@@ -90,7 +88,7 @@
     }
 
     .content h2 {
-      font-size: 2.3rem;
+      font-size: 2.25rem;
       margin: 0 0 22px 0;
     }
 
@@ -110,6 +108,7 @@
       border-radius: 4px;
       text-decoration: none;
       font-size: 1.1rem;
+      font-family: 'Inter', sans-serif;
       transition: all 0.4s;
     }
 
@@ -128,7 +127,7 @@
 </head>
 <body>
 
-  <!-- Header - Tamanho exato como na foto -->
+  <!-- Header -->
   <header>
     <h1>HAUS-MERKEL</h1>
     <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
@@ -191,6 +190,7 @@
 
   <script>
     const cards = document.querySelectorAll('.card');
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -198,6 +198,7 @@
         }
       });
     }, { threshold: 0.15 });
+
     cards.forEach(card => observer.observe(card));
   </script>
 
