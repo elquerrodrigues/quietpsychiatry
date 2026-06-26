@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAUS MERKEL</title>
+  
+  <!-- Google Fonts - Luxuoso -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #f8f6f2;
@@ -12,17 +16,22 @@
     
     body {
       margin: 0;
-      font-family: 'Georgia', 'Times New Roman', serif;
+      font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
+    h1, h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+    }
+
     header {
       text-align: center;
-      padding: 100px 20px 80px;
-      min-height: 85vh;
+      padding: 110px 20px 90px;
+      min-height: 92vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -30,19 +39,21 @@
     }
 
     h1 {
-      font-size: 3.4rem;
-      margin: 0 0 14px 0;
-      font-weight: 400;
-      letter-spacing: -2.5px;
+      font-size: 3.85rem;
+      margin: 0 0 18px 0;
+      letter-spacing: -3px;
       color: #1f1f1f;
+      line-height: 1.05;
     }
 
     .subtitle {
-      font-size: 1.15rem;
-      letter-spacing: 4.5px;
-      color: #666;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.28rem;
+      letter-spacing: 6px;
+      color: #555;
       font-weight: 400;
       margin: 0;
+      text-transform: uppercase;
     }
 
     section {
@@ -79,13 +90,12 @@
     }
 
     .content h2 {
-      font-size: 2.25rem;
+      font-size: 2.3rem;
       margin: 0 0 22px 0;
-      font-weight: 400;
     }
 
     .content p {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       max-width: 520px;
       margin: 0 auto;
       color: #444;
@@ -118,10 +128,10 @@
 </head>
 <body>
 
-  <!-- Header Compacto -->
+  <!-- Header - Tamanho exato como na foto -->
   <header>
     <h1>HAUS-MERKEL</h1>
-    <p class="subtitle">PSYCHIATRY LUXURY CONCIERGE</p>
+    <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
   </header>
 
   <section>
@@ -149,49 +159,4 @@
       <img src="foto3.png" alt="Excelência Técnica">
       <div class="content">
         <h2>Excelência Técnica</h2>
-        <p>Prática baseada exclusivamente em evidências científicas. Equipe composta apenas por psiquiatras com RQE.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="card">
-      <img src="foto4.png" alt="Conveniência">
-      <div class="content">
-        <h2>Conveniência</h2>
-        <p>O cuidado psiquiátrico no local onde você se sente mais confortável e seguro.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="card">
-      <img src="foto5.png" alt="Confidencialidade">
-      <div class="content">
-        <h2>Confidencialidade</h2>
-        <p>Segurança para proteger sua privacidade e reputação. Sigilo absoluto é inegociável.</p>
-        <a href="#" class="btn">Iniciar Atendimento Confidencial</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>HAUS MERKEL • MEDICAL LUXURY CONCIERGE • 2026</p>
-  </footer>
-
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
-
-</body>
-</html>
+        <p>Prática baseada exclusivamente em evid
