@@ -78,7 +78,6 @@
       margin: 0 auto;
     }
 
-    /* Estilo nobre para o título acima da foto */
     .top-title {
       font-size: 2.2rem;
       line-height: 1.4;
@@ -104,9 +103,11 @@
       transform: translateY(0);
     }
 
+    /* CORREÇÃO DO TAMANHO DAS FOTOS */
     .card img {
       width: 100%;
-      height: auto;
+      aspect-ratio: 4 / 3; /* Força a proporção horizontal discreta de image_16.png */
+      object-fit: cover;   /* Enquadra e corta as fotos mais altas perfeitamente sem distorcer */
       display: block;
       border-radius: 0;
     }
