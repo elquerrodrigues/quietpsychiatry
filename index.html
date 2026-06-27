@@ -3,35 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANGMER | Psiquiatria de Alta Precisão</title>
+  <title>ANGMER | Prática Clínica Privativa</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #F4F3F2;          /* Fundo Off-White Nobre */
-      --text: #2C3539;        /* Grafite Profundo */
-      --text-muted: #555555;  /* Cinza de leitura */
-      --accent: #1B2631;      /* Azul-Marinho Oxford para links */
+      --bg: #F5F4F2;          /* O Off-White exato do Aman (Linen-Bone) */
+      --text: #232B2F;        /* Grafite de Estado, profundo e fosco */
+      --text-muted: #5A6266;  /* Cinza mineral para longos blocos de leitura */
     }
     
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.8;
+      line-height: 2;
+      -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, .tagline, .explanation, .top-title {
+    /* Tipografia de Alta Costura */
+    h1, h2, .tagline, .top-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 400;
+      font-weight: 300;
+      margin: 0;
     }
 
     header {
       text-align: center;
-      padding: 60px 20px;
-      min-height: 95vh;
+      padding: 140px 20px;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,133 +41,139 @@
     }
 
     h1 {
-      font-size: 3.8rem;
-      margin: 0 0 15px 0;
-      letter-spacing: -1.5px;
+      font-size: 3.4rem;
+      letter-spacing: 8px; /* Rastreamento largo, marca institucional */
       color: var(--text);
+      margin-bottom: 25px;
     }
 
     .subtitle {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.1rem;
-      letter-spacing: 6px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 7px;
       color: var(--text);
-      opacity: 0.7;
-      margin: 0 0 70px 0;
+      opacity: 0.6;
+      margin: 0 0 90px 0;
       text-transform: uppercase;
     }
 
     .tagline {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: var(--text);
-      max-width: 560px;
-      line-height: 1.5;
+      max-width: 640px;
+      line-height: 1.6;
       margin: 0 auto;
     }
 
     .explanation {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: var(--text-muted);
-      max-width: 520px;
-      margin: 35px auto 0;
-      line-height: 1.5;
-      opacity: 0.85;
+      max-width: 540px;
+      margin: 45px auto 0;
+      line-height: 1.7;
+      font-style: italic;
     }
 
-    section {
-      padding: 60px 20px;
-      max-width: 800px;
+    /* Estrutura Editorial Aman (Sem caixas, sem quebras) */
+    .editorial-section {
+      padding: 140px 20px;
+      max-width: 900px;
       margin: 0 auto;
-    }
-
-    .top-title {
-      font-size: 2.2rem;
-      line-height: 1.4;
-      text-align: center;
-      margin-bottom: 45px;
-      color: var(--text);
-    }
-
-    /* Layout Minimalista: Sem bordas, sem caixas, sem sombras */
-    .card {
-      background: transparent;
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: none;
-      margin-bottom: 120px;
       opacity: 0;
-      transform: translateY(30px);
-      transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transform: translateY(20px);
+      transition: all 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
-    .card.visible {
+    .editorial-section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* CORREÇÃO DO TAMANHO DAS FOTOS */
-    .card img {
+    .top-title {
+      font-size: 2rem;
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 60px;
+      color: var(--text);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Proporção Anamórfica / Cinematográfica das fotos do Aman */
+    .image-container {
       width: 100%;
-      aspect-ratio: 4 / 3; /* Força a proporção horizontal discreta de image_16.png */
-      object-fit: cover;   /* Enquadra e corta as fotos mais altas perfeitamente sem distorcer */
-      display: block;
-      border-radius: 0;
+      aspect-ratio: 16 / 9; 
+      overflow: hidden;
+      margin-bottom: 50px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .content {
-      padding: 45px 0 0 0;
+      max-width: 600px;
+      margin: 0 auto;
       text-align: center;
     }
 
-    .content h2 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
+    /* Pequenos marcadores numéricos discretos no lugar de H2s barulhentos */
+    .label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
       color: var(--text);
+      opacity: 0.4;
+      margin-bottom: 20px;
+      display: block;
     }
 
     .content p {
-      font-size: 1.15rem;
-      max-width: 560px;
-      margin: 0 auto;
+      font-size: 1.25rem;
       color: var(--text-muted);
+      margin: 0;
     }
 
-    /* Link Fino de Alta Costura */
+    /* O Botão Invisível do Aman: Apenas um link etéreo sublinhado */
     .btn {
       display: inline-block;
-      margin-top: 35px;
-      background: transparent;
-      color: var(--accent);
-      padding: 0 0 6px 0;
-      border-radius: 0;
+      margin-top: 50px;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      padding: 0 0 8px 0;
       text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      border-bottom: 1px solid var(--accent);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      border-bottom: 1px solid var(--text);
       transition: opacity 0.3s;
     }
 
     .btn:hover {
-      background: transparent;
-      transform: none;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     footer {
       text-align: center;
-      padding: 100px 20px;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
+      padding: 140px 20px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
       color: var(--text);
-      opacity: 0.6;
+      opacity: 0.4;
     }
 
     @media(max-width:900px){
-      h1 { font-size: 2.8rem; }
-      .content h2 { font-size: 2rem; }
-      .top-title { font-size: 1.8rem; margin-bottom: 30px; padding: 0 10px; }
-      .tagline { font-size: 1.35rem; }
-      .explanation { font-size: 1.1rem; margin-top: 25px; }
+      h1 { font-size: 2.4rem; }
+      .tagline { font-size: 1.3rem; max-width: 90%; }
+      .top-title { font-size: 1.5rem; margin-bottom: 40px; }
+      .editorial-section { padding: 80px 20px; }
+      .content p { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -175,76 +183,76 @@
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
     <p class="tagline">Serviço médico psiquiátrico para quem não quer ser visto entrando em um consultório.</p>
-    <p class="explanation">O psiquiatra desloca-se pessoalmente até onde você estiver, garantindo a sua absoluta privacidade.</p>
+    <p class="explanation">O médico psiquiatra desloca-se pessoalmente até onde você estiver, garantindo absoluta privacidade.</p>
   </header>
 
-  <!-- SEÇÃO 1: TEXTO EXPLICATIVO ACIMA DA FOTO -->
-  <section>
-    <div class="card">
-      <h2 class="top-title">Atendimento na sua casa, no seu trabalho ou em hotéis.</h2>
+  <!-- BLOCO 1: INFRAESTRUTURA MÓVEL -->
+  <section class="editorial-section">
+    <h2 class="top-title">Atendimento psiquiátrico na sua casa, no seu trabalho ou em hotéis.</h2>
+    <div class="image-container">
       <img src="foto1.png" alt="">
-      <div class="content">
-        <h2>A Prática</h2>
-        <p>A ANGMER redefine a relação entre o cuidado psiquiátrico de alta complexidade e a privacidade de lideranças, executivos e famílias de alta exposição.</p>
-        <p style="margin-top: 15px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo intervenções baseadas em evidências científicas rigorosas exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
-      </div>
+    </div>
+    <div class="content">
+      <span class="label">I. O Manifesto</span>
+      <p>A ANGMER redefine a relação entre o cuidado psiquiátrico de alta complexidade e a privacidade de lideranças, executivos e famílias de alta exposição.</p>
+      <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo intervenções baseadas em evidências científicas rigorosas exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
     </div>
   </section>
 
-  <!-- SEÇÃO 2: MEDICINA SEM EXPOSIÇÃO -->
-  <section>
-    <div class="card">
+  <!-- BLOCO 2: PRIVACIDADE OPERACIONAL -->
+  <section class="editorial-section">
+    <div class="image-container">
       <img src="foto2.png" alt="">
-      <div class="content">
-        <h2>Medicina Sem Exposição</h2>
-        <p>Uma prática médica psiquiátrica conduzida inteiramente fora do circuito clínico tradicional. O atendimento ocorre exclusivamente no ambiente privado do paciente.</p>
-      </div>
+    </div>
+    <div class="content">
+      <span class="label">II. Espaço</span>
+      <p>Uma prática médica psiquiátrica conduzida inteiramente fora do circuito clínico tradicional. O atendimento ocorre exclusivamente no ambiente privado do paciente.</p>
     </div>
   </section>
 
-  <!-- SEÇÃO 3: RIGOR CIENTÍFICO -->
-  <section>
-    <div class="card">
+  <!-- BLOCO 3: RIGOR ACADÊMICO -->
+  <section class="editorial-section">
+    <div class="image-container">
       <img src="foto3.png" alt="">
-      <div class="content">
-        <h2>Rigor Científico</h2>
-        <p>Avaliação diagnóstica aprofundada, neurobiologia e farmacologia de alta precisão para quadros complexos e refratários.</p>
-      </div>
+    </div>
+    <div class="content">
+      <span class="label">III. Ciência</span>
+      <p>Avaliação diagnóstica aprofundada, neurobiologia e farmacologia de alta precisão para quadros complexos e refratários.</p>
     </div>
   </section>
 
-  <!-- SEÇÃO 4: LOGÍSTICA INVISÍVEL -->
-  <section>
-    <div class="card">
+  <!-- BLOCO 4: LOGÍSTICA INVISÍVEL -->
+  <section class="editorial-section">
+    <div class="image-container">
       <img src="foto4.png" alt="">
-      <div class="content">
-        <h2>Logística Invisível</h2>
-        <p>Agendamento flexível e trânsito discreto do profissional, adaptando-se integralmente à sua agenda e respeitando a soberania do seu espaço.</p>
-      </div>
+    </div>
+    <div class="content">
+      <span class="label">IV. Protocolo</span>
+      <p>Agendamento flexível e trânsito discreto do profissional, adaptando-se integralmente à sua agenda e respeitando a soberania do seu espaço.</p>
     </div>
   </section>
 
-  <!-- SEÇÃO 5: PRINCÍPIOS DA PRÁTICA -->
-  <section>
-    <div class="card">
+  <!-- BLOCO 5: POSTURA INSTITUCIONAL -->
+  <section class="editorial-section">
+    <div class="image-container">
       <img src="foto5.png" alt="">
-      <div class="content">
-        <h2>Princípios da Prática</h2>
-        <p>A ANGMER opera sob um rigor institucional pautado pela sobriedade, pela disciplina operacional e pelo absoluto autocontrole.</p>
-        <p style="margin-top: 15px;">Entendemos que o cuidado com mentes que lideram organizações e mercados exige um profissional com máxima coerência cognitiva e competência técnica inabalável. Nossa postura é definida pela eficiência silenciosa: uma prática médica que recusa o espetáculo e foca exclusivamente na precisão dos resultados e na estabilidade de nossos pacientes.</p>
-      </div>
+    </div>
+    <div class="content">
+      <span class="label">V. Postura</span>
+      <p>A ANGMER opera sob um rigor institucional pautado pela sobriedade, pela disciplina operacional e pelo absoluto autocontrole.</p>
+      <p style="margin-top: 25px;">Entendemos que o cuidado com mentes que lideram organizações e mercados exige um profissional com máxima coerência cognitiva e competência técnica inabalável. Nossa postura é definida pela eficiência silenciosa: uma prática médica que recusa o espetáculo e foca exclusivamente na precisão dos resultados e na estabilidade de nossos pacientes.</p>
     </div>
   </section>
 
-  <!-- SEÇÃO 6: ENCERRAMENTO E CONTACTO -->
-  <section>
-    <div class="card">
+  <!-- BLOCO 6: ADMISSÃO PRIVADA -->
+  <section class="editorial-section">
+    <div class="image-container">
       <img src="foto6.png" alt="">
-      <div class="content">
-        <h2>Confidencialidade</h2>
-        <p>Sigilo absoluto para proteger sua privacidade e reputação.</p>
-        <a href="mailto:admissao@quietpsychiatry.com" class="btn">Iniciar Atendimento Confidencial</a>
-      </div>
+    </div>
+    <div class="content">
+      <span class="label">VI. Salvaguarda</span>
+      <p>Sigilo absoluto para proteger sua privacidade e reputação.</p>
+      <a href="mailto:admissao@quietpsychiatry.com" class="btn">Solicitar Admissão Confidencial</a>
     </div>
   </section>
 
@@ -253,13 +261,13 @@
   </footer>
 
   <script>
-    const cards = document.querySelectorAll('.card');
+    const sections = document.querySelectorAll('.editorial-section');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.1 });
-    cards.forEach(card => observer.observe(card));
+    }, { threshold: 0.08 });
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
