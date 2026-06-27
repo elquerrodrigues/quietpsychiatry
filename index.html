@@ -32,8 +32,8 @@
 
     header {
       text-align: center;
-      padding: 140px 20px;
-      min-height: 85vh;
+      padding: 100px 20px 40px 20px; /* Reduzido para aproximar o conteúdo seguinte */
+      min-height: auto;               /* Removeu o esticamento vertical exagerado */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -42,7 +42,7 @@
 
     h1 {
       font-size: 3.4rem;
-      letter-spacing: 8px; /* Rastreamento largo, marca institucional */
+      letter-spacing: 8px;
       color: var(--text);
       margin-bottom: 25px;
     }
@@ -54,7 +54,7 @@
       letter-spacing: 7px;
       color: var(--text);
       opacity: 0.6;
-      margin: 0 0 90px 0;
+      margin: 0 0 60px 0; /* Ajustado */
       text-transform: uppercase;
     }
 
@@ -70,14 +70,14 @@
       font-size: 1.2rem;
       color: var(--text-muted);
       max-width: 540px;
-      margin: 45px auto 0;
+      margin: 35px auto 0; /* Reduzido de 45px */
       line-height: 1.7;
       font-style: italic;
     }
 
-    /* Estrutura Editorial Aman (Sem caixas, sem quebras) */
+    /* Estrutura Editorial Equilibrada */
     .editorial-section {
-      padding: 140px 20px;
+      padding: 60px 20px 100px 20px; /* Reduzido o topo para colar o texto da imagem_9 */
       max-width: 900px;
       margin: 0 auto;
       opacity: 0;
@@ -94,14 +94,14 @@
       font-size: 2rem;
       line-height: 1.5;
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 50px; /* Ajustado */
       color: var(--text);
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    /* Proporção Anamórfica / Cinematográfica das fotos do Aman */
+    /* Proporção Anamórfica / Cinematográfica das fotos */
     .image-container {
       width: 100%;
       aspect-ratio: 16 / 9; 
@@ -121,7 +121,6 @@
       text-align: center;
     }
 
-    /* Pequenos marcadores numéricos discretos no lugar de H2s barulhentos */
     .label {
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.75rem;
@@ -139,7 +138,6 @@
       margin: 0;
     }
 
-    /* O Botão Invisível do Aman: Apenas um link etéreo sublinhado */
     .btn {
       display: inline-block;
       margin-top: 50px;
@@ -160,7 +158,7 @@
 
     footer {
       text-align: center;
-      padding: 140px 20px;
+      padding: 100px 20px;
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.75rem;
       letter-spacing: 3px;
@@ -168,11 +166,16 @@
       opacity: 0.4;
     }
 
+    /* OTIMIZAÇÃO PARA MOBILE (RESOLVE A ILUSTRAÇÃO DA FOTO 9) */
     @media(max-width:900px){
+      header { padding: 70px 20px 20px 20px; }
       h1 { font-size: 2.4rem; }
-      .tagline { font-size: 1.3rem; max-width: 90%; }
-      .top-title { font-size: 1.5rem; margin-bottom: 40px; }
-      .editorial-section { padding: 80px 20px; }
+      .subtitle { margin-bottom: 40px; }
+      .tagline { font-size: 1.3rem; max-width: 95%; }
+      .explanation { font-size: 1.1rem; margin-top: 20px; }
+      
+      .editorial-section { padding: 30px 20px 80px 20px; } /* Encolhe o abismo visual */
+      .top-title { font-size: 1.5rem; margin-bottom: 35px; max-width: 100%; }
       .content p { font-size: 1.1rem; }
     }
   </style>
@@ -257,7 +260,7 @@
   </section>
 
   <footer>
-    <p>ANGMER • MEDICAL LUXURY CONCIERGE • 2026</p>
+    <p>HAUS MERKEL • MEDICAL LUXURY CONCIERGE • 2026</p>
   </footer>
 
   <script>
@@ -266,7 +269,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.05 }); // Ajustado para disparar a animação mais cedo no mobile
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
