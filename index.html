@@ -1,89 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Angmer - Medical Luxury Concierge</title>
     <style>
-        /* Reset de Estilos Base */
+        /* CSS RESET & CONFIGURAÇÕES BASE */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        body {
-            font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
-            background-color: #fdfcfb; /* Tom off-white quente e sofisticado */
+        /* Suaviza o toque no iPhone e evita comportamento elástico indesejado nas laterais */
+        html, body {
+            overflow-x: hidden;
+            background-color: #fdfcfb; /* O tom off-white premium aprovado */
             color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            text-align: center;
-            padding: 40px 20px;
         }
 
-        /* Contentor Principal para simular o layout mobile limpo */
-        .main-container {
+        /* CONFIGURAÇÃO DE LARGURA MOBILE (Foco em Smartphones/iPhone) */
+        .site-wrapper {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 0 env(safe-area-inset-bottom) 0; /* Proteção para a barra de navegação inferior do iOS */
+        }
+
+        /* ========================================================
+           1. SEÇÃO HERO (Aprovada por você - Opção 1)
+           ======================================================== */
+        .angmer-hero-section {
             max-width: 480px;
             margin: 0 auto;
-            padding: 20px 10px;
+            padding: 60px 24px;
+            text-align: center;
         }
 
-        /* Bloco de Branding / Topo */
         .brand-header {
-            margin-top: 30px;
-            margin-bottom: 70px; /* Margem generosa para dar leveza */
+            margin-top: 20px;
+            margin-bottom: 65px;
         }
 
         .brand-title {
-            font-size: 28px;
+            font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;
+            font-size: 32px;
             font-weight: 300;
-            letter-spacing: 10px; /* Espaçamento clássico de marcas de luxo */
+            letter-spacing: 11px;
             text-transform: uppercase;
             color: #111111;
             margin-bottom: 14px;
         }
 
         .brand-subtitle {
-            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-            font-size: 10px;
+            font-size: 9.5px;
             font-weight: 400;
             letter-spacing: 5px;
             text-transform: uppercase;
             color: #7a7571;
         }
 
-        /* Secção de Mensagem Unificada */
         .content-premium {
             margin-bottom: 50px;
-            padding: 0 15px;
         }
 
-        /* Headline principal com peso ideal */
         .headline {
-            font-size: 19px;
+            font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;
+            font-size: 20px;
             font-weight: 400;
             line-height: 1.5;
             color: #111111;
             margin-bottom: 24px;
+            padding: 0 10px;
         }
 
-        /* Subhead de apoio sutil */
         .subhead {
+            font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;
             font-size: 14px;
             font-weight: 300;
             line-height: 1.6;
             color: #555555;
-            padding: 0 5px;
+            padding: 0 15px;
         }
 
-        /* Botão de Ação Minimalista (CTA) */
         .cta-container {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
+        /* Botão com área de toque expandida otimizada para o dedo no celular */
         .cta-button {
             display: inline-block;
-            font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
             font-size: 10px;
             font-weight: 400;
             text-transform: uppercase;
@@ -91,42 +101,227 @@
             color: #111111;
             text-decoration: none;
             border: 1px solid #111111;
-            padding: 14px 36px;
+            padding: 16px 40px;
             background: transparent;
             transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .cta-button:hover {
+        /* Efeito de toque nativo para telas mobile */
+        .cta-button:active {
             background-color: #111111;
             color: #fdfcfb;
         }
 
-        /* Imagem de Fundo Elegante */
-        .panel-image {
+        /* ========================================================
+           2. SEÇÃO DE CONCEITO / SOBRE (Estrutura do restante do site)
+           ======================================================== */
+        .concept-section {
+            background-color: #f7f5f2; /* Sutil quebra de bloco elegante */
+            padding: 70px 24px;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #7a7571;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .concept-title {
+            font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: #111111;
+            margin-bottom: 25px;
+        }
+
+        .concept-text {
+            font-size: 14px;
+            color: #444444;
+            max-width: 400px;
+            margin: 0 auto 20px auto;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.7;
+        }
+
+        /* ========================================================
+           3. SEÇÃO DE PILARES / DIFERENCIAIS
+           ======================================================== */
+        .pillars-section {
+            padding: 70px 24px;
+            text-align: center;
+            background-color: #fdfcfb;
+        }
+
+        .pillar-card {
+            margin-bottom: 45px;
+            padding: 0 10px;
+        }
+
+        .pillar-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .pillar-number {
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            font-size: 24px;
+            font-style: italic;
+            color: #7a7571;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .pillar-title {
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: #111111;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .pillar-description {
+            font-size: 13.5px;
+            color: #555555;
+            line-height: 1.6;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        /* ========================================================
+           4. PAINEL ESTÉTICO DE TRANSIÇÃO (Substitui imagens genéricas)
+           ======================================================== */
+        .aesthetic-banner {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 0px; /* Cantos retos trazem mais rigidez e seriedade comercial */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            height: 260px;
+            background-color: #2b221c;
+            /* Degradê simulando uma textura arquitetônica escura de madeira/luxo */
+            background-image: linear-gradient(135deg, #312720 0%, #1a1411 100%);
+        }
+
+        /* ========================================================
+           5. RODAPÉ & CONTATO (Termos obrigatórios de publicidade médica)
+           ======================================================== */
+        .site-footer {
+            background-color: #111111;
+            color: #e5e5e5;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            font-size: 20px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            color: #b5b1ad;
+            margin-bottom: 40px;
+            line-height: 2;
+        }
+
+        .contact-link {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid #7a7571;
+            padding-bottom: 2px;
+        }
+
+        .medical-disclaimer {
+            font-size: 10px;
+            color: #666666;
+            line-height: 1.5;
+            border-top: 1px solid #222222;
+            padding-top: 30px;
+            max-width: 340px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        
-        <header class="brand-header">
-            <h1 class="brand-title">Angmer</h1>
-            <p class="brand-subtitle">Medical Luxury Concierge</p>
-        </header>
-        
-        <main class="content-premium">
-            <h2 class="headline">Atendimento psiquiátrico de alta privacidade, onde você estiver.</h2>
-            <p class="subhead">Em sua residência, escritório ou hotel. Absoluta discrição, sem salas de espera.</p>
-        </main>
-        
-        <div class="cta-container">
-            <a href="#" class="cta-button">Contactar Concierge</a>
-        </div>
-        
-        <img
+    <div class="site-wrapper">
+
+        <section class="angmer-hero-section">
+            <header class="brand-header">
+                <h1 class="brand-title">Angmer</h1>
+                <p class="brand-subtitle">Medical Luxury Concierge</p>
+            </header>
+            
+            <div class="content-premium">
+                <h2 class="headline">Atendimento psiquiátrico de alta privacidade, onde você estiver.</h2>
+                <p class="subhead">Em sua residência, escritório ou hotel. Absoluta discrição, sem salas de espera.</p>
+            </div>
+            
+            <div class="cta-container">
+                <a href="https://wa.me/seu-numero" class="cta-button">Contactar Concierge</a>
+            </div>
+        </section>
+
+        <section class="concept-section">
+            <span class="section-label">O Conceito</span>
+            <h3 class="concept-title">A Medicina Além do Consultório</h3>
+            <p class="concept-text">
+                O modelo tradicional de atendimento muitas vezes compromete o ativo mais precioso de figuras públicas, executivos e indivíduos que prezam pela total discrição: o anonimato e o tempo.
+            </p>
+            <p class="concept-text">
+                A Angmer redefine a experiência em saúde mental. Transportamos a excelência clínica diretamente para o seu espaço de conforto, blindando a sua rotina de qualquer exposição desnecessária.
+            </p>
+        </section>
+
+        <section class="pillars-section">
+            <span class="section-label">Diferenciais</span>
+            
+            <div class="pillar-card">
+                <span class="pillar-number">I.</span>
+                <h4 class="pillar-title">Privacidade Blindada</h4>
+                <p class="pillar-description">Ausência completa de salas de espera, secretárias ou agendas expostas. O seu tratamento permanece em estrito sigilo.</p>
+            </div>
+
+            <div class="pillar-card">
+                <span class="pillar-number">II.</span>
+                <h4 class="pillar-title">Conveniência Geográfica</h4>
+                <p class="pillar-description">Seja no recôndito da sua casa, na segurança do seu escritório corporativo ou durante estadias em hotéis de alta hotelaria.</p>
+            </div>
+
+            <div class="pillar-card">
+                <span class="pillar-number">III.</span>
+                <h4 class="pillar-title">Tempo Customizado</h4>
+                <p class="pillar-description">Consultas sem pressa, dimensionadas de acordo com a complexidade e a necessidade exata do seu dia.</p>
+            </div>
+        </section>
+
+        <div class="aesthetic-banner"></div>
+
+        <footer class="site-footer">
+            <div class="footer-brand">Angmer</div>
+            
+            <div class="contact-info">
+                <p>Atendimento Exclusivo sob Agendamento</p>
+                <p>São Paulo — Linha Privada</p>
+                <p style="margin-top: 15px;">
+                    <a href="mailto:contato@quietpsychiatry.com" class="contact-link">contato@quietpsychiatry.com</a>
+                </p>
+            </div>
+            
+            <div class="medical-disclaimer">
+                <p>Responsabilidade Técnica: Dr. Nome do Médico | CRM-SP 000000 / RQE 0000</p>
+                <p style="margin-top: 10px;">Este site segue rigorosamente as normas éticas de publicidade médica vigentes do CFM.</p>
+                <p style="margin-top: 15px; font-size: 8.5px; color: #444;">&copy; 2026 Angmer. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
