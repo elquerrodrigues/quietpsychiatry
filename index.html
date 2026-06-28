@@ -153,18 +153,29 @@
       opacity: 0.5;
     }
 
-    /* MINI-RETRO RETRATO E CREDENCIAIS DISCRETAS */
+    /* ASSINATURA TÉCNICA RE-CALIBRADA PARA ENQUADRAMENTO MÁXIMO */
     .technical-responsible {
-      padding: 80px 20px 40px 20px;
+      padding: 60px 20px 40px 20px;
       text-align: center;
-      max-width: 320px;
+      max-width: 200px; /* Estreita o bloco inteiro para forçar o alinhamento */
       margin: 0 auto;
     }
 
+    .profile-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.6rem; /* Menor para caber perfeitamente */
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.6;
+      display: block;
+      margin-bottom: 20px;
+    }
+
     .profile-container {
-      width: 160px; /* Reduzido para exatamente 2/3 */
+      width: 160px; 
       aspect-ratio: 2 / 3; 
-      margin: 0 auto 25px auto;
+      margin: 0 auto 20px auto;
       overflow: hidden;
     }
 
@@ -175,31 +186,31 @@
     }
 
     .profile-name {
-      font-size: 1.25rem; /* Letras menores e estritas ao bloco da foto */
+      font-size: 1.05rem; /* Reduzido para não estourar a largura da foto */
       color: var(--text);
-      letter-spacing: 1px;
-      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      white-space: nowrap;
     }
 
     .profile-title {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.7rem; 
-      font-weight: 300;
-      letter-spacing: 2px;
+      font-size: 0.65rem; 
+      font-weight: 400; /* Peso limpo para leitura clara no monitor */
+      letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--text-muted);
-      opacity: 0.8;
-      margin: 0 0 6px 0;
+      margin: 0 0 4px 0;
     }
 
     .profile-crm {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      opacity: 0.5;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: var(--text-muted); /* Sem opacidade apagada para garantir leitura */
       margin: 0;
+      white-space: nowrap;
     }
 
     footer {
@@ -224,8 +235,6 @@
       .content p { font-size: 1.1rem; }
       
       .technical-responsible { padding-top: 40px; }
-      .profile-container { width: 140px; } /* Ajuste fino mobile */
-      .profile-name { font-size: 1.15rem; }
     }
   </style>
 </head>
@@ -307,9 +316,9 @@
     </div>
   </section>
 
-  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO (DISCRETA E POLIDA) -->
+  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO COMPACTA -->
   <section class="technical-responsible">
-    <span class="label" style="margin-bottom: 25px;">Responsável Técnico</span>
+    <span class="profile-label">Responsável Técnico</span>
     <div class="profile-container">
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues">
     </div>
