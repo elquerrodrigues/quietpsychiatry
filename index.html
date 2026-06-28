@@ -74,7 +74,7 @@
       font-style: italic;
     }
 
-    .editorial-section {
+    .editorial-section, .technical-responsible {
       padding: 60px 20px 100px 20px;
       max-width: 900px;
       margin: 0 auto;
@@ -83,7 +83,7 @@
       transition: all 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
-    .editorial-section.visible {
+    .editorial-section.visible, .technical-responsible.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -153,20 +153,19 @@
       opacity: 0.5;
     }
 
-    /* ESTILIZAÇÃO DO RESPONSÁVEL TÉCNICO */
+    /* MINI-RETRO RETRATO E CREDENCIAIS DISCRETAS */
     .technical-responsible {
-      padding: 80px 20px 60px 20px;
+      padding: 80px 20px 40px 20px;
       text-align: center;
-      max-width: 400px;
+      max-width: 320px;
       margin: 0 auto;
     }
 
     .profile-container {
-      width: 240px;
+      width: 160px; /* Reduzido para exatamente 2/3 */
       aspect-ratio: 2 / 3; 
-      margin: 0 auto 30px auto;
+      margin: 0 auto 25px auto;
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.03); 
     }
 
     .profile-container img {
@@ -176,35 +175,36 @@
     }
 
     .profile-name {
-      font-size: 1.9rem;
+      font-size: 1.25rem; /* Letras menores e estritas ao bloco da foto */
       color: var(--text);
-      letter-spacing: 2px;
-      margin-bottom: 4px;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
     }
 
     .profile-title {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.85rem; 
+      font-size: 0.7rem; 
       font-weight: 300;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-muted);
-      opacity: 0.9;
-      margin-bottom: 12px;
+      opacity: 0.8;
+      margin: 0 0 6px 0;
     }
 
     .profile-crm {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 300;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       color: var(--text-muted);
-      opacity: 0.6;
+      opacity: 0.5;
+      margin: 0;
     }
 
     footer {
       text-align: center;
-      padding: 60px 20px 100px 20px;
+      padding: 40px 20px 100px 20px;
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.75rem;
       letter-spacing: 3px;
@@ -224,8 +224,8 @@
       .content p { font-size: 1.1rem; }
       
       .technical-responsible { padding-top: 40px; }
-      .profile-container { width: 200px; }
-      .profile-name { font-size: 1.6rem; }
+      .profile-container { width: 140px; } /* Ajuste fino mobile */
+      .profile-name { font-size: 1.15rem; }
     }
   </style>
 </head>
@@ -247,7 +247,7 @@
     <div class="content">
       <span class="label">I. O Manifesto</span>
       <p>A ANGMER redefine a relação entre o cuidado psiquiátrico de alta complexidade e a privacidade de lideranças, executivos e famílias de alta exposição.</p>
-      <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo interventions baseadas em evidências científicas rigorosas exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
+      <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo intervenções baseadas em evidências científicas rigorosas exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
     </div>
   </section>
 
@@ -284,7 +284,7 @@
     </div>
   </section>
 
-  <!-- BLOCO 5: POSTURA INSTITUCIONAL (UNIFICADO) -->
+  <!-- BLOCO 5: POSTURA INSTITUCIONAL -->
   <section class="editorial-section">
     <div class="image-container">
       <img src="foto5.png" alt="">
@@ -307,8 +307,9 @@
     </div>
   </section>
 
-  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO -->
+  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO (DISCRETA E POLIDA) -->
   <section class="technical-responsible">
+    <span class="label" style="margin-bottom: 25px;">Responsável Técnico</span>
     <div class="profile-container">
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues">
     </div>
@@ -322,7 +323,7 @@
   </footer>
 
   <script>
-    const sections = document.querySelectorAll('.editorial-section');
+    const sections = document.querySelectorAll('.editorial-section, .technical-responsible');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
