@@ -23,7 +23,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, .tagline, .top-title {
+    h1, h2, .tagline, .top-title, .profile-name {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 300;
       margin: 0;
@@ -153,9 +153,58 @@
       opacity: 0.5;
     }
 
+    /* ESTILIZAÇÃO DO RESPONSÁVEL TÉCNICO (PERFILRQE.JPEG) */
+    .technical-responsible {
+      padding: 80px 20px 60px 20px;
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .profile-container {
+      width: 240px;
+      aspect-ratio: 2 / 3; /* Proporção elegante de retrato de arte */
+      margin: 0 auto 30px auto;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.03); /* Sombra quase invisível, sutil */
+    }
+
+    .profile-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 1.9rem;
+      color: var(--text);
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .profile-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.85rem; /* Um pouco menor que o nome, como solicitado */
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    .profile-crm {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
     footer {
       text-align: center;
-      padding: 100px 20px;
+      padding: 60px 20px 100px 20px;
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.75rem;
       letter-spacing: 3px;
@@ -173,6 +222,10 @@
       .editorial-section { padding: 30px 20px 80px 20px; }
       .top-title { font-size: 1.5rem; margin-bottom: 35px; max-width: 100%; }
       .content p { font-size: 1.1rem; }
+      
+      .technical-responsible { padding-top: 40px; }
+      .profile-container { width: 200px; }
+      .profile-name { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -185,9 +238,9 @@
     <p class="explanation">O médico psiquiatra desloca-se pessoalmente até onde você estiver, garantindo absoluta privacidade.</p>
   </header>
 
-  <!-- BLOCO 1: O GRANDE ABRE-ALAS (image_12.png) -->
+  <!-- BLOCO 1: O GRANDE ABRE-ALAS (topo.png) -->
   <section class="editorial-section">
-    <h2 class="top-title">Atendimento na sua casa, trabalho ou hotel.</h2>
+    <h2 class="top-title">Atendimento psiquiátrico na sua casa, no seu trabalho ou em hotéis.</h2>
     <div class="image-container">
       <img src="topo.png" alt="Espaço Privativo ANGMER">
     </div>
@@ -220,7 +273,7 @@
     </div>
   </section>
 
-  <!-- BLOCO 4: LOGÍSTICA INVISÍVEL (O Corredor em P&B para o Trânsito Discreto) -->
+  <!-- BLOCO 4: LOGÍSTICA INVISÍVEL -->
   <section class="editorial-section">
     <div class="image-container">
       <img src="foto1.png" alt="Protocolo de Segurança ANGMER">
@@ -231,15 +284,14 @@
     </div>
   </section>
 
-  <!-- BLOCO 5: POSTURA INSTITUCIONAL -->
+  <!-- BLOCO 5: POSTURA INSTITUCIONAL (LAPIDADO) -->
   <section class="editorial-section">
     <div class="image-container">
       <img src="foto5.png" alt="">
     </div>
     <div class="content">
       <span class="label">V. Postura</span>
-      <p>A ANGMER atua sob um rigor institucional pautado pela competência e absoluta discrição.</p>
-      <p style="margin-top: 25px;">O rigor clínico encontra a absoluta discrição exigida por CEOs, líderes corporativos e figuras públicas de alta exposição.</p>
+      <p>O rigor clínico encontra a absoluta discrição exigida por CEOs, líderes corporativos e figuras públicas de alta exposição.</p>
     </div>
   </section>
 
@@ -253,6 +305,16 @@
       <p>Sigilo absoluto para proteger sua privacidade e reputação.</p>
       <a href="mailto:admissao@quietpsychiatry.com" class="btn">Solicitar Admissão Confidencial</a>
     </div>
+  </section>
+
+  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO (perfilrqe.jpeg) -->
+  <section class="technical-responsible">
+    <div class="profile-container">
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues">
+    </div>
+    <h3 class="profile-name">Dr Elquer Rodrigues</h3>
+    <p class="profile-title">Médico Psiquiatra</p>
+    <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
   </section>
 
   <footer>
