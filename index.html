@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <!-- Otimização para iPhone: lida com a proporção da tela e a área do "notch" -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Angmer - Medical Luxury Concierge</title>
     <style>
@@ -14,25 +15,24 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Suaviza o toque no iPhone e evita comportamento elástico indesejado nas laterais */
         html, body {
             overflow-x: hidden;
-            background-color: #fdfcfb; /* O tom off-white premium aprovado */
+            background-color: #fdfcfb; /* Tom off-white premium */
             color: #1a1a1a;
             font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
         }
 
-        /* CONFIGURAÇÃO DE LARGURA MOBILE (Foco em Smartphones/iPhone) */
+        /* CONTAINER PRINCIPAL (Largura perfeita para o iPhone) */
         .site-wrapper {
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            padding: 0 0 env(safe-area-inset-bottom) 0; /* Proteção para a barra de navegação inferior do iOS */
+            padding: 0 0 env(safe-area-inset-bottom) 0; /* Proteção para a barra do iOS */
         }
 
         /* ========================================================
-           1. SEÇÃO HERO (Aprovada por você - Opção 1)
+           1. SEÇÃO HERO (Abertura Minimalista - Sem Foto)
            ======================================================== */
         .angmer-hero-section {
             max-width: 480px;
@@ -91,7 +91,7 @@
             margin-bottom: 40px;
         }
 
-        /* Botão com área de toque expandida otimizada para o dedo no celular */
+        /* Botão com área de toque expandida para o celular */
         .cta-button {
             display: inline-block;
             font-size: 10px;
@@ -107,17 +107,16 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Efeito de toque nativo para telas mobile */
         .cta-button:active {
             background-color: #111111;
             color: #fdfcfb;
         }
 
         /* ========================================================
-           2. SEÇÃO DE CONCEITO / SOBRE (Estrutura do restante do site)
+           2. O CONCEITO DO SERVIÇO
            ======================================================== */
         .concept-section {
-            background-color: #f7f5f2; /* Sutil quebra de bloco elegante */
+            background-color: #f7f5f2; /* Quebra de bloco sutil */
             padding: 70px 24px;
             text-align: center;
         }
@@ -150,12 +149,54 @@
         }
 
         /* ========================================================
-           3. SEÇÃO DE PILARES / DIFERENCIAIS
+           3. NOVA SEÇÃO: O ESPECIALISTA (Sua Foto e Credenciais)
+           ======================================================== */
+        .doctor-profile-section {
+            padding: 70px 24px;
+            text-align: center;
+            background-color: #fdfcfb;
+        }
+
+        /* Estilo retrato elegante (editorial de revista) */
+        .doctor-portrait {
+            width: 220px;
+            height: 280px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .doctor-name {
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: #111111;
+            margin-bottom: 6px;
+        }
+
+        .doctor-title-sub {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7a7571;
+            margin-bottom: 15px;
+        }
+
+        .doctor-bio {
+            font-size: 13.5px;
+            color: #555555;
+            max-width: 360px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ========================================================
+           4. PILARES DA EXPERIÊNCIA
            ======================================================== */
         .pillars-section {
             padding: 70px 24px;
             text-align: center;
-            background-color: #fdfcfb;
+            background-color: #f7f5f2;
         }
 
         .pillar-card {
@@ -182,7 +223,6 @@
             font-weight: 400;
             color: #111111;
             margin-bottom: 12px;
-            letter-spacing: 0.5px;
         }
 
         .pillar-description {
@@ -194,18 +234,20 @@
         }
 
         /* ========================================================
-           4. PAINEL ESTÉTICO DE TRANSIÇÃO (Substitui imagens genéricas)
+           5. FOTO COM A MADEIRA BONITA (Banner de Transição)
            ======================================================== */
         .aesthetic-banner {
             width: 100%;
-            height: 260px;
+            height: 280px;
             background-color: #2b221c;
-            /* Degradê simulando uma textura arquitetônica escura de madeira/luxo */
-            background-image: linear-gradient(135deg, #312720 0%, #1a1411 100%);
+            /* Se a imagem falhar, mantém um degradê de madeira escura luxuosa */
+            background-image: linear-gradient(135deg, rgba(49,39,32,0.4) 0%, rgba(26,20,17,0.4) 100%), url('madeira.png');
+            background-size: cover;
+            background-position: center;
         }
 
         /* ========================================================
-           5. RODAPÉ & CONTATO (Termos obrigatórios de publicidade médica)
+           6. RODAPÉ (Com seus dados oficiais validados)
            ======================================================== */
         .site-footer {
             background-color: #111111;
@@ -252,6 +294,7 @@
 
     <div class="site-wrapper">
 
+        <!-- 1. ABERTURA MINIMALISTA (HERO - OPÇÃO 1) -->
         <section class="angmer-hero-section">
             <header class="brand-header">
                 <h1 class="brand-title">Angmer</h1>
@@ -264,10 +307,12 @@
             </div>
             
             <div class="cta-container">
-                <a href="https://wa.me/seu-numero" class="cta-button">Contactar Concierge</a>
+                <!-- Link direto e configurado para o seu WhatsApp corporativo -->
+                <a href="https://wa.me/5511967855947" target="_blank" class="cta-button">Contactar Concierge</a>
             </div>
         </section>
 
+        <!-- 2. O CONCEITO -->
         <section class="concept-section">
             <span class="section-label">O Conceito</span>
             <h3 class="concept-title">A Medicina Além do Consultório</h3>
@@ -275,17 +320,30 @@
                 O modelo tradicional de atendimento muitas vezes compromete o ativo mais precioso de figuras públicas, executivos e indivíduos que prezam pela total discrição: o anonimato e o tempo.
             </p>
             <p class="concept-text">
-                A Angmer redefine a experiência em saúde mental. Transportamos a excelência clínica diretamente para o seu espaço de conforto, blindando a sua rotina de qualquer exposição desnecessária.
+                A Angmer redefine a experiência em saúde mental. Transportamos a excelência clínica diretamente para o seu espaço de conforto, blindando a sua rotina de qualquer exposição.
             </p>
         </section>
 
+        <!-- 3. O ESPECIALISTA (Sua Seção Dedicada) -->
+        <section class="doctor-profile-section">
+            <span class="section-label">O Médico</span>
+            <!-- Nome do arquivo de imagem configurado como 'perfil.jpg' -->
+            <img class="doctor-portrait" src="perfil.jpg" alt="Dr. Elquer Rodrigues">
+            <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
+            <p class="doctor-title-sub">Médico Psiquiatra</p>
+            <p class="doctor-bio">
+                Atendimento focado na alta performance mental e bem-estar emocional, combinando rigor clínico científico com uma abordagem estritamente personalizada e confidencial.
+            </p>
+        </section>
+
+        <!-- 4. PILARES DA EXPERIÊNCIA -->
         <section class="pillars-section">
             <span class="section-label">Diferenciais</span>
             
             <div class="pillar-card">
                 <span class="pillar-number">I.</span>
                 <h4 class="pillar-title">Privacidade Blindada</h4>
-                <p class="pillar-description">Ausência completa de salas de espera, secretárias ou agendas expostas. O seu tratamento permanece em estrito sigilo.</p>
+                <p class="pillar-description">Ausência completa de salas de espera ou agendas expostas. O seu tratamento permanece em estrito sigilo.</p>
             </div>
 
             <div class="pillar-card">
@@ -297,12 +355,14 @@
             <div class="pillar-card">
                 <span class="pillar-number">III.</span>
                 <h4 class="pillar-title">Tempo Customizado</h4>
-                <p class="pillar-description">Consultas sem pressa, dimensionadas de acordo com a complexidade e a necessidade exata do seu dia.</p>
+                <p class="pillar-description">Consultas sem pressa, dimensionadas de acordo com a complexidade e a necessidade exata da sua rotina.</p>
             </div>
         </section>
 
+        <!-- 5. FOTO COM A MADEIRA BONITA -->
         <div class="aesthetic-banner"></div>
 
+        <!-- 6. RODAPÉ OFICIAL -->
         <footer class="site-footer">
             <div class="footer-brand">Angmer</div>
             
@@ -310,13 +370,15 @@
                 <p>Atendimento Exclusivo sob Agendamento</p>
                 <p>São Paulo — Linha Privada</p>
                 <p style="margin-top: 15px;">
-                    <a href="mailto:contato@quietpsychiatry.com" class="contact-link">contato@quietpsychiatry.com</a>
+                    <!-- Seu link de WhatsApp também inserido de forma discreta aqui -->
+                    <a href="https://wa.me/5511967855947" target="_blank" class="contact-link">Clique para iniciar atendimento via WhatsApp</a>
                 </p>
             </div>
             
             <div class="medical-disclaimer">
-                <p>Responsabilidade Técnica: Dr. Nome do Médico | CRM-SP 000000 / RQE 0000</p>
-                <p style="margin-top: 10px;">Este site segue rigorosamente as normas éticas de publicidade médica vigentes do CFM.</p>
+                <!-- Seus dados oficiais inseridos perfeitamente conforme exigido pelo CFM -->
+                <p>Responsabilidade Técnico-Clínica: Dr. Elquer Rodrigues | CRM-SP 157303 / RQE 85941</p>
+                <p style="margin-top: 10px;">Este ambiente digital segue rigorosamente as normas éticas de publicidade médica vigentes do CFM.</p>
                 <p style="margin-top: 15px; font-size: 8.5px; color: #444;">&copy; 2026 Angmer. Todos os direitos reservados.</p>
             </div>
         </footer>
