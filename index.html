@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <!-- Otimização para iPhone: lida com a proporção da tela e a área do "notch" -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Angmer - Medical Luxury Concierge</title>
     <style>
@@ -17,23 +16,20 @@
 
         html, body {
             overflow-x: hidden;
-            background-color: #fdfcfb; /* Tom off-white premium */
+            background-color: #fdfcfb;
             color: #1a1a1a;
             font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
         }
 
-        /* CONTAINER PRINCIPAL (Largura perfeita para o iPhone) */
         .site-wrapper {
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            padding: 0 0 env(safe-area-inset-bottom) 0; /* Proteção para a barra do iOS */
+            padding: 0 0 env(safe-area-inset-bottom) 0;
         }
 
-        /* ========================================================
-           1. SEÇÃO HERO (Abertura Minimalista - Sem Foto)
-           ======================================================== */
+        /* 1. SEÇÃO HERO (Abertura Minimalista) */
         .angmer-hero-section {
             max-width: 480px;
             margin: 0 auto;
@@ -91,7 +87,6 @@
             margin-bottom: 40px;
         }
 
-        /* Botão com área de toque expandida para o celular */
         .cta-button {
             display: inline-block;
             font-size: 10px;
@@ -112,11 +107,9 @@
             color: #fdfcfb;
         }
 
-        /* ========================================================
-           2. O CONCEITO DO SERVIÇO
-           ======================================================== */
+        /* 2. O CONCEITO DO SERVIÇO */
         .concept-section {
-            background-color: #f7f5f2; /* Quebra de bloco sutil */
+            background-color: #f7f5f2;
             padding: 70px 24px;
             text-align: center;
         }
@@ -148,55 +141,11 @@
             line-height: 1.7;
         }
 
-        /* ========================================================
-           3. NOVA SEÇÃO: O ESPECIALISTA (Sua Foto e Credenciais)
-           ======================================================== */
-        .doctor-profile-section {
-            padding: 70px 24px;
+        /* 3. PILARES DA EXPERIÊNCIA */
+        .pillars-section {
+            padding: 70px 24px 40px 24px;
             text-align: center;
             background-color: #fdfcfb;
-        }
-
-        /* Estilo retrato elegante (editorial de revista) */
-        .doctor-portrait {
-            width: 220px;
-            height: 280px;
-            object-fit: cover;
-            margin-bottom: 25px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .doctor-name {
-            font-family: 'Times New Roman', Times, Georgia, serif;
-            font-size: 22px;
-            font-weight: 400;
-            color: #111111;
-            margin-bottom: 6px;
-        }
-
-        .doctor-title-sub {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #7a7571;
-            margin-bottom: 15px;
-        }
-
-        .doctor-bio {
-            font-size: 13.5px;
-            color: #555555;
-            max-width: 360px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* ========================================================
-           4. PILARES DA EXPERIÊNCIA
-           ======================================================== */
-        .pillars-section {
-            padding: 70px 24px;
-            text-align: center;
-            background-color: #f7f5f2;
         }
 
         .pillar-card {
@@ -233,22 +182,22 @@
             margin: 0 auto;
         }
 
-        /* ========================================================
-           5. FOTO COM A MADEIRA BONITA (Banner de Transição)
-           ======================================================== */
+        /* 4. A FOTO DA MADEIRA */
         .aesthetic-banner {
             width: 100%;
-            height: 280px;
-            background-color: #2b221c;
-            /* Se a imagem falhar, mantém um degradê de madeira escura luxuosa */
-            background-image: linear-gradient(135deg, rgba(49,39,32,0.4) 0%, rgba(26,20,17,0.4) 100%), url('madeira.png');
-            background-size: cover;
-            background-position: center;
+            height: 320px;
+            display: block;
+            background-color: #2b221c; /* Fundo de segurança caso a foto atrase no 3G */
         }
 
-        /* ========================================================
-           6. RODAPÉ (Com seus dados oficiais validados)
-           ======================================================== */
+        .wood-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 5. RODAPÉ INSTITUCIONAL */
         .site-footer {
             background-color: #111111;
             color: #e5e5e5;
@@ -268,7 +217,7 @@
         .contact-info {
             font-size: 13px;
             color: #b5b1ad;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             line-height: 2;
         }
 
@@ -277,16 +226,32 @@
             text-decoration: none;
             border-bottom: 1px solid #7a7571;
             padding-bottom: 2px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
+        /* 6. SELO MÉDICO (Sua Foto Pequena) */
         .medical-disclaimer {
             font-size: 10px;
             color: #666666;
             line-height: 1.5;
             border-top: 1px solid #222222;
-            padding-top: 30px;
+            padding-top: 40px;
             max-width: 340px;
             margin: 0 auto;
+        }
+
+        /* Estilo da foto pequena no rodapé - Luxo e Discrição */
+        .tiny-doctor-photo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            filter: grayscale(100%); /* Deixa em preto e branco para ficar chique no fundo preto */
+            opacity: 0.8;
+            border: 1px solid #333;
         }
     </style>
 </head>
@@ -294,7 +259,7 @@
 
     <div class="site-wrapper">
 
-        <!-- 1. ABERTURA MINIMALISTA (HERO - OPÇÃO 1) -->
+        <!-- 1. ABERTURA (HERO) -->
         <section class="angmer-hero-section">
             <header class="brand-header">
                 <h1 class="brand-title">Angmer</h1>
@@ -302,13 +267,14 @@
             </header>
             
             <div class="content-premium">
-                <h2 class="headline">Atendimento psiquiátrico de alta privacidade, onde você estiver.</h2>
+                <!-- A nova copy genial: "Sem exposição" -->
+                <h2 class="headline">Atendimento psiquiátrico sem exposição, onde você estiver.</h2>
                 <p class="subhead">Em sua residência, escritório ou hotel. Absoluta discrição, sem salas de espera.</p>
             </div>
             
             <div class="cta-container">
-                <!-- Link direto e configurado para o seu WhatsApp corporativo -->
-                <a href="https://wa.me/5511967855947" target="_blank" class="cta-button">Contactar Concierge</a>
+                <!-- Número novo no WhatsApp -->
+                <a href="https://wa.me/5511977335683" target="_blank" class="cta-button">Contactar Concierge</a>
             </div>
         </section>
 
@@ -324,19 +290,7 @@
             </p>
         </section>
 
-        <!-- 3. O ESPECIALISTA (Sua Seção Dedicada) -->
-        <section class="doctor-profile-section">
-            <span class="section-label">O Médico</span>
-            <!-- Nome do arquivo de imagem configurado como 'perfil.jpg' -->
-            <img class="doctor-portrait" src="perfil.jpg" alt="Dr. Elquer Rodrigues">
-            <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
-            <p class="doctor-title-sub">Médico Psiquiatra</p>
-            <p class="doctor-bio">
-                Atendimento focado na alta performance mental e bem-estar emocional, combinando rigor clínico científico com uma abordagem estritamente personalizada e confidencial.
-            </p>
-        </section>
-
-        <!-- 4. PILARES DA EXPERIÊNCIA -->
+        <!-- 3. PILARES DA EXPERIÊNCIA -->
         <section class="pillars-section">
             <span class="section-label">Diferenciais</span>
             
@@ -359,25 +313,31 @@
             </div>
         </section>
 
-        <!-- 5. FOTO COM A MADEIRA BONITA -->
-        <div class="aesthetic-banner"></div>
+        <!-- 4. PAUSA VISUAL: A FOTO DA MADEIRA BONITA -->
+        <div class="aesthetic-banner">
+            <!-- A imagem agora está forçada direto no HTML. Ela vai aparecer perfeitamente! -->
+            <img src="madeira.png" alt="Ambiente Exclusivo Angmer" class="wood-image">
+        </div>
 
-        <!-- 6. RODAPÉ OFICIAL -->
+        <!-- 5. RODAPÉ E CONTATO -->
         <footer class="site-footer">
             <div class="footer-brand">Angmer</div>
             
             <div class="contact-info">
                 <p>Atendimento Exclusivo sob Agendamento</p>
                 <p>São Paulo — Linha Privada</p>
-                <p style="margin-top: 15px;">
-                    <!-- Seu link de WhatsApp também inserido de forma discreta aqui -->
-                    <a href="https://wa.me/5511967855947" target="_blank" class="contact-link">Clique para iniciar atendimento via WhatsApp</a>
+                <p style="margin-top: 25px;">
+                    <!-- Novo texto confidencial e link atualizado -->
+                    <a href="https://wa.me/5511977335683" target="_blank" class="contact-link">Iniciar atendimento confidencial</a>
                 </p>
             </div>
             
+            <!-- 6. SELO MÉDICO COM SUA FOTO PEQUENA -->
             <div class="medical-disclaimer">
-                <!-- Seus dados oficiais inseridos perfeitamente conforme exigido pelo CFM -->
-                <p>Responsabilidade Técnico-Clínica: Dr. Elquer Rodrigues | CRM-SP 157303 / RQE 85941</p>
+                <!-- Sua foto de perfil pequena agindo como um selo (em preto e branco elegante) -->
+                <img src="perfil.jpg" alt="Dr. Elquer Rodrigues" class="tiny-doctor-photo">
+                
+                <p>Responsabilidade Técnico-Clínica:<br>Dr. Elquer Rodrigues | CRM-SP 157303 / RQE 85941</p>
                 <p style="margin-top: 10px;">Este ambiente digital segue rigorosamente as normas éticas de publicidade médica vigentes do CFM.</p>
                 <p style="margin-top: 15px; font-size: 8.5px; color: #444;">&copy; 2026 Angmer. Todos os direitos reservados.</p>
             </div>
