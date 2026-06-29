@@ -1,89 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Dr. Elquer Rodrigues</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANGMER | Prática Clínica Privativa</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
 
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300&family=Inter:wght@300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2F0EB;          /* O Off-White mineral definitivo dos resorts Aman */
+      --text: #1C1B1A;        /* Carvão Editorial Profundo */
+      --text-muted: #4A4641;  /* Tom de Sombra Orgânica para leitura leve e discreta */
+      --line: #E3E0D9;        /* Linhas divisórias quase imperceptíveis como fios de linho */
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+    }
 
- <style>
-   :root {
-     --bg:       #F4F3F0;
-     --ink:      #1A1917;
-     --muted:    #8C8880;
-     --line:     #D6D2CA;
-   }
+    h1, h2, .tagline, .top-title, .profile-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      margin: 0;
+    }
 
-   *, *::before, *::after {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
-   }
+    header {
+      text-align: center;
+      padding: 180px 20px 120px 20px; /* Mais espaço de respiro no topo */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-   html, body {
-     height: 100%;
-   }
+    h1 {
+      font-size: 3.2rem;
+      letter-spacing: 12px; /* Rastreamento sutilmente mais largo e imponente */
+      color: var(--text);
+      margin-bottom: 25px;
+    }
 
-   body {
-     background: var(--bg);
-     color: var(--ink);
-     font-family: 'Inter', system-ui, sans-serif;
-     font-weight: 300;
-     -webkit-font-smoothing: antialiased;
-     display: flex;
-     flex-direction: column;
-   }
+    .subtitle {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 9px;
+      color: var(--text-muted);
+      margin: 0 0 70px 0;
+      text-transform: uppercase;
+    }
 
-   /* ── NAV ─────────────────────────────────────────── */
-   nav {
-     display: flex;
-     justify-content: space-between;
-     align-items: baseline;
-     padding: 44px 60px 0;
-   }
+    .tagline {
+      font-size: 1.55rem;
+      color: var(--text);
+      max-width: 600px;
+      line-height: 1.7;
+      margin: 0 auto;
+    }
 
-   .nav-name {
-     font-family: 'Inter', sans-serif;
-     font-size: 0.63rem;
-     font-weight: 300;
-     letter-spacing: 4px;
-     text-transform: uppercase;
-     color: var(--ink);
-     text-decoration: none;
-   }
+    .explanation {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 40px auto 0;
+      line-height: 1.8;
+      font-style: italic;
+    }
 
-   .nav-crm {
-     font-size: 0.6rem;
-     font-weight: 300;
-     letter-spacing: 2px;
-     color: var(--muted);
-   }
+    /* ESPAÇAMENTO AMAN: MONOLÍTICO E RESPIRÁVEL */
+    .editorial-section, .technical-responsible {
+      padding: 120px 20px; /* Distância monumental que evoca luxo e silêncio */
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 1.8s cubic-bezier(0.22, 1, 0.36, 1); /* Transição suave como névoa */
+    }
 
-   /* ── MAIN ────────────────────────────────────────── */
-   main {
-     flex: 1;
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-end;
-     padding: 0 60px 80px;
-   }
+    .editorial-section.visible, .technical-responsible.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-   /* ── FOTO ────────────────────────────────────────── */
-   .photo-strip {
-     width: 100%;
-     height: 54vh;
-     overflow: hidden;
-     margin-bottom: 64px;
-     opacity: 0;
-     animation: rise 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-   }
+    .top-title {
+      font-size: 1.85rem;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 60px;
+      color: var(--text);
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 0.5px;
+    }
 
-   .photo-strip img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     object-position: center 20%;
-     filter: grayscale(18
+    .image-container {
+      width: 100%;
+      aspect-ratio: 16 / 9; 
+      overflow: hidden;
+      margin-bottom: 60px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      display: block;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 60px;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      padding: 0 0 6px 0;
+      text-decoration: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      border-bottom: 1px solid var(--text);
+      transition: opacity 0.4s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.4;
+    }
+
+    /* RETRATO ASSINATURA: RIGOROSAMENTE ENQUADRADO */
+    .technical-responsible {
+      padding: 140px 20px 60px 20px;
+      text-align: center;
+      max-width: 200px; 
+      margin: 0 auto;
+    }
+
+    .profile-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.6rem; 
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    .profile-container {
+      width: 160px; 
+      aspect-ratio: 2 / 3; 
+      margin: 0 auto 25px auto;
+      overflow: hidden;
+    }
+
+    .profile-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 1.05rem; 
+      color: var(--text);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      white-space: nowrap;
+    }
+
+    .profile-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.65rem; 
+      font-weight: 400; 
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 5px 0;
+    }
+
+    .profile-crm {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px 120px 20px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    @media(max-width:900px){
+      header { padding: 120px 20px 40px 20px; }
+      h1 { font-size: 2.2rem; letter-spacing: 8px; }
+      .subtitle { margin-bottom: 50px; letter-spacing: 6px; }
+      .tagline { font-size: 1.25rem; max-width: 95%; }
+      .explanation { font-size: 1.05rem; margin-top: 25px; }
+      
+      .editorial-section { padding: 60px 20px; }
+      .top-title { font-size: 1.4rem; margin-bottom: 40px; max-width: 100%; }
+      .content p { font-size: 1.1rem; }
+      
+      .technical-responsible { padding-top: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ANGMER</h1>
+    <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
+    <p class="tagline">Serviço médico psiquiátrico para quem não quer ser visto entrando em um consultório.</p>
+    <p class="explanation">O médico psiquiatra desloca-se pessoalmente até onde você estiver, garantindo absoluta privacidade.</p>
+  </header>
+
+  <!-- I. O CONCEITO -->
+  <section class="editorial-section">
+    <h2 class="top-title">Atendimento psiquiátrico na sua casa, no seu trabalho ou em hotéis.</h2>
+    <div class="image-container">
+      <img src="topo.png" alt="Espaço Privativo ANGMER">
+    </div>
+    <div class="content">
+      <span class="label">I. O Conceito</span>
+      <p>A ANGMER redefine a relação entre o cuidado psiquiátrico e a privacidade de lideranças, executivos e famílias de alta exposição.</p>
+      <p style="margin-top: 30px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo intervenções exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
+    </div>
+  </section>
+
+  <!-- II. DINÂMICA -->
+  <section class="editorial-section">
+    <div class="image-container">
+      <img src="foto2.png" alt="">
+    </div>
+    <div class="content">
+      <span class="label">II. Dinâmica</span>
+      <p>Uma prática médica psiquiátrica conduzida inteiramente fora do circuito clínico tradicional. O atendimento ocorre exclusivamente no ambiente privado do paciente.</p>
+    </div>
+  </section>
+
+  <!-- III. RIGOR -->
+  <section class="editorial-section">
+    <div class="image-container">
+      <img src="foto3.png" alt="">
+    </div>
+    <div class="content">
+      <span class="label">III. Rigor</span>
+      <p>Condução clínica assertiva para recuperar a saúde mental.</p>
+    </div>
+  </section>
+
+  <!-- IV. LOGÍSTICA -->
+  <section class="editorial-section">
+    <div class="image-container">
+      <img src="foto1.png" alt="Protocolo de Segurança ANGMER">
+    </div>
+    <div class="content">
+      <span class="label">IV. Logística</span>
+      <p>Agendamento flexível e trânsito discreto do profissional, adaptando-se integralmente à sua agenda e respeitando a soberania do seu espaço.</p>
+    </div>
+  </section>
+
+  <!-- V. CRITÉRIO -->
+  <section class="editorial-section">
+    <div class="image-container">
+      <img src="foto5.png" alt="">
+    </div>
+    <div class="content">
+      <span class="label">V. Critério</span>
+      <p>A ANGMER atua sob um rigor institucional pautado pela competência e absoluta discrição exigida por CEOs, líderes corporativos e figuras públicas de alta exposição.</p>
+    </div>
+  </section>
+
+  <!-- VI. ADMISSÃO -->
+  <section class="editorial-section">
+    <div class="image-container">
+      <img src="fotonova.jpg" alt="">
+    </div>
+    <div class="content">
+      <span class="label">VI. Admissão</span>
+      <p>Sigilo absoluto para proteger sua privacidade e reputação.</p>
+      <a href="https://wa.me/5511977335683?text=Olá,%20tenho%20interesse%20no%20atendimento%20reservado." target="_blank" class="btn">Solicitar Admissão Confidencial</a>
+    </div>
+  </section>
+
+  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO -->
+  <section class="technical-responsible">
+    <span class="profile-label">Responsável Técnico</span>
+    <div class="profile-container">
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues">
+    </div>
+    <h3 class="profile-name">Dr Elquer Rodrigues</h3>
+    <p class="profile-title">Médico Psiquiatra</p>
+    <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
+  </section>
+
+  <footer>
+    <p>HAUS MERKEL • MEDICAL LUXURY CONCIERGE • 2026</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.editorial-section, .technical-responsible');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.02 }); /* Disparo levemente antecipado para suavidade máxima */
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
