@@ -9,10 +9,10 @@
 
   <style>
     :root {
-      --bg: #F2F0EB;          /* O Off-White mineral definitivo dos resorts Aman */
+      --bg: #F2F0EB;          /* O Off-White mineral dos resorts Aman */
       --text: #1C1B1A;        /* Carvão Editorial Profundo */
-      --text-muted: #4A4641;  /* Tom de Sombra Orgânica para leitura leve e discreta */
-      --line: #E3E0D9;        /* Linhas divisórias quase imperceptíveis como fios de linho */
+      --text-muted: #4A4641;  /* Tom de Sombra Orgânica */
+      --line: #E3E0D9;        
     }
     
     body {
@@ -24,15 +24,115 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, .tagline, .top-title, .profile-name {
+    h1, h2, h3, .tagline, .top-title, .profile-name {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 300;
       margin: 0;
     }
 
+    /* BARRA DE NAVEGAÇÃO MINIMALISTA AMAN */
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      z-index: 100;
+      background: transparent;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      letter-spacing: 6px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    /* ÍCONE HAMBÚRGUER (TRÊS BARRINHAS DEITADAS) */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 22px;
+      height: 14px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 102;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 1px;
+      background-color: var(--text);
+      transition: all 0.4s ease;
+    }
+
+    /* Animação para transformar as 3 barras em "X" quando aberto */
+    .menu-toggle.open span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* TELA INTERNA DO MENU (OVERLAY FILTRADO) */
+    .nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      z-index: 101;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .nav-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .nav-item {
+      margin: 35px 0;
+    }
+
+    .nav-link {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 4px;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-link:hover {
+      opacity: 0.4;
+    }
+
     header {
       text-align: center;
-      padding: 180px 20px 120px 20px; /* Mais espaço de respiro no topo */
+      padding: 220px 20px 120px 20px; 
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -41,7 +141,7 @@
 
     h1 {
       font-size: 3.2rem;
-      letter-spacing: 12px; /* Rastreamento sutilmente mais largo e imponente */
+      letter-spacing: 12px; 
       color: var(--text);
       margin-bottom: 25px;
     }
@@ -73,14 +173,13 @@
       font-style: italic;
     }
 
-    /* ESPAÇAMENTO AMAN: MONOLÍTICO E RESPIRÁVEL */
     .editorial-section, .technical-responsible {
-      padding: 120px 20px; /* Distância monumental que evoca luxo e silêncio */
+      padding: 120px 20px; 
       max-width: 800px;
       margin: 0 auto;
       opacity: 0;
       transform: translateY(15px);
-      transition: all 1.8s cubic-bezier(0.22, 1, 0.36, 1); /* Transição suave como névoa */
+      transition: all 1.8s cubic-bezier(0.22, 1, 0.36, 1); 
     }
 
     .editorial-section.visible, .technical-responsible.visible {
@@ -153,7 +252,6 @@
       opacity: 0.4;
     }
 
-    /* RETRATO ASSINATURA: RIGOROSAMENTE ENQUADRADO */
     .technical-responsible {
       padding: 140px 20px 60px 20px;
       text-align: center;
@@ -223,11 +321,11 @@
     }
 
     @media(max-width:900px){
-      header { padding: 120px 20px 40px 20px; }
+      .nav-bar { padding: 20px; }
+      header { padding: 160px 20px 40px 20px; }
       h1 { font-size: 2.2rem; letter-spacing: 8px; }
       .subtitle { margin-bottom: 50px; letter-spacing: 6px; }
       .tagline { font-size: 1.25rem; max-width: 95%; }
-      .explanation { font-size: 1.05rem; margin-top: 25px; }
       
       .editorial-section { padding: 60px 20px; }
       .top-title { font-size: 1.4rem; margin-bottom: 40px; max-width: 100%; }
@@ -239,6 +337,27 @@
 </head>
 <body>
 
+  <!-- FIXED NAVIGATION -->
+  <nav class="nav-bar">
+    <a href="#" class="nav-logo">ANGMER</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- MENU OVERLAY LINKS -->
+  <div class="nav-overlay" id="menuOverlay">
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#conceito" class="nav-link">O Conceito</a></li>
+      <li class="nav-item"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
+      <li class="nav-item"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
+      <li class="nav-item"><a href="#logistica" class="nav-link">Logística</a></li>
+      <li class="nav-item"><a href="#admissao" class="nav-link">Admissão</a></li>
+    </ul>
+  </div>
+
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICAL LUXURY CONCIERGE</p>
@@ -247,7 +366,7 @@
   </header>
 
   <!-- I. O CONCEITO -->
-  <section class="editorial-section">
+  <section class="editorial-section" id="conceito">
     <h2 class="top-title">Atendimento psiquiátrico na sua casa, no seu trabalho ou em hotéis.</h2>
     <div class="image-container">
       <img src="topo.png" alt="Espaço Privativo ANGMER">
@@ -259,14 +378,15 @@
     </div>
   </section>
 
-  <!-- II. DINÂMICA -->
-  <section class="editorial-section">
+  <!-- II. A INSPIRAÇÃO (ANGELA MERKEL) -->
+  <section class="editorial-section" id="inspiracao">
     <div class="image-container">
       <img src="foto2.png" alt="">
     </div>
     <div class="content">
-      <span class="label">II. Dinâmica</span>
-      <p>Uma prática médica psiquiátrica conduzida inteiramente fora do circuito clínico tradicional. O atendimento ocorre exclusivamente no ambiente privado do paciente.</p>
+      <span class="label">II. A Inspiração</span>
+      <p>O nome ANGMER deriva de um dos maiores símbolos contemporâneos de liderança silenciosa: Angela Merkel. Dezesseis anos à frente de uma potência global governada com absoluta sobriedade, competência técnica incontestável e total recusa à vaidade.</p>
+      <p style="margin-top: 25px;">Essa postura define a nossa essência: o poder da eficiência discreta, onde a competência fala mais alto do que a presença.</p>
     </div>
   </section>
 
@@ -281,19 +401,20 @@
     </div>
   </section>
 
-  <!-- IV. LOGÍSTICA -->
-  <section class="editorial-section">
+  <!-- IV. A ABORDAGEM (PORTA DOS FUNDOS / RESGATE MÉDICO) -->
+  <section class="editorial-section" id="abordagem">
     <div class="image-container">
-      <img src="foto1.png" alt="Protocolo de Segurança ANGMER">
+      <img src="foto1.png" alt="">
     </div>
     <div class="content">
-      <span class="label">IV. Logística</span>
-      <p>Agendamento flexível e trânsito discreto do profissional, adaptando-se integralmente à sua agenda e respeitando a soberania do seu espaço.</p>
+      <span class="label">IV. A Abordagem</span>
+      <p>O verdadeiro socorro médico não precisa de palcos. Entramos pelos bastidores, sem sermos vistos, com o compromisso estrito de desarmar crises agudas de pânico e sofrimento e restabelecer o equilíbrio.</p>
+      <p style="margin-top: 25px;">Esta prática é dedicada exclusivamente a quem busca resolução clínica imediata e acesso aos melhores recursos terapêuticos disponíveis — distanciando a medicina de urgência da mera busca burocrática por laudos ou atestados. É o resgate em sua forma mais pura.</p>
     </div>
   </section>
 
   <!-- V. CRITÉRIO -->
-  <section class="editorial-section">
+  <section class="editorial-section" id="logistica">
     <div class="image-container">
       <img src="foto5.png" alt="">
     </div>
@@ -304,7 +425,7 @@
   </section>
 
   <!-- VI. ADMISSÃO -->
-  <section class="editorial-section">
+  <section class="editorial-section" id="admissao">
     <div class="image-container">
       <img src="fotonova.jpg" alt="">
     </div>
@@ -331,12 +452,35 @@
   </footer>
 
   <script>
+    // LÓGICA DO MENU HAMBÚRGUER AMAN
+    const menuBtn = document.getElementById('menuBtn');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function toggleMenu() {
+      menuBtn.classList.toggle('open');
+      menuOverlay.classList.toggle('open');
+      document.body.style.overflow = menuOverlay.classList.contains('open') ? 'hidden' : '';
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // Fecha o menu suavemente ao clicar em um link e rolar
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        menuOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // INTERSECTION OBSERVER PARA TRANSICÕES NÉVOA
     const sections = document.querySelectorAll('.editorial-section, .technical-responsible');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.02 }); /* Disparo levemente antecipado para suavidade máxima */
+    }, { threshold: 0.02 });
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
