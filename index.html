@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ANGMER | Medicina Privativa</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -73,7 +73,6 @@
       transition: all 0.4s ease;
     }
 
-    /* Animação para transformar as 3 barras em "X" quando aberto */
     .menu-toggle.open span:nth-child(1) {
       transform: translateY(6px) rotate(45deg);
     }
@@ -84,7 +83,7 @@
       transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* TELA INTERNA DO MENU (OVERLAY FILTRADO) */
+    /* TELA INTERNA DO MENU */
     .nav-overlay {
       position: fixed;
       top: 0;
@@ -132,7 +131,7 @@
 
     header {
       text-align: center;
-      padding: 220px 20px 120px 20px; 
+      padding: 220px 20px 100px 20px; 
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -152,25 +151,16 @@
       font-weight: 300;
       letter-spacing: 9px;
       color: var(--text-muted);
-      margin: 0 0 70px 0;
+      margin: 0 0 50px 0;
       text-transform: uppercase;
     }
 
     .tagline {
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       color: var(--text);
-      max-width: 600px;
+      max-width: 620px;
       line-height: 1.7;
       margin: 0 auto;
-    }
-
-    .explanation {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 500px;
-      margin: 40px auto 0;
-      line-height: 1.8;
-      font-style: italic;
     }
 
     .editorial-section, .technical-responsible {
@@ -324,7 +314,7 @@
       .nav-bar { padding: 20px; }
       header { padding: 160px 20px 40px 20px; }
       h1 { font-size: 2.2rem; letter-spacing: 8px; }
-      .subtitle { margin-bottom: 50px; letter-spacing: 6px; }
+      .subtitle { margin-bottom: 30px; letter-spacing: 6px; }
       .tagline { font-size: 1.25rem; max-width: 95%; }
       
       .editorial-section { padding: 60px 20px; }
@@ -358,11 +348,11 @@
     </ul>
   </div>
 
+  <!-- HIGIENIZADO: APENAS UM BLOCO DIRETO E CIRÚRGICO -->
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICINA PRIVATIVA</p>
-    <p class="tagline">Serviço médico psiquiátrico para quem não quer ser visto entrando em um consultório.</p>
-    <p class="explanation">O médico psiquiatra desloca-se pessoalmente até onde você estiver, garantindo absoluta privacidade.</p>
+    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Absoluto silêncio e invisibilidade a terceiros.</p>
   </header>
 
   <!-- I. O CONCEITO -->
@@ -378,7 +368,7 @@
     </div>
   </section>
 
-  <!-- II. A INSPIRAÇÃO (COM FOTO ANTERIOR ABSTRATA/ARQUITETÔNICA E TEXTO MANTIDO) -->
+  <!-- II. A INSPIRAÇÃO (COM FOTO ANTERIOR E TEXTO APERFEIÇOADO) -->
   <section class="editorial-section" id="inspiracao">
     <div class="image-container">
       <img src="foto2.png" alt="A Inspiração ANGMER">
@@ -401,7 +391,7 @@
     </div>
   </section>
 
-  <!-- IV. A ABORDAGEM (EXPANDIDA SOB MEDIDA) -->
+  <!-- IV. A ABORDAGEM -->
   <section class="editorial-section" id="abordagem">
     <div class="image-container">
       <img src="foto1.png" alt="">
@@ -453,7 +443,6 @@
   </footer>
 
   <script>
-    // LÓGICA DO MENU HAMBÚRGUER AMAN
     const menuBtn = document.getElementById('menuBtn');
     const menuOverlay = document.getElementById('menuOverlay');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -474,7 +463,6 @@
       });
     });
 
-    // INTERSECTION OBSERVER PARA TRANSICÕES NÉVOA
     const sections = document.querySelectorAll('.editorial-section, .technical-responsible');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
