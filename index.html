@@ -206,6 +206,14 @@
       margin-bottom: 60px;
     }
 
+    /* MOLDURA EDITORIAL PARA IMAGENS VERTICAIS */
+    .image-container.portrait-frame {
+      aspect-ratio: 2 / 3;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .image-container img {
       width: 100%;
       height: 100%;
@@ -337,7 +345,6 @@
 </head>
 <body>
 
-  <!-- FIXED NAVIGATION -->
   <nav class="nav-bar">
     <a href="#" class="nav-logo">ANGMER</a>
     <button class="menu-toggle" id="menuBtn" aria-label="Abrir Menu">
@@ -347,7 +354,6 @@
     </button>
   </nav>
 
-  <!-- MENU OVERLAY LINKS -->
   <div class="nav-overlay" id="menuOverlay">
     <ul class="nav-menu">
       <li class="nav-item"><a href="#conceito" class="nav-link">O Conceito</a></li>
@@ -365,9 +371,8 @@
     <p class="explanation">O médico psiquiatra desloca-se pessoalmente até onde você estiver, garantindo absoluta privacidade.</p>
   </header>
 
-  <!-- I. O CONCEITO -->
   <section class="editorial-section" id="conceito">
-    <h2 class="top-title">Atendimento psiquiátrico na sua casa, no seu trabalho ou em hotéis.</h2>
+    <h2 class="top-title">Atendimento psiquiátrico na sua casa, no seu trabalho ou in hotéis.</h2>
     <div class="image-container">
       <img src="topo.png" alt="Espaço Privativo ANGMER">
     </div>
@@ -378,19 +383,17 @@
     </div>
   </section>
 
-  <!-- II. A INSPIRAÇÃO (ANGELA MERKEL) -->
   <section class="editorial-section" id="inspiracao">
-    <div class="image-container">
-      <img src="foto2.png" alt="">
+    <div class="image-container portrait-frame">
+      <img src="IMG_2431.jpeg" alt="Angela Merkel - Inspiração ANGMER">
     </div>
     <div class="content">
       <span class="label">II. A Inspiração</span>
       <p>O nome ANGMER deriva de um dos maiores símbolos contemporâneos de liderança silenciosa: Angela Merkel. Dezesseis anos à frente de uma potência global governada com absoluta sobriedade, competência técnica incontestável e total recusa à vaidade.</p>
-      <p style="margin-top: 25px;">Essa postura define a nossa essence: o poder da eficiência discreta, onde a competência fala mais alto do que a presença.</p>
+      <p style="margin-top: 25px;">Essa postura define a nossa essência: o poder da eficiência discreta, onde a competência fala mais alto do que a presença.</p>
     </div>
   </section>
 
-  <!-- III. RIGOR (TEXTO CORRIGIDO CONFORME SUA DIRETRIZ) -->
   <section class="editorial-section">
     <div class="image-container">
       <img src="foto3.png" alt="">
@@ -401,18 +404,16 @@
     </div>
   </section>
 
-  <!-- IV. A ABORDAGEM -->
   <section class="editorial-section" id="abordagem">
     <div class="image-container">
       <img src="foto1.png" alt="">
     </div>
     <div class="content">
       <span class="label">IV. A Abordagem</span>
-      <p>A atuação é estritamente nos bastidores, com o propósito de restabelecer a saúde mental de forma discreta.</p>
+      <p>A atuação ocorre sob absoluto silêncio, privacidade e total ausência de exposição. O deslocamento médico é feito diretamente até onde você estiver, garantindo que o atendimento permaneça inteiramente invisível a terceiros.</p>
     </div>
   </section>
 
-  <!-- V. A CONDUTA -->
   <section class="editorial-section" id="conduta">
     <div class="image-container">
       <img src="foto5.png" alt="">
@@ -425,7 +426,6 @@
     </div>
   </section>
 
-  <!-- VI. ADMISSÃO -->
   <section class="editorial-section" id="admissao">
     <div class="image-container">
       <img src="fotonova.jpg" alt="">
@@ -437,7 +437,6 @@
     </div>
   </section>
 
-  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO -->
   <section class="technical-responsible">
     <span class="profile-label">Responsável Técnico</span>
     <div class="profile-container">
