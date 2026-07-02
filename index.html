@@ -356,12 +356,13 @@
       text-transform: uppercase;
       letter-spacing: 6px;
       border-bottom: 1px solid var(--text);
-      transition: opacity 0.5s ease;
+      transition: all 0.3s ease;
       font-weight: 500;
     }
 
     .btn:hover {
       opacity: 0.4;
+      transform: translateY(-2px);
     }
     
     .response-time {
@@ -474,6 +475,21 @@
       color: var(--text-muted);
       display: block;
       margin-bottom: 20px;
+    }
+
+    .profile-container {
+      width: 140px;
+      aspect-ratio: 2 / 3;
+      margin: 0 auto 20px auto;
+      overflow: hidden;
+      border-radius: 1px;
+    }
+
+    .profile-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%);
     }
 
     .profile-name {
@@ -593,7 +609,6 @@
 
   <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
     <ul class="nav-menu" role="menu">
-      <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
       <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
       <li class="nav-item" role="menuitem"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
@@ -609,18 +624,14 @@
     <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
   </header>
 
-  <section class="manifesto" id="manifesto" aria-label="Manifesto ANGMER">
-    <p>O silêncio é a forma mais elevada de respeito.</p>
-    <p>A excelência médica dispensa holofotes.</p>
-    <p>A privacidade não é um luxo — é uma condição para quem não pode se dar ao luxo de ser visto.</p>
-  </section>
+  <!-- Seção Manifesto REMOVIDA COMPLETAMENTE -->
 
   <section class="editorial-section" id="conceito" aria-labelledby="conceito-title">
     <div class="image-container">
       <img src="topo.png" alt="Sala de atendimento privativa com poltrona em couro, iluminação indireta e atmosfera de tranquilidade" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="conceito-title">O Conceito</span>
+      <span class="label" id="conceito-title">I. O Conceito</span>
       <p>A ANGMER existe para preservar o que lideranças, executivos e famílias de alta exposição construíram — começando pela saúde.</p>
       <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento vai até você, no ambiente onde se sente mais seguro, para que sua saúde e tudo que você construiu permaneçam protegidos.</p>
     </div>
@@ -645,7 +656,7 @@
       <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="inspiracao-title">A Inspiração</span>
+      <span class="label" id="inspiracao-title">III. A Inspiração</span>
       <p>ANGMER inspira-se em uma das lideranças mais discretas e eficazes do século: <strong>Angela Merkel</strong>. Dezesseis anos de poder exercido com sobriedade, competência e total recusa ao espetáculo.</p>
       <p style="margin-top: 20px;">É dessa postura que nasce nossa identidade, pautada por <strong>discrição</strong> e <strong>competência</strong>.</p>
     </div>
@@ -656,7 +667,7 @@
       <img src="foto1.png" alt="Corredor privativo com design atemporal" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="abordagem-title">A Abordagem</span>
+      <span class="label" id="abordagem-title">IV. A Abordagem</span>
       <p>O atendimento presencial é a base da nossa prática. A presença do médico no seu ambiente permite uma avaliação mais precisa e uma relação terapêutica mais protegida.</p>
       <p style="margin-top: 20px;">A atuação ocorre em residências, escritórios ou hotéis, com a assistência médica a CEOs, figuras públicas e seus familiares mantida <strong>longe de qualquer exposição</strong>.</p>
       <p style="margin-top: 20px;">Nenhum registro público. Nenhum trânsito em salas de espera. Nenhum nome em sistemas compartilhados.</p>
@@ -668,7 +679,7 @@
       <img src="foto5.png" alt="Biblioteca privada com luz natural suave" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="conduta-title">A Conduta</span>
+      <span class="label" id="conduta-title">V. A Conduta</span>
       <p>A ANGMER é a antítese do espetáculo digital que distorce a medicina contemporânea. Uma prática para quem não aceita transformar sua saúde em conteúdo.</p>
       <p style="margin-top: 20px;">Intervenções precisas, sem excessos ou supermedicação. O objetivo clínico é devolver a estabilidade sem paralisar: sua vida e seus negócios devem continuar durante o tratamento.</p>
       <p style="margin-top: 20px;">Proteção contra qualquer forma de exposição — seja na imprensa, no mercado ou nas redes.</p>
@@ -681,7 +692,7 @@
       <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="atendimento-title">Atendimento</span>
+      <span class="label" id="atendimento-title">VI. Atendimento</span>
       <p>Privacidade protegida. Exposição evitada.</p>
       
       <div class="process-info">
@@ -689,7 +700,7 @@
         A partir dela, define-se a frequência e a abordagem adequadas a cada momento.
       </div>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20ao%20protocolo%20de%20admissão." 
+      <a href="https://wa.me/5511977335683?text=Olá,%20tenho%20interesse%20no%20atendimento%20reservado." 
          target="_blank" 
          rel="noopener noreferrer"
          class="btn" 
@@ -709,6 +720,9 @@
 
   <section class="technical-responsible" aria-label="Informações do Responsável Técnico">
     <span class="profile-label">Responsável Técnico</span>
+    <div class="profile-container">
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" loading="lazy">
+    </div>
     <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
     <p class="profile-title">Médico Psiquiatra</p>
     <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
@@ -797,7 +811,7 @@
         });
       });
       
-      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto, .technical-responsible');
+      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .technical-responsible');
       
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
