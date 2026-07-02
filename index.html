@@ -609,7 +609,6 @@
 
   <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
     <ul class="nav-menu" role="menu">
-      <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
       <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
       <li class="nav-item" role="menuitem"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
@@ -625,11 +624,7 @@
     <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
   </header>
 
-  <section class="manifesto" id="manifesto" aria-label="Manifesto ANGMER">
-    <p>O silêncio é a forma mais elevada de respeito.</p>
-    <p>A excelência médica dispensa holofotes.</p>
-    <p>A privacidade não é um luxo — é uma condição para quem não pode se dar ao luxo de ser visto.</p>
-  </section>
+  <!-- Seção Manifesto REMOVIDA COMPLETAMENTE -->
 
   <section class="editorial-section" id="conceito" aria-labelledby="conceito-title">
     <div class="image-container">
@@ -816,7 +811,7 @@
         });
       });
       
-      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto, .technical-responsible');
+      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .technical-responsible');
       
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
