@@ -93,11 +93,11 @@
       text-decoration: none;
       color: var(--text);
       font-weight: 400;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
     }
     
     .nav-logo:hover {
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     .menu-toggle {
@@ -193,12 +193,12 @@
       color: var(--text);
       text-decoration: none;
       letter-spacing: 4px;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       display: inline-block;
     }
 
     .nav-link:hover {
-      opacity: 0.4;
+      opacity: 0.35;
       transform: translateX(-4px);
     }
 
@@ -215,10 +215,11 @@
 
     h1 {
       font-size: clamp(2.4rem, 5vw, 3.6rem);
-      letter-spacing: 10px;
+      letter-spacing: 12px;
       color: var(--text);
       margin-bottom: 20px;
       animation: fadeInUp 0.8s var(--transition-smooth);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
 
     .subtitle {
@@ -239,6 +240,15 @@
       line-height: 1.7;
       margin: 0 auto;
       animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
+    }
+    
+    .tagline em {
+      font-style: italic;
+      display: block;
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 0.95em;
+      letter-spacing: 1px;
     }
 
     .manifesto {
@@ -285,7 +295,7 @@
       margin-bottom: 60px;
       border-radius: 2px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
-      transition: transform 0.6s var(--transition-smooth);
+      transition: transform 0.7s var(--transition-smooth);
     }
     
     .image-container:hover {
@@ -297,7 +307,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s var(--transition-smooth);
+      transition: transform 0.7s var(--transition-smooth);
     }
     
     .image-container:hover img {
@@ -345,22 +355,22 @@
 
     .btn {
       display: inline-block;
-      margin-top: 40px;
+      margin-top: 48px;
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--text);
-      padding: 12px 0 8px 0;
+      padding: 14px 0 10px 0;
       text-decoration: none;
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 6px;
       border-bottom: 1px solid var(--text);
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease, letter-spacing 0.5s ease;
       font-weight: 500;
     }
 
     .btn:hover {
-      opacity: 0.4;
-      transform: none;
+      opacity: 0.35;
+      letter-spacing: 8px;
     }
 
     .doctor-section {
@@ -385,6 +395,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .doctor-photo:hover img {
+      transform: scale(1.02);
     }
     
     .doctor-name {
@@ -437,7 +452,7 @@
       opacity: 0.45;
       max-width: 500px;
       margin: 0 auto;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
     }
     
     footer:hover {
@@ -551,7 +566,6 @@
       <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
       <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
-      <!-- Link ajustado para o novo ID -->
       <li class="nav-item" role="menuitem"><a href="#essencia" class="nav-link">A Essência</a></li>
       <li class="nav-item" role="menuitem"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
       <li class="nav-item" role="menuitem"><a href="#conduta" class="nav-link">A Conduta</a></li>
@@ -562,7 +576,7 @@
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICINA PRIVATIVA</p>
-    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
+    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel.<em>Em silêncio.</em></p>
   </header>
 
   <section class="manifesto" id="manifesto" aria-label="Manifesto ANGMER">
@@ -596,7 +610,6 @@
     </div>
   </section>
 
-  <!-- CORREÇÃO 1: A Essência (O Enigma substituindo a literalidade de Angela Merkel) -->
   <section class="editorial-section" id="essencia" aria-labelledby="essencia-title">
     <div class="image-container">
       <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa" loading="lazy">
@@ -633,7 +646,6 @@
     </div>
   </section>
 
-  <!-- CORREÇÃO 2: Atendimento e Botão elevados para o conceito de "Assessoria Privada", removendo justificativas de exclusividade -->
   <section class="editorial-section" id="atendimento" aria-labelledby="atendimento-title">
     <div class="image-container">
       <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo" loading="lazy">
@@ -647,12 +659,12 @@
         A partir dela, define-se a condução adequada para a sua continuidade clínica e pessoal.
       </div>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20contato%20com%20a%20assessoria%20privada." 
+      <a href="https://wa.me/5511977335683?text=Solicito%20contato%20reservado%20com%20a%20ANGMER." 
          target="_blank" 
          rel="noopener noreferrer"
          class="btn" 
-         aria-label="Acionar a assessoria privada via WhatsApp">
-        Acionar Assessoria Privada
+         aria-label="Solicitar contato reservado via WhatsApp">
+        Solicitar Contato Reservado
       </a>
     </div>
   </section>
@@ -720,7 +732,7 @@
                   behavior: 'smooth',
                   block: 'start'
                 });
-              }, 300);
+              }, 350);
             }
           }
         });
