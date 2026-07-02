@@ -3,25 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANGMER | Medicina Privativa</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
-
+  <!-- SEO & Meta Tags -->
+  <title>ANGMER | Psiquiatria Reservada para Alta Liderança — Atendimento Domiciliar Sigiloso</title>
+  <meta name="description" content="Serviço médico psiquiátrico sob absoluto sigilo para CEOs, famílias empresariais e figuras públicas. Atendimento na sua residência, escritório ou hotel em São Paulo.">
+  <meta name="keywords" content="psiquiatra sigiloso, psiquiatra domiciliar, psiquiatra para executivos, medicina privativa, atendimento psiquiátrico residencial, psiquiatra são paulo, saúde mental executivos, psiquiatra confidencial">
+  <meta name="author" content="Dr. Elquer Rodrigues">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph para WhatsApp e redes sociais -->
+  <meta property="og:title" content="ANGMER | Psiquiatria Reservada para Alta Liderança">
+  <meta property="og:description" content="Atendimento psiquiátrico domiciliar com absoluto sigilo. Sua saúde mental tratada onde você estiver, sem exposição.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://angmer.com.br">
+  <meta property="og:image" content="https://angmer.com.br/topo.png">
+  <meta property="og:image:alt" content="Ambiente reservado para atendimento psiquiátrico exclusivo">
+  <meta property="og:site_name" content="ANGMER Medicina Privativa">
+  <meta property="og:locale" content="pt_BR">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ANGMER | Psiquiatria Reservada para Alta Liderança">
+  <meta name="twitter:description" content="Atendimento psiquiátrico domiciliar com absoluto sigilo. Sua saúde mental tratada onde você estiver.">
+  <meta name="twitter:image" content="https://angmer.com.br/topo.png">
+  
+  <!-- Preload de fontes para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
   <style>
     :root {
       --bg: #F2F0EB;          /* O Off-White mineral dos resorts Aman */
       --text: #1C1B1A;        /* Carvão Editorial Profundo */
       --text-muted: #4A4641;  /* Tom de Sombra Orgânica */
+      --text-light: #6B6560;  /* Cinza quente para detalhes */
       --line: #E3E0D9;        
+      --gold: #A68B5B;        /* Dourado envelhecido para acentos discretos */
+      --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     
     body {
-      margin: 0;
       font-family: 'Cormorant Garamond', Georgia, serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.9;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
 
     h1, h2, h3, .tagline, .top-title, .profile-name {
@@ -30,7 +70,7 @@
       margin: 0;
     }
 
-    /* BARRA DE NAVEGAÇÃO MINIMALISTA AMAN */
+    /* BARRA DE NAVEGAÇÃO MINIMALISTA AMAN - OTIMIZADA MOBILE */
     .nav-bar {
       position: fixed;
       top: 0;
@@ -39,57 +79,80 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 40px;
+      padding: 24px 32px;
       box-sizing: border-box;
       z-index: 100;
-      background: transparent;
+      background: rgba(242, 240, 235, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: all 0.4s var(--transition-smooth);
+    }
+    
+    .nav-bar.scrolled {
+      padding: 16px 32px;
+      background: rgba(242, 240, 235, 0.95);
+      box-shadow: 0 1px 20px rgba(0, 0, 0, 0.04);
     }
 
     .nav-logo {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       letter-spacing: 6px;
       text-decoration: none;
       color: var(--text);
+      font-weight: 400;
+      transition: opacity 0.3s ease;
+    }
+    
+    .nav-logo:hover {
+      opacity: 0.6;
     }
 
-    /* ÍCONE HAMBÚRGUER */
+    /* ÍCONE HAMBÚRGUER REFINADO */
     .menu-toggle {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 22px;
-      height: 14px;
+      width: 24px;
+      height: 16px;
       background: transparent;
       border: none;
       cursor: pointer;
       padding: 0;
       z-index: 102;
+      transition: transform 0.3s ease;
+    }
+    
+    .menu-toggle:hover {
+      transform: scale(1.05);
     }
 
     .menu-toggle span {
       width: 100%;
-      height: 1px;
+      height: 1.5px;
       background-color: var(--text);
-      transition: all 0.4s ease;
+      transition: all 0.4s var(--transition-smooth);
+      transform-origin: center;
     }
 
     .menu-toggle.open span:nth-child(1) {
-      transform: translateY(6px) rotate(45deg);
+      transform: translateY(7px) rotate(45deg);
     }
     .menu-toggle.open span:nth-child(2) {
       opacity: 0;
+      transform: scaleX(0);
     }
     .menu-toggle.open span:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* TELA INTERNA DO MENU */
+    /* TELA INTERNA DO MENU - MAIS RÁPIDA E RESPONSIVA */
     .nav-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      height: 100dvh; /* Dynamic viewport height para mobile */
       background: var(--bg);
       z-index: 101;
       display: flex;
@@ -97,7 +160,8 @@
       align-items: center;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: opacity 0.5s var(--transition-smooth), visibility 0.5s var(--transition-smooth);
+      overflow-y: auto;
     }
 
     .nav-overlay.open {
@@ -107,99 +171,138 @@
 
     .nav-menu {
       list-style: none;
-      padding: 0;
+      padding: 40px 20px;
       margin: 0;
       text-align: center;
     }
 
     .nav-item {
-      margin: 35px 0;
+      margin: 28px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s var(--transition-smooth);
     }
+    
+    .nav-overlay.open .nav-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .nav-overlay.open .nav-item:nth-child(1) { transition-delay: 0.1s; }
+    .nav-overlay.open .nav-item:nth-child(2) { transition-delay: 0.2s; }
+    .nav-overlay.open .nav-item:nth-child(3) { transition-delay: 0.3s; }
+    .nav-overlay.open .nav-item:nth-child(4) { transition-delay: 0.4s; }
+    .nav-overlay.open .nav-item:nth-child(5) { transition-delay: 0.5s; }
 
     .nav-link {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: var(--text);
       text-decoration: none;
       letter-spacing: 4px;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .nav-link:hover {
       opacity: 0.4;
+      transform: translateX(-4px);
     }
 
+    /* HEADER - OTIMIZADO MOBILE */
     header {
       text-align: center;
-      padding: 220px 20px 80px 20px; 
+      padding: 180px 24px 80px 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
+      min-height: 100dvh;
     }
 
     h1 {
-      font-size: 3.2rem;
-      letter-spacing: 12px; 
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      letter-spacing: 10px;
       color: var(--text);
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s var(--transition-smooth);
     }
 
     .subtitle {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 9px;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 8px;
       color: var(--text-muted);
-      margin: 0 0 50px 0;
+      margin: 0 0 40px 0;
       text-transform: uppercase;
+      animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both;
     }
 
     .tagline {
-      font-size: 1.45rem;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       color: var(--text);
       max-width: 620px;
       line-height: 1.7;
       margin: 0 auto;
+      animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
     }
 
-    .editorial-section, .technical-responsible {
-      padding: 100px 20px 120px 20px; 
+    /* SEÇÕES EDITORIAIS - ANIMAÇÕES OTIMIZADAS */
+    .editorial-section, .doctor-section, .technical-responsible {
+      padding: 80px 24px 100px 24px;
       max-width: 800px;
       margin: 0 auto;
       opacity: 0;
-      transform: translateY(15px);
-      transition: all 1.8s cubic-bezier(0.22, 1, 0.36, 1); 
+      transform: translateY(20px);
+      transition: all 1.2s var(--transition-smooth);
+      will-change: transform, opacity;
     }
 
-    .editorial-section.visible, .technical-responsible.visible {
+    .editorial-section.visible, 
+    .doctor-section.visible, 
+    .technical-responsible.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
     .top-title {
-      font-size: 1.85rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
       line-height: 1.6;
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       color: var(--text);
       max-width: 650px;
       margin-left: auto;
       margin-right: auto;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
 
     .image-container {
       width: 100%;
-      aspect-ratio: 16 / 9; 
+      aspect-ratio: 16 / 9;
       overflow: hidden;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
+      border-radius: 2px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+      transition: transform 0.6s var(--transition-smooth);
+    }
+    
+    .image-container:hover {
+      transform: scale(1.01);
     }
 
     .image-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+      transition: transform 0.6s var(--transition-smooth);
+    }
+    
+    .image-container:hover img {
+      transform: scale(1.03);
     }
 
     .content {
@@ -210,89 +313,225 @@
 
     .label {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       letter-spacing: 5px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       display: block;
+      font-weight: 400;
     }
 
     .content p {
-      font-size: 1.2rem;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
       color: var(--text-muted);
       margin: 0;
+      line-height: 1.8;
+    }
+    
+    .content p strong {
+      color: var(--text);
+      font-weight: 400;
     }
 
+    /* BOTÕES - COM TIMER DE RESPOSTA */
     .btn {
       display: inline-block;
-      margin-top: 60px;
+      margin-top: 50px;
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--text);
-      padding: 0 0 6px 0;
+      padding: 10px 0 8px 0;
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 5px;
       border-bottom: 1px solid var(--text);
-      transition: opacity 0.4s ease;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
     }
 
     .btn:hover {
-      opacity: 0.4;
+      opacity: 0.5;
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      display: inline-block;
+      margin-top: 25px;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text-muted);
+      padding: 8px 0 6px 0;
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+      font-weight: 400;
+    }
+    
+    .btn-secondary:hover {
+      border-bottom-color: var(--text-muted);
+      color: var(--text);
+    }
+    
+    .response-time {
+      display: block;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.65rem;
+      color: var(--text-light);
+      letter-spacing: 2px;
+      margin-top: 15px;
+      font-weight: 300;
+    }
+    
+    .response-time .icon {
+      display: inline-block;
+      margin-right: 5px;
+      font-size: 0.7rem;
     }
 
-    .technical-responsible {
-      padding: 140px 20px 60px 20px;
+    /* SEÇÃO DO MÉDICO - DESTACADA */
+    .doctor-section {
+      padding: 100px 24px 80px 24px;
       text-align: center;
-      max-width: 200px; 
+      max-width: 600px;
       margin: 0 auto;
+      border-top: 1px solid var(--line);
+    }
+    
+    .doctor-photo {
+      width: 220px;
+      aspect-ratio: 3 / 4;
+      margin: 0 auto 30px auto;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .doctor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .doctor-name {
+      font-size: 1.4rem;
+      color: var(--text);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      font-weight: 300;
+    }
+    
+    .doctor-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 5px 0;
+    }
+    
+    .doctor-crm {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin: 0 0 30px 0;
+    }
+    
+    .doctor-bio {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .doctor-bio strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* SEÇÃO DE FILTRO - EXCLUSIVIDADE */
+    .exclusivity-notice {
+      max-width: 500px;
+      margin: 20px auto 0;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      text-transform: uppercase;
+      font-weight: 300;
+      border: 1px solid var(--line);
+    }
+
+    /* SEÇÃO TÉCNICA - MAIS DISCRETA */
+    .technical-responsible {
+      padding: 80px 20px 40px 20px;
+      text-align: center;
+      max-width: 200px;
+      margin: 0 auto;
+      opacity: 0.6;
+      transition: opacity 0.4s ease;
+    }
+    
+    .technical-responsible:hover {
+      opacity: 1;
     }
 
     .profile-label {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.6rem; 
+      font-size: 0.55rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-muted);
       display: block;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .profile-container {
-      width: 160px; 
-      aspect-ratio: 2 / 3; 
-      margin: 0 auto 25px auto;
+      width: 140px;
+      aspect-ratio: 2 / 3;
+      margin: 0 auto 20px auto;
       overflow: hidden;
+      border-radius: 1px;
     }
 
     .profile-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: grayscale(20%);
     }
 
     .profile-name {
-      font-size: 1.05rem; 
+      font-size: 1rem;
       color: var(--text);
       letter-spacing: 0.5px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       white-space: nowrap;
     }
 
     .profile-title {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem; 
-      font-weight: 400; 
+      font-size: 0.6rem;
+      font-weight: 400;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin: 0 0 5px 0;
+      margin: 0 0 4px 0;
     }
 
     .profile-crm {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 400;
       letter-spacing: 0.5px;
       color: var(--text-muted);
@@ -300,53 +539,189 @@
       white-space: nowrap;
     }
 
+    /* FOOTER COM LINKS LEGAIS */
     footer {
       text-align: center;
-      padding: 60px 20px 120px 20px;
+      padding: 40px 24px 80px 24px;
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 4px;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
       color: var(--text-muted);
       opacity: 0.6;
+      border-top: 1px solid var(--line);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      margin: 0 10px;
+    }
+    
+    footer a:hover {
+      color: var(--text);
+    }
+    
+    .footer-links {
+      margin-top: 15px;
     }
 
-    @media(max-width:900px){
-      .nav-bar { padding: 20px; }
-      header { padding: 160px 20px 20px 20px; }
-      h1 { font-size: 2.2rem; letter-spacing: 8px; }
-      .subtitle { margin-bottom: 30px; letter-spacing: 6px; }
-      .tagline { font-size: 1.25rem; max-width: 95%; }
+    /* ANIMAÇÕES */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MEDIA QUERIES OTIMIZADAS */
+    @media(max-width: 768px) {
+      .nav-bar {
+        padding: 18px 20px;
+      }
       
-      .editorial-section { padding: 30px 20px 80px 20px; }
-      .content p { font-size: 1.1rem; }
+      .nav-bar.scrolled {
+        padding: 12px 20px;
+      }
       
-      .technical-responsible { padding-top: 80px; }
+      header {
+        padding: 140px 20px 40px 20px;
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+        letter-spacing: 8px;
+      }
+      
+      .subtitle {
+        letter-spacing: 6px;
+        margin-bottom: 30px;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+        max-width: 100%;
+      }
+      
+      .editorial-section, .doctor-section {
+        padding: 50px 20px 70px 20px;
+      }
+      
+      .content p {
+        font-size: 1.05rem;
+      }
+      
+      .image-container {
+        margin-bottom: 35px;
+      }
+      
+      .nav-link {
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+      }
+      
+      .nav-item {
+        margin: 20px 0;
+      }
+      
+      .btn {
+        font-size: 0.7rem;
+        letter-spacing: 4px;
+      }
+      
+      .doctor-photo {
+        width: 180px;
+      }
+      
+      .exclusivity-notice {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+        padding: 15px;
+      }
+    }
+    
+    @media(max-width: 480px) {
+      header {
+        padding: 120px 16px 30px 16px;
+      }
+      
+      h1 {
+        font-size: 1.9rem;
+        letter-spacing: 6px;
+      }
+      
+      .editorial-section {
+        padding: 40px 16px 60px 16px;
+      }
+      
+      .image-container {
+        border-radius: 1px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+      }
+      
+      .content p {
+        font-size: 1rem;
+      }
+    }
+    
+    /* Otimizações para telas grandes */
+    @media(min-width: 1400px) {
+      .editorial-section, .doctor-section {
+        max-width: 900px;
+      }
+      
+      .content {
+        max-width: 620px;
+      }
+      
+      h1 {
+        font-size: 4rem;
+      }
+    }
+    
+    /* Preferências de movimento reduzido */
+    @media(prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- FIXED NAVIGATION -->
-  <nav class="nav-bar">
-    <a href="#" class="nav-logo">ANGMER</a>
-    <button class="menu-toggle" id="menuBtn" aria-label="Abrir Menu">
+  <nav class="nav-bar" id="navbar">
+    <a href="#" class="nav-logo" aria-label="ANGMER - Página inicial">ANGMER</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
 
-  <!-- MENU OVERLAY LINKS -->
-  <div class="nav-overlay" id="menuOverlay">
-    <ul class="nav-menu">
-      <li class="nav-item"><a href="#conceito" class="nav-link">O Conceito</a></li>
-      <li class="nav-item"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
-      <li class="nav-item"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
-      <li class="nav-item"><a href="#conduta" class="nav-link">A Conduta</a></li>
-      <li class="nav-item"><a href="#admissao" class="nav-link">Admissão</a></li>
+  <!-- MENU OVERLAY COM ANIMAÇÕES MELHORADAS -->
+  <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
+    <ul class="nav-menu" role="menu">
+      <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
+      <li class="nav-item" role="menuitem"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
+      <li class="nav-item" role="menuitem"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
+      <li class="nav-item" role="menuitem"><a href="#conduta" class="nav-link">A Conduta</a></li>
+      <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
+      <li class="nav-item" role="menuitem"><a href="#admissao" class="nav-link">Atendimento Reservado</a></li>
     </ul>
   </div>
 
+  <!-- HEADER PRINCIPAL -->
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICINA PRIVATIVA</p>
@@ -354,119 +729,140 @@
   </header>
 
   <!-- I. O CONCEITO -->
-  <section class="editorial-section" id="conceito">
+  <section class="editorial-section" id="conceito" aria-labelledby="conceito-title">
     <div class="image-container">
-      <img src="topo.png" alt="Espaço Privativo ANGMER">
+      <img src="topo.png" alt="Sala de atendimento privativa com poltrona em couro, iluminação indireta e atmosfera de tranquilidade absoluta" loading="lazy">
     </div>
     <div class="content">
-      <span class="label">I. O Conceito</span>
+      <span class="label" id="conceito-title">I. O Conceito</span>
       <p>A ANGMER redefine a relação entre o cuidado psiquiátrico e a privacidade de lideranças, executivos e famílias de alta exposição.</p>
-      <p style="margin-top: 30px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo intervenções exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
+      <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo intervenções exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
     </div>
   </section>
 
-  <!-- II. A INSPIRAÇÃO (ATUALIZADA COM O TEXTO DA IMAGE_4 E TERMO REAJUSTADO) -->
-  <section class="editorial-section" id="inspiracao">
+  <!-- II. A INSPIRAÇÃO -->
+  <section class="editorial-section" id="inspiracao" aria-labelledby="inspiracao-title">
     <div class="image-container">
-      <img src="foto2.png" alt="A Inspiração ANGMER">
+      <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa e poder contido" loading="lazy">
     </div>
     <div class="content">
-      <span class="label">II. A Inspiração</span>
+      <span class="label" id="inspiracao-title">II. A Inspiração</span>
       <p>O nome ANGMER deriva de um dos maiores símbolos contemporâneos de liderança silenciosa: Angela Merkel. Dezesseis anos à frente de uma potência global governada com absoluta sobriedade, competência técnica incontestável e total recusa à exposição.</p>
-      <p style="margin-top: 25px;">É dessa postura que nasce a identidade da ANGMER, pautada rigorosamente por <strong>discrição</strong> e <strong>competência</strong>.</p>
+      <p style="margin-top: 20px;">É dessa postura que nasce a identidade da ANGMER, pautada rigorosamente por <strong>discrição</strong> e <strong>competência</strong>.</p>
     </div>
   </section>
 
   <!-- III. RIGOR -->
-  <section class="editorial-section">
+  <section class="editorial-section" id="rigor" aria-labelledby="rigor-title">
     <div class="image-container">
-      <img src="foto3.png" alt="">
+      <img src="foto3.png" alt="Detalhe arquitetônico minimalista representando precisão e rigor técnico" loading="lazy">
     </div>
     <div class="content">
-      <span class="label">III. Rigor</span>
+      <span class="label" id="rigor-title">III. Rigor</span>
       <p>Condução clínica, competência e discrição para recuperar a saúde mental tanto de quadros agudos (problemas psiquiátricos de início súbito) quanto de quadros mais antigos que comprometem a saúde de líderes, de pessoas expostas e de seus familiares.</p>
     </div>
   </section>
 
   <!-- IV. A ABORDAGEM -->
-  <section class="editorial-section" id="abordagem">
+  <section class="editorial-section" id="abordagem" aria-labelledby="abordagem-title">
     <div class="image-container">
-      <img src="foto1.png" alt="">
+      <img src="foto1.png" alt="Corredor privativo com design atemporal transmitindo exclusividade e silêncio" loading="lazy">
     </div>
     <div class="content">
-      <span class="label">IV. A Abordagem</span>
+      <span class="label" id="abordagem-title">IV. A Abordagem</span>
       <p>A atuação ocorre sob absoluto silêncio, privacidade e total ausência de exposição. O atendimento é prestado diretamente em residências, escritórios ou hotéis, garantindo que a assistência médica a CEOs, figuras públicas e seus familiares permaneça inteiramente invisível a terceiros.</p>
     </div>
   </section>
 
   <!-- V. A CONDUTA -->
-  <section class="editorial-section" id="conduta">
+  <section class="editorial-section" id="conduta" aria-labelledby="conduta-title">
     <div class="image-container">
-      <img src="foto5.png" alt="">
+      <img src="foto5.png" alt="Biblioteca privada com luz natural suave simbolizando conhecimento e confidencialidade" loading="lazy">
     </div>
     <div class="content">
-      <span class="label">V. A Conduta</span>
+      <span class="label" id="conduta-title">V. A Conduta</span>
       <p>A ANGMER nasce como a antítese do espetáculo digital e da superexposição que distorcem a medicina contemporânea. É uma prática moldada para preencher a lacuna crítica de um atendimento psiquiátrico estritamente confidencial, focado e silencioso, voltado a quem não aceita transformar sua saúde em conteúdo de rede social.</p>
-      <p style="margin-top: 25px;">Nossa conduta é guiada pela sobriedade, pelo respeito rigoroso à condição alheia e por intervenções precisas, sem excessos ou supermedicação. O objetivo clínico é devolver a estabilidade sem paralisar o paciente: a sua vida e os seus negócios devem continuar fluindo ao longo do tratamento.</p>
-      <p style="margin-top: 25px;">Operamos inteiramente nos bastidores. Do trânsito invisível com entrada pela porta dos fundos ao esquema sigiloso e impenetrável de segurança dos prontuários, garantimos risco zero de exposição à mídia ou a terceiros. Na capital de São Paulo, o médico desloca-se pessoalmente até a sua residência, escritório ou hotel, assegurando um pacto de discrição absoluta.</p>
+      <p style="margin-top: 20px;">Nossa conduta é guiada pela sobriedade, pelo respeito rigoroso à condição alheia e por intervenções precisas, sem excessos ou supermedicação. O objetivo clínico é devolver a estabilidade sem paralisar o paciente: a sua vida e os seus negócios devem continuar fluindo ao longo do tratamento.</p>
+      <p style="margin-top: 20px;">Operamos inteiramente nos bastidores. Do trânsito invisível com entrada pela porta dos fundos ao esquema sigiloso e impenetrável de segurança dos prontuários, garantimos risco zero de exposição à mídia ou a terceiros. Na capital de São Paulo, o médico desloca-se pessoalmente até a sua residência, escritório ou hotel, assegurando um pacto de discrição absoluta.</p>
     </div>
   </section>
 
-  <!-- VI. ADMISSÃO -->
-  <section class="editorial-section" id="admissao">
+  <!-- O MÉDICO - NOVA SEÇÃO DESTACADA -->
+  <section class="doctor-section" id="medico" aria-labelledby="medico-title">
+    <span class="label" id="medico-title">Quem conduz seu cuidado</span>
+    <div class="doctor-photo">
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues, médico psiquiatra especializado em atendimento sigiloso para alta liderança" loading="lazy">
+    </div>
+    <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
+    <p class="doctor-title">Médico Psiquiatra</p>
+    <p class="doctor-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
+    <div class="doctor-bio">
+      <p>Formação em psiquiatria com atuação dedicada a <strong>casos de alta complexidade</strong> e ao atendimento de <strong>famílias empresariais</strong>. Experiência consolidada no manejo de quadros agudos e crônicos em ambientes que exigem <strong>máxima confidencialidade</strong> e precisão técnica.</p>
+      <p style="margin-top: 15px;">Sua prática é pautada pela <strong>discrição absoluta</strong>, pelo respeito à individualidade de cada paciente e por intervenções que respeitam o ritmo de vida e as responsabilidades de quem está sob os holofotes.</p>
+    </div>
+  </section>
+
+  <!-- VI. ATENDIMENTO RESERVADO -->
+  <section class="editorial-section" id="admissao" aria-labelledby="admissao-title">
     <div class="image-container">
-      <img src="fotonova.jpg" alt="">
+      <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo representando acesso reservado e confidencial" loading="lazy">
     </div>
     <div class="content">
-      <span class="label">VI. Admissão</span>
+      <span class="label" id="admissao-title">VI. Atendimento Reservado</span>
       <p>Sigilo absoluto para proteger sua privacidade e reputação.</p>
-      <a href="https://wa.me/5511977335683?text=Olá,%20tenho%20interesse%20no%20atendimento%20reservado." target="_blank" class="btn">Solicitar Admissão Confidencial</a>
+      
+      <a href="https://wa.me/5511977335683?text=Olá,%20tenho%20interesse%20no%20atendimento%20reservado." 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="btn" 
+         aria-label="Solicitar Atendimento Reservado via WhatsApp">
+        Solicitar Atendimento Reservado
+      </a>
+      
+      <span class="response-time">
+        <span class="icon">🔒</span> Resposta em até 2 horas, com sigilo absoluto
+      </span>
+      
+      <div class="exclusivity-notice">
+        Este serviço é destinado exclusivamente a indivíduos e famílias com exposição pública, empresarial ou patrimonial relevante.
+      </div>
     </div>
   </section>
 
   <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO -->
-  <section class="technical-responsible">
+  <section class="technical-responsible" aria-label="Informações do Responsável Técnico">
     <span class="profile-label">Responsável Técnico</span>
     <div class="profile-container">
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues">
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" loading="lazy">
     </div>
-    <h3 class="profile-name">Dr Elquer Rodrigues</h3>
+    <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
     <p class="profile-title">Médico Psiquiatra</p>
     <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
   </section>
 
+  <!-- FOOTER COM LINKS LEGAIS -->
   <footer>
     <p>ANGMER • MEDICINA PRIVATIVA • 2026</p>
+    <div class="footer-links">
+      <a href="#" aria-label="Política de Privacidade">Privacidade</a>
+      <span aria-hidden="true">•</span>
+      <a href="#" aria-label="Termos de Uso">Termos de Uso</a>
+      <span aria-hidden="true">•</span>
+      <a href="#" aria-label="Contato">Contato</a>
+    </div>
+    <p style="margin-top: 20px; font-size: 0.6rem; letter-spacing: 1px;">Todas as comunicações são criptografadas e confidenciais.</p>
   </footer>
 
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Performance: Executa apenas quando o DOM estiver pronto
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // Elementos do Menu
+      const menuBtn = document.getElementById('menuBtn');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navbar = document.getElementById('navbar');
+      let menuOpen = false;
+      let scrollTimeout;
 
-    function toggleMenu() {
-      menuBtn.classList.toggle('open');
-      menuOverlay.classList.toggle('open');
-      document.body.style.overflow = menuOverlay.classList.contains('open') ? 'hidden' : '';
-    }
-
-    menuBtn.addEventListener('click', toggleMenu);
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('open');
-        menuOverlay.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    const sections = document.querySelectorAll('.editorial-section, .technical-responsible');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.02 });
-    sections.forEach(section => observer.observe(section));
-  </script>
-</body>
-</html>
+      // Função para toggle
