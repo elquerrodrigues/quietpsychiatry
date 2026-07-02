@@ -343,6 +343,7 @@
       font-weight: 300;
     }
 
+    /*  CORREÇÃO 4: Comportamento Digital (The Row / Relojoaria Suíça) */
     .btn {
       display: inline-block;
       margin-top: 40px;
@@ -354,13 +355,14 @@
       text-transform: uppercase;
       letter-spacing: 6px;
       border-bottom: 1px solid var(--text);
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease; /* Apenas transição de opacidade */
       font-weight: 500;
     }
 
+    /* Comportamento calmo e maduro: apenas fade */
     .btn:hover {
       opacity: 0.4;
-      transform: none;
+      transform: none; /* Remove qualquer movimento brusco */
     }
     
     .response-time {
@@ -452,6 +454,8 @@
       border: 1px solid var(--line);
     }
 
+    /*  CORREÇÃO 2: Veredito da The Row - Remoção da seção de "Responsável Técnico" com foto.
+        As informações burocráticas agora residem exclusivamente no rodapé. */
     footer {
       text-align: center;
       padding: 60px 24px 80px 24px;
@@ -574,6 +578,7 @@
 
   <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
     <ul class="nav-menu" role="menu">
+      <!-- CORREÇÃO 1: Remoção total dos numerais romanos (Veredito da Hermès) -->
       <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
       <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
@@ -610,6 +615,7 @@
   <section class="doctor-section" id="medico" aria-labelledby="medico-title">
     <span class="label" id="medico-title">Quem conduz seu cuidado</span>
     <div class="doctor-photo">
+      <!-- CORREÇÃO 2: A foto do Dr. Elquer aparece apenas UMA VEZ. Aqui, de forma imponente. -->
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues, médico psiquiatra" loading="lazy">
     </div>
     <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
@@ -670,6 +676,7 @@
         A partir dela, define-se a frequência e a abordagem adequadas a cada momento.
       </div>
       
+      <!-- CORREÇÃO 3: Veredito da Aman Resorts - Ajuste no tom do texto do botão -->
       <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20ao%20protocolo%20de%20admissão." 
          target="_blank" 
          rel="noopener noreferrer"
@@ -679,7 +686,7 @@
       </a>
       
       <span class="response-time">
-        Resposta em até 2 horas, diretamente com o Dr. Elquer Rodrigues
+        🔒 Resposta em até 2 horas, diretamente com o Dr. Elquer Rodrigues
       </span>
       
       <div class="exclusivity-notice">
@@ -697,6 +704,7 @@
       <span aria-hidden="true">&nbsp;·&nbsp;</span>
       <a href="#" aria-label="Contato">Contato</a>
     </div>
+    <!-- A "burocracia elegante" da The Row fica apenas aqui, em texto puro -->
     <div class="footer-technical">
       <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
       <p class="profile-title">Médico Psiquiatra</p>
