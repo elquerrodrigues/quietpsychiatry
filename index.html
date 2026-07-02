@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO & Meta Tags -->
   <title>ANGMER | Psiquiatria Reservada para Alta Liderança — Atendimento Domiciliar Sigiloso</title>
   <meta name="description" content="Serviço médico psiquiátrico sob absoluto sigilo para CEOs, famílias empresariais e figuras públicas. Atendimento na sua residência, escritório ou hotel em São Paulo.">
   <meta name="keywords" content="psiquiatra sigiloso, psiquiatra domiciliar, psiquiatra para executivos, medicina privativa, atendimento psiquiátrico residencial, psiquiatra são paulo, saúde mental executivos, psiquiatra confidencial">
   <meta name="author" content="Dr. Elquer Rodrigues">
   <meta name="robots" content="index, follow">
   
-  <!-- Open Graph para WhatsApp e redes sociais -->
   <meta property="og:title" content="ANGMER | Psiquiatria Reservada para Alta Liderança">
   <meta property="og:description" content="Atendimento psiquiátrico domiciliar com absoluto sigilo. Sua saúde mental tratada onde você estiver, sem exposição.">
   <meta property="og:type" content="website">
@@ -21,29 +19,25 @@
   <meta property="og:site_name" content="ANGMER Medicina Privativa">
   <meta property="og:locale" content="pt_BR">
   
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ANGMER | Psiquiatria Reservada para Alta Liderança">
   <meta name="twitter:description" content="Atendimento psiquiátrico domiciliar com absoluto sigilo. Sua saúde mental tratada onde você estiver.">
   <meta name="twitter:image" content="https://angmer.com.br/topo.png">
   
-  <!-- Preload de fontes para performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   
   <style>
     :root {
-      --bg: #F2F0EB;          /* O Off-White mineral dos resorts Aman */
-      --text: #1C1B1A;        /* Carvão Editorial Profundo */
-      --text-muted: #4A4641;  /* Tom de Sombra Orgânica */
-      --text-light: #6B6560;  /* Cinza quente para detalhes */
-      --line: #E3E0D9;        
-      --gold: #A68B5B;        /* Dourado envelhecido para acentos discretos */
+      --bg: #F2F0EB;
+      --text: #1C1B1A;
+      --text-muted: #4A4641;
+      --text-light: #6B6560;
+      --line: #E3E0D9;
       --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
     }
     
@@ -64,13 +58,13 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, .tagline, .top-title, .profile-name, .doctor-name {
+    h1, h2, h3, .tagline, .doctor-name, .profile-name {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 300;
       margin: 0;
     }
 
-    /* BARRA DE NAVEGAÇÃO MINIMALISTA */
+    /* NAVEGAÇÃO */
     .nav-bar {
       position: fixed;
       top: 0;
@@ -107,7 +101,6 @@
       opacity: 0.6;
     }
 
-    /* ÍCONE HAMBÚRGUER REFINADO */
     .menu-toggle {
       display: flex;
       flex-direction: column;
@@ -145,7 +138,6 @@
       transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* TELA INTERNA DO MENU */
     .nav-overlay {
       position: fixed;
       top: 0;
@@ -210,7 +202,7 @@
       transform: translateX(-4px);
     }
 
-    /* HEADER PRINCIPAL */
+    /* HEADER */
     header {
       text-align: center;
       padding: 180px 24px 80px 24px;
@@ -244,15 +236,38 @@
     .tagline {
       font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       color: var(--text);
-      max-width: 620px;
+      max-width: 580px;
       line-height: 1.7;
       margin: 0 auto;
       animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
     }
 
-    /* SEÇÕES EDITORIAIS */
+    /* MANIFESTO */
+    .manifesto {
+      text-align: center;
+      padding: 0 24px 100px 24px;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1.2s var(--transition-smooth);
+    }
+    
+    .manifesto.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .manifesto p {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-muted);
+      line-height: 2.2;
+      margin: 0 0 30px 0;
+    }
+
+    /* SEÇÕES */
     .editorial-section, .doctor-section, .technical-responsible {
-      padding: 80px 24px 100px 24px;
+      padding: 100px 24px 100px 24px;
       max-width: 800px;
       margin: 0 auto;
       opacity: 0;
@@ -272,7 +287,7 @@
       width: 100%;
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       border-radius: 2px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
       transition: transform 0.6s var(--transition-smooth);
@@ -295,7 +310,7 @@
     }
 
     .content {
-      max-width: 580px;
+      max-width: 560px;
       margin: 0 auto;
       text-align: center;
     }
@@ -306,16 +321,16 @@
       letter-spacing: 5px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       display: block;
       font-weight: 400;
     }
 
     .content p {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
       color: var(--text-muted);
       margin: 0;
-      line-height: 1.8;
+      line-height: 1.9;
     }
     
     .content p strong {
@@ -323,24 +338,24 @@
       font-weight: 400;
     }
 
-    /* BOTÕES */
+    /* BOTÃO */
     .btn {
       display: inline-block;
       margin-top: 50px;
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--text);
-      padding: 10px 0 8px 0;
+      padding: 12px 0 8px 0;
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       border-bottom: 1px solid var(--text);
       transition: all 0.3s ease;
       font-weight: 500;
     }
 
     .btn:hover {
-      opacity: 0.5;
+      opacity: 0.4;
       transform: translateY(-2px);
     }
     
@@ -350,7 +365,7 @@
       font-size: 0.65rem;
       color: var(--text-light);
       letter-spacing: 2px;
-      margin-top: 15px;
+      margin-top: 18px;
       font-weight: 300;
     }
     
@@ -362,20 +377,21 @@
 
     /* SEÇÃO DO MÉDICO */
     .doctor-section {
-      padding: 100px 24px 80px 24px;
+      padding: 120px 24px 100px 24px;
       text-align: center;
       max-width: 600px;
       margin: 0 auto;
       border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
     
     .doctor-photo {
-      width: 220px;
+      width: 240px;
       aspect-ratio: 3 / 4;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 35px auto;
       overflow: hidden;
       border-radius: 2px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.07);
     }
     
     .doctor-photo img {
@@ -385,7 +401,7 @@
     }
     
     .doctor-name {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: var(--text);
       letter-spacing: 2px;
       margin-bottom: 8px;
@@ -407,14 +423,14 @@
       font-weight: 400;
       letter-spacing: 1px;
       color: var(--text-muted);
-      margin: 0 0 30px 0;
+      margin: 0 0 35px 0;
     }
     
     .doctor-bio {
       font-size: 1.1rem;
       color: var(--text-muted);
-      line-height: 1.8;
-      max-width: 500px;
+      line-height: 2;
+      max-width: 520px;
       margin: 0 auto;
       text-align: center;
     }
@@ -426,8 +442,8 @@
 
     /* FILTRO DE EXCLUSIVIDADE */
     .exclusivity-notice {
-      max-width: 500px;
-      margin: 20px auto 0;
+      max-width: 480px;
+      margin: 25px auto 0;
       padding: 20px;
       text-align: center;
       font-family: 'Inter', system-ui, sans-serif;
@@ -446,7 +462,7 @@
       text-align: center;
       max-width: 200px;
       margin: 0 auto;
-      opacity: 0.6;
+      opacity: 0.5;
       transition: opacity 0.4s ease;
     }
     
@@ -512,12 +528,11 @@
       text-align: center;
       padding: 40px 24px 80px 24px;
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       letter-spacing: 3px;
       color: var(--text-muted);
-      opacity: 0.6;
-      border-top: 1px solid var(--line);
-      max-width: 600px;
+      opacity: 0.45;
+      max-width: 500px;
       margin: 0 auto;
     }
     
@@ -533,7 +548,7 @@
     }
     
     .footer-links {
-      margin-top: 15px;
+      margin-top: 12px;
     }
 
     /* ANIMAÇÕES */
@@ -575,12 +590,16 @@
       }
       
       .tagline {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         max-width: 100%;
       }
       
       .editorial-section, .doctor-section {
-        padding: 50px 20px 70px 20px;
+        padding: 60px 20px 80px 20px;
+      }
+      
+      .manifesto {
+        padding: 0 20px 70px 20px;
       }
       
       .content p {
@@ -588,7 +607,7 @@
       }
       
       .image-container {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
       }
       
       .nav-link {
@@ -606,7 +625,7 @@
       }
       
       .doctor-photo {
-        width: 180px;
+        width: 200px;
       }
       
       .exclusivity-notice {
@@ -627,7 +646,7 @@
       }
       
       .editorial-section {
-        padding: 40px 16px 60px 16px;
+        padding: 50px 16px 70px 16px;
       }
       
       .image-container {
@@ -638,15 +657,19 @@
       .content p {
         font-size: 1rem;
       }
+      
+      .manifesto p {
+        font-size: 1rem;
+      }
     }
     
     @media(min-width: 1400px) {
       .editorial-section, .doctor-section {
-        max-width: 900px;
+        max-width: 850px;
       }
       
       .content {
-        max-width: 620px;
+        max-width: 580px;
       }
       
       h1 {
@@ -665,128 +688,124 @@
 </head>
 <body>
 
-  <!-- FIXED NAVIGATION -->
   <nav class="nav-bar" id="navbar">
-    <a href="#" class="nav-logo" aria-label="ANGMER - Página inicial">ANGMER</a>
-    <button class="menu-toggle" id="menuBtn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+    <a href="#" class="nav-logo" aria-label="ANGMER — Página inicial">ANGMER</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
 
-  <!-- MENU OVERLAY -->
   <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
     <ul class="nav-menu" role="menu">
+      <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
+      <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
       <li class="nav-item" role="menuitem"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
       <li class="nav-item" role="menuitem"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
       <li class="nav-item" role="menuitem"><a href="#conduta" class="nav-link">A Conduta</a></li>
-      <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
-      <li class="nav-item" role="menuitem"><a href="#admissao" class="nav-link">Atendimento Reservado</a></li>
+      <li class="nav-item" role="menuitem"><a href="#atendimento" class="nav-link">Atendimento</a></li>
     </ul>
   </div>
 
-  <!-- HEADER PRINCIPAL -->
+  <!-- HEADER -->
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICINA PRIVATIVA</p>
-    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Absoluto silêncio e invisibilidade a terceiros.</p>
+    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
   </header>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="manifesto" aria-label="Manifesto ANGMER">
+    <p>Acreditamos que o silêncio é a forma mais elevada de respeito.</p>
+    <p>Que a excelência médica dispensa holofotes.</p>
+    <p>Que a privacidade não é um luxo — é um direito de quem carrega o peso de decidir.</p>
+  </section>
 
   <!-- I. O CONCEITO -->
   <section class="editorial-section" id="conceito" aria-labelledby="conceito-title">
     <div class="image-container">
-      <img src="topo.png" alt="Sala de atendimento privativa com poltrona em couro, iluminação indireta e atmosfera de tranquilidade absoluta" loading="lazy">
+      <img src="topo.png" alt="Sala de atendimento privativa com poltrona em couro, iluminação indireta e atmosfera de tranquilidade" loading="lazy">
     </div>
     <div class="content">
       <span class="label" id="conceito-title">I. O Conceito</span>
-      <p>A ANGMER redefine a relação entre o cuidado psiquiátrico e a privacidade de lideranças, executivos e famílias de alta exposição.</p>
-      <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, oferecendo intervenções exatamente onde você se sente mais seguro e confortável, garantindo que sua saúde e sua reputação permaneçam rigorosamente protegidas.</p>
+      <p>A ANGMER redefine a relação entre o cuidado psiquiátrico e a preservação da vida de lideranças, executivos e famílias de alta exposição.</p>
+      <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento médico vai até você, no ambiente onde se sente mais seguro, garantindo que sua saúde — e tudo que você construiu — permaneçam protegidos.</p>
     </div>
   </section>
 
-  <!-- II. A INSPIRAÇÃO -->
-  <section class="editorial-section" id="inspiracao" aria-labelledby="inspiracao-title">
-    <div class="image-container">
-      <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa e poder contido" loading="lazy">
-    </div>
-    <div class="content">
-      <span class="label" id="inspiracao-title">II. A Inspiração</span>
-      <p>O nome ANGMER deriva de um dos maiores símbolos contemporâneos de liderança silenciosa: Angela Merkel. Dezesseis anos à frente de uma potência global governada com absoluta sobriedade, competência técnica incontestável e total recusa à exposição.</p>
-      <p style="margin-top: 20px;">É dessa postura que nasce a identidade da ANGMER, pautada rigorosamente por <strong>discrição</strong> e <strong>competência</strong>.</p>
-    </div>
-  </section>
-
-  <!-- III. RIGOR -->
-  <section class="editorial-section" id="rigor" aria-labelledby="rigor-title">
-    <div class="image-container">
-      <img src="foto3.png" alt="Detalhe arquitetônico minimalista representando precisão e rigor técnico" loading="lazy">
-    </div>
-    <div class="content">
-      <span class="label" id="rigor-title">III. Rigor</span>
-      <p>Condução clínica, competência e discrição para recuperar a saúde mental tanto de quadros agudos (problemas psiquiátricos de início súbito) quanto de quadros mais antigos que comprometem a saúde de líderes, de pessoas expostas e de seus familiares.</p>
-    </div>
-  </section>
-
-  <!-- IV. A ABORDAGEM -->
-  <section class="editorial-section" id="abordagem" aria-labelledby="abordagem-title">
-    <div class="image-container">
-      <img src="foto1.png" alt="Corredor privativo com design atemporal transmitindo exclusividade e silêncio" loading="lazy">
-    </div>
-    <div class="content">
-      <span class="label" id="abordagem-title">IV. A Abordagem</span>
-      <p>A atuação ocorre sob absoluto silêncio, privacidade e total ausência de exposição. O atendimento é prestado diretamente em residências, escritórios ou hotéis, garantindo que a assistência médica a CEOs, figuras públicas e seus familiares permaneça inteiramente invisível a terceiros.</p>
-    </div>
-  </section>
-
-  <!-- V. A CONDUTA -->
-  <section class="editorial-section" id="conduta" aria-labelledby="conduta-title">
-    <div class="image-container">
-      <img src="foto5.png" alt="Biblioteca privada com luz natural suave simbolizando conhecimento e confidencialidade" loading="lazy">
-    </div>
-    <div class="content">
-      <span class="label" id="conduta-title">V. A Conduta</span>
-      <p>A ANGMER nasce como a antítese do espetáculo digital e da superexposição que distorcem a medicina contemporânea. É uma prática moldada para preencher a lacuna crítica de um atendimento psiquiátrico estritamente confidencial, focado e silencioso, voltado a quem não aceita transformar sua saúde em conteúdo de rede social.</p>
-      <p style="margin-top: 20px;">Nossa conduta é guiada pela sobriedade, pelo respeito rigoroso à condição alheia e por intervenções precisas, sem excessos ou supermedicação. O objetivo clínico é devolver a estabilidade sem paralisar o paciente: a sua vida e os seus negócios devem continuar fluindo ao longo do tratamento.</p>
-      <p style="margin-top: 20px;">Operamos inteiramente nos bastidores. Do trânsito invisível com entrada pela porta dos fundos ao esquema sigiloso e impenetrável de segurança dos prontuários, garantimos risco zero de exposição à mídia ou a terceiros. Na capital de São Paulo, o médico desloca-se pessoalmente até a sua residência, escritório ou hotel, assegurando um pacto de discrição absoluta.</p>
-    </div>
-  </section>
-
-  <!-- O MÉDICO -->
+  <!-- II. O MÉDICO (COMPETÊNCIA PRIMEIRO) -->
   <section class="doctor-section" id="medico" aria-labelledby="medico-title">
     <span class="label" id="medico-title">Quem conduz seu cuidado</span>
     <div class="doctor-photo">
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues, médico psiquiatra especializado em atendimento sigiloso para alta liderança" loading="lazy">
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues, médico psiquiatra" loading="lazy">
     </div>
     <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
     <p class="doctor-title">Médico Psiquiatra</p>
     <p class="doctor-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
     <div class="doctor-bio">
-      <p>Formação em psiquiatria com atuação dedicada a <strong>casos de alta complexidade</strong> e ao atendimento de <strong>famílias empresariais</strong>. Experiência consolidada no manejo de quadros agudos e crônicos em ambientes que exigem <strong>máxima confidencialidade</strong> e precisão técnica.</p>
-      <p style="margin-top: 15px;">Sua prática é pautada pela <strong>discrição absoluta</strong>, pelo respeito à individualidade de cada paciente e por intervenções que respeitam o ritmo de vida e as responsabilidades de quem está sob os holofotes.</p>
+      <p>Dr. Elquer Rodrigues construiu sua prática sobre uma convicção: <strong>a psiquiatria de excelência não exige que o paciente abdique de sua vida para se tratar</strong>. É possível recuperar a estabilidade sem interromper o comando.</p>
+      <p style="margin-top: 20px;">Com atuação dedicada a <strong>casos de alta complexidade</strong> e ao atendimento de <strong>famílias empresariais</strong>, desenvolveu uma abordagem onde a precisão clínica e a proteção à reputação caminham juntas — uma como fundamento, a outra como consequência natural.</p>
     </div>
   </section>
 
-  <!-- VI. ATENDIMENTO RESERVADO -->
-  <section class="editorial-section" id="admissao" aria-labelledby="admissao-title">
+  <!-- III. A INSPIRAÇÃO (ENXUTA) -->
+  <section class="editorial-section" id="inspiracao" aria-labelledby="inspiracao-title">
     <div class="image-container">
-      <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo representando acesso reservado e confidencial" loading="lazy">
+      <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="admissao-title">VI. Atendimento Reservado</span>
-      <p>Sigilo absoluto para proteger sua privacidade e reputação.</p>
+      <span class="label" id="inspiracao-title">III. A Inspiração</span>
+      <p>ANGMER inspira-se em uma das lideranças mais discretas e eficazes do século: <strong>Angela Merkel</strong>. Dezesseis anos de poder exercido com sobriedade, competência e recusa absoluta ao espetáculo.</p>
+      <p style="margin-top: 20px;">É dessa postura que nasce nossa identidade.</p>
+    </div>
+  </section>
+
+  <!-- IV. A ABORDAGEM (SINFONIA SEMÂNTICA: "INVISÍVEL") -->
+  <section class="editorial-section" id="abordagem" aria-labelledby="abordagem-title">
+    <div class="image-container">
+      <img src="foto1.png" alt="Corredor privativo com design atemporal" loading="lazy">
+    </div>
+    <div class="content">
+      <span class="label" id="abordagem-title">IV. A Abordagem</span>
+      <p>A atuação ocorre em residências, escritórios ou hotéis, com a garantia de que a assistência médica a CEOs, figuras públicas e seus familiares permaneça inteiramente <strong>invisível a terceiros</strong>.</p>
+      <p style="margin-top: 20px;">Nenhum registro público. Nenhum trânsito em salas de espera. Nenhum nome em sistemas compartilhados.</p>
+    </div>
+  </section>
+
+  <!-- V. A CONDUTA (SINFONIA SEMÂNTICA: "BASTIDORES" E "PROTEÇÃO") -->
+  <section class="editorial-section" id="conduta" aria-labelledby="conduta-title">
+    <div class="image-container">
+      <img src="foto5.png" alt="Biblioteca privada com luz natural suave" loading="lazy">
+    </div>
+    <div class="content">
+      <span class="label" id="conduta-title">V. A Conduta</span>
+      <p>A ANGMER nasce como a antítese do espetáculo digital que distorce a medicina contemporânea. Uma prática moldada para quem não aceita transformar sua saúde em conteúdo.</p>
+      <p style="margin-top: 20px;">Nossa conduta é guiada por intervenções precisas, sem excessos ou supermedicação. O objetivo clínico é devolver a estabilidade sem paralisar: sua vida e seus negócios devem continuar fluindo durante o tratamento.</p>
+      <p style="margin-top: 20px;">Operamos inteiramente <strong>nos bastidores</strong>. O deslocamento é discreto. Os prontuários seguem protocolos concebidos para minimizar qualquer possibilidade de exposição. Em São Paulo, o médico vai pessoalmente até você, assegurando um pacto de <strong>proteção absoluta</strong> à sua trajetória.</p>
+    </div>
+  </section>
+
+  <!-- VI. ATENDIMENTO (SINFONIA SEMÂNTICA: "RESERVADO") -->
+  <section class="editorial-section" id="atendimento" aria-labelledby="atendimento-title">
+    <div class="image-container">
+      <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo" loading="lazy">
+    </div>
+    <div class="content">
+      <span class="label" id="atendimento-title">VI. Atendimento</span>
+      <p>Proteção à sua privacidade e à sua reputação.</p>
       
       <a href="https://wa.me/5511977335683?text=Olá,%20tenho%20interesse%20no%20atendimento%20reservado." 
          target="_blank" 
          rel="noopener noreferrer"
          class="btn" 
          aria-label="Solicitar Atendimento Reservado via WhatsApp">
-        Solicitar Atendimento Reservado
+        Solicitar Atendimento
       </a>
       
       <span class="response-time">
-        <span class="icon">🔒</span> Resposta em até 2 horas, com sigilo absoluto
+        <span class="icon">🔒</span> Resposta em até 2 horas
       </span>
       
       <div class="exclusivity-notice">
@@ -795,7 +814,7 @@
     </div>
   </section>
 
-  <!-- ASSINATURA DO RESPONSÁVEL TÉCNICO -->
+  <!-- RESPONSÁVEL TÉCNICO -->
   <section class="technical-responsible" aria-label="Informações do Responsável Técnico">
     <span class="profile-label">Responsável Técnico</span>
     <div class="profile-container">
@@ -806,119 +825,90 @@
     <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
   </section>
 
-  <!-- FOOTER COM LINKS LEGAIS -->
+  <!-- FOOTER -->
   <footer>
-    <p>ANGMER • MEDICINA PRIVATIVA • 2026</p>
+    <p>ANGMER • MEDICINA PRIVATIVA</p>
     <div class="footer-links">
       <a href="#" aria-label="Política de Privacidade">Privacidade</a>
-      <span aria-hidden="true">•</span>
-      <a href="#" aria-label="Termos de Uso">Termos de Uso</a>
-      <span aria-hidden="true">•</span>
+      <span aria-hidden="true">&nbsp;·&nbsp;</span>
+      <a href="#" aria-label="Termos de Uso">Termos</a>
+      <span aria-hidden="true">&nbsp;·&nbsp;</span>
       <a href="#" aria-label="Contato">Contato</a>
     </div>
-    <p style="margin-top: 20px; font-size: 0.6rem; letter-spacing: 1px;">Todas as comunicações são criptografadas e confidenciais.</p>
+    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Canais com criptografia de ponta a ponta e retenção zero de metadados.</p>
   </footer>
 
   <script>
-    // Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbar = document.getElementById('navbar');
-    
-    function openMenu() {
-      menuBtn.classList.add('open');
-      menuOverlay.classList.add('open');
-      menuBtn.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closeMenu() {
-      menuBtn.classList.remove('open');
-      menuOverlay.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-    
-    function toggleMenu() {
-      if (menuOverlay.classList.contains('open')) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    }
-    
-    menuBtn.addEventListener('click', toggleMenu);
-    
-    // Fechar menu ao clicar em um link
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        closeMenu();
-        // Smooth scroll para a seção
-        const targetId = link.getAttribute('href');
-        if (targetId && targetId !== '#') {
-          e.preventDefault();
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            setTimeout(() => {
-              targetElement.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }, 300); // Pequeno delay para a animação de fechamento
-          }
-        }
-      });
-    });
-    
-    // Fechar menu com tecla ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menuOverlay.classList.contains('open')) {
-        closeMenu();
-      }
-    });
-    
-    // Efeito de scroll na navbar
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-      if (scrollTimeout) {
-        window.cancelAnimationFrame(scrollTimeout);
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      const menuBtn = document.getElementById('menuBtn');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navbar = document.getElementById('navbar');
+      let scrollTimeout;
+
+      function openMenu() {
+        menuBtn.classList.add('open');
+        menuOverlay.classList.add('open');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
       }
       
-      scrollTimeout = window.requestAnimationFrame(() => {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
-    });
-    
-    // Intersection Observer para animações
-    const sections = document.querySelectorAll('.editorial-section, .doctor-section, .technical-responsible');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          // Parar de observar após a animação
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { 
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-    
-    sections.forEach(section => observer.observe(section));
-    
-    // Prevenir scroll quando menu está aberto (para iOS)
-    document.addEventListener('touchmove', (e) => {
-      if (menuOverlay.classList.contains('open') && !menuOverlay.contains(e.target)) {
-        e.preventDefault();
+      function closeMenu() {
+        menuBtn.classList.remove('open');
+        menuOverlay.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
-    }, { passive: false });
-    
-  </script>
-</body>
-</html>
+      
+      function toggleMenu() {
+        if (menuOverlay.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+      
+      menuBtn.addEventListener('click', toggleMenu);
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          closeMenu();
+          const targetId = link.getAttribute('href');
+          if (targetId && targetId !== '#') {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              setTimeout(() => {
+                targetElement.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }, 300);
+            }
+          }
+        });
+      });
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOverlay.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+      
+      window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+          window.cancelAnimationFrame(scrollTimeout);
+        }
+        scrollTimeout = window.requestAnimationFrame(() => {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+      });
+      
+      const sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto, .technical-responsible');
+      
+      const observer = new IntersectionObserver((entries)
