@@ -64,7 +64,6 @@
       margin: 0;
     }
 
-    /* NAVEGAÇÃO */
     .nav-bar {
       position: fixed;
       top: 0;
@@ -202,7 +201,6 @@
       transform: translateX(-4px);
     }
 
-    /* HEADER */
     header {
       text-align: center;
       padding: 180px 24px 80px 24px;
@@ -242,7 +240,6 @@
       animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
     }
 
-    /* MANIFESTO */
     .manifesto {
       text-align: center;
       padding: 0 24px 100px 24px;
@@ -265,7 +262,6 @@
       margin: 0 0 30px 0;
     }
 
-    /* SEÇÕES */
     .editorial-section, .doctor-section, .technical-responsible {
       padding: 100px 24px 100px 24px;
       max-width: 800px;
@@ -338,7 +334,6 @@
       font-weight: 400;
     }
 
-    /* BOTÃO */
     .btn {
       display: inline-block;
       margin-top: 50px;
@@ -368,14 +363,7 @@
       margin-top: 18px;
       font-weight: 300;
     }
-    
-    .response-time .icon {
-      display: inline-block;
-      margin-right: 5px;
-      font-size: 0.7rem;
-    }
 
-    /* SEÇÃO DO MÉDICO */
     .doctor-section {
       padding: 120px 24px 100px 24px;
       text-align: center;
@@ -440,7 +428,6 @@
       font-weight: 400;
     }
 
-    /* FILTRO DE EXCLUSIVIDADE */
     .exclusivity-notice {
       max-width: 480px;
       margin: 25px auto 0;
@@ -456,7 +443,6 @@
       border: 1px solid var(--line);
     }
 
-    /* SEÇÃO TÉCNICA */
     .technical-responsible {
       padding: 80px 20px 40px 20px;
       text-align: center;
@@ -523,7 +509,6 @@
       white-space: nowrap;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px 24px 80px 24px;
@@ -551,7 +536,6 @@
       margin-top: 12px;
     }
 
-    /* ANIMAÇÕES */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -563,126 +547,41 @@
       }
     }
 
-    /* MEDIA QUERIES */
     @media(max-width: 768px) {
-      .nav-bar {
-        padding: 18px 20px;
-      }
-      
-      .nav-bar.scrolled {
-        padding: 12px 20px;
-      }
-      
-      header {
-        padding: 140px 20px 40px 20px;
-        min-height: 100vh;
-        min-height: 100dvh;
-      }
-      
-      h1 {
-        font-size: 2.2rem;
-        letter-spacing: 8px;
-      }
-      
-      .subtitle {
-        letter-spacing: 6px;
-        margin-bottom: 30px;
-      }
-      
-      .tagline {
-        font-size: 1.15rem;
-        max-width: 100%;
-      }
-      
-      .editorial-section, .doctor-section {
-        padding: 60px 20px 80px 20px;
-      }
-      
-      .manifesto {
-        padding: 0 20px 70px 20px;
-      }
-      
-      .content p {
-        font-size: 1.05rem;
-      }
-      
-      .image-container {
-        margin-bottom: 40px;
-      }
-      
-      .nav-link {
-        font-size: 1.6rem;
-        letter-spacing: 3px;
-      }
-      
-      .nav-item {
-        margin: 20px 0;
-      }
-      
-      .btn {
-        font-size: 0.7rem;
-        letter-spacing: 4px;
-      }
-      
-      .doctor-photo {
-        width: 200px;
-      }
-      
-      .exclusivity-notice {
-        font-size: 0.6rem;
-        letter-spacing: 1px;
-        padding: 15px;
-      }
+      .nav-bar { padding: 18px 20px; }
+      .nav-bar.scrolled { padding: 12px 20px; }
+      header { padding: 140px 20px 40px 20px; min-height: 100vh; min-height: 100dvh; }
+      h1 { font-size: 2.2rem; letter-spacing: 8px; }
+      .subtitle { letter-spacing: 6px; margin-bottom: 30px; }
+      .tagline { font-size: 1.15rem; max-width: 100%; }
+      .editorial-section, .doctor-section { padding: 60px 20px 80px 20px; }
+      .manifesto { padding: 0 20px 70px 20px; }
+      .content p { font-size: 1.05rem; }
+      .image-container { margin-bottom: 40px; }
+      .nav-link { font-size: 1.6rem; letter-spacing: 3px; }
+      .nav-item { margin: 20px 0; }
+      .btn { font-size: 0.7rem; letter-spacing: 4px; }
+      .doctor-photo { width: 200px; }
+      .exclusivity-notice { font-size: 0.6rem; letter-spacing: 1px; padding: 15px; }
     }
     
     @media(max-width: 480px) {
-      header {
-        padding: 120px 16px 30px 16px;
-      }
-      
-      h1 {
-        font-size: 1.9rem;
-        letter-spacing: 6px;
-      }
-      
-      .editorial-section {
-        padding: 50px 16px 70px 16px;
-      }
-      
-      .image-container {
-        border-radius: 1px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
-      }
-      
-      .content p {
-        font-size: 1rem;
-      }
-      
-      .manifesto p {
-        font-size: 1rem;
-      }
+      header { padding: 120px 16px 30px 16px; }
+      h1 { font-size: 1.9rem; letter-spacing: 6px; }
+      .editorial-section { padding: 50px 16px 70px 16px; }
+      .image-container { border-radius: 1px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04); }
+      .content p { font-size: 1rem; }
+      .manifesto p { font-size: 1rem; }
     }
     
     @media(min-width: 1400px) {
-      .editorial-section, .doctor-section {
-        max-width: 850px;
-      }
-      
-      .content {
-        max-width: 580px;
-      }
-      
-      h1 {
-        font-size: 4rem;
-      }
+      .editorial-section, .doctor-section { max-width: 850px; }
+      .content { max-width: 580px; }
+      h1 { font-size: 4rem; }
     }
     
     @media(prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
@@ -709,21 +608,18 @@
     </ul>
   </div>
 
-  <!-- HEADER -->
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICINA PRIVATIVA</p>
     <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
   </header>
 
-  <!-- MANIFESTO -->
   <section class="manifesto" id="manifesto" aria-label="Manifesto ANGMER">
     <p>Acreditamos que o silêncio é a forma mais elevada de respeito.</p>
     <p>Que a excelência médica dispensa holofotes.</p>
     <p>Que a privacidade não é um luxo — é um direito de quem carrega o peso de decidir.</p>
   </section>
 
-  <!-- I. O CONCEITO -->
   <section class="editorial-section" id="conceito" aria-labelledby="conceito-title">
     <div class="image-container">
       <img src="topo.png" alt="Sala de atendimento privativa com poltrona em couro, iluminação indireta e atmosfera de tranquilidade" loading="lazy">
@@ -735,7 +631,6 @@
     </div>
   </section>
 
-  <!-- II. O MÉDICO (COMPETÊNCIA PRIMEIRO) -->
   <section class="doctor-section" id="medico" aria-labelledby="medico-title">
     <span class="label" id="medico-title">Quem conduz seu cuidado</span>
     <div class="doctor-photo">
@@ -750,7 +645,6 @@
     </div>
   </section>
 
-  <!-- III. A INSPIRAÇÃO (ENXUTA) -->
   <section class="editorial-section" id="inspiracao" aria-labelledby="inspiracao-title">
     <div class="image-container">
       <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa" loading="lazy">
@@ -762,7 +656,6 @@
     </div>
   </section>
 
-  <!-- IV. A ABORDAGEM (SINFONIA SEMÂNTICA: "INVISÍVEL") -->
   <section class="editorial-section" id="abordagem" aria-labelledby="abordagem-title">
     <div class="image-container">
       <img src="foto1.png" alt="Corredor privativo com design atemporal" loading="lazy">
@@ -774,7 +667,6 @@
     </div>
   </section>
 
-  <!-- V. A CONDUTA (SINFONIA SEMÂNTICA: "BASTIDORES" E "PROTEÇÃO") -->
   <section class="editorial-section" id="conduta" aria-labelledby="conduta-title">
     <div class="image-container">
       <img src="foto5.png" alt="Biblioteca privada com luz natural suave" loading="lazy">
@@ -787,7 +679,6 @@
     </div>
   </section>
 
-  <!-- VI. ATENDIMENTO (SINFONIA SEMÂNTICA: "RESERVADO") -->
   <section class="editorial-section" id="atendimento" aria-labelledby="atendimento-title">
     <div class="image-container">
       <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo" loading="lazy">
@@ -814,7 +705,6 @@
     </div>
   </section>
 
-  <!-- RESPONSÁVEL TÉCNICO -->
   <section class="technical-responsible" aria-label="Informações do Responsável Técnico">
     <span class="profile-label">Responsável Técnico</span>
     <div class="profile-container">
@@ -825,7 +715,6 @@
     <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>ANGMER • MEDICINA PRIVATIVA</p>
     <div class="footer-links">
@@ -839,76 +728,93 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      
-      const menuBtn = document.getElementById('menuBtn');
-      const menuOverlay = document.getElementById('menuOverlay');
-      const navLinks = document.querySelectorAll('.nav-link');
-      const navbar = document.getElementById('navbar');
-      let scrollTimeout;
+    const menuBtn = document.getElementById('menuBtn');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.getElementById('navbar');
+    let scrollTimeout;
 
-      function openMenu() {
-        menuBtn.classList.add('open');
-        menuOverlay.classList.add('open');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
+    function openMenu() {
+      menuBtn.classList.add('open');
+      menuOverlay.classList.add('open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+      menuBtn.classList.remove('open');
+      menuOverlay.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    
+    menuBtn.addEventListener('click', () => {
+      if (menuOverlay.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
       }
-      
-      function closeMenu() {
-        menuBtn.classList.remove('open');
-        menuOverlay.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+    });
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        closeMenu();
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            setTimeout(() => {
+              targetElement.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }, 300);
+          }
+        }
+      });
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('open')) {
+        closeMenu();
       }
-      
-      function toggleMenu() {
-        if (menuOverlay.classList.contains('open')) {
-          closeMenu();
+    });
+    
+    window.addEventListener('scroll', () => {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = window.requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
         } else {
-          openMenu();
+          navbar.classList.remove('scrolled');
         }
+      });
+    });
+    
+    const sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto, .technical-responsible');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px'
+    });
+    
+    sections.forEach(section => observer.observe(section));
+    
+    document.addEventListener('touchmove', (e) => {
+      if (menuOverlay.classList.contains('open') && !menuOverlay.contains(e.target)) {
+        e.preventDefault();
       }
-      
-      menuBtn.addEventListener('click', toggleMenu);
-      
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          closeMenu();
-          const targetId = link.getAttribute('href');
-          if (targetId && targetId !== '#') {
-            e.preventDefault();
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              setTimeout(() => {
-                targetElement.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }, 300);
-            }
-          }
-        });
-      });
-      
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && menuOverlay.classList.contains('open')) {
-          closeMenu();
-        }
-      });
-      
-      window.addEventListener('scroll', () => {
-        if (scrollTimeout) {
-          window.cancelAnimationFrame(scrollTimeout);
-        }
-        scrollTimeout = window.requestAnimationFrame(() => {
-          if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-          } else {
-            navbar.classList.remove('scrolled');
-          }
-        });
-      });
-      
-      const sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto, .technical-responsible');
-      
-      const observer = new IntersectionObserver((entries)
+    }, { passive: false });
+  </script>
+</body>
+</html>
