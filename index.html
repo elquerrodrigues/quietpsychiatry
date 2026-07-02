@@ -13,9 +13,9 @@
         }
 
         body {
-            background-color: #f5f3ef; /* Tom de creme idêntico ao fundo da imagem */
-            color: #2c2a29; /* Cor escura elegante para o texto, evitando o preto puro */
-            font-family: 'Times New Roman', Times, serif; /* Fonte serifada clássica do site */
+            background-color: #f5f3ef; 
+            color: #2c2a29; 
+            font-family: 'Times New Roman', Times, serif; 
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -37,12 +37,11 @@
 
         .logo {
             font-size: 20px;
-            letter-spacing: 0.35em; /* Espaçamento largo característico */
+            letter-spacing: 0.35em; 
             font-weight: 400;
             text-transform: uppercase;
         }
 
-        /* Ícone do Menu Hambúrguer */
         .menu-icon {
             display: flex;
             flex-direction: column;
@@ -59,6 +58,18 @@
             background-color: #2c2a29;
         }
 
+        /* Imagem de Destaque Simulada */
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 120px;
+            background-color: #333; /* Espaço reservado para a imagem que aparece no topo */
+            margin: 0 auto 40px auto;
+            background-image: url('https://via.placeholder.com/600x120/1a1a1a/ffffff?text=Espa%C3%A7o+para+Imagem');
+            background-size: cover;
+            background-position: center;
+        }
+
         /* Conteúdo Principal */
         main {
             flex: 1;
@@ -72,7 +83,7 @@
         }
 
         .section-atendimento {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .title-atendimento {
@@ -89,6 +100,7 @@
             font-weight: 400;
             line-height: 1.5;
             color: #3a3836;
+            margin-bottom: 40px;
         }
 
         /* Seção do Botão/Link Solicitar Atendimento */
@@ -104,7 +116,7 @@
             color: #2c2a29;
             text-decoration: none;
             padding-bottom: 6px;
-            border-bottom: 1px solid #2c2a29; /* Linha horizontal fina abaixo do texto */
+            border-bottom: 1px solid #2c2a29; 
             display: inline-block;
             transition: opacity 0.3s ease;
         }
@@ -113,15 +125,50 @@
             opacity: 0.6;
         }
 
+        /* Quadro de Aviso Retornado */
+        .aviso-exclusividade {
+            background-color: #f0eee9; /* Fundo ligeiramente destacado */
+            border: 1px solid #e3e0d8;
+            padding: 30px 20px;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .aviso-exclusividade p {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.6;
+            color: #5a5854;
+        }
+
+        /* Links Antigos Retornados */
+        .footer-links {
+            margin-bottom: 50px;
+        }
+
+        .footer-links p {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            color: #8a8884;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .footer-links .sub-links {
+            letter-spacing: 0.1em;
+            text-transform: none;
+        }
+
         /* Rodapé com Informações do Médico */
         footer {
             max-width: 600px;
             width: 100%;
-            margin: 40px auto 0 auto;
+            margin: 0 auto;
         }
 
         .doctor-info {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .doctor-name {
@@ -144,12 +191,6 @@
             letter-spacing: 0.05em;
             color: #6e6c68;
         }
-
-        .security-note {
-            font-size: 11px;
-            color: #8a8884;
-            letter-spacing: 0.03em;
-        }
     </style>
 </head>
 <body>
@@ -163,6 +204,9 @@
         </div>
     </header>
 
+    <!-- Adicionei uma div simulando o espaço da imagem de topo que aparece na sua nova captura -->
+    <div class="hero-image"></div>
+
     <main>
         <section class="section-atendimento">
             <h2 class="title-atendimento">ATENDIMENTO</h2>
@@ -172,6 +216,17 @@
         <section class="section-solicitar">
             <a href="#" class="btn-solicitar">SOLICITAR ATENDIMENTO</a>
         </section>
+
+        <!-- Quadro de aviso restaurado -->
+        <div class="aviso-exclusividade">
+            <p>Este serviço é destinado exclusivamente a indivíduos e famílias com exposição pública, empresarial ou patrimonial relevante.</p>
+        </div>
+
+        <!-- Links restaurados -->
+        <div class="footer-links">
+            <p>ANGMER • MEDICINA PRIVATIVA</p>
+            <p class="sub-links">Privacidade &nbsp; • &nbsp; Termos &nbsp; • &nbsp; Contato</p>
+        </div>
     </main>
 
     <footer>
@@ -180,8 +235,6 @@
             <p class="doctor-title">Médico Psiquiatra</p>
             <p class="doctor-crm">CRM SP 157303 • RQE 85941</p>
         </div>
-        
-        <p class="security-note">Comunicações protegidas por criptografia de ponta a ponta.</p>
     </footer>
 
 </body>
