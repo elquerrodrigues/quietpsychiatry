@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ANGMER | Psiquiatria Reservada — Atendimento Domiciliar Sigiloso para Alta Liderança</title>
-  <meta name="description" content="Serviço médico psiquiátrico sob sigilo absoluto. Atendimento na sua residência, escritório ou hotel em São Paulo. Para quem não pode ser visto.">
+  <title>ANGMER | Psiquiatria Reservada para Alta Liderança — Atendimento Domiciliar Sigiloso</title>
+  <meta name="description" content="Serviço médico psiquiátrico sob sigilo para CEOs, figuras públicas e famílias de alta exposição. Atendimento na sua residência, escritório ou hotel em São Paulo.">
   <meta name="keywords" content="psiquiatra sigiloso, psiquiatra domiciliar, psiquiatra para executivos, medicina privativa, atendimento psiquiátrico residencial, psiquiatra são paulo, saúde mental executivos, psiquiatra confidencial">
   <meta name="author" content="Dr. Elquer Rodrigues">
   <meta name="robots" content="index, follow">
@@ -93,11 +93,11 @@
       text-decoration: none;
       color: var(--text);
       font-weight: 400;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.3s ease;
     }
     
     .nav-logo:hover {
-      opacity: 0.5;
+      opacity: 0.6;
     }
 
     .menu-toggle {
@@ -193,12 +193,12 @@
       color: var(--text);
       text-decoration: none;
       letter-spacing: 4px;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
       display: inline-block;
     }
 
     .nav-link:hover {
-      opacity: 0.35;
+      opacity: 0.4;
       transform: translateX(-4px);
     }
 
@@ -215,11 +215,10 @@
 
     h1 {
       font-size: clamp(2.4rem, 5vw, 3.6rem);
-      letter-spacing: 12px;
+      letter-spacing: 10px;
       color: var(--text);
       margin-bottom: 20px;
       animation: fadeInUp 0.8s var(--transition-smooth);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
 
     .subtitle {
@@ -240,15 +239,6 @@
       line-height: 1.7;
       margin: 0 auto;
       animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
-    }
-    
-    .tagline em {
-      font-style: italic;
-      display: block;
-      margin-top: 12px;
-      color: var(--text-muted);
-      font-size: 0.95em;
-      letter-spacing: 1px;
     }
 
     .manifesto {
@@ -273,8 +263,8 @@
       margin: 0 0 24px 0;
     }
 
-    .editorial-section, .doctor-section {
-      padding: 100px 24px;
+    .editorial-section, .doctor-section, .technical-responsible {
+      padding: 100px 24px 100px 24px;
       max-width: 800px;
       margin: 0 auto;
       opacity: 0;
@@ -283,7 +273,9 @@
       will-change: transform, opacity;
     }
 
-    .editorial-section.visible, .doctor-section.visible {
+    .editorial-section.visible, 
+    .doctor-section.visible, 
+    .technical-responsible.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -295,7 +287,7 @@
       margin-bottom: 60px;
       border-radius: 2px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
-      transition: transform 0.7s var(--transition-smooth);
+      transition: transform 0.6s var(--transition-smooth);
     }
     
     .image-container:hover {
@@ -307,7 +299,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.7s var(--transition-smooth);
+      transition: transform 0.6s var(--transition-smooth);
     }
     
     .image-container:hover img {
@@ -355,26 +347,35 @@
 
     .btn {
       display: inline-block;
-      margin-top: 48px;
+      margin-top: 40px;
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--text);
-      padding: 14px 0 10px 0;
+      padding: 12px 0 8px 0;
       text-decoration: none;
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 6px;
       border-bottom: 1px solid var(--text);
-      transition: opacity 0.5s ease, letter-spacing 0.5s ease;
+      transition: opacity 0.5s ease;
       font-weight: 500;
     }
 
     .btn:hover {
-      opacity: 0.35;
-      letter-spacing: 8px;
+      opacity: 0.4;
+    }
+    
+    .response-time {
+      display: block;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.65rem;
+      color: var(--text-light);
+      letter-spacing: 2px;
+      margin-top: 18px;
+      font-weight: 300;
     }
 
     .doctor-section {
-      padding: 120px 24px;
+      padding: 120px 24px 100px 24px;
       text-align: center;
       max-width: 600px;
       margin: 0 auto;
@@ -395,11 +396,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-    
-    .doctor-photo:hover img {
-      transform: scale(1.02);
     }
     
     .doctor-name {
@@ -442,9 +438,75 @@
       font-weight: 400;
     }
 
+    .exclusivity-notice {
+      max-width: 480px;
+      margin: 25px auto 0;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      text-transform: uppercase;
+      font-weight: 300;
+      border: 1px solid var(--line);
+    }
+
+    .technical-responsible {
+      padding: 80px 20px 40px 20px;
+      text-align: center;
+      max-width: 200px;
+      margin: 0 auto;
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
+    }
+    
+    .technical-responsible:hover {
+      opacity: 1;
+    }
+
+    .profile-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .profile-name {
+      font-size: 1rem;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+      white-space: nowrap;
+    }
+
+    .profile-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 4px 0;
+    }
+
+    .profile-crm {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin: 0;
+      white-space: nowrap;
+    }
+
     footer {
       text-align: center;
-      padding: 60px 24px 80px 24px;
+      padding: 40px 24px 80px 24px;
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.6rem;
       letter-spacing: 3px;
@@ -452,11 +514,6 @@
       opacity: 0.45;
       max-width: 500px;
       margin: 0 auto;
-      transition: opacity 0.4s ease;
-    }
-    
-    footer:hover {
-      opacity: 0.7;
     }
     
     footer a {
@@ -472,34 +529,6 @@
     
     .footer-links {
       margin-top: 12px;
-    }
-    
-    .footer-technical {
-      margin-top: 25px;
-      padding-top: 25px;
-      border-top: 1px solid var(--line);
-      display: inline-block;
-      text-align: center;
-    }
-    
-    .footer-technical .profile-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--text);
-      letter-spacing: 0.5px;
-      margin-bottom: 3px;
-    }
-    
-    .footer-technical .profile-title,
-    .footer-technical .profile-crm {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 0 0 4px 0;
-      white-space: nowrap;
     }
 
     @keyframes fadeInUp {
@@ -520,7 +549,7 @@
       h1 { font-size: 2.2rem; letter-spacing: 8px; }
       .subtitle { letter-spacing: 6px; margin-bottom: 30px; }
       .tagline { font-size: 1.15rem; max-width: 100%; }
-      .editorial-section, .doctor-section { padding: 60px 20px; }
+      .editorial-section, .doctor-section { padding: 60px 20px 80px 20px; }
       .manifesto { padding: 0 20px 70px 20px; }
       .content p { font-size: 1.05rem; }
       .image-container { margin-bottom: 40px; }
@@ -528,12 +557,13 @@
       .nav-item { margin: 20px 0; }
       .btn { font-size: 0.7rem; letter-spacing: 4px; }
       .doctor-photo { width: 200px; }
+      .exclusivity-notice { font-size: 0.6rem; letter-spacing: 1px; padding: 15px; }
     }
     
     @media(max-width: 480px) {
       header { padding: 120px 16px 30px 16px; }
       h1 { font-size: 1.9rem; letter-spacing: 6px; }
-      .editorial-section { padding: 50px 16px; }
+      .editorial-section { padding: 50px 16px 70px 16px; }
       .image-container { border-radius: 1px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04); }
       .content p { font-size: 1rem; }
       .manifesto p { font-size: 1.05rem; }
@@ -566,7 +596,7 @@
       <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
       <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
-      <li class="nav-item" role="menuitem"><a href="#essencia" class="nav-link">A Essência</a></li>
+      <li class="nav-item" role="menuitem"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
       <li class="nav-item" role="menuitem"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
       <li class="nav-item" role="menuitem"><a href="#conduta" class="nav-link">A Conduta</a></li>
       <li class="nav-item" role="menuitem"><a href="#atendimento" class="nav-link">Atendimento</a></li>
@@ -576,7 +606,7 @@
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICINA PRIVATIVA</p>
-    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel.<em>Em silêncio.</em></p>
+    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
   </header>
 
   <section class="manifesto" id="manifesto" aria-label="Manifesto ANGMER">
@@ -610,14 +640,14 @@
     </div>
   </section>
 
-  <section class="editorial-section" id="essencia" aria-labelledby="essencia-title">
+  <section class="editorial-section" id="inspiracao" aria-labelledby="inspiracao-title">
     <div class="image-container">
       <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="essencia-title">A Essência</span>
-      <p>A ANGMER nasce da convicção de que o verdadeiro poder reside na invisibilidade. A eficácia prolongada e a estabilidade inabalável exigem retaguarda, dispensando o espetáculo.</p>
-      <p style="margin-top: 20px;">É da recusa ao holofote que construímos nossa identidade, pautada por <strong>discrição absoluta</strong> e <strong>precisão técnica</strong>. Uma presença sentida exclusivamente por seus resultados.</p>
+      <span class="label" id="inspiracao-title">A Inspiração</span>
+      <p>ANGMER inspira-se em uma das lideranças mais discretas e eficazes do século: <strong>Angela Merkel</strong>. Dezesseis anos de poder exercido com sobriedade, competência e total recusa ao espetáculo.</p>
+      <p style="margin-top: 20px;">É dessa postura que nasce nossa identidade, pautada por <strong>discrição</strong> e <strong>competência</strong>.</p>
     </div>
   </section>
 
@@ -656,17 +686,32 @@
       
       <div class="process-info">
         A avaliação inicial tem duração média de 1h30.<br>
-        A partir dela, define-se a condução adequada para a sua continuidade clínica e pessoal.
+        A partir dela, define-se a frequência e a abordagem adequadas a cada momento.
       </div>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20contato%20reservado%20com%20a%20ANGMER." 
+      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20ao%20protocolo%20de%20admissão." 
          target="_blank" 
          rel="noopener noreferrer"
          class="btn" 
-         aria-label="Solicitar contato reservado via WhatsApp">
-        Solicitar Contato Reservado
+         aria-label="Solicitar Atendimento Reservado via WhatsApp">
+        Solicitar Atendimento
       </a>
+      
+      <span class="response-time">
+        🔒 Resposta em até 2 horas, diretamente com o Dr. Elquer Rodrigues
+      </span>
+      
+      <div class="exclusivity-notice">
+        Este serviço é destinado exclusivamente a indivíduos e famílias com exposição pública, empresarial ou patrimonial relevante.
+      </div>
     </div>
+  </section>
+
+  <section class="technical-responsible" aria-label="Informações do Responsável Técnico">
+    <span class="profile-label">Responsável Técnico</span>
+    <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
+    <p class="profile-title">Médico Psiquiatra</p>
+    <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
   </section>
 
   <footer>
@@ -677,11 +722,6 @@
       <a href="#" aria-label="Termos de Uso">Termos</a>
       <span aria-hidden="true">&nbsp;·&nbsp;</span>
       <a href="#" aria-label="Contato">Contato</a>
-    </div>
-    <div class="footer-technical">
-      <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
-      <p class="profile-title">Médico Psiquiatra</p>
-      <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
     </div>
     <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Comunicações protegidas por criptografia de ponta a ponta.</p>
   </footer>
@@ -732,7 +772,7 @@
                   behavior: 'smooth',
                   block: 'start'
                 });
-              }, 350);
+              }, 300);
             }
           }
         });
@@ -757,7 +797,7 @@
         });
       });
       
-      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto');
+      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto, .technical-responsible');
       
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
