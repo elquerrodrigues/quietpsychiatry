@@ -343,7 +343,6 @@
       font-weight: 300;
     }
 
-    /*  CORREÇÃO 4: Comportamento Digital (The Row / Relojoaria Suíça) */
     .btn {
       display: inline-block;
       margin-top: 40px;
@@ -355,24 +354,13 @@
       text-transform: uppercase;
       letter-spacing: 6px;
       border-bottom: 1px solid var(--text);
-      transition: opacity 0.5s ease; /* Apenas transição de opacidade */
+      transition: opacity 0.5s ease;
       font-weight: 500;
     }
 
-    /* Comportamento calmo e maduro: apenas fade */
     .btn:hover {
       opacity: 0.4;
-      transform: none; /* Remove qualquer movimento brusco */
-    }
-    
-    .response-time {
-      display: block;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
-      color: var(--text-light);
-      letter-spacing: 2px;
-      margin-top: 18px;
-      font-weight: 300;
+      transform: none;
     }
 
     .doctor-section {
@@ -439,23 +427,6 @@
       font-weight: 400;
     }
 
-    .exclusivity-notice {
-      max-width: 480px;
-      margin: 25px auto 0;
-      padding: 20px;
-      text-align: center;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      text-transform: uppercase;
-      font-weight: 300;
-      border: 1px solid var(--line);
-    }
-
-    /*  CORREÇÃO 2: Veredito da The Row - Remoção da seção de "Responsável Técnico" com foto.
-        As informações burocráticas agora residem exclusivamente no rodapé. */
     footer {
       text-align: center;
       padding: 60px 24px 80px 24px;
@@ -542,7 +513,6 @@
       .nav-item { margin: 20px 0; }
       .btn { font-size: 0.7rem; letter-spacing: 4px; }
       .doctor-photo { width: 200px; }
-      .exclusivity-notice { font-size: 0.6rem; letter-spacing: 1px; padding: 15px; }
     }
     
     @media(max-width: 480px) {
@@ -578,11 +548,11 @@
 
   <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
     <ul class="nav-menu" role="menu">
-      <!-- CORREÇÃO 1: Remoção total dos numerais romanos (Veredito da Hermès) -->
       <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
       <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
-      <li class="nav-item" role="menuitem"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
+      <!-- Link ajustado para o novo ID -->
+      <li class="nav-item" role="menuitem"><a href="#essencia" class="nav-link">A Essência</a></li>
       <li class="nav-item" role="menuitem"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
       <li class="nav-item" role="menuitem"><a href="#conduta" class="nav-link">A Conduta</a></li>
       <li class="nav-item" role="menuitem"><a href="#atendimento" class="nav-link">Atendimento</a></li>
@@ -615,7 +585,6 @@
   <section class="doctor-section" id="medico" aria-labelledby="medico-title">
     <span class="label" id="medico-title">Quem conduz seu cuidado</span>
     <div class="doctor-photo">
-      <!-- CORREÇÃO 2: A foto do Dr. Elquer aparece apenas UMA VEZ. Aqui, de forma imponente. -->
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues, médico psiquiatra" loading="lazy">
     </div>
     <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
@@ -627,14 +596,15 @@
     </div>
   </section>
 
-  <section class="editorial-section" id="inspiracao" aria-labelledby="inspiracao-title">
+  <!-- CORREÇÃO 1: A Essência (O Enigma substituindo a literalidade de Angela Merkel) -->
+  <section class="editorial-section" id="essencia" aria-labelledby="essencia-title">
     <div class="image-container">
       <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa" loading="lazy">
     </div>
     <div class="content">
-      <span class="label" id="inspiracao-title">A Inspiração</span>
-      <p>ANGMER inspira-se em uma das lideranças mais discretas e eficazes do século: <strong>Angela Merkel</strong>. Dezesseis anos de poder exercido com sobriedade, competência e total recusa ao espetáculo.</p>
-      <p style="margin-top: 20px;">É dessa postura que nasce nossa identidade, pautada por <strong>discrição</strong> e <strong>competência</strong>.</p>
+      <span class="label" id="essencia-title">A Essência</span>
+      <p>A ANGMER nasce da convicção de que o verdadeiro poder reside na invisibilidade. A eficácia prolongada e a estabilidade inabalável exigem retaguarda, dispensando o espetáculo.</p>
+      <p style="margin-top: 20px;">É da recusa ao holofote que construímos nossa identidade, pautada por <strong>discrição absoluta</strong> e <strong>precisão técnica</strong>. Uma presença sentida exclusivamente por seus resultados.</p>
     </div>
   </section>
 
@@ -663,6 +633,7 @@
     </div>
   </section>
 
+  <!-- CORREÇÃO 2: Atendimento e Botão elevados para o conceito de "Assessoria Privada", removendo justificativas de exclusividade -->
   <section class="editorial-section" id="atendimento" aria-labelledby="atendimento-title">
     <div class="image-container">
       <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo" loading="lazy">
@@ -673,25 +644,16 @@
       
       <div class="process-info">
         A avaliação inicial tem duração média de 1h30.<br>
-        A partir dela, define-se a frequência e a abordagem adequadas a cada momento.
+        A partir dela, define-se a condução adequada para a sua continuidade clínica e pessoal.
       </div>
       
-      <!-- CORREÇÃO 3: Veredito da Aman Resorts - Ajuste no tom do texto do botão -->
-      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20ao%20protocolo%20de%20admissão." 
+      <a href="https://wa.me/5511977335683?text=Solicito%20contato%20com%20a%20assessoria%20privada." 
          target="_blank" 
          rel="noopener noreferrer"
          class="btn" 
-         aria-label="Solicitar Acesso ao Protocolo de Admissão via WhatsApp">
-        Solicitar Atendimento
+         aria-label="Acionar a assessoria privada via WhatsApp">
+        Acionar Assessoria Privada
       </a>
-      
-      <span class="response-time">
-        🔒 Resposta em até 2 horas, diretamente com o Dr. Elquer Rodrigues
-      </span>
-      
-      <div class="exclusivity-notice">
-        Este serviço é destinado exclusivamente a indivíduos e famílias com exposição pública, empresarial ou patrimonial relevante.
-      </div>
     </div>
   </section>
 
@@ -704,7 +666,6 @@
       <span aria-hidden="true">&nbsp;·&nbsp;</span>
       <a href="#" aria-label="Contato">Contato</a>
     </div>
-    <!-- A "burocracia elegante" da The Row fica apenas aqui, em texto puro -->
     <div class="footer-technical">
       <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
       <p class="profile-title">Médico Psiquiatra</p>
