@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ANGMER | Psiquiatria Reservada para Alta Liderança — Atendimento Domiciliar Sigiloso</title>
-  <meta name="description" content="Serviço médico psiquiátrico sob sigilo para CEOs, figuras públicas e famílias de alta exposição. Atendimento na sua residência, escritório ou hotel em São Paulo.">
+  <title>ANGMER | Psiquiatria Reservada — Atendimento Domiciliar Sigiloso para Alta Liderança</title>
+  <meta name="description" content="Serviço médico psiquiátrico sob sigilo absoluto. Atendimento na sua residência, escritório ou hotel em São Paulo. Para quem não pode ser visto.">
   <meta name="keywords" content="psiquiatra sigiloso, psiquiatra domiciliar, psiquiatra para executivos, medicina privativa, atendimento psiquiátrico residencial, psiquiatra são paulo, saúde mental executivos, psiquiatra confidencial">
   <meta name="author" content="Dr. Elquer Rodrigues">
   <meta name="robots" content="index, follow">
@@ -263,8 +263,8 @@
       margin: 0 0 24px 0;
     }
 
-    .editorial-section, .doctor-section, .technical-responsible {
-      padding: 100px 24px 100px 24px;
+    .editorial-section, .doctor-section {
+      padding: 100px 24px;
       max-width: 800px;
       margin: 0 auto;
       opacity: 0;
@@ -273,9 +273,7 @@
       will-change: transform, opacity;
     }
 
-    .editorial-section.visible, 
-    .doctor-section.visible, 
-    .technical-responsible.visible {
+    .editorial-section.visible, .doctor-section.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -345,6 +343,7 @@
       font-weight: 300;
     }
 
+    /*  CORREÇÃO 4: Comportamento Digital (The Row / Relojoaria Suíça) */
     .btn {
       display: inline-block;
       margin-top: 40px;
@@ -356,12 +355,14 @@
       text-transform: uppercase;
       letter-spacing: 6px;
       border-bottom: 1px solid var(--text);
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease; /* Apenas transição de opacidade */
       font-weight: 500;
     }
 
+    /* Comportamento calmo e maduro: apenas fade */
     .btn:hover {
       opacity: 0.4;
+      transform: none; /* Remove qualquer movimento brusco */
     }
     
     .response-time {
@@ -375,7 +376,7 @@
     }
 
     .doctor-section {
-      padding: 120px 24px 100px 24px;
+      padding: 120px 24px;
       text-align: center;
       max-width: 600px;
       margin: 0 auto;
@@ -453,60 +454,11 @@
       border: 1px solid var(--line);
     }
 
-    .technical-responsible {
-      padding: 80px 20px 40px 20px;
-      text-align: center;
-      max-width: 200px;
-      margin: 0 auto;
-      opacity: 0.5;
-      transition: opacity 0.4s ease;
-    }
-    
-    .technical-responsible:hover {
-      opacity: 1;
-    }
-
-    .profile-label {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.55rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .profile-name {
-      font-size: 1rem;
-      color: var(--text);
-      letter-spacing: 0.5px;
-      margin-bottom: 3px;
-      white-space: nowrap;
-    }
-
-    .profile-title {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 0 0 4px 0;
-    }
-
-    .profile-crm {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      color: var(--text-muted);
-      margin: 0;
-      white-space: nowrap;
-    }
-
+    /*  CORREÇÃO 2: Veredito da The Row - Remoção da seção de "Responsável Técnico" com foto.
+        As informações burocráticas agora residem exclusivamente no rodapé. */
     footer {
       text-align: center;
-      padding: 40px 24px 80px 24px;
+      padding: 60px 24px 80px 24px;
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.6rem;
       letter-spacing: 3px;
@@ -514,6 +466,11 @@
       opacity: 0.45;
       max-width: 500px;
       margin: 0 auto;
+      transition: opacity 0.3s ease;
+    }
+    
+    footer:hover {
+      opacity: 0.7;
     }
     
     footer a {
@@ -529,6 +486,34 @@
     
     .footer-links {
       margin-top: 12px;
+    }
+    
+    .footer-technical {
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+      display: inline-block;
+      text-align: center;
+    }
+    
+    .footer-technical .profile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+    
+    .footer-technical .profile-title,
+    .footer-technical .profile-crm {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 4px 0;
+      white-space: nowrap;
     }
 
     @keyframes fadeInUp {
@@ -549,7 +534,7 @@
       h1 { font-size: 2.2rem; letter-spacing: 8px; }
       .subtitle { letter-spacing: 6px; margin-bottom: 30px; }
       .tagline { font-size: 1.15rem; max-width: 100%; }
-      .editorial-section, .doctor-section { padding: 60px 20px 80px 20px; }
+      .editorial-section, .doctor-section { padding: 60px 20px; }
       .manifesto { padding: 0 20px 70px 20px; }
       .content p { font-size: 1.05rem; }
       .image-container { margin-bottom: 40px; }
@@ -563,7 +548,7 @@
     @media(max-width: 480px) {
       header { padding: 120px 16px 30px 16px; }
       h1 { font-size: 1.9rem; letter-spacing: 6px; }
-      .editorial-section { padding: 50px 16px 70px 16px; }
+      .editorial-section { padding: 50px 16px; }
       .image-container { border-radius: 1px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04); }
       .content p { font-size: 1rem; }
       .manifesto p { font-size: 1.05rem; }
@@ -593,6 +578,7 @@
 
   <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
     <ul class="nav-menu" role="menu">
+      <!-- CORREÇÃO 1: Remoção total dos numerais romanos (Veredito da Hermès) -->
       <li class="nav-item" role="menuitem"><a href="#manifesto" class="nav-link">Manifesto</a></li>
       <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
       <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
@@ -629,6 +615,7 @@
   <section class="doctor-section" id="medico" aria-labelledby="medico-title">
     <span class="label" id="medico-title">Quem conduz seu cuidado</span>
     <div class="doctor-photo">
+      <!-- CORREÇÃO 2: A foto do Dr. Elquer aparece apenas UMA VEZ. Aqui, de forma imponente. -->
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues, médico psiquiatra" loading="lazy">
     </div>
     <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
@@ -689,11 +676,12 @@
         A partir dela, define-se a frequência e a abordagem adequadas a cada momento.
       </div>
       
+      <!-- CORREÇÃO 3: Veredito da Aman Resorts - Ajuste no tom do texto do botão -->
       <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20ao%20protocolo%20de%20admissão." 
          target="_blank" 
          rel="noopener noreferrer"
          class="btn" 
-         aria-label="Solicitar Atendimento Reservado via WhatsApp">
+         aria-label="Solicitar Acesso ao Protocolo de Admissão via WhatsApp">
         Solicitar Atendimento
       </a>
       
@@ -707,13 +695,6 @@
     </div>
   </section>
 
-  <section class="technical-responsible" aria-label="Informações do Responsável Técnico">
-    <span class="profile-label">Responsável Técnico</span>
-    <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
-    <p class="profile-title">Médico Psiquiatra</p>
-    <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
-  </section>
-
   <footer>
     <p>ANGMER • MEDICINA PRIVATIVA</p>
     <div class="footer-links">
@@ -722,6 +703,12 @@
       <a href="#" aria-label="Termos de Uso">Termos</a>
       <span aria-hidden="true">&nbsp;·&nbsp;</span>
       <a href="#" aria-label="Contato">Contato</a>
+    </div>
+    <!-- A "burocracia elegante" da The Row fica apenas aqui, em texto puro -->
+    <div class="footer-technical">
+      <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
+      <p class="profile-title">Médico Psiquiatra</p>
+      <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
     </div>
     <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Comunicações protegidas por criptografia de ponta a ponta.</p>
   </footer>
@@ -797,7 +784,7 @@
         });
       });
       
-      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto, .technical-responsible');
+      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .manifesto');
       
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
