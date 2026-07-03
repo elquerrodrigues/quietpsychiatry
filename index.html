@@ -4,32 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ANGMER | Psiquiatria Reservada para Alta Liderança — Atendimento Domiciliar Sigiloso</title>
-  <meta name="description" content="Serviço médico psiquiátrico sob sigilo para CEOs, figuras públicas e famílias de alta exposição. Atendimento na sua residência, escritório ou hotel em São Paulo.">
-  <meta name="keywords" content="psiquiatra sigiloso, psiquiatra domiciliar, psiquiatra para executivos, medicina privativa, atendimento psiquiátrico residencial, psiquiatra são paulo, saúde mental executivos, psiquiatra confidencial">
-  <meta name="author" content="Dr. Elquer Rodrigues">
+  <title>ANGMER | Psiquiatria Reservada — Atendimento Domiciliar Sigiloso para Alta Liderança</title>
+  <meta name="description" content="Serviço médico psiquiátrico sob sigilo absoluto. Atendimento na sua residência, escritório ou hotel em São Paulo. Para quem não pode ser visto.">
+  <meta name="keywords" content="psiquiatra sigiloso, medicina privativa, atendimento psiquiátrico residencial, psiquiatra executivos são paulo">
+  <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
-  
-  <meta property="og:title" content="ANGMER | Psiquiatria Reservada para Alta Liderança">
-  <meta property="og:description" content="Atendimento psiquiátrico domiciliar com sigilo. Sua saúde mental tratada onde você estiver, sem exposição.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://quietpsychiatry.com">
-  <meta property="og:image" content="https://quietpsychiatry.com/topo.png">
-  <meta property="og:image:alt" content="Ambiente reservado para atendimento psiquiátrico exclusivo">
-  <meta property="og:site_name" content="ANGMER Medicina Privativa">
-  <meta property="og:locale" content="pt_BR">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ANGMER | Psiquiatria Reservada para Alta Liderança">
-  <meta name="twitter:description" content="Atendimento psiquiátrico domiciliar com sigilo. Sua saúde mental tratada onde você estiver.">
-  <meta name="twitter:image" content="https://quietpsychiatry.com/topo.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   
   <style>
     :root {
@@ -41,11 +24,7 @@
       --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'Cormorant Garamond', Georgia, serif;
@@ -54,11 +33,10 @@
       line-height: 1.9;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
       overflow-x: hidden;
     }
 
-    h1, h2, h3, .tagline, .doctor-name, .profile-name {
+    h1, h2, h3, .tagline {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 300;
       margin: 0;
@@ -66,18 +44,11 @@
 
     .nav-bar {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 32px;
-      box-sizing: border-box;
-      z-index: 100;
+      top: 0; left: 0; width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px 32px; z-index: 100;
       background: rgba(242, 240, 235, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       transition: all 0.4s var(--transition-smooth);
     }
     
@@ -88,97 +59,35 @@
     }
 
     .nav-logo {
-      font-size: 1.1rem;
-      letter-spacing: 6px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 400;
-      transition: opacity 0.3s ease;
+      font-size: 1.1rem; letter-spacing: 6px; text-decoration: none;
+      color: var(--text); font-weight: 400; transition: opacity 0.3s ease;
     }
-    
-    .nav-logo:hover {
-      opacity: 0.6;
-    }
+    .nav-logo:hover { opacity: 0.6; }
 
     .menu-toggle {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 24px;
-      height: 16px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 102;
-      transition: transform 0.3s ease;
+      display: flex; flex-direction: column; justify-content: space-between;
+      width: 24px; height: 16px; background: transparent; border: none;
+      cursor: pointer; padding: 0; z-index: 102; transition: transform 0.3s ease;
     }
-    
-    .menu-toggle:hover {
-      transform: scale(1.05);
-    }
-
+    .menu-toggle:hover { transform: scale(1.05); }
     .menu-toggle span {
-      width: 100%;
-      height: 1.5px;
-      background-color: var(--text);
-      transition: all 0.4s var(--transition-smooth);
-      transform-origin: center;
+      width: 100%; height: 1.5px; background-color: var(--text);
+      transition: all 0.4s var(--transition-smooth); transform-origin: center;
     }
-
-    .menu-toggle.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .menu-toggle.open span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-    .menu-toggle.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
+    .menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .nav-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      height: 100dvh;
-      background: var(--bg);
-      z-index: 101;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      visibility: hidden;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh;
+      background: var(--bg); z-index: 101; display: flex; justify-content: center;
+      align-items: center; opacity: 0; visibility: hidden;
       transition: opacity 0.5s var(--transition-smooth), visibility 0.5s var(--transition-smooth);
-      overflow-y: auto;
     }
-
-    .nav-overlay.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .nav-menu {
-      list-style: none;
-      padding: 40px 20px;
-      margin: 0;
-      text-align: center;
-    }
-
-    .nav-item {
-      margin: 28px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s var(--transition-smooth);
-    }
-    
-    .nav-overlay.open .nav-item {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
+    .nav-overlay.open { opacity: 1; visibility: visible; }
+    .nav-menu { list-style: none; padding: 40px 20px; text-align: center; }
+    .nav-item { margin: 28px 0; opacity: 0; transform: translateY(20px); transition: all 0.6s var(--transition-smooth); }
+    .nav-overlay.open .nav-item { opacity: 1; transform: translateY(0); }
     .nav-overlay.open .nav-item:nth-child(1) { transition-delay: 0.1s; }
     .nav-overlay.open .nav-item:nth-child(2) { transition-delay: 0.2s; }
     .nav-overlay.open .nav-item:nth-child(3) { transition-delay: 0.3s; }
@@ -188,411 +97,65 @@
     .nav-overlay.open .nav-item:nth-child(7) { transition-delay: 0.7s; }
 
     .nav-link {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: 4px;
-      transition: all 0.3s ease;
-      display: inline-block;
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--text);
+      text-decoration: none; letter-spacing: 4px; transition: all 0.3s ease; display: inline-block;
     }
-
-    .nav-link:hover {
-      opacity: 0.4;
-      transform: translateX(-4px);
-    }
+    .nav-link:hover { opacity: 0.4; transform: translateX(-4px); }
 
     header {
-      text-align: center;
-      padding: 180px 24px 80px 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      min-height: 100dvh;
+      text-align: center; padding: 180px 24px 80px 24px; display: flex;
+      flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;
     }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); letter-spacing: 10px; color: var(--text); margin-bottom: 20px; animation: fadeInUp 0.8s var(--transition-smooth); }
+    .subtitle { font-family: 'Inter', system-ui, sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 8px; color: var(--text-muted); margin: 0 0 40px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
+    .tagline { font-size: clamp(1.2rem, 2.5vw, 1.5rem); color: var(--text); max-width: 580px; line-height: 1.7; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; }
 
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      letter-spacing: 10px;
-      color: var(--text);
-      margin-bottom: 20px;
-      animation: fadeInUp 0.8s var(--transition-smooth);
-    }
+    .manifesto { text-align: center; padding: 0 24px 100px 24px; max-width: 620px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); }
+    .manifesto.visible { opacity: 1; transform: translateY(0); }
+    .manifesto p { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--text-muted); line-height: 2.2; margin: 0 0 24px 0; }
 
-    .subtitle {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 8px;
-      color: var(--text-muted);
-      margin: 0 0 40px 0;
-      text-transform: uppercase;
-      animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both;
-    }
+    .editorial-section, .doctor-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
+    .editorial-section.visible, .doctor-section.visible { opacity: 1; transform: translateY(0); }
 
-    .tagline {
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-      color: var(--text);
-      max-width: 580px;
-      line-height: 1.7;
-      margin: 0 auto;
-      animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both;
-    }
+    .image-container { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 60px; border-radius: 2px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06); transition: transform 0.6s var(--transition-smooth); }
+    .image-container:hover { transform: scale(1.01); }
+    .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s var(--transition-smooth); }
+    .image-container:hover img { transform: scale(1.03); }
 
-    .manifesto {
-      text-align: center;
-      padding: 0 24px 100px 24px;
-      max-width: 620px;
-      margin: 0 auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1.2s var(--transition-smooth);
-    }
+    .content { max-width: 580px; margin: 0 auto; text-align: center; }
+    .label { font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; display: block; font-weight: 400; }
+    .content p { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--text-muted); margin: 0; line-height: 1.9; }
+    .content p strong { color: var(--text); font-weight: 400; }
+
+    .process-info { font-family: 'Inter', system-ui, sans-serif; font-size: 0.7rem; color: var(--text-light); letter-spacing: 2px; line-height: 1.8; margin-top: 30px; font-weight: 300; }
+
+    .btn { display: inline-block; margin-top: 40px; font-family: 'Inter', system-ui, sans-serif; color: var(--text); padding: 12px 0 8px 0; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 6px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
+    .btn:hover { opacity: 0.4; }
     
-    .manifesto.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .response-time { display: block; font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; color: var(--text-light); letter-spacing: 2px; margin-top: 25px; font-weight: 300; }
+
+    .doctor-section { padding: 120px 24px; text-align: center; max-width: 600px; margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .doctor-name { font-size: 1.8rem; color: var(--text); letter-spacing: 2px; margin-bottom: 30px; }
     
-    .manifesto p {
-      font-size: clamp(1.15rem, 2vw, 1.4rem);
-      color: var(--text-muted);
-      line-height: 2.2;
-      margin: 0 0 24px 0;
-    }
+    .doctor-bio { font-size: 1.1rem; color: var(--text-muted); line-height: 2; max-width: 520px; margin: 0 auto; text-align: center; }
+    .doctor-bio strong { color: var(--text); font-weight: 400; }
 
-    .editorial-section, .doctor-section, .technical-responsible {
-      padding: 100px 24px 100px 24px;
-      max-width: 800px;
-      margin: 0 auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1.2s var(--transition-smooth);
-      will-change: transform, opacity;
-    }
+    .exclusivity-notice { max-width: 480px; margin: 35px auto 0; padding: 15px 0; text-align: center; font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border: none; }
 
-    .editorial-section.visible, 
-    .doctor-section.visible, 
-    .technical-responsible.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    footer { text-align: center; padding: 80px 24px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.6rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.45; max-width: 500px; margin: 0 auto; transition: opacity 0.3s ease; }
+    footer:hover { opacity: 0.7; }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
+    footer a:hover { color: var(--text); }
+    .footer-links { margin-top: 12px; margin-bottom: 25px; }
 
-    .image-container {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      margin-bottom: 60px;
-      border-radius: 2px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
-      transition: transform 0.6s var(--transition-smooth);
-    }
-    
-    .image-container:hover {
-      transform: scale(1.01);
-    }
-
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s var(--transition-smooth);
-    }
-    
-    .image-container:hover img {
-      transform: scale(1.03);
-    }
-
-    .content {
-      max-width: 580px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .label {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 25px;
-      display: block;
-      font-weight: 400;
-    }
-
-    .content p {
-      font-size: clamp(1.05rem, 2vw, 1.2rem);
-      color: var(--text-muted);
-      margin: 0;
-      line-height: 1.9;
-    }
-    
-    .content p strong {
-      color: var(--text);
-      font-weight: 400;
-    }
-
-    .process-info {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.7rem;
-      color: var(--text-light);
-      letter-spacing: 2px;
-      line-height: 1.8;
-      margin-top: 30px;
-      font-weight: 300;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 40px;
-      font-family: 'Inter', system-ui, sans-serif;
-      color: var(--text);
-      padding: 12px 0 8px 0;
-      text-decoration: none;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      border-bottom: 1px solid var(--text);
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-
-    .btn:hover {
-      opacity: 0.4;
-      transform: translateY(-2px);
-    }
-    
-    .response-time {
-      display: block;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
-      color: var(--text-light);
-      letter-spacing: 2px;
-      margin-top: 18px;
-      font-weight: 300;
-    }
-
-    .doctor-section {
-      padding: 120px 24px 100px 24px;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    
-    .doctor-photo {
-      width: 240px;
-      aspect-ratio: 3 / 4;
-      margin: 0 auto 35px auto;
-      overflow: hidden;
-      border-radius: 2px;
-      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.07);
-    }
-    
-    .doctor-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .doctor-name {
-      font-size: 1.5rem;
-      color: var(--text);
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-    
-    .doctor-title {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 0 0 5px 0;
-    }
-    
-    .doctor-crm {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      margin: 0 0 35px 0;
-    }
-    
-    .doctor-bio {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      line-height: 2;
-      max-width: 520px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .doctor-bio strong {
-      color: var(--text);
-      font-weight: 400;
-    }
-
-    .exclusivity-notice {
-      max-width: 480px;
-      margin: 25px auto 0;
-      padding: 20px;
-      text-align: center;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      text-transform: uppercase;
-      font-weight: 300;
-      border: 1px solid var(--line);
-    }
-
-    .technical-responsible {
-      padding: 80px 20px 40px 20px;
-      text-align: center;
-      max-width: 200px;
-      margin: 0 auto;
-      opacity: 0.5;
-      transition: opacity 0.4s ease;
-    }
-    
-    .technical-responsible:hover {
-      opacity: 1;
-    }
-
-    .profile-label {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.55rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .profile-container {
-      width: 140px;
-      aspect-ratio: 2 / 3;
-      margin: 0 auto 20px auto;
-      overflow: hidden;
-      border-radius: 1px;
-    }
-
-    .profile-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(20%);
-    }
-
-    .profile-name {
-      font-size: 1rem;
-      color: var(--text);
-      letter-spacing: 0.5px;
-      margin-bottom: 3px;
-      white-space: nowrap;
-    }
-
-    .profile-title {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 0 0 4px 0;
-    }
-
-    .profile-crm {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      color: var(--text-muted);
-      margin: 0;
-      white-space: nowrap;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 24px 80px 24px;
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.6rem;
-      letter-spacing: 3px;
-      color: var(--text-muted);
-      opacity: 0.45;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.3s ease;
-      margin: 0 10px;
-    }
-    
-    footer a:hover {
-      color: var(--text);
-    }
-    
-    .footer-links {
-      margin-top: 12px;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
     @media(max-width: 768px) {
-      .nav-bar { padding: 18px 20px; }
-      .nav-bar.scrolled { padding: 12px 20px; }
-      header { padding: 140px 20px 40px 20px; min-height: 100vh; min-height: 100dvh; }
-      h1 { font-size: 2.2rem; letter-spacing: 8px; }
-      .subtitle { letter-spacing: 6px; margin-bottom: 30px; }
-      .tagline { font-size: 1.15rem; max-width: 100%; }
-      .editorial-section, .doctor-section { padding: 60px 20px 80px 20px; }
-      .manifesto { padding: 0 20px 70px 20px; }
-      .content p { font-size: 1.05rem; }
-      .image-container { margin-bottom: 40px; }
+      .nav-bar { padding: 18px 20px; } .nav-bar.scrolled { padding: 12px 20px; }
+      header { padding: 140px 20px 40px 20px; } h1 { font-size: 2.2rem; letter-spacing: 8px; }
+      .editorial-section, .doctor-section { padding: 60px 20px; }
+      .manifesto { padding: 0 20px 70px 20px; } .content p { font-size: 1.05rem; }
       .nav-link { font-size: 1.6rem; letter-spacing: 3px; }
-      .nav-item { margin: 20px 0; }
-      .btn { font-size: 0.7rem; letter-spacing: 4px; }
-      .doctor-photo { width: 200px; }
-      .exclusivity-notice { font-size: 0.6rem; letter-spacing: 1px; padding: 15px; }
-    }
-    
-    @media(max-width: 480px) {
-      header { padding: 120px 16px 30px 16px; }
-      h1 { font-size: 1.9rem; letter-spacing: 6px; }
-      .editorial-section { padding: 50px 16px 70px 16px; }
-      .image-container { border-radius: 1px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04); }
-      .content p { font-size: 1rem; }
-      .manifesto p { font-size: 1.05rem; }
-    }
-    
-    @media(min-width: 1400px) {
-      .editorial-section, .doctor-section { max-width: 850px; }
-      .content { max-width: 580px; }
-      h1 { font-size: 4rem; }
-    }
-    
-    @media(prefers-reduced-motion: reduce) {
-      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
@@ -600,21 +163,19 @@
 
   <nav class="nav-bar" id="navbar">
     <a href="#" class="nav-logo" aria-label="ANGMER — Página inicial">ANGMER</a>
-    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu de navegação">
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <div class="nav-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu principal">
-    <ul class="nav-menu" role="menu">
-      <li class="nav-item" role="menuitem"><a href="#conceito" class="nav-link">O Conceito</a></li>
-      <li class="nav-item" role="menuitem"><a href="#medico" class="nav-link">O Médico</a></li>
-      <li class="nav-item" role="menuitem"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
-      <li class="nav-item" role="menuitem"><a href="#abordagem" class="nav-link">A Abordagem</a></li>
-      <li class="nav-item" role="menuitem"><a href="#conduta" class="nav-link">A Conduta</a></li>
-      <li class="nav-item" role="menuitem"><a href="#atendimento" class="nav-link">Atendimento</a></li>
+  <div class="nav-overlay" id="menuOverlay">
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#manifesto" class="nav-link">Manifesto</a></li>
+      <li class="nav-item"><a href="#conceito" class="nav-link">O Conceito</a></li>
+      <li class="nav-item"><a href="#medico" class="nav-link">O Médico</a></li>
+      <li class="nav-item"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
+      <li class="nav-item"><a href="#conduta" class="nav-link">A Conduta</a></li>
+      <li class="nav-item"><a href="#atendimento" class="nav-link">Atendimento</a></li>
     </ul>
   </div>
 
@@ -624,93 +185,63 @@
     <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
   </header>
 
-  <!-- Seção Manifesto REMOVIDA COMPLETAMENTE -->
+  <section class="manifesto" id="manifesto">
+    <p>O silêncio é a forma mais elevada de respeito.</p>
+    <p>A excelência médica dispensa holofotes.</p>
+    <p>A privacidade não é um luxo — é uma condição para quem não pode se dar ao luxo de ser visto.</p>
+  </section>
 
-  <section class="editorial-section" id="conceito" aria-labelledby="conceito-title">
-    <div class="image-container">
-      <img src="topo.png" alt="Sala de atendimento privativa com poltrona em couro, iluminação indireta e atmosfera de tranquilidade" loading="lazy">
-    </div>
+  <section class="editorial-section" id="conceito">
+    <div class="image-container"><img src="topo.png" alt="Ambiente privativo"></div>
     <div class="content">
-      <span class="label" id="conceito-title">I. O Conceito</span>
+      <span class="label">O Conceito</span>
       <p>A ANGMER existe para preservar o que lideranças, executivos e famílias de alta exposição construíram — começando pela saúde.</p>
       <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento vai até você, no ambiente onde se sente mais seguro, para que sua saúde e tudo que você construiu permaneçam protegidos.</p>
     </div>
   </section>
 
-  <section class="doctor-section" id="medico" aria-labelledby="medico-title">
-    <span class="label" id="medico-title">Quem conduz seu cuidado</span>
-    <div class="doctor-photo">
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues, médico psiquiatra" loading="lazy">
-    </div>
-    <h3 class="doctor-name">Dr. Elquer Rodrigues</h3>
-    <p class="doctor-title">Médico Psiquiatra</p>
-    <p class="doctor-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
+  <!-- O GOLPE DE MESTRE: A SEÇÃO DO MÉDICO SEM EGO -->
+  <section class="doctor-section" id="medico">
+    <span class="label">O Médico</span>
+    <h3 class="doctor-name">A Ausência do Ego</h3>
     <div class="doctor-bio">
-      <p>Dr. Elquer Rodrigues construiu sua prática sobre uma convicção: <strong>a psiquiatria de excelência não exige que o paciente abdique de sua vida para se tratar</strong>. É possível recuperar a estabilidade sem interromper o comando — e sem se tornar manchete.</p>
-      <p style="margin-top: 20px;">Com atuação dedicada a <strong>casos de alta complexidade</strong> e ao atendimento de <strong>famílias empresariais e figuras públicas</strong>, desenvolveu uma abordagem onde a precisão clínica e a proteção à reputação caminham juntas — uma como fundamento, a outra como consequência natural.</p>
+      <p>Você não encontrará uma fotografia, um perfil de rede social ou a construção de uma marca pessoal em nossa página.</p>
+      <p style="margin-top: 20px;">A ANGMER foi concebida sob uma premissa inegociável: <strong>a psiquiatria de elite deve ser invisível</strong>. Em um cenário médico corrompido pela necessidade de exposição e vaidade, optamos pelo anonimato intencional da figura pública do médico.</p>
+      <p style="margin-top: 20px;">O rigor clínico, a atenção e a proteção atuarial devem estar inteiramente voltados à saúde e à reputação do paciente — nunca aos holofotes de quem o trata. Nossa verdadeira identidade é a eficácia do nosso silêncio.</p>
     </div>
   </section>
 
-  <section class="editorial-section" id="inspiracao" aria-labelledby="inspiracao-title">
-    <div class="image-container">
-      <img src="foto2.png" alt="Ambiente executivo reservado representando liderança silenciosa" loading="lazy">
-    </div>
+  <section class="editorial-section" id="inspiracao">
+    <div class="image-container"><img src="foto2.png" alt="Liderança silenciosa"></div>
     <div class="content">
-      <span class="label" id="inspiracao-title">III. A Inspiração</span>
+      <span class="label">A Inspiração</span>
       <p>ANGMER inspira-se em uma das lideranças mais discretas e eficazes do século: <strong>Angela Merkel</strong>. Dezesseis anos de poder exercido com sobriedade, competência e total recusa ao espetáculo.</p>
-      <p style="margin-top: 20px;">É dessa postura que nasce nossa identidade, pautada por <strong>discrição</strong> e <strong>competência</strong>.</p>
+      <p style="margin-top: 20px;">É dessa postura que nasce nossa essência, pautada por <strong>discrição</strong> e <strong>competência</strong>.</p>
     </div>
   </section>
 
-  <section class="editorial-section" id="abordagem" aria-labelledby="abordagem-title">
-    <div class="image-container">
-      <img src="foto1.png" alt="Corredor privativo com design atemporal" loading="lazy">
-    </div>
+  <section class="editorial-section" id="conduta">
+    <div class="image-container"><img src="foto5.png" alt="Biblioteca privada"></div>
     <div class="content">
-      <span class="label" id="abordagem-title">IV. A Abordagem</span>
-      <p>O atendimento presencial é a base da nossa prática. A presença do médico no seu ambiente permite uma avaliação mais precisa e uma relação terapêutica mais protegida.</p>
-      <p style="margin-top: 20px;">A atuação ocorre em residências, escritórios ou hotéis, com a assistência médica a CEOs, figuras públicas e seus familiares mantida <strong>longe de qualquer exposição</strong>.</p>
-      <p style="margin-top: 20px;">Nenhum registro público. Nenhum trânsito em salas de espera. Nenhum nome em sistemas compartilhados.</p>
-    </div>
-  </section>
-
-  <section class="editorial-section" id="conduta" aria-labelledby="conduta-title">
-    <div class="image-container">
-      <img src="foto5.png" alt="Biblioteca privada com luz natural suave" loading="lazy">
-    </div>
-    <div class="content">
-      <span class="label" id="conduta-title">V. A Conduta</span>
+      <span class="label">A Conduta</span>
       <p>A ANGMER é a antítese do espetáculo digital que distorce a medicina contemporânea. Uma prática para quem não aceita transformar sua saúde em conteúdo.</p>
       <p style="margin-top: 20px;">Intervenções precisas, sem excessos ou supermedicação. O objetivo clínico é devolver a estabilidade sem paralisar: sua vida e seus negócios devem continuar durante o tratamento.</p>
-      <p style="margin-top: 20px;">Proteção contra qualquer forma de exposição — seja na imprensa, no mercado ou nas redes.</p>
-      <p style="margin-top: 20px;">Operamos nos bastidores. O deslocamento é discreto. Os prontuários seguem protocolos concebidos para minimizar a exposição. Em São Paulo, o médico vai pessoalmente até você.</p>
+      <p style="margin-top: 20px;">Operamos nos bastidores. O deslocamento é discreto. Os prontuários seguem protocolos concebidos para minimizar a exposição. Em São Paulo, a intervenção médica vai até você.</p>
     </div>
   </section>
 
-  <section class="editorial-section" id="atendimento" aria-labelledby="atendimento-title">
-    <div class="image-container">
-      <img src="fotonova.jpg" alt="Porta de entrada discreta em edifício privativo" loading="lazy">
-    </div>
+  <section class="editorial-section" id="atendimento">
+    <div class="image-container"><img src="fotonova.jpg" alt="Porta de entrada discreta"></div>
     <div class="content">
-      <span class="label" id="atendimento-title">VI. Atendimento</span>
+      <span class="label">Atendimento</span>
       <p>Privacidade protegida. Exposição evitada.</p>
+      <div class="process-info">A avaliação inicial tem duração média de 1h30.<br>A partir dela, define-se a frequência e a abordagem adequadas.</div>
       
-      <div class="process-info">
-        A avaliação inicial tem duração média de 1h30.<br>
-        A partir dela, define-se a frequência e a abordagem adequadas a cada momento.
-      </div>
-      
-      <a href="https://wa.me/5511977335683?text=Olá,%20tenho%20interesse%20no%20atendimento%20reservado." 
-         target="_blank" 
-         rel="noopener noreferrer"
-         class="btn" 
-         aria-label="Solicitar Atendimento Reservado via WhatsApp">
+      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20ao%20protocolo%20de%20admissão." target="_blank" class="btn">
         Solicitar Atendimento
       </a>
       
-      <span class="response-time">
-        🔒 Resposta em até 2 horas, diretamente com o Dr. Elquer Rodrigues
-      </span>
+      <span class="response-time">Resposta em até 2 horas, em contato direto com o médico titular.</span>
       
       <div class="exclusivity-notice">
         Este serviço é destinado exclusivamente a indivíduos e famílias com exposição pública, empresarial ou patrimonial relevante.
@@ -718,26 +249,14 @@
     </div>
   </section>
 
-  <section class="technical-responsible" aria-label="Informações do Responsável Técnico">
-    <span class="profile-label">Responsável Técnico</span>
-    <div class="profile-container">
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" loading="lazy">
-    </div>
-    <h3 class="profile-name">Dr. Elquer Rodrigues</h3>
-    <p class="profile-title">Médico Psiquiatra</p>
-    <p class="profile-crm">CRM SP 157303 &nbsp;&bull;&nbsp; RQE 85941</p>
-  </section>
-
   <footer>
     <p>ANGMER • MEDICINA PRIVATIVA</p>
     <div class="footer-links">
-      <a href="#" aria-label="Política de Privacidade">Privacidade</a>
+      <a href="privacidade.html">Privacidade e Termos Legais</a>
       <span aria-hidden="true">&nbsp;·&nbsp;</span>
-      <a href="#" aria-label="Termos de Uso">Termos</a>
-      <span aria-hidden="true">&nbsp;·&nbsp;</span>
-      <a href="#" aria-label="Contato">Contato</a>
+      <a href="mailto:contato@angmer.com.br">Contato Corporativo</a>
     </div>
-    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Comunicações protegidas por criptografia de ponta a ponta.</p>
+    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Comunicações e dados médicos protegidos por criptografia de ponta a ponta.</p>
   </footer>
 
   <script>
@@ -746,72 +265,27 @@
       var menuOverlay = document.getElementById('menuOverlay');
       var navLinks = document.querySelectorAll('.nav-link');
       var navbar = document.getElementById('navbar');
-      var scrollTimeout;
-      var menuOpen = false;
-
-      function openMenu() {
-        menuOpen = true;
-        menuBtn.classList.add('open');
-        menuOverlay.classList.add('open');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
+      
+      function toggleMenu() {
+        menuBtn.classList.toggle('open');
+        menuOverlay.classList.toggle('open');
+        document.body.style.overflow = menuOverlay.classList.contains('open') ? 'hidden' : '';
       }
       
-      function closeMenu() {
-        menuOpen = false;
-        menuBtn.classList.remove('open');
-        menuOverlay.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-      
-      menuBtn.addEventListener('click', function() {
-        if (menuOpen) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      });
+      menuBtn.addEventListener('click', toggleMenu);
       
       navLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          closeMenu();
-          var targetId = link.getAttribute('href');
-          if (targetId && targetId !== '#') {
-            e.preventDefault();
-            var targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              setTimeout(function() {
-                targetElement.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }, 300);
-            }
-          }
+        link.addEventListener('click', function() {
+          menuBtn.classList.remove('open');
+          menuOverlay.classList.remove('open');
+          document.body.style.overflow = '';
         });
-      });
-      
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && menuOpen) {
-          closeMenu();
-        }
       });
       
       window.addEventListener('scroll', function() {
-        if (scrollTimeout) {
-          window.cancelAnimationFrame(scrollTimeout);
-        }
-        scrollTimeout = window.requestAnimationFrame(function() {
-          if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-          } else {
-            navbar.classList.remove('scrolled');
-          }
-        });
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
       });
-      
-      var sections = document.querySelectorAll('.editorial-section, .doctor-section, .technical-responsible');
       
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -820,15 +294,9 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -30px 0px'
-      });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       
-      sections.forEach(function(section) {
-        observer.observe(section);
-      });
-      
+      document.querySelectorAll('.editorial-section, .doctor-section, .manifesto').forEach(function(s) { observer.observe(s); });
     })();
   </script>
 </body>
