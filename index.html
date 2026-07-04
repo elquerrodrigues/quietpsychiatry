@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ANGMER | Psiquiatria Reservada — Atendimento Domiciliar Sigiloso para Alta Liderança</title>
-  <meta name="description" content="Serviço médico psiquiátrico sob sigilo absoluto. Atendimento na sua residência, escritório ou hotel em São Paulo. Para quem não pode ser visto.">
-  <meta name="keywords" content="psiquiatra sigiloso, medicina privativa, atendimento psiquiátrico residencial, psiquiatra executivos são paulo">
-  <meta name="author" content="ANGMER">
+  <title>ANGMER | Medicina Privativa e Governança Psiquiátrica</title>
+  <meta name="description" content="Instituição médica dedicada à contenção e tratamento psiquiátrico de alta liderança sob sigilo absoluto e protocolos de segurança corporativa.">
+  <meta name="keywords" content="psiquiatra sigiloso, medicina privativa, atendimento psiquiátrico residencial, governança de saúde mental, family office saúde">
+  <meta name="author" content="ANGMER Institucional">
   <meta name="robots" content="index, follow">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   
   <style>
-    /* A PALETA OBSIDIANA: O ápice do Stealth Wealth */
+    /* A PALETA OBSIDIANA INSTITUCIONAL */
     :root {
-      --bg: #0A0A0A; /* Carvão ultra-profundo, o tom da invisibilidade */
-      --text: #EAE6D9; /* Tom de osso/pergaminho, legível mas suave */
-      --text-muted: #9E9A90; /* Cinza quente para criar profundidade */
-      --text-light: #6A6760; /* Elementos ainda mais discretos */
-      --line: #262626; /* Linhas de separação quase invisíveis */
+      --bg: #0A0A0A;
+      --text: #EAE6D9;
+      --text-muted: #9E9A90;
+      --text-light: #6A6760;
+      --line: #262626;
       --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
     }
     
@@ -48,7 +48,6 @@
       top: 0; left: 0; width: 100%;
       display: flex; justify-content: space-between; align-items: center;
       padding: 24px 32px; z-index: 100;
-      /* Ajuste do blur para o tema escuro */
       background: rgba(10, 10, 10, 0.85);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       transition: all 0.4s var(--transition-smooth);
@@ -57,7 +56,7 @@
     .nav-bar.scrolled {
       padding: 16px 32px;
       background: rgba(10, 10, 10, 0.95);
-      box-shadow: 0 1px 20px rgba(0, 0, 0, 0.5); /* Sombra mais densa */
+      box-shadow: 0 1px 20px rgba(0, 0, 0, 0.5);
     }
 
     .nav-logo {
@@ -96,7 +95,6 @@
     .nav-overlay.open .nav-item:nth-child(4) { transition-delay: 0.4s; }
     .nav-overlay.open .nav-item:nth-child(5) { transition-delay: 0.5s; }
     .nav-overlay.open .nav-item:nth-child(6) { transition-delay: 0.6s; }
-    .nav-overlay.open .nav-item:nth-child(7) { transition-delay: 0.7s; }
 
     .nav-link {
       font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--text);
@@ -116,12 +114,12 @@
     .manifesto.visible { opacity: 1; transform: translateY(0); }
     .manifesto p { font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--text-muted); line-height: 2.2; margin: 0 0 24px 0; }
 
-    .editorial-section, .doctor-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
-    .editorial-section.visible, .doctor-section.visible { opacity: 1; transform: translateY(0); }
+    .editorial-section, .institutional-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
+    .editorial-section.visible, .institutional-section.visible { opacity: 1; transform: translateY(0); }
 
     .image-container { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 60px; border-radius: 2px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); transition: transform 0.6s var(--transition-smooth); }
     .image-container:hover { transform: scale(1.01); }
-    .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s var(--transition-smooth); opacity: 0.9; } /* Leve redução de opacidade nas imagens para integrar com o fundo escuro */
+    .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s var(--transition-smooth); opacity: 0.9; }
     .image-container:hover img { transform: scale(1.03); opacity: 1; }
 
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
@@ -129,18 +127,42 @@
     .content p { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--text-muted); margin: 0; line-height: 1.9; }
     .content p strong { color: var(--text); font-weight: 400; }
 
+    .institutional-box {
+      border: 1px solid var(--line);
+      padding: 50px 30px;
+      margin-top: 40px;
+      background: rgba(255,255,255,0.01);
+    }
+    
+    .institutional-box ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 30px;
+    }
+    
+    .institutional-box li {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      padding-left: 20px;
+      position: relative;
+      letter-spacing: 0.5px;
+    }
+    
+    .institutional-box li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--text-light);
+    }
+
     .process-info { font-family: 'Inter', system-ui, sans-serif; font-size: 0.7rem; color: var(--text-light); letter-spacing: 2px; line-height: 1.8; margin-top: 30px; font-weight: 300; }
 
     .btn { display: inline-block; margin-top: 40px; font-family: 'Inter', system-ui, sans-serif; color: var(--text); padding: 12px 0 8px 0; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 6px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
     .btn:hover { opacity: 0.4; }
     
     .response-time { display: block; font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; color: var(--text-light); letter-spacing: 2px; margin-top: 25px; font-weight: 300; }
-
-    .doctor-section { padding: 120px 24px; text-align: center; max-width: 600px; margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .doctor-name { font-size: 1.8rem; color: var(--text); letter-spacing: 2px; margin-bottom: 30px; }
-    
-    .doctor-bio { font-size: 1.1rem; color: var(--text-muted); line-height: 2; max-width: 520px; margin: 0 auto; text-align: center; }
-    .doctor-bio strong { color: var(--text); font-weight: 400; }
 
     .exclusivity-notice { max-width: 480px; margin: 35px auto 0; padding: 15px 0; text-align: center; font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border: none; }
 
@@ -155,9 +177,10 @@
     @media(max-width: 768px) {
       .nav-bar { padding: 18px 20px; } .nav-bar.scrolled { padding: 12px 20px; }
       header { padding: 140px 20px 40px 20px; } h1 { font-size: 2.2rem; letter-spacing: 8px; }
-      .editorial-section, .doctor-section { padding: 60px 20px; }
+      .editorial-section, .institutional-section { padding: 60px 20px; }
       .manifesto { padding: 0 20px 70px 20px; } .content p { font-size: 1.05rem; }
       .nav-link { font-size: 1.6rem; letter-spacing: 3px; }
+      .institutional-box { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -172,92 +195,98 @@
 
   <div class="nav-overlay" id="menuOverlay">
     <ul class="nav-menu">
-      <li class="nav-item"><a href="#manifesto" class="nav-link">Manifesto</a></li>
-      <li class="nav-item"><a href="#conceito" class="nav-link">O Conceito</a></li>
-      <li class="nav-item"><a href="#medico" class="nav-link">O Médico</a></li>
+      <li class="nav-item"><a href="#conceito" class="nav-link">A Instituição</a></li>
+      <li class="nav-item"><a href="#governanca" class="nav-link">Governança & Sigilo</a></li>
       <li class="nav-item"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
-      <li class="nav-item"><a href="#conduta" class="nav-link">A Conduta</a></li>
-      <li class="nav-item"><a href="#atendimento" class="nav-link">Atendimento</a></li>
+      <li class="nav-item"><a href="#operacoes" class="nav-link">Operações</a></li>
+      <li class="nav-item"><a href="#atendimento" class="nav-link">Admissão</a></li>
     </ul>
   </div>
 
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">MEDICINA PRIVATIVA</p>
-    <p class="tagline">Serviço médico psiquiátrico diretamente na sua residência, escritório ou hotel. Em silêncio.</p>
+    <p class="tagline">Governança psiquiátrica diretamente na sua residência ou diretoria. Em absoluto silêncio.</p>
   </header>
 
   <section class="manifesto" id="manifesto">
-    <p>O silêncio é a forma mais elevada de respeito.</p>
-    <p>A excelência médica dispensa holofotes.</p>
-    <p>A privacidade não é um luxo — é uma condição para quem não pode se dar ao luxo de ser visto.</p>
+    <p>O silêncio é o mais alto grau de segurança.</p>
+    <p>A privacidade não é um privilégio — é a infraestrutura obrigatória para quem não pode falhar aos olhos do mercado.</p>
   </section>
 
   <section class="editorial-section" id="conceito">
     <div class="image-container"><img src="topo.png" alt="Ambiente privativo"></div>
     <div class="content">
-      <span class="label">O Conceito</span>
-      <p>A ANGMER existe para preservar o que lideranças, executivos e famílias de alta exposição construíram — começando pela saúde.</p>
-      <p style="margin-top: 25px;">O consultório tradicional deixa de existir. O atendimento vai até você, no ambiente onde se sente mais seguro, para que sua saúde e tudo que você construiu permaneçam protegidos.</p>
+      <span class="label">A Instituição</span>
+      <p>A ANGMER não é um consultório. Somos uma estrutura dedicada à mitigação de riscos psiquiátricos para lideranças corporativas, figuras públicas e famílias <em>UHNW</em>.</p>
+      <p style="margin-top: 25px;">Operamos sob a premissa de que a saúde mental não é apenas uma questão clínica, mas um ativo crítico que não pode estar exposto às vulnerabilidades e aos holofotes do sistema de saúde convencional.</p>
     </div>
   </section>
 
-  <section class="doctor-section" id="medico">
-    <span class="label">O Médico</span>
-    <h3 class="doctor-name">A Ausência do Ego</h3>
-    <div class="doctor-bio">
-      <p>Você não encontrará uma fotografia, um perfil de rede social ou a construção de uma marca pessoal em nossa página.</p>
-      <p style="margin-top: 20px;">A ANGMER foi concebida sob uma premissa inegociável: <strong>a psiquiatria de elite deve ser invisível</strong>. Em um cenário médico corrompido pela necessidade de exposição e vaidade, optamos pelo anonimato intencional da figura pública do médico.</p>
-      <p style="margin-top: 20px;">O rigor clínico, a atenção e a proteção atuarial devem estar inteiramente voltados à saúde e à reputação do paciente — nunca aos holofotes de quem o trata. Nossa verdadeira identidade é a eficácia do nosso silêncio.</p>
+  <!-- O NOVO CORAÇÃO INSTITUCIONAL B2B -->
+  <section class="institutional-section" id="governanca">
+    <div class="content">
+      <span class="label">Governança e Compliance de Dados</span>
+      <h3 style="font-size: 1.8rem; color: var(--text); letter-spacing: 2px; margin-bottom: 20px;">Proteção Atuarial do Paciente</h3>
+      <p>Para equipes de <em>Family Office</em>, Relações Públicas e Assessorias Jurídicas: nossa arquitetura de proteção começa antes da primeira intervenção.</p>
+      
+      <div class="institutional-box">
+        <p style="font-size: 1.1rem; color: var(--text);">Em um cenário onde a vaidade corrompe a discrição, adotamos a política da <strong>invisibilidade institucional</strong> e do anonimato intencional.</p>
+        <ul>
+          <li><strong>Zero Rastro em Nuvem:</strong> Prontuários e diretrizes clínicas são mantidos fisicamente fora de servidores conectados à internet.</li>
+          <li><strong>Canais Criptografados:</strong> Comunicação operacional restrita a aplicativos ponta-a-ponta (E2EE), sem armazenamento em dispositivos não blindados.</li>
+          <li><strong>Auditoria Jurídica:</strong> Intervenções asseguradas por Acordos de Não-Divulgação (NDA) padronizados e bilaterais.</li>
+          <li><strong>Ausência de Ego:</strong> Nenhum *branding* pessoal de corpo clínico nas redes, garantindo que o foco permaneça na preservação do ativo: o paciente.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section class="editorial-section" id="inspiracao">
     <div class="image-container"><img src="foto2.png" alt="Liderança silenciosa"></div>
     <div class="content">
-      <span class="label">A Inspiração</span>
-      <p>ANGMER inspira-se em uma das lideranças mais discretas e eficazes do século: <strong>Angela Merkel</strong>. Dezesseis anos de poder exercido com sobriedade, competência e total recusa ao espetáculo.</p>
-      <p style="margin-top: 20px;">É dessa postura que nasce nossa essência, pautada por <strong>discrição</strong> e <strong>competência</strong>.</p>
+      <span class="label">A Referência</span>
+      <p>ANGMER inspira-se em uma das gestões mais imperturbáveis do século: <strong>Angela Merkel</strong>. Poder exercido com sobriedade técnica, controle de crises e total recusa ao espetáculo.</p>
+      <p style="margin-top: 20px;">É deste arquétipo que extraímos nossos protocolos de intervenção.</p>
     </div>
   </section>
 
-  <section class="editorial-section" id="conduta">
+  <section class="editorial-section" id="operacoes">
     <div class="image-container"><img src="foto5.png" alt="Biblioteca privada"></div>
     <div class="content">
-      <span class="label">A Conduta</span>
-      <p>A ANGMER é a antítese do espetáculo digital que distorce a medicina contemporânea. Uma prática para quem não aceita transformar sua saúde em conteúdo.</p>
-      <p style="margin-top: 20px;">Intervenções precisas, sem excessos ou supermedicação. O objetivo clínico é devolver a estabilidade sem paralisar: sua vida e seus negócios devem continuar durante o tratamento.</p>
-      <p style="margin-top: 20px;">Operamos nos bastidores. O deslocamento é discreto. Os prontuários seguem protocolos concebidos para minimizar a exposição. Em São Paulo, a intervenção médica vai até você.</p>
+      <span class="label">Operações de Bastidores</span>
+      <p>Nenhuma sala de espera. Nenhum sistema compartilhado. O suporte logístico e médico é levado até a zona de segurança do paciente — seja em propriedades privadas, conselhos de administração ou hotelaria internacional no território paulistano.</p>
+      <p style="margin-top: 20px;">Nosso objetivo clínico é reestabelecer o comando neurológico e a tomada de decisão sem paralisar a agenda executiva.</p>
     </div>
   </section>
 
   <section class="editorial-section" id="atendimento">
     <div class="image-container"><img src="fotonova.jpg" alt="Porta de entrada discreta"></div>
     <div class="content">
-      <span class="label">Atendimento</span>
-      <p>Privacidade protegida. Exposição evitada.</p>
-      <div class="process-info">A avaliação inicial tem duração média de 1h30.<br>A partir dela, define-se a frequência e a abordagem adequadas.</div>
+      <span class="label">Admissão</span>
+      <p>Privacidade auditável. Intervenção cirúrgica.</p>
+      <div class="process-info">A operação inicial tem duração média de 90 minutos de mapeamento clínico em ambiente seguro.<br>A partir da triagem, institui-se o formato de governança necessário.</div>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20ao%20protocolo%20de%20admissão." target="_blank" class="btn">
-        Solicitar Atendimento
+      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20às%20diretrizes%20do%20protocolo%20de%20admissão%20da%20ANGMER." target="_blank" class="btn">
+        Iniciar Protocolo de Admissão
       </a>
       
-      <span class="response-time">Resposta em até 2 horas, em contato direto com o médico titular.</span>
+      <span class="response-time">Retorno da equipe técnica em até 2 horas úteis.</span>
       
       <div class="exclusivity-notice">
-        Este serviço é destinado exclusivamente a indivíduos e famílias com exposição pública, empresarial ou patrimonial relevante.
+        O acesso à ANGMER é reservado a indivíduos cuja exposição exija infraestrutura de sigilo compatível com seu nível de risco.
       </div>
     </div>
   </section>
 
   <footer>
-    <p>ANGMER • MEDICINA PRIVATIVA</p>
+    <p>ANGMER • INSTITUIÇÃO DE MEDICINA PRIVATIVA</p>
     <div class="footer-links">
-      <a href="privacidade.html">Privacidade e Termos Legais</a>
+      <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
       <span aria-hidden="true">&nbsp;·&nbsp;</span>
-      <a href="mailto:contato@angmer.com.br">Contato Corporativo</a>
+      <a href="mailto:contato@angmer.com.br">Contato Administrativo</a>
     </div>
-    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Comunicações e dados médicos protegidos por criptografia de ponta a ponta.</p>
+    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação.</p>
   </footer>
 
   <script>
@@ -297,7 +326,7 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       
-      document.querySelectorAll('.editorial-section, .doctor-section, .manifesto').forEach(function(s) { observer.observe(s); });
+      document.querySelectorAll('.editorial-section, .institutional-section, .manifesto').forEach(function(s) { observer.observe(s); });
     })();
   </script>
 </body>
