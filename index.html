@@ -95,6 +95,7 @@
     .nav-overlay.open .nav-item:nth-child(4) { transition-delay: 0.4s; }
     .nav-overlay.open .nav-item:nth-child(5) { transition-delay: 0.5s; }
     .nav-overlay.open .nav-item:nth-child(6) { transition-delay: 0.6s; }
+    .nav-overlay.open .nav-item:nth-child(7) { transition-delay: 0.7s; }
 
     .nav-link {
       font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--text);
@@ -142,11 +143,12 @@
     
     .institutional-box li {
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       padding-left: 20px;
       position: relative;
+      line-height: 1.8;
       letter-spacing: 0.5px;
     }
     
@@ -166,7 +168,7 @@
 
     .exclusivity-notice { max-width: 480px; margin: 35px auto 0; padding: 15px 0; text-align: center; font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border: none; }
 
-    footer { text-align: center; padding: 80px 24px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.6rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.45; max-width: 500px; margin: 0 auto; transition: opacity 0.3s ease; }
+    footer { text-align: center; padding: 80px 24px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.6rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.45; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
     footer:hover { opacity: 0.7; }
     footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
     footer a:hover { color: var(--text); }
@@ -196,7 +198,8 @@
   <div class="nav-overlay" id="menuOverlay">
     <ul class="nav-menu">
       <li class="nav-item"><a href="#conceito" class="nav-link">A Instituição</a></li>
-      <li class="nav-item"><a href="#governanca" class="nav-link">Governança & Sigilo</a></li>
+      <li class="nav-item"><a href="#governanca" class="nav-link">Governança de Dados</a></li>
+      <li class="nav-item"><a href="#blindagem" class="nav-link">Blindagem Midiática</a></li>
       <li class="nav-item"><a href="#inspiracao" class="nav-link">A Inspiração</a></li>
       <li class="nav-item"><a href="#operacoes" class="nav-link">Operações</a></li>
       <li class="nav-item"><a href="#atendimento" class="nav-link">Admissão</a></li>
@@ -223,10 +226,9 @@
     </div>
   </section>
 
-  <!-- O NOVO CORAÇÃO INSTITUCIONAL B2B -->
   <section class="institutional-section" id="governanca">
     <div class="content">
-      <span class="label">Governança e Compliance de Dados</span>
+      <span class="label">Governança e Compliance</span>
       <h3 style="font-size: 1.8rem; color: var(--text); letter-spacing: 2px; margin-bottom: 20px;">Proteção Atuarial do Paciente</h3>
       <p>Para equipes de <em>Family Office</em>, Relações Públicas e Assessorias Jurídicas: nossa arquitetura de proteção começa antes da primeira intervenção.</p>
       
@@ -236,7 +238,23 @@
           <li><strong>Zero Rastro em Nuvem:</strong> Prontuários e diretrizes clínicas são mantidos fisicamente fora de servidores conectados à internet.</li>
           <li><strong>Canais Criptografados:</strong> Comunicação operacional restrita a aplicativos ponta-a-ponta (E2EE), sem armazenamento em dispositivos não blindados.</li>
           <li><strong>Auditoria Jurídica:</strong> Intervenções asseguradas por Acordos de Não-Divulgação (NDA) padronizados e bilaterais.</li>
-          <li><strong>Ausência de Ego:</strong> Nenhum *branding* pessoal de corpo clínico nas redes, garantindo que o foco permaneça na preservação do ativo: o paciente.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO EXIGIDA PELA "PR" -->
+  <section class="institutional-section" id="blindagem">
+    <div class="content">
+      <span class="label">Isolamento e Rastro Zero</span>
+      <h3 style="font-size: 1.8rem; color: var(--text); letter-spacing: 2px; margin-bottom: 20px;">Blindagem Midiática e Digital</h3>
+      <p>A proteção contra a especulação pública e o rastreio comercial algorítmico é tratada com o mesmo rigor de uma intervenção de emergência clínica.</p>
+      
+      <div class="institutional-box">
+        <ul>
+          <li><strong>Política Irrevogável de 'No Comment':</strong> A ANGMER não interage com veículos de mídia ou jornalistas. Não concedemos entrevistas e não validamos especulações sobre a identidade de pacientes sob nenhuma circunstância. A imprensa não possui jurisdição em nossa operação.</li>
+          <li><strong>Zero Tracking Digital:</strong> Este domínio é uma zona digitalmente estéril. Não utilizamos cookies de rastreamento, pixels do Meta (Facebook/Instagram) ou ferramentas de <em>retargeting</em> publicitário. A sua navegação aqui não deixa pegadas comerciais.</li>
+          <li><strong>Repulsa à Prova Social:</strong> Jamais utilizaremos o prestígio corporativo ou público de nossos pacientes como ferramenta de validação. Você não encontrará "casos de sucesso" ou portfólio em nossos canais. O sigilo do cliente é superior ao nosso marketing.</li>
         </ul>
       </div>
     </div>
@@ -284,9 +302,9 @@
     <div class="footer-links">
       <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
       <span aria-hidden="true">&nbsp;·&nbsp;</span>
-      <a href="mailto:contato@angmer.com.br">Contato Administrativo</a>
+      <a href="mailto:governanca@angmer.com.br">Contato de Governança</a>
     </div>
-    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação.</p>
+    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio 100% livre de rastreamento (Zero-Tracking).</p>
   </footer>
 
   <script>
@@ -298,7 +316,7 @@
       
       function toggleMenu() {
         menuBtn.classList.toggle('open');
-        menuOverlay.classList.add('open');
+        menuOverlay.classList.toggle('open');
         document.body.style.overflow = menuOverlay.classList.contains('open') ? 'hidden' : '';
       }
       
