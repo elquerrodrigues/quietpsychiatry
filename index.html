@@ -126,11 +126,11 @@
     .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 40px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
     .tagline { font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--text); max-width: 680px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; }
 
-    /* DIVISORES AUMENTADOS: 85vh no desktop para mostrar muito mais da foto vertical */
+    /* CORREÇÃO DO DESKTOP: Altura reduzida para 45vh (corte cinematográfico) e foco no centro-topo (30%) */
     .parallax-divider {
-      height: 85vh;
+      height: 45vh;
       width: 100%;
-      background-position: center center;
+      background-position: center 30%;
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
@@ -143,7 +143,7 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.3) 50%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.2) 50%, var(--bg) 100%);
     }
 
     .content-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
@@ -192,8 +192,8 @@
       .institutional-box li { font-size: 1rem; line-height: 1.9; }
       .content p { font-size: 1rem; line-height: 2; }
       .family-note { font-size: 0.8rem; }
-      /* AUMENTADO PARA 70vh NO MOBILE PARA TER UMA JANELA MAIOR PARA AS FOTOS */
-      .parallax-divider { background-attachment: scroll; height: 70vh; }
+      /* No mobile a tela já é vertical, então a imagem pode ocupar 65% da tela perfeitamente */
+      .parallax-divider { background-attachment: scroll; height: 65vh; background-position: center center; }
     }
   </style>
 </head>
