@@ -1,31 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR" style="background-color: #0A0A0A;">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
-  <meta name="description" content="Atendimento psiquiátrico com discrição absoluta para quem não pode ser visto entrando em um consultório.">
+  <meta name="description" content="Psiquiatra domiciliar com discrição absoluta para quem não pode ser visto entrando em um consultório. Atendimento corporativo e governamental.">
+  <meta name="keywords" content="psiquiatra domiciliar, psiquiatria corporativa, psiquiatra sigiloso, medicina privativa, atendimento psiquiátrico in loco">
+  <meta name="author" content="ANGMER">
+  <meta name="robots" content="index, follow">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Elquer Rodrigues",
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://angmer.com.br",
+      "description": "Psiquiatria domiciliar e corporativa privativa com protocolos de sigilo e governança de dados."
+    }
+  </script>
   
   <style>
-    /* ARQUITETURA DE DESIGN ANTI-FALHAS - SEM OPACIDADES OU JS */
+    /* PALETA OBSIDIANA PURA - LUXO SILENCIOSO E TIPOGRÁFICO */
+    :root {
+      --bg: #0A0A0A;
+      --text: #EAE6D9;
+      --text-muted: #9E9A90;
+      --text-light: #6A6760;
+      --line: #262626;
+      --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      
+      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', Times, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    html, body {
-      background-color: #0A0A0A !important;
-      color: #EAE6D9 !important;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.9;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3, .tagline, .nav-logo {
-      font-family: 'Cormorant Garamond', Georgia, serif !important;
+    h1, h2, h3, .tagline {
+      font-family: var(--font-serif);
       font-weight: 400;
+      margin: 0;
     }
 
     .nav-bar {
@@ -33,95 +62,183 @@
       top: 0; left: 0; width: 100%;
       display: flex; justify-content: space-between; align-items: center;
       padding: 24px 32px; z-index: 100;
-      background: rgba(10, 10, 10, 0.92);
+      background: rgba(10, 10, 10, 0.85);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid #1A1A1A;
+      transition: all 0.4s var(--transition-smooth);
+    }
+    
+    .nav-bar.scrolled {
+      padding: 16px 32px;
+      background: rgba(10, 10, 10, 0.95);
+      box-shadow: 0 1px 20px rgba(0, 0, 0, 0.5);
     }
 
     .nav-logo {
+      font-family: var(--font-serif);
       font-size: 1.3rem; letter-spacing: 6px; text-decoration: none;
-      color: #EAE6D9; text-transform: uppercase;
+      color: var(--text); font-weight: 400; transition: opacity 0.3s ease;
     }
+    .nav-logo:hover { opacity: 0.6; }
 
     .menu-toggle {
-      background: transparent; border: none; color: #9E9A90;
-      font-family: 'Inter', sans-serif; font-size: 0.7rem;
-      letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      width: 48px; height: 48px; background: transparent; border: none;
+      cursor: pointer; padding: 0; z-index: 102; transition: transform 0.3s ease;
+      position: relative;
     }
+    .menu-toggle:hover { transform: scale(1.05); }
+    
+    .menu-toggle-icon {
+      display: flex; flex-direction: column; justify-content: space-between;
+      width: 24px; height: 16px;
+    }
+    .menu-toggle-icon span {
+      display: block;
+      width: 100%; height: 1.5px; background-color: var(--text);
+      transition: all 0.4s var(--transition-smooth); transform-origin: center;
+    }
+    .menu-toggle.open .menu-toggle-icon span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.open .menu-toggle-icon span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-toggle.open .menu-toggle-icon span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh;
+      background: var(--bg); z-index: 101; display: flex; justify-content: center;
+      align-items: center; opacity: 0; visibility: hidden;
+      transition: opacity 0.5s var(--transition-smooth), visibility 0.5s var(--transition-smooth);
+    }
+    .nav-overlay.open { opacity: 1; visibility: visible; }
+    .nav-menu { list-style: none; padding: 40px 20px; text-align: center; }
+    .nav-item { margin: 24px 0; opacity: 0; transform: translateY(20px); transition: all 0.6s var(--transition-smooth); }
+    .nav-overlay.open .nav-item { opacity: 1; transform: translateY(0); }
+    .nav-overlay.open .nav-item:nth-child(1) { transition-delay: 0.1s; }
+    .nav-overlay.open .nav-item:nth-child(2) { transition-delay: 0.15s; }
+    .nav-overlay.open .nav-item:nth-child(3) { transition-delay: 0.2s; }
+    .nav-overlay.open .nav-item:nth-child(4) { transition-delay: 0.25s; }
+    .nav-overlay.open .nav-item:nth-child(5) { transition-delay: 0.3s; }
+
+    .nav-link {
+      font-family: var(--font-serif); font-size: 2.4rem; color: var(--text);
+      text-decoration: none; letter-spacing: 4px; transition: all 0.3s ease; display: inline-block;
+    }
+    .nav-link:hover { opacity: 0.4; transform: translateX(-4px); }
 
     header {
       text-align: center; padding: 220px 24px 140px 24px; display: flex;
-      flex-direction: column; justify-content: center; align-items: center; min-height: 85vh;
+      flex-direction: column; justify-content: center; align-items: center; min-height: 90vh;
     }
-    
-    h1 { font-size: clamp(2.6rem, 6vw, 4rem); letter-spacing: 12px; color: #EAE6D9; margin-bottom: 25px; font-weight: 300; }
-    .subtitle { font-family: 'Inter', sans-serif !important; font-size: 0.75rem; letter-spacing: 6px; color: #9E9A90; margin: 0 0 45px 0; text-transform: uppercase; }
-    .tagline { font-size: clamp(1.3rem, 3.5vw, 2.1rem); color: #EAE6D9; max-width: 720px; line-height: 1.65; margin: 0 auto; font-weight: 300; }
+    h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); letter-spacing: 12px; color: var(--text); margin-bottom: 25px; animation: fadeInUp 0.8s var(--transition-smooth); font-weight: 300; }
+    .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
+    .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; font-weight: 300; }
 
-    /* PARALLAX CORRIGIDO: Altura ideal (45vh) e Grayscale de 30% na primeira foto */
     .parallax-divider {
-      height: 45vh; width: 100%;
-      background-position: center 30%; background-repeat: no-repeat; background-size: cover;
-      position: relative; display: block !important;
+      height: 45vh;
+      width: 100%;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+      opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth);
     }
+    .parallax-divider.visible { opacity: 1; transform: translateY(0); }
     
     .parallax-divider::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, #0A0A0A 0%, rgba(10,10,10,0.25) 50%, #0A0A0A 100%);
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.2) 50%, var(--bg) 100%);
     }
 
-    .content-section { 
-      padding: 100px 24px; max-width: 800px; margin: 0 auto;
-      display: block !important;
-    }
+    .content-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
+    .content-section.visible { opacity: 1; transform: translateY(0); }
 
     .content { max-width: 640px; margin: 0 auto; text-align: center; }
-    .label { font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: #9E9A90; margin-bottom: 25px; display: block; font-weight: 500; }
-    .content p { font-size: clamp(1rem, 1.8vw, 1.1rem); color: #9E9A90; margin-bottom: 20px; line-height: 1.95; font-weight: 300; }
-    .content p:last-child { margin-bottom: 0; }
+    .label { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; display: block; font-weight: 500; }
+    .content p { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-muted); margin: 0; line-height: 1.95; font-weight: 300; letter-spacing: -0.1px; }
     
-    .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: #EAE6D9; margin-bottom: 35px; font-weight: 300; letter-spacing: 1px; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--text); margin-bottom: 35px; font-weight: 300; letter-spacing: 1px; }
 
-    .institutional-box { border: 1px solid #262626; padding: 50px 35px; margin-top: 50px; background: rgba(255,255,255,0.01); }
+    .institutional-box { border: 1px solid var(--line); padding: 50px 35px; margin-top: 50px; background: rgba(255,255,255,0.01); }
     .institutional-box ul { list-style: none; text-align: left; }
-    .institutional-box li { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #9E9A90; margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; font-weight: 300; }
+    .institutional-box li { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.2px; font-weight: 300; }
     .institutional-box li:last-child { margin-bottom: 0; }
-    .institutional-box li strong { color: #EAE6D9; font-weight: 500; }
-    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: #6A6760; }
+    .institutional-box li strong { color: var(--text); font-weight: 500; }
+    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
 
-    .doctor-signature { margin-top: 40px; padding-top: 30px; border-top: 1px solid #262626; text-align: center; }
-    .doctor-signature strong { color: #EAE6D9; font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 5px; }
-    .doctor-signature span { color: #6A6760; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
+    .doctor-signature { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--line); text-align: center; }
+    .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 5px; }
+    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
 
-    .btn { display: inline-block; margin-top: 50px; font-family: 'Inter', sans-serif; color: #EAE6D9; padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid #EAE6D9; transition: opacity 0.3s ease; font-weight: 600; }
+    .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 600; }
     .btn:hover { opacity: 0.4; }
 
-    .secure-alt-contact { display: block; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #9E9A90; letter-spacing: 0.5px; margin-top: 30px; line-height: 1.7; font-weight: 300; }
-    .secure-alt-contact a { color: #EAE6D9; text-decoration: none; border-bottom: 1px solid #6A6760; transition: color 0.3s ease; }
-    .secure-alt-contact a:hover { color: #9E9A90; }
+    /* ESTILIZAÇÃO DO CANAL ALTERNATIVO DE SEGURANÇA MÁXIMA */
+    .secure-alt-contact {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-top: 30px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .secure-alt-contact a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text-light);
+      transition: color 0.3s ease;
+    }
+    .secure-alt-contact a:hover {
+      color: var(--text-muted);
+    }
 
-    .family-note { max-width: 480px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 1px; color: #9E9A90; line-height: 1.8; font-weight: 300; border-top: 1px solid #262626; }
-    .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 2px; color: #9E9A90; line-height: 1.8; text-transform: uppercase; font-weight: 400; border-top: 1px solid #262626; }
+    .family-note { max-width: 480px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
+    .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 400; border-top: 1px solid var(--line); }
 
-    footer { text-align: center; padding: 100px 24px 60px 24px; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 3px; color: #9E9A90; opacity: 0.6; max-width: 600px; margin: 0 auto; }
-    footer a { color: #9E9A90; text-decoration: none; margin: 0 10px; }
+    footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
+    footer:hover { opacity: 0.8; }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
+    footer a:hover { color: var(--text); }
     .footer-links { margin-top: 15px; margin-bottom: 30px; }
-    .footer-email { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 2px; color: #EAE6D9; text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid #6A6760; }
-    .footer-disclaimer { display: block; font-size: 0.55rem; letter-spacing: 1px; color: #6A6760; margin-top: 12px; }
+    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 2px; color: var(--text); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--text-light); transition: all 0.3s ease; opacity: 0.8; }
+    .footer-email:hover { opacity: 1; border-bottom-color: var(--text); color: var(--text); }
+    .footer-disclaimer { display: block; font-size: 0.55rem; letter-spacing: 1px; color: var(--text-light); margin-top: 12px; opacity: 0.6; }
 
     @media(max-width: 768px) {
-      header { padding: 160px 20px 100px 20px; } h1 { font-size: 2.3rem; letter-spacing: 8px; }
+      .nav-bar { padding: 18px 20px; } .nav-bar.scrolled { padding: 12px 20px; }
+      header { padding: 160px 20px 100px 20px; } h1 { font-size: 2.4rem; letter-spacing: 8px; }
       .content-section { padding: 80px 20px; }
-      .parallax-divider { height: 60vh; background-position: center center; }
+      .nav-link { font-size: 1.8rem; letter-spacing: 3px; }
+      .institutional-box { padding: 40px 20px; }
+      .institutional-box li { font-size: 1rem; line-height: 1.9; }
+      .content p { font-size: 1rem; line-height: 2; }
+      .family-note { font-size: 0.8rem; }
+      .parallax-divider { background-attachment: scroll; height: 65vh; background-position: center center; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="nav-bar">
-    <a href="#" class="nav-logo">ANGMER</a>
-    <span class="menu-toggle">MENU</span>
+  <nav class="nav-bar" id="navbar">
+    <a href="#" class="nav-logo" aria-label="ANGMER — Página inicial">ANGMER</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu de navegação">
+      <span class="menu-toggle-icon">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
   </nav>
+
+  <div class="nav-overlay" id="menuOverlay">
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#tese" class="nav-link">A Tese</a></li>
+      <li class="nav-item"><a href="#servico" class="nav-link">O Serviço</a></li>
+      <li class="nav-item"><a href="#medico" class="nav-link">O Médico</a></li>
+      <li class="nav-item"><a href="#blindagem" class="nav-link">A Blindagem</a></li>
+      <li class="nav-item"><a href="#admissao" class="nav-link">Admissão</a></li>
+    </ul>
+  </div>
 
   <header>
     <h1>ANGMER</h1>
@@ -129,14 +246,14 @@
     <p class="tagline">Atendimento psiquiátrico com discrição absoluta para quem não pode ser visto entrando em um consultório.</p>
   </header>
 
-  <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(30%);"></div>
+  <div class="parallax-divider" style="background-image: url('foto-tese.png');"></div>
 
   <section class="content-section" id="tese">
     <div class="content">
       <span class="label">A Tese</span>
       <h2 class="section-title">O Risco da Exposição</h2>
       <p>Para figuras públicas, lideranças governamentais e executivos de alto impacto, a saúde mental é um ativo crítico.</p>
-      <p style="margin-top: 20px;">Uma crise, ou mesmo uma consulta de rotina, não pode se tornar alvo de especulação. Por isso, eliminamos o maior ponto de vulnerabilidade do cuidado médico tradicional: a sala de espera.</p>
+      <p style="margin-top: 20px;">Uma crise, ou mesmo uma consulta de rotina, não pode se tornar alvo de especulação. Por isso, eliminamos o maior ponto de vulnerabilidade do cuidado médico tradicional: a sala de esperas.</p>
     </div>
   </section>
 
@@ -165,6 +282,7 @@
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
       <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
       <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e profissional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
+      
       <p style="margin-top: 20px;">Você não encontrará fotos minhas em colunas sociais, perfis públicos atualizados ou qualquer forma de autopromoção digital. Não posto casos clínicos, não participo de debates midiáticos, não compartilho opiniões em redes sociais e não frequento eventos onde o meu nome possa ser associado ao seu. A minha presença pública como médico simplesmente não existe — e isso não é acidental. É um pré-requisito para o exercício desta profissão no nível de exigência que os meus pacientes demandam.</p>
       
       <div class="doctor-signature">
@@ -218,13 +336,55 @@
 
   <footer>
     <p>ANGMER • PSIQUIATRIA DOMICILIAR PRIVATIVA</p>
+    
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
+    
     <div class="footer-links">
-      <a href="#">Diretrizes Legais e Responsabilidade Médica</a>
+      <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
     </div>
-    <p style="font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio próprio livre de rastreadores (Zero-Tracking).</p>
+    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio próprio livre de rastreadores (Zero-Tracking).</p>
     <span class="footer-disclaimer">Canais externos de comunicação estão sujeitos às políticas de privacidade das respectivas plataformas.</span>
   </footer>
 
+  <script>
+    (function() {
+      var menuBtn = document.getElementById('menuBtn');
+      var menuOverlay = document.getElementById('menuOverlay');
+      var navLinks = document.querySelectorAll('.nav-link');
+      var navbar = document.getElementById('navbar');
+      
+      function toggleMenu() {
+        menuBtn.classList.toggle('open');
+        menuOverlay.classList.toggle('open');
+        document.body.style.overflow = menuOverlay.classList.contains('open') ? 'hidden' : '';
+      }
+      
+      menuBtn.addEventListener('click', toggleMenu);
+      
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          menuBtn.classList.remove('open');
+          menuOverlay.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+      });
+      
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      
+      document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
+    })();
+  </script>
 </body>
 </html>
