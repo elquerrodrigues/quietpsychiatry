@@ -10,7 +10,9 @@
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
   
-  <!-- BLINDAGEM DE RASTRO ZERO: Fontes externas (Google Fonts) removidas. O site opera de forma estéril e autônoma. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   
   <style>
     /* PALETA OBSIDIANA PURA - FOCO EM PRIVACIDADE E LUXO SILENCIOSO */
@@ -21,16 +23,12 @@
       --text-light: #6A6760;
       --line: #262626;
       --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
-      
-      /* Tipografia Nativa do Sistema: Sem requisições a servidores de terceiros */
-      --font-serif: Georgia, 'Times New Roman', Times, serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
-      font-family: var(--font-serif);
+      font-family: 'Cormorant Garamond', Georgia, serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.9;
@@ -40,8 +38,8 @@
     }
 
     h1, h2, h3, .tagline {
-      font-family: var(--font-serif);
-      font-weight: 400;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
       margin: 0;
     }
 
@@ -99,7 +97,7 @@
     .nav-overlay.open .nav-item:nth-child(6) { transition-delay: 0.6s; }
 
     .nav-link {
-      font-family: var(--font-serif); font-size: 2rem; color: var(--text);
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--text);
       text-decoration: none; letter-spacing: 4px; transition: all 0.3s ease; display: inline-block;
     }
     .nav-link:hover { opacity: 0.4; transform: translateX(-4px); }
@@ -109,7 +107,7 @@
       flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;
     }
     h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); letter-spacing: 10px; color: var(--text); margin-bottom: 20px; animation: fadeInUp 0.8s var(--transition-smooth); }
-    .subtitle { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 400; letter-spacing: 8px; color: var(--text-muted); margin: 0 0 40px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
+    .subtitle { font-family: 'Inter', system-ui, sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 8px; color: var(--text-muted); margin: 0 0 40px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
     .tagline { font-size: clamp(1.2rem, 2.5vw, 1.5rem); color: var(--text); max-width: 580px; line-height: 1.7; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; }
 
     .manifesto { text-align: center; padding: 0 24px 100px 24px; max-width: 620px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); }
@@ -125,7 +123,7 @@
     .image-container:hover img { transform: scale(1.03); opacity: 1; }
 
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
-    .label { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; display: block; font-weight: 400; }
+    .label { font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; display: block; font-weight: 400; }
     .content p { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--text-muted); margin: 0; line-height: 1.9; }
     .content p strong { color: var(--text); font-weight: 400; }
 
@@ -143,7 +141,7 @@
     }
     
     .institutional-box li {
-      font-family: var(--font-sans);
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.85rem;
       color: var(--text-muted);
       margin-bottom: 20px;
@@ -160,16 +158,16 @@
       color: var(--text-light);
     }
 
-    .process-info { font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-light); letter-spacing: 2px; line-height: 1.8; margin-top: 30px; font-weight: 300; }
+    .process-info { font-family: 'Inter', system-ui, sans-serif; font-size: 0.7rem; color: var(--text-light); letter-spacing: 2px; line-height: 1.8; margin-top: 30px; font-weight: 300; }
 
-    .btn { display: inline-block; margin-top: 40px; font-family: var(--font-sans); color: var(--text); padding: 12px 0 8px 0; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 6px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
+    .btn { display: inline-block; margin-top: 40px; font-family: 'Inter', system-ui, sans-serif; color: var(--text); padding: 12px 0 8px 0; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 6px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
     .btn:hover { opacity: 0.4; }
     
-    .response-time { display: block; font-family: var(--font-sans); font-size: 0.65rem; color: var(--text-light); letter-spacing: 2px; margin-top: 25px; font-weight: 300; }
+    .response-time { display: block; font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; color: var(--text-light); letter-spacing: 2px; margin-top: 25px; font-weight: 300; }
 
-    .exclusivity-notice { max-width: 480px; margin: 35px auto 0; padding: 15px 0; text-align: center; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border: none; }
+    .exclusivity-notice { max-width: 480px; margin: 35px auto 0; padding: 15px 0; text-align: center; font-family: 'Inter', system-ui, sans-serif; font-size: 0.65rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border: none; }
 
-    footer { text-align: center; padding: 80px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.45; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
+    footer { text-align: center; padding: 80px 24px; font-family: 'Inter', system-ui, sans-serif; font-size: 0.6rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.45; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
     footer:hover { opacity: 0.7; }
     footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
     footer a:hover { color: var(--text); }
