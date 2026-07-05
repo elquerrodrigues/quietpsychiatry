@@ -181,13 +181,47 @@
     
     .response-time { display: block; font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-light); letter-spacing: 2px; margin-top: 25px; font-weight: 300; }
 
+    .family-note {
+      max-width: 480px;
+      margin: 30px auto 0;
+      padding: 20px 0;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-weight: 300;
+      border-top: 1px solid var(--line);
+    }
+
     .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border-top: 1px solid var(--line); }
 
+    /* AJUSTE 3: Rodapé redesenhado com email em destaque */
     footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
     footer:hover { opacity: 0.8; }
     footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
     footer a:hover { color: var(--text); }
     .footer-links { margin-top: 15px; margin-bottom: 30px; }
+
+    .footer-email {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: var(--text);
+      text-decoration: none;
+      margin: 10px 0 25px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--text-light);
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+    .footer-email:hover {
+      opacity: 1;
+      border-bottom-color: var(--text);
+      color: var(--text);
+    }
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -255,7 +289,9 @@
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
       <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
       <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e profissional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
-      <p style="margin-top: 20px;">Você não me encontrará exibindo rotinas na internet ou buscando validação social. A minha única função é intervir e estabilizar a sua crise sem que o mundo exterior sequer saiba que eu estive lá.</p>
+      
+      <!-- AJUSTE 2: Parágrafo adicional reforçando a ausência de exposição em redes sociais -->
+      <p style="margin-top: 20px;">Você não encontrará fotos minhas em colunas sociais, perfis públicos atualizados ou qualquer forma de autopromoção digital. Não posto casos clínicos, não participo de debates midiáticos, não compartilho opiniões em redes sociais e não frequento eventos onde o meu nome possa ser associado ao seu. A minha presença pública como médico simplesmente não existe — e isso não é acidental. É um pré-requisito para o exercício desta profissão no nível de exigência que os meus pacientes demandam.</p>
       
       <div class="doctor-signature">
         <strong>Dr. Elquer Rodrigues</strong>
@@ -292,18 +328,25 @@
       
       <span class="response-time">O contato inicial ocorre em ambiente digital estrito e seguro.</span>
       
+      <!-- AJUSTE 1: Sinalização sutil para familiares e representantes -->
+      <div class="family-note">
+        O primeiro contato pode ser realizado por um familiar, assessor de confiança ou representante legal do potencial paciente. A discrição se estende a todas as partes envolvidas no processo.
+      </div>
+      
       <div class="exclusivity-notice">
         O acesso à ANGMER é reservado a indivíduos cuja exposição exija infraestrutura de sigilo compatível com seu nível de risco.
       </div>
     </div>
   </section>
 
+  <!-- AJUSTE 3: Rodapé com email em destaque -->
   <footer>
     <p>ANGMER • PSIQUIATRIA DOMICILIAR E CORPORATIVA</p>
+    
+    <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
+    
     <div class="footer-links">
       <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
-      <span aria-hidden="true">&nbsp;·&nbsp;</span>
-      <a href="mailto:admissao@angmer.com.br">Contato Privado</a>
     </div>
     <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio 100% livre de rastreamento (Zero-Tracking).</p>
   </footer>
