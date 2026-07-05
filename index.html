@@ -126,11 +126,11 @@
     .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 40px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
     .tagline { font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--text); max-width: 680px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; }
 
-    /* ESTRUTURA DOS DIVISORES DE IMAGEM */
+    /* DIVISORES AUMENTADOS: 85vh no desktop para mostrar muito mais da foto vertical */
     .parallax-divider {
-      height: 40vh;
+      height: 85vh;
       width: 100%;
-      background-position: center;
+      background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
@@ -139,12 +139,11 @@
     }
     .parallax-divider.visible { opacity: 1; transform: translateY(0); }
     
-    /* Gradiente sombrio sobre as imagens para manter a elegância e legibilidade */
     .parallax-divider::after {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.4) 50%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.3) 50%, var(--bg) 100%);
     }
 
     .content-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
@@ -156,18 +155,9 @@
     
     .section-title { font-size: 2rem; color: var(--text); margin-bottom: 30px; font-weight: 300; }
 
-    .institutional-box {
-      border: 1px solid var(--line);
-      padding: 50px 35px;
-      margin-top: 50px;
-      background: rgba(255,255,255,0.01);
-    }
-    
+    .institutional-box { border: 1px solid var(--line); padding: 50px 35px; margin-top: 50px; background: rgba(255,255,255,0.01); }
     .institutional-box ul { list-style: none; text-align: left; }
-    .institutional-box li {
-      font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted);
-      margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.5px;
-    }
+    .institutional-box li { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.5px; }
     .institutional-box li:last-child { margin-bottom: 0; }
     .institutional-box li strong { color: var(--text); font-weight: 500; }
     .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
@@ -178,8 +168,6 @@
 
     .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
     .btn:hover { opacity: 0.4; }
-    
-    .response-time { display: block; font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-light); letter-spacing: 2px; margin-top: 25px; font-weight: 300; }
 
     .family-note { max-width: 480px; margin: 30px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1.5px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
     .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border-top: 1px solid var(--line); }
@@ -204,7 +192,8 @@
       .institutional-box li { font-size: 1rem; line-height: 1.9; }
       .content p { font-size: 1rem; line-height: 2; }
       .family-note { font-size: 0.8rem; }
-      .parallax-divider { background-attachment: scroll; /* Melhora performance no iPhone */ height: 30vh; }
+      /* AUMENTADO PARA 70vh NO MOBILE PARA TER UMA JANELA MAIOR PARA AS FOTOS */
+      .parallax-divider { background-attachment: scroll; height: 70vh; }
     }
   </style>
 </head>
@@ -231,11 +220,10 @@
 
   <header>
     <h1>ANGMER</h1>
-    <p class="subtitle">Psiquiatria Domiciliar e Corporativa Privativa</p>
+    <p class="subtitle">Psiquiatria Domiciliar Privativa</p>
     <p class="tagline">Atendimento psiquiátrico com discrição absoluta para quem não pode ser visto entrando em um consultório.</p>
   </header>
 
-  <!-- IMAGEM 1: O Prédio Geométrico -->
   <div class="parallax-divider" style="background-image: url('foto-tese.png');"></div>
 
   <section class="content-section" id="tese">
@@ -247,7 +235,6 @@
     </div>
   </section>
 
-  <!-- IMAGEM 2: O Encontro Noturno -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
   <section class="content-section" id="servico">
@@ -265,8 +252,7 @@
     </div>
   </section>
 
-  <!-- IMAGEM 3: Os Painéis de Madeira -->
-  <div class="parallax-divider" style="background-image: url('foto-medico.png.png');"></div>
+  <div class="parallax-divider" style="background-image: url('foto-medico.png');"></div>
 
   <section class="content-section" id="medico">
     <div class="content">
@@ -284,7 +270,6 @@
     </div>
   </section>
 
-  <!-- IMAGEM 4: A Base de Latão com Caneta -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
   <section class="content-section" id="blindagem">
@@ -312,7 +297,6 @@
       <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20às%20diretrizes%20do%20protocolo%20de%20admissão%20da%20ANGMER." target="_blank" class="btn">
         Iniciar Protocolo de Atendimento
       </a>
-      
       
       <div class="family-note">
         O primeiro contato pode ser realizado por um familiar, assessor de confiança ou representante legal do potencial paciente. A discrição se estende a todas as partes envolvidas no processo.
@@ -373,7 +357,6 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       
-      // Observa tanto o texto quanto os divisores com as imagens para dar o efeito de fade
       document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
     })();
   </script>
