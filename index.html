@@ -10,6 +10,10 @@
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -17,7 +21,7 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Psiquiatria domiciliar e corporativa privativa com protocolos de sigilo e governança de dados."
+      "description": "Psiquiatria domiciliar e corporativa privativa com protocols de sigilo e governança de dados."
     }
   </script>
   
@@ -31,14 +35,15 @@
       --line: #262626;
       --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
       
-      --font-serif: Georgia, 'Times New Roman', Times, serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      /* ATUALIZAÇÃO DAS FONTES GLOBAIS VIA GOOGLE FONTS */
+      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', Times, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
-      font-family: var(--font-serif);
+      font-family: var(--font-sans); /* Inter aplicada globalmente para todos os textos comuns */
       background: var(--bg);
       color: var(--text);
       line-height: 1.9;
@@ -47,6 +52,7 @@
       overflow-x: hidden;
     }
 
+    /* TÍTULOS E TAGLINES ASSUMEM A CORMORANT GARAMOND */
     h1, h2, h3, .tagline {
       font-family: var(--font-serif);
       font-weight: 400;
@@ -70,7 +76,8 @@
     }
 
     .nav-logo {
-      font-size: 1.1rem; letter-spacing: 6px; text-decoration: none;
+      font-family: var(--font-serif); /* Logo em Cormorant Garamond fica extremamente elegante */
+      font-size: 1.3rem; letter-spacing: 6px; text-decoration: none;
       color: var(--text); font-weight: 400; transition: opacity 0.3s ease;
     }
     .nav-logo:hover { opacity: 0.6; }
@@ -113,7 +120,7 @@
     .nav-overlay.open .nav-item:nth-child(5) { transition-delay: 0.3s; }
 
     .nav-link {
-      font-family: var(--font-serif); font-size: 2rem; color: var(--text);
+      font-family: var(--font-serif); font-size: 2.4rem; color: var(--text);
       text-decoration: none; letter-spacing: 4px; transition: all 0.3s ease; display: inline-block;
     }
     .nav-link:hover { opacity: 0.4; transform: translateX(-4px); }
@@ -122,11 +129,11 @@
       text-align: center; padding: 220px 24px 140px 24px; display: flex;
       flex-direction: column; justify-content: center; align-items: center; min-height: 90vh;
     }
-    h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); letter-spacing: 10px; color: var(--text); margin-bottom: 20px; animation: fadeInUp 0.8s var(--transition-smooth); }
-    .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 40px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
-    .tagline { font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--text); max-width: 680px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; }
+    h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); letter-spacing: 12px; color: var(--text); margin-bottom: 25px; animation: fadeInUp 0.8s var(--transition-smooth); font-weight: 300; }
+    .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
+    .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; font-weight: 300; }
 
-    /* CORREÇÃO DO DESKTOP: Altura reduzida para 45vh (corte cinematográfico) e foco no centro-topo (30%) */
+    /* PARALLAX CINEMATOGRÁFICO AJUSTADO PARA O DESKTOP (45vh com foco inteligente) */
     .parallax-divider {
       height: 45vh;
       width: 100%;
@@ -150,14 +157,14 @@
     .content-section.visible { opacity: 1; transform: translateY(0); }
 
     .content { max-width: 640px; margin: 0 auto; text-align: center; }
-    .label { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; display: block; font-weight: 400; }
-    .content p { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--text-muted); margin: 0; line-height: 1.9; }
+    .label { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; display: block; font-weight: 500; }
+    .content p { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-muted); margin: 0; line-height: 1.95; font-weight: 300; letter-spacing: -0.1px; }
     
-    .section-title { font-size: 2rem; color: var(--text); margin-bottom: 30px; font-weight: 300; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--text); margin-bottom: 35px; font-weight: 300; letter-spacing: 1px; }
 
     .institutional-box { border: 1px solid var(--line); padding: 50px 35px; margin-top: 50px; background: rgba(255,255,255,0.01); }
     .institutional-box ul { list-style: none; text-align: left; }
-    .institutional-box li { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.5px; }
+    .institutional-box li { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.2px; font-weight: 300; }
     .institutional-box li:last-child { margin-bottom: 0; }
     .institutional-box li strong { color: var(--text); font-weight: 500; }
     .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
@@ -166,11 +173,11 @@
     .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 5px; }
     .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
 
-    .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
+    .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 600; }
     .btn:hover { opacity: 0.4; }
 
-    .family-note { max-width: 480px; margin: 30px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1.5px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
-    .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border-top: 1px solid var(--line); }
+    .family-note { max-width: 480px; margin: 30px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
+    .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 400; border-top: 1px solid var(--line); }
 
     footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
     footer:hover { opacity: 0.8; }
@@ -181,18 +188,16 @@
     .footer-email:hover { opacity: 1; border-bottom-color: var(--text); color: var(--text); }
     .footer-disclaimer { display: block; font-size: 0.55rem; letter-spacing: 1px; color: var(--text-light); margin-top: 12px; opacity: 0.6; }
 
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-
     @media(max-width: 768px) {
       .nav-bar { padding: 18px 20px; } .nav-bar.scrolled { padding: 12px 20px; }
-      header { padding: 160px 20px 100px 20px; } h1 { font-size: 2.2rem; letter-spacing: 8px; }
+      header { padding: 160px 20px 100px 20px; } h1 { font-size: 2.4rem; letter-spacing: 8px; }
       .content-section { padding: 80px 20px; }
-      .nav-link { font-size: 1.6rem; letter-spacing: 3px; }
+      .nav-link { font-size: 1.8rem; letter-spacing: 3px; }
       .institutional-box { padding: 40px 20px; }
       .institutional-box li { font-size: 1rem; line-height: 1.9; }
       .content p { font-size: 1rem; line-height: 2; }
       .family-note { font-size: 0.8rem; }
-      /* No mobile a tela já é vertical, então a imagem pode ocupar 65% da tela perfeitamente */
+      /* No mobile a tela vertical aproveita melhor a foto em 65vh */
       .parallax-divider { background-attachment: scroll; height: 65vh; background-position: center center; }
     }
   </style>
@@ -259,7 +264,7 @@
       <span class="label">O Médico</span>
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
       <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
-      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e profissional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
+      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e professional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
       
       <p style="margin-top: 20px;">Você não encontrará fotos minhas em colunas sociais, perfis públicos atualizados ou qualquer forma de autopromoção digital. Não posto casos clínicos, não participo de debates midiáticos, não compartilho opiniões em redes sociais e não frequento eventos onde o meu nome possa ser associado ao seu. A minha presença pública como médico simplesmente não existe — e isso não é acidental. É um pré-requisito para o exercício desta profissão no nível de exigência que os meus pacientes demandam.</p>
       
@@ -294,71 +299,4 @@
       <h2 class="section-title">Admissão e Triagem</h2>
       <p>Atendimento médico especializado, com arquitetura desenhada para mitigar riscos de exposição.</p>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20às%20diretrizes%20do%20protocolo%20de%20admissão%20da%20ANGMER." target="_blank" class="btn">
-        Iniciar Protocolo de Atendimento
-      </a>
-      
-      <div class="family-note">
-        O primeiro contato pode ser realizado por um familiar, assessor de confiança ou representante legal do potencial paciente. A discrição se estende a todas as partes envolvidas no processo.
-      </div>
-      
-      <div class="exclusivity-notice">
-        O acesso à ANGMER é reservado a indivíduos cuja exposição exija infraestrutura de sigilo compatível com seu nível de risco.
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>ANGMER • PSIQUIATRIA DOMICILIAR E CORPORATIVA</p>
-    
-    <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
-    
-    <div class="footer-links">
-      <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
-    </div>
-    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio próprio livre de rastreadores (Zero-Tracking).</p>
-    <span class="footer-disclaimer">Canais externos de comunicação estão sujeitos às políticas de privacidade das respectivas plataformas.</span>
-  </footer>
-
-  <script>
-    (function() {
-      var menuBtn = document.getElementById('menuBtn');
-      var menuOverlay = document.getElementById('menuOverlay');
-      var navLinks = document.querySelectorAll('.nav-link');
-      var navbar = document.getElementById('navbar');
-      
-      function toggleMenu() {
-        menuBtn.classList.toggle('open');
-        menuOverlay.classList.toggle('open');
-        document.body.style.overflow = menuOverlay.classList.contains('open') ? 'hidden' : '';
-      }
-      
-      menuBtn.addEventListener('click', toggleMenu);
-      
-      navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-          menuBtn.classList.remove('open');
-          menuOverlay.classList.remove('open');
-          document.body.style.overflow = '';
-        });
-      });
-      
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) navbar.classList.add('scrolled');
-        else navbar.classList.remove('scrolled');
-      });
-      
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-      
-      document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
-    })();
-  </script>
-</body>
-</html>
+      <a href="
