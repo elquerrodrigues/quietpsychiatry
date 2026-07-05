@@ -21,19 +21,18 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Psiquiatria domiciliar e corporativa privativa com protocolos de sigilo e governança de dados."
+      "description": "Psiquiatria domiciliar privativa com protocolos de sigilo e governança de dados."
     }
   </script>
   
   <style>
-    /* PALETA OBSIDIANA PURA - LUXO SILENCIOSO E TIPOGRÁFICO */
+    /* PALETA OBSIDIANA PURA - CORRIGIDA E SEM TRAVAS DE OPACIDADE */
     :root {
       --bg: #0A0A0A;
       --text: #EAE6D9;
       --text-muted: #9E9A90;
       --text-light: #6A6760;
       --line: #262626;
-      --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
       
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', Times, serif;
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -42,7 +41,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
-      font-family: var(--font-sans);
+      font-family: var(--font-sans); /* Texto corrido em Inter */
       background: var(--bg);
       color: var(--text);
       line-height: 1.9;
@@ -52,7 +51,7 @@
     }
 
     h1, h2, h3, .tagline {
-      font-family: var(--font-serif);
+      font-family: var(--font-serif); /* Títulos em Cormorant Garamond */
       font-weight: 400;
       margin: 0;
     }
@@ -64,7 +63,7 @@
       padding: 24px 32px; z-index: 100;
       background: rgba(10, 10, 10, 0.85);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      transition: all 0.4s var(--transition-smooth);
+      transition: padding 0.3s ease, background 0.3s ease;
     }
     
     .nav-bar.scrolled {
@@ -95,42 +94,37 @@
     .menu-toggle-icon span {
       display: block;
       width: 100%; height: 1.5px; background-color: var(--text);
-      transition: all 0.4s var(--transition-smooth); transform-origin: center;
+      transition: transform 0.3s ease, opacity 0.3s ease; transform-origin: center;
     }
     .menu-toggle.open .menu-toggle-icon span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle.open .menu-toggle-icon span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-toggle.open .menu-toggle-icon span:nth-child(2) { opacity: 0; }
     .menu-toggle.open .menu-toggle-icon span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .nav-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh;
       background: var(--bg); z-index: 101; display: flex; justify-content: center;
       align-items: center; opacity: 0; visibility: hidden;
-      transition: opacity 0.5s var(--transition-smooth), visibility 0.5s var(--transition-smooth);
+      transition: opacity 0.4s ease, visibility 0.4s ease;
     }
     .nav-overlay.open { opacity: 1; visibility: visible; }
     .nav-menu { list-style: none; padding: 40px 20px; text-align: center; }
-    .nav-item { margin: 24px 0; opacity: 0; transform: translateY(20px); transition: all 0.6s var(--transition-smooth); }
-    .nav-overlay.open .nav-item { opacity: 1; transform: translateY(0); }
-    .nav-overlay.open .nav-item:nth-child(1) { transition-delay: 0.1s; }
-    .nav-overlay.open .nav-item:nth-child(2) { transition-delay: 0.15s; }
-    .nav-overlay.open .nav-item:nth-child(3) { transition-delay: 0.2s; }
-    .nav-overlay.open .nav-item:nth-child(4) { transition-delay: 0.25s; }
-    .nav-overlay.open .nav-item:nth-child(5) { transition-delay: 0.3s; }
+    .nav-item { margin: 24px 0; }
 
     .nav-link {
       font-family: var(--font-serif); font-size: 2.4rem; color: var(--text);
-      text-decoration: none; letter-spacing: 4px; transition: all 0.3s ease; display: inline-block;
+      text-decoration: none; letter-spacing: 4px; transition: opacity 0.3s ease; display: inline-block;
     }
-    .nav-link:hover { opacity: 0.4; transform: translateX(-4px); }
+    .nav-link:hover { opacity: 0.4; }
 
     header {
       text-align: center; padding: 220px 24px 140px 24px; display: flex;
       flex-direction: column; justify-content: center; align-items: center; min-height: 90vh;
     }
-    h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); letter-spacing: 12px; color: var(--text); margin-bottom: 25px; animation: fadeInUp 0.8s var(--transition-smooth); font-weight: 300; }
-    .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
-    .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; font-weight: 300; }
+    h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); letter-spacing: 12px; color: var(--text); margin-bottom: 25px; font-weight: 300; }
+    .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; }
+    .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; font-weight: 300; }
 
+    /* PARALLAX SEGURO: OPACIDADE FIXADA EM 1 (Sempre visível) */
     .parallax-divider {
       height: 45vh;
       width: 100%;
@@ -139,9 +133,8 @@
       background-size: cover;
       background-attachment: fixed;
       position: relative;
-      opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth);
+      opacity: 1; /* Forçado 1 para evitar bug de carregamento */
     }
-    .parallax-divider.visible { opacity: 1; transform: translateY(0); }
     
     .parallax-divider::after {
       content: '';
@@ -150,8 +143,13 @@
       background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.2) 50%, var(--bg) 100%);
     }
 
-    .content-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
-    .content-section.visible { opacity: 1; transform: translateY(0); }
+    /* SEÇÕES DE CONTEÚDO: REMOVIDAS AS TRAVAS DE ANIMÇÃO QUE CAUSAVAM O APAGÃO */
+    .content-section { 
+      padding: 100px 24px; 
+      max-width: 800px; 
+      margin: 0 auto; 
+      opacity: 1; /* Sempre visível imediatamente */
+    }
 
     .content { max-width: 640px; margin: 0 auto; text-align: center; }
     .label { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 25px; display: block; font-weight: 500; }
@@ -159,4 +157,138 @@
     
     .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--text); margin-bottom: 35px; font-weight: 300; letter-spacing: 1px; }
 
-    .institutional-box { border: 1px solid var(--line); padding: 50px 35px; margin-top: 50px; background: rgba
+    .institutional-box { border: 1px solid var(--line); padding: 50px 35px; margin-top: 50px; background: rgba(255,255,255,0.01); }
+    .institutional-box ul { list-style: none; text-align: left; }
+    .institutional-box li { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.2px; font-weight: 300; }
+    .institutional-box li:last-child { margin-bottom: 0; }
+    .institutional-box li strong { color: var(--text); font-weight: 500; }
+    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
+
+    .doctor-signature { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--line); text-align: center; }
+    .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 5px; }
+    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
+
+    .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 600; }
+    .btn:hover { opacity: 0.4; }
+
+    .secure-alt-contact {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-top: 30px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .secure-alt-contact a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text-light);
+      transition: color 0.3s ease;
+    }
+    .secure-alt-contact a:hover {
+      color: var(--text-muted);
+    }
+
+    .family-note { max-width: 480px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
+    .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 400; border-top: 1px solid var(--line); }
+
+    footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
+    footer:hover { opacity: 0.8; }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
+    footer a:hover { color: var(--text); }
+    .footer-links { margin-top: 15px; margin-bottom: 30px; }
+    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 2px; color: var(--text); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--text-light); transition: all 0.3s ease; opacity: 0.8; }
+    .footer-email:hover { opacity: 1; border-bottom-color: var(--text); color: var(--text); }
+    .footer-disclaimer { display: block; font-size: 0.55rem; letter-spacing: 1px; color: var(--text-light); margin-top: 12px; opacity: 0.6; }
+
+    @media(max-width: 768px) {
+      .nav-bar { padding: 18px 20px; } .nav-bar.scrolled { padding: 12px 20px; }
+      header { padding: 160px 20px 100px 20px; } h1 { font-size: 2.4rem; letter-spacing: 8px; }
+      .content-section { padding: 80px 20px; }
+      .nav-link { font-size: 1.8rem; letter-spacing: 3px; }
+      .institutional-box { padding: 40px 20px; }
+      .institutional-box li { font-size: 1rem; line-height: 1.9; }
+      .content p { font-size: 1rem; line-height: 2; }
+      .family-note { font-size: 0.8rem; }
+      .parallax-divider { background-attachment: scroll; height: 65vh; background-position: center center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-bar" id="navbar">
+    <a href="#" class="nav-logo" aria-label="ANGMER — Página inicial">ANGMER</a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu de navegação">
+      <span class="menu-toggle-icon">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay" id="menuOverlay">
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#tese" class="nav-link">A Tese</a></li>
+      <li class="nav-item"><a href="#servico" class="nav-link">O Serviço</a></li>
+      <li class="nav-item"><a href="#medico" class="nav-link">O Médico</a></li>
+      <li class="nav-item"><a href="#blindagem" class="nav-link">A Blindagem</a></li>
+      <li class="nav-item"><a href="#admissao" class="nav-link">Admissão</a></li>
+    </ul>
+  </div>
+
+  <header>
+    <h1>ANGMER</h1>
+    <p class="subtitle">Psiquiatria Domiciliar Privativa</p>
+    <p class="tagline">Atendimento psiquiátrico com discrição absoluta para quem não pode ser visto entrando em um consultório.</p>
+  </header>
+
+  <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(30%);"></div>
+
+  <section class="content-section" id="tese">
+    <div class="content">
+      <span class="label">A Tese</span>
+      <h2 class="section-title">O Risco da Exposição</h2>
+      <p>Para figuras públicas, lideranças governamentais e executivos de alto impacto, a saúde mental é um ativo crítico.</p>
+      <p style="margin-top: 20px;">Uma crise, ou mesmo uma consulta de rotina, não pode se tornar alvo de especulação. Por isso, eliminamos o maior ponto de vulnerabilidade do cuidado médico tradicional: a sala de espera.</p>
+    </div>
+  </section>
+
+  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
+
+  <section class="content-section" id="servico">
+    <div class="content">
+      <span class="label">O Serviço</span>
+      <h2 class="section-title">Intervenção Clínica In Loco</h2>
+      <p>Avaliação, manejo de crises e acompanhamento psiquiátrico contínuo realizados diretamente na sua zona de segurança — seja na sua residência, quarto de hotel ou sede corporativa.</p>
+      
+      <div class="institutional-box">
+        <ul>
+          <li><strong>Sigilo Logístico:</strong> Sem recepções, sem intermediários desnecessários, sem cruzar com outras pessoas. O médico vai até você.</li>
+          <li><strong>Preservação da Rotina:</strong> O objetivo clínico central é a estabilização emocional e a preservação da sua capacidade de tomada de decisão, respeitando o peso e a urgência da sua agenda.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
+
+  <section class="content-section" id="medico">
+    <div class="content">
+      <span class="label">O Médico</span>
+      <h2 class="section-title">A Ausência de Ego como Princípio</h2>
+      <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
+      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e profissional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
+      
+      <p style="margin-top: 20px;">Você não encontrará fotos minhas em colunas sociais, perfis públicos atualizados ou qualquer forma de autopromoção digital. Não posto casos clínicos, não participo de debates midiáticos, não compartilho opiniões em redes sociais e não frequento eventos onde o meu nome possa ser associado ao seu. A minha presença pública como médico simplesmente não existe — e isso não é acidental. É um pré-requisito para o exercício desta profissão no nível de exigência que os meus pacientes demandam.</p>
+      
+      <div class="doctor-signature">
+        <strong>Dr. Elquer Rodrigues</strong>
+        <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
+
+  <section
