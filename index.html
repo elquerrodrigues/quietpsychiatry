@@ -10,6 +10,18 @@
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
   
+  <!-- JSON-LD: Dados estruturados mínimos para mecanismos de busca, sem expor telefone ou endereço -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Elquer Rodrigues",
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://angmer.com.br",
+      "description": "Psiquiatria domiciliar e corporativa privativa com protocolos de sigilo e governança de dados."
+    }
+  </script>
+  
   <style>
     /* PALETA OBSIDIANA PURA - LUXO SILENCIOSO E TIPOGRÁFICO */
     :root {
@@ -65,19 +77,27 @@
     }
     .nav-logo:hover { opacity: 0.6; }
 
+    /* AJUSTE: Menu toggle com área de toque de 48x48px e ícone visual mantido em 24x16px */
     .menu-toggle {
-      display: flex; flex-direction: column; justify-content: space-between;
-      width: 24px; height: 16px; background: transparent; border: none;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      width: 48px; height: 48px; background: transparent; border: none;
       cursor: pointer; padding: 0; z-index: 102; transition: transform 0.3s ease;
+      position: relative;
     }
     .menu-toggle:hover { transform: scale(1.05); }
-    .menu-toggle span {
+    
+    .menu-toggle-icon {
+      display: flex; flex-direction: column; justify-content: space-between;
+      width: 24px; height: 16px;
+    }
+    .menu-toggle-icon span {
+      display: block;
       width: 100%; height: 1.5px; background-color: var(--text);
       transition: all 0.4s var(--transition-smooth); transform-origin: center;
     }
-    .menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .menu-toggle.open .menu-toggle-icon span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.open .menu-toggle-icon span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .menu-toggle.open .menu-toggle-icon span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .nav-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh;
@@ -197,7 +217,7 @@
 
     .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border-top: 1px solid var(--line); }
 
-    /* AJUSTE 3: Rodapé redesenhado com email em destaque */
+    /* Rodapé com email em destaque */
     footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
     footer:hover { opacity: 0.8; }
     footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
@@ -222,6 +242,15 @@
       border-bottom-color: var(--text);
       color: var(--text);
     }
+    
+    .footer-disclaimer {
+      display: block;
+      font-size: 0.55rem;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      margin-top: 12px;
+      opacity: 0.6;
+    }
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -231,6 +260,19 @@
       .content-section { padding: 80px 20px; }
       .nav-link { font-size: 1.6rem; letter-spacing: 3px; }
       .institutional-box { padding: 40px 20px; }
+      
+      /* AJUSTE: Tipografia ampliada no mobile para itens de leitura longa */
+      .institutional-box li {
+        font-size: 1rem;
+        line-height: 1.9;
+      }
+      .content p {
+        font-size: 1rem;
+        line-height: 2;
+      }
+      .family-note {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -239,7 +281,9 @@
   <nav class="nav-bar" id="navbar">
     <a href="#" class="nav-logo" aria-label="ANGMER — Página inicial">ANGMER</a>
     <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu de navegação">
-      <span></span><span></span><span></span>
+      <span class="menu-toggle-icon">
+        <span></span><span></span><span></span>
+      </span>
     </button>
   </nav>
 
@@ -290,7 +334,6 @@
       <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
       <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e profissional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
       
-      <!-- AJUSTE 2: Parágrafo adicional reforçando a ausência de exposição em redes sociais -->
       <p style="margin-top: 20px;">Você não encontrará fotos minhas em colunas sociais, perfis públicos atualizados ou qualquer forma de autopromoção digital. Não posto casos clínicos, não participo de debates midiáticos, não compartilho opiniões em redes sociais e não frequento eventos onde o meu nome possa ser associado ao seu. A minha presença pública como médico simplesmente não existe — e isso não é acidental. É um pré-requisito para o exercício desta profissão no nível de exigência que os meus pacientes demandam.</p>
       
       <div class="doctor-signature">
@@ -310,7 +353,8 @@
         <ul>
           <li><strong>Auditoria Jurídica (NDA Bilateral):</strong> O atendimento é resguardado por Acordo de Confidencialidade (NDA) estrito e legalmente vinculativo, protegendo tanto a pessoa física quanto a instituição que ela representa.</li>
           <li><strong>Isolamento de Dados (Rastro Zero):</strong> Prontuários mantidos fora de servidores públicos em nuvem. Toda a comunicação logística ocorre via canais com criptografia ponta a ponta. Este domínio opera sem cookies ou rastreadores de publicidade (Meta/Google).</li>
-          <li><strong>Política de 'No Comment':</strong> Não interagimos com a mídia, não confirmamos admissões e, por imperativo ético e de segurança, não utilizamos pacientes como "casos de sucesso". A sua presença na ANGMER não existe para o mundo exterior.</li>
+          <!-- AJUSTE 1: Frase de blindagem juridicamente mais defensável, mantendo força emocional -->
+          <li><strong>Política de Silêncio Institucional:</strong> Para o mundo exterior, a sua presença na ANGMER simplesmente não aconteceu. Não confirmamos, não comentamos, não divulgamos — sob nenhuma circunstância.</li>
         </ul>
       </div>
     </div>
@@ -328,7 +372,6 @@
       
       <span class="response-time">O contato inicial ocorre em ambiente digital estrito e seguro.</span>
       
-      <!-- AJUSTE 1: Sinalização sutil para familiares e representantes -->
       <div class="family-note">
         O primeiro contato pode ser realizado por um familiar, assessor de confiança ou representante legal do potencial paciente. A discrição se estende a todas as partes envolvidas no processo.
       </div>
@@ -339,7 +382,6 @@
     </div>
   </section>
 
-  <!-- AJUSTE 3: Rodapé com email em destaque -->
   <footer>
     <p>ANGMER • PSIQUIATRIA DOMICILIAR E CORPORATIVA</p>
     
@@ -348,7 +390,9 @@
     <div class="footer-links">
       <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
     </div>
-    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio 100% livre de rastreamento (Zero-Tracking).</p>
+    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio próprio livre de rastreadores (Zero-Tracking).</p>
+    <!-- AJUSTE 4: Disclaimer sobre canais externos -->
+    <span class="footer-disclaimer">Canais externos de comunicação estão sujeitos às políticas de privacidade das respectivas plataformas.</span>
   </footer>
 
   <script>
