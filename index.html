@@ -87,12 +87,13 @@
     }
     .nav-overlay.open { opacity: 1; visibility: visible; }
     .nav-menu { list-style: none; padding: 40px 20px; text-align: center; }
-    .nav-item { margin: 28px 0; opacity: 0; transform: translateY(20px); transition: all 0.6s var(--transition-smooth); }
+    .nav-item { margin: 24px 0; opacity: 0; transform: translateY(20px); transition: all 0.6s var(--transition-smooth); }
     .nav-overlay.open .nav-item { opacity: 1; transform: translateY(0); }
     .nav-overlay.open .nav-item:nth-child(1) { transition-delay: 0.1s; }
-    .nav-overlay.open .nav-item:nth-child(2) { transition-delay: 0.2s; }
-    .nav-overlay.open .nav-item:nth-child(3) { transition-delay: 0.3s; }
-    .nav-overlay.open .nav-item:nth-child(4) { transition-delay: 0.4s; }
+    .nav-overlay.open .nav-item:nth-child(2) { transition-delay: 0.15s; }
+    .nav-overlay.open .nav-item:nth-child(3) { transition-delay: 0.2s; }
+    .nav-overlay.open .nav-item:nth-child(4) { transition-delay: 0.25s; }
+    .nav-overlay.open .nav-item:nth-child(5) { transition-delay: 0.3s; }
 
     .nav-link {
       font-family: var(--font-serif); font-size: 2rem; color: var(--text);
@@ -151,6 +152,30 @@
       color: var(--text-light);
     }
 
+    .doctor-signature {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    .doctor-signature strong {
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .doctor-signature span {
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
     .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
     .btn:hover { opacity: 0.4; }
     
@@ -188,6 +213,7 @@
     <ul class="nav-menu">
       <li class="nav-item"><a href="#tese" class="nav-link">A Tese</a></li>
       <li class="nav-item"><a href="#servico" class="nav-link">O Serviço</a></li>
+      <li class="nav-item"><a href="#medico" class="nav-link">O Médico</a></li>
       <li class="nav-item"><a href="#blindagem" class="nav-link">A Blindagem</a></li>
       <li class="nav-item"><a href="#admissao" class="nav-link">Admissão</a></li>
     </ul>
@@ -219,6 +245,21 @@
           <li><strong>Sigilo Logístico:</strong> Sem recepções, sem intermediários desnecessários, sem cruzar com outras pessoas. O médico vai até você.</li>
           <li><strong>Preservação da Rotina:</strong> O objetivo clínico central é a estabilização emocional e a preservação da sua capacidade de tomada de decisão, respeitando o peso e a urgência da sua agenda.</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="medico">
+    <div class="content">
+      <span class="label">O Médico</span>
+      <h2 class="section-title">A Ausência de Ego como Princípio</h2>
+      <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
+      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e profissional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
+      <p style="margin-top: 20px;">Você não me encontrará exibindo rotinas na internet ou buscando validação social. A minha única função é intervir e estabilizar a sua crise sem que o mundo exterior sequer saiba que eu estive lá.</p>
+      
+      <div class="doctor-signature">
+        <strong>Dr. Elquer Rodrigues</strong>
+        <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
       </div>
     </div>
   </section>
