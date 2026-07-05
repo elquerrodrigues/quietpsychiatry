@@ -10,7 +10,6 @@
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
   
-  <!-- JSON-LD: Dados estruturados mínimos para mecanismos de busca, sem expor telefone ou endereço -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,7 +31,6 @@
       --line: #262626;
       --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
       
-      /* Tipografia Nativa do Sistema (Zero Tracking Google Fonts) */
       --font-serif: Georgia, 'Times New Roman', Times, serif;
       --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
@@ -128,6 +126,27 @@
     .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 40px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
     .tagline { font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--text); max-width: 680px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; }
 
+    /* ESTRUTURA DOS DIVISORES DE IMAGEM */
+    .parallax-divider {
+      height: 40vh;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+      opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth);
+    }
+    .parallax-divider.visible { opacity: 1; transform: translateY(0); }
+    
+    /* Gradiente sombrio sobre as imagens para manter a elegância e legibilidade */
+    .parallax-divider::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.4) 50%, var(--bg) 100%);
+    }
+
     .content-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
     .content-section.visible { opacity: 1; transform: translateY(0); }
 
@@ -144,76 +163,25 @@
       background: rgba(255,255,255,0.01);
     }
     
-    .institutional-box ul {
-      list-style: none;
-      text-align: left;
-    }
-    
+    .institutional-box ul { list-style: none; text-align: left; }
     .institutional-box li {
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 25px;
-      padding-left: 20px;
-      position: relative;
-      line-height: 1.8;
-      letter-spacing: 0.5px;
+      font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted);
+      margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.5px;
     }
-    
     .institutional-box li:last-child { margin-bottom: 0; }
-    
     .institutional-box li strong { color: var(--text); font-weight: 500; }
+    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
 
-    .institutional-box li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--text-light);
-    }
-
-    .doctor-signature {
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-    .doctor-signature strong {
-      color: var(--text);
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 500;
-      display: block;
-      margin-bottom: 5px;
-    }
-    .doctor-signature span {
-      color: var(--text-light);
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+    .doctor-signature { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--line); text-align: center; }
+    .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 5px; }
+    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
 
     .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 500; }
     .btn:hover { opacity: 0.4; }
     
     .response-time { display: block; font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-light); letter-spacing: 2px; margin-top: 25px; font-weight: 300; }
 
-    .family-note {
-      max-width: 480px;
-      margin: 30px auto 0;
-      padding: 20px 0;
-      text-align: center;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      font-weight: 300;
-      border-top: 1px solid var(--line);
-    }
-
+    .family-note { max-width: 480px; margin: 30px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1.5px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
     .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 300; border-top: 1px solid var(--line); }
 
     footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
@@ -221,34 +189,9 @@
     footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
     footer a:hover { color: var(--text); }
     .footer-links { margin-top: 15px; margin-bottom: 30px; }
-
-    .footer-email {
-      display: inline-block;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      color: var(--text);
-      text-decoration: none;
-      margin: 10px 0 25px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid var(--text-light);
-      transition: all 0.3s ease;
-      opacity: 0.8;
-    }
-    .footer-email:hover {
-      opacity: 1;
-      border-bottom-color: var(--text);
-      color: var(--text);
-    }
-    
-    .footer-disclaimer {
-      display: block;
-      font-size: 0.55rem;
-      letter-spacing: 1px;
-      color: var(--text-light);
-      margin-top: 12px;
-      opacity: 0.6;
-    }
+    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 2px; color: var(--text); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--text-light); transition: all 0.3s ease; opacity: 0.8; }
+    .footer-email:hover { opacity: 1; border-bottom-color: var(--text); color: var(--text); }
+    .footer-disclaimer { display: block; font-size: 0.55rem; letter-spacing: 1px; color: var(--text-light); margin-top: 12px; opacity: 0.6; }
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -258,18 +201,10 @@
       .content-section { padding: 80px 20px; }
       .nav-link { font-size: 1.6rem; letter-spacing: 3px; }
       .institutional-box { padding: 40px 20px; }
-      
-      .institutional-box li {
-        font-size: 1rem;
-        line-height: 1.9;
-      }
-      .content p {
-        font-size: 1rem;
-        line-height: 2;
-      }
-      .family-note {
-        font-size: 0.8rem;
-      }
+      .institutional-box li { font-size: 1rem; line-height: 1.9; }
+      .content p { font-size: 1rem; line-height: 2; }
+      .family-note { font-size: 0.8rem; }
+      .parallax-divider { background-attachment: scroll; /* Melhora performance no iPhone */ height: 30vh; }
     }
   </style>
 </head>
@@ -300,6 +235,9 @@
     <p class="tagline">Atendimento psiquiátrico com discrição absoluta para quem não pode ser visto entrando em um consultório.</p>
   </header>
 
+  <!-- IMAGEM 1: O Prédio Geométrico -->
+  <div class="parallax-divider" style="background-image: url('foto-tese.png');"></div>
+
   <section class="content-section" id="tese">
     <div class="content">
       <span class="label">A Tese</span>
@@ -308,6 +246,9 @@
       <p style="margin-top: 20px;">Uma crise, ou mesmo uma consulta de rotina, não pode se tornar alvo de especulação. Por isso, eliminamos o maior ponto de vulnerabilidade do cuidado médico tradicional: a sala de espera.</p>
     </div>
   </section>
+
+  <!-- IMAGEM 2: O Encontro Noturno -->
+  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
   <section class="content-section" id="servico">
     <div class="content">
@@ -323,6 +264,9 @@
       </div>
     </div>
   </section>
+
+  <!-- IMAGEM 3: Os Painéis de Madeira -->
+  <div class="parallax-divider" style="background-image: url('foto-medico.png');"></div>
 
   <section class="content-section" id="medico">
     <div class="content">
@@ -340,6 +284,9 @@
     </div>
   </section>
 
+  <!-- IMAGEM 4: A Base de Latão com Caneta -->
+  <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
+
   <section class="content-section" id="blindagem">
     <div class="content">
       <span class="label">Infraestrutura</span>
@@ -350,8 +297,6 @@
         <ul>
           <li><strong>Auditoria Jurídica (NDA Bilateral):</strong> O atendimento é resguardado por Acordo de Confidencialidade (NDA) estrito e legalmente vinculativo, protegendo tanto a pessoa física quanto a instituição que ela representa.</li>
           <li><strong>Isolamento de Dados (Rastro Zero):</strong> Prontuários mantidos fora de servidores públicos em nuvem. Toda a comunicação logística ocorre via canais com criptografia ponta a ponta. Este domínio opera sem cookies ou rastreadores de publicidade (Meta/Google).</li>
-          
-          <!-- ATENÇÃO: AQUI ESTÁ A NOVA POLÍTICA DE SILÊNCIO INSTITUCIONAL -->
           <li><strong>Política de Silêncio Institucional:</strong> A confidencialidade é tratada como princípio permanente da prática clínica. A existência de um atendimento, sua natureza e qualquer informação relacionada ao paciente permanecem protegidas pelo sigilo profissional, observadas as exceções previstas em lei e autorizadas pelo próprio paciente.</li>
         </ul>
       </div>
@@ -429,7 +374,8 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       
-      document.querySelectorAll('.content-section').forEach(function(s) { observer.observe(s); });
+      // Observa tanto o texto quanto os divisores com as imagens para dar o efeito de fade
+      document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
     })();
   </script>
 </body>
