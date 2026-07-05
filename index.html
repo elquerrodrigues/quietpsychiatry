@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ANGMER | Psiquiatria Domiciliar e Corporativa</title>
+  <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
   <meta name="description" content="Psiquiatra domiciliar com discrição absoluta para quem não pode ser visto entrando em um consultório. Atendimento corporativo e governamental.">
   <meta name="keywords" content="psiquiatra domiciliar, psiquiatria corporativa, psiquiatra sigiloso, medicina privativa, atendimento psiquiátrico in loco">
   <meta name="author" content="ANGMER">
@@ -21,7 +21,7 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Psiquiatria domiciliar e corporativa privativa com protocols de sigilo e governança de dados."
+      "description": "Psiquiatria domiciliar e corporativa privativa com protocolos de sigilo e governança de dados."
     }
   </script>
   
@@ -35,7 +35,6 @@
       --line: #262626;
       --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
       
-      /* ATUALIZAÇÃO DAS FONTES GLOBAIS VIA GOOGLE FONTS */
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', Times, serif;
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
@@ -43,7 +42,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
-      font-family: var(--font-sans); /* Inter aplicada globalmente para todos os textos comuns */
+      font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
       line-height: 1.9;
@@ -52,7 +51,6 @@
       overflow-x: hidden;
     }
 
-    /* TÍTULOS E TAGLINES ASSUMEM A CORMORANT GARAMOND */
     h1, h2, h3, .tagline {
       font-family: var(--font-serif);
       font-weight: 400;
@@ -76,7 +74,7 @@
     }
 
     .nav-logo {
-      font-family: var(--font-serif); /* Logo em Cormorant Garamond fica extremamente elegante */
+      font-family: var(--font-serif);
       font-size: 1.3rem; letter-spacing: 6px; text-decoration: none;
       color: var(--text); font-weight: 400; transition: opacity 0.3s ease;
     }
@@ -133,7 +131,6 @@
     .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
     .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; font-weight: 300; }
 
-    /* PARALLAX CINEMATOGRÁFICO AJUSTADO PARA O DESKTOP (45vh com foco inteligente) */
     .parallax-divider {
       height: 45vh;
       width: 100%;
@@ -176,7 +173,28 @@
     .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 600; }
     .btn:hover { opacity: 0.4; }
 
-    .family-note { max-width: 480px; margin: 30px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
+    /* ESTILIZAÇÃO DO CANAL ALTERNATIVO DE SEGURANÇA MÁXIMA */
+    .secure-alt-contact {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-top: 30px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .secure-alt-contact a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text-light);
+      transition: color 0.3s ease;
+    }
+    .secure-alt-contact a:hover {
+      color: var(--text-muted);
+    }
+
+    .family-note { max-width: 480px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 1px; color: var(--text-muted); line-height: 1.8; font-weight: 300; border-top: 1px solid var(--line); }
     .exclusivity-notice { max-width: 520px; margin: 40px auto 0; padding: 20px 0; text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); line-height: 1.8; text-transform: uppercase; font-weight: 400; border-top: 1px solid var(--line); }
 
     footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
@@ -197,7 +215,6 @@
       .institutional-box li { font-size: 1rem; line-height: 1.9; }
       .content p { font-size: 1rem; line-height: 2; }
       .family-note { font-size: 0.8rem; }
-      /* No mobile a tela vertical aproveita melhor a foto em 65vh */
       .parallax-divider { background-attachment: scroll; height: 65vh; background-position: center center; }
     }
   </style>
@@ -236,67 +253,8 @@
       <span class="label">A Tese</span>
       <h2 class="section-title">O Risco da Exposição</h2>
       <p>Para figuras públicas, lideranças governamentais e executivos de alto impacto, a saúde mental é um ativo crítico.</p>
-      <p style="margin-top: 20px;">Uma crise, ou mesmo uma consulta de rotina, não pode se tornar alvo de especulação. Por isso, eliminamos o maior ponto de vulnerabilidade do cuidado médico tradicional: a sala de espera.</p>
+      <p style="margin-top: 20px;">Uma crise, ou mesmo uma consulta de rotina, não pode se tornar alvo de especulação. Por isso, eliminamos o maior ponto de vulnerabilidade do cuidado médico tradicional: a sala de esperas.</p>
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
-
-  <section class="content-section" id="servico">
-    <div class="content">
-      <span class="label">O Serviço</span>
-      <h2 class="section-title">Intervenção Clínica In Loco</h2>
-      <p>Avaliação, manejo de crises e acompanhamento psiquiátrico contínuo realizados diretamente na sua zona de segurança — seja na sua residência, quarto de hotel ou sede corporativa.</p>
-      
-      <div class="institutional-box">
-        <ul>
-          <li><strong>Sigilo Logístico:</strong> Sem recepções, sem intermediários desnecessários, sem cruzar com outras pessoas. O médico vai até você.</li>
-          <li><strong>Preservação da Rotina:</strong> O objetivo clínico central é a estabilização emocional e a preservação da sua capacidade de tomada de decisão, respeitando o peso e a urgência da sua agenda.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
-
-  <section class="content-section" id="medico">
-    <div class="content">
-      <span class="label">O Médico</span>
-      <h2 class="section-title">A Ausência de Ego como Princípio</h2>
-      <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
-      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e professional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
-      
-      <p style="margin-top: 20px;">Você não encontrará fotos minhas em colunas sociais, perfis públicos atualizados ou qualquer forma de autopromoção digital. Não posto casos clínicos, não participo de debates midiáticos, não compartilho opiniões em redes sociais e não frequento eventos onde o meu nome possa ser associado ao seu. A minha presença pública como médico simplesmente não existe — e isso não é acidental. É um pré-requisito para o exercício desta profissão no nível de exigência que os meus pacientes demandam.</p>
-      
-      <div class="doctor-signature">
-        <strong>Dr. Elquer Rodrigues</strong>
-        <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
-
-  <section class="content-section" id="blindagem">
-    <div class="content">
-      <span class="label">Infraestrutura</span>
-      <h2 class="section-title">Protocolos de Sigilo e Governança de Dados</h2>
-      <p>A proteção da sua privacidade é tratada com rigor institucional, em estrito alinhamento ao Código de Ética Médica e à LGPD.</p>
-      
-      <div class="institutional-box">
-        <ul>
-          <li><strong>Auditoria Jurídica (NDA Bilateral):</strong> O atendimento é resguardado por Acordo de Confidencialidade (NDA) estrito e legalmente vinculativo, protegendo tanto a pessoa física quanto a instituição que ela representa.</li>
-          <li><strong>Isolamento de Dados (Rastro Zero):</strong> Prontuários mantidos fora de servidores públicos em nuvem. Toda a comunicação logística ocorre via canais com criptografia ponta a ponta. Este domínio opera sem cookies ou rastreadores de publicidade (Meta/Google).</li>
-          <li><strong>Política de Silêncio Institucional:</strong> A confidencialidade é tratada como princípio permanente da prática clínica. A existência de um atendimento, sua natureza e qualquer informação relacionada ao paciente permanecem protegidas pelo sigilo profissional, observadas as exceções previstas em lei e autorizadas pelo próprio paciente.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section" id="admissao">
-    <div class="content">
-      <span class="label">Contato Privado</span>
-      <h2 class="section-title">Admissão e Triagem</h2>
-      <p>Atendimento médico especializado, com arquitetura desenhada para mitigar riscos de exposição.</p>
-      
-      <a href="
+  <div
