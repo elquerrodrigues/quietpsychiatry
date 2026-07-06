@@ -232,4 +232,190 @@
       margin-top: 60px; 
       font-family: var(--font-sans); 
       color: var(--bg); 
-      background-color: var(--text);
+      background-color: var(--text); 
+      padding: 16px 40px; 
+      text-decoration: none; 
+      font-size: 0.7rem; 
+      text-transform: uppercase; 
+      letter-spacing: 4px; 
+      transition: all 0.4s ease; 
+      font-weight: 400; 
+    }
+    .btn:hover { background-color: var(--accent); color: var(--bg); }
+
+    .secure-alt-contact {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      color: var(--text-light);
+      letter-spacing: 0.3px;
+      margin-top: 40px;
+      line-height: 1.8;
+      font-weight: 200;
+    }
+    .secure-alt-contact a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: all 0.3s ease;
+    }
+    .secure-alt-contact a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* FOOTER DISCRETO */
+    footer { text-align: center; padding: 120px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; }
+    footer a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; margin: 0 12px; }
+    footer a:hover { color: var(--accent); }
+    .footer-links { margin-top: 20px; margin-bottom: 40px; }
+    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
+    .footer-email:hover { color: var(--text); border-bottom-color: var(--text); }
+
+    @keyframes fadeInSmooth { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* REGRAS LAPIDADAS EXCLUSIVAS PARA O IPHONE */
+    @media(max-width: 768px) {
+      header { padding: 0 20px; min-height: 90vh; } 
+      
+      h1 { 
+        font-size: 2.1rem; 
+        margin-bottom: 20px; 
+        animation: lanserhofMobileReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+      }
+      
+      .subtitle { letter-spacing: 6px; margin-bottom: 40px; }
+      .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
+      
+      .content-section { padding: 100px 20px; }
+      .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
+      .content p { font-size: 0.95rem; line-height: 1.9; }
+      
+      .profile-photo {
+        height: 25vh; 
+        margin: 40px auto 25px auto;
+        padding: 6px;
+      }
+      
+      .parallax-divider { 
+        background-attachment: scroll; 
+        height: 50vh;             
+        margin: 50px 0;           
+        background-size: cover;   
+        background-position: center center; 
+      }
+      .btn { width: 100%; text-align: center; padding: 18px 20px; }
+    }
+
+    @keyframes lanserhofMobileReveal {
+      0% { opacity: 0; letter-spacing: -2px; filter: blur(5px); transform: scale(0.98); }
+      30% { opacity: 0.3; filter: blur(2px); }
+      100% { opacity: 1; letter-spacing: 10px; filter: blur(0); transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ANGMER</h1>
+    <p class="subtitle">Psiquiatria Domiciliar Privativa</p>
+    <p class="tagline">Atendimento psiquiátrico no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
+  </header>
+
+  <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(15%);"></div>
+
+  <section class="content-section" id="tese">
+    <div class="content">
+      <h2 class="section-title">O Privilégio de Permanecer Oculto</h2>
+      <p>Para grandes executivos, lideranças e figuras públicas, buscar suporte para a saúde mental não deve significar abrir mão do controle sobre a sua imagem pública.</p>
+      <p>O verdadeiro cuidado não exige que você se desloque, enfrente salas de espera ou se exponha a ambientes coletivos. Eliminamos o maior fator de vulnerabilidade da medicina tradicional: a necessidade de trânsito social. Seu acompanhamento médico transcorre unicamente onde você está seguro.</p>
+    </div>
+  </section>
+
+  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
+
+  <section class="content-section" id="servico">
+    <div class="content">
+      <h2 class="section-title">A Medicina no Seu Território</h2>
+      <p>Consultas, diagnóstico e acompanhamento clínico contínuo realizados diretamente no ambiente de sua escolha — seja em sua residência particular, na discrição de uma suíte de hotel ou nos bastidores restritos de seu escritório corporativo.</p>
+      
+      <div class="institutional-box">
+        <ul>
+          <li><strong>Sem deslocamento</strong></li>
+          <li><strong>Sem salas de espera</strong></li>
+          <li><strong>Sem mudança de rotina</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
+
+  <section class="content-section" id="medico">
+    <div class="content">
+      <h2 class="section-title">A Ausência de Ego como Princípio</h2>
+      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
+      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
+      <p>Minha prática é estritamente privada. Não compartilho rotinas, não utilizo canais públicos para autopromoção e não frequento ambientes onde meu nome possa ser associado ao seu. Esse recatamento público não é acidental; é um pré-requisito indispensável para atender ao nível de exigência que a sua privacidade demanda.</p>
+      
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      
+      <div class="doctor-signature">
+        <strong>Dr. Elquer Rodrigues</strong>
+        <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
+
+  <section class="content-section" id="blindagem">
+    <div class="content">
+      <h2 class="section-title">Atendimento Psiquiátrico Domiciliar</h2>
+      <p>Lideranças empresariais e figuras públicas de alta exposição contam aqui com uma dinâmica médica invertida: o médico vai até o paciente. Em vez de se deslocar a clínicas tradicionais ou enfrentar o risco de salas de espera, o paciente solicita o atendimento e é assistido em seu território seguro. É o suporte psiquiátrico especializado desenhado para quem exige máxima conveniência.</p>
+      <p>Esta consultoria privativa é realizada de forma estritamente individual pelo Dr. Elquer Rodrigues, sem assistentes ou equipes intermediárias, blindando o silêncio absoluto desde o primeiro contato. Por critérios logísticos e rigor clínico, o atendimento domiciliar está disponível, por enquanto, exclusivamente na cidade de São Paulo, amoldando-se à rotina de quem opera sob alta governança.</p>
+    </div>
+  </section>
+
+  <section class="content-section" id="admissao">
+    <div class="content">
+      <h2 class="section-title">Acesso Direto e Exclusivo</h2>
+      <p>Um canal privativo estruturado para dar início ao seu atendimento médico com o máximo de discrição, fluidez e absoluto resguardo de dados.</p>
+      
+      <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20às%20diretrizes%20do%20protocolo%20de%20admissão%20da%20ANGMER." target="_blank" class="btn">
+        solicitar agendamento privativo
+      </a>
+      
+      <span class="secure-alt-contact">
+        Para alinhamentos de alta governança ou admissões corporativas restritas, o contato pode ser estabelecido diretamente via: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
+      </span>
+    </div>
+  </section>
+
+  <footer>
+    <p>ANGMER • PSIQUIATRIA DOMICILIAR PRIVATIVA</p>
+    
+    <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
+    
+    <div class="footer-links">
+      <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
+    </div>
+    <p style="font-size: 0.55rem; letter-spacing: 1px; opacity: 0.7;">Operações resguardadas por absoluto sigilo profissional. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
+  </footer>
+
+  <script>
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+      
+      document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
+    })();
+  </script>
+</body>
+</html>
