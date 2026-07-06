@@ -49,7 +49,7 @@
       font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
-      line-height: 2.1; /* Linhas mais espaçadas para leitura aristocrática */
+      line-height: 2.1; 
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
@@ -73,13 +73,16 @@
       background: radial-gradient(circle at center, #0e0e0e 0%, var(--bg) 70%);
     }
     
+    /* === O EFEITO LANSERHOF NA PALAVRA ANGMER === */
     h1 { 
       font-size: clamp(2.6rem, 7vw, 4.5rem); 
-      letter-spacing: 16px; /* Espaçamento ultra-premium */
       color: var(--text); 
       margin-bottom: 30px; 
-      animation: fadeInSmooth 1.2s var(--transition-smooth); 
       text-transform: uppercase;
+      will-change: letter-spacing, opacity, filter;
+      
+      /* Aplicação da animação majestosa e lenta */
+      animation: lanserhofReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
     }
     
     .subtitle { 
@@ -90,7 +93,8 @@
       color: var(--accent); 
       margin: 0 0 50px 0; 
       text-transform: uppercase; 
-      animation: fadeInSmooth 1.2s var(--transition-smooth) 0.3s both; 
+      /* Surge suavemente logo após a abertura da palavra ANGMER */
+      animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
     }
     
     .tagline { 
@@ -100,7 +104,27 @@
       line-height: 1.7; 
       margin: 0 auto; 
       font-style: italic;
-      animation: fadeInSmooth 1.2s var(--transition-smooth) 0.6s both; 
+      animation: fadeInSmooth 1.5s var(--transition-smooth) 1.6s both; 
+    }
+
+    /* KEYFRAMES DO EFEITO LANSERHOF (ABERTURA ARISTOCRÁTICA) */
+    @keyframes lanserhofReveal {
+      0% {
+        opacity: 0;
+        letter-spacing: -3px;       /* Começa comprimido */
+        filter: blur(6px);          /* Leve névoa de mistério */
+        transform: scale(0.98);
+      }
+      30% {
+        opacity: 0.3;
+        filter: blur(3px);
+      }
+      100% {
+        opacity: 1;
+        letter-spacing: 16px;       /* Abre majestosamente no espaçamento de elite */
+        filter: blur(0);            /* Nitidez cristalina */
+        transform: scale(1);
+      }
     }
 
     /* MOLDURA DE FOTOGRAFIA PARALLAX/DIVIDER */
@@ -126,7 +150,6 @@
 
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
     
-    /* Degradê suave nas bordas para simular fusão em veludo */
     .parallax-divider::after {
       content: '';
       position: absolute;
@@ -166,7 +189,7 @@
       letter-spacing: 2px;
     }
 
-    /* CAIXA INSTITUCIONAL ESTILO ATELIER */
+    /* CAIXA INSTITUCIONAL ESTIRO ATELIER */
     .institutional-box { 
       border: 1px solid var(--line); 
       padding: 60px 45px; 
@@ -199,7 +222,7 @@
       margin-top: 60px; 
       font-family: var(--font-sans); 
       color: var(--bg); 
-      background-color: var(--text); /* Contraste nobre de alfaiataria */
+      background-color: var(--text); 
       padding: 16px 40px; 
       text-decoration: none; 
       font-size: 0.7rem; 
@@ -241,10 +264,17 @@
 
     @keyframes fadeInSmooth { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* REDUÇÃO MILIMÉTRICA PARA TELA DO IPHONE */
+    /* REGRAS EXCLUSIVAS PARA ADAPTAÇÃO NO IPHONE */
     @media(max-width: 768px) {
       header { padding: 0 20px; min-height: 90vh; } 
-      h1 { font-size: 2.1rem; letter-spacing: 10px; margin-bottom: 20px; }
+      
+      /* Ajuste proporcional do Lanserhof Effect no mobile para não quebrar linha */
+      h1 { 
+        font-size: 2.1rem; 
+        margin-bottom: 20px; 
+        animation: lanserhofMobileReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+      }
+      
       .subtitle { letter-spacing: 6px; margin-bottom: 40px; }
       .tagline { font-size: 1.15rem; line-height: 1.6; }
       .content-section { padding: 100px 20px; }
@@ -258,6 +288,26 @@
         background-size: contain;
       }
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
+    }
+
+    /* Variável de animação mobile para acomodar telas menores sem transbordar */
+    @keyframes lanserhofMobileReveal {
+      0% {
+        opacity: 0;
+        letter-spacing: -2px;
+        filter: blur(5px);
+        transform: scale(0.98);
+      }
+      30% {
+        opacity: 0.3;
+        filter: blur(2px);
+      }
+      100% {
+        opacity: 1;
+        letter-spacing: 10px; /* Unidade milimétrica para o visor do iPhone */
+        filter: blur(0);
+        transform: scale(1);
+      }
     }
   </style>
 </head>
@@ -359,7 +409,7 @@
     <p style="font-size: 0.55rem; letter-spacing: 1px; opacity: 0.7;">Operações resguardadas por absoluto sigilo profissional. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
   </footer>
 
-  <script strain="sartorial">
+  <script>
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
