@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone/Safari (Retornado ao Veludo Preto) -->
+  <!-- Integração de Cor com a Barra do iPhone/Safari -->
   <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
@@ -94,15 +94,16 @@
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
     }
     
+    /* === MUDANÇA CONTRATADA: ALINHADA COM A SERIFADA ELEGANTE (CORMORANT) === */
     .tagline { 
-      font-family: var(--font-sans); 
-      font-weight: 300;
-      font-size: clamp(1.1rem, 3.2vw, 1.4rem); 
+      font-family: var(--font-serif); 
+      font-weight: 400;
+      font-size: clamp(1.25rem, 3.6vw, 1.6rem); /* Ajuste de tamanho para balanço óptico */
       color: var(--text-muted); 
       max-width: 620px; 
-      line-height: 1.9; 
+      line-height: 1.8; 
       margin: 0 auto; 
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.6s both; 
     }
 
@@ -286,7 +287,9 @@
       }
       
       .subtitle { letter-spacing: 6px; margin-bottom: 40px; }
-      .tagline { font-size: 1.05rem; line-height: 1.7; padding: 0 10px; }
+      
+      /* Ajuste milimétrico para a Cormorant Garamond brilhar no celular */
+      .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
       
       .content-section { padding: 100px 20px; }
       .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
