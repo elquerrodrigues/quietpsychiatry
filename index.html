@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
-  <meta name="description" content="Psiquiatra domiciliar com discrição absoluta para quem não pode ser visto entrando em um consultório. Atendimento corporativo e governamental.">
-  <meta name="keywords" content="psiquiatra domiciliar, psiquiatria corporativa, psiquiatra sigiloso, medicina privativa, atendimento psiquiátrico in loco">
+  <meta name="description" content="Atendimento psiquiátrico exclusivo no conforto da sua residência, escritório ou hotel. Preservação total do seu anonimato sem necessidade de deslocamentos.">
+  <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa, atendimento psiquiátrico discreto, psiquiatra executivos">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
   
@@ -21,7 +21,7 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Psiquiatria domiciliar e corporativa privativa com protocolos de sigilo e governança de dados."
+      "description": "Psiquiatria domiciliar e corporativa privativa focada no conforto e anonimato total do paciente."
     }
   </script>
   
@@ -67,32 +67,27 @@
     .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
     .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; font-weight: 300; }
 
-    /* === AJUSTE DE IMAGEM PARA APARECER INTEIRA (NO NOTEBOOK) === */
+    /* SEÇÃO DE IMAGEM CORRIGIDA (CONTAIN E CENTRALIZADA) */
     .parallax-divider {
       width: 100%;
-      background-position: center center; /* Centraliza a imagem */
+      background-position: center center;
       background-repeat: no-repeat;
-      
-      /* MUDANÇA CHAVE: De 'cover' para 'contain' para mostrar a foto inteira sem cortes */
       background-size: contain; 
-      
       background-attachment: fixed;
       position: relative;
-      background-color: var(--bg); /* Garante fundo preto se a foto for menor */
+      background-color: var(--bg);
       opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth);
     }
 
-    /* Ajuste específico para desktops/notebooks para dar altura à foto */
     @media (min-width: 769px) {
       .parallax-divider {
-        height: 80vh; /* Aumenta a altura no notebook para fotos quadradas/verticais aparecerem bem */
-        margin: 50px 0; /* Espaço elegante acima e abaixo da imagem */
+        height: 80vh;
+        margin: 50px 0;
       }
     }
 
     .parallax-divider.visible { opacity: 1; transform: translateY(0); }
     
-    /* Gradiente suave nas bordas da imagem para integrar com o fundo preto */
     .parallax-divider::after {
       content: '';
       position: absolute;
@@ -153,21 +148,13 @@
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* === AJUSTE PARA CELULAR === */
     @media(max-width: 768px) {
       header { padding: 120px 20px 100px 20px; } h1 { font-size: 2.4rem; letter-spacing: 8px; }
       .content-section { padding: 80px 20px; }
       .institutional-box { padding: 40px 20px; }
       .institutional-box li { font-size: 1rem; line-height: 1.9; }
       .content p { font-size: 1rem; line-height: 2; }
-      
-      /* No celular, removemos o efeito fixo e garantimos que a foto apareça bem */
-      .parallax-divider { 
-        background-attachment: scroll; 
-        height: 60vh; /* Altura generosa no celular */
-        background-size: contain; /* Mantém a foto inteira no celular também */
-        margin: 20px 0;
-      }
+      .parallax-divider { background-attachment: scroll; height: 60vh; background-size: contain; margin: 20px 0; }
     }
   </style>
 </head>
@@ -176,47 +163,44 @@
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">Psiquiatria Domiciliar Privativa</p>
-    <p class="tagline">Atendimento psiquiátrico com discrição absoluta para quem não pode ser visto entrando em um consultório.</p>
+    <p class="tagline">Tratamento psiquiátrico de alto padrão no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
 
-  <!-- SEÇÃO DE IMAGEM 1: TESE -->
   <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(30%);"></div>
 
   <section class="content-section" id="tese">
     <div class="content">
-      <h2 class="section-title">O Risco da Exposição</h2>
-      <p>Para figuras públicas, lideranças governamentais e executivos de alto impacto, a saúde mental é um ativo crítico.</p>
-      <p style="margin-top: 20px;">Uma crise, ou mesmo uma consulta de rotina, não pode se tornar alvo de especulação. Por isso, eliminamos o maior ponto de vulnerabilidade do cuidado médico tradicional: a sala de espera.</p>
+      <h2 class="section-title">O Privilégio de Permanecer Oculto</h2>
+      <p>Para grandes executivos, lideranças e figuras públicas, buscar suporte para a saúde mental não deve significar abrir mão do controle sobre a sua imagem.</p>
+      <p style="margin-top: 20px;">O verdadeiro cuidado não exige que você se desloque, enfrente o trânsito ou se exponha a ambientes públicos. Eliminamos completamente o maior fator de vulnerabilidade da medicina tradicional: a necessidade de ser visto entrando em uma clínica ou aguardando em uma recepção. Seu tratamento acontece onde você está seguro.</p>
     </div>
   </section>
 
-  <!-- SEÇÃO DE IMAGEM 2: SERVIÇO -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
   <section class="content-section" id="servico">
     <div class="content">
-      <h2 class="section-title">Intervenção Clínica In Loco</h2>
-      <p>Avaliação, manejo de crises e acompanhamento psiquiátrico contínuo realizados diretamente na sua zona de segurança — seja na sua residência, quarto de hotel ou sede corporativa.</p>
+      <h2 class="section-title">A Medicina no Seu Território</h2>
+      <p>Consultas, manejo de rotinas e acompanhamento clínico contínuo realizados diretamente no ambiente de sua escolha — seja no recôndito da sua residência, na discrição de uma suíte de hotel ou na total privacidade do seu escritório corporativo.</p>
       
       <div class="institutional-box">
         <ul>
-          <li><strong>Sigilo Logístico:</strong> Sem recepções, sem intermediários desnecessários, sem cruzar com outras pessoas. O médico vai até você.</li>
-          <li><strong>Preservação da Rotina:</strong> O objetivo clínico central é a estabilização emocional e a preservação da sua capacidade de tomada de decisão, respeitando o peso e a urgência da sua agenda.</li>
+          <li><strong>Ausência de Deslocamento:</strong> Você não precisa interromper o seu dia ou sair do seu ambiente de conforto. O atendimento médico se molda à sua localização atual, sem intermediários.</li>
+          <li><strong>Preservação Absoluta da Rotina:</strong> O foco clínico está em estabilizar e proteger a sua capacidade de decisão e bem-estar, respeitando rigorosamente os horários e o ritmo de seus compromissos.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO DE IMAGEM 3: MÉDICO -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
   <section class="content-section" id="medico">
     <div class="content">
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
-      <p>Lideranças e figuras de grande exposição pública não buscam médicos espalhafatosos ou deslumbrados com a mídia. Em um cenário onde a medicina frequentemente cede à superexposição em redes sociais, a discrição absoluta tornou-se o ativo clínico mais raro e valioso.</p>
-      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige silêncio, respeito irrestrito à privacidade e competência técnica. A ANGMER foi criada exatamente porque este é o meu perfil pessoal e profissional: estritamente clínico, avesso aos holofotes e focado na resolução do problema.</p>
+      <p>Pacientes de grande exposição pública e alta exigência não buscam médicos midiáticos ou deslumbrados com os holofotes. Em um cenário onde a medicina frequentemente cede à espetacularização, o silêncio e o recatamento profissional tornaram-se os ativos clínicos mais raros e valiosos.</p>
+      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige discrição absoluta, respeito irrestrito à intimidade e foco estritamente técnico. A ANGMER foi desenhada para refletir esse perfil: uma atuação médica de bastidor, voltada exclusivamente para o cuidado e para a resolução do problema.</p>
       
-      <p style="margin-top: 20px;">Você não encontrará fotos minhas em colunas sociais, perfis públicos atualizados ou qualquer forma de autopromoção digital. Não posto casos clínicos, não participo de debates midiáticos, não compartilho opiniões em redes sociais e não frequento eventos onde o meu nome possa ser associado ao seu. A minha presença pública como médico simplesmente não existe — e isso não é acidental. É um pré-requisito para o exercício desta profissão no nível de exigência que os meus pacientes demandam.</p>
+      <p style="margin-top: 20px;">Minha prática é pautada pelo distanciamento total das redes sociais e da autopromoção digital. Não compartilho rotinas, não exponho vivências e não frequento ambientes onde meu nome possa ser publicamente associado ao seu. O foco permanece único e exclusivamente onde deve estar: no seu bem-estar, em ambiente privado.</p>
       
       <div class="doctor-signature">
         <strong>Dr. Elquer Rodrigues</strong>
@@ -225,19 +209,18 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DE IMAGEM 4: BLINDAGEM -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
   <section class="content-section" id="blindagem">
     <div class="content">
-      <h2 class="section-title">Protocolos de Sigilo e Governança de Dados</h2>
-      <p>A proteção da sua privacidade é tratada com rigor institucional, em estrito alinhamento ao Código de Ética Médica e à LGPD.</p>
+      <h2 class="section-title">Garantia de Anonimato Prático</h2>
+      <p>O cuidado com a integridade da sua rotina e da sua privacidade individual é tratado com o mais alto rigor ético e profissional.</p>
       
       <div class="institutional-box">
         <ul>
-          <li><strong>Auditoria Jurídica (NDA Bilateral):</strong> O atendimento é resguardado por Acordo de Confidencialidade (NDA) estrito e legalmente vinculativo, protegendo tanto a pessoa física quanto a instituição que ela representa.</li>
-          <li><strong>Isolamento de Dados (Rastro Zero):</strong> Prontuários mantidos fora de servidores públicos em nuvem. Toda a comunicação logística ocorre via canais com criptografia ponta a ponta. Este domínio opera sem cookies ou rastreadores de publicidade (Meta/Google).</li>
-          <li><strong>Política de Silêncio Institucional:</strong> A confidencialidade é tratada como princípio permanente da prática clínica. A existência de um atendimento, sua natureza e qualquer informação relacionada ao paciente permanecem protegidas pelo sigilo profissional, observadas as exceções previstas em lei e autorizadas pelo próprio paciente.</li>
+          <li><strong>Discrição Visual Plena:</strong> Todo o planejamento de visitas e agendamentos é feito para ter impacto visual zero. A presença do médico no local é indistinguível de uma visita rotineira ou corporativa comum.</li>
+          <li><strong>Isolamento de Informações:</strong> O histórico de suas consultas permanece estritamente restrito ao âmbito do segredo médico-paciente. Nenhum funcionário, vizinho, colega de trabalho ou terceiro saberá da existência do acompanhamento.</li>
+          <li><strong>Silêncio Permanente:</strong> A confidencialidade é encarada como um pilar inalterável do tratamento. A natureza das consultas, os horários e qualquer detalhe do seu processo terapêutico permanecem totalmente resguardados e protegidos.</li>
         </ul>
       </div>
     </div>
@@ -245,15 +228,15 @@
 
   <section class="content-section" id="admissao">
     <div class="content">
-      <h2 class="section-title">Admissão e Triagem</h2>
-      <p>Atendimento médico especializado, com arquitetura desenhada para mitigar riscos de exposição.</p>
+      <h2 class="section-title">Acesso Direto e Exclusivo</h2>
+      <p>Um canal direto projetado especificamente para iniciar o seu acompanhamento médico com o máximo de discrição e agilidade, sem burocracias.</p>
       
       <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20às%20diretrizes%20do%20protocolo%20de%20admissão%20da%20ANGMER." target="_blank" class="btn">
-        Iniciar Protocolo de Atendimento
+        Agendar Consulta Privativa
       </a>
       
       <span class="secure-alt-contact">
-        Para admissões corporativas sob alto risco de exposição, canais alternativos de segurança podem ser solicitados diretamente via Signal ou através do e-mail criptografado: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
+        Para alinhamentos institucionais ou agendamentos corporativos de alta urgência, o contato também pode ser formalizado diretamente através do endereço eletrônico: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
       </span>
     </div>
   </section>
@@ -266,8 +249,7 @@
     <div class="footer-links">
       <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
     </div>
-    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por protocolos de segurança da informação. Domínio próprio livre de rastreadores (Zero-Tracking).</p>
-    <span class="footer-disclaimer">Canais externos de comunicação estão sujeitos às políticas de privacidade das respectivas plataformas.</span>
+    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por absoluto sigilo profissional. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
   </footer>
 
   <script>
@@ -281,10 +263,7 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       
-      // Aplicamos o observador apenas nas seções de conteúdo para o efeito de fade-in
       document.querySelectorAll('.content-section').forEach(function(s) { observer.observe(s); });
-      
-      // As imagens parallax agora aparecem imediatamente ou com um delay suave controlado pelo CSS
       document.querySelectorAll('.parallax-divider').forEach(function(s) { s.classList.add('visible'); });
     })();
   </script>
