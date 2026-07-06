@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone/Safari -->
   <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
@@ -94,7 +93,6 @@
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
     }
     
-    /* === MUDANÇA CONTRATADA: VOLTA PARA A FONTE INTER (MÁXIMA LEGIBILIDADE) === */
     .tagline { 
       font-family: var(--font-sans); 
       font-weight: 300;
@@ -113,18 +111,18 @@
       100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
-    /* TRANSIÇÃO CINEMATOGRÁFICA DAS FOTOS */
+    /* === TRANSIÇÃO E ALINHAMENTO DAS IMAGENS (DESKTOP) === */
     .parallax-divider {
       width: 100%;
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: contain; 
+      background-size: cover; /* Garantindo consistência luxuosa também no PC */
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
       
       opacity: 0; 
-      transform: scale(0.92); 
+      transform: scale(0.95); 
       filter: blur(4px);
       transform-origin: center center;
       
@@ -136,7 +134,7 @@
 
     @media (min-width: 769px) {
       .parallax-divider {
-        height: 85vh;
+        height: 70vh;
         margin: 80px 0;
       }
     }
@@ -147,11 +145,12 @@
       filter: blur(0);
     }
     
+    /* Degradê de veludo para fundir as bordas superiores e inferiores das fotos */
     .parallax-divider::after {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 12%, rgba(6,6,6,0) 88%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 15%, rgba(6,6,6,0) 85%, var(--bg) 100%);
     }
 
     /* SEÇÕES DE CONTEÚDO ELEVADAS */
@@ -259,7 +258,7 @@
 
     @keyframes fadeInSmooth { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* REGRAS EXCLUSIVAS PARA ADAPTAÇÃO NO IPHONE */
+    /* === REGRAS LAPIDADAS EXCLUSIVAS PARA O IPHONE === */
     @media(max-width: 768px) {
       header { padding: 0 20px; min-height: 90vh; } 
       
@@ -270,19 +269,19 @@
       }
       
       .subtitle { letter-spacing: 6px; margin-bottom: 40px; }
-      
-      /* Ajuste milimétrico do tamanho para leitura imediata no iPhone */
       .tagline { font-size: 1.05rem; line-height: 1.7; padding: 0 10px; }
       
       .content-section { padding: 100px 20px; }
       .institutional-box { padding: 45px 24px; margin-top: 45px; }
       .content p { font-size: 0.95rem; line-height: 1.9; }
       
+      /* REFAZIMENTO COMPLETO DE RITMO SARTORIAL MOBILE */
       .parallax-divider { 
         background-attachment: scroll; 
-        height: 65vh; 
-        margin: 40px 0;
-        background-size: contain;
+        height: 50vh;             /* Altura milimetricamente idêntica para todas as janelas */
+        margin: 50px 0;           /* Espaçamento elegante entre blocos */
+        background-size: cover;   /* Força a imagem a tocar as laterais esquerda e direita */
+        background-position: center center; /* Mantém a essência da foto no centro da janela */
       }
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
     }
@@ -302,7 +301,6 @@
     <p class="tagline">Tratamento psiquiátrico de alto padrão no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
 
-  <!-- FOTOGRAFIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(15%);"></div>
 
   <section class="content-section" id="tese">
@@ -313,7 +311,6 @@
     </div>
   </section>
 
-  <!-- FOTOGRAFIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
   <section class="content-section" id="servico">
@@ -330,7 +327,6 @@
     </div>
   </section>
 
-  <!-- FOTOGRAFIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
   <section class="content-section" id="medico">
@@ -347,7 +343,6 @@
     </div>
   </section>
 
-  <!-- FOTOGRAFIA 4 -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
   <section class="content-section" id="blindagem">
@@ -365,7 +360,6 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DE ADMISSÃO -->
   <section class="content-section" id="admissao">
     <div class="content">
       <h2 class="section-title">Acesso Direto e Exclusivo</h2>
