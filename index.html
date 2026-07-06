@@ -87,11 +87,15 @@
       font-family: var(--font-sans); 
       font-size: 0.7rem; 
       font-weight: 300; 
-      letter-spacing: 8px; 
+      letter-spacing: 6px; /* Ajuste sutil para acomodar a nova frase mais longa no celular */
       color: var(--accent); 
       margin: 0 0 50px 0; 
       text-transform: uppercase; 
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
+    }
+    
+    @media (min-width: 769px) {
+      .subtitle { letter-spacing: 8px; }
     }
     
     .tagline { 
@@ -285,7 +289,7 @@
         animation: lanserhofMobileReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
       }
       
-      .subtitle { letter-spacing: 6px; margin-bottom: 40px; }
+      .subtitle { letter-spacing: 5px; margin-bottom: 40px; }
       .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
       
       .content-section { padding: 100px 20px; }
@@ -319,7 +323,8 @@
 
   <header>
     <h1>ANGMER</h1>
-    <p class="subtitle">Psiquiatria Domiciliar Privativa</p>
+    <!-- ALTERAÇÃO EXECUTADA COM SUPORTE A ESPAÇAMENTO ÓPTICO MOBILE -->
+    <p class="subtitle">Um psiquiatria onde você estiver</p>
     <p class="tagline">Atendimento psiquiátrico no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
 
@@ -359,7 +364,7 @@
     <div class="content">
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
       <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
-      <p>Sempre conduzi minha carreira sob a premissa de que a excellence na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
+      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
       <p>Minha prática é estritamente privada. Não compartilho rotinas, não utilizo canais públicos para autopromoção e não frequento ambientes onde meu nome possa ser associado ao seu. Esse recatamento público não é acidental; é um pré-requisito indispensável para atender ao nível de exigência que a sua privacidade demanda.</p>
       
       <!-- FOTO DE PERFIL DO GITHUB -->
@@ -375,12 +380,10 @@
   <!-- FOTOGRAFIA 4 -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
-  <!-- SEÇÃO LAPIDADA COM O CORTE DO TRECHO CORRESPONDENTE -->
   <section class="content-section" id="blindagem">
     <div class="content">
       <h2 class="section-title">Atendimento Psiquiátrico Domiciliar</h2>
       <p>Lideranças empresariais e figuras públicas de alta exposição contam aqui com uma dinâmica médica invertida: o médico vai até o paciente. Em vez de se deslocar a clínicas tradicionais ou enfrentar o risco de salas de espera, o paciente solicita o atendimento e é assistido em seu território seguro. É o suporte psiquiátrico especializado desenhado para quem exige máxima conveniência.</p>
-      <!-- ALTERAÇÃO EXECUTADA: PARÁGRAFO ENCERRADO EXCLUSIVAMENTE EM SÃO PAULO. -->
       <p>Esta consultoria privativa é realizada de forma estritamente individual pelo Dr. Elquer Rodrigues, sem assistentes ou equipes intermediárias, blindando o silêncio absoluto desde o primeiro contato. Por critérios logísticos e rigor clínico, o atendimento domiciliar está disponível, por enquanto, exclusivamente na cidade de São Paulo.</p>
     </div>
   </section>
@@ -402,7 +405,8 @@
   </section>
 
   <footer>
-    <p>ANGMER • PSIQUIATRIA DOMICILIAR PRIVATIVA</p>
+    <!-- UNIFICAÇÃO DA MARCA NO RODAPÉ -->
+    <p>ANGMER • UM PSIQUIATRA ONDE VOCÊ ESTIVER</p>
     
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
     
