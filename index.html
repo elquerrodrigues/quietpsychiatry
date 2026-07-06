@@ -111,12 +111,12 @@
       100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
-    /* === TRANSIÇÃO E ALINHAMENTO DAS IMAGENS (DESKTOP) === */
+    /* TRANSIÇÃO E ALINHAMENTO DAS IMAGENS GRANDES */
     .parallax-divider {
       width: 100%;
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: cover; /* Garantindo consistência luxuosa também no PC */
+      background-size: cover; 
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
@@ -145,7 +145,6 @@
       filter: blur(0);
     }
     
-    /* Degradê de veludo para fundir as bordas superiores e inferiores das fotos */
     .parallax-divider::after {
       content: '';
       position: absolute;
@@ -183,6 +182,24 @@
       letter-spacing: 2px;
     }
 
+    /* === MOLDURA SARTORIAL DA SUA FOTO DE PERFIL === */
+    .profile-photo {
+      display: block;
+      margin: 50px auto 30px auto;
+      height: 35vh; /* Metade matemática dos 70vh das outras fotos no PC */
+      width: auto;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      padding: 8px;
+      background-color: rgba(255, 255, 255, 0.01);
+      transition: border-color 0.6s ease;
+    }
+    
+    /* Efeito de acendimento sutil na moldura ao passar o mouse */
+    .profile-photo:hover {
+      border-color: rgba(195, 175, 149, 0.4);
+    }
+
     /* CAIXA INSTITUCIONAL ESTILO ATELIER */
     .institutional-box { 
       border: 1px solid var(--line); 
@@ -206,7 +223,7 @@
     .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 300; }
 
     /* ASSINATURA DA AUTORIDADE */
-    .doctor-signature { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--line); text-align: center; }
+    .doctor-signature { margin-top: 30px; padding-top: 35px; border-top: 1px solid var(--line); text-align: center; }
     .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; display: block; margin-bottom: 8px; }
     .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
 
@@ -258,7 +275,7 @@
 
     @keyframes fadeInSmooth { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* === REGRAS LAPIDADAS EXCLUSIVAS PARA O IPHONE === */
+    /* REGRAS LAPIDADAS EXCLUSIVAS PARA O IPHONE */
     @media(max-width: 768px) {
       header { padding: 0 20px; min-height: 90vh; } 
       
@@ -275,13 +292,19 @@
       .institutional-box { padding: 45px 24px; margin-top: 45px; }
       .content p { font-size: 0.95rem; line-height: 1.9; }
       
-      /* REFAZIMENTO COMPLETO DE RITMO SARTORIAL MOBILE */
+      /* Ajuste proporcional da sua foto para o visor do iPhone */
+      .profile-photo {
+        height: 25vh; /* Metade matemática dos 50vh das outras fotos no celular */
+        margin: 40px auto 25px auto;
+        padding: 6px;
+      }
+      
       .parallax-divider { 
         background-attachment: scroll; 
-        height: 50vh;             /* Altura milimetricamente idêntica para todas as janelas */
-        margin: 50px 0;           /* Espaçamento elegante entre blocos */
-        background-size: cover;   /* Força a imagem a tocar as laterais esquerda e direita */
-        background-position: center center; /* Mantém a essência da foto no centro da janela */
+        height: 50vh;             
+        margin: 50px 0;           
+        background-size: cover;   
+        background-position: center center; 
       }
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
     }
@@ -332,9 +355,11 @@
   <section class="content-section" id="medico">
     <div class="content">
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
-      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
+      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entertainment digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
       <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
       <p>Minha prática é estritamente privada. Não compartilho rotinas, não utilizo canais públicos para autopromoção e não frequento ambientes onde meu nome possa ser associado ao seu. Esse recatamento público não é acidental; é um pré-requisito indispensável para atender ao nível de exigência que a sua privacidade demanda.</p>
+      
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       
       <div class="doctor-signature">
         <strong>Dr. Elquer Rodrigues</strong>
