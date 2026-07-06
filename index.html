@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Integração de Cor com a Barra do iPhone/Safari -->
   <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
@@ -23,7 +24,7 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Psiquiatria domiciliar e corporativa privativa focada no conforto e anonimato total do paciente."
+      "description": "Psiquiatria domiciliar e corporativa privativa focada no conforto and anonimato total do paciente."
     }
   </script>
   
@@ -182,11 +183,11 @@
       letter-spacing: 2px;
     }
 
-    /* === MOLDURA SARTORIAL DA SUA FOTO DE PERFIL === */
+    /* MOLDURA SARTORIAL DA SUA FOTO DE PERFIL */
     .profile-photo {
       display: block;
       margin: 50px auto 30px auto;
-      height: 35vh; /* Metade matemática dos 70vh das outras fotos no PC */
+      height: 35vh; 
       width: auto;
       object-fit: contain;
       border: 1px solid var(--line);
@@ -195,7 +196,6 @@
       transition: border-color 0.6s ease;
     }
     
-    /* Efeito de acendimento sutil na moldura ao passar o mouse */
     .profile-photo:hover {
       border-color: rgba(195, 175, 149, 0.4);
     }
@@ -203,19 +203,19 @@
     /* CAIXA INSTITUCIONAL ESTILO ATELIER */
     .institutional-box { 
       border: 1px solid var(--line); 
-      padding: 60px 45px; 
-      margin-top: 60px; 
+      padding: 40px 45px; 
+      margin-top: 50px; 
       background: linear-gradient(180deg, rgba(195,175,149,0.02) 0%, rgba(6,6,6,0) 100%); 
     }
-    .institutional-box ul { list-style: none; text-align: left; }
+    .institutional-box ul { list-style: none; text-align: left; display: inline-block; margin: 0 auto; }
     .institutional-box li { 
       font-family: var(--font-sans); 
-      font-size: 0.88rem; 
+      font-size: 0.95rem; 
       color: var(--text-muted); 
-      margin-bottom: 30px; 
+      margin-bottom: 20px; 
       padding-left: 25px; 
       position: relative; 
-      line-height: 1.9; 
+      line-height: 1.6; 
       font-weight: 200; 
     }
     .institutional-box li:last-child { margin-bottom: 0; }
@@ -289,12 +289,11 @@
       .tagline { font-size: 1.05rem; line-height: 1.7; padding: 0 10px; }
       
       .content-section { padding: 100px 20px; }
-      .institutional-box { padding: 45px 24px; margin-top: 45px; }
+      .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
       .content p { font-size: 0.95rem; line-height: 1.9; }
       
-      /* Ajuste proporcional da sua foto para o visor do iPhone */
       .profile-photo {
-        height: 25vh; /* Metade matemática dos 50vh das outras fotos no celular */
+        height: 25vh; 
         margin: 40px auto 25px auto;
         padding: 6px;
       }
@@ -324,6 +323,7 @@
     <p class="tagline">Tratamento psiquiátrico de alto padrão no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
 
+  <!-- FOTOGRAFIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(15%);"></div>
 
   <section class="content-section" id="tese">
@@ -334,31 +334,36 @@
     </div>
   </section>
 
+  <!-- FOTOGRAFIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
   <section class="content-section" id="servico">
     <div class="content">
       <h2 class="section-title">A Medicina no Seu Território</h2>
-      <p>Consultas, diagnóstico e acompanhamento clínico contínuo realizados diretamente no ambiente de sua escolha — seja no recôndito de sua residência particular, na discrição de uma suíte de hotel ou nos bastidores restritos de seu escritório corporativo.</p>
+      <p>Consultas, diagnóstico e acompanhamento clínico contínuo realizados diretamente no ambiente de sua escolha — seja em sua residência particular, na discrição de uma suíte de hotel ou nos bastidores restritos de seu escritório corporativo.</p>
       
+      <!-- SEÇÃO ATUALIZADA CONFORME IMAGE_5.PNG: Direto, minimalista e autoexplicativo -->
       <div class="institutional-box">
         <ul>
-          <li><strong>Ausência de Deslocamento:</strong> O ato médico se amolda inteiramente à sua localização e à sua rotina atual. O Dr. Elquer Rodrigues vai até você de forma direta, mitigando riscos de agenda.</li>
-          <li><strong>Preservação do Ritmo Decisório:</strong> O objetivo principal do acompanhamento é restabelecer a estabilidade clínica e a sua alta performance, sem que o tratamento imponha rupturas nos seus compromissos institucionais.</li>
+          <li><strong>Sem deslocamento</strong></li>
+          <li><strong>Sem salas de espera</strong></li>
+          <li><strong>Sem mudança de rotina</strong></li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- FOTOGRAFIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
   <section class="content-section" id="medico">
     <div class="content">
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
-      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entertainment digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
+      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
       <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
       <p>Minha prática é estritamente privada. Não compartilho rotinas, não utilizo canais públicos para autopromoção e não frequento ambientes onde meu nome possa ser associado ao seu. Esse recatamento público não é acidental; é um pré-requisito indispensável para atender ao nível de exigência que a sua privacidade demanda.</p>
       
+      <!-- FOTO DE PERFIL DO GITHUB -->
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       
       <div class="doctor-signature">
@@ -368,6 +373,7 @@
     </div>
   </section>
 
+  <!-- FOTOGRAFIA 4 -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
   <section class="content-section" id="blindagem">
@@ -385,6 +391,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO DE ADMISSÃO -->
   <section class="content-section" id="admissao">
     <div class="content">
       <h2 class="section-title">Acesso Direto e Exclusivo</h2>
