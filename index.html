@@ -67,23 +67,37 @@
     .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
     .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; font-weight: 300; }
 
+    /* === AJUSTE DE IMAGEM PARA APARECER INTEIRA (NO NOTEBOOK) === */
     .parallax-divider {
-      height: 45vh;
       width: 100%;
-      background-position: center 30%;
+      background-position: center center; /* Centraliza a imagem */
       background-repeat: no-repeat;
-      background-size: cover;
+      
+      /* MUDANÇA CHAVE: De 'cover' para 'contain' para mostrar a foto inteira sem cortes */
+      background-size: contain; 
+      
       background-attachment: fixed;
       position: relative;
+      background-color: var(--bg); /* Garante fundo preto se a foto for menor */
       opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth);
     }
+
+    /* Ajuste específico para desktops/notebooks para dar altura à foto */
+    @media (min-width: 769px) {
+      .parallax-divider {
+        height: 80vh; /* Aumenta a altura no notebook para fotos quadradas/verticais aparecerem bem */
+        margin: 50px 0; /* Espaço elegante acima e abaixo da imagem */
+      }
+    }
+
     .parallax-divider.visible { opacity: 1; transform: translateY(0); }
     
+    /* Gradiente suave nas bordas da imagem para integrar com o fundo preto */
     .parallax-divider::after {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0.2) 50%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 85%, var(--bg) 100%);
     }
 
     .content-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
@@ -139,13 +153,21 @@
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
+    /* === AJUSTE PARA CELULAR === */
     @media(max-width: 768px) {
       header { padding: 120px 20px 100px 20px; } h1 { font-size: 2.4rem; letter-spacing: 8px; }
       .content-section { padding: 80px 20px; }
       .institutional-box { padding: 40px 20px; }
       .institutional-box li { font-size: 1rem; line-height: 1.9; }
       .content p { font-size: 1rem; line-height: 2; }
-      .parallax-divider { background-attachment: scroll; height: 65vh; background-position: center center; }
+      
+      /* No celular, removemos o efeito fixo e garantimos que a foto apareça bem */
+      .parallax-divider { 
+        background-attachment: scroll; 
+        height: 60vh; /* Altura generosa no celular */
+        background-size: contain; /* Mantém a foto inteira no celular também */
+        margin: 20px 0;
+      }
     }
   </style>
 </head>
@@ -157,6 +179,7 @@
     <p class="tagline">Atendimento psiquiátrico com discrição absoluta para quem não pode ser visto entrando em um consultório.</p>
   </header>
 
+  <!-- SEÇÃO DE IMAGEM 1: TESE -->
   <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(30%);"></div>
 
   <section class="content-section" id="tese">
@@ -167,6 +190,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO DE IMAGEM 2: SERVIÇO -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
   <section class="content-section" id="servico">
@@ -183,6 +207,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO DE IMAGEM 3: MÉDICO -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
   <section class="content-section" id="medico">
@@ -200,6 +225,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO DE IMAGEM 4: BLINDAGEM -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
   <section class="content-section" id="blindagem">
@@ -255,7 +281,11 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       
-      document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
+      // Aplicamos o observador apenas nas seções de conteúdo para o efeito de fade-in
+      document.querySelectorAll('.content-section').forEach(function(s) { observer.observe(s); });
+      
+      // As imagens parallax agora aparecem imediatamente ou com um delay suave controlado pelo CSS
+      document.querySelectorAll('.parallax-divider').forEach(function(s) { s.classList.add('visible'); });
     })();
   </script>
 </body>
