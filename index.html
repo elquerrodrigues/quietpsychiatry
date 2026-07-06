@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone/Safari (Agora em Alabastro) -->
-  <meta name="theme-color" content="#F7F6F3">
+  <!-- Integração de Cor com a Barra do iPhone/Safari (Retornado ao Veludo Preto) -->
+  <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
   <meta name="description" content="Atendimento psiquiátrico exclusivo no conforto da sua residência, escritório ou hotel. Preservação total do seu anonimato sem necessidade de deslocamentos.">
@@ -29,14 +29,14 @@
   </script>
   
   <style>
-    /* PALETA EDITORIAL (HIGH-END LIGHT LUXURY AESTHETIC) */
+    /* PALETA SARTORIAL OBRIGATÓRIA (ERMENEGILDO ZEGNA AESTHETIC) */
     :root {
-      --bg: #F7F6F3;               /* Alabastro / Papel de algodão fosco */
-      --text: #1A1A18;             /* Carvão vegetal alfaiataria */
-      --text-muted: #5A5854;       /* Cashmere terroso médio */
-      --text-light: #8A867E;       /* Fio de linho envelhecido */
-      --accent: #A8947C;           /* Bronze profundo (ajustado para contraste no claro) */
-      --line: rgba(168, 148, 124, 0.18); /* Costura de alfaiataria sutil */
+      --bg: #060606;               /* Veludo preto obsidiana */
+      --text: #F5F3EF;             /* Marfim de seda pura */
+      --text-muted: #BAB5A9;       /* Cashmere cinza quente */
+      --text-light: #7D786E;       /* Fio de linho envelhecido */
+      --accent: #C3AF95;           /* Detalhes em bronze sutil/brushed gold */
+      --line: rgba(195, 175, 149, 0.12); /* Costura invisível de alfaiataria */
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -61,7 +61,7 @@
       margin: 0;
     }
 
-    /* CAPA DO SITE (IMERSÃO CLARA NO IPHONE) */
+    /* CAPA DO SITE (IMERSÃO TOTAL NO IPHONE) */
     header {
       text-align: center; 
       padding: 0 24px;
@@ -70,10 +70,10 @@
       justify-content: center; 
       align-items: center; 
       min-height: 95vh;
-      background: radial-gradient(circle at center, #ffffff 0%, var(--bg) 70%);
+      background: radial-gradient(circle at center, #0e0e0e 0%, var(--bg) 70%);
     }
     
-    /* EFEITO LANSERHOF REVELADO EM FUNDO CLARO */
+    /* EFEITO LANSERHOF NA PALAVRA ANGMER */
     h1 { 
       font-size: clamp(2.6rem, 7vw, 4.5rem); 
       color: var(--text); 
@@ -112,7 +112,7 @@
       100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
-    /* TRANSIÇÃO E JANELAS DAS IMAGENS GRANDES */
+    /* TRANSIÇÃO E ALINHAMENTO GEOMÉTRICO DAS IMAGENS GRANDES */
     .parallax-divider {
       width: 100%;
       background-position: center center;
@@ -146,12 +146,11 @@
       filter: blur(0);
     }
     
-    /* Fusão do degradê com a nova cor clara de fundo */
     .parallax-divider::after {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(247,246,243,0) 15%, rgba(247,246,243,0) 85%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 15%, rgba(6,6,6,0) 85%, var(--bg) 100%);
     }
 
     /* SEÇÕES DE CONTEÚDO ELEVADAS */
@@ -184,7 +183,7 @@
       letter-spacing: 2px;
     }
 
-    /* MOLDURA SARTORIAL DA FOTO DE PERFIL */
+    /* MOLDURA DA FOTO DE PERFIL (METADE DO TAMANHO) */
     .profile-photo {
       display: block;
       margin: 50px auto 30px auto;
@@ -193,20 +192,20 @@
       object-fit: contain;
       border: 1px solid var(--line);
       padding: 8px;
-      background-color: rgba(0, 0, 0, 0.005);
+      background-color: rgba(255, 255, 255, 0.01);
       transition: border-color 0.6s ease;
     }
     
     .profile-photo:hover {
-      border-color: rgba(168, 148, 124, 0.5);
+      border-color: rgba(195, 175, 149, 0.4);
     }
 
-    /* CAIXA INSTITUCIONAL ESTILO ATELIER CLARO */
+    /* CAIXA INSTITUCIONAL ESTILO ATELIER ESCURO */
     .institutional-box { 
       border: 1px solid var(--line); 
       padding: 40px 45px; 
       margin-top: 50px; 
-      background: linear-gradient(180deg, rgba(168,148,124,0.04) 0%, rgba(247,246,243,0) 100%); 
+      background: linear-gradient(180deg, rgba(195,175,149,0.02) 0%, rgba(6,6,6,0) 100%); 
     }
     .institutional-box ul { list-style: none; text-align: left; display: inline-block; margin: 0 auto; }
     .institutional-box li { 
@@ -217,18 +216,18 @@
       padding-left: 25px; 
       position: relative; 
       line-height: 1.6; 
-      font-weight: 300; 
+      font-weight: 200; 
     }
     .institutional-box li:last-child { margin-bottom: 0; }
     .institutional-box li strong { color: var(--text); font-weight: 400; letter-spacing: 0.5px; }
-    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 400; }
+    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 300; }
 
     /* ASSINATURA DA AUTORIDADE */
     .doctor-signature { margin-top: 30px; padding-top: 35px; border-top: 1px solid var(--line); text-align: center; }
     .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; display: block; margin-bottom: 8px; }
-    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 400; }
+    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
 
-    /* BOTÃO SOB MEDIDA INVERTIDO (BLINDAGEM ESCURA NO FUNDO CLARO) */
+    /* BOTÃO SOB MEDIDA */
     .btn { 
       display: inline-block; 
       margin-top: 60px; 
@@ -243,7 +242,7 @@
       transition: all 0.4s ease; 
       font-weight: 400; 
     }
-    .btn:hover { background-color: var(--accent); color: white; }
+    .btn:hover { background-color: var(--accent); color: var(--bg); }
 
     .secure-alt-contact {
       display: block;
@@ -253,7 +252,7 @@
       letter-spacing: 0.3px;
       margin-top: 40px;
       line-height: 1.8;
-      font-weight: 300;
+      font-weight: 200;
     }
     .secure-alt-contact a {
       color: var(--text-muted);
@@ -266,7 +265,7 @@
       border-bottom-color: var(--accent);
     }
 
-    /* FOOTER DISCRETO EDITORIAL */
+    /* FOOTER DISCRETO */
     footer { text-align: center; padding: 120px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; }
     footer a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; margin: 0 12px; }
     footer a:hover { color: var(--accent); }
@@ -360,7 +359,7 @@
     <div class="content">
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
       <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
-      <p>Sempre conduzi minha carreira sob a premissa de que a excellence na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
+      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
       <p>Minha prática é estritamente privada. Não compartilho rotinas, não utilizo canais públicos para autopromoção e não frequento ambientes onde meu nome possa ser associado ao seu. Esse recatamento público não é acidental; é um pré-requisito indispensável para atender ao nível de exigência que a sua privacidade demanda.</p>
       
       <!-- FOTO DE PERFIL DO GITHUB -->
