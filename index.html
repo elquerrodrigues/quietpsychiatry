@@ -55,7 +55,7 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, .tagline {
+    h1, h2, h3 {
       font-family: var(--font-serif);
       font-weight: 300;
       margin: 0;
@@ -94,13 +94,16 @@
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
     }
     
+    /* === MUDANÇA CONTRATADA: VOLTA PARA A FONTE INTER (MÁXIMA LEGIBILIDADE) === */
     .tagline { 
-      font-size: clamp(1.3rem, 3.8vw, 2.1rem); 
+      font-family: var(--font-sans); 
+      font-weight: 300;
+      font-size: clamp(1.1rem, 3.2vw, 1.4rem); 
       color: var(--text-muted); 
-      max-width: 680px; 
-      line-height: 1.7; 
+      max-width: 620px; 
+      line-height: 1.9; 
       margin: 0 auto; 
-      font-style: italic;
+      letter-spacing: 0.5px;
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.6s both; 
     }
 
@@ -110,7 +113,7 @@
       100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
-    /* === AJUSTE DE TRANSIÇÃO CINEMATOGRÁFICA DAS FOTOS === */
+    /* TRANSIÇÃO CINEMATOGRÁFICA DAS FOTOS */
     .parallax-divider {
       width: 100%;
       background-position: center center;
@@ -120,13 +123,11 @@
       position: relative;
       background-color: var(--bg);
       
-      /* Configuração inicial oculta, menor e enevoada no centro */
       opacity: 0; 
       transform: scale(0.92); 
       filter: blur(4px);
       transform-origin: center center;
       
-      /* Transição de veludo líquida e extremamente suave */
       transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), 
                   transform 2.5s cubic-bezier(0.16, 1, 0.3, 1), 
                   filter 2.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -140,7 +141,6 @@
       }
     }
 
-    /* Estado ativo: expande suavemente e encaixa nas bordas */
     .parallax-divider.visible { 
       opacity: 1; 
       transform: scale(1); 
@@ -270,7 +270,10 @@
       }
       
       .subtitle { letter-spacing: 6px; margin-bottom: 40px; }
-      .tagline { font-size: 1.15rem; line-height: 1.6; }
+      
+      /* Ajuste milimétrico do tamanho para leitura imediata no iPhone */
+      .tagline { font-size: 1.05rem; line-height: 1.7; padding: 0 10px; }
+      
       .content-section { padding: 100px 20px; }
       .institutional-box { padding: 45px 24px; margin-top: 45px; }
       .content p { font-size: 0.95rem; line-height: 1.9; }
@@ -400,7 +403,6 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       
-      // O observador agora monitora tanto os textos quanto as fotos dinamicamente
       document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
     })();
   </script>
