@@ -73,15 +73,13 @@
       background: radial-gradient(circle at center, #0e0e0e 0%, var(--bg) 70%);
     }
     
-    /* === O EFEITO LANSERHOF NA PALAVRA ANGMER === */
+    /* EFEITO LANSERHOF NA PALAVRA ANGMER */
     h1 { 
       font-size: clamp(2.6rem, 7vw, 4.5rem); 
       color: var(--text); 
       margin-bottom: 30px; 
       text-transform: uppercase;
       will-change: letter-spacing, opacity, filter;
-      
-      /* Aplicação da animação majestosa e lenta */
       animation: lanserhofReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
     }
     
@@ -93,7 +91,6 @@
       color: var(--accent); 
       margin: 0 0 50px 0; 
       text-transform: uppercase; 
-      /* Surge suavemente logo após a abertura da palavra ANGMER */
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
     }
     
@@ -107,27 +104,13 @@
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.6s both; 
     }
 
-    /* KEYFRAMES DO EFEITO LANSERHOF (ABERTURA ARISTOCRÁTICA) */
     @keyframes lanserhofReveal {
-      0% {
-        opacity: 0;
-        letter-spacing: -3px;       /* Começa comprimido */
-        filter: blur(6px);          /* Leve névoa de mistério */
-        transform: scale(0.98);
-      }
-      30% {
-        opacity: 0.3;
-        filter: blur(3px);
-      }
-      100% {
-        opacity: 1;
-        letter-spacing: 16px;       /* Abre majestosamente no espaçamento de elite */
-        filter: blur(0);            /* Nitidez cristalina */
-        transform: scale(1);
-      }
+      0% { opacity: 0; letter-spacing: -3px; filter: blur(6px); transform: scale(0.98); }
+      30% { opacity: 0.3; filter: blur(3px); }
+      100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
-    /* MOLDURA DE FOTOGRAFIA PARALLAX/DIVIDER */
+    /* === AJUSTE DE TRANSIÇÃO CINEMATOGRÁFICA DAS FOTOS === */
     .parallax-divider {
       width: 100%;
       background-position: center center;
@@ -136,9 +119,18 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
+      
+      /* Configuração inicial oculta, menor e enevoada no centro */
       opacity: 0; 
-      transform: scale(0.98);
-      transition: all 1.6s var(--transition-smooth);
+      transform: scale(0.92); 
+      filter: blur(4px);
+      transform-origin: center center;
+      
+      /* Transição de veludo líquida e extremamente suave */
+      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 2.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                  filter 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity, filter;
     }
 
     @media (min-width: 769px) {
@@ -148,7 +140,12 @@
       }
     }
 
-    .parallax-divider.visible { opacity: 1; transform: scale(1); }
+    /* Estado ativo: expande suavemente e encaixa nas bordas */
+    .parallax-divider.visible { 
+      opacity: 1; 
+      transform: scale(1); 
+      filter: blur(0);
+    }
     
     .parallax-divider::after {
       content: '';
@@ -170,7 +167,6 @@
     .content-section.visible { opacity: 1; transform: translateY(0); }
 
     .content { max-width: 680px; margin: 0 auto; text-align: center; }
-    
     .content p { 
       font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
       color: var(--text-muted); 
@@ -179,7 +175,6 @@
       font-weight: 200; 
       letter-spacing: 0.3px; 
     }
-    
     .content p:last-child { margin-bottom: 0; }
     
     .section-title { 
@@ -189,7 +184,7 @@
       letter-spacing: 2px;
     }
 
-    /* CAIXA INSTITUCIONAL ESTIRO ATELIER */
+    /* CAIXA INSTITUCIONAL ESTILO ATELIER */
     .institutional-box { 
       border: 1px solid var(--line); 
       padding: 60px 45px; 
@@ -268,7 +263,6 @@
     @media(max-width: 768px) {
       header { padding: 0 20px; min-height: 90vh; } 
       
-      /* Ajuste proporcional do Lanserhof Effect no mobile para não quebrar linha */
       h1 { 
         font-size: 2.1rem; 
         margin-bottom: 20px; 
@@ -290,24 +284,10 @@
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
     }
 
-    /* Variável de animação mobile para acomodar telas menores sem transbordar */
     @keyframes lanserhofMobileReveal {
-      0% {
-        opacity: 0;
-        letter-spacing: -2px;
-        filter: blur(5px);
-        transform: scale(0.98);
-      }
-      30% {
-        opacity: 0.3;
-        filter: blur(2px);
-      }
-      100% {
-        opacity: 1;
-        letter-spacing: 10px; /* Unidade milimétrica para o visor do iPhone */
-        filter: blur(0);
-        transform: scale(1);
-      }
+      0% { opacity: 0; letter-spacing: -2px; filter: blur(5px); transform: scale(0.98); }
+      30% { opacity: 0.3; filter: blur(2px); }
+      100% { opacity: 1; letter-spacing: 10px; filter: blur(0); transform: scale(1); }
     }
   </style>
 </head>
@@ -420,8 +400,8 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       
-      document.querySelectorAll('.content-section').forEach(function(s) { observer.observe(s); });
-      document.querySelectorAll('.parallax-divider').forEach(function(s) { s.classList.add('visible'); });
+      // O observador agora monitora tanto os textos quanto as fotos dinamicamente
+      document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
     })();
   </script>
 </body>
