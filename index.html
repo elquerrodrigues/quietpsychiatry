@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Integração de Cor com a Barra do iPhone/Safari -->
+  <meta name="theme-color" content="#060606">
+  
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
   <meta name="description" content="Atendimento psiquiátrico exclusivo no conforto da sua residência, escritório ou hotel. Preservação total do seu anonimato sem necessidade de deslocamentos.">
   <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa, atendimento psiquiátrico discreto, psiquiatra executivos">
@@ -12,7 +15,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
   
   <script type="application/ld+json">
     {
@@ -26,16 +29,17 @@
   </script>
   
   <style>
-    /* PALETA OBSIDIANA PURA E TIPOGRAFIA DE ALTO PADRÃO */
+    /* PALETA SARTORIAL (ERMENEGILDO ZEGNA AESTHETIC) */
     :root {
-      --bg: #0A0A0A;
-      --text: #EAE6D9;
-      --text-muted: #9E9A90;
-      --text-light: #6A6760;
-      --line: #262626;
-      --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+      --bg: #060606;               /* Veludo preto obsidiana */
+      --text: #F5F3EF;             /* Marfim de seda pura */
+      --text-muted: #BAB5A9;       /* Cashmere cinza quente */
+      --text-light: #7D786E;       /* Fio de linho envelhecido */
+      --accent: #C3AF95;           /* Detalhes em bronze sutil/brushed gold */
+      --line: rgba(195, 175, 149, 0.12); /* Costura invisível de alfaiataria */
+      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
-      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', Times, serif;
+      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
@@ -45,7 +49,7 @@
       font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.9;
+      line-height: 2.1; /* Linhas mais espaçadas para leitura aristocrática */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
@@ -53,21 +57,53 @@
 
     h1, h2, h3, .tagline {
       font-family: var(--font-serif);
-      font-weight: 400;
+      font-weight: 300;
       margin: 0;
     }
 
+    /* CAPA DO SITE (IMERSÃO TOTAL NO IPHONE) */
     header {
       text-align: center; 
-      padding: 180px 24px 140px 24px; 
+      padding: 0 24px;
       display: flex;
-      flex-direction: column; justify-content: center; align-items: center; min-height: 90vh;
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 95vh;
+      background: radial-gradient(circle at center, #0e0e0e 0%, var(--bg) 70%);
     }
-    h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); letter-spacing: 12px; color: var(--text); margin-bottom: 25px; animation: fadeInUp 0.8s var(--transition-smooth); font-weight: 300; }
-    .subtitle { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 400; letter-spacing: 6px; color: var(--text-muted); margin: 0 0 45px 0; text-transform: uppercase; animation: fadeInUp 0.8s var(--transition-smooth) 0.2s both; }
-    .tagline { font-size: clamp(1.4rem, 3.5vw, 2.2rem); color: var(--text); max-width: 720px; line-height: 1.6; margin: 0 auto; animation: fadeInUp 0.8s var(--transition-smooth) 0.4s both; font-weight: 300; }
+    
+    h1 { 
+      font-size: clamp(2.6rem, 7vw, 4.5rem); 
+      letter-spacing: 16px; /* Espaçamento ultra-premium */
+      color: var(--text); 
+      margin-bottom: 30px; 
+      animation: fadeInSmooth 1.2s var(--transition-smooth); 
+      text-transform: uppercase;
+    }
+    
+    .subtitle { 
+      font-family: var(--font-sans); 
+      font-size: 0.7rem; 
+      font-weight: 300; 
+      letter-spacing: 8px; 
+      color: var(--accent); 
+      margin: 0 0 50px 0; 
+      text-transform: uppercase; 
+      animation: fadeInSmooth 1.2s var(--transition-smooth) 0.3s both; 
+    }
+    
+    .tagline { 
+      font-size: clamp(1.3rem, 3.8vw, 2.1rem); 
+      color: var(--text-muted); 
+      max-width: 680px; 
+      line-height: 1.7; 
+      margin: 0 auto; 
+      font-style: italic;
+      animation: fadeInSmooth 1.2s var(--transition-smooth) 0.6s both; 
+    }
 
-    /* SEÇÃO DE IMAGEM CORRIGIDA (CONTAIN E CENTRALIZADA) */
+    /* MOLDURA DE FOTOGRAFIA PARALLAX/DIVIDER */
     .parallax-divider {
       width: 100%;
       background-position: center center;
@@ -76,85 +112,152 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
-      opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth);
+      opacity: 0; 
+      transform: scale(0.98);
+      transition: all 1.6s var(--transition-smooth);
     }
 
     @media (min-width: 769px) {
       .parallax-divider {
-        height: 80vh;
-        margin: 50px 0;
+        height: 85vh;
+        margin: 80px 0;
       }
     }
 
-    .parallax-divider.visible { opacity: 1; transform: translateY(0); }
+    .parallax-divider.visible { opacity: 1; transform: scale(1); }
     
+    /* Degradê suave nas bordas para simular fusão em veludo */
     .parallax-divider::after {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 85%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 12%, rgba(6,6,6,0) 88%, var(--bg) 100%);
     }
 
-    .content-section { padding: 100px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(20px); transition: all 1.2s var(--transition-smooth); will-change: transform, opacity; }
+    /* SEÇÕES DE CONTEÚDO ELEVADAS */
+    .content-section { 
+      padding: 140px 24px; 
+      max-width: 850px; 
+      margin: 0 auto; 
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: all 1.4s var(--transition-smooth); 
+      will-change: transform, opacity; 
+    }
     .content-section.visible { opacity: 1; transform: translateY(0); }
 
-    .content { max-width: 640px; margin: 0 auto; text-align: center; }
-    .content p { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--text-muted); margin: 0; line-height: 1.95; font-weight: 300; letter-spacing: -0.1px; }
+    .content { max-width: 680px; margin: 0 auto; text-align: center; }
     
-    .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--text); margin-bottom: 35px; font-weight: 300; letter-spacing: 1px; }
+    .content p { 
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
+      color: var(--text-muted); 
+      margin-bottom: 25px;
+      line-height: 2.1; 
+      font-weight: 200; 
+      letter-spacing: 0.3px; 
+    }
+    
+    .content p:last-child { margin-bottom: 0; }
+    
+    .section-title { 
+      font-size: clamp(1.6rem, 4vw, 2.2rem); 
+      color: var(--text); 
+      margin-bottom: 45px; 
+      letter-spacing: 2px;
+    }
 
-    .institutional-box { border: 1px solid var(--line); padding: 50px 35px; margin-top: 50px; background: rgba(255,255,255,0.01); }
+    /* CAIXA INSTITUCIONAL ESTILO ATELIER */
+    .institutional-box { 
+      border: 1px solid var(--line); 
+      padding: 60px 45px; 
+      margin-top: 60px; 
+      background: linear-gradient(180deg, rgba(195,175,149,0.02) 0%, rgba(6,6,6,0) 100%); 
+    }
     .institutional-box ul { list-style: none; text-align: left; }
-    .institutional-box li { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; padding-left: 20px; position: relative; line-height: 1.8; letter-spacing: 0.2px; font-weight: 300; }
+    .institutional-box li { 
+      font-family: var(--font-sans); 
+      font-size: 0.88rem; 
+      color: var(--text-muted); 
+      margin-bottom: 30px; 
+      padding-left: 25px; 
+      position: relative; 
+      line-height: 1.9; 
+      font-weight: 200; 
+    }
     .institutional-box li:last-child { margin-bottom: 0; }
-    .institutional-box li strong { color: var(--text); font-weight: 500; }
-    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--text-light); }
+    .institutional-box li strong { color: var(--text); font-weight: 400; letter-spacing: 0.5px; }
+    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 300; }
 
-    .doctor-signature { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--line); text-align: center; }
-    .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 5px; }
-    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; }
+    /* ASSINATURA DA AUTORIDADE */
+    .doctor-signature { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--line); text-align: center; }
+    .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; display: block; margin-bottom: 8px; }
+    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
 
-    .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text); padding: 14px 0 10px 0; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid var(--text); transition: opacity 0.5s ease; font-weight: 600; }
-    .btn:hover { opacity: 0.4; }
+    /* BOTÃO SOB MEDIDA */
+    .btn { 
+      display: inline-block; 
+      margin-top: 60px; 
+      font-family: var(--font-sans); 
+      color: var(--bg); 
+      background-color: var(--text); /* Contraste nobre de alfaiataria */
+      padding: 16px 40px; 
+      text-decoration: none; 
+      font-size: 0.7rem; 
+      text-transform: uppercase; 
+      letter-spacing: 4px; 
+      transition: all 0.4s ease; 
+      font-weight: 400; 
+    }
+    .btn:hover { background-color: var(--accent); color: var(--bg); }
 
     .secure-alt-contact {
       display: block;
       font-family: var(--font-sans);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-      margin-top: 30px;
-      line-height: 1.7;
-      font-weight: 300;
+      font-size: 0.7rem;
+      color: var(--text-light);
+      letter-spacing: 0.3px;
+      margin-top: 40px;
+      line-height: 1.8;
+      font-weight: 200;
     }
     .secure-alt-contact a {
-      color: var(--text);
+      color: var(--text-muted);
       text-decoration: none;
-      border-bottom: 1px solid var(--text-light);
-      transition: color 0.3s ease;
+      border-bottom: 1px solid var(--line);
+      transition: all 0.3s ease;
     }
     .secure-alt-contact a:hover {
-      color: var(--text-muted);
+      color: var(--accent);
+      border-bottom-color: var(--accent);
     }
 
-    footer { text-align: center; padding: 100px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); opacity: 0.5; max-width: 600px; margin: 0 auto; transition: opacity 0.3s ease; }
-    footer:hover { opacity: 0.8; }
-    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; margin: 0 10px; }
-    footer a:hover { color: var(--text); }
-    .footer-links { margin-top: 15px; margin-bottom: 30px; }
-    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 2px; color: var(--text); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--text-light); transition: all 0.3s ease; opacity: 0.8; }
-    .footer-email:hover { opacity: 1; border-bottom-color: var(--text); color: var(--text); }
-    .footer-disclaimer { display: block; font-size: 0.55rem; letter-spacing: 1px; color: var(--text-light); margin-top: 12px; opacity: 0.6; }
+    /* FOOTER DISCRETO */
+    footer { text-align: center; padding: 120px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; }
+    footer a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; margin: 0 12px; }
+    footer a:hover { color: var(--accent); }
+    .footer-links { margin-top: 20px; margin-bottom: 40px; }
+    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
+    .footer-email:hover { color: var(--text); border-bottom-color: var(--text); }
 
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInSmooth { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+    /* REDUÇÃO MILIMÉTRICA PARA TELA DO IPHONE */
     @media(max-width: 768px) {
-      header { padding: 120px 20px 100px 20px; } h1 { font-size: 2.4rem; letter-spacing: 8px; }
-      .content-section { padding: 80px 20px; }
-      .institutional-box { padding: 40px 20px; }
-      .institutional-box li { font-size: 1rem; line-height: 1.9; }
-      .content p { font-size: 1rem; line-height: 2; }
-      .parallax-divider { background-attachment: scroll; height: 60vh; background-size: contain; margin: 20px 0; }
+      header { padding: 0 20px; min-height: 90vh; } 
+      h1 { font-size: 2.1rem; letter-spacing: 10px; margin-bottom: 20px; }
+      .subtitle { letter-spacing: 6px; margin-bottom: 40px; }
+      .tagline { font-size: 1.15rem; line-height: 1.6; }
+      .content-section { padding: 100px 20px; }
+      .institutional-box { padding: 45px 24px; margin-top: 45px; }
+      .content p { font-size: 0.95rem; line-height: 1.9; }
+      
+      .parallax-divider { 
+        background-attachment: scroll; 
+        height: 65vh; 
+        margin: 40px 0;
+        background-size: contain;
+      }
+      .btn { width: 100%; text-align: center; padding: 18px 20px; }
     }
   </style>
 </head>
@@ -166,41 +269,43 @@
     <p class="tagline">Tratamento psiquiátrico de alto padrão no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
 
-  <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(30%);"></div>
+  <!-- FOTOGRAFIA 1 -->
+  <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(15%);"></div>
 
   <section class="content-section" id="tese">
     <div class="content">
       <h2 class="section-title">O Privilégio de Permanecer Oculto</h2>
-      <p>Para grandes executivos, lideranças e figuras públicas, buscar suporte para a saúde mental não deve significar abrir mão do controle sobre a sua imagem.</p>
-      <p style="margin-top: 20px;">O verdadeiro cuidado não exige que você se desloque, enfrente o trânsito ou se exponha a ambientes públicos. Eliminamos completamente o maior fator de vulnerabilidade da medicina tradicional: a necessidade de ser visto entrando em uma clínica ou aguardando em uma recepção. Seu tratamento acontece onde você está seguro.</p>
+      <p>Para grandes executivos, lideranças e figuras públicas, buscar suporte para a saúde mental não deve significar abrir mão do controle sobre a sua imagem pública.</p>
+      <p>O verdadeiro cuidado não exige que você se desloque, enfrente salas de espera ou se exponha a ambientes coletivos. Eliminamos o maior fator de vulnerabilidade da medicina tradicional: a necessidade de trânsito social. Seu acompanhamento médico transcorre unicamente onde você está seguro.</p>
     </div>
   </section>
 
+  <!-- FOTOGRAFIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
   <section class="content-section" id="servico">
     <div class="content">
       <h2 class="section-title">A Medicina no Seu Território</h2>
-      <p>Consultas, manejo de rotinas e acompanhamento clínico contínuo realizados diretamente no ambiente de sua escolha — seja no recôndito da sua residência, na discrição de uma suíte de hotel ou na total privacidade do seu escritório corporativo.</p>
+      <p>Consultas, diagnóstico e acompanhamento clínico contínuo realizados diretamente no ambiente de sua escolha — seja no recôndito de sua residência particular, na discrição de uma suíte de hotel ou nos bastidores restritos de seu escritório corporativo.</p>
       
       <div class="institutional-box">
         <ul>
-          <li><strong>Ausência de Deslocamento:</strong> Você não precisa interromper o seu dia ou sair do seu ambiente de conforto. O atendimento médico se molda à sua localização atual, sem intermediários.</li>
-          <li><strong>Preservação Absoluta da Rotina:</strong> O foco clínico está em estabilizar e proteger a sua capacidade de decisão e bem-estar, respeitando rigorosamente os horários e o ritmo de seus compromissos.</li>
+          <li><strong>Ausência de Deslocamento:</strong> O ato médico se amolda inteiramente à sua localização e à sua rotina atual. O Dr. Elquer Rodrigues vai até você de forma direta, mitigando riscos de agenda.</li>
+          <li><strong>Preservação do Ritmo Decisório:</strong> O objetivo principal do acompanhamento é restabelecer a estabilidade clínica e a sua alta performance, sem que o tratamento imponha rupturas nos seus compromissos institucionais.</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- FOTOGRAFIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
   <section class="content-section" id="medico">
     <div class="content">
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
-      <p>Pacientes de grande exposição pública e alta exigência não buscam médicos midiáticos ou deslumbrados com os holofotes. Em um cenário onde a medicina frequentemente cede à espetacularização, o silêncio e o recatamento profissional tornaram-se os ativos clínicos mais raros e valiosos.</p>
-      <p style="margin-top: 20px;">Sempre atuei sob a premissa de que o verdadeiro padrão de excelência na psiquiatria exige discrição absoluta, respeito irrestrito à intimidade e foco estritamente técnico. A ANGMER foi desenhada para refletir esse perfil: uma atuação médica de bastidor, voltada exclusivamente para o cuidado e para a resolução do problema.</p>
-      
-      <p style="margin-top: 20px;">Minha prática é pautada pelo distanciamento total das redes sociais e da autopromoção digital. Não compartilho rotinas, não exponho vivências e não frequento ambientes onde meu nome possa ser publicamente associado ao seu. O foco permanece único e exclusivamente onde deve estar: no seu bem-estar, em ambiente privado.</p>
+      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
+      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
+      <p>Minha prática é estritamente privada. Não compartilho rotinas, não utilizo canais públicos para autopromoção e não frequento ambientes onde meu nome possa ser associado ao seu. Esse recatamento público não é acidental; é um pré-requisito indispensável para atender ao nível de exigência que a sua privacidade demanda.</p>
       
       <div class="doctor-signature">
         <strong>Dr. Elquer Rodrigues</strong>
@@ -209,34 +314,36 @@
     </div>
   </section>
 
+  <!-- FOTOGRAFIA 4 -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
   <section class="content-section" id="blindagem">
     <div class="content">
       <h2 class="section-title">Garantia de Anonimato Prático</h2>
-      <p>O cuidado com a integridade da sua rotina e da sua privacidade individual é tratado com o mais alto rigor ético e profissional.</p>
+      <p>O resguardo da sua privacidade individual e corporativa é conduzido com o mais severo rigor ético, ético-profissional e institucional.</p>
       
       <div class="institutional-box">
         <ul>
-          <li><strong>Discrição Visual Plena:</strong> Todo o planejamento de visitas e agendamentos é feito para ter impacto visual zero. A presença do médico no local é indistinguível de uma visita rotineira ou corporativa comum.</li>
-          <li><strong>Isolamento de Informações:</strong> O histórico de suas consultas permanece estritamente restrito ao âmbito do segredo médico-paciente. Nenhum funcionário, vizinho, colega de trabalho ou terceiro saberá da existência do acompanhamento.</li>
-          <li><strong>Silêncio Permanente:</strong> A confidencialidade é encarada como um pilar inalterável do tratamento. A natureza das consultas, os horários e qualquer detalhe do seu processo terapêutico permanecem totalmente resguardados e protegidos.</li>
+          <li><strong>Discrição Visual Plena:</strong> Toda a logística de visitas é planejada para ter impacto visual nulo. A presença do médico em sua localidade é indistinguível de uma agenda institucional comum ou de uma visita estritamente rotineira.</li>
+          <li><strong>Isolamento Total de Dados:</strong> O registro das suas consultas permanece sob absoluto e exclusivo segredo médico-paciente. Nenhum terceiro, colaborador ou elemento externo terá ciência da existência do acompanhamento.</li>
+          <li><strong>Silêncio Permanente:</strong> A confidencialidade é indissolúvel. A existência do atendimento, os horários acordados e o teor de todo o processo clínico permanecem resguardados de forma permanente.</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- SEÇÃO DE ADMISSÃO -->
   <section class="content-section" id="admissao">
     <div class="content">
       <h2 class="section-title">Acesso Direto e Exclusivo</h2>
-      <p>Um canal direto projetado especificamente para iniciar o seu acompanhamento médico com o máximo de discrição e agilidade, sem burocracias.</p>
+      <p>Um canal privativo estruturado para dar início ao seu atendimento médico com o máximo de discrição, fluidez e absoluto resguardo de dados.</p>
       
       <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20às%20diretrizes%20do%20protocolo%20de%20admissão%20da%20ANGMER." target="_blank" class="btn">
         Agendar Consulta Privativa
       </a>
       
       <span class="secure-alt-contact">
-        Para alinhamentos institucionais ou agendamentos corporativos de alta urgência, o contato também pode ser formalizado diretamente através do endereço eletrônico: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
+        Para alinhamentos de alta governança ou admissões corporativas restritas, o contato pode ser estabelecido diretamente via: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
       </span>
     </div>
   </section>
@@ -249,10 +356,10 @@
     <div class="footer-links">
       <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
     </div>
-    <p style="margin-top: 18px; font-size: 0.58rem; letter-spacing: 1px;">Operações resguardadas por absoluto sigilo profissional. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
+    <p style="font-size: 0.55rem; letter-spacing: 1px; opacity: 0.7;">Operações resguardadas por absoluto sigilo profissional. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
   </footer>
 
-  <script>
+  <script strain="sartorial">
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -261,7 +368,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+      }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       
       document.querySelectorAll('.content-section').forEach(function(s) { observer.observe(s); });
       document.querySelectorAll('.parallax-divider').forEach(function(s) { s.classList.add('visible'); });
