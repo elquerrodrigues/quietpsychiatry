@@ -116,7 +116,7 @@
       100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
-    /* TRANSIÇÃO E ALINHAMENTO GEOMÉTRICO DAS IMAGENS GRANDES */
+    /* ALINHAMENTO DAS IMAGENS + ALGORITMO FILTRO AESOP/KINFOLK MATE */
     .parallax-divider {
       width: 100%;
       background-position: center center;
@@ -126,15 +126,15 @@
       position: relative;
       background-color: var(--bg);
       
+      /* Efeito Óptico Sutil: Redução de contraste duro, calor terroso e pretos lavados */
+      filter: contrast(90%) brightness(92%) sepia(6%) saturate(92%);
+      
       opacity: 0; 
       transform: scale(0.95); 
-      filter: blur(4px);
       transform-origin: center center;
-      
       transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), 
-                  transform 2.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                  filter 2.2s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity, filter;
+                  transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
     }
 
     @media (min-width: 769px) {
@@ -147,7 +147,6 @@
     .parallax-divider.visible { 
       opacity: 1; 
       transform: scale(1); 
-      filter: blur(0);
     }
     
     .parallax-divider::after {
@@ -187,7 +186,7 @@
       letter-spacing: 2px;
     }
 
-    /* MOLDURA DA FOTO DE PERFIL (METADE DO TAMANHO) */
+    /* MOLDURA DA FOTO DE PERFIL (METADE DO TAMANHO + FILTRO KINFOLK) */
     .profile-photo {
       display: block;
       margin: 50px auto 30px auto;
@@ -197,6 +196,7 @@
       border: 1px solid var(--line);
       padding: 8px;
       background-color: rgba(255, 255, 255, 0.01);
+      filter: contrast(92%) sepia(5%);
       transition: border-color 0.6s ease;
     }
     
@@ -225,6 +225,28 @@
     .institutional-box li:last-child { margin-bottom: 0; }
     .institutional-box li strong { color: var(--text); font-weight: 400; letter-spacing: 0.5px; }
     .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 300; }
+
+    /* GRID / ALINHAMENTO MINIMALISTA PARA OS CRITÉRIOS DE PÚBLICO */
+    .eligibility-block {
+      text-align: left;
+      margin-bottom: 35px;
+    }
+    .eligibility-block:last-child { margin-bottom: 0; }
+    .eligibility-block h3 {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .eligibility-block p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
 
     /* ASSINATURA DA AUTORIDADE */
     .doctor-signature { margin-top: 30px; padding-top: 35px; border-top: 1px solid var(--line); text-align: center; }
@@ -364,7 +386,6 @@
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
       <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
       <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
-      <!-- PARÁGRAFO ATUALIZADO CONFORME DIRETRIZ: COMPACTO E CONTRASTANTE -->
       <p>Recuso categoricamente a superexposição, a espetacularização da rotina e a autopromoção digital.</p>
       
       <!-- FOTO DE PERFIL DO GITHUB -->
@@ -383,8 +404,41 @@
   <section class="content-section" id="blindagem">
     <div class="content">
       <h2 class="section-title">Atendimento Psiquiátrico Domiciliar</h2>
-      <p>Lideranças empresariais e figures públicas de alta exposição contam aqui com uma dinâmica médica invertida: o médico vai até o paciente. Em vez de se deslocar a clínicas tradicionais ou enfrentar o risco de salas de espera, o paciente solicita o atendimento e é assistido em seu território seguro. É o suporte psiquiátrico especializado desenhado para quem exige máxima conveniência.</p>
+      <p>Lideranças empresariais e figuras públicas de alta exposição contam aqui com uma dinâmica médica invertida: o médico vai até o paciente. Em vez de se deslocar a clínicas tradicionais ou enfrentar o risco de salas de espera, o paciente solicita o atendimento e é assistido em seu território seguro. É o suporte psiquiátrico especializado desenhado para quem exige máxima conveniência.</p>
       <p>Esta consultoria privativa é realizada de forma estritamente individual pelo Dr. Elquer Rodrigues, sem assistentes ou equipes intermediárias, blindando o silêncio absoluto desde o primeiro contato. Por critérios logísticos e rigor clínico, o atendimento domiciliar está disponível, por enquanto, exclusivamente na cidade de São Paulo.</p>
+    </div>
+  </section>
+
+  <!-- NOVO: FOTOGRAFIA 5 (TRANSIÇÃO ÓPTICA DA GRADE DE PERFIS) -->
+  <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
+
+  <!-- NOVA SEÇÃO: CRITÉRIOS DE ELEGIBILIDADE DE PÚBLICO EM FORMATO ATELIER -->
+  <section class="content-section" id="elegibilidade">
+    <div class="content">
+      <h2 class="section-title">Critérios de Elegibilidade</h2>
+      <p>O protocolo de suporte da ANGMER foi desenhado sob a premissa de gerenciamento de risco reputacional. Atendemos, de maneira estritamente restrita, aos seguintes escopos corporativos e sociais:</p>
+      
+      <div class="institutional-box">
+        <div class="eligibility-block">
+          <h3>01. C-Level e Founders</h3>
+          <p>Presidentes de conselhos, diretores e fundadores de companhias sob extrema pressão. O acompanhamento previne que oscilações de saúde mental gerem instabilidade na governança ou flutuações de ativos na bolsa.</p>
+        </div>
+        
+        <div class="eligibility-block">
+          <h3>02. Celebridades e Figuras Públicas</h3>
+          <p>Artistas de grande escalão e atletas sob severos contratos de imagem. A estabilização clínica ocorre em ambientes privativos, neutralizando vazamentos na mídia ou registros em salas de espera tradicionais.</p>
+        </div>
+        
+        <div class="eligibility-block">
+          <h3>03. Clãs Familiares de Alta Renda</h3>
+          <p>Herdeiros, cônjuges e patriarcas com alto patrimônio protegido. O desenho logístico mitiga riscos de segurança e resguarda o sobrenome familiar contra especulações sociais em círculos restritos.</p>
+        </div>
+        
+        <div class="eligibility-block">
+          <h3>04. Agentes Institucionais</h3>
+          <p>Magistrados, tomadores de decisão e lideranças do cenário jurídico e financeiro. Blindagem total de prontuário para impedir que vulnerabilidades clínicas sejam instrumentalizadas externamente.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -399,7 +453,7 @@
       </a>
       
       <span class="secure-alt-contact">
-        Para alinhamentos de alta governança ou admissões corporativas restritas, o contato pode be estabelecido diretamente via: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
+        Para alinhamentos de alta governança ou admissões corporativas restritas, o contato pode ser estabelecido diretamente via: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
       </span>
     </div>
   </section>
