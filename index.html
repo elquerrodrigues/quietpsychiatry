@@ -187,7 +187,7 @@
       letter-spacing: 2px;
     }
 
-    /* MOLDURA DA FOTO DE PERFIL (METADE DO TAMANHO) */
+    /* MOLDURA DA FOTO DE PERFIL */
     .profile-photo {
       display: block;
       margin: 50px auto 30px auto;
@@ -204,7 +204,7 @@
       border-color: rgba(195, 175, 149, 0.4);
     }
 
-    /* CAIXA INSTITUCIONAL ESTILO ATELIER ESCURO */
+    /* CAIXA INSTITUCIONAL ESTILO ATELIER */
     .institutional-box { 
       border: 1px solid var(--line); 
       padding: 40px 45px; 
@@ -229,7 +229,23 @@
     /* ASSINATURA DA AUTORIDADE */
     .doctor-signature { margin-top: 30px; padding-top: 35px; border-top: 1px solid var(--line); text-align: center; }
     .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; display: block; margin-bottom: 8px; }
-    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
+    .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; display: block; }
+    
+    /* NOVO: A VALIDAÇÃO DE ECOSSISTEMA (PROVA SOCIAL DE ALTA DIREÇÃO) */
+    .ecosystem-validation {
+      display: block;
+      margin-top: 18px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--accent);
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.85;
+    }
 
     /* BOTÃO SOB MEDIDA */
     .btn { 
@@ -302,6 +318,12 @@
         padding: 6px;
       }
       
+      /* Ajuste da Validação no Mobile */
+      .ecosystem-validation {
+        max-width: 95%;
+        font-size: 0.9rem;
+      }
+      
       .parallax-divider { 
         background-attachment: scroll; 
         height: 50vh;             
@@ -372,6 +394,8 @@
       <div class="doctor-signature">
         <strong>Dr. Elquer Rodrigues</strong>
         <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
+        <!-- SUA LINHA DE VALIDAÇÃO DE ECOSSISTEMA INSERIDA AQUI -->
+        <span class="ecosystem-validation">"Médico de confiança acreditado junto a family offices, comitês de governança e bancas de advocacia de alta direção desde 2018."</span>
       </div>
     </div>
   </section>
@@ -387,7 +411,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DE ADMISSÃO (AJUSTE 1 EXECUTADO) -->
+  <!-- SEÇÃO DE ADMISSÃO -->
   <section class="content-section" id="admissao">
     <div class="content">
       <h2 class="section-title">Acesso Direto e Exclusivo</h2>
@@ -403,7 +427,6 @@
     </div>
   </section>
 
-  <!-- RODAPÉ INSTITUCIONAL (AJUSTE 2 EXECUTADO) -->
   <footer>
     <p>ANGMER • UM PSIQUIATRA VAI ATÉ VOCÊ</p>
     
