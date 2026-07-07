@@ -178,19 +178,18 @@
       letter-spacing: 2px;
     }
 
-    /* MOLDURA APAGADA + AUMENTO DE 20% + MÁSCARA ESFUMAÇADA AESOP */
+    /* FOTO DE PERFIL ESFUMAÇADA AESOP (+20% TAMANHO / SEM BORDAS DURAS) */
     .profile-photo {
       display: block;
       margin: 60px auto 40px auto;
-      height: 42vh;              /* Redimensionamento cirúrgico de +20% (era 35vh) */
+      height: 42vh;              
       width: auto;
       object-fit: contain;
-      border: none;              /* Moldura extinta */
+      border: none;              
       padding: 0;
       background: transparent;
       filter: contrast(94%) sepia(5%) brightness(95%);
       
-      /* Algoritmo de esfumaçado nobre nas margens */
       -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
       mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
     }
@@ -266,14 +265,12 @@
     .secure-alt-contact a { color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
     .secure-alt-contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
-    /* FOOTER DISCRETO */
+    /* FOOTER DISCRETO SIMPLIFICADO */
     footer { text-align: center; padding: 120px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; }
     footer a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; margin: 0 12px; }
     footer a:hover { color: var(--accent); }
     .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
     .footer-email:hover { color: var(--text); border-bottom-color: var(--text); }
-
-    @keyframes fadeInSmooth { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     /* REGRAS LAPIDADAS PARA O IPHONE */
     @media(max-width: 768px) {
@@ -284,9 +281,8 @@
       .content-section { padding: 100px 20px; }
       .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
       
-      /* Ajuste proporcional móvel da foto com máscara de esfumaçado */
       .profile-photo { 
-        height: 30vh;            /* Redimensionamento proporcional móvel de +20% */
+        height: 30vh;            
         margin: 50px auto 30px auto; 
         padding: 0;
       }
@@ -311,13 +307,14 @@
   </header>
 
   <!-- FOTOGRAFIA 1 -->
-  <div class="parallax-divider" style="background-image: url('foto-tese.png'); filter: grayscale(15%);"></div>
+  <div class="parallax-divider" style="background-image: url('foto-tese.png');"></div>
 
+  <!-- SEÇÃO ATUALIZADA: TÍTULO COM CRASE E PARÁGRAFOS AJUSTADOS -->
   <section class="content-section" id="tese">
     <div class="content">
-      <h2 class="section-title">O Privilégio de Permanecer Oculto</h2>
-      <p>Para grandes executivos, lideranças e figuras públicas, buscar suporte para a saúde mental não deve significar abrir mão do controle sobre a sua imagem pública.</p>
-      <p>O verdadeiro cuidado não exige que você se desloque, enfrente salas de espera ou se exponha a ambientes coletivos. Eliminamos o maior fator de vulnerabilidade da medicina tradicional: a necessidade_ de trânsito social. Seu acompanhamento médico transcorre unicamente onde você está seguro.</p>
+      <h2 class="section-title">O direito à não exposição</h2>
+      <p>Buscar suporte para a saúde mental não deve significar abrir mão do controle sobre a sua imagem pública.</p>
+      <p>O verdadeiro cuidado não exige que você se desloque, enfrente salas de espera ou se exponha a ambientes coletivos. Eliminamos um fator de vulnerabilidade da medicina tradicional: a necessidade de trânsito social. Seu acompanhamento médico transcorre unicamente onde você está seguro.</p>
     </div>
   </section>
 
@@ -349,7 +346,6 @@
       <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
       <p>Recuso categoricamente a superexposição, a espetacularização da rotina e a autopromoção digital.</p>
       
-      <!-- FOTO DE PERFIL DO GITHUB (ATUALIZADA COM O NOVO EFEITO FOSCO MATE) -->
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       
       <div class="doctor-signature">
@@ -419,7 +415,7 @@
     </div>
   </section>
 
-  <!-- RODAPÉ INSTITUCIONAL (LINHA DE DIRETRIZES LEGAIS EXPULSADA DO CÓDIGO) -->
+  <!-- RODAPÉ INSTITUCIONAL -->
   <footer>
     <p>ANGMER • UM PSIQUIATRA VAI ATÉ VOCÊ</p>
     
