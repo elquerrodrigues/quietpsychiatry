@@ -77,10 +77,23 @@
     h1 { 
       font-size: clamp(2.6rem, 7vw, 4.5rem); 
       color: var(--text); 
-      margin-bottom: 30px; 
+      margin-bottom: 20px; 
       text-transform: uppercase;
       will-change: letter-spacing, opacity, filter;
       animation: lanserhofReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+    }
+    
+    /* VALIDAÇÃO DE CREDENCIAIS IMEDIATA (3 SEGUNDOS NO TOPO) */
+    .header-crm {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      opacity: 0.85;
+      animation: fadeInSmooth 1.5s var(--transition-smooth) 1.0s both;
     }
     
     .subtitle { 
@@ -88,14 +101,15 @@
       font-size: 0.75rem; 
       font-weight: 300; 
       letter-spacing: 6px; 
-      color: var(--accent); 
+      color: var(--text-muted); 
       margin: 0 0 50px 0; 
       text-transform: uppercase; 
-      animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
+      animation: fadeInSmooth 1.5s var(--transition-smooth) 1.3s both; 
     }
     
     @media (min-width: 769px) {
       .subtitle { letter-spacing: 8px; font-size: 0.8rem; }
+      .header-crm { font-size: 0.65rem; letter-spacing: 4px; }
     }
     
     .tagline { 
@@ -187,7 +201,7 @@
       letter-spacing: 2px;
     }
 
-    /* MOLDURA DA FOTO DE PERFIL */
+    /* MOLDURA DA FOTO DE PERFIL (METADE DO TAMANHO) */
     .profile-photo {
       display: block;
       margin: 50px auto 30px auto;
@@ -204,7 +218,7 @@
       border-color: rgba(195, 175, 149, 0.4);
     }
 
-    /* CAIXA INSTITUCIONAL ESTILO ATELIER */
+    /* CAIXA INSTITUCIONAL ESTILO ATELIER ESCURO */
     .institutional-box { 
       border: 1px solid var(--line); 
       padding: 40px 45px; 
@@ -231,7 +245,7 @@
     .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; display: block; margin-bottom: 8px; }
     .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; display: block; }
     
-    /* NOVO: A VALIDAÇÃO DE ECOSSISTEMA (PROVA SOCIAL DE ALTA DIREÇÃO) */
+    /* A VALIDAÇÃO DE ECOSSISTEMA (PROVA SOCIAL DE ALTA DIREÇÃO) */
     .ecosystem-validation {
       display: block;
       margin-top: 18px;
@@ -301,11 +315,12 @@
       
       h1 { 
         font-size: 2.1rem; 
-        margin-bottom: 20px; 
+        margin-bottom: 15px; 
         animation: lanserhofMobileReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
       }
       
-      .subtitle { letter-spacing: 5px; margin-bottom: 40px; }
+      .header-crm { margin-bottom: 20px; font-size: 0.58rem; letter-spacing: 2px; }
+      .subtitle { letter-spacing: 4px; margin-bottom: 40px; }
       .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
       
       .content-section { padding: 100px 20px; }
@@ -318,7 +333,6 @@
         padding: 6px;
       }
       
-      /* Ajuste da Validação no Mobile */
       .ecosystem-validation {
         max-width: 95%;
         font-size: 0.9rem;
@@ -345,6 +359,8 @@
 
   <header>
     <h1>ANGMER</h1>
+    <!-- AJUSTE EXECUTADO: CHANCELA MÉDICA E REGISTRO IMEDIATO NO CABEÇALHO -->
+    <p class="header-crm">Dr. Elquer Rodrigues &bull; CRM-SP 157303 &bull; RQE 85941</p>
     <p class="subtitle">Um psiquiatra vai até você</p>
     <p class="tagline">Atendimento psiquiátrico no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
@@ -394,7 +410,6 @@
       <div class="doctor-signature">
         <strong>Dr. Elquer Rodrigues</strong>
         <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
-        <!-- SUA LINHA DE VALIDAÇÃO DE ECOSSISTEMA INSERIDA AQUI -->
         <span class="ecosystem-validation">"Médico de confiança acreditado junto a family offices, comitês de governança e bancas de advocacia de alta direção desde 2018."</span>
       </div>
     </div>
