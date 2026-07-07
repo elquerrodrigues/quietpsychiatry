@@ -48,7 +48,7 @@
     body {
       font-family: var(--font-sans);
       background: var(--bg);
-      color: var(--text-muted);   /* Base de leitura suavizada, sem branco puro */
+      color: var(--text-muted);   
       line-height: 2.1; 
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -73,7 +73,6 @@
       background: radial-gradient(circle at center, #0e0e0e 0%, var(--bg) 70%);
     }
     
-    /* UNIFORMIDADE CROMÁTICA: O topo agora assume o tom Âmbar Aesop */
     h1 { 
       font-size: clamp(2.6rem, 7vw, 4.5rem); 
       color: var(--accent); 
@@ -88,7 +87,7 @@
       font-size: 0.75rem; 
       font-weight: 300; 
       letter-spacing: 6px; 
-      color: var(--text-light); /* Suavizado para dar contraste ao título âmbar */
+      color: var(--text-light); 
       margin: 0 0 50px 0; 
       text-transform: uppercase; 
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
@@ -172,7 +171,6 @@
     }
     .content p:last-child { margin-bottom: 0; }
     
-    /* TODOS OS TÍTULOS DO SITE NO ESTILO ÂMBAR */
     .section-title { 
       font-size: clamp(1.6rem, 4vw, 2.2rem); 
       color: var(--accent); 
@@ -180,20 +178,22 @@
       letter-spacing: 2px;
     }
 
-    /* MOLDURA DA FOTO DE PERFIL */
+    /* MOLDURA APAGADA + AUMENTO DE 20% + MÁSCARA ESFUMAÇADA AESOP */
     .profile-photo {
       display: block;
-      margin: 50px auto 30px auto;
-      height: 35vh; 
+      margin: 60px auto 40px auto;
+      height: 42vh;              /* Redimensionamento cirúrgico de +20% (era 35vh) */
       width: auto;
       object-fit: contain;
-      border: 1px solid var(--line);
-      padding: 8px;
-      background-color: rgba(255, 255, 255, 0.01);
-      filter: contrast(92%) sepia(5%);
-      transition: border-color 0.6s ease;
+      border: none;              /* Moldura extinta */
+      padding: 0;
+      background: transparent;
+      filter: contrast(94%) sepia(5%) brightness(95%);
+      
+      /* Algoritmo de esfumaçado nobre nas margens */
+      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
     }
-    .profile-photo:hover { border-color: rgba(195, 175, 149, 0.4); }
 
     /* CAIXA INSTITUCIONAL ESCURA */
     .institutional-box { 
@@ -270,7 +270,6 @@
     footer { text-align: center; padding: 120px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; }
     footer a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; margin: 0 12px; }
     footer a:hover { color: var(--accent); }
-    .footer-links { margin-top: 20px; margin-bottom: 40px; }
     .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
     .footer-email:hover { color: var(--text); border-bottom-color: var(--text); }
 
@@ -284,7 +283,14 @@
       .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
       .content-section { padding: 100px 20px; }
       .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
-      .profile-photo { height: 25vh; margin: 40px auto 25px auto; padding: 6px; }
+      
+      /* Ajuste proporcional móvel da foto com máscara de esfumaçado */
+      .profile-photo { 
+        height: 30vh;            /* Redimensionamento proporcional móvel de +20% */
+        margin: 50px auto 30px auto; 
+        padding: 0;
+      }
+      
       .parallax-divider { background-attachment: scroll; height: 50vh; margin: 50px 0; background-size: cover; background-position: center center; }
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
     }
@@ -311,7 +317,7 @@
     <div class="content">
       <h2 class="section-title">O Privilégio de Permanecer Oculto</h2>
       <p>Para grandes executivos, lideranças e figuras públicas, buscar suporte para a saúde mental não deve significar abrir mão do controle sobre a sua imagem pública.</p>
-      <p>O verdadeiro cuidado não exige que você se desloque, enfrente salas de espera ou se exponha a ambientes coletivos. Eliminamos o maior fator de vulnerabilidade da medicina tradicional: a necessidade de trânsito social. Seu acompanhamento médico transcorre unicamente onde você está seguro.</p>
+      <p>O verdadeiro cuidado não exige que você se desloque, enfrente salas de espera ou se exponha a ambientes coletivos. Eliminamos o maior fator de vulnerabilidade da medicina tradicional: a necessidade_ de trânsito social. Seu acompanhamento médico transcorre unicamente onde você está seguro.</p>
     </div>
   </section>
 
@@ -343,7 +349,7 @@
       <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
       <p>Recuso categoricamente a superexposição, a espetacularização da rotina e a autopromoção digital.</p>
       
-      <!-- FOTO DE PERFIL DO GITHUB -->
+      <!-- FOTO DE PERFIL DO GITHUB (ATUALIZADA COM O NOVO EFEITO FOSCO MATE) -->
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       
       <div class="doctor-signature">
@@ -413,16 +419,13 @@
     </div>
   </section>
 
-  <!-- RODAPÉ INSTITUCIONAL -->
+  <!-- RODAPÉ INSTITUCIONAL (LINHA DE DIRETRIZES LEGAIS EXPULSADA DO CÓDIGO) -->
   <footer>
     <p>ANGMER • UM PSIQUIATRA VAI ATÉ VOCÊ</p>
     
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
     
-    <div class="footer-links">
-      <a href="privacidade.html">Diretrizes Legais e Responsabilidade Médica</a>
-    </div>
-    <p style="font-size: 0.55rem; letter-spacing: 1px; opacity: 0.7;">Operações conduzidas sob rigoroso sigilo profissional, conforme o Código de Ética Médica. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
+    <p style="font-size: 0.55rem; letter-spacing: 1px; opacity: 0.7; margin-top: 40px;">Operações conduzidas sob rigoroso sigilo profissional, conforme o Código de Ética Médica. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
   </footer>
 
   <script>
