@@ -24,7 +24,7 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Psiquiatria domiciliar e corporativa privativa focada no conforto and anonimato total do paciente."
+      "description": "Psiquiatria domiciliar e corporativa privativa focada no conforto e anonimato total do paciente."
     }
   </script>
   
@@ -178,11 +178,11 @@
       letter-spacing: 2px;
     }
 
-    /* FOTO DE PERFIL ESFUMAÇADA AESOP (+20% TAMANHO / SEM BORDAS DURAS) */
+    /* FOTO DE PERFIL ESFUMAÇADA AESOP (AUMENTADA PARA MAIOR PRESENÇA INSTITUCIONAL) */
     .profile-photo {
       display: block;
-      margin: 60px auto 40px auto;
-      height: 42vh;              
+      margin: 70px auto 50px auto;
+      height: 50vh;              /* Aumentado de 42vh para 50vh */
       width: auto;
       object-fit: contain;
       border: none;              
@@ -190,8 +190,8 @@
       background: transparent;
       filter: contrast(94%) sepia(5%) brightness(95%);
       
-      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
-      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
 
     /* CAIXA INSTITUCIONAL ESCURA */
@@ -213,7 +213,7 @@
       font-weight: 200; 
     }
     .institutional-box li:last-child { margin-bottom: 0; }
-    .institutional-box li strong { color: var(--accent); font-weight: 400; letter-spacing: 0.5px; }
+    .institutional-box li strong { color: var(--text); font-weight: 400; letter-spacing: 0.5px; }
     .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 300; }
 
     /* CRITÉRIOS DE PÚBLICO */
@@ -282,7 +282,7 @@
       .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
       
       .profile-photo { 
-        height: 30vh;            
+        height: 38vh;            /* Aumentado proporcionalmente para o mobile */
         margin: 50px auto 30px auto; 
         padding: 0;
       }
@@ -306,26 +306,53 @@
     <p class="tagline">Atendimento psiquiátrico no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
 
-  <!-- FOTOGRAFIA 1 -->
+  <!-- FOTOGRAFIA 1 (Agora antecedendo a apresentação do médico) -->
   <div class="parallax-divider" style="background-image: url('foto-tese.png');"></div>
 
-  <!-- SEÇÃO REESTRUTURADA COM AS SUAS DIRETRIZES EXATAS DE TEXTO -->
-  <section class="content-section" id="tese">
+  <!-- SEÇÃO 1: O MÉDICO (Renomeada e movida para o topo, trazendo máxima autoridade logo de cara) -->
+  <section class="content-section" id="medico">
     <div class="content">
-      <h2 class="section-title">O direito de não ser visto</h2>
-      <p>Existe uma diferença entre cuidar da saúde e expor a própria vida.</p>
-      <p>Você não deveria trocar uma pela outra.</p>
-      <p>Na ANGMER, o atendimento acontece onde você já se sente seguro. Sem sala de espera. Sem encontrar conhecidos.</p>
-      <p>A melhor consulta é aquela que ninguém precisa saber que aconteceu.</p>
-      <p>Sua rotina continua intacta. Sua história permanece entre você e seu médico.</p>
-      <p>Para alguns, discrição é conforto.</p>
-      <p>Para outros, é a única forma de tratamento ser possível.</p>
+      <h2 class="section-title">O Médico</h2>
+      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER (nome inspirado na competência e discrição da chanceler alemã Angela Merkel) foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
+      <p>Recuso categoricamente a superexposição, a espetacularização da rotina e a autopromoção digital.</p>
+      
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      
+      <div class="doctor-signature">
+        <strong>Dr. Elquer Rodrigues</strong>
+        <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
+      </div>
     </div>
   </section>
 
   <!-- FOTOGRAFIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
+  <!-- SEÇÃO 2: LOGÍSTICA DE SP (O texto novo aprovado por você) -->
+  <section class="content-section" id="tese">
+    <div class="content">
+      <h2 class="section-title">A Soberania do Seu Próprio Território</h2>
+      <p>Para quem dita o ritmo do mercado ou vive sob constante escrutínio público, o tempo e a privacidade são ativos inegociáveis. Atravessar a cidade de São Paulo para uma consulta médica não é apenas um desgaste na sua agenda — é uma vulnerabilidade logística e reputacional que você não precisa mais assumir.</p>
+      <p>A ANGMER redefine o padrão de cuidado ao instaurar uma dinâmica absoluta: o atendimento psiquiátrico de excelência acontece <strong>exatamente onde você estiver</strong>. Seja na segurança indevassável da sua residência, na blindagem do seu escritório corporativo ou na discrição de uma suíte de hotel na capital paulista. O médico se adapta à sua geografia.</p>
+      
+      <p style="margin-top: 40px; margin-bottom: 0;">As vantagens dessa arquitetura de atendimento são desenhadas para a alta performance e o sigilo total:</p>
+      
+      <div class="institutional-box" style="margin-top: 25px; margin-bottom: 40px;">
+        <ul>
+          <li><strong>Blindagem Logística:</strong> A eliminação de salas de espera, trânsito e corredores clínicos anula a zero o risco de encontros indesejados.</li>
+          <li><strong>Otimização de Agenda:</strong> Seu tempo permanece intacto. A consulta encaixa-se na sua rotina sem interromper o fluxo das suas decisões.</li>
+          <li><strong>Precisão Clínica:</strong> Ao ser avaliado no seu próprio território, onde as defesas naturais relaxam, o diagnóstico é mais profundo.</li>
+        </ul>
+      </div>
+      
+      <p>O verdadeiro privilégio não é apenas ter acesso aos melhores especialistas. É ter acesso a eles com a garantia de que o mundo lá fora jamais saberá.</p>
+    </div>
+  </section>
+
+  <!-- FOTOGRAFIA 3 -->
+  <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
+
+  <!-- SEÇÃO 3: A MEDICINA NO SEU TERRITÓRIO -->
   <section class="content-section" id="servico">
     <div class="content">
       <h2 class="section-title">A Medicina no Seu Território</h2>
@@ -341,27 +368,10 @@
     </div>
   </section>
 
-  <!-- FOTOGRAFIA 3 -->
-  <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
-
-  <section class="content-section" id="medico">
-    <div class="content">
-      <h2 class="section-title">A Ausência de Ego como Princípio</h2>
-      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER (nome inspirado na competência e discrição da chanceler alemã Angela Merkel) foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
-      <p>Recuso categoricamente a superexposição, a espetacularização da rotina e a autopromoção digital.</p>
-      
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
-      
-      <div class="doctor-signature">
-        <strong>Dr. Elquer Rodrigues</strong>
-        <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
-      </div>
-    </div>
-  </section>
-
   <!-- FOTOGRAFIA 4 -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
+  <!-- SEÇÃO 4: ATENDIMENTO PSIQUIÁTRICO DOMICILIAR -->
   <section class="content-section" id="blindagem">
     <div class="content">
       <h2 class="section-title">Atendimento Psiquiátrico Domiciliar</h2>
@@ -373,7 +383,7 @@
   <!-- FOTOGRAFIA 5 -->
   <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
 
-  <!-- CRITÉRIOS DE ELEGIBILIDADE -->
+  <!-- SEÇÃO 5: CRITÉRIOS DE ELEGIBILIDADE -->
   <section class="content-section" id="elegibilidade">
     <div class="content">
       <h2 class="section-title">Critérios de Elegibilidade</h2>
