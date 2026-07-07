@@ -35,7 +35,7 @@
       --text: #F5F3EF;             /* Marfim de seda pura */
       --text-muted: #BAB5A9;       /* Cashmere cinza quente */
       --text-light: #7D786E;       /* Fio de linho envelhecido */
-      --accent: #C3AF95;           /* Detalhes em bronze sutil/brushed gold */
+      --accent: #C3AF95;           /* O tom Âmbar/Bronze sutil da Aesop */
       --line: rgba(195, 175, 149, 0.12); /* Costura invisível de alfaiataria */
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
@@ -48,7 +48,7 @@
     body {
       font-family: var(--font-sans);
       background: var(--bg);
-      color: var(--text);
+      color: var(--text-muted);   /* Base de leitura suavizada, sem branco puro */
       line-height: 2.1; 
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -73,10 +73,10 @@
       background: radial-gradient(circle at center, #0e0e0e 0%, var(--bg) 70%);
     }
     
-    /* EFEITO LANSERHOF NA PALAVRA ANGMER */
+    /* UNIFORMIDADE CROMÁTICA: O topo agora assume o tom Âmbar Aesop */
     h1 { 
       font-size: clamp(2.6rem, 7vw, 4.5rem); 
-      color: var(--text); 
+      color: var(--accent); 
       margin-bottom: 30px; 
       text-transform: uppercase;
       will-change: letter-spacing, opacity, filter;
@@ -88,7 +88,7 @@
       font-size: 0.75rem; 
       font-weight: 300; 
       letter-spacing: 6px; 
-      color: var(--accent); 
+      color: var(--text-light); /* Suavizado para dar contraste ao título âmbar */
       margin: 0 0 50px 0; 
       text-transform: uppercase; 
       animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
@@ -116,7 +116,7 @@
       100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
-    /* ALINHAMENTO DAS IMAGENS + ALGORITMO FILTRO AESOP/KINFOLK MATE */
+    /* ALINHAMENTO DAS IMAGENS + FILTRO AESOP MATE */
     .parallax-divider {
       width: 100%;
       background-position: center center;
@@ -125,10 +125,7 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
-      
-      /* Efeito Óptico Sutil: Redução de contraste duro, calor terroso e pretos lavados */
       filter: contrast(90%) brightness(92%) sepia(6%) saturate(92%);
-      
       opacity: 0; 
       transform: scale(0.95); 
       transform-origin: center center;
@@ -144,11 +141,7 @@
       }
     }
 
-    .parallax-divider.visible { 
-      opacity: 1; 
-      transform: scale(1); 
-    }
-    
+    .parallax-divider.visible { opacity: 1; transform: scale(1); }
     .parallax-divider::after {
       content: '';
       position: absolute;
@@ -179,14 +172,15 @@
     }
     .content p:last-child { margin-bottom: 0; }
     
+    /* TODOS OS TÍTULOS DO SITE NO ESTILO ÂMBAR */
     .section-title { 
       font-size: clamp(1.6rem, 4vw, 2.2rem); 
-      color: var(--text); 
+      color: var(--accent); 
       margin-bottom: 45px; 
       letter-spacing: 2px;
     }
 
-    /* MOLDURA DA FOTO DE PERFIL (METADE DO TAMANHO + FILTRO KINFOLK) */
+    /* MOLDURA DA FOTO DE PERFIL */
     .profile-photo {
       display: block;
       margin: 50px auto 30px auto;
@@ -199,12 +193,9 @@
       filter: contrast(92%) sepia(5%);
       transition: border-color 0.6s ease;
     }
-    
-    .profile-photo:hover {
-      border-color: rgba(195, 175, 149, 0.4);
-    }
+    .profile-photo:hover { border-color: rgba(195, 175, 149, 0.4); }
 
-    /* CAIXA INSTITUCIONAL ESTILO ATELIER ESCURO */
+    /* CAIXA INSTITUCIONAL ESCURA */
     .institutional-box { 
       border: 1px solid var(--line); 
       padding: 40px 45px; 
@@ -223,14 +214,11 @@
       font-weight: 200; 
     }
     .institutional-box li:last-child { margin-bottom: 0; }
-    .institutional-box li strong { color: var(--text); font-weight: 400; letter-spacing: 0.5px; }
+    .institutional-box li strong { color: var(--accent); font-weight: 400; letter-spacing: 0.5px; }
     .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 300; }
 
-    /* GRID / ALINHAMENTO MINIMALISTA PARA OS CRITÉRIOS DE PÚBLICO */
-    .eligibility-block {
-      text-align: left;
-      margin-bottom: 35px;
-    }
+    /* CRITÉRIOS DE PÚBLICO */
+    .eligibility-block { text-align: left; margin-bottom: 35px; }
     .eligibility-block:last-child { margin-bottom: 0; }
     .eligibility-block h3 {
       font-family: var(--font-sans);
@@ -241,16 +229,11 @@
       color: var(--accent);
       margin-bottom: 8px;
     }
-    .eligibility-block p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      margin-bottom: 0;
-    }
+    .eligibility-block p { font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 0; }
 
     /* ASSINATURA DA AUTORIDADE */
     .doctor-signature { margin-top: 30px; padding-top: 35px; border-top: 1px solid var(--line); text-align: center; }
-    .doctor-signature strong { color: var(--text); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; display: block; margin-bottom: 8px; }
+    .doctor-signature strong { color: var(--accent); font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; display: block; margin-bottom: 8px; }
     .doctor-signature span { color: var(--text-light); font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; display: block; }
 
     /* BOTÃO SOB MEDIDA */
@@ -259,7 +242,7 @@
       margin-top: 60px; 
       font-family: var(--font-sans); 
       color: var(--bg); 
-      background-color: var(--text); 
+      background-color: var(--accent); 
       padding: 16px 40px; 
       text-decoration: none; 
       font-size: 0.7rem; 
@@ -268,7 +251,7 @@
       transition: all 0.4s ease; 
       font-weight: 400; 
     }
-    .btn:hover { background-color: var(--accent); color: var(--bg); }
+    .btn:hover { background-color: var(--text); color: var(--bg); }
 
     .secure-alt-contact {
       display: block;
@@ -280,16 +263,8 @@
       line-height: 1.8;
       font-weight: 200;
     }
-    .secure-alt-contact a {
-      color: var(--text-muted);
-      text-decoration: none;
-      border-bottom: 1px solid var(--line);
-      transition: all 0.3s ease;
-    }
-    .secure-alt-contact a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
+    .secure-alt-contact a { color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
+    .secure-alt-contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
     /* FOOTER DISCRETO */
     footer { text-align: center; padding: 120px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; }
@@ -301,36 +276,16 @@
 
     @keyframes fadeInSmooth { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* REGRAS LAPIDADAS EXCLUSIVAS PARA O IPHONE */
+    /* REGRAS LAPIDADAS PARA O IPHONE */
     @media(max-width: 768px) {
       header { padding: 0 20px; min-height: 90vh; } 
-      
-      h1 { 
-        font-size: 2.1rem; 
-        margin-bottom: 20px; 
-        animation: lanserhofMobileReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
-      }
-      
+      h1 { font-size: 2.1rem; margin-bottom: 20px; animation: lanserhofMobileReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards; }
       .subtitle { letter-spacing: 5px; margin-bottom: 40px; }
       .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
-      
       .content-section { padding: 100px 20px; }
       .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
-      .content p { font-size: 0.95rem; line-height: 1.9; }
-      
-      .profile-photo {
-        height: 25vh; 
-        margin: 40px auto 25px auto;
-        padding: 6px;
-      }
-      
-      .parallax-divider { 
-        background-attachment: scroll; 
-        height: 50vh;             
-        margin: 50px 0;           
-        background-size: cover;   
-        background-position: center center; 
-      }
+      .profile-photo { height: 25vh; margin: 40px auto 25px auto; padding: 6px; }
+      .parallax-divider { background-attachment: scroll; height: 50vh; margin: 50px 0; background-size: cover; background-position: center center; }
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
     }
 
@@ -384,8 +339,8 @@
   <section class="content-section" id="medico">
     <div class="content">
       <h2 class="section-title">A Ausência de Ego como Princípio</h2>
-      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entertainment digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
-      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para reflectir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
+      <p>Lideranças e personalidades de alta exposição não buscam profissionais deslumbrados ou integrados à engrenagem do entretenimento digital. Em uma era de superexposição médica nas redes sociais, o silêncio profissional tornou-se o ativo mais escasso e valioso.</p>
+      <p>Sempre conduzi minha carreira sob a premissa de que a excelência na psiquiatria exige discrição absoluta, sobriedade e rigor técnico. A ANGMER foi projetada para refletir esse perfil: uma atuação estritamente clínica, avessa aos holofotes e voltada exclusivamente para o cuidado de bastidor.</p>
       <p>Recuso categoricamente a superexposição, a espetacularização da rotina e a autopromoção digital.</p>
       
       <!-- FOTO DE PERFIL DO GITHUB -->
@@ -401,11 +356,9 @@
   <!-- FOTOGRAFIA 4 -->
   <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
 
-  <!-- SEÇÃO ATUALIZADA CONFORME SOLICITADO -->
   <section class="content-section" id="blindagem">
     <div class="content">
       <h2 class="section-title">Atendimento Psiquiátrico Domiciliar</h2>
-      <!-- TEXTO MODIFICADO COMPATÍVEL COM O SCRIPT DE CORTE -->
       <p>O médico psiquiatra vai até a casa do paciente. Em vez de se deslocar a clínicas tradicionais ou enfrentar o risco de salas de espera, o paciente solicita o atendimento e é assistido em seu território seguro. É o suporte psiquiátrico especializado desenhado para quem exige máxima conveniência.</p>
       <p>Esta consultoria privativa é realizada de forma estritamente individual pelo Dr. Elquer Rodrigues, sem assistentes ou equipes intermediárias, blindando o silêncio absoluto desde o primeiro contato. Por critérios logísticos e rigor clínico, o atendimento domiciliar está disponível, por enquanto, exclusivamente na cidade de São Paulo.</p>
     </div>
