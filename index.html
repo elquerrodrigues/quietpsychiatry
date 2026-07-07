@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone/Safari -->
   <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
@@ -43,9 +42,11 @@
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { box-sizing: border-box; }
     
     body {
+      margin: 0;
+      padding: 0;
       font-family: var(--font-sans);
       background: var(--bg);
       color: var(--text-muted);   
@@ -65,12 +66,9 @@
     header {
       text-align: center; 
       padding: 0 24px;
-      display: flex;
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      min-height: 95vh;
-      background: radial-gradient(circle at center, #0e0e0e 0%, var(--bg) 70%);
+      display: block;
+      margin-top: 15vh;
+      margin-bottom: 10vh;
     }
     
     h1 { 
@@ -78,8 +76,7 @@
       color: var(--accent); 
       margin-bottom: 30px; 
       text-transform: uppercase;
-      will-change: letter-spacing, opacity, filter;
-      animation: lanserhofReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+      letter-spacing: 16px;
     }
     
     .subtitle { 
@@ -90,7 +87,6 @@
       color: var(--text-light); 
       margin: 0 0 50px 0; 
       text-transform: uppercase; 
-      animation: fadeInSmooth 1.5s var(--transition-smooth) 1.2s both; 
     }
     
     @media (min-width: 769px) {
@@ -106,18 +102,12 @@
       line-height: 1.8; 
       margin: 0 auto; 
       letter-spacing: 0.3px;
-      animation: fadeInSmooth 1.5s var(--transition-smooth) 1.6s both; 
-    }
-
-    @keyframes lanserhofReveal {
-      0% { opacity: 0; letter-spacing: -3px; filter: blur(6px); transform: scale(0.98); }
-      30% { opacity: 0.3; filter: blur(3px); }
-      100% { opacity: 1; letter-spacing: 16px; filter: blur(0); transform: scale(1); }
     }
 
     /* ALINHAMENTO DAS IMAGENS + FILTRO AESOP MATE */
     .parallax-divider {
       width: 100%;
+      height: 40vh;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover; 
@@ -135,8 +125,8 @@
 
     @media (min-width: 769px) {
       .parallax-divider {
-        height: 70vh;
-        margin: 80px 0;
+        height: 65vh;
+        margin: 60px 0;
       }
     }
 
@@ -150,7 +140,7 @@
 
     /* SEÇÕES DE CONTEÚDO ELEVADAS */
     .content-section { 
-      padding: 140px 24px; 
+      padding: 100px 24px; 
       max-width: 850px; 
       margin: 0 auto; 
       opacity: 0; 
@@ -178,11 +168,11 @@
       letter-spacing: 2px;
     }
 
-    /* FOTO DE PERFIL ESFUMAÇADA AESOP (AUMENTADA PARA MAIOR PRESENÇA INSTITUCIONAL) */
+    /* FOTO DE PERFIL ESFUMAÇADA AESOP (50vh PARA MÁXIMA AUTORIDADE DE BASTIDOR) */
     .profile-photo {
       display: block;
       margin: 70px auto 50px auto;
-      height: 50vh;              /* Aumentado de 42vh para 50vh */
+      height: 50vh;              
       width: auto;
       object-fit: contain;
       border: none;              
@@ -201,7 +191,7 @@
       margin-top: 50px; 
       background: linear-gradient(180deg, rgba(195,175,149,0.02) 0%, rgba(6,6,6,0) 100%); 
     }
-    .institutional-box ul { list-style: none; text-align: left; display: inline-block; margin: 0 auto; }
+    .institutional-box ul { list-style: none; text-align: left; display: inline-block; margin: 0 auto; padding: 0; }
     .institutional-box li { 
       font-family: var(--font-sans); 
       font-size: 0.95rem; 
@@ -274,27 +264,21 @@
 
     /* REGRAS LAPIDADAS PARA O IPHONE */
     @media(max-width: 768px) {
-      header { padding: 0 20px; min-height: 90vh; } 
-      h1 { font-size: 2.1rem; margin-bottom: 20px; animation: lanserhofMobileReveal 2.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards; }
+      header { padding: 0 20px; margin-top: 10vh; margin-bottom: 5vh; } 
+      h1 { font-size: 2.1rem; margin-bottom: 20px; letter-spacing: 10px; }
       .subtitle { letter-spacing: 5px; margin-bottom: 40px; }
       .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
-      .content-section { padding: 100px 20px; }
+      .content-section { padding: 80px 20px; }
       .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: center; }
       
       .profile-photo { 
-        height: 38vh;            /* Aumentado proporcionalmente para o mobile */
+        height: 38vh;            
         margin: 50px auto 30px auto; 
         padding: 0;
       }
       
-      .parallax-divider { background-attachment: scroll; height: 50vh; margin: 50px 0; background-size: cover; background-position: center center; }
+      .parallax-divider { background-attachment: scroll; height: 45vh; margin: 40px 0; background-size: cover; background-position: center center; }
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
-    }
-
-    @keyframes lanserhofMobileReveal {
-      0% { opacity: 0; letter-spacing: -2px; filter: blur(5px); transform: scale(0.98); }
-      30% { opacity: 0.3; filter: blur(2px); }
-      100% { opacity: 1; letter-spacing: 10px; filter: blur(0); transform: scale(1); }
     }
   </style>
 </head>
@@ -306,10 +290,28 @@
     <p class="tagline">Atendimento psiquiátrico no conforto do seu próprio espaço, com total preservação da sua privacidade.</p>
   </header>
 
-  <!-- FOTOGRAFIA 1 (Agora antecedendo a apresentação do médico) -->
-  <div class="parallax-divider" style="background-image: url('foto-tese.png');"></div>
+  <section class="content-section" id="servico">
+    <div class="content">
+      <h2 class="section-title">O Serviço</h2>
+      <p>Para quem dita o ritmo do mercado ou vive sob constante escrutínio público, o tempo e a privacidade são ativos inegociáveis. Atravessar a cidade de São Paulo para uma consulta médica é uma vulnerabilidade logística e reputacional que você não precisa mais assumir.</p>
+      <p>A ANGMER redefine o padrão de cuidado ao inverter a dinâmica tradicional: o médico psiquiatra vai até você. Consultas, diagnósticos e acompanhamento clínico contínuo acontecem <strong>exatamente onde você já se sente seguro</strong> — seja na inviolabilidade da sua residência, na blindagem do seu escritório corporativo ou na discrição de uma suíte de hotel.</p>
+      
+      <p style="margin-top: 40px; margin-bottom: 0;">As vantagens dessa arquitetura de atendimento são desenhadas para a alta performance e o sigilo total:</p>
+      
+      <div class="institutional-box" style="margin-top: 25px; margin-bottom: 40px;">
+        <ul>
+          <li><strong>Nenhum deslocamento:</strong> A eliminação de salas de espera e corredores clínicos anula a zero o risco de encontros indesejados ou fotos acidentais.</li>
+          <li><strong>Otimização de agenda:</strong> A consulta molda-se à sua rotina, mantendo o seu tempo intacto e sem interromper o fluxo de suas decisões.</li>
+          <li><strong>Precisão clínica:</strong> Ao ser avaliado no seu próprio território, onde as defesas naturais relaxam, o diagnóstico é mais profundo e o conforto é imediato.</li>
+        </ul>
+      </div>
+      
+      <p>O suporte psiquiátrico desenhado para quem exige excelência e discrição máxima. Por critérios de rigor clínico e logístico, disponível exclusivamente na capital paulista.</p>
+    </div>
+  </section>
 
-  <!-- SEÇÃO 1: O MÉDICO (Renomeada e movida para o topo, trazendo máxima autoridade logo de cara) -->
+  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
+
   <section class="content-section" id="medico">
     <div class="content">
       <h2 class="section-title">O Médico</h2>
@@ -325,68 +327,11 @@
     </div>
   </section>
 
-  <!-- FOTOGRAFIA 2 -->
-  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
-
-  <!-- SEÇÃO 2: LOGÍSTICA DE SP (O texto novo aprovado por você) -->
-  <section class="content-section" id="tese">
-    <div class="content">
-      <h2 class="section-title">A Soberania do Seu Próprio Território</h2>
-      <p>Para quem dita o ritmo do mercado ou vive sob constante escrutínio público, o tempo e a privacidade são ativos inegociáveis. Atravessar a cidade de São Paulo para uma consulta médica não é apenas um desgaste na sua agenda — é uma vulnerabilidade logística e reputacional que você não precisa mais assumir.</p>
-      <p>A ANGMER redefine o padrão de cuidado ao instaurar uma dinâmica absoluta: o atendimento psiquiátrico de excelência acontece <strong>exatamente onde você estiver</strong>. Seja na segurança indevassável da sua residência, na blindagem do seu escritório corporativo ou na discrição de uma suíte de hotel na capital paulista. O médico se adapta à sua geografia.</p>
-      
-      <p style="margin-top: 40px; margin-bottom: 0;">As vantagens dessa arquitetura de atendimento são desenhadas para a alta performance e o sigilo total:</p>
-      
-      <div class="institutional-box" style="margin-top: 25px; margin-bottom: 40px;">
-        <ul>
-          <li><strong>Blindagem Logística:</strong> A eliminação de salas de espera, trânsito e corredores clínicos anula a zero o risco de encontros indesejados.</li>
-          <li><strong>Otimização de Agenda:</strong> Seu tempo permanece intacto. A consulta encaixa-se na sua rotina sem interromper o fluxo das suas decisões.</li>
-          <li><strong>Precisão Clínica:</strong> Ao ser avaliado no seu próprio território, onde as defesas naturais relaxam, o diagnóstico é mais profundo.</li>
-        </ul>
-      </div>
-      
-      <p>O verdadeiro privilégio não é apenas ter acesso aos melhores especialistas. É ter acesso a eles com a garantia de que o mundo lá fora jamais saberá.</p>
-    </div>
-  </section>
-
-  <!-- FOTOGRAFIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
-  <!-- SEÇÃO 3: A MEDICINA NO SEU TERRITÓRIO -->
-  <section class="content-section" id="servico">
+  <section class="content-section" id="publico">
     <div class="content">
-      <h2 class="section-title">A Medicina no Seu Território</h2>
-      <p>Consultas, diagnóstico e acompanhamento clínico contínuo realizados diretamente no ambiente de sua escolha — seja em sua residência particular, na discrição de uma suíte de hotel ou nos bastidores restritos de seu escritório corporativo.</p>
-      
-      <div class="institutional-box">
-        <ul>
-          <li><strong>Sem deslocamento</strong></li>
-          <li><strong>Sem salas de espera</strong></li>
-          <li><strong>Sem mudança de rotina</strong></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOTOGRAFIA 4 -->
-  <div class="parallax-divider" style="background-image: url('foto-blindagem.png');"></div>
-
-  <!-- SEÇÃO 4: ATENDIMENTO PSIQUIÁTRICO DOMICILIAR -->
-  <section class="content-section" id="blindagem">
-    <div class="content">
-      <h2 class="section-title">Atendimento Psiquiátrico Domiciliar</h2>
-      <p>O médico psiquiatra vai até a casa do paciente. Em vez de se deslocar a clínicas tradicionais ou enfrentar o risco de salas de espera, o paciente solicita o atendimento e é assistido em seu território seguro. É o suporte psiquiátrico especializado desenhado para quem exige máxima conveniência.</p>
-      <p>Esta consultoria privativa é realizada de forma estritamente individual pelo Dr. Elquer Rodrigues, sem assistentes ou equipes intermediárias, blindando o silêncio absoluto desde o primeiro contato. Por critérios logísticos e rigor clínico, o atendimento domiciliar está disponível, por enquanto, exclusivamente na cidade de São Paulo.</p>
-    </div>
-  </section>
-
-  <!-- FOTOGRAFIA 5 -->
-  <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
-
-  <!-- SEÇÃO 5: CRITÉRIOS DE ELEGIBILIDADE -->
-  <section class="content-section" id="elegibilidade">
-    <div class="content">
-      <h2 class="section-title">Critérios de Elegibilidade</h2>
+      <h2 class="section-title">O Público</h2>
       <p>O protocolo de suporte da ANGMER foi desenhado sob a premissa de gerenciamento de risco reputacional. Atendemos, de maneira estritamente restrita, aos seguintes escopos corporativos e sociais:</p>
       
       <div class="institutional-box">
@@ -413,10 +358,11 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DE ADMISSÃO -->
+  <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
+
   <section class="content-section" id="admissao">
     <div class="content">
-      <h2 class="section-title">Acesso Direto e Exclusivo</h2>
+      <h2 class="section-title">Acesso Directo e Exclusivo</h2>
       <p>Um canal privativo estruturado para dar início ao seu atendimento médico com o máximo de discrição, fluidez e rigoroso resguardo de dados, nos termos da ética médica.</p>
       
       <a href="https://wa.me/5511977335683?text=Solicito%20acesso%20às%20diretrizes%20do%20protocolo%20de%20admissão%20da%20ANGMER." target="_blank" class="btn">
@@ -429,7 +375,6 @@
     </div>
   </section>
 
-  <!-- RODAPÉ INSTITUCIONAL -->
   <footer>
     <p>ANGMER • UM PSIQUIATRA VAI ATÉ VOCÊ</p>
     
