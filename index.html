@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
-  <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel em São Paulo.">
+  <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel in São Paulo.">
   <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
@@ -136,7 +136,6 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
-      /* Aumentado o contraste para aspecto de editorial fotográfico */
       filter: contrast(110%) brightness(85%) sepia(10%) saturate(80%) grayscale(20%);
       opacity: 0; 
       transform: scale(0.95); 
@@ -179,6 +178,24 @@
       letter-spacing: 0.3px; 
     }
     .content p:last-child { margin-bottom: 0; }
+
+    /* Efeito de Revelação Lenta Editorial para Subfrases */
+    .scroll-reveal-slow {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: var(--text-light);
+      margin: 20px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal-slow.visible {
+      opacity: 0.9;
+      transform: translateY(0);
+    }
 
     /* FOTO DE PERFIL ESFUMAÇADA */
     .profile-photo {
@@ -275,18 +292,20 @@
   <!-- FOTO INTERMEDIÁRIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
-  <!-- A NARRATIVA DO SERVIÇO (Sem Títulos) -->
+  <!-- A NARRATIVA DO SERVIÇO (Lapidada no Minimalismo Radical de Maison) -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--accent); line-height: 1.4; margin-bottom: 80px;">
         O lugar muda.<br>O cuidado permanece.
       </p>
 
-      <p>Nem todo cuidado precisa começar em um consultório.</p>
+      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 300; margin-bottom: 50px; line-height: 1.6;">
+        Consulta psiquiátrica presencial, diagnóstico e tratamento onde você estiver.
+      </p>
       
-      <p>Para algumas pessoas, deslocar-se até uma clínica representa perda de tempo, exposição desnecessária ou simplesmente não faz sentido diante da rotina. Nessas situações, o atendimento pode acontecer onde o paciente já está.</p>
-      
-      <p>A ANGMER oferece atendimento psiquiátrico realizado diretamente na residência, escritório ou hotel, preservando o conforto e a discrição. O atendimento ocorre exclusivamente mediante agendamento.</p>
+      <!-- Subfrases com animação de surgimento lento e sutil -->
+      <p class="scroll-reveal-slow">Sem deslocamento</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">Sem exposição pública</p>
     </div>
   </section>
 
@@ -303,7 +322,7 @@
     </div>
   </section>
 
-  <!-- FOTO INTERMEDIÁRIA 3 -->
+  <!-- FOTOGRAFIA INTERMEDIÁRIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
 
   <!-- CONTATO & INFORMAÇÕES -->
@@ -319,7 +338,7 @@
         Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
       </span>
 
-      <!-- ACCORDION (Informações organizadas pela dúvida do usuário) -->
+      <!-- ACCORDION (Informações) -->
       <div class="faq-container">
         <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
         
@@ -396,7 +415,7 @@
       });
     });
 
-    // Observer para o Efeito Fade In de Leitura
+    // Observer para o Efeito Fade In de Leitura (Incluindo as subfrases lentas)
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -407,7 +426,7 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       
-      document.querySelectorAll('.content-section, .parallax-divider').forEach(function(s) { observer.observe(s); });
+      document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow').forEach(function(s) { observer.observe(s); });
     })();
   </script>
 </body>
