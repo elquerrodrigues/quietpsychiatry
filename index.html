@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+l<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
-  <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel in São Paulo.">
+  <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel em São Paulo.">
   <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
@@ -215,7 +215,7 @@
     .secure-alt-contact {
       display: block;
       font-family: var(--font-sans);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: var(--text-light);
       letter-spacing: 0.3px;
       margin-top: 40px;
@@ -292,7 +292,7 @@
   <!-- FOTO INTERMEDIÁRIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
-  <!-- A NARRATIVA DO SERVIÇO (Lapidada no Minimalismo Radical de Maison) -->
+  <!-- A NARRATIVA DO SERVIÇO -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--accent); line-height: 1.4; margin-bottom: 80px;">
@@ -303,7 +303,6 @@
         Consulta psiquiátrica presencial, diagnóstico e tratamento onde você estiver.
       </p>
       
-      <!-- Subfrases com animação de surgimento lento e sutil -->
       <p class="scroll-reveal-slow">Sem deslocamento</p>
       <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">Sem exposição pública</p>
     </div>
@@ -322,7 +321,7 @@
     </div>
   </section>
 
-  <!-- FOTOGRAFIA INTERMEDIÁRIA 3 -->
+  <!-- FOTO INTERMEDIÁRIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
 
   <!-- CONTATO & INFORMAÇÕES -->
@@ -335,7 +334,7 @@
       </a>
       
       <span class="secure-alt-contact">
-        Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
+        A disponibilidade depende da agenda médica e da localização do atendimento.
       </span>
 
       <!-- ACCORDION (Informações) -->
@@ -395,7 +394,7 @@
     </div>
   </section>
 
-  <!-- RODAPÉ AINDA MAIS PURO -->
+  <!-- RODAPÉ -->
   <footer>
     <div class="footer-brand">ANGMER</div>
     <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
@@ -403,7 +402,6 @@
   </footer>
 
   <script>
-    // UX Elegante: Fecha outras abas do FAQ quando uma é aberta
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
@@ -415,7 +413,6 @@
       });
     });
 
-    // Observer para o Efeito Fade In de Leitura (Incluindo as subfrases lentas)
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
