@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone / Safari -->
-  <meta name="theme-color" content="#060606">
+  <!-- Integração de Cor com a Barra do iPhone / Safari (Atualizado para o Off-White) -->
+  <meta name="theme-color" content="#F5F3EF">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
   <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel em São Paulo.">
@@ -29,14 +29,14 @@
   </script>
   
   <style>
-    /* PALETA SARTORIAL MINIMALISTA (LORO PIANA / BRUNELLO CUCINELLI AESTHETIC) */
+    /* PALETA SARTORIAL CANVAS (LORO PIANA & LITE EDITORIAL AESTHETIC) */
     :root {
-      --bg: #060606;               
-      --text: #F5F3EF;             
-      --text-muted: #BAB5A9;       
-      --text-light: #7D786E;       
-      --accent: #C3AF95;           
-      --line: rgba(195, 175, 149, 0.15); 
+      --bg: #F5F3EF;               /* O bege chique / Seda pura e lavada */
+      --text: #060606;             /* Preto obsidiana profundo para máxima nitidez */
+      --text-muted: #2C2A27;       /* Carvão quente / Café expresso para leitura densa */
+      --text-light: #8A8477;       /* Linho envelhecido / Tom de pedra polida */
+      --accent: #A69177;           /* Bronze terroso sutil */
+      --line: rgba(6, 6, 6, 0.08); /* Costura fina e quase invisível sobre o claro */
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -57,7 +57,7 @@
       overflow-x: hidden;
     }
 
-    /* CAPA EDITORIAL (O SILÊNCIO THE ROW) */
+    /* CAPA EDITORIAL CLARA */
     header {
       text-align: center; 
       padding: 0 24px;
@@ -105,7 +105,7 @@
       text-transform: uppercase; 
     }
 
-    /* O BOTÃO GHOST (Invisível até ser necessário) */
+    /* O BOTÃO GHOST ADAPTADO PARA O CLARO */
     .btn { 
       display: inline-block; 
       margin-top: 50px; 
@@ -122,11 +122,11 @@
       font-weight: 300; 
     }
     .btn:hover { 
-      border-color: var(--accent); 
-      color: var(--accent); 
+      border-color: var(--text); 
+      color: var(--text); 
     }
 
-    /* ALINHAMENTO DAS IMAGENS EDITORIAL (Mais Contraste, Menos Informação) */
+    /* FILTROS ADAPTADOS PARA O CLARO */
     .parallax-divider {
       width: 100%;
       height: 45vh;
@@ -136,7 +136,7 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
-      filter: contrast(110%) brightness(85%) sepia(10%) saturate(80%) grayscale(20%);
+      filter: contrast(100%) brightness(95%) sepia(8%) saturate(85%);
       opacity: 0; 
       transform: scale(0.95); 
       transform-origin: center center;
@@ -153,7 +153,7 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 15%, rgba(6,6,6,0) 85%, var(--bg) 100%);
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(245,243,239,0) 15%, rgba(245,243,239,0) 85%, var(--bg) 100%);
     }
 
     /* SEÇÕES DE CONTEÚDO EDITORIAIS */
@@ -197,7 +197,7 @@
       transform: translateY(0);
     }
 
-    /* FOTO DE PERFIL ESFUMAÇADA */
+    /* FOTO DE PERFIL ADAPTADA AO FUNDO MARFIM */
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
@@ -207,7 +207,7 @@
       border: none;              
       padding: 0;
       background: transparent;
-      filter: contrast(105%) sepia(5%) brightness(95%) grayscale(10%);
+      filter: contrast(100%) sepia(8%) brightness(95%) grayscale(15%);
       -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
       mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
@@ -223,7 +223,7 @@
       font-weight: 200;
     }
 
-    /* ACCORDION (Informações) */
+    /* ACCORDION (Informações - Adaptação Light) */
     .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
@@ -246,8 +246,8 @@
       font-weight: 200;
       font-size: 1.2rem;
     }
-    .faq-item[open] summary { color: var(--accent); }
-    .faq-item[open] summary::after { content: '–'; color: var(--accent); }
+    .faq-item[open] summary { color: var(--text); font-weight: 400; }
+    .faq-item[open] summary::after { content: '–'; color: var(--text); }
     .faq-answer {
       padding-bottom: 24px;
       color: var(--text-muted);
@@ -256,12 +256,12 @@
       font-weight: 200;
     }
 
-    /* FOOTER EDITORIAL (Apenas fatos) */
+    /* FOOTER EDITORIAL CLARO */
     footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; }
-    .footer-email:hover { color: var(--accent); }
+    .footer-email:hover { color: var(--text); }
 
     /* REGRAS LAPIDADAS PARA O IPHONE */
     @media(max-width: 768px) {
@@ -375,7 +375,7 @@
         <details class="faq-item">
           <summary>O atendimento pode ocorrer em hotéis?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Sim, desde que exista autorização do estabelecimento e condições adequadas e seguras para a consulta médica.</p>
+            <p style="margin: 0; text-align: left;">Sim, desde que exista autorização do establishment e condições adequadas e seguras para a consulta médica.</p>
           </div>
         </details>
 
