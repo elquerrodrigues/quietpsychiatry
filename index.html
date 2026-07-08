@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#060606">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
-  <meta name="description" content="Atendimento psiquiátrico exclusivo no conforto da sua residência, escritório ou hotel. Preservação total do seu anonimato sem necessidade de deslocamentos.">
-  <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa, atendimento psiquiátrico discreto, psiquiatra executivos">
+  <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel em São Paulo.">
+  <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
   
@@ -24,19 +24,19 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Psiquiatria domiciliar e corporativa privativa focada no conforto e anonimato total do paciente."
+      "description": "Atendimento psiquiátrico domiciliar em São Paulo."
     }
   </script>
   
   <style>
-    /* PALETA SARTORIAL OBRIGATÓRIA (ERMENEGILDO ZEGNA AESTHETIC) */
+    /* PALETA SARTORIAL MINIMALISTA */
     :root {
-      --bg: #060606;               /* Veludo preto obsidiana */
-      --text: #F5F3EF;             /* Marfim de seda pura */
-      --text-muted: #BAB5A9;       /* Cashmere cinza quente */
-      --text-light: #7D786E;       /* Fio de linho envelhecido */
-      --accent: #C3AF95;           /* O tom Âmbar/Bronze sutil da Aesop */
-      --line: rgba(195, 175, 149, 0.12); /* Costura invisível de alfaiataria */
+      --bg: #060606;               
+      --text: #F5F3EF;             
+      --text-muted: #BAB5A9;       
+      --text-light: #7D786E;       
+      --accent: #C3AF95;           
+      --line: rgba(195, 175, 149, 0.12); 
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -69,7 +69,7 @@
       padding: 0 24px;
       display: block;
       margin-top: 15vh;
-      margin-bottom: 10vh;
+      margin-bottom: 12vh;
     }
     
     h1 { 
@@ -105,108 +105,6 @@
       letter-spacing: 0.3px;
     }
 
-    /* ALINHAMENTO DAS IMAGENS + FILTRO AESOP MATE */
-    .parallax-divider {
-      width: 100%;
-      height: 40vh;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover; 
-      background-attachment: fixed;
-      position: relative;
-      background-color: var(--bg);
-      filter: contrast(90%) brightness(92%) sepia(6%) saturate(92%);
-      opacity: 0; 
-      transform: scale(0.95); 
-      transform-origin: center center;
-      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), 
-                  transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
-    }
-
-    @media (min-width: 769px) {
-      .parallax-divider {
-        height: 65vh;
-        margin: 60px 0;
-      }
-    }
-
-    .parallax-divider.visible { opacity: 1; transform: scale(1); }
-    .parallax-divider::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 15%, rgba(6,6,6,0) 85%, var(--bg) 100%);
-    }
-
-    /* SEÇÕES DE CONTEÚDO ELEVADAS */
-    .content-section { 
-      padding: 100px 24px; 
-      max-width: 850px; 
-      margin: 0 auto; 
-      opacity: 0; 
-      transform: translateY(30px); 
-      transition: all 1.4s var(--transition-smooth); 
-      will-change: transform, opacity; 
-    }
-    .content-section.visible { opacity: 1; transform: translateY(0); }
-
-    .content { max-width: 680px; margin: 0 auto; text-align: center; }
-    .content p { 
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
-      color: var(--text-muted); 
-      margin-bottom: 25px;
-      line-height: 2.1; 
-      font-weight: 200; 
-      letter-spacing: 0.3px; 
-    }
-    .content p:last-child { margin-bottom: 0; }
-    
-    .section-title { 
-      font-size: clamp(1.6rem, 4vw, 2.2rem); 
-      color: var(--accent); 
-      margin-bottom: 45px; 
-      letter-spacing: 2px;
-    }
-
-    /* FOTO DE PERFIL ESFUMAÇADA AESOP (50vh PARA SOBERANIA VISUAL DE BASTIDOR) */
-    .profile-photo {
-      display: block;
-      margin: 70px auto 50px auto;
-      height: 50vh;              
-      width: auto;
-      object-fit: contain;
-      border: none;              
-      padding: 0;
-      background: transparent;
-      filter: contrast(94%) sepia(5%) brightness(95%);
-      
-      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-    }
-
-    /* CAIXA INSTITUCIONAL ESCURA */
-    .institutional-box { 
-      border: 1px solid var(--line); 
-      padding: 40px 45px; 
-      margin-top: 50px; 
-      background: linear-gradient(180deg, rgba(195,175,149,0.02) 0%, rgba(6,6,6,0) 100%); 
-    }
-    .institutional-box ul { list-style: none; text-align: left; display: inline-block; margin: 0 auto; padding: 0; }
-    .institutional-box li { 
-      font-family: var(--font-sans); 
-      font-size: 0.95rem; 
-      color: var(--text-muted); 
-      margin-bottom: 20px; 
-      padding-left: 25px; 
-      position: relative; 
-      line-height: 1.6; 
-      font-weight: 200; 
-    }
-    .institutional-box li:last-child { margin-bottom: 0; }
-    .institutional-box li strong { color: var(--text); font-weight: 400; letter-spacing: 0.5px; }
-    .institutional-box li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 300; }
-
     /* BOTÃO SOB MEDIDA */
     .btn { 
       display: inline-block; 
@@ -224,43 +122,138 @@
     }
     .btn:hover { background-color: var(--text); color: var(--bg); }
 
+    /* ALINHAMENTO DAS IMAGENS + FILTRO AESOP MATE */
+    .parallax-divider {
+      width: 100%;
+      height: 40vh;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; 
+      background-attachment: fixed;
+      position: relative;
+      background-color: var(--bg);
+      filter: contrast(90%) brightness(92%) sepia(6%) saturate(92%);
+      opacity: 0; 
+      transform: scale(0.95); 
+      transform-origin: center center;
+      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+
+    @media (min-width: 769px) {
+      .parallax-divider { height: 65vh; margin: 60px 0; }
+    }
+
+    .parallax-divider.visible { opacity: 1; transform: scale(1); }
+    .parallax-divider::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 15%, rgba(6,6,6,0) 85%, var(--bg) 100%);
+    }
+
+    /* SEÇÕES DE CONTEÚDO ELEVADAS */
+    .content-section { 
+      padding: 120px 24px; 
+      max-width: 850px; 
+      margin: 0 auto; 
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: all 1.4s var(--transition-smooth); 
+      will-change: transform, opacity; 
+    }
+    .content-section.visible { opacity: 1; transform: translateY(0); }
+
+    .content { max-width: 600px; margin: 0 auto; text-align: center; }
+    .content p { 
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
+      color: var(--text-muted); 
+      margin-bottom: 35px;
+      line-height: 2.1; 
+      font-weight: 200; 
+      letter-spacing: 0.3px; 
+    }
+    .content p:last-child { margin-bottom: 0; }
+    
+    .section-title { 
+      font-size: clamp(1.6rem, 4vw, 2.2rem); 
+      color: var(--accent); 
+      margin-bottom: 50px; 
+      letter-spacing: 2px;
+    }
+
+    /* FOTO DE PERFIL ESFUMAÇADA AESOP */
+    .profile-photo {
+      display: block;
+      margin: 0 auto 50px auto;
+      height: 45vh;              
+      width: auto;
+      object-fit: contain;
+      border: none;              
+      padding: 0;
+      background: transparent;
+      filter: contrast(94%) sepia(5%) brightness(95%);
+      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    }
+
     .secure-alt-contact {
       display: block;
       font-family: var(--font-sans);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: var(--text-light);
       letter-spacing: 0.3px;
       margin-top: 40px;
       line-height: 1.8;
       font-weight: 200;
     }
-    .secure-alt-contact a { color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
-    .secure-alt-contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
-    /* FOOTER DISCRETO SIMPLIFICADO */
-    footer { text-align: center; padding: 120px 24px 60px 24px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; }
-    footer a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; margin: 0 12px; }
-    footer a:hover { color: var(--accent); }
-    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 3px; color: var(--accent); text-decoration: none; margin: 10px 0 25px; padding-bottom: 4px; border-bottom: 1px solid var(--line); transition: all 0.3s ease; }
-    .footer-email:hover { color: var(--text); border-bottom-color: var(--text); }
+    /* FAQ ACCORDION (O Segredo do SEO Limpo) */
+    .faq-container { margin-top: 60px; text-align: left; border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item summary {
+      padding: 24px 0;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      letter-spacing: 0.5px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; } 
+    .faq-item summary::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      color: var(--accent);
+      font-weight: 200;
+      font-size: 1.2rem;
+    }
+    .faq-item[open] summary::after { content: '–'; }
+    .faq-answer {
+      padding-bottom: 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.9;
+      font-weight: 200;
+    }
+
+    /* FOOTER DISCRETO MINIMALISTA */
+    footer { text-align: center; padding: 60px 24px 80px 24px; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); max-width: 650px; margin: 0 auto; text-transform: uppercase; }
+    .footer-email { display: inline-block; font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--accent); text-decoration: none; margin-top: 25px; transition: all 0.3s ease; text-transform: lowercase; }
+    .footer-email:hover { color: var(--text); }
 
     /* REGRAS LAPIDADAS PARA O IPHONE */
     @media(max-width: 768px) {
-      header { padding: 0 20px; margin-top: 10vh; margin-bottom: 5vh; } 
+      header { padding: 0 20px; margin-top: 12vh; margin-bottom: 5vh; } 
       h1 { font-size: 2.1rem; margin-bottom: 20px; letter-spacing: 10px; }
       .subtitle { letter-spacing: 5px; margin-bottom: 40px; }
       .tagline { font-size: 1.2rem; line-height: 1.6; padding: 0 5px; }
-      .content-section { padding: 80px 20px; }
+      .content-section { padding: 90px 20px; }
       
-      .institutional-box { padding: 35px 24px; margin-top: 35px; text-align: left; } 
-      .institutional-box ul { display: block; text-align: left; width: 100%; }
-      
-      .profile-photo { 
-        height: 38vh;            
-        margin: 50px auto 30px auto; 
-        padding: 0;
-      }
-      
+      .profile-photo { height: 40vh; margin: 0 auto 30px auto; }
       .parallax-divider { background-attachment: scroll; height: 45vh; margin: 40px 0; background-size: cover; background-position: center center; }
       .btn { width: 100%; text-align: center; padding: 18px 20px; }
     }
@@ -268,83 +261,149 @@
 </head>
 <body>
 
+  <!-- CAPA -->
   <header>
     <h1>ANGMER</h1>
     <p class="subtitle">Um psiquiatra vai até você</p>
-    <p class="tagline">Atendimento psiquiátrico domiciliar em São Paulo para quem valoriza discrição e conveniência.</p>
+    <p class="tagline">Atendimento psiquiátrico domiciliar em São Paulo.</p>
+    
+    <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." target="_blank" class="btn">
+      Verificar disponibilidade
+    </a>
   </header>
 
-  <!-- SEÇÃO 1: O SERVIÇO -->
+  <!-- FOTO INTERMEDIÁRIA 1 -->
+  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
+
+  <!-- O SERVIÇO -->
   <section class="content-section" id="servico">
     <div class="content">
       <h2 class="section-title">O Serviço</h2>
-      <p>O funcionamento é simples e direto. O médico vai até você.</p>
-      <p>Atendimento psiquiátrico na sua residência, no seu escritório ou em hotel. Você solicita e eu vou te atender onde você precisar.</p>
+      <p>Algumas circunstâncias tornam o deslocamento até um consultório inconveniente ou simplesmente desnecessário.</p>
+      <p>A ANGMER oferece atendimento psiquiátrico realizado diretamente na residência, escritório ou hotel do paciente, preservando conforto, discrição e continuidade do cuidado.</p>
+      <p>O atendimento ocorre exclusivamente mediante agendamento.</p>
     </div>
   </section>
 
-  <!-- FOTOGRAFIA INTERMEDIÁRIA 1 -->
-  <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
-
-  <!-- SEÇÃO 2: O MÉDICO -->
-  <section class="content-section" id="medico">
-    <div class="content">
-      <h2 class="section-title">O Médico</h2>
-      <p>O psiquiatra Dr. Elquer Rodrigues (CRM-SP 157303 • RQE 85941) atua há mais de 12 anos como médico psiquiatra na capital paulista e sempre prezou pela competência e discrição. Esse foi o motivo de criar a ANGMER (inspirada na competência e discrição da chanceler alemã Angela Merkel).</p>
-      
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
-      
-      <div class="doctor-signature">
-        <strong>Dr. Elquer Rodrigues</strong>
-        <span>Médico Psiquiatra • CRM-SP 157303 • RQE 85941</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOTOGRAFIA INTERMEDIÁRIA 2 -->
+  <!-- FOTO INTERMEDIÁRIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
-  <!-- SEÇÃO 3: O PÚBLICO (Minimalismo radical e direto ao ponto) -->
-  <section class="content-section" id="publico">
+  <!-- O MÉDICO -->
+  <section class="content-section" id="medico">
     <div class="content">
-      <h2 class="section-title">O Público</h2>
-      <p>A ANGMER é para pacientes que necessitam de cuidado médico psiquiátrico domiciliar: executivos e empresários, figuras públicas, lideranças e agentes institucionais, famílias e clãs.</p>
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      
+      <p>Sou o Dr. Elquer Rodrigues.</p>
+      <p>Médico psiquiatra (CRM-SP 157303 • RQE 85941).</p>
+      <p>Atuo exclusivamente em psiquiatria há mais de doze anos.</p>
+      <p>Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
+      <p>Nada além disso.</p>
     </div>
   </section>
 
-  <!-- FOTOGRAFIA INTERMEDIÁRIA 3 -->
+  <!-- FOTO INTERMEDIÁRIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
 
-  <!-- SEÇÃO FINAL: CONTATO -->
-  <section class="content-section" id="admissao">
+  <!-- CONTATO & FAQ -->
+  <section class="content-section" id="contato">
     <div class="content">
       <h2 class="section-title">Contato</h2>
-      <p>Entre em contato para consultar a disponibilidade de atendimento domiciliar ou corporativo.</p>
+      <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
       
       <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." target="_blank" class="btn">
-        Verificar Disponibilidade
+        Verificar disponibilidade
       </a>
       
-      <span class="secure-alt-contact" style="margin-top: 30px; font-weight: 300; opacity: 0.9;">
-        Agenda restrita mediante disponibilidade geográfica e clínica.
+      <span class="secure-alt-contact" style="margin-top: 30px;">
+        Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
       </span>
-      
-      <span class="secure-alt-contact" style="margin-top: 20px;">
-        Para canais institucionais ou corporativos: <a href="mailto:drelquer@quietpsychiatry.com">drelquer@quietpsychiatry.com</a>
-      </span>
+
+      <!-- FAQ ACCORDION -->
+      <div class="faq-container">
+        <h3 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Perguntas Frequentes</h3>
+        
+        <details class="faq-item">
+          <summary>Como funciona o atendimento domiciliar?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">O médico realiza o atendimento diretamente na residência, escritório ou hotel do paciente, em horário previamente agendado.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Em quais locais o atendimento é realizado?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">Residências, empresas, escritórios e hotéis localizados na cidade de São Paulo.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>O atendimento é sigiloso?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">Sim. Todo atendimento médico é protegido pelo sigilo profissional previsto no Código de Ética Médica.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quem realiza o atendimento?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">Todos os atendimentos são realizados pessoalmente pelo Dr. Elquer Rodrigues.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>O atendimento pode ocorrer em hotéis?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">Sim, desde que exista autorização do estabelecimento e condições adequadas para a consulta.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Como é feito o agendamento?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">A solicitação inicial é realizada pelo WhatsApp. Após análise da disponibilidade clínica e geográfica, o horário é confirmado.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quanto tempo dura a consulta?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">O tempo varia conforme a necessidade clínica de cada paciente.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>É possível solicitar atendimento para familiares?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0;">Sim. O atendimento pode ser solicitado por familiares ou representantes do paciente.</p>
+          </div>
+        </details>
+      </div>
+
     </div>
   </section>
 
-  <!-- RODAPÉ INSTITUCIONAL -->
+  <!-- RODAPÉ MINIMALISTA -->
   <footer>
-    <p>ANGMER • UM PSIQUIATRA VAI ATÉ VOCÊ</p>
-    
+    <p style="margin: 5px 0;">ANGMER</p>
+    <p style="margin: 5px 0;">Psiquiatria Domiciliar Privativa</p>
+    <p style="margin: 5px 0; opacity: 0.6;">CRM-SP 157303 • RQE 85941</p>
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
-    
-    <p style="font-size: 0.55rem; letter-spacing: 1px; opacity: 0.7; margin-top: 40px;">Operações conduzidas sob rigoroso sigilo profissional, conforme o Código de Ética Médica. Atendimento médico exclusivo em ambiente domiciliar e corporativo privativo.</p>
   </footer>
 
   <script>
+    // Fecha outras perguntas do FAQ quando uma nova é aberta
+    const details = document.querySelectorAll('details');
+    details.forEach((targetDetail) => {
+      targetDetail.addEventListener('click', () => {
+        details.forEach((detail) => {
+          if (detail !== targetDetail) {
+            detail.removeAttribute('open');
+          }
+        });
+      });
+    });
+
+    // Observer para o efeito Parallax Fade
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
