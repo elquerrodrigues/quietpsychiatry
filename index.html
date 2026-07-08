@@ -29,14 +29,14 @@
   </script>
   
   <style>
-    /* PALETA SARTORIAL CANVAS (LORO PIANA & LITE EDITORIAL AESTHETIC) */
+    /* PALETA SARTORIAL CANVAS - ALTO CONTRASTE */
     :root {
-      --bg: #F5F3EF;               
-      --text: #060606;             
-      --text-muted: #2C2A27;       
-      --text-light: #8A8477;       
-      --accent: #A69177;           
-      --line: rgba(6, 6, 6, 0.08); 
+      --bg: #F5F3EF;               /* O bege chique / Seda pura e lavada */
+      --text: #000000;             /* Preto absoluto para máxima nitidez nos títulos */
+      --text-muted: #0A0A0A;       /* Preto profundo e denso para leitura perfeita do corpo */
+      --text-light: #6E685E;       /* Ajustado para um tom mais escuro e legível */
+      --accent: #87745F;           /* Bronze terroso ajustado para melhor contraste */
+      --line: rgba(0, 0, 0, 0.12); /* Linhas divisórias ligeiramente mais firmes */
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -73,7 +73,7 @@
       margin-bottom: 60px; 
       text-transform: uppercase;
       letter-spacing: 8px;
-      font-weight: 300;
+      font-weight: 400; /* Peso levemente ajustado para legibilidade */
     }
     
     .hero-statement { 
@@ -89,7 +89,7 @@
     .hero-locations { 
       font-family: var(--font-sans); 
       font-size: 0.65rem; 
-      font-weight: 300; 
+      font-weight: 400; 
       letter-spacing: 4px; 
       color: var(--text-muted); 
       text-transform: uppercase; 
@@ -99,34 +99,34 @@
     .hero-city { 
       font-family: var(--font-sans); 
       font-size: 0.6rem; 
-      font-weight: 300; 
+      font-weight: 400; 
       letter-spacing: 2px; 
       color: var(--text-light); 
       text-transform: uppercase; 
     }
 
-    /* O BOTÃO GHOST ADAPTADO PARA O CLARO */
+    /* O BOTÃO GHOST DE ALTO CONTRASTE */
     .btn { 
       display: inline-block; 
       margin-top: 50px; 
       font-family: var(--font-sans); 
       color: var(--text-muted); 
       background-color: transparent; 
-      border: 1px solid var(--text-light);
+      border: 1px solid var(--text-muted);
       padding: 16px 45px; 
       text-decoration: none; 
       font-size: 0.65rem; 
       text-transform: uppercase; 
       letter-spacing: 3px; 
       transition: all 0.5s ease; 
-      font-weight: 300; 
+      font-weight: 400; 
     }
     .btn:hover { 
-      border-color: var(--text); 
-      color: var(--text); 
+      border-color: var(--accent); 
+      color: var(--accent); 
     }
 
-    /* IMAGENS DE TRANSIÇÃO COM CORTE SECO */
+    /* IMAGENS DE TRANSIÇÃO COM FILTRO AESOP */
     .parallax-divider {
       width: 100%;
       height: 45vh;
@@ -168,7 +168,7 @@
       color: var(--text-muted); 
       margin-bottom: 35px;
       line-height: 2.1; 
-      font-weight: 200; 
+      font-weight: 300; /* Leve ajuste de peso para contraste no fundo claro */
       letter-spacing: 0.3px; 
     }
     .content p:last-child { margin-bottom: 0; }
@@ -187,11 +187,11 @@
       will-change: transform, opacity;
     }
     .scroll-reveal-slow.visible {
-      opacity: 0.9;
+      opacity: 1; /* Forçado opacidade total para leitura */
       transform: translateY(0);
     }
 
-    /* FOTO DE PERFIL COM CORTE SECO */
+    /* FOTO DE PERFIL COM FILTRO AESOP RETRATISTA */
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
@@ -212,17 +212,17 @@
       letter-spacing: 0.3px;
       margin-top: 40px;
       line-height: 1.8;
-      font-weight: 200;
+      font-weight: 400;
     }
 
-    /* ACCORDION */
+    /* ACCORDION REESTILIZADO PARA ALTO CONTRASTE */
     .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
       padding: 24px 0;
       font-family: var(--font-sans);
       font-size: 0.95rem;
-      font-weight: 300;
+      font-weight: 400; /* Ajustado de 300 para 400 */
       color: var(--text-muted);
       cursor: pointer;
       list-style: none;
@@ -235,25 +235,25 @@
       position: absolute;
       right: 0;
       color: var(--text-light);
-      font-weight: 200;
+      font-weight: 400;
       font-size: 1.2rem;
     }
-    .faq-item[open] summary { color: var(--text); font-weight: 400; }
+    .faq-item[open] summary { color: var(--text); font-weight: 500; }
     .faq-item[open] summary::after { content: '–'; color: var(--text); }
     .faq-answer {
       padding-bottom: 24px;
       color: var(--text-muted);
       font-size: 0.85rem;
       line-height: 1.9;
-      font-weight: 200;
+      font-weight: 300;
     }
 
     /* FOOTER EDITORIAL CLARO */
     footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
-    .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; }
-    .footer-email:hover { color: var(--text); }
+    .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 400; }
+    .footer-email:hover { color: var(--accent); }
 
     /* REGRAS LAPIDADAS PARA O IPHONE */
     @media(max-width: 768px) {
@@ -287,7 +287,7 @@
         Psiquiatra domiciliar.
       </p>
 
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 300; margin-bottom: 50px; line-height: 1.6;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 50px; line-height: 1.6;">
         Atendimento presencial no local escolhido pelo paciente.
       </p>
       
@@ -367,7 +367,7 @@
         <details class="faq-item">
           <summary>Como é feito o agendamento?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">A solicitação inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</p>
+            <p style="margin: 0; text-align: left;">A solicitud inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</p>
           </div>
         </details>
       </div>
