@@ -29,7 +29,7 @@
   </script>
   
   <style>
-    /* PALETA SARTORIAL MINIMALISTA */
+    /* PALETA SARTORIAL MINIMALISTA (LORO PIANA / BRUNELLO CUCINELLI AESTHETIC) */
     :root {
       --bg: #060606;               
       --text: #F5F3EF;             
@@ -66,7 +66,6 @@
       margin-bottom: 12vh;
     }
     
-    /* H1 Contido e Silencioso */
     h1 { 
       font-family: var(--font-sans);
       font-size: 0.85rem; 
@@ -77,7 +76,6 @@
       font-weight: 300;
     }
     
-    /* A Frase de Impacto */
     .hero-statement { 
       font-family: var(--font-serif); 
       font-size: clamp(2.2rem, 6vw, 3.8rem); 
@@ -88,7 +86,6 @@
       max-width: 700px;
     }
     
-    /* Ritmo de Locais */
     .hero-locations { 
       font-family: var(--font-sans); 
       font-size: 0.65rem; 
@@ -129,7 +126,7 @@
       color: var(--accent); 
     }
 
-    /* ALINHAMENTO DAS IMAGENS MATE */
+    /* ALINHAMENTO DAS IMAGENS EDITORIAL (Mais Contraste, Menos Informação) */
     .parallax-divider {
       width: 100%;
       height: 45vh;
@@ -139,7 +136,8 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
-      filter: contrast(90%) brightness(92%) sepia(6%) saturate(92%);
+      /* Aumentado o contraste para aspecto de editorial fotográfico */
+      filter: contrast(110%) brightness(85%) sepia(10%) saturate(80%) grayscale(20%);
       opacity: 0; 
       transform: scale(0.95); 
       transform-origin: center center;
@@ -159,7 +157,7 @@
       background: linear-gradient(to bottom, var(--bg) 0%, rgba(6,6,6,0) 15%, rgba(6,6,6,0) 85%, var(--bg) 100%);
     }
 
-    /* SEÇÕES DE CONTEÚDO EDITORIAIS (Muito respiro) */
+    /* SEÇÕES DE CONTEÚDO EDITORIAIS */
     .content-section { 
       padding: 120px 24px; 
       max-width: 800px; 
@@ -192,7 +190,7 @@
       border: none;              
       padding: 0;
       background: transparent;
-      filter: contrast(94%) sepia(5%) brightness(95%);
+      filter: contrast(105%) sepia(5%) brightness(95%) grayscale(10%);
       -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
       mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
@@ -277,16 +275,18 @@
   <!-- FOTO INTERMEDIÁRIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
-  <!-- A FRASE DE OURO & O SERVIÇO (Sem Títulos) -->
+  <!-- A NARRATIVA DO SERVIÇO (Sem Títulos) -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--accent); line-height: 1.4; margin-bottom: 80px;">
-        O consultório muda.<br>O cuidado permanece.
+        O lugar muda.<br>O cuidado permanece.
       </p>
 
-      <p>Algumas circunstâncias tornam o deslocamento desnecessário.</p>
-      <p>A ANGMER oferece atendimento psiquiátrico realizado diretamente na residência, escritório ou hotel do paciente, preservando conforto, discrição e a continuidade do cuidado.</p>
-      <p>O atendimento ocorre exclusivamente mediante agendamento.</p>
+      <p>Nem todo cuidado precisa começar em um consultório.</p>
+      
+      <p>Para algumas pessoas, deslocar-se até uma clínica representa perda de tempo, exposição desnecessária ou simplesmente não faz sentido diante da rotina. Nessas situações, o atendimento pode acontecer onde o paciente já está.</p>
+      
+      <p>A ANGMER oferece atendimento psiquiátrico realizado diretamente na residência, escritório ou hotel, preservando o conforto e a discrição. O atendimento ocorre exclusivamente mediante agendamento.</p>
     </div>
   </section>
 
@@ -319,63 +319,56 @@
         Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
       </span>
 
-      <!-- ACCORDION (Informações) -->
+      <!-- ACCORDION (Informações organizadas pela dúvida do usuário) -->
       <div class="faq-container">
         <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
         
         <details class="faq-item">
+          <summary>Para quem esse serviço faz sentido?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left;">Para pacientes que necessitam de cuidado psiquiátrico sênior, mas cujas rotinas exigem total proteção de privacidade, flexibilidade de agenda e a eliminação de deslocamentos por São Paulo.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
           <summary>Como funciona o atendimento domiciliar?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">O médico realiza o atendimento diretamente na residência, escritório ou hotel do paciente, em horário previamente agendado.</p>
+            <p style="margin: 0; text-align: left;">O médico realiza a avaliação clínica, o diagnóstico e a prescrição diretamente na residência, escritório ou hotel do paciente, em horário previamente agendado.</p>
           </div>
         </details>
         
         <details class="faq-item">
           <summary>Em quais locais o atendimento é realizado?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados na cidade de São Paulo.</p>
+            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>O atendimento é sigiloso?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Sim. Todo atendimento médico é protegido pelo sigilo profissional previsto no Código de Ética Médica.</p>
+            <p style="margin: 0; text-align: left;">Sim. Todo o processo, incluindo prescrições e guarda de prontuários, é conduzido sob estrito sigilo profissional previsto no Código de Ética Médica.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>Quem realiza o atendimento?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Todos os atendimentos são realizados pessoalmente pelo Dr. Elquer Rodrigues.</p>
+            <p style="margin: 0; text-align: left;">Todos os atendimentos são realizados pessoalmente e diretamente pelo Dr. Elquer Rodrigues.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>O atendimento pode ocorrer em hotéis?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Sim, desde que exista autorização do estabelecimento e condições adequadas para a consulta.</p>
+            <p style="margin: 0; text-align: left;">Sim, desde que exista autorização do estabelecimento e condições adequadas e seguras para a consulta médica.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>Como é feito o agendamento?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">A solicitação inicial é realizada pelo WhatsApp. Após análise da disponibilidade clínica e geográfica, o horário é confirmado.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Quanto tempo dura a consulta?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">O tempo varia conforme a necessidade clínica de cada paciente.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>É possível solicitar atendimento para familiares?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Sim. O atendimento pode ser solicitado por familiares ou representantes do paciente.</p>
+            <p style="margin: 0; text-align: left;">A solicitação inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</p>
           </div>
         </details>
       </div>
