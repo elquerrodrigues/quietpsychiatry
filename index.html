@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Integração de Cor com a Barra do iPhone / Safari -->
   <meta name="theme-color" content="#F5F3EF">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
@@ -30,12 +31,12 @@
   <style>
     /* PALETA SARTORIAL CANVAS (LORO PIANA & LITE EDITORIAL AESTHETIC) */
     :root {
-      --bg: #F5F3EF;               /* O bege chique / Seda pura e lavada */
-      --text: #060606;             /* Preto obsidiana profundo para máxima nitidez */
-      --text-muted: #2C2A27;       /* Carvão quente / Café expresso para leitura densa */
-      --text-light: #8A8477;       /* Linho envelhecido / Tom de pedra polida */
-      --accent: #A69177;           /* Bronze terroso sutil */
-      --line: rgba(6, 6, 6, 0.08); /* Costura fina e quase invisível sobre o claro */
+      --bg: #F5F3EF;               
+      --text: #060606;             
+      --text-muted: #2C2A27;       
+      --text-light: #8A8477;       
+      --accent: #A69177;           
+      --line: rgba(6, 6, 6, 0.08); 
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -135,7 +136,6 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
-      /* Filtro Aesop Premium */
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
       opacity: 0; 
       transform: scale(0.98); 
@@ -269,6 +269,7 @@
 </head>
 <body>
 
+  <!-- CAPA EDITORIAL -->
   <header>
     <h1>ANGMER</h1>
     <p class="hero-statement">Um psiquiatra vai até você.</p>
@@ -276,8 +277,10 @@
     <p class="hero-city">São Paulo</p>
   </header>
 
+  <!-- FOTO INTERMEDIÁRIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
+  <!-- A NARRATIVA DO SERVIÇO -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--accent); line-height: 1.4; margin-bottom: 80px;">
@@ -293,8 +296,10 @@
     </div>
   </section>
 
+  <!-- FOTO INTERMEDIÁRIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
+  <!-- O MÉDICO -->
   <section class="content-section">
     <div class="content">
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
@@ -304,8 +309,10 @@
     </div>
   </section>
 
+  <!-- FOTO INTERMEDIÁRIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
 
+  <!-- CONTATO & INFORMAÇÕES -->
   <section class="content-section">
     <div class="content">
       <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
@@ -318,8 +325,16 @@
         Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
       </span>
 
+      <!-- ACCORDION -->
       <div class="faq-container">
         <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
+        
+        <details class="faq-item">
+          <summary>Por que o nome ANGMER?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left;">Sempre admirei pessoas competentes e discretas, que trabalham longe dos holofotes e não buscam chamar a atenção, ao mesmo tempo em que entregam um trabalho excepcional. Um exemplo dessa postura é a ex-chanceler alemã Angela Merkel, daí a inspiração para o nome.</p>
+          </div>
+        </details>
         
         <details class="faq-item">
           <summary>Para quem esse serviço faz sentido?</summary>
@@ -360,6 +375,7 @@
     </div>
   </section>
 
+  <!-- RODAPÉ -->
   <footer>
     <div class="footer-brand">ANGMER</div>
     <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
