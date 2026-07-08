@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone / Safari -->
   <meta name="theme-color" content="#F5F3EF">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
@@ -126,7 +125,7 @@
       color: var(--text); 
     }
 
-    /* IMAGENS DE TRANSIÇÃO COM CORTE SECO (Degradês de máscara removidos) */
+    /* IMAGENS DE TRANSIÇÃO COM CORTE SECO */
     .parallax-divider {
       width: 100%;
       height: 45vh;
@@ -136,7 +135,7 @@
       background-attachment: fixed;
       position: relative;
       background-color: var(--bg);
-      /* Filtro Aesop Premium: Muted, Warm, Matte Texture */
+      /* Filtro Aesop Premium */
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
       opacity: 0; 
       transform: scale(0.98); 
@@ -192,7 +191,7 @@
       transform: translateY(0);
     }
 
-    /* FOTO DE PERFIL COM CORTE SECO (Esfumaçado e máscara completamente removidos) */
+    /* FOTO DE PERFIL COM CORTE SECO */
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
@@ -202,7 +201,6 @@
       border: none;              
       padding: 0;
       background: transparent;
-      /* Filtro Aesop Retratista: tom terroso, grão e luz natural focada */
       filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
     }
 
@@ -271,7 +269,6 @@
 </head>
 <body>
 
-  <!-- CAPA EDITORIAL -->
   <header>
     <h1>ANGMER</h1>
     <p class="hero-statement">Um psiquiatra vai até você.</p>
@@ -279,10 +276,8 @@
     <p class="hero-city">São Paulo</p>
   </header>
 
-  <!-- FOTO INTERMEDIÁRIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
-  <!-- A NARRATIVA DO SERVIÇO -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--accent); line-height: 1.4; margin-bottom: 80px;">
@@ -298,10 +293,8 @@
     </div>
   </section>
 
-  <!-- FOTO INTERMEDIÁRIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
-  <!-- O MÉDICO -->
   <section class="content-section">
     <div class="content">
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
@@ -311,10 +304,8 @@
     </div>
   </section>
 
-  <!-- FOTO INTERMEDIÁRIA 3 -->
   <div class="parallax-divider" style="background-image: url('foto-perfis.png');"></div>
 
-  <!-- CONTATO & INFORMAÇÕES -->
   <section class="content-section">
     <div class="content">
       <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
@@ -327,7 +318,6 @@
         Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
       </span>
 
-      <!-- ACCORDION -->
       <div class="faq-container">
         <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
         
@@ -353,13 +343,6 @@
         </details>
 
         <details class="faq-item">
-          <summary>O atendimento é sigiloso?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Sim. Todo o processo, incluindo prescrições e guarda de prontuários, é conduzido sob estrito sigilo profissional previsto no Código de Ética Médica.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
           <summary>Quem realiza o atendimento?</summary>
           <div class="faq-answer">
             <p style="margin: 0; text-align: left;">Todos os atendimentos são realizados pessoalmente e diretamente pelo Dr. Elquer Rodrigues.</p>
@@ -377,7 +360,6 @@
     </div>
   </section>
 
-  <!-- RODAPÉ -->
   <footer>
     <div class="footer-brand">ANGMER</div>
     <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
