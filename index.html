@@ -4,43 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone / Safari -->
   <meta name="theme-color" content="#F5F3EF">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
   <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel em São Paulo.">
-  <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa">
-  <meta name="author" content="ANGMER">
-  <meta name="robots" content="index, follow">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Physician",
-      "name": "Dr. Elquer Rodrigues",
-      "medicalSpecialty": "Psychiatry",
-      "url": "https://angmer.com.br",
-      "description": "Atendimento psiquiátrico domiciliar em São Paulo."
-    }
-  </script>
+  <!-- Trocando a fonte para simular o rigor suíço (Geométrica Grotesca para títulos, clássica para corpo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   
   <style>
-    /* PALETA SARTORIAL CANVAS - WCAG 2.1 AA COMPLIANT */
+    /* PALETA "THE ROW" (CONTRASTE EXTREMO, MAS SUAVE) */
     :root {
-      --bg: #F5F3EF;               /* O bege chique / Seda pura e lavada */
-      --text: #000000;             /* Preto absoluto para máxima nitidez nos títulos */
-      --text-muted: #0A0A0A;       /* Preto profundo e denso para leitura perfeita do corpo */
-      --text-light: #4A453E;       /* Alto contraste (Umber Escuro) > 7:1 ratio */
-      --accent: #736351;           /* Bronze terroso escurecido */
-      --line: rgba(0, 0, 0, 0.15); /* Linhas divisórias nítidas */
-      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+      --bg: #F5F3EF;               
+      --text: #050505;             /* Preto quase absoluto (Off-black) para não ferir os olhos */
+      --text-muted: #33312E;       /* Carvão profundo para corpo de texto */
+      --text-light: #7A756D;       
+      --line: rgba(5, 5, 5, 0.1);  /* Linhas extremamente finas e sutis */
       
-      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      /* O Segredo: Tipografia Híbrida de Luxo */
+      --font-display: 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
     }
     
     * { box-sizing: border-box; }
@@ -48,305 +33,265 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       background: var(--bg);
       color: var(--text-muted);   
-      line-height: 2.1; 
+      /* Corpo de texto maior (18px) para conforto extremo */
+      font-size: 18px; 
+      line-height: 1.8; 
+      letter-spacing: 0.01em; /* Tracking ligeiramente aberto no corpo (+0.01em) */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
 
-    /* CAPA EDITORIAL CLARA */
+    /* CAPA (Muito ar, margens vastas) */
     header {
       text-align: center; 
-      padding: 0 24px;
-      display: block;
-      margin-top: 18vh;
-      margin-bottom: 18vh;
+      padding: 0 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 85vh; /* Ocupa quase a tela toda apenas com texto */
     }
     
     h1 { 
-      font-family: var(--font-sans);
-      font-size: 0.85rem; 
+      font-family: var(--font-display);
+      font-size: 0.75rem; 
       color: var(--text-light); 
-      margin-bottom: 60px; 
+      margin-bottom: 8vh; 
       text-transform: uppercase;
-      letter-spacing: 8px;
+      letter-spacing: 0.15em;
       font-weight: 500; 
     }
     
     .hero-statement { 
-      font-family: var(--font-serif); 
-      font-size: clamp(2.2rem, 6vw, 3.8rem); 
-      font-weight: 300;
+      font-family: var(--font-display); 
+      font-size: clamp(2.8rem, 8vw, 4.5rem); /* Aumentado drasticamente */
+      font-weight: 300; /* Peso Extralight/Light */
       color: var(--text); 
-      margin: 0 auto 30px auto; 
-      line-height: 1.1;
-      max-width: 700px;
+      margin: 0 auto 40px auto; 
+      line-height: 1.05; /* Line-height de 1.05 conforme recomendação */
+      letter-spacing: -0.04em; /* Tracking negativo elegante */
+      max-width: 800px;
     }
     
     .hero-locations { 
-      font-family: var(--font-sans); 
-      font-size: 0.65rem; 
-      font-weight: 500; 
-      letter-spacing: 4px; 
+      font-family: var(--font-body); 
+      font-size: 0.7rem; 
+      font-weight: 400; 
+      letter-spacing: 0.08em; 
       color: var(--text-muted); 
       text-transform: uppercase; 
       margin-bottom: 12px;
     }
-    
-    .hero-city { 
-      font-family: var(--font-sans); 
-      font-size: 0.6rem; 
-      font-weight: 500; 
-      letter-spacing: 2px; 
-      color: var(--text-light); 
-      text-transform: uppercase; 
-    }
 
-    /* BOTÃO GHOST ACESSÍVEL */
+    /* BOTÃO "THE ROW" (Invisível, puro texto) */
     .btn { 
       display: inline-block; 
-      margin-top: 50px; 
-      font-family: var(--font-sans); 
-      color: var(--text-muted); 
+      margin-top: 60px; 
+      font-family: var(--font-body); 
+      color: var(--text); 
       background-color: transparent; 
-      border: 1px solid var(--text-muted);
-      padding: 16px 45px; 
+      border: none;
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 8px 0; 
       text-decoration: none; 
-      font-size: 0.65rem; 
+      font-size: 0.75rem; 
       text-transform: uppercase; 
-      letter-spacing: 3px; 
- transition: all 0.5s ease; 
+      letter-spacing: 0.08em; /* Tracking largo */
+      transition: border-color 0.4s ease; 
       font-weight: 500; 
     }
     .btn:hover { 
-      border-color: var(--accent); 
-      color: var(--accent); 
-    }
-    .btn:focus-visible {
-      outline: 2px solid var(--text);
-      outline-offset: 4px;
+      border-bottom-color: var(--text); 
     }
 
-    /* IMAGENS DE TRANSIÇÃO COM FILTRO AESOP */
+    /* IMAGENS DE TRANSIÇÃO (Mantendo o filtro, mas com proporção de tela inteira) */
     .parallax-divider {
       width: 100%;
-      height: 45vh;
+      height: 60vh;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover; 
       background-attachment: fixed;
-      position: relative;
       background-color: var(--bg);
-      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+      filter: contrast(105%) brightness(92%) sepia(8%) saturate(75%);
       opacity: 0; 
-      transform: scale(0.98); 
-      transform-origin: center center;
-      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
+      transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .parallax-divider.visible { opacity: 1; }
 
-    @media (min-width: 769px) {
-      .parallax-divider { height: 75vh; margin: 40px 0; }
-    }
-
-    .parallax-divider.visible { opacity: 1; transform: scale(1); }
-
-    /* SEÇÕES DE CONTEÚDO EDITORIAIS */
+    /* SEÇÕES DE CONTEÚDO (Mais estreitas, mais padding vertical) */
     .content-section { 
-      padding: 120px 24px; 
-      max-width: 800px; 
+      padding: 160px 8%; /* Aumentado em 25% (mais ar) */
+      max-width: 100%; 
       margin: 0 auto; 
       opacity: 0; 
-      transform: translateY(30px); 
-      transition: all 1.4s var(--transition-smooth); 
-      will-change: transform, opacity; 
+      transform: translateY(20px); 
+      transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
     }
     .content-section.visible { opacity: 1; transform: translateY(0); }
 
-    .content { max-width: 580px; margin: 0 auto; text-align: center; }
+    /* Forçando o texto a ser estreito (40 caracteres por linha) */
+    .content { max-width: 480px; margin: 0 auto; text-align: center; }
+    
     .content p { 
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
       color: var(--text-muted); 
-      margin-bottom: 35px;
-      line-height: 2.1; 
+      margin-bottom: 40px; /* Margem de ~2.2x a fonte */
       font-weight: 300; 
-      letter-spacing: 0.3px; 
     }
-    .content p:last-child { margin-bottom: 0; }
 
-    /* Efeito de Revelação Lenta Editorial */
+    .heading-large {
+      font-family: var(--font-display); 
+      font-size: clamp(2.4rem, 6vw, 3.2rem); 
+      color: var(--text); 
+      font-weight: 300; 
+      line-height: 1.1; 
+      letter-spacing: -0.03em;
+      margin-bottom: 60px;
+    }
+
+    /* REVELAÇÃO LENTA */
     .scroll-reveal-slow {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 5px;
+      letter-spacing: 0.1em;
       color: var(--text-light);
-      margin: 20px 0;
+      margin: 24px 0;
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
+      transition: opacity 2s ease;
     }
-    .scroll-reveal-slow.visible {
-      opacity: 1; 
-      transform: translateY(0);
-    }
+    .scroll-reveal-slow.visible { opacity: 1; }
 
-    /* FOTO DE PERFIL COM FILTRO AESOP RETRATISTA */
+    /* FOTO PERFIL */
     .profile-photo {
       display: block;
-      margin: 0 auto 60px auto;
-      height: 45vh;              
+      margin: 0 auto 80px auto;
+      height: 50vh;              
       width: auto;
       object-fit: contain;
-      border: none;              
-      padding: 0;
-      background: transparent;
-      filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
+      filter: contrast(102%) sepia(8%) brightness(95%) saturate(80%);
     }
 
     .secure-alt-contact {
       display: block;
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: var(--text-light);
-      letter-spacing: 0.3px;
-      margin-top: 40px;
-      line-height: 1.8;
-      font-weight: 400;
+      margin-top: 60px;
     }
 
-    /* ACCORDION REESTILIZADO PARA ALTO CONTRASTE */
-    .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
-    .faq-item { border-bottom: 1px solid var(--line); }
+    /* ACCORDION (Linhas finas, tipografia geométrica) */
+    .faq-container { margin-top: 120px; text-align: left; border-top: 0.5px solid var(--line); }
+    .faq-item { border-bottom: 0.5px solid var(--line); }
     .faq-item summary {
-      padding: 24px 0;
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      font-weight: 500; 
-      color: var(--text-muted);
+      padding: 32px 0;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400; 
+      color: var(--text);
       cursor: pointer;
       list-style: none;
       position: relative;
-      letter-spacing: 0.5px;
+      letter-spacing: -0.01em;
     }
     .faq-item summary::-webkit-details-marker { display: none; } 
     .faq-item summary::after {
       content: '+';
       position: absolute;
       right: 0;
-      color: var(--text-light);
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-    .faq-item[open] summary { color: var(--text); font-weight: 600; }
-    .faq-item[open] summary::after { content: '–'; color: var(--text); }
-    .faq-answer {
-      padding-bottom: 24px;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.9;
       font-weight: 300;
     }
+    .faq-item[open] summary { font-weight: 500; }
+    .faq-item[open] summary::after { content: '–'; }
+    .faq-answer {
+      padding-bottom: 32px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
 
-    /* FOOTER EDITORIAL CLARO */
-    footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
-    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
-    .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
-    .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
-    .footer-email:hover { color: var(--accent); }
+    /* FOOTER */
+    footer { text-align: center; padding: 80px 5% 120px 5%; margin: 0 auto; }
+    .footer-brand { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 0.2em; color: var(--text); margin-bottom: 20px; font-weight: 500; }
+    .footer-creds { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 30px; }
+    
+    .footer-email { 
+      font-size: 0.8rem; 
+      color: var(--text); 
+      text-decoration: none; 
+      border-bottom: 1px solid var(--line); 
+      padding-bottom: 4px;
+      transition: border-color 0.3s ease;
+    }
+    .footer-email:hover { border-bottom-color: var(--text); }
 
-    /* REGRAS LAPIDADAS PARA O IPHONE */
+    /* IPHONE */
     @media(max-width: 768px) {
-      header { padding: 0 20px; margin-top: 16vh; margin-bottom: 12vh; } 
-      h1 { letter-spacing: 6px; margin-bottom: 40px; }
-      .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
-      .content-section { padding: 90px 20px; }
-      .profile-photo { height: 40vh; margin: 0 auto 40px auto; }
-      .parallax-divider { background-attachment: scroll; height: 50vh; margin: 20px 0; background-size: cover; background-position: center center; }
-      .btn { width: 100%; text-align: center; padding: 18px 20px; }
+      .hero-statement { font-size: 2.8rem; letter-spacing: -0.02em; }
+      .parallax-divider { height: 50vh; background-attachment: scroll; }
+      .content-section { padding: 120px 6%; }
+      .heading-large { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- CAPA EDITORIAL -->
   <header>
     <h1>ANGMER</h1>
     <p class="hero-statement">Um psiquiatra vai até você.</p>
     <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
-    <p class="hero-city">São Paulo</p>
+    <p class="hero-locations" style="color: var(--text-light); font-size: 0.6rem;">São Paulo</p>
   </header>
 
-  <!-- FOTO INTERMEDIÁRIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
-  <!-- A NARRATIVA DO SERVIÇO -->
-  <section class="content-section" style="padding-top: 140px;">
+  <section class="content-section">
     <div class="content">
-      <p style="font-family: var(--font-sans); font-size: clamp(1.6rem, 4vw, 2.2rem); color: #000000 !important; font-weight: 700; line-height: 1.4; margin-bottom: 80px; letter-spacing: -0.5px;">
-        Psiquiatra domiciliar.
-      </p>
-
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 50px; line-height: 1.6;">
-        Atendimento presencial no local escolhido pelo paciente.
-      </p>
+      <p class="heading-large">Psiquiatria domiciliar.</p>
+      <p>Atendimento presencial no local escolhido pelo paciente.</p>
       
-      <p class="scroll-reveal-slow">Sem deslocamento</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">Sem exposição pública</p>
+      <p class="scroll-reveal-slow" style="margin-top: 60px;">Sem deslocamento</p>
+      <p class="scroll-reveal-slow">Sem exposição pública</p>
     </div>
   </section>
 
-  <!-- FOTO INTERMEDIÁRIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
-  <!-- O MÉDICO -->
   <section class="content-section">
     <div class="content">
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
-      
       <p>Sou o Dr. Elquer Rodrigues, médico psiquiatra (CRM-SP 157303 • RQE 85941).</p>
-      <p>Atuo exclusivamente como médico psiquiatra há mais de doze anos. Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
+      <p>Atuo exclusivamente como psiquiatra há mais de doze anos. Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
     </div>
   </section>
 
-  <!-- FOTO INTERMEDIÁRIA 3 (Atualizada conforme solicitado para 1006.jpg) -->
   <div class="parallax-divider" style="background-image: url('1006.jpg');"></div>
 
-  <!-- CONTATO & INFORMAÇÕES -->
   <section class="content-section">
-    <div class="content">
+    <div class="content" style="max-width: 600px;">
+      <p class="heading-large" style="font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 30px;">Agendamento</p>
       <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." 
-         target="_blank" 
-         class="btn"
-         aria-label="Verificar disponibilidade de atendimento via WhatsApp">
+      <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." target="_blank" class="btn">
         Verificar disponibilidade
       </a>
       
-      <span class="secure-alt-contact">
-        Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
-      </span>
+      <span class="secure-alt-contact">Agenda limitada.<br>Atendimento condicionado a disponibilidade clínica e geográfica.</span>
 
-      <!-- ACCORDION -->
       <div class="faq-container">
-        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
         
         <details class="faq-item">
           <summary>Para quem é esse serviço</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Para pacientes que precisam de atendimento psiquiátrico, mas cujas rotinas exigem total proteção de privacidade, flexibilidade de agenda e a eliminação de deslocamentos pela capital de São Paulo.</p>
+            <p style="text-align: left;">Para pacientes que precisam de atendimento psiquiátrico, mas cujas rotinas exigem total proteção de privacidade, flexibilidade de agenda e a eliminação de deslocamentos pela capital de São Paulo.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>Como é o atendimento?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left; white-space: pre-line;">Após a confirmação do agendamento e do pagamento, o atendimento é realizado no local de sua preferência — residência, escritório ou hotel.
+            <p style="text-align: left; white-space: pre-line;">Após a confirmação do agendamento e do pagamento, o atendimento é realizado no local de sua preferência — residência, escritório ou hotel.
             A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico, incluindo avaliação clínica completa, definição diagnóstica, elaboração do plano terapêutico e prescrição, quando indicada.
             Todos os atendimentos podem ser realizados no seu local de preferência.
             Por se tratar de um serviço médico privativo, individualizado e com horário exclusivamente reservado ao paciente, todas as consultas são previamente agendadas e remuneradas. Não há consultas de retorno gratuitas.</p>
@@ -356,28 +301,28 @@
         <details class="faq-item">
           <summary>Em quais locais o atendimento é realizado?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
+            <p style="text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>Quem realiza o atendimento?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Todos os atendimentos são realizados pessoalmente e diretamente pelo Dr. Elquer Rodrigues.</p>
+            <p style="text-align: left;">Todos os atendimentos são realizados pessoalmente e diretamente pelo Dr. Elquer Rodrigues.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>Como é feito o agendamento?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">A solicitação inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</p>
+            <p style="text-align: left;">A solicitação inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>Por que o nome ANGMER?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left; white-space: pre-line;">O nome ANGMER foi inspirado em Angela Merkel, não pela política, mas por sua liderança discreta e eficaz.
+            <p style="text-align: left; white-space: pre-line;">O nome ANGMER foi inspirado em Angela Merkel, não pela política, mas por sua liderança discreta e eficaz.
             Ela governou com serenidade, consistência e decisões sólidas.
             Sua credibilidade vinha da qualidade de suas ações, não de discursos grandiosos.
             Essa postura inspira a essência da ANGMER.
@@ -385,11 +330,9 @@
           </div>
         </details>
       </div>
-
     </div>
   </section>
 
-  <!-- RODAPÉ -->
   <footer>
     <div class="footer-brand">ANGMER</div>
     <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
