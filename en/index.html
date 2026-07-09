@@ -12,10 +12,34 @@
   <meta name="keywords" content="home psychiatrist, hotel psychiatrist, private doctor at home">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
+
+  <!-- CORREÇÃO TÉCNICA: TAGS HREFLANG (Espelho bidirecional para o Google não penalizar) -->
+  <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br" />
+  <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://angmer.com.br" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CORREÇÃO TÉCNICA: DADO ESTRUTURADO MÉDICO (Schema.org Physician) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Elquer Rodrigues",
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://angmer.com.br",
+      "description": "Private domiciliary, corporate, and premium psychiatric care in São Paulo.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$$$$"
+    }
+  </script>
   
   <style>
     /* SARTORIAL CANVAS PALETTE - WCAG 2.1 AA COMPLIANT */
@@ -46,7 +70,7 @@
       overflow-x: hidden;
     }
 
-    /* MINIMALIST LANGUAGE SELECTOR (Only PT and EN) */
+    /* MINIMALIST LANGUAGE SELECTOR */
     .lang-nav {
       position: absolute;
       top: 40px;
@@ -286,7 +310,7 @@
 </head>
 <body>
 
-  <!-- LANGUAGE NAV (Only PT and EN - EN is Active) -->
+  <!-- LANGUAGE NAV (Active set to EN) -->
   <nav class="lang-nav">
     <a href="/">PT</a>
     <a href="/en/" class="active">EN</a>
