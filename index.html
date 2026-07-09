@@ -57,6 +57,28 @@
       overflow-x: hidden;
     }
 
+    /* SELETOR DE IDIOMAS MINIMALISTA */
+    .lang-nav {
+      position: absolute;
+      top: 40px;
+      right: 24px;
+      display: flex;
+      gap: 15px;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      z-index: 10;
+    }
+    .lang-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .lang-nav a:hover, .lang-nav a.active {
+      color: var(--text);
+      font-weight: 600;
+    }
+
     /* CAPA EDITORIAL CLARA */
     header {
       text-align: center; 
@@ -262,6 +284,7 @@
 
     /* REGRAS LAPIDADAS PARA O IPHONE */
     @media(max-width: 768px) {
+      .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; margin-top: 16vh; margin-bottom: 12vh; } 
       h1 { letter-spacing: 6px; margin-bottom: 40px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
@@ -273,6 +296,14 @@
   </style>
 </head>
 <body>
+
+  <!-- SELETOR DE IDIOMAS ACOPLADO NO TOPO DO BODY -->
+  <nav class="lang-nav">
+    <a href="/" class="active">PT</a>
+    <a href="/en/">EN</a>
+    <a href="/de/">DE</a>
+    <a href="/fr/">FR</a>
+  </nav>
 
   <!-- CAPA EDITORIAL -->
   <header>
@@ -288,7 +319,6 @@
   <!-- A NARRATIVA DO SERVIÇO -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
-      <!-- Atualizado de volta para Cormorant Garamond com peso forte e redação lapidada -->
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #000000 !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">
         Psiquiatra domiciliar.
       </p>
@@ -348,7 +378,7 @@
         <details class="faq-item">
           <summary>Como é o atendimento?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left; white-space: pre-line;">Após a confirmação do agendamento e do pagamento, o atendimento é realizado no local de sua preferência — residência, escritório ou hotel.
+            <p style="margin: 0; text-align: left; white-space: pre-line;">Após a confirmation do agendamento e do pagamento, o atendimento é realizado no local de sua preferência — residência, escritório ou hotel.
             A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico, incluindo avaliação clínica completa, definição diagnóstica, elaboração do plano terapêutico e prescrição, quando indicada.
             Todos os atendimentos podem ser realizados no seu local de preferência.
             Por se tratar de um serviço médico privativo, individualizado e com horário exclusivamente reservado ao paciente, todas as consultas são previamente agendadas e remuneradas. Não há consultas de retorno gratuitas.</p>
