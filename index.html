@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Integração de Cor com a Barra do iPhone / Safari -->
   <meta name="theme-color" content="#F5F3EF">
   
   <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
@@ -12,6 +11,10 @@
   <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
+
+  <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br" />
+  <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://angmer.com.br" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +27,14 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Atendimento psiquiátrico domiciliar em São Paulo."
+      "description": "Atendimento psiquiátrico domiciliar, corporativo e privativo na capital de São Paulo.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$$$$"
     }
   </script>
   
@@ -297,13 +307,11 @@
 </head>
 <body>
 
-  <!-- SELETOR DE IDIOMAS (Apenas PT e EN) -->
   <nav class="lang-nav">
     <a href="/" class="active">PT</a>
     <a href="/en/">EN</a>
   </nav>
 
-  <!-- CAPA EDITORIAL -->
   <header>
     <h1>ANGMER</h1>
     <p class="hero-statement">Um psiquiatra vai até você.</p>
@@ -311,10 +319,8 @@
     <p class="hero-city">São Paulo</p>
   </header>
 
-  <!-- FOTO INTERMEDIÁRIA 1 -->
   <div class="parallax-divider" style="background-image: url('foto-servico.png');"></div>
 
-  <!-- A NARRATIVA DO SERVIÇO -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #000000 !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">
@@ -330,10 +336,8 @@
     </div>
   </section>
 
-  <!-- FOTO INTERMEDIÁRIA 2 -->
   <div class="parallax-divider" style="background-image: url('foto-dificil.png');"></div>
 
-  <!-- O MÉDICO -->
   <section class="content-section">
     <div class="content">
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
@@ -343,10 +347,8 @@
     </div>
   </section>
 
-  <!-- FOTO INTERMEDIÁRIA 3 -->
   <div class="parallax-divider" style="background-image: url('1006.jpg');"></div>
 
-  <!-- CONTATO & INFORMAÇÕES -->
   <section class="content-section">
     <div class="content">
       <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
@@ -362,7 +364,6 @@
         Agenda limitada.<br>Atendimento realizado apenas mediante disponibilidade geográfica e clínica.
       </span>
 
-      <!-- ACCORDION -->
       <div class="faq-container">
         <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
         
@@ -419,7 +420,6 @@
     </div>
   </section>
 
-  <!-- RODAPÉ -->
   <footer>
     <div class="footer-brand">ANGMER</div>
     <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
