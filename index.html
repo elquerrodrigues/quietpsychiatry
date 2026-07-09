@@ -34,7 +34,7 @@
       --bg: #F5F3EF;               /* O bege chique / Seda pura e lavada */
       --text: #000000;             /* Preto absoluto para máxima nitidez nos títulos */
       --text-muted: #0A0A0A;       /* Preto profundo e denso para leitura perfeita do corpo */
-      --text-light: #4A453E;       /* Corrigido para alto contraste (Umber Escuro) > 7:1 ratio */
+      --text-light: #4A453E;       /* Alto contraste (Umber Escuro) > 7:1 ratio */
       --accent: #736351;           /* Bronze terroso escurecido para conformidade em títulos */
       --line: rgba(0, 0, 0, 0.15); /* Linhas divisórias nítidas */
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
@@ -125,7 +125,6 @@
       border-color: var(--accent); 
       color: var(--accent); 
     }
-    /* Indicador visual nítido para navegação por teclado (tecnologia assistiva) */
     .btn:focus-visible {
       outline: 2px solid var(--text);
       outline-offset: 4px;
@@ -217,7 +216,7 @@
       letter-spacing: 0.3px;
       margin-top: 40px;
       line-height: 1.8;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     /* ACCORDION REESTILIZADO PARA ALTO CONTRASTE */
@@ -288,7 +287,8 @@
   <!-- A NARRATIVA DO SERVIÇO -->
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--accent); line-height: 1.4; margin-bottom: 80px;">
+      <!-- Atualizado para var(--text) garantindo o preto absoluto de alta nitidez -->
+      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--text); line-height: 1.4; margin-bottom: 80px;">
         Psiquiatra domiciliar.
       </p>
 
@@ -378,7 +378,7 @@
             <p style="margin: 0; text-align: left; white-space: pre-line;">O nome ANGMER foi inspirado em Angela Merkel, não pela política, mas por sua liderança discreta e eficaz.
             Ela governou com serenidade, consistência e decisões sólidas.
             Sua credibilidade vinha da qualidade de suas ações, não de discursos grandiosos.
-            Essa postura inspira a essência da ANGMER.
+            Essa postura inspira a essence da ANGMER.
             Discrição, competência e consistência são meus pilares.</p>
           </div>
         </details>
