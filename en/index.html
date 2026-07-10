@@ -8,9 +8,10 @@
   
   <title>ANGMER | Private Domiciliary Psychiatry</title>
   <meta name="description" content="Psychiatric care directly at your residence, office, or hotel in São Paulo.">
+  <meta name="keywords" content="home psychiatrist, hotel psychiatrist, private doctor at home">
+  <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
 
-  <!-- HREFLANG -->
   <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br" />
   <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
   <link rel="alternate" hreflang="x-default" href="https://angmer.com.br" />
@@ -19,7 +20,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- SCHEMA.ORG -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,56 +39,185 @@
   </script>
   
   <style>
+    /* PALETA SARTORIAL CANVAS - WCAG 2.1 AA COMPLIANT */
     :root {
-      --bg: #F5F3EF;
-      --text: #000000;
-      --text-muted: #0A0A0A;
-      --text-light: #4A453E;
-      --line: rgba(0, 0, 0, 0.15);
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Inter', system-ui, sans-serif;
+      --bg: #F5F3EF;               
+      --text: #000000;             
+      --text-muted: #0A0A0A;       
+      --text-light: #4A453E;       
+      --accent: #736351;           
+      --line: rgba(0, 0, 0, 0.15); 
+      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+      
+      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    body { margin: 0; background: var(--bg); font-family: var(--font-sans); color: var(--text-muted); line-height: 2.1; overflow-x: hidden; }
-
-    /* FOTOS E PARALAXE */
-    .parallax-divider {
-      width: 100%;
-      height: 45vh;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+    * { box-sizing: border-box; }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-muted);   
+      line-height: 2.1; 
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    /* CORREÇÃO DO ESTICAMENTO NO COMPUTADOR */
-    @media (min-width: 1024px) {
-      .parallax-divider { 
-        height: 80vh; 
-        background-size: contain; 
-        background-attachment: scroll; 
-      }
+    /* SELETOR DE IDIOMAS */
+    .lang-nav {
+      position: absolute;
+      top: 40px;
+      right: 24px;
+      display: flex;
+      gap: 15px;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      z-index: 10;
     }
-
-    /* ESTILOS DE NAVEGAÇÃO */
-    .lang-nav { position: absolute; top: 40px; right: 24px; display: flex; gap: 15px; font-size: 0.65rem; z-index: 10; }
-    .lang-nav a { color: var(--text-light); text-decoration: none; }
-    .lang-nav a.active { color: var(--text); font-weight: 600; }
+    .lang-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .lang-nav a:hover, .lang-nav a.active {
+      color: var(--text);
+      font-weight: 600;
+    }
 
     /* CABEÇALHO */
-    header { text-align: center; padding: 18vh 24px; }
-    h1 { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 8px; color: var(--text-light); text-transform: uppercase; }
-    .hero-statement { font-family: var(--font-serif); font-size: clamp(2.2rem, 6vw, 3.8rem); color: var(--text); margin: 30px auto; line-height: 1.1; max-width: 700px; }
+    header {
+      text-align: center; 
+      padding: 0 24px;
+      display: block;
+      margin-top: 18vh;
+      margin-bottom: 18vh;
+    }
     
-    /* CONTEÚDO */
-    .content-section { padding: 120px 24px; max-width: 600px; margin: 0 auto; text-align: center; }
-    .profile-photo { display: block; margin: 0 auto 60px auto; height: 45vh; width: auto; filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%); }
-    .btn { display: inline-block; margin-top: 50px; border-bottom: 1px solid var(--text); padding-bottom: 8px; color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 4px; font-size: 0.7rem; }
+    h1 { 
+      font-family: var(--font-sans);
+      font-size: 0.85rem; 
+      color: var(--text-light); 
+      margin-bottom: 60px; 
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      font-weight: 500; 
+    }
     
-    /* RODAPÉ */
-    footer { text-align: center; padding: 60px 24px 100px 24px; }
-    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; }
+    .hero-statement { 
+      font-family: var(--font-serif); 
+      font-size: clamp(2.2rem, 6vw, 3.8rem); 
+      font-weight: 300;
+      color: var(--text); 
+      margin: 0 auto 30px auto; 
+      line-height: 1.1;
+      max-width: 700px;
+    }
+    
+    .hero-locations { 
+      font-family: var(--font-sans); 
+      font-size: 0.65rem; 
+      font-weight: 500; 
+      letter-spacing: 4px; 
+      color: var(--text-muted); 
+      text-transform: uppercase; 
+      margin-bottom: 12px;
+    }
+    
+    .hero-city { 
+      font-family: var(--font-sans); 
+      font-size: 0.6rem; 
+      font-weight: 500; 
+      letter-spacing: 2px; 
+      color: var(--text-light); 
+      text-transform: uppercase; 
+    }
+
+    /* BOTÃO SUTIL */
+    .btn { 
+      display: inline-block; 
+      margin-top: 50px; 
+      font-family: var(--font-sans); 
+      color: var(--text-muted); 
+      background-color: transparent; 
+      border: none;
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 8px 0; 
+      text-decoration: none; 
+      font-size: 0.7rem; 
+      text-transform: uppercase; 
+      letter-spacing: 4px; 
+      transition: border-color 0.4s ease, color 0.4s ease; 
+      font-weight: 500; 
+    }
+    .btn:hover { 
+      border-bottom-color: var(--text); 
+      color: var(--text);
+    }
+
+    /* FOTOS - AJUSTADAS PARA NÃO CORTAR (CONTAIN) */
+    .parallax-divider {
+      width: 100%;
+      height: 60vh;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain; /* FOTO INTEIRA SEM CORTE */
+      background-attachment: scroll; 
+      position: relative;
+      background-color: var(--bg);
+      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+      opacity: 0; 
+      transform: scale(0.98); 
+      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+
+    .parallax-divider.visible { opacity: 1; transform: scale(1); }
+
+    /* SEÇÕES DE CONTEÚDO */
+    .content-section { 
+      padding: 120px 24px; 
+      max-width: 800px; 
+      margin: 0 auto; 
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: all 1.4s var(--transition-smooth); 
+      will-change: transform, opacity; 
+    }
+    .content-section.visible { opacity: 1; transform: translateY(0); }
+
+    .content { max-width: 580px; margin: 0 auto; text-align: center; }
+    .content p { 
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
+      color: var(--text-muted); 
+      margin-bottom: 35px;
+      line-height: 2.1; 
+      font-weight: 300; 
+      letter-spacing: 0.3px; 
+    }
+
+    /* FOTO DE PERFIL */
+    .profile-photo {
+      display: block;
+      margin: 0 auto 60px auto;
+      height: 45vh;              
+      width: auto;
+      object-fit: contain;
+      filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
+    }
+
+    /* ACCORDION */
+    .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 24px 0; cursor: pointer; }
+    .faq-answer { margin-top: 15px; color: var(--text-muted); font-size: 0.85rem; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); }
+    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
   </style>
 </head>
 <body>
@@ -100,32 +229,58 @@
 
   <header>
     <h1>ANGMER</h1>
-    <p class="hero-statement">A psychiatrist comes to you.</p>
+    <p class="hero-statement">A psychiatrist comes to you</p>
+    <p class="hero-locations">Residence &bull; Office &bull; Hotel</p>
+    <p class="hero-city">São Paulo</p>
   </header>
 
-  <div class="parallax-divider" style="background-image: url('/foto-servico.png');"></div>
+  <!-- IMAGEM 1 -->
+  <div class="parallax-divider" style="background-image: url('/foto1.jpg');"></div>
 
   <section class="content-section">
-    <p style="font-family: var(--font-serif); font-size: 2rem;">Domiciliary psychiatrist.</p>
-    <p>In-person care at the location of the patient's choice.</p>
+    <div class="content">
+      <p style="font-family: var(--font-serif); font-size: 2rem;">Domiciliary psychiatrist.</p>
+      <p>In-person care at the location of your choice.</p>
+    </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('/foto-dificil.png');"></div>
+  <!-- IMAGEM 2 -->
+  <div class="parallax-divider" style="background-image: url('/foto2.jpg');"></div>
 
   <section class="content-section">
-    <img src="/perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
-    <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
+    <div class="content">
+      <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
+      <p>I have been practicing exclusively as a psychiatrist for over twelve years.</p>
+    </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('/1006.jpg');"></div>
+  <!-- IMAGEM 3 -->
+  <div class="parallax-divider" style="background-image: url('/foto3.jpg');"></div>
 
   <section class="content-section">
-    <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." target="_blank" class="btn">Check availability</a>
+    <div class="content">
+      <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20availability%20for%20ANGMER%20services." 
+         target="_blank" 
+         class="btn">Check availability</a>
+      
+      <div class="faq-container">
+        <details class="faq-item">
+          <summary>Service information</summary>
+          <div class="faq-answer">Private care provided personally by Dr. Elquer Rodrigues.</div>
+        </details>
+      </div>
+    </div>
   </section>
 
   <footer>
     <div class="footer-brand">ANGMER</div>
   </footer>
 
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.parallax-divider, .content-section').forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
