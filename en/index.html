@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <meta name="theme-color" content="#F5F3EF">
+  <meta name="theme-color" content="#0A0A0A">
   
   <title>ANGMER | Private Domiciliary Psychiatry</title>
   <meta name="description" content="Psychiatric care directly at your residence, office, or hotel in São Paulo.">
@@ -39,14 +39,14 @@
   </script>
   
   <style>
-    /* PALETA SARTORIAL CANVAS - WCAG 2.1 AA COMPLIANT */
+    /* PALETA DARK MODE - PRETO OBSIDIANO */
     :root {
-      --bg: #F5F3EF;               
-      --text: #000000;             
-      --text-muted: #0A0A0A;       
-      --text-light: #4A453E;       
-      --accent: #736351;           
-      --line: rgba(0, 0, 0, 0.15); 
+      --bg: #0A0A0A;               
+      --text: #FFFFFF;             
+      --text-muted: #E0E0E0;       
+      --text-light: #999999;       
+      --accent: #B8A38C;           
+      --line: rgba(255, 255, 255, 0.15); 
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -89,7 +89,7 @@
       font-weight: 600;
     }
 
-    /* CAPA EDITORIAL CLARA */
+    /* CAPA EDITORIAL */
     header {
       text-align: center; 
       padding: 0 24px;
@@ -163,7 +163,7 @@
       outline-offset: 4px;
     }
 
-    /* IMAGENS DE TRANSIÇÃO COM FILTRO AESOP - SEM FAIXA BEGE */
+    /* IMAGENS DE TRANSIÇÃO COM FUNDO TRANSPARENTE E CONTAIN */
     .parallax-divider {
       width: 100%;
       height: 60vh;
@@ -172,7 +172,7 @@
       background-size: contain; 
       background-attachment: scroll; 
       position: relative;
-      background-color: transparent; 
+      background-color: transparent; /* <- REMOVIDA A FAIXA BEGE */
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
       opacity: 0; 
       transform: scale(0.98); 
@@ -252,7 +252,7 @@
       font-weight: 400;
     }
 
-    /* ACCORDION REESTILIZADO PARA ALTO CONTRASTE */
+    /* ACCORDION REESTILIZADO PARA ALTO CONTRASTE NO PRETO */
     .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
@@ -319,11 +319,14 @@
     <p class="hero-city">São Paulo</p>
   </header>
 
-  <div class="parallax-divider" style="background-image: url('../foto1.jpg');"></div>
+  <!-- IMAGE 1 -->
+  <!-- Caminhos das imagens apontando diretamente para a pasta en, conforme seus prints -->
+  <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
 
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #000000 !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">
+      <!-- Ajustado para branco puro (#FFFFFF) no modo obsidiano -->
+      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FFFFFF !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">
         Domiciliary psychiatrist.
       </p>
 
@@ -337,18 +340,20 @@
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('../foto2.jpg');"></div>
+  <!-- IMAGE 2 -->
+  <div class="parallax-divider" style="background-image: url('foto2.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
-      <img src="../perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       
       <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
       <p>I have been practicing exclusively as a psychiatrist for over twelve years. Each consultation is performed personally by me, from the first contact to clinical follow-up.</p>
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('../foto3.jpg');"></div>
+  <!-- IMAGE 3 -->
+  <div class="parallax-divider" style="background-image: url('foto3.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
