@@ -76,18 +76,9 @@
       animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
     }
 
-    @keyframes expandSite {
-       0% { clip-path: inset(50% 50%); } 
-       15% { clip-path: inset(calc(50% - 90px)); } 
-       45% { clip-path: inset(calc(50% - 90px)); } 
-       100% { clip-path: inset(0%); } 
-    }
+    @keyframes expandSite { 0% { clip-path: inset(50% 50%); } 15% { clip-path: inset(calc(50% - 90px)); } 45% { clip-path: inset(calc(50% - 90px)); } 100% { clip-path: inset(0%); } }
+    @keyframes unlockScroll { to { height: auto; overflow: visible; clip-path: none; } }
 
-    @keyframes unlockScroll {
-      to { height: auto; overflow: visible; clip-path: none; }
-    }
-
-    /* SELETOR DE IDIOMAS */
     .lang-nav {
       position: absolute;
       top: 40px;
@@ -102,7 +93,6 @@
     .lang-nav a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; }
     .lang-nav a:hover, .lang-nav a.active { color: var(--text); font-weight: 600; }
 
-    /* CAPA EDITORIAL */
     header { text-align: center; padding: 0 24px; position: relative; min-height: 80vh; }
     
     h1 { 
@@ -121,11 +111,7 @@
       animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
     }
 
-    @keyframes moveLogo {
-      0% { top: 50vh; } 
-      45% { top: 50vh; } 
-      100% { top: 18vh; } 
-    }
+    @keyframes moveLogo { 0% { top: 50vh; } 45% { top: 50vh; } 100% { top: 18vh; } }
     
     .hero-text-block { padding-top: 30vh; padding-bottom: 18vh; }
     .hero-statement { font-family: var(--font-serif); font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 300; color: var(--text); margin: 0 auto 30px auto; line-height: 1.1; max-width: 700px; }
@@ -135,41 +121,21 @@
     .fade-in-late { opacity: 0; transform: translateY(20px); animation: fadeUpText 1s cubic-bezier(0.25, 1, 0.5, 1) 2.2s forwards; }
     @keyframes fadeUpText { to { opacity: 1; transform: translateY(0); } }
 
-    /* BOTÃO SUTIL */
     .btn { display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text-muted); background-color: transparent; border: none; border-bottom: 1px solid var(--line); padding: 0 0 8px 0; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 4px; transition: border-color 0.4s ease, color 0.4s ease; font-weight: 500; }
     .btn:hover { border-bottom-color: var(--text); color: var(--text); }
 
-    /* IMAGENS COM SUTILEZA */
-    .parallax-divider {
-      width: 100%; height: 78vh; background-position: center center; background-repeat: no-repeat;
-      background-size: contain; background-attachment: scroll; position: relative; background-color: transparent; 
-      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
-      opacity: 0; transform: scale(0.98); transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity; margin: 60px 0;
-    }
-    
-    .parallax-divider::after, .profile-photo-wrapper::after {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 5%, rgba(10,10,10,0) 85%, #0A0A0A 100%);
-      pointer-events: none;
-    }
-
+    .parallax-divider { width: 100%; height: 78vh; background-position: center center; background-repeat: no-repeat; background-size: contain; background-attachment: scroll; position: relative; background-color: transparent; filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%); opacity: 0; transform: scale(0.98); transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; margin: 60px 0; }
+    .parallax-divider::after, .profile-photo-wrapper::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 5%, rgba(10,10,10,0) 85%, rgba(10,10,10,0.5) 100%); pointer-events: none; }
     @media (min-width: 769px) { .parallax-divider { height: 75vh; margin: 40px 0; } }
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
 
-    /* BANNER SÃO PAULO */
     .sp-banner-wrapper { width: 100%; text-align: center; margin: 60px 0; opacity: 0; transform: scale(0.98); transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
     .sp-banner-wrapper.visible { opacity: 1; transform: scale(1); }
     .sp-banner-inner { position: relative; display: inline-block; max-width: 100%; }
     .sp-image { display: block; max-width: 100%; height: 78vh; width: auto; object-fit: contain; filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%); }
-    .sp-smoke {
-      position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; 
-      background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 5%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.85) 80%, #0A0A0A 100%);
-      display: flex; align-items: flex-end; justify-content: center; padding-bottom: 70px; pointer-events: none; 
-    }
-    .sp-text { font-family: var(--font-serif); font-size: 1.2rem; color: #FFFFFF; font-weight: 300; letter-spacing: 8px; text-transform: uppercase; margin: 0; }
+    .sp-smoke { position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 100%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 50px; pointer-events: none; }
+    .sp-text { font-family: var(--font-serif); font-size: 1.5rem; color: #FFFFFF; font-weight: 300; letter-spacing: 12px; text-transform: uppercase; margin: 0; white-space: nowrap; }
 
-    /* CONTEÚDO */
     .content-section { padding: 120px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(30px); transition: all 1.4s var(--transition-smooth); will-change: transform, opacity; }
     .content-section.visible { opacity: 1; transform: translateY(0); }
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
@@ -181,7 +147,21 @@
     .profile-photo-wrapper { position: relative; display: inline-block; margin: 0 auto 60px auto; }
     .profile-photo { display: block; height: 58vh; width: 100%; object-fit: contain; filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%); }
 
-    /* MOBILE - LARGURA 100% E +10% ALTURA */
+    .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item summary { padding: 24px 0; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 500; color: var(--text-muted); cursor: pointer; list-style: none; position: relative; letter-spacing: 0.5px; }
+    .faq-item summary::-webkit-details-marker { display: none; } 
+    .faq-item summary::after { content: '+'; position: absolute; right: 0; color: var(--text-light); font-weight: 500; font-size: 1.2rem; }
+    .faq-item[open] summary { color: var(--text); font-weight: 600; }
+    .faq-item[open] summary::after { content: '–'; color: var(--text); }
+    .faq-answer { padding-bottom: 24px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.9; font-weight: 300; }
+
+    footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
+    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
+    .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
+    .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
+    .footer-email:hover { color: var(--accent); }
+
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 60vh; } 
@@ -190,25 +170,18 @@
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
       .content-section { padding: 90px 20px; }
-      
-      .profile-photo { height: 64vh; width: 100%; }
+      .profile-photo { height: 64vh; width: 100%; object-fit: cover; }
       .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: cover; background-attachment: scroll; }
-      
       .sp-image { width: 100%; height: 66vh; object-fit: cover; } 
-      .sp-smoke { padding-bottom: 60px; height: 60%; }
+      .sp-smoke { padding-bottom: 40px; height: 30%; }
+      .sp-text { font-size: 0.9rem; letter-spacing: 4px; }
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
   </style>
 </head>
 <body>
-
 <div class="site-wrapper">
-
-  <nav class="lang-nav fade-in-late">
-    <a href="/">PT</a>
-    <a href="/en/" class="active">EN</a>
-  </nav>
-
+  <nav class="lang-nav fade-in-late"><a href="/">PT</a><a href="/en/">EN</a></nav>
   <header>
     <h1>ANGMER</h1>
     <div class="hero-text-block fade-in-late">
@@ -217,147 +190,59 @@
       <p class="hero-city">São Paulo</p>
     </div>
   </header>
-
-  <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
-
+  <div class="parallax-divider" style="background-image: url('../foto1.jpg');"></div>
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FFFFFF !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">
-        Domiciliary psychiatrist.
-      </p>
-
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 50px; line-height: 1.6;">
-        Care wherever you need it.
-      </p>
-      
+      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FFFFFF !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">Domiciliary psychiatrist.</p>
+      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 50px; line-height: 1.6;">Care wherever you need it.</p>
       <p class="scroll-reveal-slow">No travel needed</p>
       <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">No public exposure</p>
       <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Absolute discretion</p>
     </div>
   </section>
-
-  <div class="parallax-divider" style="background-image: url('foto2.jpg');"></div>
-
+  <div class="parallax-divider" style="background-image: url('../foto2.jpg');"></div>
   <section class="content-section">
     <div class="content">
-      <div class="profile-photo-wrapper">
-        <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
-      </div>
-      
+      <div class="profile-photo-wrapper"><img src="../perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo"></div>
       <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
       <p>I have been practicing exclusively as a psychiatrist for over twelve years. Each consultation is performed personally by me, from the first contact to clinical follow-up.</p>
     </div>
   </section>
-
   <div class="sp-banner-wrapper">
     <div class="sp-banner-inner">
-      <img src="fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
-      <div class="sp-smoke">
-        <p class="sp-text">Care in São Paulo</p>
-      </div>
+      <img src="../fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
+      <div class="sp-smoke"><p class="sp-text">Care in São Paulo</p></div>
     </div>
   </div>
-
   <section class="content-section" style="padding-top: 60px; padding-bottom: 60px;">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">
-        When privacy is non-negotiable.
-      </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">
-        When your condition makes any displacement difficult.
-      </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 0;">
-        When privacy is as important as the treatment.
-      </p>
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">When privacy is non-negotiable.</p>
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">When your condition makes any displacement difficult.</p>
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 0;">When privacy is as important as the treatment.</p>
     </div>
   </section>
-
-  <div class="parallax-divider" style="background-image: url('foto3.jpg');"></div>
-
+  <div class="parallax-divider" style="background-image: url('../foto3.jpg');"></div>
   <section class="content-section">
     <div class="content">
       <p>Consult availability for home or corporate visits.</p>
-      
-      <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20availability%20for%20ANGMER%20services." 
-         target="_blank" 
-         class="btn"
-         aria-label="Check service availability via WhatsApp">
-        Check availability
-      </a>
-      
+      <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20availability%20for%20ANGMER%20services." target="_blank" class="btn" aria-label="Check service availability via WhatsApp">Check availability</a>
       <div class="faq-container">
         <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Information</h3>
-        
-        <details class="faq-item">
-          <summary>Who is this service for?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">For patients who require psychiatric care, but whose routines demand total privacy, schedule flexibility, and the elimination of travel across the capital of São Paulo.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How is the care provided?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left; white-space: pre-line;">After confirmation of the appointment and payment, the service is performed at your preferred location — residence, office, or hotel.
-            The consultation follows the same depth and technical rigor as an office visit, including full clinical assessment, diagnostic definition, therapeutic planning, and prescription when indicated.
-            All consultations are pre-scheduled and paid for. There are no free follow-up consultations.</p>
-          </div>
-        </details>
-        
-        <details class="faq-item">
-          <summary>Where is the service provided?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residences, companies, offices, and hotels located exclusively in the city of São Paulo.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Who provides the care?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">All consultations are performed personally and directly by Dr. Elquer Rodrigues.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How is scheduling done?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">The initial request is made via WhatsApp. After a brief analysis of clinical and geographical availability, the time is confirmed directly with the doctor.</p>
-          </div>
-        </details>
+        <details class="faq-item"><summary>Who is this service for?</summary><div class="faq-answer">For patients who require psychiatric care, but whose routines demand total privacy, schedule flexibility, and the elimination of travel across the capital of São Paulo.</div></details>
+        <details class="faq-item"><summary>How is the care provided?</summary><div class="faq-answer">After confirmation of the appointment and payment, the service is performed at your preferred location — residence, office, or hotel. The consultation follows the same depth and technical rigor as an office visit, including full clinical assessment, diagnostic definition, therapeutic planning, and prescription when indicated.</div></details>
+        <details class="faq-item"><summary>Where is the service provided?</summary><div class="faq-answer">Residences, companies, offices, and hotels located exclusively in the city of São Paulo.</div></details>
+        <details class="faq-item"><summary>Who provides the care?</summary><div class="faq-answer">All consultations are performed personally and directly by Dr. Elquer Rodrigues.</div></details>
+        <details class="faq-item"><summary>How is scheduling done?</summary><div class="faq-answer">The initial request is made via WhatsApp. After a brief analysis of clinical and geographical availability, the time is confirmed directly with the doctor.</div></details>
       </div>
-
     </div>
   </section>
-
-  <footer>
-    <div class="footer-brand">ANGMER</div>
-    <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
-    <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
-  </footer>
-
+  <footer><div class="footer-brand">ANGMER</div><div class="footer-creds">CRM-SP 157303 • RQE 85941</div><a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a></footer>
 </div>
-
   <script>
     const details = document.querySelectorAll('details');
-    details.forEach((targetDetail) => {
-      targetDetail.addEventListener('click', () => {
-        details.forEach((detail) => {
-          if (detail !== targetDetail) {
-            detail.removeAttribute('open');
-          }
-        });
-      });
-    });
-
+    details.forEach((targetDetail) => { targetDetail.addEventListener('click', () => { details.forEach((detail) => { if (detail !== targetDetail) detail.removeAttribute('open'); }); }); });
     (function() {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+      var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow, .sp-banner-wrapper').forEach(function(s) { observer.observe(s); });
     })();
   </script>
