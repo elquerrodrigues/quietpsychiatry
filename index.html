@@ -59,7 +59,7 @@
       margin: 0;
       padding: 0;
       font-family: var(--font-sans);
-      background: #FFFFFF; /* Fundo branco inicial para o efeito de expansão */
+      background: #FFFFFF; 
       color: var(--text-muted);   
       line-height: 2.1; 
       -webkit-font-smoothing: antialiased;
@@ -67,11 +67,11 @@
       overflow-x: hidden;
     }
 
-    /* ESTRUTURA DA ANIMAÇÃO DE ABERTURA TIPO LANSERHOF */
+    /* ESTRUTURA DA ANIMAÇÃO TIPO LANSERHOF */
     .site-wrapper {
       background: var(--bg);
       width: 100%;
-      height: 100vh; /* Trava o scroll durante a abertura */
+      height: 100vh; 
       overflow: hidden; 
       animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
     }
@@ -87,7 +87,7 @@
       to { height: auto; overflow: visible; clip-path: none; }
     }
 
-    /* SELETOR DE IDIOMAS MINIMALISTA */
+    /* SELETOR DE IDIOMAS */
     .lang-nav {
       position: absolute;
       top: 40px;
@@ -99,23 +99,11 @@
       letter-spacing: 1px;
       z-index: 10;
     }
-    .lang-nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .lang-nav a:hover, .lang-nav a.active {
-      color: var(--text);
-      font-weight: 600;
-    }
+    .lang-nav a { color: var(--text-light); text-decoration: none; transition: color 0.3s ease; }
+    .lang-nav a:hover, .lang-nav a.active { color: var(--text); font-weight: 600; }
 
     /* CAPA EDITORIAL */
-    header {
-      text-align: center; 
-      padding: 0 24px;
-      position: relative;
-      min-height: 80vh;
-    }
+    header { text-align: center; padding: 0 24px; position: relative; min-height: 80vh; }
     
     h1 { 
       position: absolute;
@@ -139,276 +127,147 @@
       100% { top: 18vh; } 
     }
     
-    .hero-text-block {
-      padding-top: 30vh; 
-      padding-bottom: 18vh;
-    }
+    .hero-text-block { padding-top: 30vh; padding-bottom: 18vh; }
 
     .hero-statement { 
-      font-family: var(--font-serif); 
-      font-size: clamp(2.2rem, 6vw, 3.8rem); 
-      font-weight: 300;
-      color: var(--text); 
-      margin: 0 auto 30px auto; 
-      line-height: 1.1;
-      max-width: 700px;
+      font-family: var(--font-serif); font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 300;
+      color: var(--text); margin: 0 auto 30px auto; line-height: 1.1; max-width: 700px;
     }
     
-    .hero-locations { 
-      font-family: var(--font-sans); 
-      font-size: 0.65rem; 
-      font-weight: 500; 
-      letter-spacing: 4px; 
-      color: var(--text-muted); 
-      text-transform: uppercase; 
-      margin-bottom: 12px;
-    }
-    
-    .hero-city { 
-      font-family: var(--font-sans); 
-      font-size: 0.6rem; 
-      font-weight: 500; 
-      letter-spacing: 2px; 
-      color: var(--text-light); 
-      text-transform: uppercase; 
-    }
+    .hero-locations { font-family: var(--font-sans); font-size: 0.65rem; font-weight: 500; letter-spacing: 4px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; }
+    .hero-city { font-family: var(--font-sans); font-size: 0.6rem; font-weight: 500; letter-spacing: 2px; color: var(--text-light); text-transform: uppercase; }
 
     .fade-in-late {
-      opacity: 0;
-      transform: translateY(20px);
+      opacity: 0; transform: translateY(20px);
       animation: fadeUpText 1s cubic-bezier(0.25, 1, 0.5, 1) 2.2s forwards;
     }
 
-    @keyframes fadeUpText {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUpText { to { opacity: 1; transform: translateY(0); } }
 
     /* BOTÃO SUTIL */
     .btn { 
-      display: inline-block; 
-      margin-top: 50px; 
-      font-family: var(--font-sans); 
-      color: var(--text-muted); 
-      background-color: transparent; 
-      border: none;
-      border-bottom: 1px solid var(--line);
-      padding: 0 0 8px 0; 
-      text-decoration: none; 
-      font-size: 0.7rem; 
-      text-transform: uppercase; 
-      letter-spacing: 4px; 
-      transition: border-color 0.4s ease, color 0.4s ease; 
-      font-weight: 500; 
+      display: inline-block; margin-top: 50px; font-family: var(--font-sans); color: var(--text-muted); 
+      background-color: transparent; border: none; border-bottom: 1px solid var(--line); 
+      padding: 0 0 8px 0; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; 
+      letter-spacing: 4px; transition: border-color 0.4s ease, color 0.4s ease; font-weight: 500; 
     }
-    .btn:hover { 
-      border-bottom-color: var(--text); 
-      color: var(--text);
-    }
-    .btn:focus-visible {
-      outline: 2px solid var(--text);
-      outline-offset: 4px;
-    }
+    .btn:hover { border-bottom-color: var(--text); color: var(--text); }
+    .btn:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
 
-    /* IMAGENS DE TRANSIÇÃO (DESKTOP: +30% na altura -> 78vh) */
+    /* IMAGENS DE TRANSIÇÃO (COM BORDAS ESFUMAÇADAS) */
     .parallax-divider {
       width: 100%;
-      height: 78vh;
+      height: 78vh; /* 30% maior no desktop */
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: contain; 
+      background-size: cover; /* Para preencher tudo e a fumaça pegar certinho nas bordas */
       background-attachment: scroll; 
       position: relative;
       background-color: transparent; 
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
-      opacity: 0; 
-      transform: scale(0.98); 
-      transform-origin: center center;
+      opacity: 0; transform: scale(0.98); transform-origin: center center;
       transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
       margin: 60px 0;
     }
 
+    /* Efeito de fumaça preta em todas as 4 bordas (flutuante) */
+    .parallax-divider::after, .profile-photo-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        linear-gradient(to bottom, #0A0A0A 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 85%, #0A0A0A 100%),
+        linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 85%, #0A0A0A 100%);
+      pointer-events: none;
+    }
+
+    @media (min-width: 769px) { .parallax-divider { height: 75vh; margin: 40px 0; } }
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
 
-    /* BANNER SÃO PAULO (COM FUMAÇA AESOP E LEGENDA NOBRE) */
+    /* BANNER SÃO PAULO */
     .sp-banner-wrapper {
-      width: 100%;
-      text-align: center;
-      margin: 60px 0;
-      opacity: 0; 
-      transform: scale(0.98); 
+      width: 100%; text-align: center; margin: 60px 0; opacity: 0; transform: scale(0.98); 
       transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
     }
     .sp-banner-wrapper.visible { opacity: 1; transform: scale(1); }
     
-    .sp-banner-inner {
-      position: relative;
-      display: inline-block;
-      max-width: 100%;
-    }
+    .sp-banner-inner { position: relative; display: block; width: 100%; }
     
     .sp-image {
-      display: block;
-      max-width: 100%;
-      height: 78vh;
-      width: auto;
-      object-fit: contain;
+      display: block; width: 100%; height: 78vh; object-fit: cover;
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
     }
     
     .sp-smoke {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 55%;
-      background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 30%, rgba(10,10,10,0.85) 65%, #0A0A0A 100%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 70px; /* Mais alto no desktop */
-      pointer-events: none; 
+      position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; /* Cobre a foto toda para aplicar fumaça em cima e embaixo */
+      background: linear-gradient(to bottom, #0A0A0A 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.85) 80%, #0A0A0A 100%);
+      display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: 70px; pointer-events: none; 
     }
     
-    .sp-text {
-      font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.2vw, 1.5rem); /* Fonte menor e refinada */
-      color: #FFFFFF;
-      font-weight: 400;
-      letter-spacing: 5px; /* Espaçamento editorial alto */
-      text-transform: uppercase;
-      margin: 0;
-    }
+    .sp-text { font-family: var(--font-serif); font-size: clamp(1.1rem, 2.2vw, 1.5rem); color: #FFFFFF; font-weight: 400; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
 
     /* SEÇÕES DE CONTEÚDO EDITORIAIS */
-    .content-section { 
-      padding: 120px 24px; 
-      max-width: 800px; 
-      margin: 0 auto; 
-      opacity: 0; 
-      transform: translateY(30px); 
-      transition: all 1.4s var(--transition-smooth); 
-      will-change: transform, opacity; 
-    }
+    .content-section { padding: 120px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(30px); transition: all 1.4s var(--transition-smooth); will-change: transform, opacity; }
     .content-section.visible { opacity: 1; transform: translateY(0); }
 
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
-    .content p { 
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
-      color: var(--text-muted); 
-      margin-bottom: 35px;
-      line-height: 2.1; 
-      font-weight: 300; 
-      letter-spacing: 0.3px; 
-    }
+    .content p { font-size: clamp(0.95rem, 1.6vw, 1.05rem); color: var(--text-muted); margin-bottom: 35px; line-height: 2.1; font-weight: 300; letter-spacing: 0.3px; }
     .content p:last-child { margin-bottom: 0; }
 
-    /* Efeito de Revelação Lenta Editorial */
-    .scroll-reveal-slow {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      color: var(--text-light);
-      margin: 20px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-slow.visible {
-      opacity: 1; 
-      transform: translateY(0);
-    }
+    .scroll-reveal-slow { font-family: var(--font-sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 5px; color: var(--text-light); margin: 20px 0; opacity: 0; transform: translateY(20px); transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
+    .scroll-reveal-slow.visible { opacity: 1; transform: translateY(0); }
 
-    /* FOTO DE PERFIL */
-    .profile-photo {
-      display: block;
+    /* FOTO DE PERFIL COM FUMAÇA */
+    .profile-photo-wrapper {
+      position: relative;
+      display: inline-block;
       margin: 0 auto 60px auto;
-      height: 58vh;              
-      width: auto;
-      object-fit: contain;
-      border: none;              
-      padding: 0;
-      background: transparent;
-      filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
+      max-width: 100%;
+    }
+    .profile-photo {
+      display: block; height: 58vh; width: 100%; object-fit: cover; border: none; padding: 0;
+      background: transparent; filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
     }
 
-    .secure-alt-contact {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      color: var(--text-light);
-      letter-spacing: 0.3px;
-      margin-top: 40px;
-      line-height: 1.8;
-      font-weight: 400;
-    }
+    .secure-alt-contact { display: block; font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-light); letter-spacing: 0.3px; margin-top: 40px; line-height: 1.8; font-weight: 400; }
 
-    /* ACCORDION REESTILIZADO PARA ALTO CONTRASTE NO PRETO */
+    /* ACCORDION */
     .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
     .faq-item { border-bottom: 1px solid var(--line); }
-    .faq-item summary {
-      padding: 24px 0;
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      font-weight: 500; 
-      color: var(--text-muted);
-      cursor: pointer;
-      list-style: none;
-      position: relative;
-      letter-spacing: 0.5px;
-    }
+    .faq-item summary { padding: 24px 0; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 500; color: var(--text-muted); cursor: pointer; list-style: none; position: relative; letter-spacing: 0.5px; }
     .faq-item summary::-webkit-details-marker { display: none; } 
-    .faq-item summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      color: var(--text-light);
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
+    .faq-item summary::after { content: '+'; position: absolute; right: 0; color: var(--text-light); font-weight: 500; font-size: 1.2rem; }
     .faq-item[open] summary { color: var(--text); font-weight: 600; }
     .faq-item[open] summary::after { content: '–'; color: var(--text); }
-    .faq-answer {
-      padding-bottom: 24px;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.9;
-      font-weight: 300;
-    }
+    .faq-answer { padding-bottom: 24px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.9; font-weight: 300; }
 
-    /* FOOTER EDITORIAL CLARO */
+    /* FOOTER */
     footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
 
-    /* MOBILE - AJUSTES DE FOTO E TEXTO */
+    /* MOBILE - LARGURA 100% E +10% ALTURA */
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 60vh; } 
-      @keyframes moveLogo {
-        0% { top: 50vh; }
-        45% { top: 50vh; }
-        100% { top: 16vh; }
-      }
+      @keyframes moveLogo { 0% { top: 50vh; } 45% { top: 50vh; } 100% { top: 16vh; } }
       .hero-text-block { padding-top: 26vh; padding-bottom: 12vh; }
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
       .content-section { padding: 90px 20px; }
       
-      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 40px auto; }
-      .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: contain; background-attachment: scroll; }
+      .profile-photo-wrapper { width: 100%; display: block; }
+      .profile-photo { height: 66vh; width: 100%; }
+      .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: cover; background-position: center; }
       
-      /* Ajustes Mobile Banner São Paulo */
       .sp-banner-wrapper { margin: 20px 0; }
-      .sp-banner-inner { width: 100%; display: block; } 
-      .sp-image { width: 100%; height: 66vh; object-fit: cover; } 
-      /* Subindo o texto no celular para não ficar "esmagado" */
-      .sp-smoke { padding-bottom: 100px; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
+      .sp-image { height: 66vh; } 
+      .sp-smoke { padding-bottom: 100px; } /* Sobe a frase no celular */
 
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
@@ -454,7 +313,9 @@
 
   <section class="content-section">
     <div class="content">
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      <div class="profile-photo-wrapper">
+        <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      </div>
       
       <p>Sou o Dr. Elquer Rodrigues, médico psiquiatra (CRM-SP 157303 • RQE 85941).</p>
       <p>Atuo exclusivamente como médico psiquiatra há mais de doze anos. Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
@@ -574,7 +435,6 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       
-      /* O observer agora "escuta" também a aparição do banner de SP */
       document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow, .sp-banner-wrapper').forEach(function(s) { observer.observe(s); });
     })();
   </script>
