@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="theme-color" content="#0A0A0A">
   
-  <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
-  <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel em São Paulo.">
-  <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa">
+  <title>ANGMER | Private Domiciliary Psychiatry</title>
+  <meta name="description" content="Psychiatric care directly at your residence, office, or hotel in São Paulo.">
+  <meta name="keywords" content="home psychiatrist, hotel psychiatrist, private doctor at home">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
 
@@ -27,7 +27,7 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Atendimento psiquiátrico domiciliar, corporativo e privativo na capital de São Paulo.",
+      "description": "Private domiciliary, corporate, and premium psychiatric care in São Paulo.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "São Paulo",
@@ -77,10 +77,10 @@
     }
 
     @keyframes expandSite {
-       0% { clip-path: inset(50% 50%); } /* Totalmente invisível */
-       15% { clip-path: inset(calc(50% - 90px)); } /* Forma o quadrado no centro */
-       45% { clip-path: inset(calc(50% - 90px)); } /* Pausa no quadrado */
-       100% { clip-path: inset(0%); } /* Expande para a tela toda */
+       0% { clip-path: inset(50% 50%); } 
+       15% { clip-path: inset(calc(50% - 90px)); } 
+       45% { clip-path: inset(calc(50% - 90px)); } 
+       100% { clip-path: inset(0%); } 
     }
 
     @keyframes unlockScroll {
@@ -134,13 +134,13 @@
     }
 
     @keyframes moveLogo {
-      0% { top: 50vh; } /* Dentro do quadro central */
-      45% { top: 50vh; } /* Pausa no centro */
-      100% { top: 18vh; } /* Sobe majestosamente */
+      0% { top: 50vh; } 
+      45% { top: 50vh; } 
+      100% { top: 18vh; } 
     }
     
     .hero-text-block {
-      padding-top: 30vh; /* Espaço para o h1 descer/subir sem atropelar */
+      padding-top: 30vh; 
       padding-bottom: 18vh;
     }
 
@@ -209,10 +209,10 @@
       outline-offset: 4px;
     }
 
-    /* IMAGENS DE TRANSIÇÃO COM FUNDO TRANSPARENTE E CONTAIN */
+    /* IMAGENS DE TRANSIÇÃO (DESKTOP: +30% na altura -> 78vh) */
     .parallax-divider {
       width: 100%;
-      height: 60vh;
+      height: 78vh;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain; 
@@ -225,13 +225,61 @@
       transform-origin: center center;
       transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
-    }
-
-    @media (min-width: 769px) {
-      .parallax-divider { height: 75vh; margin: 40px 0; }
+      margin: 60px 0;
     }
 
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
+
+    /* BANNER SÃO PAULO (COM FUMAÇA AESOP E LEGENDA NOBRE) */
+    .sp-banner-wrapper {
+      width: 100%;
+      text-align: center;
+      margin: 60px 0;
+      opacity: 0; 
+      transform: scale(0.98); 
+      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    .sp-banner-wrapper.visible { opacity: 1; transform: scale(1); }
+    
+    .sp-banner-inner {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+    
+    .sp-image {
+      display: block;
+      max-width: 100%;
+      height: 78vh;
+      width: auto;
+      object-fit: contain;
+      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+    }
+    
+    .sp-smoke {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 55%;
+      background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 30%, rgba(10,10,10,0.85) 65%, #0A0A0A 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 70px; /* Mais alto no desktop */
+      pointer-events: none; 
+    }
+    
+    .sp-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem); /* Fonte menor e refinada */
+      color: #FFFFFF;
+      font-weight: 400;
+      letter-spacing: 5px; /* Espaçamento editorial alto */
+      text-transform: uppercase;
+      margin: 0;
+    }
 
     /* SEÇÕES DE CONTEÚDO EDITORIAIS */
     .content-section { 
@@ -278,7 +326,7 @@
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
-      height: 45vh;              
+      height: 58vh;              
       width: auto;
       object-fit: contain;
       border: none;              
@@ -331,14 +379,14 @@
       font-weight: 300;
     }
 
-    /* FOOTER */
+    /* FOOTER EDITORIAL CLARO */
     footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
 
-    /* MOBILE */
+    /* MOBILE - AJUSTES DE FOTO E TEXTO */
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 60vh; } 
@@ -351,8 +399,17 @@
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
       .content-section { padding: 90px 20px; }
-      .profile-photo { height: 40vh; margin: 0 auto 40px auto; }
-      .parallax-divider { height: 50vh; margin: 20px 0; background-size: contain; }
+      
+      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 40px auto; }
+      .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: contain; background-attachment: scroll; }
+      
+      /* Ajustes Mobile Banner São Paulo */
+      .sp-banner-wrapper { margin: 20px 0; }
+      .sp-banner-inner { width: 100%; display: block; } 
+      .sp-image { width: 100%; height: 66vh; object-fit: cover; } 
+      /* Subindo o texto no celular para não ficar "esmagado" */
+      .sp-smoke { padding-bottom: 100px; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
+
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
   </style>
@@ -362,15 +419,15 @@
 <div class="site-wrapper">
 
   <nav class="lang-nav fade-in-late">
-    <a href="/" class="active">PT</a>
-    <a href="/en/">EN</a>
+    <a href="/">PT</a>
+    <a href="/en/" class="active">EN</a>
   </nav>
 
   <header>
     <h1>ANGMER</h1>
     <div class="hero-text-block fade-in-late">
-      <p class="hero-statement">Um psiquiatra vai até você</p>
-      <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
+      <p class="hero-statement">A psychiatrist comes to you</p>
+      <p class="hero-locations">Residence &bull; Office &bull; Hotel</p>
       <p class="hero-city">São Paulo</p>
     </div>
   </header>
@@ -380,16 +437,16 @@
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FFFFFF !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">
-        Psiquiatria domiciliar.
+        Domiciliary psychiatrist.
       </p>
 
       <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 50px; line-height: 1.6;">
-        Atendimento presencial no local escolhido pelo paciente.
+        Care wherever you need it.
       </p>
       
-      <p class="scroll-reveal-slow">Sem deslocamento</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">Sem exposição pública</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Discrição absoluta</p>
+      <p class="scroll-reveal-slow">No travel needed</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">No public exposure</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Absolute discretion</p>
     </div>
   </section>
 
@@ -399,8 +456,31 @@
     <div class="content">
       <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       
-      <p>Sou o Dr. Elquer Rodrigues, médico psiquiatra (CRM-SP 157303 • RQE 85941).</p>
-      <p>Atuo exclusivamente como médico psiquiatra há mais de doze anos. Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
+      <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
+      <p>I have been practicing exclusively as a psychiatrist for over twelve years. Each consultation is performed personally by me, from the first contact to clinical follow-up.</p>
+    </div>
+  </section>
+
+  <div class="sp-banner-wrapper">
+    <div class="sp-banner-inner">
+      <img src="fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
+      <div class="sp-smoke">
+        <p class="sp-text">Care in São Paulo</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section" style="padding-top: 60px; padding-bottom: 60px;">
+    <div class="content">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">
+        When privacy is non-negotiable.
+      </p>
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">
+        When your condition makes any displacement difficult.
+      </p>
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 0;">
+        When privacy is as important as the treatment.
+      </p>
     </div>
   </section>
 
@@ -408,68 +488,56 @@
 
   <section class="content-section">
     <div class="content">
-      <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
+      <p>Consult availability for home or corporate visits.</p>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." 
+      <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20availability%20for%20ANGMER%20services." 
          target="_blank" 
          class="btn"
-         aria-label="Verificar disponibilidade de atendimento via WhatsApp">
-        Verificar disponibilidade
+         aria-label="Check service availability via WhatsApp">
+        Check availability
       </a>
       
       <span class="secure-alt-contact">
-        Agenda limitada.<br>Atendimento realizado mediante disponibilidade geográfica.
+        Limited schedule.<br>Service provided upon geographical availability.
       </span>
 
       <div class="faq-container">
-        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
+        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Information</h3>
         
         <details class="faq-item">
-          <summary>Para quem é esse serviço</summary>
+          <summary>Who is this service for?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Para pacientes que precisam de atendimento psiquiátrico, mas cujas rotinas exigem total proteção de privacidade, flexibilidade de agenda e a eliminação de deslocamentos pela capital de São Paulo.</p>
+            <p style="margin: 0; text-align: left;">For patients who require psychiatric care, but whose routines demand total privacy, schedule flexibility, and the elimination of travel across the capital of São Paulo.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>Como é o atendimento?</summary>
+          <summary>How is the care provided?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left; white-space: pre-line;">Após a confirmação do agendamento e do pagamento, o atendimento é realizado no local de sua preferência — residência, escritório ou hotel.
-            A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico, incluindo avaliação clínica completa, definição diagnóstica, elaboração do plano terapêutico e prescrição, quando indicada.
-            Todos os atendimentos podem ser realizados no seu local de preferência.
-            Por se tratar de um serviço médico privativo, individualizado e com horário exclusivamente reservado ao paciente, todas as consultas são previamente agendadas e remuneradas. Não há consultas de retorno gratuitas.</p>
+            <p style="margin: 0; text-align: left; white-space: pre-line;">After confirmation of the appointment and payment, the service is performed at your preferred location — residence, office, or hotel.
+            The consultation follows the same depth and technical rigor as an office visit, including full clinical assessment, diagnostic definition, therapeutic planning, and prescription when indicated.
+            All consultations are pre-scheduled and paid for. There are no free follow-up consultations.</p>
           </div>
         </details>
         
         <details class="faq-item">
-          <summary>Em quais locais o atendimento é realizado?</summary>
+          <summary>Where is the service provided?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
+            <p style="margin: 0; text-align: left;">Residences, companies, offices, and hotels located exclusively in the city of São Paulo.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>Quem realiza o atendimento?</summary>
+          <summary>Who provides the care?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Todos os atendimentos são realizados pessoalmente e diretamente pelo Dr. Elquer Rodrigues.</p>
+            <p style="margin: 0; text-align: left;">All consultations are performed personally and directly by Dr. Elquer Rodrigues.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>Como é feito o agendamento?</summary>
+          <summary>How is scheduling done?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">A solicitação inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Por que o nome ANGMER?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left; white-space: pre-line;">O nome ANGMER foi inspirado em Angela Merkel, não pela política, mas por sua liderança discreta e eficaz.
-            Ela governou com serenidade, consistência e decisões sólidas.
-            Sua credibilidade vinha da qualidade de suas ações, não de discursos grandiosos.
-            Essa postura inspira a essência da ANGMER.
-            Discrição, competência e consistência são meus pilares.</p>
+            <p style="margin: 0; text-align: left;">The initial request is made via WhatsApp. After a brief analysis of clinical and geographical availability, the time is confirmed directly with the doctor.</p>
           </div>
         </details>
       </div>
@@ -505,7 +573,7 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       
-      document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow').forEach(function(s) { observer.observe(s); });
+      document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow, .sp-banner-wrapper').forEach(function(s) { observer.observe(s); });
     })();
   </script>
 </body>
