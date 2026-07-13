@@ -41,7 +41,7 @@
   <style>
     /* PALETA DARK MODE - PRETO OBSIDIANO */
     :root {
-      --bg: #0A0A0A;               
+      --bg: #0A0A0A;                
       --text: #FFFFFF;             
       --text-muted: #E0E0E0;       
       --text-light: #999999;       
@@ -160,7 +160,7 @@
       background-attachment: scroll; 
       position: relative;
       background-color: transparent; 
-      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+      /* Filtro removido para manter a imagem original */
       opacity: 0; transform: scale(0.98); transform-origin: center center;
       transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
@@ -185,6 +185,7 @@
     .sp-banner-inner { position: relative; display: inline-block; max-width: 100%; }
     .sp-image {
       display: block; max-width: 100%; height: 78vh; width: auto; object-fit: contain;
+      /* Filtro mantido apenas na foto de São Paulo */
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
     }
     .sp-smoke {
@@ -205,7 +206,7 @@
     .scroll-reveal-slow.visible { opacity: 1; transform: translateY(0); }
 
     .profile-photo-wrapper { position: relative; display: inline-block; margin: 0 auto 60px auto; }
-    .profile-photo { display: block; height: 58vh; width: 100%; object-fit: contain; filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%); }
+    .profile-photo { display: block; height: 58vh; width: 100%; object-fit: contain; /* Filtro removido */ }
 
     .secure-alt-contact { display: block; font-family: var(--font-sans); font-size: 0.7rem; color: var(--text-light); letter-spacing: 0.3px; margin-top: 40px; line-height: 1.8; font-weight: 400; }
 
