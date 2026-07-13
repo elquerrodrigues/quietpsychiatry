@@ -194,7 +194,7 @@
       .profile-photo { height: 64vh; width: 100%; }
       .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: cover; background-attachment: scroll; }
       
-      .sp-image { height: 66vh; } 
+      .sp-image { width: 100%; height: 66vh; object-fit: cover; } 
       .sp-smoke { padding-bottom: 60px; height: 60%; }
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
@@ -218,7 +218,7 @@
     </div>
   </header>
 
-  <div class="parallax-divider" style="background-image: url('../foto1.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
 
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
@@ -236,12 +236,12 @@
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('../foto2.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('foto2.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
       <div class="profile-photo-wrapper">
-        <img src="../perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+        <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       </div>
       
       <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
@@ -251,7 +251,7 @@
 
   <div class="sp-banner-wrapper">
     <div class="sp-banner-inner">
-      <img src="../fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
+      <img src="fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
       <div class="sp-smoke">
         <p class="sp-text">Care in São Paulo</p>
       </div>
@@ -272,7 +272,7 @@
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('../foto3.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('foto3.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
@@ -284,14 +284,71 @@
          aria-label="Check service availability via WhatsApp">
         Check availability
       </a>
+      
+      <div class="faq-container">
+        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Information</h3>
+        
+        <details class="faq-item">
+          <summary>Who is this service for?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left;">For patients who require psychiatric care, but whose routines demand total privacy, schedule flexibility, and the elimination of travel across the capital of São Paulo.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How is the care provided?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left; white-space: pre-line;">After confirmation of the appointment and payment, the service is performed at your preferred location — residence, office, or hotel.
+            The consultation follows the same depth and technical rigor as an office visit, including full clinical assessment, diagnostic definition, therapeutic planning, and prescription when indicated.
+            All consultations are pre-scheduled and paid for. There are no free follow-up consultations.</p>
+          </div>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Where is the service provided?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left;">Residences, companies, offices, and hotels located exclusively in the city of São Paulo.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Who provides the care?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left;">All consultations are performed personally and directly by Dr. Elquer Rodrigues.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How is scheduling done?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left;">The initial request is made via WhatsApp. After a brief analysis of clinical and geographical availability, the time is confirmed directly with the doctor.</p>
+          </div>
+        </details>
+      </div>
+
     </div>
   </section>
 
   <footer>
     <div class="footer-brand">ANGMER</div>
+    <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
+    <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
   </footer>
 
+</div>
+
   <script>
+    const details = document.querySelectorAll('details');
+    details.forEach((targetDetail) => {
+      targetDetail.addEventListener('click', () => {
+        details.forEach((detail) => {
+          if (detail !== targetDetail) {
+            detail.removeAttribute('open');
+          }
+        });
+      });
+    });
+
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
