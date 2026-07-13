@@ -47,12 +47,24 @@
       --accent: #B8A38C;           
       --line: rgba(255, 255, 255, 0.15); 
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+      
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; font-family: var(--font-sans); background: #FFFFFF; color: var(--text-muted); line-height: 2.1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background: #FFFFFF; 
+      color: var(--text-muted);   
+      line-height: 2.1; 
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
 
     .site-wrapper { background: var(--bg); width: 100%; height: 100vh; overflow: hidden; animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards; }
 
@@ -79,10 +91,7 @@
     .btn:hover { border-bottom-color: var(--text); color: var(--text); }
 
     .parallax-divider { width: 100%; height: 78vh; background-position: center center; background-repeat: no-repeat; background-size: contain; background-attachment: scroll; position: relative; background-color: transparent; filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%); opacity: 0; transform: scale(0.98); transform-origin: center center; transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; margin: 60px 0; }
-    
-    /* Esfumaçado 50% na base */
-    .parallax-divider::after, .profile-photo-wrapper::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 5%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.5) 100%); pointer-events: none; }
-
+    .parallax-divider::after, .profile-photo-wrapper::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 5%, rgba(10,10,10,0) 85%, rgba(10,10,10,0.5) 100%); pointer-events: none; }
     @media (min-width: 769px) { .parallax-divider { height: 75vh; margin: 40px 0; } }
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
 
@@ -90,14 +99,14 @@
     .sp-banner-wrapper.visible { opacity: 1; transform: scale(1); }
     .sp-banner-inner { position: relative; display: inline-block; max-width: 100%; }
     .sp-image { display: block; max-width: 100%; height: 78vh; width: auto; object-fit: contain; filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%); }
-    .sp-smoke { position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 100%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 40px; pointer-events: none; }
-    .sp-text { font-family: var(--font-serif); font-size: clamp(1.1rem, 2vw, 1.3rem); color: #FFFFFF; font-weight: 300; letter-spacing: 12px; text-transform: uppercase; margin: 0; white-space: nowrap; }
+    .sp-smoke { position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 100%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 50px; pointer-events: none; }
+    .sp-text { font-family: var(--font-serif); font-size: 1.5rem; color: #FFFFFF; font-weight: 300; letter-spacing: 12px; text-transform: uppercase; margin: 0; white-space: nowrap; }
 
     .content-section { padding: 120px 24px; max-width: 800px; margin: 0 auto; opacity: 0; transform: translateY(30px); transition: all 1.4s var(--transition-smooth); will-change: transform, opacity; }
     .content-section.visible { opacity: 1; transform: translateY(0); }
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
     .content p { font-size: clamp(0.95rem, 1.6vw, 1.05rem); color: var(--text-muted); margin-bottom: 35px; line-height: 2.1; font-weight: 300; letter-spacing: 0.3px; }
-    
+    .content p:last-child { margin-bottom: 0; }
     .scroll-reveal-slow { font-family: var(--font-sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 5px; color: var(--text-light); margin: 20px 0; opacity: 0; transform: translateY(20px); transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
     .scroll-reveal-slow.visible { opacity: 1; transform: translateY(0); }
 
@@ -129,8 +138,8 @@
       .content-section { padding: 90px 20px; }
       .profile-photo { height: 64vh; width: 100%; object-fit: cover; }
       .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: cover; background-attachment: scroll; }
-      .sp-image { height: 66vh; width: 100%; object-fit: cover; } 
-      .sp-smoke { padding-bottom: 30px; height: 30%; }
+      .sp-image { width: 100%; height: 66vh; object-fit: cover; } 
+      .sp-smoke { padding-bottom: 40px; height: 30%; }
       .sp-text { font-size: 0.9rem; letter-spacing: 4px; }
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
@@ -138,10 +147,7 @@
 </head>
 <body>
 <div class="site-wrapper">
-  <nav class="lang-nav fade-in-late">
-    <a href="/" class="active">PT</a>
-    <a href="/en/">EN</a>
-  </nav>
+  <nav class="lang-nav fade-in-late"><a href="/" class="active">PT</a><a href="/en/">EN</a></nav>
   <header>
     <h1>ANGMER</h1>
     <div class="hero-text-block fade-in-late">
@@ -186,13 +192,13 @@
     <div class="content">
       <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
       <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." target="_blank" class="btn" aria-label="Verificar disponibilidade de atendimento via WhatsApp">Verificar disponibilidade</a>
-      <span class="secure-alt-contact">Agenda limitada.<br>Atendimento realizado mediante disponibilidade geográfica.</span>
       <div class="faq-container">
         <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
         <details class="faq-item"><summary>Para quem é esse serviço</summary><div class="faq-answer">Para pacientes que precisam de atendimento psiquiátrico, mas cujas rotinas exigem total proteção de privacidade, flexibilidade de agenda e a eliminação de deslocamentos pela capital de São Paulo.</div></details>
         <details class="faq-item"><summary>Como é o atendimento?</summary><div class="faq-answer">Após a confirmação do agendamento e do pagamento, o atendimento é realizado no local de sua preferência — residência, escritório ou hotel. A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico.</div></details>
         <details class="faq-item"><summary>Em quais locais?</summary><div class="faq-answer">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</div></details>
         <details class="faq-item"><summary>Quem realiza?</summary><div class="faq-answer">Todos os atendimentos são realizados pessoalmente e diretamente pelo Dr. Elquer Rodrigues.</div></details>
+        <details class="faq-item"><summary>Como é feito o agendamento?</summary><div class="faq-answer">A solicitação inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</div></details>
       </div>
     </div>
   </section>
