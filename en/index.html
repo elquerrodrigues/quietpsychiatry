@@ -230,6 +230,56 @@
 
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
 
+    /* BANNER SÃO PAULO (NOVO - COM FUMAÇA AESOP) */
+    .sp-banner-wrapper {
+      width: 100%;
+      text-align: center;
+      margin: 60px 0;
+      opacity: 0; 
+      transform: scale(0.98); 
+      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    .sp-banner-wrapper.visible { opacity: 1; transform: scale(1); }
+    
+    .sp-banner-inner {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+    
+    .sp-image {
+      display: block;
+      max-width: 100%;
+      height: 78vh;
+      width: auto;
+      object-fit: contain;
+      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+    }
+    
+    .sp-smoke {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 55%;
+      background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 30%, rgba(10,10,10,0.85) 65%, #0A0A0A 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 40px;
+      pointer-events: none; 
+    }
+    
+    .sp-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: #FFFFFF;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
     /* SEÇÕES DE CONTEÚDO EDITORIAIS */
     .content-section { 
       padding: 120px 24px; 
@@ -352,6 +402,12 @@
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 40px auto; }
       .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: contain; background-attachment: scroll; }
       
+      /* Ajustes Mobile Banner São Paulo */
+      .sp-banner-wrapper { margin: 20px 0; }
+      .sp-banner-inner { width: 100%; display: block; } 
+      .sp-image { width: 100%; height: 66vh; object-fit: cover; } 
+      .sp-smoke { padding-bottom: 30px; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
+
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
   </style>
@@ -402,6 +458,15 @@
       <p>I have been practicing exclusively as a psychiatrist for over twelve years. Each consultation is performed personally by me, from the first contact to clinical follow-up.</p>
     </div>
   </section>
+
+  <div class="sp-banner-wrapper">
+    <div class="sp-banner-inner">
+      <img src="fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
+      <div class="sp-smoke">
+        <p class="sp-text">Care in São Paulo</p>
+      </div>
+    </div>
+  </div>
 
   <section class="content-section" style="padding-top: 60px; padding-bottom: 60px;">
     <div class="content">
@@ -517,7 +582,7 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
       
-      document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow').forEach(function(s) { observer.observe(s); });
+      document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow, .sp-banner-wrapper').forEach(function(s) { observer.observe(s); });
     })();
   </script>
 </body>
