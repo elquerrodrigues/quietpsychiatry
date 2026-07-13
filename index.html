@@ -14,7 +14,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "Dr. Elquer Rodrigues",
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://angmer.com.br",
+      "description": "Atendimento psiquiátrico domiciliar, corporativo e privativo na capital de São Paulo.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$$$$"
+    }
+  </script>
+  
   <style>
+    /* PALETA DARK MODE - PRETO OBSIDIANO */
     :root {
       --bg: #0A0A0A;               
       --text: #FFFFFF;             
@@ -22,6 +41,7 @@
       --text-light: #999999;       
       --accent: #B8A38C;           
       --line: rgba(255, 255, 255, 0.15); 
+      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Inter', system-ui, sans-serif;
     }
@@ -44,15 +64,15 @@
     .hero-text-block { padding-top: 30vh; }
     .hero-statement { font-family: var(--font-serif); font-size: clamp(2.2rem, 6vw, 3.8rem); color: var(--text); line-height: 1.1; margin: 0 auto 30px; max-width: 700px; }
     
-    .parallax-divider { width: 100%; height: 78vh; background-position: center; background-repeat: no-repeat; background-size: cover; margin: 60px 0; position: relative; }
-    .parallax-divider::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, transparent 5%, transparent 95%, rgba(10,10,10,0.5) 100%); pointer-events: none; }
+    /* ESFUMAÇADO SUTIL (5% TOP / 50% BASE) */
+    .parallax-divider { width: 100%; height: 78vh; background-position: center; background-repeat: no-repeat; background-size: contain; margin: 60px 0; position: relative; }
+    .parallax-divider::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, transparent 5%, transparent 50%, rgba(10,10,10,0.5) 100%); pointer-events: none; }
     
     .sp-banner-wrapper { width: 100%; text-align: center; margin: 60px 0; position: relative; }
     .sp-image { display: block; max-width: 100%; height: 78vh; margin: 0 auto; object-fit: contain; }
-    .sp-smoke { position: absolute; bottom: 0; left: 0; width: 100%; height: 40%; background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.5)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 50px; pointer-events: none; }
+    .sp-smoke { position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.5)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 50px; pointer-events: none; }
     
-    /* LEGENDA SÃO PAULO AJUSTADA */
-    .sp-text { font-family: var(--font-serif); font-size: clamp(0.8rem, 2vw, 1.4rem); color: #FFFFFF; letter-spacing: 6px; text-transform: uppercase; white-space: nowrap; margin: 0; padding: 0 10px; }
+    .sp-text { font-family: var(--font-serif); font-size: clamp(1.2rem, 2vw, 1.5rem); color: #FFFFFF; letter-spacing: 6px; text-transform: uppercase; white-space: nowrap; margin: 0; padding: 0 10px; }
 
     .content-section { padding: 120px 24px; max-width: 800px; margin: 0 auto; }
     .profile-photo { height: 58vh; width: 100%; object-fit: contain; margin-bottom: 60px; }
