@@ -77,10 +77,10 @@
     }
 
     @keyframes expandSite {
-       0% { clip-path: inset(50% 50%); } /* Totalmente invisível */
-       15% { clip-path: inset(calc(50% - 90px)); } /* Forma o quadrado no centro */
-       45% { clip-path: inset(calc(50% - 90px)); } /* Pausa no quadrado */
-       100% { clip-path: inset(0%); } /* Expande para a tela toda */
+       0% { clip-path: inset(50% 50%); } 
+       15% { clip-path: inset(calc(50% - 90px)); } 
+       45% { clip-path: inset(calc(50% - 90px)); } 
+       100% { clip-path: inset(0%); } 
     }
 
     @keyframes unlockScroll {
@@ -134,13 +134,13 @@
     }
 
     @keyframes moveLogo {
-      0% { top: 50vh; } /* Dentro do quadro central */
-      45% { top: 50vh; } /* Pausa no centro */
-      100% { top: 18vh; } /* Sobe majestosamente */
+      0% { top: 50vh; } 
+      45% { top: 50vh; } 
+      100% { top: 18vh; } 
     }
     
     .hero-text-block {
-      padding-top: 30vh; /* Espaço para o h1 descer/subir sem atropelar */
+      padding-top: 30vh; 
       padding-bottom: 18vh;
     }
 
@@ -274,7 +274,7 @@
       transform: translateY(0);
     }
 
-    /* FOTO DE PERFIL */
+    /* FOTO DE PERFIL COM FILTRO AESOP RETRATISTA */
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
@@ -331,14 +331,14 @@
       font-weight: 300;
     }
 
-    /* FOOTER */
+    /* FOOTER EDITORIAL CLARO */
     footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
 
-    /* MOBILE */
+    /* MOBILE - AJUSTES PARA FOTOS OCUPAREM TODA A LARGURA */
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 60vh; } 
@@ -351,8 +351,10 @@
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
       .content-section { padding: 90px 20px; }
-      .profile-photo { height: 40vh; margin: 0 auto 40px auto; }
-      .parallax-divider { background-attachment: scroll; height: 50vh; margin: 20px 0; background-size: contain; }
+      
+      .profile-photo { height: 48vh; width: 100%; margin: 0 auto 40px auto; }
+      .parallax-divider { background-attachment: scroll; height: 60vh; width: 100%; margin: 20px 0; background-size: contain; }
+      
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
   </style>
