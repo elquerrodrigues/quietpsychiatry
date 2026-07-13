@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="theme-color" content="#0A0A0A">
   
-  <title>ANGMER | Psiquiatria Domiciliar Privativa</title>
-  <meta name="description" content="Atendimento psiquiátrico diretamente na sua residência, escritório ou hotel em São Paulo.">
-  <meta name="keywords" content="psiquiatra domiciliar, psiquiatra no hotel, psiquiatra particular em casa">
+  <title>ANGMER | Private Domiciliary Psychiatry</title>
+  <meta name="description" content="Psychiatric care directly at your residence, office, or hotel in São Paulo.">
+  <meta name="keywords" content="home psychiatrist, hotel psychiatrist, private doctor at home">
   <meta name="author" content="ANGMER">
   <meta name="robots" content="index, follow">
 
@@ -27,7 +27,7 @@
       "name": "Dr. Elquer Rodrigues",
       "medicalSpecialty": "Psychiatry",
       "url": "https://angmer.com.br",
-      "description": "Atendimento psiquiátrico domiciliar, corporativo e privativo na capital de São Paulo.",
+      "description": "Private domiciliary, corporate, and premium psychiatric care in São Paulo.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "São Paulo",
@@ -157,10 +157,10 @@
     /* IMAGENS DE TRANSIÇÃO (COM BORDAS ESFUMAÇADAS) */
     .parallax-divider {
       width: 100%;
-      height: 78vh; /* 30% maior no desktop */
+      height: 78vh; 
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: cover; /* Para preencher tudo e a fumaça pegar certinho nas bordas */
+      background-size: cover; 
       background-attachment: scroll; 
       position: relative;
       background-color: transparent; 
@@ -171,7 +171,7 @@
       margin: 60px 0;
     }
 
-    /* Efeito de fumaça preta em todas as 4 bordas (flutuante) */
+    /* Efeito de fumaça preta nas fotos para flutuarem */
     .parallax-divider::after, .profile-photo-wrapper::after {
       content: "";
       position: absolute;
@@ -201,7 +201,7 @@
     }
     
     .sp-smoke {
-      position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; /* Cobre a foto toda para aplicar fumaça em cima e embaixo */
+      position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; 
       background: linear-gradient(to bottom, #0A0A0A 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 50%, rgba(10,10,10,0.85) 80%, #0A0A0A 100%);
       display: flex; align-items: flex-end; justify-content: center;
       padding-bottom: 70px; pointer-events: none; 
@@ -267,7 +267,7 @@
       
       .sp-banner-wrapper { margin: 20px 0; }
       .sp-image { height: 66vh; } 
-      .sp-smoke { padding-bottom: 100px; } /* Sobe a frase no celular */
+      .sp-smoke { padding-bottom: 100px; }
 
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
@@ -278,55 +278,55 @@
 <div class="site-wrapper">
 
   <nav class="lang-nav fade-in-late">
-    <a href="/" class="active">PT</a>
-    <a href="/en/">EN</a>
+    <a href="/">PT</a>
+    <a href="/en/" class="active">EN</a>
   </nav>
 
   <header>
     <h1>ANGMER</h1>
     <div class="hero-text-block fade-in-late">
-      <p class="hero-statement">Um psiquiatra vai até você</p>
-      <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
+      <p class="hero-statement">A psychiatrist comes to you</p>
+      <p class="hero-locations">Residence &bull; Office &bull; Hotel</p>
       <p class="hero-city">São Paulo</p>
     </div>
   </header>
 
-  <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('../foto1.jpg');"></div>
 
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FFFFFF !important; font-weight: 600; line-height: 1.4; margin-bottom: 80px;">
-        Psiquiatria domiciliar.
+        Domiciliary psychiatrist.
       </p>
 
       <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 50px; line-height: 1.6;">
-        Atendimento presencial no local escolhido pelo paciente.
+        Care wherever you need it.
       </p>
       
-      <p class="scroll-reveal-slow">Sem deslocamento</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">Sem exposição pública</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Discrição absoluta</p>
+      <p class="scroll-reveal-slow">No travel needed</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">No public exposure</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Absolute discretion</p>
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('foto2.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('../foto2.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
       <div class="profile-photo-wrapper">
-        <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+        <img src="../perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       </div>
       
-      <p>Sou o Dr. Elquer Rodrigues, médico psiquiatra (CRM-SP 157303 • RQE 85941).</p>
-      <p>Atuo exclusivamente como médico psiquiatra há mais de doze anos. Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
+      <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
+      <p>I have been practicing exclusively as a psychiatrist for over twelve years. Each consultation is performed personally by me, from the first contact to clinical follow-up.</p>
     </div>
   </section>
 
   <div class="sp-banner-wrapper">
     <div class="sp-banner-inner">
-      <img src="fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
+      <img src="../fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
       <div class="sp-smoke">
-        <p class="sp-text">Atendimento em São Paulo</p>
+        <p class="sp-text">Care in São Paulo</p>
       </div>
     </div>
   </div>
@@ -334,72 +334,71 @@
   <section class="content-section" style="padding-top: 60px; padding-bottom: 60px;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">
-        Quando a privacidade não é negociável.
+        When privacy is non-negotiable.
       </p>
       <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">
-        Quando sua condição dificulta qualquer deslocamento.
+        When your condition makes any displacement difficult.
       </p>
       <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 0;">
-        Quando a privacidade é tão importante quanto o tratamento.
+        When privacy is as important as the treatment.
       </p>
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('foto3.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('../foto3.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
-      <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
+      <p>Consult availability for home or corporate visits.</p>
       
-      <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." 
+      <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20availability%20for%20ANGMER%20services." 
          target="_blank" 
          class="btn"
-         aria-label="Verificar disponibilidade de atendimento via WhatsApp">
-        Verificar disponibilidade
+         aria-label="Check service availability via WhatsApp">
+        Check availability
       </a>
       
       <span class="secure-alt-contact">
-        Agenda limitada.<br>Atendimento realizado mediante disponibilidade geográfica.
+        Limited schedule.<br>Service provided upon geographical availability.
       </span>
 
       <div class="faq-container">
-        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Informações</h3>
+        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; text-align: center;">Information</h3>
         
         <details class="faq-item">
-          <summary>Para quem é esse serviço</summary>
+          <summary>Who is this service for?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Para pacientes que precisam de atendimento psiquiátrico, mas cujas rotinas exigem total proteção de privacidade, flexibilidade de agenda e a eliminação de deslocamentos pela capital de São Paulo.</p>
+            <p style="margin: 0; text-align: left;">For patients who require psychiatric care, but whose routines demand total privacy, schedule flexibility, and the elimination of travel across the capital of São Paulo.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>Como é o atendimento?</summary>
+          <summary>How is the care provided?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left; white-space: pre-line;">Após a confirmação do agendamento e do pagamento, o atendimento é realizado no local de sua preferência — residência, escritório ou hotel.
-            A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico, incluindo avaliação clínica completa, definição diagnóstica, elaboração do plano terapêutico e prescrição, quando indicada.
-            Todos os atendimentos podem ser realizados no seu local de preferência.
-            Por se tratar de um serviço médico privativo, individualizado e com horário exclusivamente reservado ao paciente, todas as consultas são previamente agendadas e remuneradas. Não há consultas de retorno gratuitas.</p>
+            <p style="margin: 0; text-align: left; white-space: pre-line;">After confirmation of the appointment and payment, the service is performed at your preferred location — residence, office, or hotel.
+            The consultation follows the same depth and technical rigor as an office visit, including full clinical assessment, diagnostic definition, therapeutic planning, and prescription when indicated.
+            All consultations are pre-scheduled and paid for. There are no free follow-up consultations.</p>
           </div>
         </details>
         
         <details class="faq-item">
-          <summary>Em quais locais o atendimento é realizado?</summary>
+          <summary>Where is the service provided?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
+            <p style="margin: 0; text-align: left;">Residences, companies, offices, and hotels located exclusively in the city of São Paulo.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>Quem realiza o atendimento?</summary>
+          <summary>Who provides the care?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Todos os atendimentos são realizados pessoalmente e diretamente pelo Dr. Elquer Rodrigues.</p>
+            <p style="margin: 0; text-align: left;">All consultations are performed personally and directly by Dr. Elquer Rodrigues.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>Como é feito o agendamento?</summary>
+          <summary>How is scheduling done?</summary>
           <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">A solicitação inicial é realizada pelo WhatsApp. Após breve análise da disponibilidade clínica e geográfica, o horário é confirmado diretamente com o médico.</p>
+            <p style="margin: 0; text-align: left;">The initial request is made via WhatsApp. After a brief analysis of clinical and geographical availability, the time is confirmed directly with the doctor.</p>
           </div>
         </details>
       </div>
