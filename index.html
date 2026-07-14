@@ -221,17 +221,17 @@
       object-fit: cover; /* Faz a foto preencher a tela, impedindo que o texto vaze */
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
     }
-    .sp-smoke {
+   .sp-smoke {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 65%; /* Aumentamos a fumaça para cobrir o texto mais alto */
-      background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 40%, rgba(10,10,10,0.85) 75%, #0A0A0A 100%);
+      height: 55%; /* Altura da fumaça levemente reduzida */
+      background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 30%, rgba(10,10,10,0.85) 70%, #0A0A0A 100%);
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 18vh; /* Sobe o texto em aprox. 20 a 25% da altura da imagem */
+      padding-bottom: 12vh; /* Reduzido de 18vh para 12vh (desce o texto) */
       pointer-events: none; 
     }
     .sp-text {
