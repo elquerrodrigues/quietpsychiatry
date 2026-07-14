@@ -34,11 +34,11 @@
   </script>
   <style>
     :root {
-      --bg: #0A0A0A;               
-      --text: #FFFFFF;             
-      --text-muted: #E0E0E0;       
-      --text-light: #999999;       
-      --accent: #B8A38C;           
+      --bg: #0A0A0A;                
+      --text: #FFFFFF;              
+      --text-muted: #E0E0E0;        
+      --text-light: #999999;        
+      --accent: #B8A38C;            
       --line: rgba(255, 255, 255, 0.15); 
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -50,7 +50,7 @@
       padding: 0;
       font-family: var(--font-sans);
       background: #FFFFFF;
-      color: var(--text-muted);   
+      color: var(--text-muted);    
       line-height: 2.1; 
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -198,6 +198,7 @@
       margin: 60px 0;
     }
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
+    
     .sp-banner-wrapper {
       width: 100%;
       text-align: center;
@@ -208,7 +209,7 @@
       will-change: transform, opacity;
     }
     .sp-banner-wrapper.visible { opacity: 1; transform: scale(1); }
-   .sp-banner-inner {
+    .sp-banner-inner {
       position: relative;
       display: block; 
       width: 100%;
@@ -218,20 +219,20 @@
       display: block;
       width: 100%;
       height: 78vh;
-      object-fit: cover; /* Faz a foto preencher a tela, impedindo que o texto vaze */
+      object-fit: cover;
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
     }
-   .sp-smoke {
+    .sp-smoke {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 55%; /* Altura da fumaça levemente reduzida */
+      height: 55%; 
       background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 30%, rgba(10,10,10,0.85) 70%, #0A0A0A 100%);
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 12vh; /* Reduzido de 18vh para 12vh (desce o texto) */
+      padding-bottom: 12vh; /* AQUI CONTROLAMOS A ALTURA NO COMPUTADOR */
       pointer-events: none; 
     }
     .sp-text {
@@ -242,6 +243,7 @@
       letter-spacing: 1px;
       margin: 0;
     }
+    
     .content-section { 
       padding: 120px 24px; 
       max-width: 800px; 
@@ -281,10 +283,10 @@
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
-      height: 58vh;             
+      height: 58vh;              
       width: auto;
       object-fit: contain;
-      border: none;             
+      border: none;              
       padding: 0;
       background: transparent;
       filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
@@ -335,6 +337,7 @@
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
+    
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 60vh; } 
@@ -363,7 +366,10 @@
       .sp-banner-wrapper { margin: 20px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
       .sp-banner-inner { width: 100%; display: block; } 
       .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
-      .sp-smoke { padding-bottom: 15vh; height: 70%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
+      
+      /* AQUI CONTROLAMOS A ALTURA NO CELULAR */
+      .sp-smoke { padding-bottom: 8vh; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
+      
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
   </style>
@@ -383,7 +389,8 @@
     </div>
   </header>
   <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
- <section class="content-section" style="padding: 100px 24px; display: flex; flex-direction: column; justify-content: center;">
+  
+  <section class="content-section" style="padding: 100px 24px; display: flex; flex-direction: column; justify-content: center;">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FFFFFF !important; font-weight: 600; line-height: 1.4; margin-bottom: 40px;">
         Psiquiatra domiciliar.
@@ -396,6 +403,7 @@
       <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Discrição absoluta</p>
     </div>
   </section>
+
   <div class="parallax-divider" style="background-image: url('foto2.jpg');"></div>
   <section class="content-section">
     <div class="content">
