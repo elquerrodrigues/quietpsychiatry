@@ -59,7 +59,7 @@
       margin: 0;
       padding: 0;
       font-family: var(--font-sans);
-      background: #FFFFFF; /* Fundo branco inicial para o efeito de expansão */
+      background: #FFFFFF; 
       color: var(--text-muted);   
       line-height: 2.1; 
       -webkit-font-smoothing: antialiased;
@@ -67,11 +67,11 @@
       overflow-x: hidden;
     }
 
-    /* ESTRUTURA DA ANIMAÇÃO DE ABERTURA TIPO LANSERHOF */
+    /* ESTRUTURA DA ANIMAÇÃO TIPO LANSERHOF */
     .site-wrapper {
       background: var(--bg);
       width: 100%;
-      height: 100vh; /* Trava o scroll durante a abertura */
+      height: 100vh; 
       overflow: hidden; 
       animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
     }
@@ -87,7 +87,7 @@
       to { height: auto; overflow: visible; clip-path: none; }
     }
 
-    /* SELETOR DE IDIOMAS MINIMALISTA */
+    /* SELETOR DE IDIOMAS */
     .lang-nav {
       position: absolute;
       top: 40px;
@@ -209,13 +209,13 @@
       outline-offset: 4px;
     }
 
-    /* IMAGENS DE TRANSIÇÃO (DESKTOP: +30% na altura -> 78vh) */
+    /* IMAGENS DE TRANSIÇÃO (COM BORDAS ESFUMAÇADAS) */
     .parallax-divider {
       width: 100%;
-      height: 78vh;
+      height: 78vh; /* 30% maior no desktop */
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: contain; 
+      background-size: cover; /* Para preencher tudo e a fumaça pegar certinho nas bordas */
       background-attachment: scroll; 
       position: relative;
       background-color: transparent; 
@@ -228,9 +228,21 @@
       margin: 60px 0;
     }
 
+    /* Efeito de fumaça preta em todas as 4 bordas (flutuante) */
+    .parallax-divider::after, .profile-photo-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        linear-gradient(to bottom, #0A0A0A 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 85%, #0A0A0A 100%),
+        linear-gradient(to right, #0A0A0A 0%, rgba(10,10,10,0) 15%, rgba(10,10,10,0) 85%, #0A0A0A 100%);
+      pointer-events: none;
+    }
+
+    @media (min-width: 769px) { .parallax-divider { height: 75vh; margin: 40px 0; } }
     .parallax-divider.visible { opacity: 1; transform: scale(1); }
 
-    /* BANNER SÃO PAULO (COM FUMAÇA AESOP E LEGENDA NOBRE) */
+    /* BANNER SÃO PAULO */
     .sp-banner-wrapper {
       width: 100%;
       text-align: center;
@@ -253,7 +265,7 @@
       max-width: 100%;
       height: 78vh;
       width: auto;
-      object-fit: contain;
+      object-fit: cover;
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
     }
     
@@ -267,17 +279,16 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 70px; /* Mais alto no desktop */
+      padding-bottom: 40px;
       pointer-events: none; 
     }
     
     .sp-text {
       font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.2vw, 1.5rem); /* Fonte menor e refinada */
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       color: #FFFFFF;
-      font-weight: 400;
-      letter-spacing: 5px; /* Espaçamento editorial alto */
-      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 1px;
       margin: 0;
     }
 
@@ -304,7 +315,6 @@
     }
     .content p:last-child { margin-bottom: 0; }
 
-    /* Efeito de Revelação Lenta Editorial */
     .scroll-reveal-slow {
       font-family: var(--font-sans);
       font-size: 0.65rem;
@@ -322,7 +332,13 @@
       transform: translateY(0);
     }
 
-    /* FOTO DE PERFIL */
+    /* FOTO DE PERFIL COM FUMAÇA */
+    .profile-photo-wrapper {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto 60px auto;
+      max-width: 100%;
+    }
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
@@ -346,7 +362,7 @@
       font-weight: 400;
     }
 
-    /* ACCORDION REESTILIZADO PARA ALTO CONTRASTE NO PRETO */
+    /* ACCORDION */
     .faq-container { margin-top: 80px; text-align: left; border-top: 1px solid var(--line); }
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
@@ -379,14 +395,14 @@
       font-weight: 300;
     }
 
-    /* FOOTER EDITORIAL CLARO */
+    /* FOOTER */
     footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
 
-    /* MOBILE - AJUSTES DE FOTO E TEXTO */
+    /* MOBILE - LARGURA 100% E +10% ALTURA */
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 60vh; } 
@@ -400,15 +416,25 @@
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
       .content-section { padding: 90px 20px; }
       
-      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 40px auto; }
-      .parallax-divider { height: 66vh; width: 100%; margin: 20px 0; background-size: contain; background-attachment: scroll; }
+      .profile-photo-wrapper { width: 100%; display: block; }
+      .profile-photo { height: 66vh; width: 100%; }
+      .parallax-divider { 
+        height: 66vh; 
+        width: 100vw; 
+        margin: 20px 0; 
+        background-size: cover; 
+        background-position: center center;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
       
-      /* Ajustes Mobile Banner São Paulo */
-      .sp-banner-wrapper { margin: 20px 0; }
+      .sp-banner-wrapper { margin: 20px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
       .sp-banner-inner { width: 100%; display: block; } 
-      .sp-image { width: 100%; height: 66vh; object-fit: cover; } 
-      /* Subindo o texto no celular para não ficar "esmagado" */
-      .sp-smoke { padding-bottom: 100px; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
+      .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
+      .sp-smoke { padding-bottom: 30px; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
 
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
     }
@@ -432,7 +458,7 @@
     </div>
   </header>
 
-  <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('../foto1.jpg');"></div>
 
   <section class="content-section" style="padding-top: 140px;">
     <div class="content">
@@ -441,7 +467,7 @@
       </p>
 
       <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 50px; line-height: 1.6;">
-        Care wherever you need it.
+        In-person care at the location chosen by the patient.
       </p>
       
       <p class="scroll-reveal-slow">No travel needed</p>
@@ -450,11 +476,13 @@
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('foto2.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('../foto2.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      <div class="profile-photo-wrapper">
+        <img src="../perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      </div>
       
       <p>I am Dr. Elquer Rodrigues, psychiatrist (CRM-SP 157303 • RQE 85941).</p>
       <p>I have been practicing exclusively as a psychiatrist for over twelve years. Each consultation is performed personally by me, from the first contact to clinical follow-up.</p>
@@ -463,7 +491,7 @@
 
   <div class="sp-banner-wrapper">
     <div class="sp-banner-inner">
-      <img src="fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
+      <img src="../fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
       <div class="sp-smoke">
         <p class="sp-text">Care in São Paulo</p>
       </div>
@@ -484,7 +512,7 @@
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('foto3.jpg');"></div>
+  <div class="parallax-divider" style="background-image: url('../foto3.jpg');"></div>
 
   <section class="content-section">
     <div class="content">
@@ -540,6 +568,17 @@
             <p style="margin: 0; text-align: left;">The initial request is made via WhatsApp. After a brief analysis of clinical and geographical availability, the time is confirmed directly with the doctor.</p>
           </div>
         </details>
+
+        <details class="faq-item">
+          <summary>Why the name ANGMER?</summary>
+          <div class="faq-answer">
+            <p style="margin: 0; text-align: left; white-space: pre-line;">The name ANGMER was inspired by Angela Merkel, not for politics, but for her discreet and effective leadership.
+            She governed with serenity, consistency, and solid decision-making.
+            Her credibility came from the quality of her actions, not grand speeches.
+            This stance inspires the essence of ANGMER.
+            Discretion, competence, and consistency are my pillars.</p>
+          </div>
+        </details>
       </div>
 
     </div>
@@ -551,7 +590,9 @@
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
   </footer>
 
-</div> <script>
+</div>
+
+<script>
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
@@ -575,6 +616,6 @@
       
       document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow, .sp-banner-wrapper').forEach(function(s) { observer.observe(s); });
     })();
-  </script>
+</script>
 </body>
 </html>
