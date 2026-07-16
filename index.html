@@ -138,15 +138,16 @@
       letter-spacing: 4px; 
       color: var(--text-muted); 
       text-transform: uppercase; 
-      margin-bottom: 12px;
+      margin-bottom: 6px; /* Levemente reduzido para unir as duas linhas visualmente */
     }
-    .hero-city { 
-      font-family: var(--font-sans); 
-      font-size: 0.6rem; 
-      font-weight: 500; 
-      letter-spacing: 2px; 
-      color: var(--text-light); 
-      text-transform: uppercase; 
+    .hero-luxury { 
+      font-family: var(--font-serif); 
+      font-size: clamp(1.2rem, 3.5vw, 1.45rem); 
+      font-weight: 400; 
+      font-style: italic;
+      letter-spacing: 1px; 
+      color: var(--accent); 
+      margin: 0;
     }
     .fade-in-late {
       opacity: 0;
@@ -385,7 +386,7 @@
     <div class="hero-text-block fade-in-late">
       <p class="hero-statement">Um psiquiatra vai até você</p>
       <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
-      <p class="hero-city">São Paulo</p>
+      <p class="hero-luxury">Luxury Concierge Psychiatrist</p>
     </div>
   </header>
   <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
