@@ -111,7 +111,7 @@
       transform: translate(-50%, -50%);
       font-family: var(--font-serif);
       font-size: 1rem; 
-      color: var(--text); /* Agora o logo é escuro */
+      color: var(--text);
       margin: 0; 
       text-transform: uppercase;
       letter-spacing: 10px;
@@ -128,15 +128,20 @@
       width: 100%;
       max-width: 800px;
     }
+    
+    /* MODIFICAÇÃO EDITORIAL NA FRASE PRINCIPAL */
     .hero-statement { 
       font-family: var(--font-serif); 
-      font-size: clamp(2.2rem, 6vw, 3.8rem); 
-      font-weight: 300;
+      font-size: clamp(1.2rem, 3vw, 2rem); 
+      font-weight: 400; 
       color: var(--text); 
       margin: 0 auto 50px auto; 
-      line-height: 1.1;
-      max-width: 700px;
+      line-height: 1.5;
+      max-width: 800px;
+      text-transform: uppercase;
+      letter-spacing: 12px;
     }
+    
     .hero-locations { 
       font-family: var(--font-sans); 
       font-size: 0.65rem; 
@@ -217,8 +222,8 @@
       display: inline-block; 
       margin-top: 80px; 
       font-family: var(--font-sans); 
-      color: var(--bg); /* Texto claro */
-      background-color: var(--text); /* Fundo escuro */
+      color: var(--bg);
+      background-color: var(--text);
       padding: 16px 36px; 
       text-decoration: none; 
       font-size: 0.7rem; 
@@ -269,7 +274,6 @@
       left: 0;
       width: 100%;
       height: 55%; 
-      /* Gradiente agora desvanece para o Off-White */
       background: linear-gradient(to bottom, rgba(249,248,246,0) 0%, rgba(249,248,246,0.6) 40%, rgba(249,248,246,0.9) 70%, var(--bg) 100%);
       display: flex;
       align-items: flex-end;
@@ -386,7 +390,7 @@
         100% { top: 12vh; } 
       }
       h1 { letter-spacing: 8px; } 
-      .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 35px; }
+      .hero-statement { font-size: 1.2rem; line-height: 1.5; margin-bottom: 35px; letter-spacing: 8px; }
       
       .header-gallery { gap: 35vh; margin-bottom: 250px; margin-top: 15vh; } 
       .gallery-item { width: 100vw; }
@@ -422,21 +426,21 @@
 
   <div class="header-gallery">
     <div class="gallery-item scroll-reveal">
-      <img src="foto1.jpg?v=novo" alt="Na sua casa" class="gallery-image">
+      <img src="foto1.jpg?v=novo" alt="I. THE RESIDENCE" class="gallery-image">
       <div class="gallery-smoke"></div>
-      <p class="gallery-caption">Na sua casa</p>
+      <p class="gallery-caption">I. THE RESIDENCE</p>
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <img src="foto2.jpg?v=novo" alt="Hotel" class="gallery-image">
+      <img src="foto2.jpg?v=novo" alt="II. HOSPITALITY" class="gallery-image">
       <div class="gallery-smoke"></div>
-      <p class="gallery-caption">Hotel</p>
+      <p class="gallery-caption">II. HOSPITALITY</p>
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <img src="foto3.jpg?v=novo" alt="Escritório" class="gallery-image">
+      <img src="foto3.jpg?v=novo" alt="III. CORPORATE" class="gallery-image">
       <div class="gallery-smoke"></div>
-      <p class="gallery-caption">Escritório</p>
+      <p class="gallery-caption">III. CORPORATE</p>
     </div>
   </div>
 
@@ -456,7 +460,7 @@
 
   <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
     <div class="content">
-      <img src="foto4.jpg?v=novo" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
+      <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
       <p>Eu sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
       <p>Atuo exclusivamente como psiquiatra há mais de doze anos. Todo o atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
     </div>
