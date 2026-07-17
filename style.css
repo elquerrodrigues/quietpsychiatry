@@ -52,7 +52,7 @@
       height: 45vh;
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: cover; /* Mantém preenchido no celular */
+      background-size: cover;
       background-attachment: fixed;
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
     }
@@ -60,17 +60,34 @@
     @media (min-width: 1024px) {
       .parallax-divider { 
         height: 80vh; 
-        background-size: contain; /* Preserva a foto original no computador */
+        background-size: contain;
         background-attachment: scroll; 
       }
     }
 
-    /* O RESTANTE DO SEU CÓDIGO PERMANECE IGUAL AQUI... */
     .lang-nav { position: absolute; top: 40px; right: 24px; display: flex; gap: 15px; font-size: 0.65rem; }
-    /* ... (resto dos seus estilos) ... */
+
+    /* CORREÇÃO DE ESPAÇAMENTO SOLICITADA */
+    .btn-container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+
+    footer { 
+      text-align: center; 
+      padding: 80px 24px; /* Uniformizado para evitar o excesso de espaço abaixo */
+      font-family: var(--font-sans); 
+      margin: 0 auto; 
+      background-color: var(--bg); 
+      color: var(--text-muted);
+    }
+
+    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 20px; }
+    .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); }
   </style>
 </head>
 <body>
-  <!-- O CONTEÚDO DO CORPO DO SITE CONTINUA IGUAL -->
+  <!-- O seu conteúdo vai aqui -->
 </body>
 </html>
