@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0A0A0A">
+  <meta name="theme-color" content="#F9F8F6">
   <title>ANGMER | Psiquiatria Concierge Particular</title>
   <meta name="description" content="Atendimento psiquiátrico diretamente em sua residência, escritório ou hotel em São Paulo.">
   <meta name="keywords" content="psiquiatra concierge, psiquiatra hotel, psiquiatra particular em casa">
@@ -34,12 +34,14 @@
   </script>
   <style>
     :root {
-      --bg: #0A0A0A;              
-      --text: #FFFFFF;            
-      --text-muted: #E0E0E0;        
-      --text-light: #999999;        
-      --accent: #B8A38C;            
-      --line: rgba(255, 255, 255, 0.15); 
+      /* Estética Off-White Editorial (The Row / Zegna) */
+      --bg: #F9F8F6;              
+      --bg-alt: #FFFFFF;
+      --text: #1C1C1A;            
+      --text-muted: #555555;        
+      --text-light: #888888;        
+      --accent: #9B856A;            
+      --line: rgba(0, 0, 0, 0.08); 
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -49,7 +51,7 @@
       margin: 0;
       padding: 0;
       font-family: var(--font-sans);
-      background: #FFFFFF;
+      background: var(--bg);
       color: var(--text-muted);    
       line-height: 2.1; 
       -webkit-font-smoothing: antialiased;
@@ -100,32 +102,31 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center; /* Centraliza o bloco de texto verticalmente na tela */
+      justify-content: center;
     }
     h1 { 
       position: absolute;
       top: 50vh;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-family: var(--font-serif); /* Fonte alterada para ficar igual à imagem */
-      font-size: 1rem; /* Levemente aumentado para combinar com a fonte serifada */
-      color: var(--text-light); 
+      font-family: var(--font-serif);
+      font-size: 1rem; 
+      color: var(--text); /* Agora o logo é escuro */
       margin: 0; 
       text-transform: uppercase;
       letter-spacing: 10px;
-      font-weight: 400; /* Peso da fonte mais delicado */
+      font-weight: 400; 
       z-index: 20;
       animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
     }
     @keyframes moveLogo {
       0% { top: 50vh; } 
       45% { top: 50vh; } 
-      100% { top: 15vh; } /* Logo desce mais, dando maior respiro do topo */
+      100% { top: 15vh; }
     }
     .hero-text-block {
       width: 100%;
       max-width: 800px;
-      /* Removidos os paddings arbitrários. O Flexbox do header agora cuida da centralização perfeita */
     }
     .hero-statement { 
       font-family: var(--font-serif); 
@@ -183,7 +184,7 @@
       display: block;
       width: 100%;
       height: auto; 
-      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+      filter: contrast(105%) brightness(96%) sepia(5%) saturate(90%);
     }
 
     .gallery-smoke {
@@ -216,8 +217,8 @@
       display: inline-block; 
       margin-top: 80px; 
       font-family: var(--font-sans); 
-      color: var(--bg); 
-      background-color: var(--text); 
+      color: var(--bg); /* Texto claro */
+      background-color: var(--text); /* Fundo escuro */
       padding: 16px 36px; 
       text-decoration: none; 
       font-size: 0.7rem; 
@@ -260,7 +261,7 @@
       width: 100%;
       height: 78vh;
       object-fit: cover;
-      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+      filter: contrast(105%) brightness(96%) sepia(5%) saturate(90%);
     }
     .sp-smoke {
       position: absolute;
@@ -268,7 +269,8 @@
       left: 0;
       width: 100%;
       height: 55%; 
-      background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.4) 30%, rgba(10,10,10,0.85) 70%, #0A0A0A 100%);
+      /* Gradiente agora desvanece para o Off-White */
+      background: linear-gradient(to bottom, rgba(249,248,246,0) 0%, rgba(249,248,246,0.6) 40%, rgba(249,248,246,0.9) 70%, var(--bg) 100%);
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -278,7 +280,7 @@
     .sp-text {
       font-family: var(--font-serif);
       font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: #FFFFFF;
+      color: var(--text);
       font-weight: 300;
       letter-spacing: 1px;
       margin: 0;
@@ -326,7 +328,7 @@
       border: none;              
       padding: 0;
       background: transparent;
-      filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
+      filter: contrast(102%) sepia(5%) brightness(96%) saturate(85%);
     }
     .secure-alt-contact {
       display: block;
@@ -345,7 +347,7 @@
       font-family: var(--font-sans);
       font-size: 0.95rem;
       font-weight: 500; 
-      color: var(--text-muted);
+      color: var(--text);
       cursor: pointer;
       list-style: none;
       position: relative;
@@ -381,9 +383,9 @@
       @keyframes moveLogo {
         0% { top: 50vh; }
         45% { top: 50vh; }
-        100% { top: 12vh; } /* No mobile, o logo também desce para dar um respiro elegante */
+        100% { top: 12vh; } 
       }
-      h1 { letter-spacing: 8px; } /* Ajuste de kerning para não encavalar no mobile */
+      h1 { letter-spacing: 8px; } 
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 35px; }
       
       .header-gallery { gap: 35vh; margin-bottom: 250px; margin-top: 15vh; } 
@@ -396,7 +398,7 @@
       .sp-banner-inner { width: 100%; display: block; } 
       .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
       
-      .sp-smoke { padding-bottom: 8vh; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
+      .sp-smoke { padding-bottom: 8vh; height: 60%; background: linear-gradient(to bottom, rgba(249,248,246,0) 0%, rgba(249,248,246,0.6) 40%, var(--bg) 100%); }
       
       .btn { display: inline-block; width: auto; text-align: center; }
     }
@@ -418,7 +420,6 @@
     </div>
   </header>
 
-  <!-- Galeria movida para fora do header -->
   <div class="header-gallery">
     <div class="gallery-item scroll-reveal">
       <img src="foto1.jpg?v=novo" alt="Na sua casa" class="gallery-image">
@@ -439,12 +440,12 @@
     </div>
   </div>
 
-  <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: #FFFFFF; color: var(--text-muted);">
+  <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); color: var(--text-muted);">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--bg) !important; font-weight: 600; line-height: 1.4; margin-bottom: 50px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--text) !important; font-weight: 600; line-height: 1.4; margin-bottom: 50px;">
         Psiquiatra concierge.
       </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--bg); font-weight: 400; margin-bottom: 80px; line-height: 1.6;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 80px; line-height: 1.6;">
         Atendimento presencial no local de sua escolha.
       </p>
       <p class="scroll-reveal-slow" style="color: var(--text-light);">Sem deslocamentos</p>
@@ -470,12 +471,12 @@
     </div>
   </div>
   
-  <section class="content-section scroll-reveal" style="background-color: #FFFFFF; color: var(--bg);">
+  <section class="content-section scroll-reveal" style="background-color: var(--bg-alt); color: var(--text-muted);">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--bg); font-weight: 300; margin-bottom: 60px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 60px;">
         Se você não pode ou não quer ser visto.
       </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--bg); font-weight: 300; margin-bottom: 0;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 0;">
         Se os seus sintomas o impedem de sair de casa.
       </p>
     </div>
