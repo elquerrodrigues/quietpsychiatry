@@ -152,7 +152,7 @@
       font-style: italic;
       letter-spacing: 1px; 
       color: var(--accent); 
-      margin: 0 0 65vh 0; /* AUMENTADO O ESPAÇO AQUI */
+      margin: 0; /* Resetado para manter o header com exatamente 100vh */
     }
     
     .header-gallery {
@@ -162,12 +162,13 @@
       flex-direction: column;
       align-items: center;
       gap: 50vh; 
+      margin-top: 15vh; /* Dá um respiro para a foto não colar instantaneamente na primeira rolagem */
       margin-bottom: 400px;
     }
     
     .gallery-item {
       position: relative;
-      width: 50vw; /* FOTOS REDUZIDAS PELA METADE NA VERSÃO DESKTOP */
+      width: 50vw; 
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
@@ -385,10 +386,10 @@
       .hero-text-block { padding-top: 25vh; padding-bottom: 6vh; }
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 35px; }
-      .hero-luxury { margin-bottom: 25vh; } 
+      .hero-luxury { margin-bottom: 0; } /* Removido margin para não estourar a tela inicial */
       
-      .header-gallery { gap: 35vh; margin-bottom: 250px; } 
-      .gallery-item { width: 100vw; } /* FOTOS VOLTAM AO TAMANHO TOTAL NO MOBILE */
+      .header-gallery { gap: 35vh; margin-bottom: 250px; margin-top: 15vh; } 
+      .gallery-item { width: 100vw; }
 
       .content-section { padding: 200px 20px; }
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 100px auto; }
@@ -409,34 +410,36 @@
     <a href="/" class="active">PT</a>
     <a href="/en/">EN</a>
   </nav>
+  
   <header>
     <h1>ANGMER</h1>
     <div class="hero-text-block fade-in-late">
       <p class="hero-statement">Um psiquiatra vai até você</p>
       <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
       <p class="hero-luxury">Psiquiatria Concierge de Luxo</p>
-      
-      <div class="header-gallery">
-        <div class="gallery-item scroll-reveal">
-          <img src="foto1.jpg?v=novo" alt="Na sua casa" class="gallery-image">
-          <div class="gallery-smoke"></div>
-          <p class="gallery-caption">Na sua casa</p>
-        </div>
-        
-        <div class="gallery-item scroll-reveal">
-          <img src="foto2.jpg?v=novo" alt="Hotel" class="gallery-image">
-          <div class="gallery-smoke"></div>
-          <p class="gallery-caption">Hotel</p>
-        </div>
-        
-        <div class="gallery-item scroll-reveal">
-          <img src="foto3.jpg?v=novo" alt="Escritório" class="gallery-image">
-          <div class="gallery-smoke"></div>
-          <p class="gallery-caption">Escritório</p>
-        </div>
-      </div>
     </div>
   </header>
+
+  <!-- Galeria movida para fora do header -->
+  <div class="header-gallery">
+    <div class="gallery-item scroll-reveal">
+      <img src="foto1.jpg?v=novo" alt="Na sua casa" class="gallery-image">
+      <div class="gallery-smoke"></div>
+      <p class="gallery-caption">Na sua casa</p>
+    </div>
+    
+    <div class="gallery-item scroll-reveal">
+      <img src="foto2.jpg?v=novo" alt="Hotel" class="gallery-image">
+      <div class="gallery-smoke"></div>
+      <p class="gallery-caption">Hotel</p>
+    </div>
+    
+    <div class="gallery-item scroll-reveal">
+      <img src="foto3.jpg?v=novo" alt="Escritório" class="gallery-image">
+      <div class="gallery-smoke"></div>
+      <p class="gallery-caption">Escritório</p>
+    </div>
+  </div>
 
   <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: #FFFFFF; color: var(--text-muted);">
     <div class="content">
