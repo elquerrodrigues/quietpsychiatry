@@ -96,7 +96,7 @@
       text-align: center; 
       padding: 0 24px;
       position: relative;
-      min-height: 100vh; /* Aumentado para acomodar as novas fotos inicialmete */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -119,11 +119,11 @@
     @keyframes moveLogo {
       0% { top: 50vh; } 
       45% { top: 50vh; } 
-      100% { top: 8vh; } /* Ajustado levemente para cima */
+      100% { top: 8vh; }
     }
     .hero-text-block {
-      padding-top: 20vh; /* Ajustado para dar espaço ao logo no topo */
-      padding-bottom: 10vh;
+      padding-top: 20vh;
+      padding-bottom: 8vh;
       width: 100%;
       max-width: 800px;
     }
@@ -152,22 +152,23 @@
       font-style: italic;
       letter-spacing: 1px; 
       color: var(--accent); 
-      margin: 0 0 80px 0; /* Espaço antes da galeria */
+      margin: 0 0 60px 0;
     }
     
-    /* NOVA GALERIA DE FOTOS NO TOPO */
+    /* NOVA GALERIA DE FOTOS PONTA A PONTA */
     .header-gallery {
-      width: 100%;
+      width: 100vw;
+      margin-left: calc(50% - 50vw); /* Truque para vazar o limite e ir de ponta a ponta */
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 75px; /* ESPAÇO DE APROXIMADAMENTE 2CM */
-      margin-bottom: 100px;
+      gap: 90px;
+      margin-bottom: 120px;
     }
     
     .gallery-item {
+      position: relative;
       width: 100%;
-      text-align: center;
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
@@ -179,23 +180,40 @@
     }
 
     .gallery-image {
+      display: block;
       width: 100%;
-      height: 60vh; /* Altura chique */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      height: auto; /* Garante que a foto não seja cortada (aspect ratio preservado) */
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
-      margin-bottom: 15px;
+    }
+
+    /* ESFUMAÇADO ULTRA DISCRETO NA BASE DA FOTO */
+    .gallery-smoke {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 45%, rgba(10,10,10,0.95) 100%);
+      pointer-events: none;
+      z-index: 1;
     }
     
+    /* LEGENDA GIGANTE E ULTRA-CHIQUE DENTRO DA FOTO */
     .gallery-caption {
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--text-light);
+      position: absolute;
+      bottom: 5%; /* Posicionada na base, sobre o esfumaçado */
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #FFFFFF;
+      letter-spacing: 2px;
       margin: 0;
-      font-weight: 500;
+      z-index: 2;
+      text-shadow: 0px 4px 20px rgba(0,0,0,0.5);
     }
 
     .fade-in-late {
@@ -231,7 +249,6 @@
       outline-offset: 4px;
     }
     
-    /* EFEITO DE APARECER SUAVEMENTE (SCROLL REVEAL) */
     .scroll-reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -244,14 +261,10 @@
       transform: translateY(0);
     }
 
-    /* Ajuste para garantir que o parallax divider antigo (não usado agora) não quebre */
-    .parallax-divider { display: none; }
-    
     .sp-banner-wrapper {
       width: 100%;
       text-align: center;
       margin: 60px 0;
-      /* Já tem o scroll-reveal aplicado via JS */
     }
     
     .sp-banner-inner {
@@ -293,7 +306,6 @@
       padding: 120px 24px; 
       max-width: 800px; 
       margin: 0 auto; 
-      /* Efeito aplicado via classe scroll-reveal */
     }
     
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
@@ -308,7 +320,6 @@
     .content p:last-child { margin-bottom: 0; }
     
     .scroll-reveal-slow {
-      /* Mantido para os textos curtos, mas o efeito geral é .scroll-reveal */
       font-family: var(--font-sans);
       font-size: 0.65rem;
       text-transform: uppercase;
@@ -390,12 +401,11 @@
         45% { top: 50vh; }
         100% { top: 6vh; }
       }
-      .hero-text-block { padding-top: 18vh; padding-bottom: 8vh; }
+      .hero-text-block { padding-top: 18vh; padding-bottom: 6vh; }
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
       
-      .header-gallery { gap: 50px; } /* Menos espaço no celular */
-      .gallery-image { height: 45vh; background-size: cover; } /* Cover no celular fica melhor */
+      .header-gallery { gap: 60px; margin-bottom: 80px; } 
 
       .content-section { padding: 90px 20px; }
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 40px auto; }
@@ -423,27 +433,29 @@
       <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
       <p class="hero-luxury">Luxury Concierge Psychiatrist</p>
       
-      <!-- NOVA GALERIA DE FOTOS NO TOPO -->
+      <!-- GALERIA DE FOTOS - 100% LARGURA, SEM CORTES E COM LEGENDA INTERNA -->
       <div class="header-gallery">
         <div class="gallery-item scroll-reveal">
-          <div class="gallery-image" style="background-image: url('foto1.jpg');"></div>
+          <img src="foto1.jpg?v=novo" alt="Na sua casa" class="gallery-image">
+          <div class="gallery-smoke"></div>
           <p class="gallery-caption">Na sua casa</p>
         </div>
         
         <div class="gallery-item scroll-reveal">
-          <div class="gallery-image" style="background-image: url('foto2.jpg');"></div>
+          <img src="foto2.jpg?v=novo" alt="Hotel" class="gallery-image">
+          <div class="gallery-smoke"></div>
           <p class="gallery-caption">Hotel</p>
         </div>
         
         <div class="gallery-item scroll-reveal">
-          <div class="gallery-image" style="background-image: url('foto3.jpg');"></div>
+          <img src="foto3.jpg?v=novo" alt="Escritório" class="gallery-image">
+          <div class="gallery-smoke"></div>
           <p class="gallery-caption">Escritório</p>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- TEXTO MANTIDO COMO SOLICITADO, LOGO APÓS A GALERIA INICIAL -->
   <section class="content-section scroll-reveal" style="padding: 100px 24px; display: flex; flex-direction: column; justify-content: center; background-color: #FFFFFF; color: var(--text-muted);">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--bg) !important; font-weight: 600; line-height: 1.4; margin-bottom: 40px;">
@@ -458,26 +470,23 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DO DR COM FOTO 4 -->
   <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
     <div class="content">
-      <img src="foto4.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
+      <img src="foto4.jpg?v=novo" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
       <p>Sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
       <p>Atuo exclusivamente como médico psiquiatra há mais de doze anos. Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
     </div>
   </section>
   
-  <!-- BANNER SP COM FOTO 5 -->
   <div class="sp-banner-wrapper scroll-reveal">
     <div class="sp-banner-inner">
-      <img src="foto5.jpg" class="sp-image" alt="São Paulo">
+      <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
       <div class="sp-smoke">
         <p class="sp-text">Atendimento em São Paulo</p>
       </div>
     </div>
   </div>
   
-  <!-- TEXTOS FINAIS MANTIDOS -->
   <section class="content-section scroll-reveal" style="padding-top: 60px; padding-bottom: 60px; background-color: #FFFFFF; color: var(--bg);">
     <div class="content">
       <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--bg); font-weight: 300; margin-bottom: 30px;">
@@ -489,7 +498,6 @@
     </div>
   </section>
   
-  <!-- FAQ E BOTAO -->
   <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
     <div class="content">
       <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
@@ -542,7 +550,6 @@
 </div>
 
 <script>
-    // Script para controlar o Accordion do FAQ (mantido original)
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
@@ -554,33 +561,23 @@
       });
     });
 
-    // SCRIPT PARA O EFEITO CHIQUÉRRIMO DE APARECER NA ROLAGEM (SCROLL REVEAL)
     (function() {
-      // Cria o Observador de Intersecção
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          // Se o elemento estiver visível na tela
           if (entry.isIntersecting) {
-            // Adiciona a classe que engatilha a animação CSS
             entry.target.classList.add('visible');
-            // Para de observar o elemento depois que ele aparece
             observer.unobserve(entry.target);
           }
         });
       }, { 
-        // Configurações para o aparecimento ser mais suave
-        threshold: 0.15, // Necessário 15% do elemento estar na tela
-        rootMargin: '0px 0px -50px 0px' // Margem inferior para o gatilho ocorrer um pouco antes
+        threshold: 0.15, 
+        rootMargin: '0px 0px -50px 0px' 
       });
       
-      // Seleciona todos os elementos que devem ter o efeito
-      // Inclui as novas gallery-items, content-sections e sp-banner
       document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow').forEach(function(el) {
-        // Inicialmente garante que eles tenham a classe base do efeito se não tiverem no HTML
         if(!el.classList.contains('scroll-reveal-slow')) {
             el.classList.add('scroll-reveal');
         }
-        // Começa a observar
         observer.observe(el);
       });
     })();
