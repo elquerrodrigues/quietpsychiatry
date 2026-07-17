@@ -100,32 +100,32 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center; /* Centraliza o bloco de texto verticalmente na tela */
     }
     h1 { 
       position: absolute;
       top: 50vh;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-family: var(--font-sans);
-      font-size: 0.85rem; 
+      font-family: var(--font-serif); /* Fonte alterada para ficar igual à imagem */
+      font-size: 1rem; /* Levemente aumentado para combinar com a fonte serifada */
       color: var(--text-light); 
       margin: 0; 
       text-transform: uppercase;
-      letter-spacing: 8px;
-      font-weight: 500; 
+      letter-spacing: 10px;
+      font-weight: 400; /* Peso da fonte mais delicado */
       z-index: 20;
       animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
     }
     @keyframes moveLogo {
       0% { top: 50vh; } 
       45% { top: 50vh; } 
-      100% { top: 8vh; }
+      100% { top: 15vh; } /* Logo desce mais, dando maior respiro do topo */
     }
     .hero-text-block {
-      padding-top: 40vh;
-      padding-bottom: 10vh;
       width: 100%;
       max-width: 800px;
+      /* Removidos os paddings arbitrários. O Flexbox do header agora cuida da centralização perfeita */
     }
     .hero-statement { 
       font-family: var(--font-serif); 
@@ -152,7 +152,7 @@
       font-style: italic;
       letter-spacing: 1px; 
       color: var(--accent); 
-      margin: 0; /* Resetado para manter o header com exatamente 100vh */
+      margin: 0;
     }
     
     .header-gallery {
@@ -162,7 +162,7 @@
       flex-direction: column;
       align-items: center;
       gap: 50vh; 
-      margin-top: 15vh; /* Dá um respiro para a foto não colar instantaneamente na primeira rolagem */
+      margin-top: 15vh; 
       margin-bottom: 400px;
     }
     
@@ -381,12 +381,10 @@
       @keyframes moveLogo {
         0% { top: 50vh; }
         45% { top: 50vh; }
-        100% { top: 6vh; }
+        100% { top: 12vh; } /* No mobile, o logo também desce para dar um respiro elegante */
       }
-      .hero-text-block { padding-top: 25vh; padding-bottom: 6vh; }
-      h1 { letter-spacing: 6px; }
+      h1 { letter-spacing: 8px; } /* Ajuste de kerning para não encavalar no mobile */
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 35px; }
-      .hero-luxury { margin-bottom: 0; } /* Removido margin para não estourar a tela inicial */
       
       .header-gallery { gap: 35vh; margin-bottom: 250px; margin-top: 15vh; } 
       .gallery-item { width: 100vw; }
