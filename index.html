@@ -164,19 +164,6 @@
       transform: translateY(30px);
       animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.6s forwards;
     }
-
-    .hero-luxury { 
-      font-family: var(--font-sans); 
-      font-size: 0.65rem; 
-      font-weight: bold; 
-      text-transform: uppercase;
-      letter-spacing: 4px; 
-      color: var(--text-muted); 
-      margin: 0;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 3s forwards;
-    }
     
     .header-gallery {
       width: 100vw;
@@ -370,9 +357,10 @@
       line-height: 1.9;
       font-weight: 300;
     }
-    /* Ajustado o padding-top de 200px para 170px (redução de 15%) */
-    footer { text-align: center; padding: 170px 24px 250px 24px; font-family: var(--font-sans); margin: 0 auto; background-color: var(--bg); color: var(--text-muted);}
+    /* Ajustado o padding-top de 170px para 145px (redução adicional) */
+    footer { text-align: center; padding: 145px 24px 250px 24px; font-family: var(--font-sans); margin: 0 auto; background-color: var(--bg); color: var(--text-muted);}
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 30px; }
+    .footer-luxury-tag { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 30px; text-transform: uppercase; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 35px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
@@ -423,7 +411,6 @@
     <div class="hero-text-block">
       <p class="hero-statement">Um psiquiatra vai até você</p>
       <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
-      <p class="hero-luxury">Psiquiatria Concierge de Luxo</p>
     </div>
   </header>
 
@@ -533,6 +520,7 @@
   
   <footer>
     <div class="footer-brand">ANGMER</div>
+    <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
     <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
   </footer>
