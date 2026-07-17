@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F9F8F6">
-  <title>ANGMER | Nem todos entram em consultórios</title>
+  <title>ANGMER | Psiquiatria Concierge Particular</title>
   <meta name="description" content="Atendimento psiquiátrico diretamente em sua residência, escritório ou hotel em São Paulo.">
   <meta name="keywords" content="psiquiatra concierge, psiquiatra hotel, psiquiatra particular em casa">
   <meta name="author" content="ANGMER">
@@ -185,7 +185,7 @@
       align-items: center;
       gap: 50vh; 
       margin-top: 15vh; 
-      margin-bottom: 400px;
+      margin-bottom: 300px; /* Reduzido levemente */
     }
     
     .gallery-item {
@@ -241,7 +241,7 @@
     .sp-banner-wrapper {
       width: 100%;
       text-align: center;
-      margin: 250px 0;
+      margin: 150px 0; /* Reduzido de 250px */
     }
     
     .sp-banner-inner {
@@ -250,6 +250,7 @@
       width: 100%;
       margin: 0 auto;
     }
+    
     .sp-image {
       display: block;
       width: 100%;
@@ -257,30 +258,10 @@
       object-fit: cover;
       filter: contrast(105%) brightness(96%) sepia(5%) saturate(90%);
     }
-    .sp-smoke {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 55%; 
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 12vh;
-      pointer-events: none; 
-    }
-    .sp-text {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: var(--text);
-      font-weight: 300;
-      letter-spacing: 1px;
-      margin: 0;
-    }
     
     /* ESPAÇAMENTO AJUSTADO PARA EVITAR BURACOS */
     .content-section { 
-      padding: 200px 24px;
+      padding: 180px 24px; /* Reduzido de 300px */
       max-width: 800px; 
       margin: 0 auto; 
     }
@@ -312,9 +293,10 @@
       opacity: 1; 
       transform: translateY(0);
     }
+    
     .profile-photo {
       display: block;
-      margin: 0 auto 150px auto; 
+      margin: 0 auto 100px auto; /* Reduzido de 150px */
       height: 58vh;             
       width: auto;
       object-fit: contain;
@@ -326,9 +308,10 @@
 
     .btn-container {
         padding-top: 60px;
-        padding-bottom: 60px; /* Reduzido de 120px */
+        padding-bottom: 60px; /* Reduzido de 120px para não ficar solto */
         text-align: center;
     }
+    
     .secure-alt-contact {
       display: block;
       font-family: var(--font-sans);
@@ -340,6 +323,7 @@
       margin-bottom: 25px;
       line-height: 1.6;
     }
+    
     .faq-container { margin-bottom: 100px; text-align: left; } 
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
@@ -372,7 +356,7 @@
       font-weight: 300;
     }
     
-    /* LINHA FINA E RODAPÉ AJUSTADO */
+    /* RODAPÉ E LINHA FINA (LUXO SILENCIOSO) */
     footer { 
       text-align: center; 
       padding: 80px 24px 100px 24px; /* Reduzido de 250px */
@@ -380,8 +364,9 @@
       margin: 0 auto; 
       background-color: var(--bg); 
       color: var(--text-muted);
-      border-top: 1px solid rgba(0, 0, 0, 0.08); /* Linha sutil para intencionalidade do espaço */
+      border-top: 1px solid rgba(0, 0, 0, 0.08); /* Ancoragem visual sutil */
     }
+    
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 30px; }
     .footer-luxury-tag { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 30px; text-transform: uppercase; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 35px; }
@@ -411,23 +396,23 @@
         white-space: nowrap; 
       }
       
-      .header-gallery { gap: 35vh; margin-bottom: 250px; margin-top: 15vh; } 
+      .header-gallery { gap: 35vh; margin-bottom: 180px; margin-top: 15vh; } 
       .gallery-item { width: 100vw; }
 
-      /* Ajuste rigoroso dos espaços vazios no mobile */
-      .content-section { padding: 120px 20px; } /* Reduzido de 200px */
+      /* Ajuste rigoroso dos espaços vazios no mobile para não parecer quebrado */
+      .content-section { padding: 100px 20px; } /* Muito mais ajustado, reduzido de 200px */
       
-      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 100px auto; }
+      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } /* Imagem mais próxima do texto */
       
-      .sp-banner-wrapper { margin: 150px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+      .sp-banner-wrapper { margin: 100px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
       .sp-banner-inner { width: 100%; display: block; } 
       .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
       
-      .sp-smoke { padding-bottom: 8vh; height: 60%; } 
-      
       .btn { display: inline-block; width: auto; text-align: center; }
-
-      footer { padding: 60px 20px 60px 20px; } /* Muito mais conciso no final */
+      
+      .btn-container { padding-bottom: 40px; } /* Botão mais próximo do final */
+      
+      footer { padding: 60px 20px 80px 20px; } /* Final mais coeso e firme */
     }
   </style>
 </head>
@@ -441,7 +426,7 @@
   <header>
     <h1>ANGMER</h1>
     <div class="hero-text-block">
-      <p class="hero-intro">Algumas pessoas<br>não entram<br>em consultórios.</p>
+      <p class="hero-intro">Nem todos<br>entram<br>em consultórios.</p>
       <p class="hero-statement">Um psiquiatra vai até você.</p>
       <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
     </div>
@@ -486,9 +471,6 @@
   <div class="sp-banner-wrapper scroll-reveal">
     <div class="sp-banner-inner">
       <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
-      <div class="sp-smoke">
-        <p class="sp-text">Atendimento em São Paulo</p>
-      </div>
     </div>
   </div>
   
