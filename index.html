@@ -129,10 +129,7 @@
       45% { top: 50vh; } 
       100% { top: 15vh; }
     }
-    .hero-text-block {
-      width: 100%;
-      max-width: 800px;
-    }
+    .hero-text-block { width: 100%; max-width: 800px; }
     
     @keyframes elegantFadeUp {
       to { opacity: 1; transform: translateY(0); }
@@ -172,7 +169,7 @@
       display: flex;
       flex-direction: row; 
       justify-content: center;
-      align-items: flex-end; 
+      align-items: flex-start; 
       gap: 4vw;
       margin-top: 15vh; 
       margin-bottom: 300px;
@@ -187,204 +184,81 @@
       transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
     }
     
-    .gallery-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .gallery-item.visible { opacity: 1; transform: translateY(0); }
     
-    /* Classe atualizada para o visual premium das fotos */
+    /* ESTILO PREMIUM ATUALIZADO: LEGENDA NO TOPO */
     .gallery-caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 40px 20px;
+      background: linear-gradient(to bottom, rgba(242, 241, 237, 0.9) 0%, rgba(242, 241, 237, 0) 100%);
       font-family: var(--font-serif);
-      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-      font-style: italic;
+      font-size: 1.1rem;
+      font-weight: 400;
       color: var(--text);
       text-align: center;
-      margin-bottom: 35px;
-      font-weight: 300;
-      line-height: 1.4;
-      letter-spacing: 1px;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      z-index: 2;
     }
 
     .gallery-image {
       display: block;
       width: 100%;
       height: 55vh; 
-      object-fit: contain; 
+      object-fit: cover; 
       filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
     }
     
     .btn { 
-      display: inline-block; 
-      font-family: var(--font-sans); 
-      color: var(--bg);
-      background-color: var(--text);
-      padding: 16px 36px; 
-      text-decoration: none; 
-      font-size: 0.7rem; 
-      text-transform: uppercase; 
-      letter-spacing: 3px; 
-      font-weight: 600;
-      transition: opacity 0.3s ease;
-      border-radius: 2px;
+      display: inline-block; font-family: var(--font-sans); color: var(--bg);
+      background-color: var(--text); padding: 16px 36px; text-decoration: none; 
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600;
+      transition: opacity 0.3s ease; border-radius: 2px;
     }
-    .btn:hover { 
-      opacity: 0.85;
-    }
+    .btn:hover { opacity: 0.85; }
     
     .scroll-reveal {
-      opacity: 0;
-      transform: translateY(30px);
+      opacity: 0; transform: translateY(30px);
       transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
       will-change: transform, opacity;
     }
-    
-    .scroll-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .sp-banner-wrapper {
-      width: 100%;
-      text-align: center;
-      margin: 150px 0; 
-    }
-    
-    .sp-banner-inner {
-      position: relative;
-      display: block; 
-      width: 100%;
-      margin: 0 auto;
-    }
-    
-    .sp-image {
-      display: block;
-      width: 100%;
-      height: 78vh;
-      object-fit: cover;
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-    }
-    
+    .sp-banner-wrapper { width: 100%; text-align: center; margin: 150px 0; }
+    .sp-banner-inner { position: relative; display: block; width: 100%; margin: 0 auto; }
+    .sp-image { width: 100%; height: 78vh; object-fit: cover; filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%); }
     .sp-caption-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 80px 20px 30px; 
+      position: absolute; bottom: 0; left: 0; width: 100%; padding: 80px 20px 30px; 
       background: linear-gradient(to top, rgba(24,24,24,0.7) 0%, rgba(24,24,24,0) 100%);
-      color: var(--bg);
-      font-family: var(--font-serif);
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      text-align: center;
-      font-weight: 400;
-      letter-spacing: 1px;
+      color: var(--bg); font-family: var(--font-serif); font-size: clamp(1.4rem, 3vw, 2rem);
+      text-align: center; font-weight: 400; letter-spacing: 1px;
     }
     
-    .content-section { 
-      padding: 180px 24px; 
-      max-width: 800px; 
-      margin: 0 auto; 
-    }
-    
+    .content-section { padding: 180px 24px; max-width: 800px; margin: 0 auto; }
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
-    .content p { 
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
-      color: var(--text-muted); 
-      margin-bottom: 60px; 
-      line-height: 2.2; 
-      font-weight: 300; 
-      letter-spacing: 0.3px; 
-    }
-    .content p:last-child { margin-bottom: 0; }
+    .content p { font-size: clamp(0.95rem, 1.6vw, 1.05rem); color: var(--text-muted); margin-bottom: 60px; line-height: 2.2; font-weight: 300; letter-spacing: 0.3px; }
     
-    .scroll-reveal-slow {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      color: var(--text-light);
-      margin: 40px 0; 
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1), transform 2s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-slow.visible {
-      opacity: 1; 
-      transform: translateY(0);
-    }
+    .scroll-reveal-slow { font-family: var(--font-sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 5px; color: var(--text-light); margin: 40px 0; opacity: 0; transform: translateY(20px); transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1), transform 2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .scroll-reveal-slow.visible { opacity: 1; transform: translateY(0); }
     
-    .profile-photo {
-      display: block;
-      margin: 0 auto 100px auto; 
-      height: 58vh;             
-      width: auto;
-      object-fit: contain;
-      border: none;             
-      padding: 0;
-      background: transparent;
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-    }
-
-    .btn-container {
-        padding-top: 60px;
-        padding-bottom: 60px; 
-        text-align: center;
-    }
-    
-    .secure-alt-contact {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      color: var(--text) !important;
-      font-weight: bold !important;
-      letter-spacing: 0.5px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
+    .profile-photo { display: block; margin: 0 auto 100px auto; height: 58vh; width: auto; object-fit: contain; filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%); }
+    .btn-container { padding-top: 60px; padding-bottom: 60px; text-align: center; }
+    .secure-alt-contact { display: block; font-family: var(--font-sans); font-size: 0.75rem; color: var(--text) !important; font-weight: bold !important; letter-spacing: 0.5px; margin-top: 25px; margin-bottom: 25px; line-height: 1.6; }
     
     .faq-container { margin-bottom: 100px; text-align: left; } 
     .faq-item { border-bottom: 1px solid var(--line); }
-    .faq-item summary {
-      padding: 30px 0; 
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      font-weight: 500; 
-      color: var(--text);
-      cursor: pointer;
-      list-style: none;
-      position: relative;
-      letter-spacing: 0.5px;
-    }
+    .faq-item summary { padding: 30px 0; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 500; color: var(--text); cursor: pointer; list-style: none; position: relative; letter-spacing: 0.5px; }
     .faq-item summary::-webkit-details-marker { display: none; } 
-    .faq-item summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      color: var(--text-light);
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
+    .faq-item summary::after { content: '+'; position: absolute; right: 0; color: var(--text-light); font-weight: 500; font-size: 1.2rem; }
     .faq-item[open] summary { color: var(--text); font-weight: 600; }
     .faq-item[open] summary::after { content: '–'; color: var(--text); }
-    .faq-answer {
-      padding-bottom: 30px; 
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.9;
-      font-weight: 300;
-    }
+    .faq-answer { padding-bottom: 30px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.9; font-weight: 300; }
     
-    footer { 
-      text-align: center; 
-      padding: 80px 24px 100px 24px; 
-      font-family: var(--font-sans); 
-      margin: 0 auto; 
-      background-color: var(--bg); 
-      color: var(--text-muted);
-      border-top: 1px solid var(--line); 
-    }
-    
+    footer { text-align: center; padding: 80px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; background-color: var(--bg); color: var(--text-muted); border-top: 1px solid var(--line); }
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 30px; }
     .footer-luxury-tag { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 30px; text-transform: uppercase; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 35px; }
@@ -392,52 +266,8 @@
     .footer-email:hover { color: var(--accent); }
     
     @media(max-width: 768px) {
-      .lang-nav { top: 25px; right: 20px; gap: 10px; }
-      header { padding: 0 20px; min-height: 100vh; } 
-      @keyframes moveLogo {
-        0% { top: 50vh; }
-        45% { top: 50vh; }
-        100% { top: 12vh; } 
-      }
-      h1 { letter-spacing: 8px; } 
-
-      .hero-statement { 
-        font-size: clamp(0.8rem, 4vw, 1.2rem); 
-        line-height: 1.5; 
-        margin-bottom: 35px; 
-        letter-spacing: 2px; 
-        white-space: nowrap; 
-      }
-      
-      .header-gallery { 
-        flex-direction: column; 
-        gap: 15vh;
-        margin-bottom: 180px; 
-        margin-top: 15vh; 
-        padding: 0;
-      } 
-      
-      .gallery-item[style] { margin-bottom: 0 !important; }
-      
       .gallery-item { width: 100vw; padding: 0 20px; }
-      .gallery-image {
-        height: auto;
-        object-fit: cover;
-      }
-
-      .content-section { padding: 100px 20px; } 
-      
-      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } 
-      
-      .sp-banner-wrapper { margin: 100px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
-      .sp-banner-inner { width: 100%; display: block; } 
-      .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
-      
-      .btn { display: inline-block; width: auto; text-align: center; }
-      
-      .btn-container { padding-bottom: 40px; } 
-      
-      footer { padding: 60px 20px 80px 20px; } 
+      .gallery-image { height: auto; object-fit: cover; }
     }
   </style>
 </head>
@@ -458,42 +288,37 @@
   </header>
 
   <div class="header-gallery">
-    <!-- Texto atualizado e corrigido (inicial maiúscula) -->
-    <div class="gallery-item scroll-reveal" style="margin-bottom: 40px;">
-      <p class="gallery-caption">Se os seus sintomas o impedem de sair de casa</p>
-      <img src="foto1.jpg?v=novo" alt="Atendimento em São Paulo" class="gallery-image">
+    <div class="gallery-item scroll-reveal">
+      <p class="gallery-caption">Na sua casa se os seus sintomas te impedem de sair</p>
+      <img src="foto1.jpg?v=novo" alt="Atendimento Domiciliar" class="gallery-image">
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <p class="gallery-caption">No seu hotel, se você não quer ser visto</p>
-      <img src="foto2.jpg?v=novo" alt="Hotel e Hospitalidade" class="gallery-image">
+      <p class="gallery-caption">No seu hotel se você não quer ser visto</p>
+      <img src="foto2.jpg?v=novo" alt="Atendimento Hotel" class="gallery-image">
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <p class="gallery-caption">No seu escritório, se você não pode ser visto</p>
-      <img src="foto3.jpg?v=novo" alt="Ambiente Corporativo" class="gallery-image">
+      <p class="gallery-caption">No seu escritório se você não pode ser visto</p>
+      <img src="foto3.jpg?v=novo" alt="Atendimento Corporativo" class="gallery-image">
     </div>
   </div>
 
-  <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); color: var(--text-muted);">
+  <section class="content-section scroll-reveal" style="background-color: var(--bg-alt);">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--text) !important; font-weight: 600; line-height: 1.4; margin-bottom: 50px;">
-        Psiquiatra concierge.
-      </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 80px; line-height: 1.6;">
-        Atendimento presencial no local de sua escolha.
-      </p>
-      <p class="scroll-reveal-slow" style="color: var(--text-light);">Sem deslocamentos</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.3s; color: var(--text-light);">Sem exposição pública</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.6s; color: var(--text-light);">Discrição absoluta</p>
+      <p style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--text); font-weight: 600; line-height: 1.4; margin-bottom: 50px;">Psiquiatra concierge.</p>
+      <p style="font-family: var(--font-serif); font-size: 1.45rem; color: var(--text); font-weight: 400; margin-bottom: 80px;">Atendimento presencial no local de sua escolha.</p>
+      <p class="scroll-reveal-slow">Sem deslocamentos</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">Sem exposição pública</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Discrição absoluta</p>
     </div>
   </section>
 
-  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
+  <section class="content-section scroll-reveal">
     <div class="content">
-      <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
+      <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo">
       <p>Eu sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
-      <p>Atuo exclusivamente como psiquiatra há mais de doze anos. Todo o atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
+      <p>Atuo exclusivamente como psiquiatra há mais de doze anos. Todo o atendimento é realizado pessoalmente por mim.</p>
     </div>
   </section>
   
@@ -504,93 +329,36 @@
     </div>
   </div>
   
-  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
+  <section class="content-section scroll-reveal">
     <div class="content">
-      
       <div class="faq-container">
-        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center;">Informações</h3>
-        <details class="faq-item">
-          <summary>Para quem é este serviço?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Destinado a pacientes que necessitam de atendimento presencial com máxima discrição, conveniência e continuidade do cuidado, no local onde eles se sentem mais confortáveis e seguros.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Como funciona o atendimento?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0 0 15px 0; text-align: left;">Após a confirmação do agendamento e pagamento, eu vou até você.</p>
-            <p style="margin: 0 0 15px 0; text-align: left;">A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico. Avaliação clínica completa, diagnóstico e prescrição.</p>
-            <p style="margin: 0; text-align: left;">Por se tratar de um serviço médico particular e altamente personalizado, com tempo reservado exclusivamente para o paciente, todas as consultas são previamente agendadas e pagas. Não há consultas de retorno gratuitas.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Onde os atendimentos são realizados?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Como é feito o agendamento?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">A solicitação inicial é feita via WhatsApp. Após uma breve análise de disponibilidade clínica e geográfica, o horário da consulta é confirmado diretamente com o médico.</p>
-          </div>
-        </details>
+        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; color: var(--text-light); margin-bottom: 60px; text-align: center;">Informações</h3>
+        <details class="faq-item"><summary>Para quem é este serviço?</summary><div class="faq-answer"><p>Destinado a pacientes que necessitam de atendimento presencial com máxima discrição.</p></div></details>
+        <details class="faq-item"><summary>Como funciona o atendimento?</summary><div class="faq-answer"><p>Eu vou até você com rigor técnico de consultório.</p></div></details>
       </div>
 
       <div class="btn-container">
-          <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20ANGMER." 
-             target="_blank" 
-             class="btn"
-             aria-label="Verificar disponibilidade via WhatsApp">
-            Consultar disponibilidade
-          </a>
-          <span class="secure-alt-contact">
-            Agenda limitada.<br>Atendimento sujeito à disponibilidade geográfica.
-          </span>
+          <a href="https://wa.me/5511977335683" class="btn">Consultar disponibilidade</a>
       </div>
-      
     </div>
   </section>
   
   <footer>
     <div class="footer-brand">ANGMER</div>
     <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
-    <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
+    <div class="footer-creds">CRM-SP 157303 • RQE 85941</div>
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
   </footer>
 </div>
 
 <script>
-    const details = document.querySelectorAll('details');
-    details.forEach((targetDetail) => {
-      targetDetail.addEventListener('click', () => {
-        details.forEach((detail) => {
-          if (detail !== targetDetail) {
-            detail.removeAttribute('open');
-          }
-        });
-      });
-    });
-
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-      }, { 
-        threshold: 0.15, 
-        rootMargin: '0px 0px -50px 0px' 
-      });
-      
-      document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow').forEach(function(el) {
-        if(!el.classList.contains('scroll-reveal-slow')) {
-            el.classList.add('scroll-reveal');
-        }
-        observer.observe(el);
-      });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.scroll-reveal, .scroll-reveal-slow').forEach(function(el) { observer.observe(el); });
     })();
 </script>
 </body>
