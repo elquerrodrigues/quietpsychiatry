@@ -34,7 +34,6 @@
   </script>
   <style>
     :root {
-      /* Estética Off-White Editorial (The Row / Zegna) */
       --bg: #F9F8F6;              
       --bg-alt: #FFFFFF;
       --text: #1C1C1A;            
@@ -134,7 +133,6 @@
       max-width: 800px;
     }
     
-    /* ANIMAÇÃO EDITORIAL NO TEXTO HERO */
     @keyframes elegantFadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
@@ -213,7 +211,6 @@
     
     .btn { 
       display: inline-block; 
-      margin-top: 0; 
       font-family: var(--font-sans); 
       color: var(--bg);
       background-color: var(--text);
@@ -326,18 +323,23 @@
       background: transparent;
       filter: contrast(102%) sepia(5%) brightness(96%) saturate(85%);
     }
+
+    /* MODIFICAÇÕES DE ESPAÇAMENTO E ESTILO */
+    .btn-container {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
     .secure-alt-contact {
       display: block;
       font-family: var(--font-sans);
-      font-size: 0.7rem;
-      color: var(--text-light);
-      letter-spacing: 0.3px;
-      margin-top: 40px;
-      line-height: 1.8;
-      font-weight: 400;
+      font-size: 0.75rem;
+      color: var(--text) !important;
+      font-weight: bold !important;
+      letter-spacing: 0.5px;
+      margin-top: 25px;
+      line-height: 1.6;
     }
-    /* MODIFICAÇÃO DE ESPAÇAMENTO AQUI */
-    .faq-container { margin-bottom: 200px; text-align: left; } 
+    .faq-container { margin-bottom: 100px; text-align: left; } 
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
       padding: 30px 0; 
@@ -513,15 +515,17 @@
         </details>
       </div>
 
-      <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20ANGMER." 
-         target="_blank" 
-         class="btn"
-         aria-label="Verificar disponibilidade via WhatsApp">
-        Consultar disponibilidade
-      </a>
-      <span class="secure-alt-contact">
-        Agenda limitada.<br>Atendimento sujeito à disponibilidade geográfica.
-      </span>
+      <div class="btn-container">
+          <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20ANGMER." 
+             target="_blank" 
+             class="btn"
+             aria-label="Verificar disponibilidade via WhatsApp">
+            Consultar disponibilidade
+          </a>
+          <span class="secure-alt-contact">
+            Agenda limitada.<br>Atendimento sujeito à disponibilidade geográfica.
+          </span>
+      </div>
       
     </div>
   </section>
