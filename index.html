@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F9F8F6">
-  <title>ANGMER | Psiquiatria Concierge Particular</title>
+  <title>ANGMER | Nem todos entram em consultórios</title>
   <meta name="description" content="Atendimento psiquiátrico diretamente em sua residência, escritório ou hotel em São Paulo.">
   <meta name="keywords" content="psiquiatra concierge, psiquiatra hotel, psiquiatra particular em casa">
   <meta name="author" content="ANGMER">
@@ -177,20 +177,23 @@
       animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.6s forwards;
     }
     
+    /* MODIFICADO PARA DESKTOP - LADO A LADO */
     .header-gallery {
       width: 100vw;
       margin-left: calc(50% - 50vw); 
       display: flex;
-      flex-direction: column;
+      flex-direction: row; 
+      justify-content: center;
       align-items: center;
-      gap: 50vh; 
+      gap: 4vw; /* Espaçamento entre elas */
       margin-top: 15vh; 
-      margin-bottom: 300px; /* Reduzido levemente */
+      margin-bottom: 300px;
+      padding: 0 5vw;
     }
     
     .gallery-item {
       position: relative;
-      width: 50vw; 
+      width: 26vw; /* Largura para caberem 3 sem tocar */
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
@@ -204,7 +207,8 @@
     .gallery-image {
       display: block;
       width: 100%;
-      height: auto; 
+      height: 55vh; /* Altura controlada para caber na tela do notebook */
+      object-fit: contain; /* Não corta a imagem original */
       filter: contrast(105%) brightness(96%) sepia(5%) saturate(90%);
     }
     
@@ -241,7 +245,7 @@
     .sp-banner-wrapper {
       width: 100%;
       text-align: center;
-      margin: 150px 0; /* Reduzido de 250px */
+      margin: 150px 0; 
     }
     
     .sp-banner-inner {
@@ -259,9 +263,8 @@
       filter: contrast(105%) brightness(96%) sepia(5%) saturate(90%);
     }
     
-    /* ESPAÇAMENTO AJUSTADO PARA EVITAR BURACOS */
     .content-section { 
-      padding: 180px 24px; /* Reduzido de 300px */
+      padding: 180px 24px; 
       max-width: 800px; 
       margin: 0 auto; 
     }
@@ -296,7 +299,7 @@
     
     .profile-photo {
       display: block;
-      margin: 0 auto 100px auto; /* Reduzido de 150px */
+      margin: 0 auto 100px auto; 
       height: 58vh;             
       width: auto;
       object-fit: contain;
@@ -308,7 +311,7 @@
 
     .btn-container {
         padding-top: 60px;
-        padding-bottom: 60px; /* Reduzido de 120px para não ficar solto */
+        padding-bottom: 60px; 
         text-align: center;
     }
     
@@ -356,15 +359,14 @@
       font-weight: 300;
     }
     
-    /* RODAPÉ E LINHA FINA (LUXO SILENCIOSO) */
     footer { 
       text-align: center; 
-      padding: 80px 24px 100px 24px; /* Reduzido de 250px */
+      padding: 80px 24px 100px 24px; 
       font-family: var(--font-sans); 
       margin: 0 auto; 
       background-color: var(--bg); 
       color: var(--text-muted);
-      border-top: 1px solid rgba(0, 0, 0, 0.08); /* Ancoragem visual sutil */
+      border-top: 1px solid rgba(0, 0, 0, 0.08); 
     }
     
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 30px; }
@@ -396,13 +398,23 @@
         white-space: nowrap; 
       }
       
-      .header-gallery { gap: 35vh; margin-bottom: 180px; margin-top: 15vh; } 
+      /* PRESERVA A DISPOSIÇÃO MOBILE ORIGINAL (VERTICAL) */
+      .header-gallery { 
+        flex-direction: column; 
+        gap: 35vh; 
+        margin-bottom: 180px; 
+        margin-top: 15vh; 
+        padding: 0;
+      } 
       .gallery-item { width: 100vw; }
+      .gallery-image {
+        height: auto;
+        object-fit: cover;
+      }
 
-      /* Ajuste rigoroso dos espaços vazios no mobile para não parecer quebrado */
-      .content-section { padding: 100px 20px; } /* Muito mais ajustado, reduzido de 200px */
+      .content-section { padding: 100px 20px; } 
       
-      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } /* Imagem mais próxima do texto */
+      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } 
       
       .sp-banner-wrapper { margin: 100px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
       .sp-banner-inner { width: 100%; display: block; } 
@@ -410,9 +422,9 @@
       
       .btn { display: inline-block; width: auto; text-align: center; }
       
-      .btn-container { padding-bottom: 40px; } /* Botão mais próximo do final */
+      .btn-container { padding-bottom: 40px; } 
       
-      footer { padding: 60px 20px 80px 20px; } /* Final mais coeso e firme */
+      footer { padding: 60px 20px 80px 20px; } 
     }
   </style>
 </head>
