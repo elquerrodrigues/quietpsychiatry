@@ -172,7 +172,7 @@
       display: flex;
       flex-direction: row; 
       justify-content: center;
-      align-items: flex-end; /* Alinha as imagens por baixo para facilitar o deslocamento */
+      align-items: flex-end; 
       gap: 4vw;
       margin-top: 15vh; 
       margin-bottom: 300px;
@@ -192,15 +192,17 @@
       transform: translateY(0);
     }
     
-    /* Nova classe para os textos acima das fotos 1, 2 e 3 */
+    /* Classe atualizada para o visual premium das fotos */
     .gallery-caption {
       font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      font-style: italic;
       color: var(--text);
       text-align: center;
-      margin-bottom: 15px;
-      font-weight: 400;
-      line-height: 1.3;
+      margin-bottom: 35px;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 1px;
     }
 
     .gallery-image {
@@ -262,13 +264,12 @@
       filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
     }
     
-    /* Classe para o texto sobre a foto 5 com degradê na base */
     .sp-caption-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 80px 20px 30px; /* Espaço para o degradê */
+      padding: 80px 20px 30px; 
       background: linear-gradient(to top, rgba(24,24,24,0.7) 0%, rgba(24,24,24,0) 100%);
       color: var(--bg);
       font-family: var(--font-serif);
@@ -410,13 +411,12 @@
       
       .header-gallery { 
         flex-direction: column; 
-        gap: 15vh; /* Ajuste do gap no mobile */
+        gap: 15vh;
         margin-bottom: 180px; 
         margin-top: 15vh; 
         padding: 0;
       } 
       
-      /* Remove o deslocamento da foto 1 no mobile para alinhar perfeitamente em coluna */
       .gallery-item[style] { margin-bottom: 0 !important; }
       
       .gallery-item { width: 100vw; padding: 0 20px; }
@@ -458,19 +458,19 @@
   </header>
 
   <div class="header-gallery">
-    <!-- Foto 1 deslocada levemente para cima pelo margin-bottom e alinhamento flex-end na galeria -->
+    <!-- Texto atualizado e corrigido (inicial maiúscula) -->
     <div class="gallery-item scroll-reveal" style="margin-bottom: 40px;">
-      <p class="gallery-caption">se seus sintomas te impedem de sair de casa</p>
+      <p class="gallery-caption">Se os seus sintomas o impedem de sair de casa</p>
       <img src="foto1.jpg?v=novo" alt="Atendimento em São Paulo" class="gallery-image">
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <p class="gallery-caption">no seu hotel se você não quer ser visto</p>
+      <p class="gallery-caption">No seu hotel, se você não quer ser visto</p>
       <img src="foto2.jpg?v=novo" alt="Hotel e Hospitalidade" class="gallery-image">
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <p class="gallery-caption">no seu escritório se você não pode ser visto</p>
+      <p class="gallery-caption">No seu escritório, se você não pode ser visto</p>
       <img src="foto3.jpg?v=novo" alt="Ambiente Corporativo" class="gallery-image">
     </div>
   </div>
@@ -500,7 +500,6 @@
   <div class="sp-banner-wrapper scroll-reveal">
     <div class="sp-banner-inner">
       <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
-      <!-- Texto sobreposto à foto 5 com fundo esfumaçado -->
       <div class="sp-caption-overlay">atendimento em São Paulo</div>
     </div>
   </div>
