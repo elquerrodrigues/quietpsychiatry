@@ -122,7 +122,7 @@
       100% { top: 8vh; }
     }
     .hero-text-block {
-      padding-top: 40vh; /* AUMENTADO PARA MAIS RESPIRO INICIAL */
+      padding-top: 40vh;
       padding-bottom: 10vh;
       width: 100%;
       max-width: 800px;
@@ -152,7 +152,7 @@
       font-style: italic;
       letter-spacing: 1px; 
       color: var(--accent); 
-      margin: 0 0 35vh 0; /* TRIPLO DE ESPAÇO ANTES DAS FOTOS */
+      margin: 0 0 65vh 0; /* AUMENTADO O ESPAÇO AQUI */
     }
     
     .header-gallery {
@@ -161,13 +161,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 50vh; /* ESPAÇO GIGANTESCO ENTRE AS FOTOS (TRIPLO) */
-      margin-bottom: 400px; /* ESPAÇO GIGANTESCO ANTES DA PRÓXIMA SEÇÃO */
+      gap: 50vh; 
+      margin-bottom: 400px;
     }
     
     .gallery-item {
       position: relative;
-      width: 100%;
+      width: 50vw; /* FOTOS REDUZIDAS PELA METADE NA VERSÃO DESKTOP */
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
@@ -185,12 +185,10 @@
       filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
     }
 
-    /* Fumaça removida/ocultada para dar lugar à foto pura - Luxo silencioso não usa degradês pesados */
     .gallery-smoke {
       display: none;
     }
     
-    /* Nova Legenda: Design Minimalista de Alto Padrão */
     .gallery-caption {
       position: relative;
       margin-top: 30px; 
@@ -247,7 +245,7 @@
     .sp-banner-wrapper {
       width: 100%;
       text-align: center;
-      margin: 250px 0; /* TRIPLO DE ESPAÇO */
+      margin: 250px 0;
     }
     
     .sp-banner-inner {
@@ -286,7 +284,7 @@
     }
     
     .content-section { 
-      padding: 300px 24px; /* AUMENTO GIGANTESCO DE PADDING (De 180 para 300) */
+      padding: 300px 24px;
       max-width: 800px; 
       margin: 0 auto; 
     }
@@ -295,7 +293,7 @@
     .content p { 
       font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
       color: var(--text-muted); 
-      margin-bottom: 60px; /* Mais espaço entre os parágrafos */
+      margin-bottom: 60px; 
       line-height: 2.2; 
       font-weight: 300; 
       letter-spacing: 0.3px; 
@@ -320,7 +318,7 @@
     }
     .profile-photo {
       display: block;
-      margin: 0 auto 150px auto; /* MUITO MAIS ESPAÇO APÓS A FOTO */
+      margin: 0 auto 150px auto; 
       height: 58vh;              
       width: auto;
       object-fit: contain;
@@ -339,10 +337,10 @@
       line-height: 1.8;
       font-weight: 400;
     }
-    .faq-container { margin-top: 200px; text-align: left; border-top: 1px solid var(--line); } /* AUMENTADO SIGNIFICATIVAMENTE */
+    .faq-container { margin-top: 200px; text-align: left; border-top: 1px solid var(--line); } 
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
-      padding: 40px 0; /* FAQ MAIS ESPAÇOSO */
+      padding: 40px 0; 
       font-family: var(--font-sans);
       font-size: 0.95rem;
       font-weight: 500; 
@@ -387,9 +385,10 @@
       .hero-text-block { padding-top: 25vh; padding-bottom: 6vh; }
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 35px; }
-      .hero-luxury { margin-bottom: 25vh; } /* TRIPLO DE ESPAÇO MOBILE */
+      .hero-luxury { margin-bottom: 25vh; } 
       
-      .header-gallery { gap: 35vh; margin-bottom: 250px; } /* ESPAÇO GIGANTE MOBILE */
+      .header-gallery { gap: 35vh; margin-bottom: 250px; } 
+      .gallery-item { width: 100vw; } /* FOTOS VOLTAM AO TAMANHO TOTAL NO MOBILE */
 
       .content-section { padding: 200px 20px; }
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 100px auto; }
