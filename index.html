@@ -96,7 +96,10 @@
       text-align: center; 
       padding: 0 24px;
       position: relative;
-      min-height: 80vh;
+      min-height: 100vh; /* Aumentado para acomodar as novas fotos inicialmete */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h1 { 
       position: absolute;
@@ -116,11 +119,13 @@
     @keyframes moveLogo {
       0% { top: 50vh; } 
       45% { top: 50vh; } 
-      100% { top: 18vh; } 
+      100% { top: 8vh; } /* Ajustado levemente para cima */
     }
     .hero-text-block {
-      padding-top: 30vh; 
-      padding-bottom: 18vh;
+      padding-top: 20vh; /* Ajustado para dar espaço ao logo no topo */
+      padding-bottom: 10vh;
+      width: 100%;
+      max-width: 800px;
     }
     .hero-statement { 
       font-family: var(--font-serif); 
@@ -138,7 +143,7 @@
       letter-spacing: 4px; 
       color: var(--text-muted); 
       text-transform: uppercase; 
-      margin-bottom: 6px; /* Levemente reduzido para unir as duas linhas visualmente */
+      margin-bottom: 6px;
     }
     .hero-luxury { 
       font-family: var(--font-serif); 
@@ -147,8 +152,52 @@
       font-style: italic;
       letter-spacing: 1px; 
       color: var(--accent); 
-      margin: 0;
+      margin: 0 0 80px 0; /* Espaço antes da galeria */
     }
+    
+    /* NOVA GALERIA DE FOTOS NO TOPO */
+    .header-gallery {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 75px; /* ESPAÇO DE APROXIMADAMENTE 2CM */
+      margin-bottom: 100px;
+    }
+    
+    .gallery-item {
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
+    }
+    
+    .gallery-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 60vh; /* Altura chique */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
+      margin-bottom: 15px;
+    }
+    
+    .gallery-caption {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--text-light);
+      margin: 0;
+      font-weight: 500;
+    }
+
     .fade-in-late {
       opacity: 0;
       transform: translateY(20px);
@@ -181,35 +230,30 @@
       outline: 2px solid var(--text);
       outline-offset: 4px;
     }
-    .parallax-divider {
-      width: 100%;
-      height: 78vh;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain; 
-      background-attachment: scroll; 
-      position: relative;
-      background-color: transparent; 
-      filter: contrast(104%) brightness(94%) sepia(10%) saturate(80%);
-      opacity: 0; 
-      transform: scale(0.98); 
-      transform-origin: center center;
-      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* EFEITO DE APARECER SUAVEMENTE (SCROLL REVEAL) */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
       will-change: transform, opacity;
-      margin: 60px 0;
     }
-    .parallax-divider.visible { opacity: 1; transform: scale(1); }
+    
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Ajuste para garantir que o parallax divider antigo (não usado agora) não quebre */
+    .parallax-divider { display: none; }
     
     .sp-banner-wrapper {
       width: 100%;
       text-align: center;
       margin: 60px 0;
-      opacity: 0; 
-      transform: scale(0.98); 
-      transition: opacity 2.2s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
+      /* Já tem o scroll-reveal aplicado via JS */
     }
-    .sp-banner-wrapper.visible { opacity: 1; transform: scale(1); }
+    
     .sp-banner-inner {
       position: relative;
       display: block; 
@@ -233,7 +277,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 12vh; /* AQUI CONTROLAMOS A ALTURA NO COMPUTADOR */
+      padding-bottom: 12vh;
       pointer-events: none; 
     }
     .sp-text {
@@ -249,12 +293,9 @@
       padding: 120px 24px; 
       max-width: 800px; 
       margin: 0 auto; 
-      opacity: 0; 
-      transform: translateY(30px); 
-      transition: all 1.4s var(--transition-smooth); 
-      will-change: transform, opacity; 
+      /* Efeito aplicado via classe scroll-reveal */
     }
-    .content-section.visible { opacity: 1; transform: translateY(0); }
+    
     .content { max-width: 580px; margin: 0 auto; text-align: center; }
     .content p { 
       font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
@@ -265,7 +306,9 @@
       letter-spacing: 0.3px; 
     }
     .content p:last-child { margin-bottom: 0; }
+    
     .scroll-reveal-slow {
+      /* Mantido para os textos curtos, mas o efeito geral é .scroll-reveal */
       font-family: var(--font-sans);
       font-size: 0.65rem;
       text-transform: uppercase;
@@ -274,7 +317,7 @@
       margin: 20px 0;
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1), transform 2s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
     }
     .scroll-reveal-slow.visible {
@@ -284,10 +327,10 @@
     .profile-photo {
       display: block;
       margin: 0 auto 60px auto;
-      height: 58vh;              
+      height: 58vh;             
       width: auto;
       object-fit: contain;
-      border: none;              
+      border: none;             
       padding: 0;
       background: transparent;
       filter: contrast(102%) sepia(12%) brightness(96%) saturate(85%);
@@ -333,7 +376,7 @@
       line-height: 1.9;
       font-weight: 300;
     }
-    footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; }
+    footer { text-align: center; padding: 60px 24px 100px 24px; font-family: var(--font-sans); margin: 0 auto; background-color: var(--bg); color: var(--text-muted);}
     .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 15px; }
     .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 20px; }
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
@@ -341,34 +384,26 @@
     
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
-      header { padding: 0 20px; min-height: 60vh; } 
+      header { padding: 0 20px; min-height: 100vh; } 
       @keyframes moveLogo {
         0% { top: 50vh; }
         45% { top: 50vh; }
-        100% { top: 16vh; }
+        100% { top: 6vh; }
       }
-      .hero-text-block { padding-top: 26vh; padding-bottom: 12vh; }
+      .hero-text-block { padding-top: 18vh; padding-bottom: 8vh; }
       h1 { letter-spacing: 6px; }
       .hero-statement { font-size: 2.1rem; line-height: 1.25; margin-bottom: 25px; }
+      
+      .header-gallery { gap: 50px; } /* Menos espaço no celular */
+      .gallery-image { height: 45vh; background-size: cover; } /* Cover no celular fica melhor */
+
       .content-section { padding: 90px 20px; }
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 40px auto; }
-      .parallax-divider { 
-        height: 66vh; 
-        width: 100vw; 
-        margin: 20px 0; 
-        background-size: cover; 
-        background-position: center center;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-      }
+      
       .sp-banner-wrapper { margin: 20px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
       .sp-banner-inner { width: 100%; display: block; } 
       .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
       
-      /* AQUI CONTROLAMOS A ALTURA NO CELULAR */
       .sp-smoke { padding-bottom: 8vh; height: 60%; background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%); }
       
       .btn { display: inline-block; width: auto; text-align: center; padding: 0 0 8px 0; }
@@ -387,52 +422,75 @@
       <p class="hero-statement">Um psiquiatra vai até você</p>
       <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
       <p class="hero-luxury">Luxury Concierge Psychiatrist</p>
+      
+      <!-- NOVA GALERIA DE FOTOS NO TOPO -->
+      <div class="header-gallery">
+        <div class="gallery-item scroll-reveal">
+          <div class="gallery-image" style="background-image: url('foto1.jpg');"></div>
+          <p class="gallery-caption">Na sua casa</p>
+        </div>
+        
+        <div class="gallery-item scroll-reveal">
+          <div class="gallery-image" style="background-image: url('foto2.jpg');"></div>
+          <p class="gallery-caption">Hotel</p>
+        </div>
+        
+        <div class="gallery-item scroll-reveal">
+          <div class="gallery-image" style="background-image: url('foto3.jpg');"></div>
+          <p class="gallery-caption">Escritório</p>
+        </div>
+      </div>
     </div>
   </header>
-  <div class="parallax-divider" style="background-image: url('foto1.jpg');"></div>
-  
-  <section class="content-section" style="padding: 100px 24px; display: flex; flex-direction: column; justify-content: center;">
+
+  <!-- TEXTO MANTIDO COMO SOLICITADO, LOGO APÓS A GALERIA INICIAL -->
+  <section class="content-section scroll-reveal" style="padding: 100px 24px; display: flex; flex-direction: column; justify-content: center; background-color: #FFFFFF; color: var(--text-muted);">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: #FFFFFF !important; font-weight: 600; line-height: 1.4; margin-bottom: 40px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--bg) !important; font-weight: 600; line-height: 1.4; margin-bottom: 40px;">
         Psiquiatra domiciliar.
       </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 40px; line-height: 1.6;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--bg); font-weight: 400; margin-bottom: 40px; line-height: 1.6;">
         Atendimento presencial no local escolhido pelo paciente.
       </p>
-      <p class="scroll-reveal-slow">Sem deslocamento</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.3s;">Sem exposição pública</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.6s;">Discrição absoluta</p>
+      <p class="scroll-reveal-slow" style="color: var(--text-light);">Sem deslocamento</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.3s; color: var(--text-light);">Sem exposição pública</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.6s; color: var(--text-light);">Discrição absoluta</p>
     </div>
   </section>
 
-  <div class="parallax-divider" style="background-image: url('foto2.jpg');"></div>
-  <section class="content-section">
+  <!-- SEÇÃO DO DR COM FOTO 4 -->
+  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
     <div class="content">
-      <img src="perfilrqe.jpeg" alt="Dr. Elquer Rodrigues" class="profile-photo">
+      <img src="foto4.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
       <p>Sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
       <p>Atuo exclusivamente como médico psiquiatra há mais de doze anos. Cada atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
     </div>
   </section>
-  <div class="sp-banner-wrapper">
+  
+  <!-- BANNER SP COM FOTO 5 -->
+  <div class="sp-banner-wrapper scroll-reveal">
     <div class="sp-banner-inner">
-      <img src="fotosaopaulo.jpg" class="sp-image" alt="São Paulo">
+      <img src="foto5.jpg" class="sp-image" alt="São Paulo">
       <div class="sp-smoke">
         <p class="sp-text">Atendimento em São Paulo</p>
       </div>
     </div>
   </div>
-  <section class="content-section" style="padding-top: 60px; padding-bottom: 60px;">
+  
+  <!-- TEXTOS FINAIS MANTIDOS -->
+  <section class="content-section scroll-reveal" style="padding-top: 60px; padding-bottom: 60px; background-color: #FFFFFF; color: var(--bg);">
     <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 30px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--bg); font-weight: 300; margin-bottom: 30px;">
         Se você não pode ou não quer ser visto.
       </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--text); font-weight: 300; margin-bottom: 0;">
+      <p style="font-family: var(--font-serif); font-size: clamp(1.3rem, 3.5vw, 1.6rem); color: var(--bg); font-weight: 300; margin-bottom: 0;">
         Se seus sintomas te impedem de sair de casa.
       </p>
     </div>
   </section>
-  <div class="parallax-divider" style="background-image: url('foto3.jpg');"></div>
-  <section class="content-section">
+  
+  <!-- FAQ E BOTAO -->
+  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
     <div class="content">
       <p>Consulte a disponibilidade para atendimento domiciliar ou corporativo.</p>
       <a href="https://wa.me/5511977335683?text=Solicito%20verificar%20a%20disponibilidade%20de%20atendimento%20da%20ANGMER." 
@@ -475,13 +533,16 @@
       </div>
     </div>
   </section>
+  
   <footer>
     <div class="footer-brand">ANGMER</div>
     <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
     <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
   </footer>
 </div>
+
 <script>
+    // Script para controlar o Accordion do FAQ (mantido original)
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
@@ -492,16 +553,36 @@
         });
       });
     });
+
+    // SCRIPT PARA O EFEITO CHIQUÉRRIMO DE APARECER NA ROLAGEM (SCROLL REVEAL)
     (function() {
+      // Cria o Observador de Intersecção
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
+          // Se o elemento estiver visível na tela
           if (entry.isIntersecting) {
+            // Adiciona a classe que engatilha a animação CSS
             entry.target.classList.add('visible');
+            // Para de observar o elemento depois que ele aparece
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('.content-section, .parallax-divider, .scroll-reveal-slow, .sp-banner-wrapper').forEach(function(s) { observer.observe(s); });
+      }, { 
+        // Configurações para o aparecimento ser mais suave
+        threshold: 0.15, // Necessário 15% do elemento estar na tela
+        rootMargin: '0px 0px -50px 0px' // Margem inferior para o gatilho ocorrer um pouco antes
+      });
+      
+      // Seleciona todos os elementos que devem ter o efeito
+      // Inclui as novas gallery-items, content-sections e sp-banner
+      document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow').forEach(function(el) {
+        // Inicialmente garante que eles tenham a classe base do efeito se não tiverem no HTML
+        if(!el.classList.contains('scroll-reveal-slow')) {
+            el.classList.add('scroll-reveal');
+        }
+        // Começa a observar
+        observer.observe(el);
+      });
     })();
 </script>
 </body>
