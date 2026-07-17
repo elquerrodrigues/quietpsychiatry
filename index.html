@@ -84,6 +84,11 @@
       font-size: 0.65rem;
       letter-spacing: 1px;
       z-index: 10;
+      opacity: 0;
+      animation: fadeNav 1s cubic-bezier(0.25, 1, 0.5, 1) 2.2s forwards;
+    }
+    @keyframes fadeNav {
+      to { opacity: 1; }
     }
     .lang-nav a {
       color: var(--text-light);
@@ -129,7 +134,11 @@
       max-width: 800px;
     }
     
-    /* MODIFICAÇÃO EDITORIAL NA FRASE PRINCIPAL */
+    /* ANIMAÇÃO EDITORIAL NO TEXTO HERO */
+    @keyframes elegantFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .hero-statement { 
       font-family: var(--font-serif); 
       font-size: clamp(1.2rem, 3vw, 2rem); 
@@ -140,6 +149,9 @@
       max-width: 800px;
       text-transform: uppercase;
       letter-spacing: 12px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
     }
     
     .hero-locations { 
@@ -150,15 +162,22 @@
       color: var(--text-muted); 
       text-transform: uppercase; 
       margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.6s forwards;
     }
+
     .hero-luxury { 
       font-family: var(--font-serif); 
-      font-size: clamp(1.2rem, 3.5vw, 1.45rem); 
-      font-weight: 400; 
-      font-style: italic;
-      letter-spacing: 1px; 
-      color: var(--accent); 
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem); 
+      font-weight: 500; 
+      text-transform: uppercase;
+      letter-spacing: 6px; 
+      color: var(--text); 
       margin: 0;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 3s forwards;
     }
     
     .header-gallery {
@@ -190,32 +209,6 @@
       width: 100%;
       height: auto; 
       filter: contrast(105%) brightness(96%) sepia(5%) saturate(90%);
-    }
-
-    .gallery-smoke {
-      display: none;
-    }
-    
-    .gallery-caption {
-      position: relative;
-      margin-top: 30px; 
-      text-align: center;
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 10px;
-      color: var(--text-light);
-      z-index: 2;
-    }
-
-    .fade-in-late {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUpText 1s cubic-bezier(0.25, 1, 0.5, 1) 2.2s forwards;
-    }
-    @keyframes fadeUpText {
-      to { opacity: 1; transform: translateY(0); }
     }
     
     .btn { 
@@ -274,7 +267,7 @@
       left: 0;
       width: 100%;
       height: 55%; 
-      background: linear-gradient(to bottom, rgba(249,248,246,0) 0%, rgba(249,248,246,0.6) 40%, rgba(249,248,246,0.9) 70%, var(--bg) 100%);
+      /* Filtro esfumaçado removido */
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -347,7 +340,7 @@
     .faq-container { margin-top: 200px; text-align: left; border-top: 1px solid var(--line); } 
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary {
-      padding: 40px 0; 
+      padding: 30px 0; /* Espaçamento reduzido */
       font-family: var(--font-sans);
       font-size: 0.95rem;
       font-weight: 500; 
@@ -369,7 +362,7 @@
     .faq-item[open] summary { color: var(--text); font-weight: 600; }
     .faq-item[open] summary::after { content: '–'; color: var(--text); }
     .faq-answer {
-      padding-bottom: 40px;
+      padding-bottom: 30px; /* Espaçamento reduzido */
       color: var(--text-muted);
       font-size: 0.85rem;
       line-height: 1.9;
@@ -402,7 +395,7 @@
       .sp-banner-inner { width: 100%; display: block; } 
       .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
       
-      .sp-smoke { padding-bottom: 8vh; height: 60%; background: linear-gradient(to bottom, rgba(249,248,246,0) 0%, rgba(249,248,246,0.6) 40%, var(--bg) 100%); }
+      .sp-smoke { padding-bottom: 8vh; height: 60%; } /* Gradiente removido também no mobile */
       
       .btn { display: inline-block; width: auto; text-align: center; }
     }
@@ -410,14 +403,14 @@
 </head>
 <body>
 <div class="site-wrapper">
-  <nav class="lang-nav fade-in-late">
+  <nav class="lang-nav">
     <a href="/" class="active">PT</a>
     <a href="/en/">EN</a>
   </nav>
   
   <header>
     <h1>ANGMER</h1>
-    <div class="hero-text-block fade-in-late">
+    <div class="hero-text-block">
       <p class="hero-statement">Um psiquiatra vai até você</p>
       <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
       <p class="hero-luxury">Psiquiatria Concierge de Luxo</p>
@@ -426,21 +419,15 @@
 
   <div class="header-gallery">
     <div class="gallery-item scroll-reveal">
-      <img src="foto1.jpg?v=novo" alt="I. THE RESIDENCE" class="gallery-image">
-      <div class="gallery-smoke"></div>
-      <p class="gallery-caption">I. THE RESIDENCE</p>
+      <img src="foto1.jpg?v=novo" alt="Atendimento em São Paulo" class="gallery-image">
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <img src="foto2.jpg?v=novo" alt="II. HOSPITALITY" class="gallery-image">
-      <div class="gallery-smoke"></div>
-      <p class="gallery-caption">II. HOSPITALITY</p>
+      <img src="foto2.jpg?v=novo" alt="Hotel e Hospitalidade" class="gallery-image">
     </div>
     
     <div class="gallery-item scroll-reveal">
-      <img src="foto3.jpg?v=novo" alt="III. CORPORATE" class="gallery-image">
-      <div class="gallery-smoke"></div>
-      <p class="gallery-caption">III. CORPORATE</p>
+      <img src="foto3.jpg?v=novo" alt="Ambiente Corporativo" class="gallery-image">
     </div>
   </div>
 
