@@ -59,7 +59,7 @@
       overflow-x: hidden;
     }
 
-    /* 2. OVERLAY DE RUÍDO SUTIL */
+    /* OVERLAY DE RUÍDO SUTIL */
     .noise-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -70,43 +70,52 @@
       background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
-    /* 1. CURSOR CUSTOMIZADO */
-    @media (hover: hover) and (pointer: fine) {
-      body, a, button, summary, .btn, .lang-nav a {
-        cursor: none !important;
-      }
-      .custom-cursor {
-        position: fixed;
-        top: 0; left: 0;
-        width: 28px; height: 28px;
-        border: 1px solid rgba(24, 24, 24, 0.6);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 99999;
-        /* O transition cuida tanto do delay (follow) quanto da suavidade do scale ao passar em links */
-        transition: transform 0.15s ease-out;
-        transform: translate3d(calc(var(--clientX, -100px) - 50%), calc(var(--clientY, -100px) - 50%), 0) scale(var(--cursorScale, 1));
-        will-change: transform;
-      }
+    /* 8. BREATHING BACKGROUND */
+    .breathing-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      /* Gradiente sutil em tons próximos a --bg */
+      background: radial-gradient(120% 120% at 50% 50%, #F5F4F0 0%, #EFEEE9 100%);
+      background-size: 200% 200%;
+      animation: breathBg 25s ease-in-out infinite alternate;
     }
-    @media (hover: none) {
-      .custom-cursor { display: none; }
+    @keyframes breathBg {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
     }
 
-    /* 3. TRANSIÇÃO DE ENTRADA (SCALE + CLIP-PATH) */
+    /* 12. ASSINATURA TIPOGRÁFICA NO SCROLL */
+    .scroll-signature {
+      position: fixed;
+      top: 0;
+      right: 24px;
+      width: 1px;
+      height: 0%;
+      background-color: var(--line);
+      z-index: 9999;
+      pointer-events: none;
+      transition: height 0.1s linear;
+    }
+
+    /* TRANSIÇÃO DE ENTRADA */
     .site-wrapper {
-      background: var(--bg);
+      background: transparent; /* Permite ver o breathing-bg */
       width: 100%;
       height: 100vh;
       overflow: hidden; 
       transform-origin: center top;
       animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
+      /* Será usado na transição de idioma */
+      transition: opacity 0.4s ease;
     }
     @keyframes expandSite {
-       0% { clip-path: inset(50% 50%); transform: scale(1.04); } 
-       15% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); } 
-       45% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); } 
-       100% { clip-path: inset(0%); transform: scale(1); } 
+       0% { clip-path: inset(50% 50%); transform: scale(1.04); background: var(--bg); } 
+       15% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); background: var(--bg); } 
+       45% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); background: var(--bg); } 
+       100% { clip-path: inset(0%); transform: scale(1); background: transparent; } 
     }
     @keyframes unlockScroll {
       to { height: auto; overflow: visible; clip-path: none; }
@@ -137,6 +146,7 @@
       color: var(--text);
       font-weight: 600;
     }
+    
     header {
       text-align: center; 
       padding: 0 24px;
@@ -148,7 +158,7 @@
       justify-content: center;
     }
     
-    /* 3 e 5. BLUR DE ENTRADA + BREATHING LETTER-SPACING */
+    /* BLUR DE ENTRADA + BREATHING LETTER-SPACING */
     h1 { 
       position: absolute;
       top: 50vh;
@@ -168,6 +178,7 @@
       45% { top: 50vh; letter-spacing: 5px; filter: blur(3px); } 
       100% { top: 15vh; letter-spacing: 10px; filter: blur(0); }
     }
+    
     .hero-text-block {
       width: 100%;
       max-width: 800px;
@@ -205,13 +216,14 @@
       animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards;
     }
     
+    /* FIX DE ALINHAMENTO DESKTOP NAS FOTOS */
     .header-gallery {
       width: 100vw;
       margin-left: calc(50% - 50vw); 
       display: flex;
       flex-direction: row; 
       justify-content: center;
-      align-items: flex-end; 
+      align-items: center; /* Alinha as caixas ao centro */
       gap: 4vw;
       margin-top: 5vh;
       margin-bottom: 300px;
@@ -231,14 +243,21 @@
       transform: translateY(0);
     }
 
-    /* O will-change ajuda na performance do parallax via JS */
+    /* 9. HOVER COM DESATURAÇÃO REVERSA */
     .gallery-image {
       display: block;
       width: 100%;
       height: 55vh; 
-      object-fit: contain; 
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-      will-change: transform; 
+      object-fit: cover; /* Garante que todas as fotos fiquem na mesma altura exata */
+      /* Base: sutilmente desaturado */
+      filter: contrast(102%) brightness(96%) sepia(3%) saturate(85%) grayscale(20%);
+      will-change: transform, filter; 
+      transition: filter 1.2s var(--transition-smooth);
+    }
+    
+    .gallery-item:hover .gallery-image {
+      /* Hover: revela a cor plena */
+      filter: contrast(102%) brightness(96%) sepia(3%) saturate(105%) grayscale(0%);
     }
     
     .btn { 
@@ -367,6 +386,7 @@
       list-style: none;
       position: relative;
       letter-spacing: 0.5px;
+      cursor: pointer;
     }
     .faq-item summary::-webkit-details-marker { display: none; } 
     .faq-item summary::after {
@@ -392,7 +412,7 @@
       padding: 80px 24px 100px 24px; 
       font-family: var(--font-sans); 
       margin: 0 auto; 
-      background-color: var(--bg); 
+      background-color: transparent; /* Permite ver o breathing bg */
       color: var(--text-muted);
       border-top: 1px solid var(--line); 
     }
@@ -404,10 +424,10 @@
     .footer-email:hover { color: var(--accent); }
     
     @media(max-width: 768px) {
+      .scroll-signature { right: 10px; }
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 100vh; } 
       
-      /* Ajuste do Blur e Spacing para o H1 Mobile */
       @keyframes moveLogo {
         0% { top: 50vh; letter-spacing: 2px; filter: blur(4px); }
         45% { top: 50vh; letter-spacing: 3px; filter: blur(2px); }
@@ -458,10 +478,15 @@
 
 <!-- Overlay de Ruído -->
 <div class="noise-overlay"></div>
-<!-- Cursor Customizado -->
-<div class="custom-cursor"></div>
 
 <div class="site-wrapper">
+  
+  <!-- 8. Background Residente Sutil -->
+  <div class="breathing-bg"></div>
+
+  <!-- 12. Assinatura Tipográfica Invisível de Scroll -->
+  <div class="scroll-signature"></div>
+
   <nav class="lang-nav">
     <a href="/" class="active">PT</a>
     <a href="/en/">EN</a>
@@ -506,7 +531,7 @@
     </div>
   </section>
 
-  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
+  <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
     <div class="content">
       <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
       <p>Eu sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
@@ -520,7 +545,7 @@
     </div>
   </div>
   
-  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
+  <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
     <div class="content">
       
       <div class="faq-container">
@@ -611,43 +636,54 @@
       });
     })();
 
-    /* 4. PARALLAX SUTIL NA GALERIA DO HEADER */
+    /* PARALLAX SUTIL NA GALERIA DO HEADER */
     const parallaxImages = document.querySelectorAll('.parallax-img');
     function applyParallax() {
         const scrolled = window.pageYOffset;
         parallaxImages.forEach((img, index) => {
-            // Cada imagem se move em velocidade sutilmente diferente baseado no index
             const speed = 0.05 + (index * 0.04); 
             const yPos = -(scrolled * speed);
             img.style.transform = `translate3d(0, ${yPos}px, 0)`;
         });
         requestAnimationFrame(applyParallax);
     }
-    // Inicia o loop de animação do parallax
     requestAnimationFrame(applyParallax);
 
-    /* 1. LÓGICA DO CURSOR CUSTOMIZADO */
-    const cursor = document.querySelector('.custom-cursor');
-    // Só ativa script do cursor se o dispositivo suportar hover (exclui celulares/tablets p/ evitar bugs)
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        
-        // Atualiza a posição do círculo via variáveis CSS (hardware acelerado)
-        window.addEventListener('mousemove', (e) => {
-            cursor.style.setProperty('--clientX', e.clientX + 'px');
-            cursor.style.setProperty('--clientY', e.clientY + 'px');
+    /* 11. TRANSIÇÃO DE PÁGINA (FADE NO IDIOMA) */
+    const langLinks = document.querySelectorAll('.lang-nav a');
+    const siteWrapper = document.querySelector('.site-wrapper');
+    
+    langLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Ignora se for o idioma já ativo
+            if (link.classList.contains('active')) return;
+            
+            e.preventDefault();
+            const targetUrl = link.href;
+            
+            // Faz o fade out via opacidade
+            siteWrapper.style.opacity = '0';
+            
+            // Aguarda o fade out (400ms) antes de realizar a navegação real
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 400);
         });
+    });
 
-        // Expansão do cursor nos elementos clicáveis
-        const interactables = document.querySelectorAll('a, button, summary, .btn, .faq-item summary');
-        interactables.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.setProperty('--cursorScale', '1.8');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.setProperty('--cursorScale', '1');
-            });
-        });
-    }
+    /* 12. ASSINATURA TIPOGRÁFICA DE SCROLL PROGRESS */
+    const scrollSignature = document.querySelector('.scroll-signature');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        
+        if(maxScroll > 0) {
+            // Calcula o progresso de 0 a 100
+            const progress = Math.min((scrolled / maxScroll) * 100, 100);
+            scrollSignature.style.height = progress + '%';
+        }
+    });
+
 </script>
 </body>
 </html>
