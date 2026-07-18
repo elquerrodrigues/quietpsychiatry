@@ -310,6 +310,16 @@
       object-fit: cover;
       filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
     }
+
+    /* ESTILO ULTRA MINIMALISTA - TEXTO ABAIXO DA FOTO SÃO PAULO */
+    .sp-caption {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      color: #1A1A1A;
+      text-align: center;
+      margin-top: 50px;
+      font-size: 32px;
+    }
     
     .content-section { 
       padding: 180px 24px; 
@@ -466,6 +476,12 @@
       .sp-banner-inner { width: 100%; display: block; } 
       .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
       
+      /* AJUSTE MOBILE DA CAPTION DA FOTO 5 */
+      .sp-caption {
+        font-size: 24px;
+        margin-top: 40px;
+      }
+      
       .btn { display: inline-block; width: auto; text-align: center; }
       
       .btn-container { padding-bottom: 40px; } 
@@ -542,6 +558,7 @@
   <div class="sp-banner-wrapper scroll-reveal">
     <div class="sp-banner-inner">
       <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
+      <p class="sp-caption">Atendimento em São Paulo.</p>
     </div>
   </div>
   
