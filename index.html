@@ -58,22 +58,60 @@
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
+
+    /* 2. OVERLAY DE RUÍDO SUTIL */
+    .noise-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.03;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* 1. CURSOR CUSTOMIZADO */
+    @media (hover: hover) and (pointer: fine) {
+      body, a, button, summary, .btn, .lang-nav a {
+        cursor: none !important;
+      }
+      .custom-cursor {
+        position: fixed;
+        top: 0; left: 0;
+        width: 28px; height: 28px;
+        border: 1px solid rgba(24, 24, 24, 0.6);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        /* O transition cuida tanto do delay (follow) quanto da suavidade do scale ao passar em links */
+        transition: transform 0.15s ease-out;
+        transform: translate3d(calc(var(--clientX, -100px) - 50%), calc(var(--clientY, -100px) - 50%), 0) scale(var(--cursorScale, 1));
+        will-change: transform;
+      }
+    }
+    @media (hover: none) {
+      .custom-cursor { display: none; }
+    }
+
+    /* 3. TRANSIÇÃO DE ENTRADA (SCALE + CLIP-PATH) */
     .site-wrapper {
       background: var(--bg);
       width: 100%;
       height: 100vh;
       overflow: hidden; 
+      transform-origin: center top;
       animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
     }
     @keyframes expandSite {
-       0% { clip-path: inset(50% 50%); } 
-       15% { clip-path: inset(calc(50% - 90px)); } 
-       45% { clip-path: inset(calc(50% - 90px)); } 
-       100% { clip-path: inset(0%); } 
+       0% { clip-path: inset(50% 50%); transform: scale(1.04); } 
+       15% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); } 
+       45% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); } 
+       100% { clip-path: inset(0%); transform: scale(1); } 
     }
     @keyframes unlockScroll {
       to { height: auto; overflow: visible; clip-path: none; }
     }
+    
     .lang-nav {
       position: absolute;
       top: 40px;
@@ -109,25 +147,26 @@
       align-items: center;
       justify-content: center;
     }
+    
+    /* 3 e 5. BLUR DE ENTRADA + BREATHING LETTER-SPACING */
     h1 { 
       position: absolute;
       top: 50vh;
       left: 50%;
       transform: translate(-50%, -50%);
       font-family: var(--font-serif);
-      font-size: 1.2rem; /* Alterado de 1rem para 1.2rem (aumento de 20%) */
+      font-size: 1.2rem;
       color: var(--text);
       margin: 0; 
       text-transform: uppercase;
-      letter-spacing: 10px;
       font-weight: 400; 
       z-index: 20;
       animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
     }
     @keyframes moveLogo {
-      0% { top: 50vh; } 
-      45% { top: 50vh; } 
-      100% { top: 15vh; }
+      0% { top: 50vh; letter-spacing: 4px; filter: blur(6px); } 
+      45% { top: 50vh; letter-spacing: 5px; filter: blur(3px); } 
+      100% { top: 15vh; letter-spacing: 10px; filter: blur(0); }
     }
     .hero-text-block {
       width: 100%;
@@ -174,7 +213,7 @@
       justify-content: center;
       align-items: flex-end; 
       gap: 4vw;
-      margin-top: 5vh; /* Alterado de 15vh para 5vh para reduzir o espaço */
+      margin-top: 5vh;
       margin-bottom: 300px;
       padding: 0 5vw;
     }
@@ -191,24 +230,15 @@
       opacity: 1;
       transform: translateY(0);
     }
-    
-    .gallery-caption {
-      font-family: var(--font-serif);
-      font-size: clamp(1.4rem, 2vw, 1.8rem); 
-      color: var(--text);
-      text-align: center;
-      margin-bottom: 15px;
-      font-weight: 400;
-      line-height: 1.3;
-      font-style: normal; 
-    }
 
+    /* O will-change ajuda na performance do parallax via JS */
     .gallery-image {
       display: block;
       width: 100%;
       height: 55vh; 
       object-fit: contain; 
       filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
+      will-change: transform; 
     }
     
     .btn { 
@@ -334,7 +364,6 @@
       font-size: 0.95rem;
       font-weight: 500; 
       color: var(--text);
-      cursor: pointer;
       list-style: none;
       position: relative;
       letter-spacing: 0.5px;
@@ -377,12 +406,13 @@
     @media(max-width: 768px) {
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
       header { padding: 0 20px; min-height: 100vh; } 
+      
+      /* Ajuste do Blur e Spacing para o H1 Mobile */
       @keyframes moveLogo {
-        0% { top: 50vh; }
-        45% { top: 50vh; }
-        100% { top: 12vh; } 
+        0% { top: 50vh; letter-spacing: 2px; filter: blur(4px); }
+        45% { top: 50vh; letter-spacing: 3px; filter: blur(2px); }
+        100% { top: 12vh; letter-spacing: 8px; filter: blur(0px); } 
       }
-      h1 { letter-spacing: 8px; } 
 
       .hero-statement { 
         font-size: clamp(0.8rem, 4vw, 1.2rem); 
@@ -396,7 +426,7 @@
         flex-direction: column; 
         gap: 15vh;
         margin-bottom: 180px; 
-        margin-top: 5vh; /* Alterado de 15vh para 5vh para reduzir o espaço no mobile */
+        margin-top: 5vh; 
         padding: 0;
       } 
       
@@ -426,6 +456,11 @@
 </head>
 <body>
 
+<!-- Overlay de Ruído -->
+<div class="noise-overlay"></div>
+<!-- Cursor Customizado -->
+<div class="custom-cursor"></div>
+
 <div class="site-wrapper">
   <nav class="lang-nav">
     <a href="/" class="active">PT</a>
@@ -443,17 +478,17 @@
   <div class="header-gallery">
     <!-- Foto 1 -->
     <div class="gallery-item scroll-reveal" style="margin-bottom: 40px;">
-      <img src="foto1.jpg?v=novo" alt="Atendimento em São Paulo" class="gallery-image">
+      <img src="foto1.jpg?v=novo" alt="Atendimento em São Paulo" class="gallery-image parallax-img">
     </div>
     
     <!-- Foto 2 -->
     <div class="gallery-item scroll-reveal">
-      <img src="foto2.jpg?v=novo" alt="Hotel e Hospitalidade" class="gallery-image">
+      <img src="foto2.jpg?v=novo" alt="Hotel e Hospitalidade" class="gallery-image parallax-img">
     </div>
     
     <!-- Foto 3 -->
     <div class="gallery-item scroll-reveal">
-      <img src="foto3.jpg?v=novo" alt="Ambiente Corporativo" class="gallery-image">
+      <img src="foto3.jpg?v=novo" alt="Ambiente Corporativo" class="gallery-image parallax-img">
     </div>
   </div>
 
@@ -479,7 +514,6 @@
     </div>
   </section>
   
-  <!-- Foto 5 – sem overlay e sem legenda -->
   <div class="sp-banner-wrapper scroll-reveal">
     <div class="sp-banner-inner">
       <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
@@ -543,6 +577,7 @@
 </div>
 
 <script>
+    /* Lógica do Acordeão */
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
@@ -554,6 +589,7 @@
       });
     });
 
+    /* Scroll Reveal Observador */
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -574,6 +610,44 @@
         observer.observe(el);
       });
     })();
+
+    /* 4. PARALLAX SUTIL NA GALERIA DO HEADER */
+    const parallaxImages = document.querySelectorAll('.parallax-img');
+    function applyParallax() {
+        const scrolled = window.pageYOffset;
+        parallaxImages.forEach((img, index) => {
+            // Cada imagem se move em velocidade sutilmente diferente baseado no index
+            const speed = 0.05 + (index * 0.04); 
+            const yPos = -(scrolled * speed);
+            img.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        });
+        requestAnimationFrame(applyParallax);
+    }
+    // Inicia o loop de animação do parallax
+    requestAnimationFrame(applyParallax);
+
+    /* 1. LÓGICA DO CURSOR CUSTOMIZADO */
+    const cursor = document.querySelector('.custom-cursor');
+    // Só ativa script do cursor se o dispositivo suportar hover (exclui celulares/tablets p/ evitar bugs)
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        
+        // Atualiza a posição do círculo via variáveis CSS (hardware acelerado)
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.setProperty('--clientX', e.clientX + 'px');
+            cursor.style.setProperty('--clientY', e.clientY + 'px');
+        });
+
+        // Expansão do cursor nos elementos clicáveis
+        const interactables = document.querySelectorAll('a, button, summary, .btn, .faq-item summary');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.setProperty('--cursorScale', '1.8');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.setProperty('--cursorScale', '1');
+            });
+        });
+    }
 </script>
 </body>
 </html>
