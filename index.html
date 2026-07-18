@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F2F1ED">
+  <meta name="theme-color" content="#F4F1EA">
   <title>ANGMER | Psiquiatria Concierge Particular</title>
   <meta name="description" content="Atendimento psiquiátrico diretamente em sua residência, escritório ou hotel em São Paulo.">
   <meta name="keywords" content="psiquiatra concierge, psiquiatra hotel, psiquiatra particular em casa">
@@ -14,6 +14,7 @@
   <link rel="alternate" hreflang="x-default" href="https://angmer.com.br" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ITEM 2: Fontes definidas (Cormorant Garamond para títulos, Inter para corpo) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
     {
@@ -34,13 +35,14 @@
   </script>
   <style>
     :root {
-      --bg: #F2F1ED;           
-      --bg-alt: #F2F1ED;       
-      --text: #181818;         
-      --text-muted: #4A4A4A;   
-      --text-light: #737373;   
+      /* ITEM 1: Cores off-white e grafite queimado */
+      --bg: #F4F1EA;            /* off-white envelhecido */
+      --bg-alt: #F4F1EA;       
+      --text: #2C2B2A;          /* grafite queimado - principal */
+      --text-muted: #5A5A5A;    /* tom mais suave */
+      --text-light: #8A8A8A;   
       --accent: #9B856A;            
-      --line: rgba(24, 24, 24, 0.1); 
+      --line: rgba(44, 43, 42, 0.1); 
       --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
       --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
       --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -59,7 +61,7 @@
       overflow-x: hidden;
     }
 
-    /* OVERLAY DE RUÍDO SUTIL */
+    /* ITEM 3: OVERLAY DE RUÍDO SUTIL (já existente, mantido) */
     .noise-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -70,15 +72,14 @@
       background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
-    /* 8. BREATHING BACKGROUND */
+    /* 8. BREATHING BACKGROUND (mantido, não pedido para remover) */
     .breathing-bg {
       position: fixed;
       top: 0; left: 0;
       width: 100vw; height: 100vh;
       pointer-events: none;
       z-index: -1;
-      /* Gradiente sutil em tons próximos a --bg */
-      background: radial-gradient(120% 120% at 50% 50%, #F5F4F0 0%, #EFEEE9 100%);
+      background: radial-gradient(120% 120% at 50% 50%, #F8F6F0 0%, #EFEEE9 100%);
       background-size: 200% 200%;
       animation: breathBg 25s ease-in-out infinite alternate;
     }
@@ -87,7 +88,6 @@
       100% { background-position: 100% 100%; }
     }
 
-    /* 12. ASSINATURA TIPOGRÁFICA NO SCROLL */
     .scroll-signature {
       position: fixed;
       top: 0;
@@ -100,15 +100,13 @@
       transition: height 0.1s linear;
     }
 
-    /* TRANSIÇÃO DE ENTRADA */
     .site-wrapper {
-      background: transparent; /* Permite ver o breathing-bg */
+      background: transparent;
       width: 100%;
       height: 100vh;
       overflow: hidden; 
       transform-origin: center top;
       animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
-      /* Será usado na transição de idioma */
       transition: opacity 0.4s ease;
     }
     @keyframes expandSite {
@@ -158,7 +156,6 @@
       justify-content: center;
     }
     
-    /* BLUR DE ENTRADA + BREATHING LETTER-SPACING */
     h1 { 
       position: absolute;
       top: 50vh;
@@ -216,14 +213,13 @@
       animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards;
     }
     
-    /* FIX DE ALINHAMENTO DESKTOP NAS FOTOS */
     .header-gallery {
       width: 100vw;
       margin-left: calc(50% - 50vw); 
       display: flex;
       flex-direction: row; 
       justify-content: center;
-      align-items: center; /* Alinha as caixas ao centro */
+      align-items: center;
       gap: 4vw;
       margin-top: 5vh;
       margin-bottom: 300px;
@@ -243,39 +239,41 @@
       transform: translateY(0);
     }
 
-    /* 9. HOVER COM DESATURAÇÃO REVERSA */
     .gallery-image {
       display: block;
       width: 100%;
       height: 55vh; 
-      object-fit: cover; /* Garante que todas as fotos fiquem na mesma altura exata */
-      /* Base: sutilmente desaturado */
+      object-fit: cover;
       filter: contrast(102%) brightness(96%) sepia(3%) saturate(85%) grayscale(20%);
       will-change: transform, filter; 
       transition: filter 1.2s var(--transition-smooth);
     }
     
     .gallery-item:hover .gallery-image {
-      /* Hover: revela a cor plena */
       filter: contrast(102%) brightness(96%) sepia(3%) saturate(105%) grayscale(0%);
     }
     
+    /* ITEM 6: Botão "Toque Suave" – fundo transparente, borda fina, texto sutil */
     .btn { 
       display: inline-block; 
       font-family: var(--font-sans); 
-      color: var(--bg);
-      background-color: var(--text);
-      padding: 16px 36px; 
+      color: var(--text);
+      background-color: transparent;
+      padding: 14px 28px; 
       text-decoration: none; 
       font-size: 0.7rem; 
       text-transform: uppercase; 
-      letter-spacing: 3px; 
-      font-weight: 600;
-      transition: opacity 0.3s ease;
+      letter-spacing: 4px; 
+      font-weight: 400;
+      transition: all 0.3s ease;
+      border: 1px solid var(--line);
       border-radius: 2px;
     }
     .btn:hover { 
-      opacity: 0.85;
+      background-color: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+      opacity: 1;
     }
     
     .scroll-reveal {
@@ -311,23 +309,27 @@
       filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
     }
 
-    /* ESTILO ULTRA MINIMALISTA - TEXTO ABAIXO DA FOTO SÃO PAULO */
     .sp-caption {
       font-family: var(--font-serif);
       font-weight: 300;
-      color: #1A1A1A;
+      color: var(--text);
       text-align: center;
       margin-top: 50px;
       font-size: 32px;
     }
     
+    /* ITEM 7: Respiração – conteúdo com largura máxima de 50% da viewport e padding generoso */
     .content-section { 
-      padding: 180px 24px; 
-      max-width: 800px; 
+      padding: 180px clamp(24px, 10vw, 120px); 
+      max-width: 50vw;          /* ocupa no máximo metade da largura da tela */
       margin: 0 auto; 
     }
     
-    .content { max-width: 580px; margin: 0 auto; text-align: center; }
+    .content { 
+      max-width: 100%; 
+      margin: 0 auto; 
+      text-align: center; 
+    }
     .content p { 
       font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
       color: var(--text-muted); 
@@ -422,7 +424,7 @@
       padding: 80px 24px 100px 24px; 
       font-family: var(--font-sans); 
       margin: 0 auto; 
-      background-color: transparent; /* Permite ver o breathing bg */
+      background-color: transparent;
       color: var(--text-muted);
       border-top: 1px solid var(--line); 
     }
@@ -468,7 +470,11 @@
         object-fit: cover;
       }
 
-      .content-section { padding: 100px 20px; } 
+      /* ITEM 7: No mobile, a largura máxima volta a ser 100% para não quebrar */
+      .content-section { 
+        max-width: 100%; 
+        padding: 100px 20px; 
+      }
       
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } 
       
@@ -476,7 +482,6 @@
       .sp-banner-inner { width: 100%; display: block; } 
       .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
       
-      /* AJUSTE MOBILE DA CAPTION DA FOTO 5 */
       .sp-caption {
         font-size: 24px;
         margin-top: 40px;
@@ -492,15 +497,12 @@
 </head>
 <body>
 
-<!-- Overlay de Ruído -->
+<!-- ITEM 3: Overlay de ruído -->
 <div class="noise-overlay"></div>
 
 <div class="site-wrapper">
   
-  <!-- 8. Background Residente Sutil -->
   <div class="breathing-bg"></div>
-
-  <!-- 12. Assinatura Tipográfica Invisível de Scroll -->
   <div class="scroll-signature"></div>
 
   <nav class="lang-nav">
@@ -517,17 +519,12 @@
   </header>
 
   <div class="header-gallery">
-    <!-- Foto 1 -->
     <div class="gallery-item scroll-reveal" style="margin-bottom: 40px;">
       <img src="foto1.jpg?v=novo" alt="Atendimento em São Paulo" class="gallery-image parallax-img">
     </div>
-    
-    <!-- Foto 2 -->
     <div class="gallery-item scroll-reveal">
       <img src="foto2.jpg?v=novo" alt="Hotel e Hospitalidade" class="gallery-image parallax-img">
     </div>
-    
-    <!-- Foto 3 -->
     <div class="gallery-item scroll-reveal">
       <img src="foto3.jpg?v=novo" alt="Ambiente Corporativo" class="gallery-image parallax-img">
     </div>
@@ -596,11 +593,12 @@
       </div>
 
       <div class="btn-container">
+          <!-- ITEM 6: Botão "Toque Suave" com novo texto e estilo -->
           <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20ANGMER." 
              target="_blank" 
              class="btn"
-             aria-label="Verificar disponibilidade via WhatsApp">
-            Consultar disponibilidade
+             aria-label="Marque o silêncio – agende sua consulta">
+            Marque o silêncio
           </a>
           <span class="secure-alt-contact">
             Agenda limitada.<br>Atendimento sujeito à disponibilidade geográfica.
@@ -619,7 +617,7 @@
 </div>
 
 <script>
-    /* Lógica do Acordeão */
+    /* Acordeão */
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
@@ -631,7 +629,7 @@
       });
     });
 
-    /* Scroll Reveal Observador */
+    /* Scroll Reveal */
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -653,7 +651,7 @@
       });
     })();
 
-    /* PARALLAX SUTIL NA GALERIA DO HEADER */
+    /* Parallax */
     const parallaxImages = document.querySelectorAll('.parallax-img');
     function applyParallax() {
         const scrolled = window.pageYOffset;
@@ -666,36 +664,28 @@
     }
     requestAnimationFrame(applyParallax);
 
-    /* 11. TRANSIÇÃO DE PÁGINA (FADE NO IDIOMA) */
+    /* Transição de idioma */
     const langLinks = document.querySelectorAll('.lang-nav a');
     const siteWrapper = document.querySelector('.site-wrapper');
     
     langLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Ignora se for o idioma já ativo
             if (link.classList.contains('active')) return;
-            
             e.preventDefault();
             const targetUrl = link.href;
-            
-            // Faz o fade out via opacidade
             siteWrapper.style.opacity = '0';
-            
-            // Aguarda o fade out (400ms) antes de realizar a navegação real
             setTimeout(() => {
                 window.location.href = targetUrl;
             }, 400);
         });
     });
 
-    /* 12. ASSINATURA TIPOGRÁFICA DE SCROLL PROGRESS */
+    /* Assinatura de scroll */
     const scrollSignature = document.querySelector('.scroll-signature');
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const maxScroll = document.body.scrollHeight - window.innerHeight;
-        
         if(maxScroll > 0) {
-            // Calcula o progresso de 0 a 100
             const progress = Math.min((scrolled / maxScroll) * 100, 100);
             scrollSignature.style.height = progress + '%';
         }
