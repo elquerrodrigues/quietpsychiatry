@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F4F1EA" />
-    <title>ANGMER | Concierge Psychiatry</title>
+    <title>PSIQUIATRA PRIVATIVO | Concierge Psychiatry</title>
     <meta name="description" content="Psychiatric care delivered directly to your home, office, or hotel in São Paulo." />
     <meta name="keywords" content="concierge psychiatrist, hotel psychiatrist, private psychiatrist at home" />
-    <meta name="author" content="ANGMER" />
+    <meta name="author" content="PSIQUIATRA PRIVATIVO" />
     <meta name="robots" content="index, follow" />
     <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br/" />
     <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
@@ -33,7 +33,7 @@
         }
     </script>
     <style>
-        /* ===== CSS EXATAMENTE IGUAL AO ORIGINAL (apenas ajustes de cores mantidos) ===== */
+        /* ===== CSS ATUALIZADO COM AS MELHORIAS VISUAIS ===== */
         :root {
             --bg: #F4F1EA;
             --bg-alt: #F4F1EA;
@@ -186,36 +186,44 @@
             justify-content: center;
         }
 
+        /* BADGE (selo) */
+        .badge {
+            display: inline-block;
+            border: 1px solid var(--text);
+            padding: 6px 18px;
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text);
+            margin-bottom: 28px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: elegantFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+        }
+
         h1 {
-            position: absolute;
-            top: 50vh;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative;
             font-family: var(--font-serif);
-            font-size: 1.2rem;
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
             color: var(--text);
             margin: 0;
             text-transform: uppercase;
             font-weight: 400;
-            z-index: 20;
-            animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+            letter-spacing: 6px;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: elegantFadeUp 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
         }
-        @keyframes moveLogo {
-            0% {
-                top: 50vh;
-                letter-spacing: 4px;
-                filter: blur(6px);
-            }
-            45% {
-                top: 50vh;
-                letter-spacing: 5px;
-                filter: blur(3px);
-            }
-            100% {
-                top: 15vh;
-                letter-spacing: 10px;
-                filter: blur(0);
-            }
+        /* Linha decorativa abaixo do título */
+        .title-divider {
+            width: 60px;
+            height: 1px;
+            background-color: var(--text);
+            margin: 24px auto 30px auto;
+            opacity: 0;
+            animation: elegantFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
         }
 
         .hero-text-block {
@@ -232,30 +240,30 @@
 
         .hero-statement {
             font-family: var(--font-serif);
-            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-size: clamp(1.0rem, 2.4vw, 1.6rem);
             font-weight: bold;
             color: var(--text);
-            margin: 0 auto 30px auto;
+            margin: 0 auto 20px auto;
             line-height: 1.5;
             max-width: 800px;
             text-transform: uppercase;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
             opacity: 0;
             transform: translateY(30px);
-            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
+            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
         }
 
         .hero-locations {
             font-family: var(--font-sans);
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: bold;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             color: var(--text-muted);
             text-transform: uppercase;
             margin-bottom: 0;
             opacity: 0;
             transform: translateY(30px);
-            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards;
+            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.7s forwards;
         }
 
         .header-gallery {
@@ -521,10 +529,11 @@
 
         .footer-brand {
             font-family: var(--font-serif);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             letter-spacing: 6px;
             color: var(--text);
             margin-bottom: 30px;
+            font-weight: 400;
         }
         .footer-luxury-tag {
             font-family: var(--font-sans);
@@ -590,7 +599,13 @@
             font-weight: 700 !important;
         }
         h1 {
-            font-weight: 700 !important;
+            font-weight: 400 !important;
+        }
+        .footer-brand {
+            font-weight: 400 !important;
+        }
+        .badge {
+            font-weight: 500 !important;
         }
 
         .faq-item summary,
@@ -636,29 +651,9 @@
                 min-height: 100vh;
             }
 
-            @keyframes moveLogo {
-                0% {
-                    top: 50vh;
-                    letter-spacing: 2px;
-                    filter: blur(4px);
-                }
-                45% {
-                    top: 50vh;
-                    letter-spacing: 3px;
-                    filter: blur(2px);
-                }
-                100% {
-                    top: 12vh;
-                    letter-spacing: 8px;
-                    filter: blur(0px);
-                }
-            }
-
             .hero-statement {
-                font-size: clamp(0.8rem, 4vw, 1.2rem);
-                line-height: 1.5;
-                margin-bottom: 20px;
-                letter-spacing: 2px;
+                font-size: clamp(0.7rem, 3.5vw, 1.0rem);
+                letter-spacing: 4px;
                 white-space: nowrap;
             }
 
@@ -737,6 +732,16 @@
             footer {
                 padding: 60px 20px 80px 20px;
             }
+
+            .badge {
+                font-size: 0.5rem;
+                padding: 4px 14px;
+                letter-spacing: 3px;
+            }
+            .title-divider {
+                width: 40px;
+                margin: 18px auto 22px auto;
+            }
         }
     </style>
 </head>
@@ -756,7 +761,15 @@
         </nav>
 
         <header>
-            <h1>ANGMER</h1>
+            <!-- Badge (selo) -->
+            <div class="badge">Concierge</div>
+
+            <!-- Título quebrado em duas linhas -->
+            <h1>PSIQUIATRA<br>PRIVATIVO</h1>
+
+            <!-- Linha decorativa -->
+            <div class="title-divider"></div>
+
             <div class="hero-text-block">
                 <p class="hero-statement">A psychiatrist comes to you.</p>
                 <p class="hero-locations">Home &bull; Office &bull; Hotel</p>
@@ -773,7 +786,7 @@
                 <img src="/foto1.jpg?v=novo" alt="Home visit" class="gallery-image" />
             </div>
 
-            <!-- HOTEL – título e texto do hotel -->
+            <!-- HOTEL -->
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
                     <p class="caption-title">At your hotel</p>
@@ -782,7 +795,7 @@
                 <img src="/foto2.jpg?v=novo" alt="Hotel appointment" class="gallery-image" />
             </div>
 
-            <!-- ESCRITÓRIO – título e texto do escritório -->
+            <!-- ESCRITÓRIO -->
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
                     <p class="caption-title">At your office</p>
@@ -863,7 +876,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20ANGMER%20availability."
+                    <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20PSIQUIATRA%20PRIVATIVO%20availability."
                        target="_blank"
                        class="btn"
                        aria-label="Check availability – schedule your appointment">
@@ -878,14 +891,14 @@
         </section>
 
         <footer>
-            <div class="footer-brand">ANGMER</div>
+            <div class="footer-brand">PSIQUIATRA PRIVATIVO</div>
             <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
             <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
             <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
         </footer>
     </div>
 
-    <!-- ===== SCRIPTS (idênticos aos originais, com pequeno ajuste para funcionar com os links de idioma) ===== -->
+    <!-- ===== SCRIPTS (idênticos aos originais) ===== -->
     <script>
         const details = document.querySelectorAll('details');
         details.forEach((targetDetail) => {
