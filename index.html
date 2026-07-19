@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F4F1EA">
-    <title>ANGMER | Psiquiatria Concierge Particular</title>
+    <title>PSIQUIATRA PRIVATIVO | Psiquiatria Concierge Particular</title>
     <meta name="description" content="Atendimento psiquiátrico diretamente em sua residência, escritório ou hotel em São Paulo.">
     <meta name="keywords" content="psiquiatra concierge, psiquiatra hotel, psiquiatra particular em casa">
-    <meta name="author" content="ANGMER">
+    <meta name="author" content="PSIQUIATRA PRIVATIVO">
     <meta name="robots" content="index, follow">
     <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br/" />
     <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
@@ -191,13 +191,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-family: var(--font-serif);
-            font-size: 1.2rem;
+            /* Ajuste de tamanho e espaçamento para o novo nome */
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
             color: var(--text);
             margin: 0;
             text-transform: uppercase;
             font-weight: 400;
+            letter-spacing: 6px;
             z-index: 20;
             animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+            white-space: nowrap;
         }
         @keyframes moveLogo {
             0% {
@@ -211,8 +214,8 @@
                 filter: blur(3px);
             }
             100% {
-                top: 15vh;
-                letter-spacing: 10px;
+                top: 12vh;
+                letter-spacing: 8px;
                 filter: blur(0);
             }
         }
@@ -327,7 +330,6 @@
             overflow-wrap: normal;
         }
 
-        /* ===== BOTÃO COM FUNDO PRETO E LETRAS BRANCAS ===== */
         .btn {
             display: inline-block;
             font-family: var(--font-sans);
@@ -521,10 +523,11 @@
 
         .footer-brand {
             font-family: var(--font-serif);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             letter-spacing: 6px;
             color: var(--text);
             margin-bottom: 30px;
+            font-weight: 400;
         }
         .footer-luxury-tag {
             font-family: var(--font-sans);
@@ -590,7 +593,10 @@
             font-weight: 700 !important;
         }
         h1 {
-            font-weight: 700 !important;
+            font-weight: 400 !important; /* h1 com peso mais leve para elegância */
+        }
+        .footer-brand {
+            font-weight: 400 !important;
         }
 
         .faq-item summary,
@@ -649,7 +655,7 @@
                 }
                 100% {
                     top: 12vh;
-                    letter-spacing: 8px;
+                    letter-spacing: 4px;
                     filter: blur(0px);
                 }
             }
@@ -755,7 +761,7 @@
         </nav>
 
         <header>
-            <h1>ANGMER</h1>
+            <h1>PSIQUIATRA PRIVATIVO</h1>
             <div class="hero-text-block">
                 <p class="hero-statement">Um psiquiatra vai até você.</p>
                 <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
@@ -772,7 +778,7 @@
                 <img src="foto1.jpg?v=novo" alt="Atendimento em residência" class="gallery-image">
             </div>
 
-            <!-- HOTEL – título e texto do hotel -->
+            <!-- HOTEL -->
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
                     <p class="caption-title">No seu hotel</p>
@@ -781,7 +787,7 @@
                 <img src="foto2.jpg?v=novo" alt="Atendimento em escritório" class="gallery-image">
             </div>
 
-            <!-- ESCRITÓRIO – título e texto do escritório -->
+            <!-- ESCRITÓRIO -->
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
                     <p class="caption-title">No seu escritório</p>
@@ -859,7 +865,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20ANGMER."
+                    <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20PSIQUIATRA%20PRIVATIVO."
                        target="_blank"
                        class="btn"
                        aria-label="Marque o silêncio – agende sua consulta">
@@ -874,7 +880,7 @@
         </section>
 
         <footer>
-            <div class="footer-brand">ANGMER</div>
+            <div class="footer-brand">PSIQUIATRA PRIVATIVO</div>
             <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
             <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
             <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
