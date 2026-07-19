@@ -435,6 +435,19 @@
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
     
+    /* ===== NEGRITO EM TODAS AS PALAVRAS ===== */
+    body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, footer, header, nav,
+    .btn, .hero-statement, .hero-locations, .content p, .faq-answer, .secure-alt-contact,
+    .sp-caption, .scroll-reveal-slow, .footer-brand, .footer-luxury-tag, .footer-creds,
+    .footer-email, .lang-nav a, .faq-item summary, .faq-item summary::after,
+    .content-section, .sp-banner-wrapper, .site-wrapper, .gallery-item, .hero-text-block {
+      font-weight: 700 !important;
+    }
+    /* Mantém o peso do título principal (h1) para não sobrepor o estilo */
+    h1 {
+      font-weight: 700 !important;
+    }
+    
     /* ===== DESKTOP – galeria empilhada verticalmente ===== */
     @media(min-width: 769px) {
       .header-gallery {
