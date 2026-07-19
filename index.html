@@ -221,7 +221,7 @@
       align-items: center;
       gap: 4vw;
       margin-top: 5vh;
-      margin-bottom: 150px;  /* ← reduzido para 50% (era 300px) */
+      margin-bottom: 105px;  /* ← 30% a menos que 150px (150 * 0.7 = 105) */
       padding: 0 5vw;
     }
     
@@ -337,21 +337,24 @@
     }
     .content p:last-child { margin-bottom: 0; }
     
+    /* Efeito lento, suave e chique para as três frases */
     .scroll-reveal-slow {
       font-family: var(--font-sans);
       font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 5px;
       color: var(--text-light);
-      margin: 40px 0; 
+      margin: 40px 0;
+      font-weight: 700; /* negrito */
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1), transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(20px) scale(0.98);
+      transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
     }
     .scroll-reveal-slow.visible {
-      opacity: 1; 
-      transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
     
     .profile-photo {
@@ -440,7 +443,7 @@
         gap: 80px; /* respiro entre as imagens */
         padding: 0 20px;
         margin-top: 10vh;
-        margin-bottom: 150px; /* ← reduzido para 50% (era 300px) */
+        margin-bottom: 105px; /* 30% a menos que 150px */
       }
       .gallery-item {
         width: 100%;
@@ -454,7 +457,7 @@
       }
     }
 
-    /* ===== MOBILE (já estava bom) ===== */
+    /* ===== MOBILE ===== */
     @media(max-width: 768px) {
       .scroll-signature { right: 10px; }
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
@@ -477,7 +480,7 @@
       .header-gallery { 
         flex-direction: column; 
         gap: 15vh;
-        margin-bottom: 90px; /* ← reduzido para 50% (era 180px) */
+        margin-bottom: 63px; /* 30% a menos que 90px (90 * 0.7 = 63) */
         margin-top: 5vh; 
         padding: 0;
       } 
@@ -558,9 +561,10 @@
       <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 80px; line-height: 1.6;">
         Atendimento presencial no local de sua escolha.
       </p>
-      <p class="scroll-reveal-slow" style="color: var(--text-light);">Sem deslocamentos</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.3s; color: var(--text-light);">Sem exposição pública</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.6s; color: var(--text-light);">Discrição absoluta</p>
+      <!-- Frases com efeito lento, suave e chique, em negrito -->
+      <p class="scroll-reveal-slow" style="transition-delay: 0.4s;">Sem deslocamentos</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 0.8s;">Sem exposição pública</p>
+      <p class="scroll-reveal-slow" style="transition-delay: 1.2s;">Discrição absoluta</p>
     </div>
   </section>
 
