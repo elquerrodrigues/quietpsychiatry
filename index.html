@@ -40,7 +40,7 @@
             --text-muted: #5A5A5A;
             --text-light: #8A8A8A;
             --accent: #9B856A;
-            --line: rgba(44, 43, 42, 0.1);
+            --line: rgba(44, 43, 42, 0.12);
             --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
             --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
             --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -176,7 +176,7 @@
 
         header {
             text-align: center;
-            padding: 0 24px;
+            padding: 40px 24px 80px 24px;
             position: relative;
             min-height: 100vh;
             display: flex;
@@ -268,16 +268,31 @@
             animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.7s forwards;
         }
 
-        /* SEÇÃO "ONDE VOCÊ PRECISAR" – movida para antes da galeria com bastante espaço */
+        /* SEÇÃO "ONDE VOCÊ PRECISAR" – com MUITO ESPAÇO */
         .onde-section {
-            padding-top: 180px;
-            padding-bottom: 180px;
-            margin: 60px 0;
+            padding-top: 200px;
+            padding-bottom: 200px;
+            margin: 40px 0;
             background-color: var(--bg-alt);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        /* LINHA DIVISÓRIA ELEGANTE */
+        .section-divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 80px 0 100px 0;
+            width: 100%;
+        }
+        .section-divider .line {
+            width: 60px;
+            height: 1px;
+            background-color: var(--text-light);
+            opacity: 0.3;
         }
 
         .header-gallery {
@@ -288,8 +303,8 @@
             justify-content: center;
             align-items: center;
             gap: 12vw;
-            margin-top: 80px; /* mais espaço entre a seção e a galeria */
-            margin-bottom: 50px;
+            margin-top: 60px;
+            margin-bottom: 80px;
             padding: 0 5vw;
         }
 
@@ -415,7 +430,7 @@
         }
 
         .content-section {
-            padding: 90px clamp(24px, 10vw, 120px);
+            padding: 120px clamp(24px, 10vw, 120px);
             max-width: 50vw;
             margin: 0 auto;
         }
@@ -633,8 +648,8 @@
                 align-items: center;
                 gap: 100px;
                 padding: 0 20px;
-                margin-top: 80px;
-                margin-bottom: 50px;
+                margin-top: 60px;
+                margin-bottom: 80px;
             }
             .gallery-item {
                 width: 100%;
@@ -661,7 +676,7 @@
                 gap: 10px;
             }
             header {
-                padding: 0 20px;
+                padding: 30px 20px 60px 20px;
                 min-height: 100vh;
             }
 
@@ -672,16 +687,23 @@
             }
 
             .onde-section {
-                padding-top: 120px;
-                padding-bottom: 120px;
-                margin: 40px 0;
+                padding-top: 140px;
+                padding-bottom: 140px;
+                margin: 30px 0;
+            }
+
+            .section-divider {
+                margin: 50px 0 70px 0;
+            }
+            .section-divider .line {
+                width: 40px;
             }
 
             .header-gallery {
                 flex-direction: column;
                 gap: 16vh;
                 margin-bottom: 30px;
-                margin-top: 60px;
+                margin-top: 40px;
                 padding: 0;
             }
 
@@ -706,7 +728,7 @@
 
             .content-section {
                 max-width: 100%;
-                padding: 50px 20px;
+                padding: 80px 20px;
             }
 
             .profile-photo {
@@ -785,22 +807,16 @@
         </nav>
 
         <header>
-            <!-- Badge (selo) -->
             <div class="badge">Concierge</div>
-
-            <!-- Título dentro de um retângulo preto -->
             <div class="title-box">PSIQUIATRA<br>PRIVATIVO</div>
-
-            <!-- Linha decorativa -->
             <div class="title-divider"></div>
-
             <div class="hero-text-block">
                 <p class="hero-statement">Um psiquiatra vai até você.</p>
                 <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
             </div>
         </header>
 
-        <!-- ===== SEÇÃO "ONDE VOCÊ PRECISAR" – agora antes da galeria ===== -->
+        <!-- ===== SEÇÃO "ONDE VOCÊ PRECISAR" ===== -->
         <section class="onde-section scroll-reveal">
             <div class="content" style="max-width: 800px; margin: 0 auto;">
                 <p style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3.2vw, 2.8rem); color: var(--text); font-weight: 300; line-height: 1.2; margin-bottom: 80px; letter-spacing: 0.4em; text-transform: uppercase;">
@@ -819,9 +835,13 @@
             </div>
         </section>
 
-        <!-- GALERIA DE FOTOS (agora depois da seção) -->
+        <!-- ===== LINHA DIVISÓRIA ELEGANTE ===== -->
+        <div class="section-divider">
+            <span class="line"></span>
+        </div>
+
+        <!-- ===== GALERIA DE FOTOS ===== -->
         <div class="header-gallery">
-            <!-- RESIDÊNCIA -->
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
                     <p class="caption-title">Na sua residência</p>
@@ -830,7 +850,6 @@
                 <img src="foto1.jpg?v=novo" alt="Atendimento em residência" class="gallery-image">
             </div>
 
-            <!-- HOTEL -->
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
                     <p class="caption-title">No seu hotel</p>
@@ -839,7 +858,6 @@
                 <img src="foto2.jpg?v=novo" alt="Atendimento em escritório" class="gallery-image">
             </div>
 
-            <!-- ESCRITÓRIO -->
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
                     <p class="caption-title">No seu escritório</p>
@@ -849,7 +867,7 @@
             </div>
         </div>
 
-        <!-- (restante do conteúdo permanece igual) -->
+        <!-- ===== PERFIL ===== -->
         <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
             <div class="content">
                 <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
@@ -858,6 +876,7 @@
             </div>
         </section>
 
+        <!-- ===== BANNER SÃO PAULO ===== -->
         <div class="sp-banner-wrapper scroll-reveal">
             <div class="sp-banner-inner">
                 <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
@@ -865,6 +884,7 @@
             </div>
         </div>
 
+        <!-- ===== FAQ E BOTÃO ===== -->
         <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
             <div class="content">
 
