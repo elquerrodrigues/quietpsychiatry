@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F4F1EA" />
-    <title>PSIQUIATRA PRIVATIVO | Concierge Psychiatry</title>
+    <title>PSIQUIATRA PRIVATIVO | Concierge Psychiatry Luxury</title>
     <meta name="description" content="Psychiatric care delivered directly to your home, office, or hotel in São Paulo." />
     <meta name="keywords" content="concierge psychiatrist, hotel psychiatrist, private psychiatrist at home" />
     <meta name="author" content="PSIQUIATRA PRIVATIVO" />
@@ -33,7 +33,6 @@
         }
     </script>
     <style>
-        /* ===== CSS ATUALIZADO COM AS MELHORIAS VISUAIS ===== */
         :root {
             --bg: #F4F1EA;
             --bg-alt: #F4F1EA;
@@ -41,7 +40,7 @@
             --text-muted: #5A5A5A;
             --text-light: #8A8A8A;
             --accent: #9B856A;
-            --line: rgba(44, 43, 42, 0.1);
+            --line: rgba(44, 43, 42, 0.12);
             --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
             --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
             --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -177,7 +176,7 @@
 
         header {
             text-align: center;
-            padding: 0 24px;
+            padding: 40px 24px 80px 24px;
             position: relative;
             min-height: 100vh;
             display: flex;
@@ -186,7 +185,6 @@
             justify-content: center;
         }
 
-        /* BADGE (selo) */
         .badge {
             display: inline-block;
             border: 1px solid var(--text);
@@ -202,21 +200,23 @@
             animation: elegantFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
         }
 
-        h1 {
-            position: relative;
+        .title-box {
+            display: inline-block;
+            background-color: #000;
+            padding: 20px 40px;
             font-family: var(--font-serif);
             font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-            color: var(--text);
-            margin: 0;
+            color: #fff;
             text-transform: uppercase;
             font-weight: 400;
             letter-spacing: 6px;
-            line-height: 1.2;
+            line-height: 1.3;
+            text-align: center;
             opacity: 0;
             transform: translateY(30px);
             animation: elegantFadeUp 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
         }
-        /* Linha decorativa abaixo do título */
+
         .title-divider {
             width: 60px;
             height: 1px;
@@ -266,6 +266,31 @@
             animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.7s forwards;
         }
 
+        .onde-section {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            margin: 40px 0;
+            background-color: var(--bg-alt);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px 0 120px 0;
+            width: 100%;
+        }
+        .section-divider .line {
+            width: 60px;
+            height: 1px;
+            background-color: var(--text-light);
+            opacity: 0.3;
+        }
+
         .header-gallery {
             width: 100vw;
             margin-left: calc(50% - 50vw);
@@ -274,8 +299,8 @@
             justify-content: center;
             align-items: center;
             gap: 12vw;
-            margin-top: 2vh;
-            margin-bottom: 50px;
+            margin-top: 100px;
+            margin-bottom: 60px;
             padding: 0 5vw;
         }
 
@@ -311,7 +336,7 @@
         .gallery-caption {
             width: 100%;
             text-align: center;
-            padding: 0 10px 60px 10px;
+            padding: 0 10px 120px 10px;
         }
         .caption-title {
             font-family: var(--font-serif);
@@ -339,8 +364,8 @@
         .btn {
             display: inline-block;
             font-family: var(--font-sans);
-            color: var(--text);
-            background-color: transparent;
+            background-color: #000;
+            color: #fff;
             padding: 14px 28px;
             text-decoration: none;
             font-size: 0.7rem;
@@ -348,13 +373,13 @@
             letter-spacing: 4px;
             font-weight: 400;
             transition: all 0.3s ease;
-            border: 1px solid var(--line);
+            border: 1px solid #000;
             border-radius: 2px;
         }
         .btn:hover {
-            background-color: var(--text);
-            color: var(--bg);
-            border-color: var(--text);
+            background-color: #fff;
+            color: #000;
+            border-color: #000;
             opacity: 1;
         }
 
@@ -401,9 +426,14 @@
         }
 
         .content-section {
-            padding: 90px clamp(24px, 10vw, 120px);
+            padding: 120px clamp(24px, 10vw, 120px);
             max-width: 50vw;
             margin: 0 auto;
+        }
+
+        .profile-section {
+            margin-top: 80px;
+            padding-top: 60px;
         }
 
         .content {
@@ -455,9 +485,10 @@
         }
 
         .btn-container {
-            padding-top: 60px;
-            padding-bottom: 60px;
+            padding-top: 100px;
+            padding-bottom: 100px;
             text-align: center;
+            margin-top: 60px;
         }
 
         .secure-alt-contact {
@@ -473,7 +504,7 @@
         }
 
         .faq-container {
-            margin-bottom: 100px;
+            margin-bottom: 140px;
             text-align: left;
         }
         .faq-item {
@@ -535,7 +566,8 @@
             margin-bottom: 30px;
             font-weight: 400;
         }
-        .footer-luxury-tag {
+        /* FRASE FINAL DO RODAPÉ – SEM "LUXURY" */
+        .footer-tag {
             font-family: var(--font-sans);
             font-size: 0.65rem;
             letter-spacing: 3px;
@@ -587,7 +619,7 @@
         .sp-caption,
         .scroll-reveal-slow,
         .footer-brand,
-        .footer-luxury-tag,
+        .footer-tag,
         .footer-creds,
         .footer-email,
         .lang-nav a,
@@ -598,7 +630,7 @@
         .hero-text-block {
             font-weight: 700 !important;
         }
-        h1 {
+        .title-box {
             font-weight: 400 !important;
         }
         .footer-brand {
@@ -619,8 +651,8 @@
                 align-items: center;
                 gap: 100px;
                 padding: 0 20px;
-                margin-top: 2vh;
-                margin-bottom: 50px;
+                margin-top: 100px;
+                margin-bottom: 60px;
             }
             .gallery-item {
                 width: 100%;
@@ -633,7 +665,11 @@
                 object-fit: cover;
             }
             .gallery-caption {
-                padding: 0 10px 60px 10px;
+                padding: 0 10px 120px 10px;
+            }
+
+            .section-divider {
+                margin: 120px 0 140px 0;
             }
         }
 
@@ -647,7 +683,7 @@
                 gap: 10px;
             }
             header {
-                padding: 0 20px;
+                padding: 30px 20px 60px 20px;
                 min-height: 100vh;
             }
 
@@ -657,11 +693,24 @@
                 white-space: nowrap;
             }
 
+            .onde-section {
+                padding-top: 140px;
+                padding-bottom: 140px;
+                margin: 30px 0;
+            }
+
+            .section-divider {
+                margin: 70px 0 90px 0;
+            }
+            .section-divider .line {
+                width: 40px;
+            }
+
             .header-gallery {
                 flex-direction: column;
                 gap: 16vh;
                 margin-bottom: 30px;
-                margin-top: 2vh;
+                margin-top: 60px;
                 padding: 0;
             }
 
@@ -675,7 +724,7 @@
                 object-fit: cover;
             }
             .gallery-caption {
-                padding: 0 10px 40px 10px;
+                padding: 0 10px 80px 10px;
             }
             .caption-title {
                 font-size: 1.2rem;
@@ -686,7 +735,12 @@
 
             .content-section {
                 max-width: 100%;
-                padding: 50px 20px;
+                padding: 80px 20px;
+            }
+
+            .profile-section {
+                margin-top: 40px;
+                padding-top: 40px;
             }
 
             .profile-photo {
@@ -726,7 +780,13 @@
             }
 
             .btn-container {
-                padding-bottom: 40px;
+                padding-top: 60px;
+                padding-bottom: 60px;
+                margin-top: 40px;
+            }
+
+            .faq-container {
+                margin-bottom: 80px;
             }
 
             footer {
@@ -742,6 +802,11 @@
                 width: 40px;
                 margin: 18px auto 22px auto;
             }
+            .title-box {
+                padding: 16px 24px;
+                font-size: clamp(1.2rem, 4vw, 1.8rem);
+                letter-spacing: 3px;
+            }
         }
     </style>
 </head>
@@ -754,62 +819,26 @@
         <div class="breathing-bg"></div>
         <div class="scroll-signature"></div>
 
-        <!-- Navegação de idioma: versão EN ativa, link para PT -->
         <nav class="lang-nav" id="langNav">
             <a href="/">PT</a>
             <a href="/en/" class="active">EN</a>
         </nav>
 
         <header>
-            <!-- Badge (selo) -->
             <div class="badge">Concierge</div>
-
-            <!-- Título quebrado em duas linhas -->
-            <h1>PSIQUIATRA<br>PRIVATIVO</h1>
-
-            <!-- Linha decorativa -->
+            <div class="title-box">PSIQUIATRA<br>PRIVATIVO</div>
             <div class="title-divider"></div>
-
             <div class="hero-text-block">
                 <p class="hero-statement">A psychiatrist comes to you.</p>
                 <p class="hero-locations">Home &bull; Office &bull; Hotel</p>
             </div>
         </header>
 
-        <div class="header-gallery">
-            <!-- RESIDÊNCIA (HOME) -->
-            <div class="gallery-item scroll-reveal">
-                <div class="gallery-caption">
-                    <p class="caption-title">At your home</p>
-                    <p class="caption-desc">For those who cannot or do not wish to leave home. If symptoms paralyze your routine or simply going out causes distress, treatment begins in the comfort of your home.</p>
-                </div>
-                <img src="/foto1.jpg?v=novo" alt="Home visit" class="gallery-image" />
-            </div>
-
-            <!-- HOTEL -->
-            <div class="gallery-item scroll-reveal">
-                <div class="gallery-caption">
-                    <p class="caption-title">At your hotel</p>
-                    <p class="caption-desc">For those seeking anonymity or who travel frequently. If you prefer not to be seen, want a neutral location, or are away from home, we guarantee total privacy and comfort.</p>
-                </div>
-                <img src="/foto2.jpg?v=novo" alt="Hotel appointment" class="gallery-image" />
-            </div>
-
-            <!-- ESCRITÓRIO -->
-            <div class="gallery-item scroll-reveal">
-                <div class="gallery-caption">
-                    <p class="caption-title">At your office</p>
-                    <p class="caption-desc">For those who do not want to interrupt their routine or need discretion. I see you in your professional environment, with complete privacy, so no one needs to know you are in treatment.</p>
-                </div>
-                <img src="/foto3.jpg?v=novo" alt="Office appointment" class="gallery-image" />
-            </div>
-        </div>
-
-        <!-- SEÇÃO PRINCIPAL: título e três frases em inglês -->
-        <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); padding-top: 160px; padding-bottom: 140px;">
-            <div class="content">
-                <p style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3.2vw, 2.8rem); color: var(--text); font-weight: 300; line-height: 1.2; margin-bottom: 100px; letter-spacing: 0.4em; text-transform: uppercase;">
-                    WHEREVER YOU NEED
+        <!-- SEÇÃO "WHEREVER YOU NEED" -->
+        <section class="onde-section scroll-reveal">
+            <div class="content" style="max-width: 800px; margin: 0 auto;">
+                <p style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3.2vw, 2.8rem); color: var(--text); font-weight: 300; line-height: 1.2; margin-bottom: 80px; letter-spacing: 0.4em; text-transform: uppercase;">
+                    WHEREVER<br>YOU NEED
                 </p>
 
                 <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
@@ -824,10 +853,47 @@
             </div>
         </section>
 
-        <!-- PERFIL DO MÉDICO -->
-        <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
+        <!-- LINHA DIVISÓRIA 1 -->
+        <div class="section-divider">
+            <span class="line"></span>
+        </div>
+
+        <!-- GALERIA DE FOTOS -->
+        <div class="header-gallery">
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">At your home</p>
+                    <p class="caption-desc">For those who cannot or do not wish to leave home. If symptoms paralyze your routine or simply going out causes distress, treatment begins in the comfort of your home.</p>
+                </div>
+                <img src="foto1.jpg?v=novo" alt="Home visit" class="gallery-image" />
+            </div>
+
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">At your hotel</p>
+                    <p class="caption-desc">For those seeking anonymity or who travel frequently. If you prefer not to be seen, want a neutral location, or are away from home, we guarantee total privacy and comfort.</p>
+                </div>
+                <img src="foto2.jpg?v=novo" alt="Hotel appointment" class="gallery-image" />
+            </div>
+
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">At your office</p>
+                    <p class="caption-desc">For those who do not want to interrupt their routine or need discretion. I see you in your professional environment, with complete privacy, so no one needs to know you are in treatment.</p>
+                </div>
+                <img src="foto3.jpg?v=novo" alt="Office appointment" class="gallery-image" />
+            </div>
+        </div>
+
+        <!-- LINHA DIVISÓRIA 2 – entre galeria e perfil -->
+        <div class="section-divider" style="margin-top: 80px; margin-bottom: 120px;">
+            <span class="line"></span>
+        </div>
+
+        <!-- PERFIL -->
+        <section class="content-section profile-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
             <div class="content">
-                <img src="/foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal" />
+                <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal" />
                 <p>I am Dr. Elquer Rodrigues, psychiatrist <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
                 <p>I have worked exclusively as a psychiatrist for over twelve years. All care is provided personally by me, from the first contact to clinical follow‑up.</p>
             </div>
@@ -836,9 +902,14 @@
         <!-- BANNER SÃO PAULO -->
         <div class="sp-banner-wrapper scroll-reveal">
             <div class="sp-banner-inner">
-                <img src="/foto5.jpg?v=novo" class="sp-image" alt="São Paulo" />
+                <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo" />
                 <p class="sp-caption">Care in São Paulo.</p>
             </div>
+        </div>
+
+        <!-- LINHA DIVISÓRIA 3 – entre banner e FAQ -->
+        <div class="section-divider" style="margin-top: 100px; margin-bottom: 120px;">
+            <span class="line"></span>
         </div>
 
         <!-- FAQ E BOTÃO -->
@@ -875,6 +946,11 @@
                     </details>
                 </div>
 
+                <!-- LINHA DIVISÓRIA 4 – entre FAQ e botão -->
+                <div style="display: flex; justify-content: center; margin: 60px 0 80px 0;">
+                    <span style="width: 60px; height: 1px; background-color: var(--text-light); opacity: 0.3;"></span>
+                </div>
+
                 <div class="btn-container">
                     <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20PSIQUIATRA%20PRIVATIVO%20availability."
                        target="_blank"
@@ -892,13 +968,13 @@
 
         <footer>
             <div class="footer-brand">PSIQUIATRA PRIVATIVO</div>
-            <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
+            <!-- AQUI: frase final sem "LUXURY" -->
+            <div class="footer-tag">PSYCHIATRIST CONCIERGE</div>
             <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
             <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
         </footer>
     </div>
 
-    <!-- ===== SCRIPTS (idênticos aos originais) ===== -->
     <script>
         const details = document.querySelectorAll('details');
         details.forEach((targetDetail) => {
@@ -924,7 +1000,7 @@
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow')
+            document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow, .onde-section')
                 .forEach(function(el) {
                     if (!el.classList.contains('scroll-reveal-slow')) {
                         el.classList.add('scroll-reveal');
