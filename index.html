@@ -277,11 +277,12 @@
             align-items: center;
         }
 
+        /* DIVISÓRIA PADRÃO */
         .section-divider {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 80px 0 100px 0;
+            margin: 100px 0 120px 0;
             width: 100%;
         }
         .section-divider .line {
@@ -291,6 +292,7 @@
             opacity: 0.3;
         }
 
+        /* GALERIA */
         .header-gallery {
             width: 100vw;
             margin-left: calc(50% - 50vw);
@@ -300,7 +302,7 @@
             align-items: center;
             gap: 12vw;
             margin-top: 100px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             padding: 0 5vw;
         }
 
@@ -336,7 +338,7 @@
         .gallery-caption {
             width: 100%;
             text-align: center;
-            padding: 0 10px 120px 10px; /* AUMENTADO: antes 60px */
+            padding: 0 10px 120px 10px;
         }
         .caption-title {
             font-family: var(--font-serif);
@@ -431,6 +433,12 @@
             margin: 0 auto;
         }
 
+        /* Seção de perfil com mais margem superior */
+        .profile-section {
+            margin-top: 80px;
+            padding-top: 60px;
+        }
+
         .content {
             max-width: 100%;
             margin: 0 auto;
@@ -480,9 +488,10 @@
         }
 
         .btn-container {
-            padding-top: 60px;
-            padding-bottom: 60px;
+            padding-top: 100px;
+            padding-bottom: 100px;
             text-align: center;
+            margin-top: 60px;
         }
 
         .secure-alt-contact {
@@ -498,7 +507,7 @@
         }
 
         .faq-container {
-            margin-bottom: 100px;
+            margin-bottom: 140px;
             text-align: left;
         }
         .faq-item {
@@ -645,7 +654,7 @@
                 gap: 100px;
                 padding: 0 20px;
                 margin-top: 100px;
-                margin-bottom: 80px;
+                margin-bottom: 60px;
             }
             .gallery-item {
                 width: 100%;
@@ -658,7 +667,11 @@
                 object-fit: cover;
             }
             .gallery-caption {
-                padding: 0 10px 120px 10px; /* antes 60px */
+                padding: 0 10px 120px 10px;
+            }
+
+            .section-divider {
+                margin: 120px 0 140px 0;
             }
         }
 
@@ -689,7 +702,7 @@
             }
 
             .section-divider {
-                margin: 50px 0 70px 0;
+                margin: 70px 0 90px 0;
             }
             .section-divider .line {
                 width: 40px;
@@ -713,7 +726,7 @@
                 object-fit: cover;
             }
             .gallery-caption {
-                padding: 0 10px 80px 10px; /* antes 40px */
+                padding: 0 10px 80px 10px;
             }
             .caption-title {
                 font-size: 1.2rem;
@@ -725,6 +738,11 @@
             .content-section {
                 max-width: 100%;
                 padding: 80px 20px;
+            }
+
+            .profile-section {
+                margin-top: 40px;
+                padding-top: 40px;
             }
 
             .profile-photo {
@@ -764,7 +782,13 @@
             }
 
             .btn-container {
-                padding-bottom: 40px;
+                padding-top: 60px;
+                padding-bottom: 60px;
+                margin-top: 40px;
+            }
+
+            .faq-container {
+                margin-bottom: 80px;
             }
 
             footer {
@@ -831,7 +855,7 @@
             </div>
         </section>
 
-        <!-- LINHA DIVISÓRIA -->
+        <!-- LINHA DIVISÓRIA 1 -->
         <div class="section-divider">
             <span class="line"></span>
         </div>
@@ -863,8 +887,13 @@
             </div>
         </div>
 
-        <!-- PERFIL -->
-        <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
+        <!-- LINHA DIVISÓRIA 2 – entre galeria e perfil -->
+        <div class="section-divider" style="margin-top: 80px; margin-bottom: 120px;">
+            <span class="line"></span>
+        </div>
+
+        <!-- PERFIL (com classe extra para margem superior) -->
+        <section class="content-section profile-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
             <div class="content">
                 <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
                 <p>Eu sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
@@ -878,6 +907,11 @@
                 <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
                 <p class="sp-caption">Atendimento em São Paulo.</p>
             </div>
+        </div>
+
+        <!-- LINHA DIVISÓRIA 3 – entre banner e FAQ -->
+        <div class="section-divider" style="margin-top: 100px; margin-bottom: 120px;">
+            <span class="line"></span>
         </div>
 
         <!-- FAQ E BOTÃO -->
@@ -912,6 +946,11 @@
                             <p style="margin: 0; text-align: left;">A solicitação inicial é feita via WhatsApp. Após uma breve análise de disponibilidade clínica e geográfica, o horário da consulta é confirmado diretamente com o médico.</p>
                         </div>
                     </details>
+                </div>
+
+                <!-- LINHA DIVISÓRIA 4 – entre FAQ e botão -->
+                <div style="display: flex; justify-content: center; margin: 60px 0 80px 0;">
+                    <span style="width: 60px; height: 1px; background-color: var(--text-light); opacity: 0.3;"></span>
                 </div>
 
                 <div class="btn-container">
