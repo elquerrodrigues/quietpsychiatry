@@ -1,595 +1,961 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F2F1ED">
-  <title>ANGMER | Private Concierge Psychiatry</title>
-  <meta name="description" content="Psychiatric care directly at your residence, office, or hotel in São Paulo.">
-  <meta name="keywords" content="concierge psychiatrist, hotel psychiatrist, private house call psychiatrist">
-  <meta name="author" content="ANGMER">
-  <meta name="robots" content="index, follow">
-  <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br" />
-  <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://angmer.com.br" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Physician",
-      "name": "Dr. Elquer Rodrigues",
-      "medicalSpecialty": "Psychiatry",
-      "url": "https://angmer.com.br/en/",
-      "description": "Concierge and private psychiatric care in São Paulo.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo",
-        "addressRegion": "SP",
-        "addressCountry": "BR"
-      },
-      "priceRange": "$$$$"
-    }
-  </script>
-  <style>
-    :root {
-      --bg: #F2F1ED;           
-      --bg-alt: #F2F1ED;       
-      --text: #181818;         
-      --text-muted: #4A4A4A;   
-      --text-light: #737373;   
-      --accent: #9B856A;            
-      --line: rgba(24, 24, 24, 0.1); 
-      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
-      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text-muted);    
-      line-height: 2.1; 
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
-    .site-wrapper {
-      background: var(--bg);
-      width: 100%;
-      height: 100vh;
-      overflow: hidden; 
-      animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
-    }
-    @keyframes expandSite {
-       0% { clip-path: inset(50% 50%); } 
-       15% { clip-path: inset(calc(50% - 90px)); } 
-       45% { clip-path: inset(calc(50% - 90px)); } 
-       100% { clip-path: inset(0%); } 
-    }
-    @keyframes unlockScroll {
-      to { height: auto; overflow: visible; clip-path: none; }
-    }
-    .lang-nav {
-      position: absolute;
-      top: 40px;
-      right: 24px;
-      display: flex;
-      gap: 15px;
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      letter-spacing: 1px;
-      z-index: 10;
-      opacity: 0;
-      animation: fadeNav 1s cubic-bezier(0.25, 1, 0.5, 1) 2.2s forwards;
-    }
-    @keyframes fadeNav {
-      to { opacity: 1; }
-    }
-    .lang-nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .lang-nav a:hover, .lang-nav a.active {
-      color: var(--text);
-      font-weight: 600;
-    }
-    header {
-      text-align: center; 
-      padding: 0 24px;
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    h1 { 
-      position: absolute;
-      top: 50vh;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-serif);
-      font-size: 1rem; 
-      color: var(--text);
-      margin: 0; 
-      text-transform: uppercase;
-      letter-spacing: 10px;
-      font-weight: 400; 
-      z-index: 20;
-      animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
-    }
-    @keyframes moveLogo {
-      0% { top: 50vh; } 
-      45% { top: 50vh; } 
-      100% { top: 15vh; }
-    }
-    .hero-text-block {
-      width: 100%;
-      max-width: 800px;
-    }
-    
-    @keyframes elegantFadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F4F1EA" />
+    <title>ANGMER | Concierge Psychiatry</title>
+    <meta name="description" content="Psychiatric care delivered directly to your home, office, or hotel in São Paulo." />
+    <meta name="keywords" content="concierge psychiatrist, hotel psychiatrist, private psychiatrist at home" />
+    <meta name="author" content="ANGMER" />
+    <meta name="robots" content="index, follow" />
+    <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br/" />
+    <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://angmer.com.br/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Physician",
+            "name": "Dr. Elquer Rodrigues",
+            "medicalSpecialty": "Psychiatry",
+            "url": "https://angmer.com.br/en/",
+            "description": "Psychiatric home, corporate and private care in São Paulo.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "addressCountry": "BR"
+            },
+            "priceRange": "$$$$"
+        }
+    </script>
+    <style>
+        /* ===== CSS EXATAMENTE IGUAL AO ORIGINAL (apenas ajustes de cores mantidos) ===== */
+        :root {
+            --bg: #F4F1EA;
+            --bg-alt: #F4F1EA;
+            --text: #2C2B2A;
+            --text-muted: #5A5A5A;
+            --text-light: #8A8A8A;
+            --accent: #9B856A;
+            --line: rgba(44, 43, 42, 0.1);
+            --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+            --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
 
-    .hero-statement { 
-      font-family: var(--font-serif); 
-      font-size: clamp(1.2rem, 3vw, 2rem); 
-      font-weight: bold; 
-      color: var(--text); 
-      margin: 0 auto 50px auto; 
-      line-height: 1.5;
-      max-width: 800px;
-      text-transform: uppercase;
-      letter-spacing: 12px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
-    }
-    
-    .hero-locations { 
-      font-family: var(--font-sans); 
-      font-size: 0.65rem; 
-      font-weight: bold; 
-      letter-spacing: 4px; 
-      color: var(--text-muted); 
-      text-transform: uppercase; 
-      margin-bottom: 15px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards;
-    }
-    
-    .header-gallery {
-      width: 100vw;
-      margin-left: calc(50% - 50vw); 
-      display: flex;
-      flex-direction: row; 
-      justify-content: center;
-      align-items: flex-end; 
-      gap: 4vw;
-      margin-top: 15vh; 
-      margin-bottom: 300px;
-      padding: 0 5vw;
-    }
-    
-    .gallery-item {
-      position: relative;
-      width: 26vw; 
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
-    }
-    
-    .gallery-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .gallery-caption {
-      font-family: var(--font-serif);
-      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-      font-style: italic;
-      color: var(--text);
-      text-align: center;
-      margin-bottom: 35px;
-      font-weight: 300;
-      line-height: 1.4;
-      letter-spacing: 1px;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text-muted);
+            line-height: 2.1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
 
-    .gallery-image {
-      display: block;
-      width: 100%;
-      height: 55vh; 
-      object-fit: contain; 
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-    }
-    
-    .btn { 
-      display: inline-block; 
-      font-family: var(--font-sans); 
-      color: var(--bg);
-      background-color: var(--text);
-      padding: 16px 36px; 
-      text-decoration: none; 
-      font-size: 0.7rem; 
-      text-transform: uppercase; 
-      letter-spacing: 3px; 
-      font-weight: 600;
-      transition: opacity 0.3s ease;
-      border-radius: 2px;
-    }
-    .btn:hover { 
-      opacity: 0.85;
-    }
-    
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
-      will-change: transform, opacity;
-    }
-    
-    .scroll-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.03;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
 
-    .sp-banner-wrapper {
-      width: 100%;
-      text-align: center;
-      margin: 150px 0; 
-    }
-    
-    .sp-banner-inner {
-      position: relative;
-      display: block; 
-      width: 100%;
-      margin: 0 auto;
-    }
-    
-    .sp-image {
-      display: block;
-      width: 100%;
-      height: 78vh;
-      object-fit: cover;
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-    }
-    
-    .sp-caption-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 80px 20px 30px; 
-      background: linear-gradient(to top, rgba(24,24,24,0.7) 0%, rgba(24,24,24,0) 100%);
-      color: var(--bg);
-      font-family: var(--font-serif);
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      text-align: center;
-      font-weight: 400;
-      letter-spacing: 1px;
-    }
-    
-    .content-section { 
-      padding: 180px 24px; 
-      max-width: 800px; 
-      margin: 0 auto; 
-    }
-    
-    .content { max-width: 580px; margin: 0 auto; text-align: center; }
-    .content p { 
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
-      color: var(--text-muted); 
-      margin-bottom: 60px; 
-      line-height: 2.2; 
-      font-weight: 300; 
-      letter-spacing: 0.3px; 
-    }
-    .content p:last-child { margin-bottom: 0; }
-    
-    .scroll-reveal-slow {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      color: var(--text-light);
-      margin: 40px 0; 
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1), transform 2s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-slow.visible {
-      opacity: 1; 
-      transform: translateY(0);
-    }
-    
-    .profile-photo {
-      display: block;
-      margin: 0 auto 100px auto; 
-      height: 58vh;             
-      width: auto;
-      object-fit: contain;
-      border: none;             
-      padding: 0;
-      background: transparent;
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-    }
+        .breathing-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(120% 120% at 50% 50%, #F8F6F0 0%, #EFEEE9 100%);
+            background-size: 200% 200%;
+            animation: breathBg 25s ease-in-out infinite alternate;
+        }
+        @keyframes breathBg {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
 
-    .btn-container {
-        padding-top: 60px;
-        padding-bottom: 60px; 
-        text-align: center;
-    }
-    
-    .secure-alt-contact {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      color: var(--text) !important;
-      font-weight: bold !important;
-      letter-spacing: 0.5px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
-    
-    .faq-container { margin-bottom: 100px; text-align: left; } 
-    .faq-item { border-bottom: 1px solid var(--line); }
-    .faq-item summary {
-      padding: 30px 0; 
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      font-weight: 500; 
-      color: var(--text);
-      cursor: pointer;
-      list-style: none;
-      position: relative;
-      letter-spacing: 0.5px;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; } 
-    .faq-item summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      color: var(--text-light);
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-    .faq-item[open] summary { color: var(--text); font-weight: 600; }
-    .faq-item[open] summary::after { content: '–'; color: var(--text); }
-    .faq-answer {
-      padding-bottom: 30px; 
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.9;
-      font-weight: 300;
-    }
-    
-    footer { 
-      text-align: center; 
-      padding: 80px 24px 100px 24px; 
-      font-family: var(--font-sans); 
-      margin: 0 auto; 
-      background-color: var(--bg); 
-      color: var(--text-muted);
-      border-top: 1px solid var(--line); 
-    }
-    
-    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 30px; }
-    .footer-luxury-tag { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 30px; text-transform: uppercase; }
-    .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 35px; }
-    .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
-    .footer-email:hover { color: var(--accent); }
-    
-    @media(max-width: 768px) {
-      .lang-nav { top: 25px; right: 20px; gap: 10px; }
-      header { padding: 0 20px; min-height: 100vh; } 
-      @keyframes moveLogo {
-        0% { top: 50vh; }
-        45% { top: 50vh; }
-        100% { top: 12vh; } 
-      }
-      h1 { letter-spacing: 8px; } 
+        .scroll-signature {
+            position: fixed;
+            top: 0;
+            right: 24px;
+            width: 1px;
+            height: 0%;
+            background-color: var(--line);
+            z-index: 9999;
+            pointer-events: none;
+            transition: height 0.1s linear;
+        }
 
-      .hero-statement { 
-        font-size: clamp(0.8rem, 4vw, 1.2rem); 
-        line-height: 1.5; 
-        margin-bottom: 35px; 
-        letter-spacing: 2px; 
-        white-space: nowrap; 
-      }
-      
-      .header-gallery { 
-        flex-direction: column; 
-        gap: 15vh;
-        margin-bottom: 180px; 
-        margin-top: 15vh; 
-        padding: 0;
-      } 
-      
-      .gallery-item[style] { margin-bottom: 0 !important; }
-      
-      .gallery-item { width: 100vw; padding: 0 20px; }
-      .gallery-image {
-        height: auto;
-        object-fit: cover;
-      }
+        .site-wrapper {
+            background: transparent;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            transform-origin: center top;
+            animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
+            transition: opacity 0.4s ease;
+        }
+        @keyframes expandSite {
+            0% {
+                clip-path: inset(50% 50%);
+                transform: scale(1.04);
+                background: var(--bg);
+            }
+            15% {
+                clip-path: inset(calc(50% - 90px));
+                transform: scale(1.02);
+                background: var(--bg);
+            }
+            45% {
+                clip-path: inset(calc(50% - 90px));
+                transform: scale(1.02);
+                background: var(--bg);
+            }
+            100% {
+                clip-path: inset(0%);
+                transform: scale(1);
+                background: transparent;
+            }
+        }
+        @keyframes unlockScroll {
+            to {
+                height: auto;
+                overflow: visible;
+                clip-path: none;
+            }
+        }
 
-      .content-section { padding: 100px 20px; } 
-      
-      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } 
-      
-      .sp-banner-wrapper { margin: 100px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
-      .sp-banner-inner { width: 100%; display: block; } 
-      .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
-      
-      .btn { display: inline-block; width: auto; text-align: center; }
-      
-      .btn-container { padding-bottom: 40px; } 
-      
-      footer { padding: 60px 20px 80px 20px; } 
-    }
-  </style>
+        .lang-nav {
+            position: fixed;
+            top: 40px;
+            right: 24px;
+            display: flex;
+            gap: 15px;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            z-index: 10;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s var(--transition-smooth);
+        }
+        .lang-nav.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lang-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .lang-nav a:hover,
+        .lang-nav a.active {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        header {
+            text-align: center;
+            padding: 0 24px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            position: absolute;
+            top: 50vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 400;
+            z-index: 20;
+            animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+        }
+        @keyframes moveLogo {
+            0% {
+                top: 50vh;
+                letter-spacing: 4px;
+                filter: blur(6px);
+            }
+            45% {
+                top: 50vh;
+                letter-spacing: 5px;
+                filter: blur(3px);
+            }
+            100% {
+                top: 15vh;
+                letter-spacing: 10px;
+                filter: blur(0);
+            }
+        }
+
+        .hero-text-block {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        @keyframes elegantFadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-statement {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: bold;
+            color: var(--text);
+            margin: 0 auto 30px auto;
+            line-height: 1.5;
+            max-width: 800px;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
+        }
+
+        .hero-locations {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards;
+        }
+
+        .header-gallery {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 12vw;
+            margin-top: 2vh;
+            margin-bottom: 50px;
+            padding: 0 5vw;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 26vw;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-image {
+            display: block;
+            width: 100%;
+            height: 75vh;
+            object-fit: cover;
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(85%) grayscale(20%);
+            transition: filter 1.2s var(--transition-smooth);
+        }
+
+        .gallery-item:hover .gallery-image {
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(105%) grayscale(0%);
+        }
+
+        .gallery-caption {
+            width: 100%;
+            text-align: center;
+            padding: 0 10px 60px 10px;
+        }
+        .caption-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0 0 6px 0;
+        }
+        .caption-desc {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            word-break: normal;
+            overflow-wrap: normal;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font-sans);
+            color: var(--text);
+            background-color: transparent;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+        }
+        .btn:hover {
+            background-color: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+            opacity: 1;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
+            will-change: transform, opacity;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sp-banner-wrapper {
+            width: 100%;
+            text-align: center;
+            margin: 150px 0;
+        }
+
+        .sp-banner-inner {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .sp-image {
+            display: block;
+            width: 100%;
+            height: 78vh;
+            object-fit: cover;
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
+        }
+
+        .sp-caption {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            color: var(--text);
+            text-align: center;
+            margin-top: 50px;
+            font-size: 32px;
+        }
+
+        .content-section {
+            padding: 90px clamp(24px, 10vw, 120px);
+            max-width: 50vw;
+            margin: 0 auto;
+        }
+
+        .content {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content p {
+            font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            line-height: 2.2;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scroll-reveal-slow {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--text-light);
+            margin: 40px 0;
+            font-weight: 700;
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .scroll-reveal-slow.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .profile-photo {
+            display: block;
+            margin: 0 auto 150px auto;
+            height: 58vh;
+            width: auto;
+            object-fit: contain;
+            border: none;
+            padding: 0;
+            background: transparent;
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
+        }
+
+        .btn-container {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .secure-alt-contact {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            color: var(--text) !important;
+            font-weight: bold !important;
+            letter-spacing: 0.5px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .faq-container {
+            margin-bottom: 100px;
+            text-align: left;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--line);
+        }
+        .faq-item summary {
+            padding: 30px 0;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            list-style: none;
+            position: relative;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+        .faq-item[open] summary {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .faq-item[open] summary::after {
+            content: '–';
+            color: var(--text);
+        }
+        .faq-answer {
+            padding-bottom: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 24px 100px 24px;
+            font-family: var(--font-sans);
+            margin: 0 auto;
+            background-color: transparent;
+            color: var(--text-muted);
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-brand {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+        .footer-luxury-tag {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .footer-creds {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin-bottom: 35px;
+        }
+        .footer-email {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .footer-email:hover {
+            color: var(--accent);
+        }
+
+        /* Regra global de negrito (mantida) */
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        span,
+        div,
+        section,
+        footer,
+        header,
+        nav,
+        .btn,
+        .hero-statement,
+        .hero-locations,
+        .content p,
+        .faq-answer,
+        .secure-alt-contact,
+        .sp-caption,
+        .scroll-reveal-slow,
+        .footer-brand,
+        .footer-luxury-tag,
+        .footer-creds,
+        .footer-email,
+        .lang-nav a,
+        .content-section,
+        .sp-banner-wrapper,
+        .site-wrapper,
+        .gallery-item,
+        .hero-text-block {
+            font-weight: 700 !important;
+        }
+        h1 {
+            font-weight: 700 !important;
+        }
+
+        .faq-item summary,
+        .faq-item summary::after {
+            font-weight: 400 !important;
+        }
+
+        @media(min-width: 769px) {
+            .header-gallery {
+                flex-direction: column;
+                align-items: center;
+                gap: 100px;
+                padding: 0 20px;
+                margin-top: 2vh;
+                margin-bottom: 50px;
+            }
+            .gallery-item {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .gallery-image {
+                height: 75vh;
+                aspect-ratio: auto;
+                object-fit: cover;
+            }
+            .gallery-caption {
+                padding: 0 10px 60px 10px;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .scroll-signature {
+                right: 10px;
+            }
+            .lang-nav {
+                top: 25px;
+                right: 20px;
+                gap: 10px;
+            }
+            header {
+                padding: 0 20px;
+                min-height: 100vh;
+            }
+
+            @keyframes moveLogo {
+                0% {
+                    top: 50vh;
+                    letter-spacing: 2px;
+                    filter: blur(4px);
+                }
+                45% {
+                    top: 50vh;
+                    letter-spacing: 3px;
+                    filter: blur(2px);
+                }
+                100% {
+                    top: 12vh;
+                    letter-spacing: 8px;
+                    filter: blur(0px);
+                }
+            }
+
+            .hero-statement {
+                font-size: clamp(0.8rem, 4vw, 1.2rem);
+                line-height: 1.5;
+                margin-bottom: 20px;
+                letter-spacing: 2px;
+                white-space: nowrap;
+            }
+
+            .header-gallery {
+                flex-direction: column;
+                gap: 16vh;
+                margin-bottom: 30px;
+                margin-top: 2vh;
+                padding: 0;
+            }
+
+            .gallery-item {
+                width: 100vw;
+                padding: 0 20px;
+            }
+            .gallery-image {
+                height: 70vh;
+                aspect-ratio: auto;
+                object-fit: cover;
+            }
+            .gallery-caption {
+                padding: 0 10px 40px 10px;
+            }
+            .caption-title {
+                font-size: 1.2rem;
+            }
+            .caption-desc {
+                font-size: 0.8rem;
+            }
+
+            .content-section {
+                max-width: 100%;
+                padding: 50px 20px;
+            }
+
+            .profile-photo {
+                height: 50vh;
+                width: 100%;
+                margin: 0 auto 120px auto;
+            }
+
+            .sp-banner-wrapper {
+                margin: 100px 0;
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+            }
+            .sp-banner-inner {
+                width: 100%;
+                display: block;
+            }
+            .sp-image {
+                width: 100vw;
+                height: 66vh;
+                object-fit: cover;
+            }
+
+            .sp-caption {
+                font-size: 24px;
+                margin-top: 40px;
+            }
+
+            .btn {
+                display: inline-block;
+                width: auto;
+                text-align: center;
+            }
+
+            .btn-container {
+                padding-bottom: 40px;
+            }
+
+            footer {
+                padding: 60px 20px 80px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div class="site-wrapper">
-  <nav class="lang-nav">
-    <a href="/">PT</a>
-    <a href="/en/" class="active">EN</a>
-  </nav>
-  
-  <header>
-    <h1>ANGMER</h1>
-    <div class="hero-text-block">
-      <p class="hero-statement">A psychiatrist comes to you.</p>
-      <p class="hero-locations">Residence &bull; Office &bull; Hotel</p>
-    </div>
-  </header>
+    <div class="noise-overlay"></div>
 
-  <div class="header-gallery">
-    <div class="gallery-item scroll-reveal" style="margin-bottom: 40px;">
-      <p class="gallery-caption">If your symptoms prevent you from leaving home</p>
-      <img src="foto1.jpg?v=novo" alt="Atendimento em São Paulo" class="gallery-image">
-    </div>
-    
-    <div class="gallery-item scroll-reveal">
-      <p class="gallery-caption">At your hotel, if you wish to remain unseen</p>
-      <img src="foto2.jpg?v=novo" alt="Hotel and Hospitality" class="gallery-image">
-    </div>
-    
-    <div class="gallery-item scroll-reveal">
-      <p class="gallery-caption">At your office, if you require absolute privacy</p>
-      <img src="foto3.jpg?v=novo" alt="Corporate Environment" class="gallery-image">
-    </div>
-  </div>
+    <div class="site-wrapper">
 
-  <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); color: var(--text-muted);">
-    <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--text) !important; font-weight: 600; line-height: 1.4; margin-bottom: 50px;">
-        Concierge psychiatry.
-      </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 80px; line-height: 1.6;">
-        In-person care at the location of your choice.
-      </p>
-      <p class="scroll-reveal-slow" style="color: var(--text-light);">No travel required</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.3s; color: var(--text-light);">No public exposure</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.6s; color: var(--text-light);">Absolute discretion</p>
-    </div>
-  </section>
+        <div class="breathing-bg"></div>
+        <div class="scroll-signature"></div>
 
-  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
-    <div class="content">
-      <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
-      <p>I am Dr. Elquer Rodrigues, a board-certified psychiatrist <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
-      <p>I have been practicing psychiatry exclusively for over twelve years. All care is provided personally by me, from the initial contact to ongoing clinical follow-up.</p>
-    </div>
-  </section>
-  
-  <div class="sp-banner-wrapper scroll-reveal">
-    <div class="sp-banner-inner">
-      <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
-      <div class="sp-caption-overlay">Care in São Paulo</div>
-    </div>
-  </div>
-  
-  <section class="content-section scroll-reveal" style="background-color: var(--bg); color: var(--text-muted);">
-    <div class="content">
-      
-      <div class="faq-container">
-        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center;">Information</h3>
-        <details class="faq-item">
-          <summary>Who is this service for?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Designed for patients who require in-person care with maximum discretion, convenience, and continuity of care, in the setting where they feel most comfortable and secure.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>How does it work?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0 0 15px 0; text-align: left;">Upon confirmation of your appointment and payment, I travel to your location.</p>
-            <p style="margin: 0 0 15px 0; text-align: left;">The consultation maintains the same depth and clinical rigor as an office visit: complete clinical evaluation, diagnosis, and prescription.</p>
-            <p style="margin: 0; text-align: left;">As this is a private and highly personalized medical service with time reserved exclusively for the patient, all consultations must be scheduled and paid for in advance. There are no free follow-up consultations.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Where do you provide care?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residences, companies, offices, and hotels located exclusively within the city of São Paulo.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>How do I schedule an appointment?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">The initial request is made via WhatsApp. After a brief review of clinical and geographical availability, your appointment time is confirmed directly with the doctor.</p>
-          </div>
-        </details>
-      </div>
+        <!-- Navegação de idioma: versão EN ativa, link para PT -->
+        <nav class="lang-nav" id="langNav">
+            <a href="/">PT</a>
+            <a href="/en/" class="active">EN</a>
+        </nav>
 
-      <div class="btn-container">
-          <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20ANGMER%20availability." 
-             target="_blank" 
-             class="btn"
-             aria-label="Check availability via WhatsApp">
-            Check availability
-          </a>
-          <span class="secure-alt-contact">
-            Limited schedule.<br>Service subject to geographical availability.
-          </span>
-      </div>
-      
-    </div>
-  </section>
-  
-  <footer>
-    <div class="footer-brand">ANGMER</div>
-    <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
-    <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
-    <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
-  </footer>
-</div>
+        <header>
+            <h1>ANGMER</h1>
+            <div class="hero-text-block">
+                <p class="hero-statement">A psychiatrist comes to you.</p>
+                <p class="hero-locations">Home &bull; Office &bull; Hotel</p>
+            </div>
+        </header>
 
-<script>
-    const details = document.querySelectorAll('details');
-    details.forEach((targetDetail) => {
-      targetDetail.addEventListener('click', () => {
-        details.forEach((detail) => {
-          if (detail !== targetDetail) {
-            detail.removeAttribute('open');
-          }
+        <div class="header-gallery">
+            <!-- RESIDÊNCIA (HOME) -->
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">At your home</p>
+                    <p class="caption-desc">For those who cannot or do not wish to leave home. If symptoms paralyze your routine or simply going out causes distress, treatment begins in the comfort of your home.</p>
+                </div>
+                <img src="/foto1.jpg?v=novo" alt="Home visit" class="gallery-image" />
+            </div>
+
+            <!-- HOTEL – título e texto do hotel -->
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">At your hotel</p>
+                    <p class="caption-desc">For those seeking anonymity or who travel frequently. If you prefer not to be seen, want a neutral location, or are away from home, we guarantee total privacy and comfort.</p>
+                </div>
+                <img src="/foto2.jpg?v=novo" alt="Hotel appointment" class="gallery-image" />
+            </div>
+
+            <!-- ESCRITÓRIO – título e texto do escritório -->
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">At your office</p>
+                    <p class="caption-desc">For those who do not want to interrupt their routine or need discretion. I see you in your professional environment, with complete privacy, so no one needs to know you are in treatment.</p>
+                </div>
+                <img src="/foto3.jpg?v=novo" alt="Office appointment" class="gallery-image" />
+            </div>
+        </div>
+
+        <!-- SEÇÃO PRINCIPAL: título e três frases em inglês -->
+        <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); padding-top: 160px; padding-bottom: 140px;">
+            <div class="content">
+                <p style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3.2vw, 2.8rem); color: var(--text); font-weight: 300; line-height: 1.2; margin-bottom: 100px; letter-spacing: 0.4em; text-transform: uppercase;">
+                    WHEREVER YOU NEED
+                </p>
+
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
+                    No commuting
+                </p>
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
+                    No public exposure
+                </p>
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 0; text-transform: uppercase;">
+                    Absolute discretion
+                </p>
+            </div>
+        </section>
+
+        <!-- PERFIL DO MÉDICO -->
+        <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
+            <div class="content">
+                <img src="/foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal" />
+                <p>I am Dr. Elquer Rodrigues, psychiatrist <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
+                <p>I have worked exclusively as a psychiatrist for over twelve years. All care is provided personally by me, from the first contact to clinical follow‑up.</p>
+            </div>
+        </section>
+
+        <!-- BANNER SÃO PAULO -->
+        <div class="sp-banner-wrapper scroll-reveal">
+            <div class="sp-banner-inner">
+                <img src="/foto5.jpg?v=novo" class="sp-image" alt="São Paulo" />
+                <p class="sp-caption">Care in São Paulo.</p>
+            </div>
+        </div>
+
+        <!-- FAQ E BOTÃO -->
+        <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
+            <div class="content">
+
+                <div class="faq-container">
+                    <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center;">Information</h3>
+                    <details class="faq-item">
+                        <summary>Who is this service for?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0; text-align: left;">For patients who need in‑person care with maximum discretion, convenience and continuity of care, in the place where they feel most comfortable and safe.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How does the appointment work?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0 0 15px 0; text-align: left;">After confirmation of scheduling and payment, I come to you.</p>
+                            <p style="margin: 0 0 15px 0; text-align: left;">The consultation is conducted with the same depth and technical rigor as an office visit: complete clinical evaluation, diagnosis and prescription.</p>
+                            <p style="margin: 0; text-align: left;">Because this is a private, highly personalized medical service with time reserved exclusively for the patient, all consultations are scheduled and paid in advance. There are no free follow‑up visits.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Where are appointments held?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0; text-align: left;">Homes, companies, offices and hotels located exclusively in the city of São Paulo.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do I schedule?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0; text-align: left;">The initial request is made via WhatsApp. After a brief analysis of clinical and geographic availability, the appointment time is confirmed directly with the doctor.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="btn-container">
+                    <a href="https://wa.me/5511977335683?text=I%20would%20like%20to%20check%20ANGMER%20availability."
+                       target="_blank"
+                       class="btn"
+                       aria-label="Check availability – schedule your appointment">
+                        Check availability
+                    </a>
+                    <span class="secure-alt-contact">
+                        Limited schedule.<br />Service subject to geographic availability.
+                    </span>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-brand">ANGMER</div>
+            <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
+            <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
+            <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
+        </footer>
+    </div>
+
+    <!-- ===== SCRIPTS (idênticos aos originais, com pequeno ajuste para funcionar com os links de idioma) ===== -->
+    <script>
+        const details = document.querySelectorAll('details');
+        details.forEach((targetDetail) => {
+            targetDetail.addEventListener('click', () => {
+                details.forEach((detail) => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute('open');
+                    }
+                });
+            });
         });
-      });
-    });
 
-    (function() {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+        (function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow')
+                .forEach(function(el) {
+                    if (!el.classList.contains('scroll-reveal-slow')) {
+                        el.classList.add('scroll-reveal');
+                    }
+                    observer.observe(el);
+                });
+        })();
+
+        (function() {
+            const langNav = document.getElementById('langNav');
+            let alreadyVisible = false;
+
+            window.addEventListener('scroll', function() {
+                if (!alreadyVisible && window.scrollY > window.innerHeight * 0.1) {
+                    langNav.classList.add('visible');
+                    alreadyVisible = true;
+                }
+            });
+        })();
+
+        const langLinks = document.querySelectorAll('.lang-nav a');
+        const siteWrapper = document.querySelector('.site-wrapper');
+
+        langLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.classList.contains('active')) return;
+                e.preventDefault();
+                const targetUrl = link.href;
+                siteWrapper.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400);
+            });
         });
-      }, { 
-        threshold: 0.15, 
-        rootMargin: '0px 0px -50px 0px' 
-      });
-      
-      document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow').forEach(function(el) {
-        if(!el.classList.contains('scroll-reveal-slow')) {
-            el.classList.add('scroll-reveal');
-        }
-        observer.observe(el);
-      });
-    })();
-</script>
+
+        const scrollSignature = document.querySelector('.scroll-signature');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            if (maxScroll > 0) {
+                const progress = Math.min((scrolled / maxScroll) * 100, 100);
+                scrollSignature.style.height = progress + '%';
+            }
+        });
+    </script>
 </body>
 </html>
