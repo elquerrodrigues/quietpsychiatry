@@ -115,7 +115,6 @@
       to { height: auto; overflow: visible; clip-path: none; }
     }
     
-    /* Toggle de idioma – invisível até o scroll */
     .lang-nav {
       position: fixed;
       top: 40px;
@@ -221,7 +220,7 @@
       align-items: center;
       gap: 4vw;
       margin-top: 5vh;
-      margin-bottom: 105px;  /* ← 30% a menos que 150px (150 * 0.7 = 105) */
+      margin-bottom: 50px;  /* reduzido para 50px */
       padding: 0 5vw;
     }
     
@@ -317,7 +316,7 @@
     }
     
     .content-section { 
-      padding: 180px clamp(24px, 10vw, 120px); 
+      padding: 90px clamp(24px, 10vw, 120px);  /* reduzido para 90px */
       max-width: 50vw;
       margin: 0 auto; 
     }
@@ -337,7 +336,6 @@
     }
     .content p:last-child { margin-bottom: 0; }
     
-    /* Efeito lento, suave e chique para as três frases */
     .scroll-reveal-slow {
       font-family: var(--font-sans);
       font-size: 0.65rem;
@@ -345,7 +343,7 @@
       letter-spacing: 5px;
       color: var(--text-light);
       margin: 40px 0;
-      font-weight: 700; /* negrito */
+      font-weight: 700;
       opacity: 0;
       transform: translateY(20px) scale(0.98);
       transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1),
@@ -435,7 +433,6 @@
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
     
-    /* ===== NEGRITO EM TODAS AS PALAVRAS ===== */
     body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, footer, header, nav,
     .btn, .hero-statement, .hero-locations, .content p, .faq-answer, .secure-alt-contact,
     .sp-caption, .scroll-reveal-slow, .footer-brand, .footer-luxury-tag, .footer-creds,
@@ -443,34 +440,31 @@
     .content-section, .sp-banner-wrapper, .site-wrapper, .gallery-item, .hero-text-block {
       font-weight: 700 !important;
     }
-    /* Mantém o peso do título principal (h1) para não sobrepor o estilo */
     h1 {
       font-weight: 700 !important;
     }
     
-    /* ===== DESKTOP – galeria empilhada verticalmente ===== */
     @media(min-width: 769px) {
       .header-gallery {
         flex-direction: column;
         align-items: center;
-        gap: 80px; /* respiro entre as imagens */
+        gap: 80px;
         padding: 0 20px;
         margin-top: 10vh;
-        margin-bottom: 105px; /* 30% a menos que 150px */
+        margin-bottom: 50px;  /* reduzido */
       }
       .gallery-item {
         width: 100%;
-        max-width: 600px; /* não fica gigante */
+        max-width: 600px;
         margin: 0 auto;
       }
       .gallery-image {
-        height: auto;       /* mantém proporção */
-        aspect-ratio: 4 / 3; /* ou use 3/2, ajuste conforme suas fotos */
+        height: auto;
+        aspect-ratio: 4 / 3;
         object-fit: cover;
       }
     }
 
-    /* ===== MOBILE ===== */
     @media(max-width: 768px) {
       .scroll-signature { right: 10px; }
       .lang-nav { top: 25px; right: 20px; gap: 10px; }
@@ -493,7 +487,7 @@
       .header-gallery { 
         flex-direction: column; 
         gap: 15vh;
-        margin-bottom: 63px; /* 30% a menos que 90px (90 * 0.7 = 63) */
+        margin-bottom: 30px;  /* reduzido */
         margin-top: 5vh; 
         padding: 0;
       } 
@@ -510,7 +504,7 @@
 
       .content-section { 
         max-width: 100%; 
-        padding: 100px 20px; 
+        padding: 50px 20px;  /* reduzido */
       }
       
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } 
@@ -574,7 +568,6 @@
       <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 80px; line-height: 1.6;">
         Atendimento presencial no local de sua escolha.
       </p>
-      <!-- Frases com efeito lento, suave e chique, em negrito -->
       <p class="scroll-reveal-slow" style="transition-delay: 0.4s;">Sem deslocamentos</p>
       <p class="scroll-reveal-slow" style="transition-delay: 0.8s;">Sem exposição pública</p>
       <p class="scroll-reveal-slow" style="transition-delay: 1.2s;">Discrição absoluta</p>
@@ -653,7 +646,6 @@
 </div>
 
 <script>
-    /* Acordeão */
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
@@ -665,7 +657,6 @@
       });
     });
 
-    /* Scroll Reveal */
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -687,7 +678,6 @@
       });
     })();
 
-    /* Toggle de idioma – aparece após o scroll */
     (function() {
       const langNav = document.getElementById('langNav');
       let alreadyVisible = false;
@@ -700,7 +690,6 @@
       });
     })();
 
-    /* Parallax */
     const parallaxImages = document.querySelectorAll('.parallax-img');
     function applyParallax() {
         const scrolled = window.pageYOffset;
@@ -713,7 +702,6 @@
     }
     requestAnimationFrame(applyParallax);
 
-    /* Transição de idioma */
     const langLinks = document.querySelectorAll('.lang-nav a');
     const siteWrapper = document.querySelector('.site-wrapper');
     
@@ -729,7 +717,6 @@
         });
     });
 
-    /* Assinatura de scroll */
     const scrollSignature = document.querySelector('.scroll-signature');
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
@@ -739,7 +726,6 @@
             scrollSignature.style.height = progress + '%';
         }
     });
-
 </script>
 </body>
 </html>
