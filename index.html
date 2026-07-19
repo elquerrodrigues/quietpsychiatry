@@ -220,7 +220,7 @@
       align-items: center;
       gap: 4vw;
       margin-top: 5vh;
-      margin-bottom: 50px;  /* reduzido para 50px */
+      margin-bottom: 50px;
       padding: 0 5vw;
     }
     
@@ -316,7 +316,7 @@
     }
     
     .content-section { 
-      padding: 90px clamp(24px, 10vw, 120px);  /* reduzido para 90px */
+      padding: 90px clamp(24px, 10vw, 120px);
       max-width: 50vw;
       margin: 0 auto; 
     }
@@ -398,13 +398,18 @@
       letter-spacing: 0.5px;
       cursor: pointer;
     }
+    /* Remove o negrito das perguntas */
+    .faq-item summary,
+    .faq-item summary::after {
+      font-weight: 400 !important;
+    }
     .faq-item summary::-webkit-details-marker { display: none; } 
     .faq-item summary::after {
       content: '+';
       position: absolute;
       right: 0;
       color: var(--text-light);
-      font-weight: 500;
+      font-weight: 400 !important;
       font-size: 1.2rem;
     }
     .faq-item[open] summary { color: var(--text); font-weight: 600; }
@@ -433,6 +438,7 @@
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
     
+    /* Regra global de negrito (mantida) */
     body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, footer, header, nav,
     .btn, .hero-statement, .hero-locations, .content p, .faq-answer, .secure-alt-contact,
     .sp-caption, .scroll-reveal-slow, .footer-brand, .footer-luxury-tag, .footer-creds,
@@ -451,7 +457,7 @@
         gap: 80px;
         padding: 0 20px;
         margin-top: 10vh;
-        margin-bottom: 50px;  /* reduzido */
+        margin-bottom: 50px;
       }
       .gallery-item {
         width: 100%;
@@ -487,7 +493,7 @@
       .header-gallery { 
         flex-direction: column; 
         gap: 15vh;
-        margin-bottom: 30px;  /* reduzido */
+        margin-bottom: 30px;
         margin-top: 5vh; 
         padding: 0;
       } 
@@ -504,7 +510,7 @@
 
       .content-section { 
         max-width: 100%; 
-        padding: 50px 20px;  /* reduzido */
+        padding: 50px 20px;
       }
       
       .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } 
