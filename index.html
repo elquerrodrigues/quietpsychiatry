@@ -433,7 +433,8 @@
 
         .profile-photo {
             display: block;
-            margin: 0 auto 100px auto;
+            margin: 0 auto 150px auto;
+            /* ↑ aumentado para mais espaço entre foto e o título */
             height: 58vh;
             width: auto;
             object-fit: contain;
@@ -694,7 +695,8 @@
             .profile-photo {
                 height: 50vh;
                 width: 100%;
-                margin: 0 auto 60px auto;
+                margin: 0 auto 120px auto;
+                /* aumenta espaçamento no mobile também */
             }
 
             .sp-banner-wrapper {
@@ -788,22 +790,22 @@
             </div>
         </div>
 
-        <!-- SEÇÃO ATUALIZADA: título grande + três frases -->
-        <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); color: var(--text-muted);">
+        <!-- SEÇÃO ATUALIZADA: título sem "atendimento", espaços ampliados e estilo nobre -->
+        <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); padding-top: 140px; padding-bottom: 120px;">
             <div class="content">
-                <!-- TÍTULO GRANDE -->
-                <p style="font-family: var(--font-serif); font-size: clamp(2.2rem, 5.5vw, 3.8rem); color: var(--text); font-weight: 600; line-height: 1.2; margin-bottom: 30px; letter-spacing: 2px;">
-                    atendimento <span style="display: inline-block;">ONDE VOCÊ PRECISAR</span>
+                <!-- TÍTULO PRINCIPAL: apenas "ONDE VOCÊ PRECISAR" -->
+                <p style="font-family: var(--font-serif); font-size: clamp(2.8rem, 6vw, 4.8rem); color: var(--text); font-weight: 300; line-height: 1.1; margin-bottom: 80px; letter-spacing: 0.4em; text-transform: uppercase;">
+                    ONDE VOCÊ PRECISAR
                 </p>
 
-                <!-- TRÊS FRASES – um pouco menores que o título -->
-                <p class="scroll-reveal-slow" style="font-size: clamp(1rem, 1.8vw, 1.25rem); font-family: var(--font-sans); letter-spacing: 4px; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">
+                <!-- TRÊS FRASES com estilo refinado (nobre, The Row) -->
+                <p class="scroll-reveal-slow" style="font-size: clamp(1.1rem, 1.6vw, 1.3rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 28px; text-transform: uppercase;">
                     Sem deslocamentos
                 </p>
-                <p class="scroll-reveal-slow" style="font-size: clamp(1rem, 1.8vw, 1.25rem); font-family: var(--font-sans); letter-spacing: 4px; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(1.1rem, 1.6vw, 1.3rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 28px; text-transform: uppercase;">
                     Sem exposição pública
                 </p>
-                <p class="scroll-reveal-slow" style="font-size: clamp(1rem, 1.8vw, 1.25rem); font-family: var(--font-sans); letter-spacing: 4px; color: var(--text-muted); margin-bottom: 0; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(1.1rem, 1.6vw, 1.3rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 0; text-transform: uppercase;">
                     Discrição absoluta
                 </p>
             </div>
