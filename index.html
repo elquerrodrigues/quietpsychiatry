@@ -1,766 +1,934 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F4F1EA">
-  <title>ANGMER | Psiquiatria Concierge Particular</title>
-  <meta name="description" content="Atendimento psiquiátrico diretamente em sua residência, escritório ou hotel em São Paulo.">
-  <meta name="keywords" content="psiquiatra concierge, psiquiatra hotel, psiquiatra particular em casa">
-  <meta name="author" content="ANGMER">
-  <meta name="robots" content="index, follow">
-  <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br/" />
-  <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://angmer.com.br/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Physician",
-      "name": "Dr. Elquer Rodrigues",
-      "medicalSpecialty": "Psychiatry",
-      "url": "https://angmer.com.br/",
-      "description": "Atendimento psiquiátrico domiciliar, corporativo e particular em São Paulo.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo",
-        "addressRegion": "SP",
-        "addressCountry": "BR"
-      },
-      "priceRange": "$$$$"
-    }
-  </script>
-  <style>
-    :root {
-      --bg: #F4F1EA;
-      --bg-alt: #F4F1EA;
-      --text: #2C2B2A;
-      --text-muted: #5A5A5A;
-      --text-light: #8A8A8A;
-      --accent: #9B856A;
-      --line: rgba(44, 43, 42, 0.1);
-      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
-      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--text-muted);
-      line-height: 2.1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4F1EA">
+    <title>ANGMER | Psiquiatria Concierge Particular</title>
+    <meta name="description" content="Atendimento psiquiátrico diretamente em sua residência, escritório ou hotel em São Paulo.">
+    <meta name="keywords" content="psiquiatra concierge, psiquiatra hotel, psiquiatra particular em casa">
+    <meta name="author" content="ANGMER">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br/" />
+    <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://angmer.com.br/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Physician",
+            "name": "Dr. Elquer Rodrigues",
+            "medicalSpecialty": "Psychiatry",
+            "url": "https://angmer.com.br/",
+            "description": "Atendimento psiquiátrico domiciliar, corporativo e particular em São Paulo.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "addressCountry": "BR"
+            },
+            "priceRange": "$$$$"
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #F4F1EA;
+            --bg-alt: #F4F1EA;
+            --text: #2C2B2A;
+            --text-muted: #5A5A5A;
+            --text-light: #8A8A8A;
+            --accent: #9B856A;
+            --line: rgba(44, 43, 42, 0.1);
+            --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+            --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
 
-    .noise-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      pointer-events: none;
-      z-index: 9998;
-      opacity: 0.03;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text-muted);
+            line-height: 2.1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
 
-    .breathing-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      pointer-events: none;
-      z-index: -1;
-      background: radial-gradient(120% 120% at 50% 50%, #F8F6F0 0%, #EFEEE9 100%);
-      background-size: 200% 200%;
-      animation: breathBg 25s ease-in-out infinite alternate;
-    }
-    @keyframes breathBg {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 100% 100%; }
-    }
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.03;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
 
-    .scroll-signature {
-      position: fixed;
-      top: 0;
-      right: 24px;
-      width: 1px;
-      height: 0%;
-      background-color: var(--line);
-      z-index: 9999;
-      pointer-events: none;
-      transition: height 0.1s linear;
-    }
+        .breathing-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(120% 120% at 50% 50%, #F8F6F0 0%, #EFEEE9 100%);
+            background-size: 200% 200%;
+            animation: breathBg 25s ease-in-out infinite alternate;
+        }
+        @keyframes breathBg {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
 
-    .site-wrapper {
-      background: transparent;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      transform-origin: center top;
-      animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
-      transition: opacity 0.4s ease;
-    }
-    @keyframes expandSite {
-       0% { clip-path: inset(50% 50%); transform: scale(1.04); background: var(--bg); } 
-       15% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); background: var(--bg); } 
-       45% { clip-path: inset(calc(50% - 90px)); transform: scale(1.02); background: var(--bg); } 
-       100% { clip-path: inset(0%); transform: scale(1); background: transparent; } 
-    }
-    @keyframes unlockScroll {
-      to { height: auto; overflow: visible; clip-path: none; }
-    }
-    
-    .lang-nav {
-      position: fixed;
-      top: 40px;
-      right: 24px;
-      display: flex;
-      gap: 15px;
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      letter-spacing: 1px;
-      z-index: 10;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.6s var(--transition-smooth);
-    }
-    .lang-nav.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .lang-nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .lang-nav a:hover, .lang-nav a.active {
-      color: var(--text);
-      font-weight: 600;
-    }
-    
-    header {
-      text-align: center; 
-      padding: 0 24px;
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    h1 { 
-      position: absolute;
-      top: 50vh;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      color: var(--text);
-      margin: 0; 
-      text-transform: uppercase;
-      font-weight: 400; 
-      z-index: 20;
-      animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
-    }
-    @keyframes moveLogo {
-      0% { top: 50vh; letter-spacing: 4px; filter: blur(6px); } 
-      45% { top: 50vh; letter-spacing: 5px; filter: blur(3px); } 
-      100% { top: 15vh; letter-spacing: 10px; filter: blur(0); }
-    }
-    
-    .hero-text-block {
-      width: 100%;
-      max-width: 800px;
-    }
-    
-    @keyframes elegantFadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+        .scroll-signature {
+            position: fixed;
+            top: 0;
+            right: 24px;
+            width: 1px;
+            height: 0%;
+            background-color: var(--line);
+            z-index: 9999;
+            pointer-events: none;
+            transition: height 0.1s linear;
+        }
 
-    .hero-statement { 
-      font-family: var(--font-serif); 
-      font-size: clamp(1.2rem, 3vw, 2rem); 
-      font-weight: bold; 
-      color: var(--text); 
-      margin: 0 auto 30px auto; 
-      line-height: 1.5;
-      max-width: 800px;
-      text-transform: uppercase;
-      letter-spacing: 12px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
-    }
-    
-    .hero-locations { 
-      font-family: var(--font-sans); 
-      font-size: 0.65rem; 
-      font-weight: bold; 
-      letter-spacing: 4px; 
-      color: var(--text-muted); 
-      text-transform: uppercase; 
-      margin-bottom: 0;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards;
-    }
-    
-    .header-gallery {
-      width: 100vw;
-      margin-left: calc(50% - 50vw); 
-      display: flex;
-      flex-direction: row; 
-      justify-content: center;
-      align-items: center;
-      gap: 4vw;
-      margin-top: 2vh;
-      margin-bottom: 50px;
-      padding: 0 5vw;
-    }
-    
-    .gallery-item {
-      position: relative;
-      width: 26vw; 
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .gallery-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        .site-wrapper {
+            background: transparent;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            transform-origin: center top;
+            animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
+            transition: opacity 0.4s ease;
+        }
+        @keyframes expandSite {
+            0% {
+                clip-path: inset(50% 50%);
+                transform: scale(1.04);
+                background: var(--bg);
+            }
+            15% {
+                clip-path: inset(calc(50% - 90px));
+                transform: scale(1.02);
+                background: var(--bg);
+            }
+            45% {
+                clip-path: inset(calc(50% - 90px));
+                transform: scale(1.02);
+                background: var(--bg);
+            }
+            100% {
+                clip-path: inset(0%);
+                transform: scale(1);
+                background: transparent;
+            }
+        }
+        @keyframes unlockScroll {
+            to {
+                height: auto;
+                overflow: visible;
+                clip-path: none;
+            }
+        }
 
-    .gallery-image {
-      display: block;
-      width: 100%;
-      height: 75vh;                /* aumentado para ~80% da viewport */
-      object-fit: cover;
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(85%) grayscale(20%);
-      transition: filter 1.2s var(--transition-smooth);
-    }
-    
-    .gallery-item:hover .gallery-image {
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(105%) grayscale(0%);
-    }
+        .lang-nav {
+            position: fixed;
+            top: 40px;
+            right: 24px;
+            display: flex;
+            gap: 15px;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            z-index: 10;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s var(--transition-smooth);
+        }
+        .lang-nav.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lang-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .lang-nav a:hover,
+        .lang-nav a.active {
+            color: var(--text);
+            font-weight: 600;
+        }
 
-    /* --- LEGENDAS ACIMA DA FOTO --- */
-    .gallery-caption {
-      width: 100%;
-      text-align: center;
-      padding: 0 10px 30px 10px;   /* padding inferior para separar da imagem */
-    }
-    .caption-title {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;           /* maior */
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin: 0 0 6px 0;
-    }
-    .caption-desc {
-      font-family: var(--font-sans);
-      font-size: 0.9rem;           /* maior */
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin: 0;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    /* ------------------------------------------- */
-    
-    .btn { 
-      display: inline-block; 
-      font-family: var(--font-sans); 
-      color: var(--text);
-      background-color: transparent;
-      padding: 14px 28px; 
-      text-decoration: none; 
-      font-size: 0.7rem; 
-      text-transform: uppercase; 
-      letter-spacing: 4px; 
-      font-weight: 400;
-      transition: all 0.3s ease;
-      border: 1px solid var(--line);
-      border-radius: 2px;
-    }
-    .btn:hover { 
-      background-color: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-      opacity: 1;
-    }
-    
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
-      will-change: transform, opacity;
-    }
-    
-    .scroll-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        header {
+            text-align: center;
+            padding: 0 24px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .sp-banner-wrapper {
-      width: 100%;
-      text-align: center;
-      margin: 150px 0; 
-    }
-    
-    .sp-banner-inner {
-      position: relative;
-      display: block; 
-      width: 100%;
-      margin: 0 auto;
-    }
-    
-    .sp-image {
-      display: block;
-      width: 100%;
-      height: 78vh;
-      object-fit: cover;
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-    }
+        h1 {
+            position: absolute;
+            top: 50vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 400;
+            z-index: 20;
+            animation: moveLogo 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+        }
+        @keyframes moveLogo {
+            0% {
+                top: 50vh;
+                letter-spacing: 4px;
+                filter: blur(6px);
+            }
+            45% {
+                top: 50vh;
+                letter-spacing: 5px;
+                filter: blur(3px);
+            }
+            100% {
+                top: 15vh;
+                letter-spacing: 10px;
+                filter: blur(0);
+            }
+        }
 
-    .sp-caption {
-      font-family: var(--font-serif);
-      font-weight: 300;
-      color: var(--text);
-      text-align: center;
-      margin-top: 50px;
-      font-size: 32px;
-    }
-    
-    .content-section { 
-      padding: 90px clamp(24px, 10vw, 120px);
-      max-width: 50vw;
-      margin: 0 auto; 
-    }
-    
-    .content { 
-      max-width: 100%; 
-      margin: 0 auto; 
-      text-align: center; 
-    }
-    .content p { 
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem); 
-      color: var(--text-muted); 
-      margin-bottom: 60px; 
-      line-height: 2.2; 
-      font-weight: 300; 
-      letter-spacing: 0.3px; 
-    }
-    .content p:last-child { margin-bottom: 0; }
-    
-    .scroll-reveal-slow {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      color: var(--text-light);
-      margin: 40px 0;
-      font-weight: 700;
-      opacity: 0;
-      transform: translateY(20px) scale(0.98);
-      transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-slow.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    
-    .profile-photo {
-      display: block;
-      margin: 0 auto 100px auto; 
-      height: 58vh;              
-      width: auto;
-      object-fit: contain;
-      border: none;              
-      padding: 0;
-      background: transparent;
-      filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
-    }
+        .hero-text-block {
+            width: 100%;
+            max-width: 800px;
+        }
 
-    .btn-container {
-        padding-top: 60px;
-        padding-bottom: 60px; 
-        text-align: center;
-    }
-    
-    .secure-alt-contact {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      color: var(--text) !important;
-      font-weight: bold !important;
-      letter-spacing: 0.5px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
-    
-    .faq-container { margin-bottom: 100px; text-align: left; } 
-    .faq-item { border-bottom: 1px solid var(--line); }
-    .faq-item summary {
-      padding: 30px 0; 
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      font-weight: 500; 
-      color: var(--text);
-      list-style: none;
-      position: relative;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; } 
-    .faq-item summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      color: var(--text-light);
-      font-weight: 500;
-      font-size: 1.2rem;
-    }
-    .faq-item[open] summary { color: var(--text); font-weight: 600; }
-    .faq-item[open] summary::after { content: '–'; color: var(--text); }
-    .faq-answer {
-      padding-bottom: 30px; 
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      line-height: 1.9;
-      font-weight: 300;
-    }
-    
-    footer { 
-      text-align: center; 
-      padding: 80px 24px 100px 24px; 
-      font-family: var(--font-sans); 
-      margin: 0 auto; 
-      background-color: transparent;
-      color: var(--text-muted);
-      border-top: 1px solid var(--line); 
-    }
-    
-    .footer-brand { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 6px; color: var(--text); margin-bottom: 30px; }
-    .footer-luxury-tag { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 30px; text-transform: uppercase; }
-    .footer-creds { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-light); margin-bottom: 35px; }
-    .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
-    .footer-email:hover { color: var(--accent); }
-    
-    /* Regra global de negrito (mantida) */
-    body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, footer, header, nav,
-    .btn, .hero-statement, .hero-locations, .content p, .faq-answer, .secure-alt-contact,
-    .sp-caption, .scroll-reveal-slow, .footer-brand, .footer-luxury-tag, .footer-creds,
-    .footer-email, .lang-nav a, 
-    .content-section, .sp-banner-wrapper, .site-wrapper, .gallery-item, .hero-text-block {
-      font-weight: 700 !important;
-    }
-    h1 {
-      font-weight: 700 !important;
-    }
+        @keyframes elegantFadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .faq-item summary,
-    .faq-item summary::after {
-      font-weight: 400 !important;
-    }
-    
-    @media(min-width: 769px) {
-      .header-gallery {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        padding: 0 20px;
-        margin-top: 2vh;
-        margin-bottom: 50px;
-      }
-      .gallery-item {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      .gallery-image {
-        height: 75vh;           /* consistente */
-        aspect-ratio: auto;     /* remove a restrição 4/3 para usar a altura definida */
-        object-fit: cover;
-      }
-      .gallery-caption {
-        padding: 0 10px 30px 10px;
-      }
-    }
+        .hero-statement {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: bold;
+            color: var(--text);
+            margin: 0 auto 30px auto;
+            line-height: 1.5;
+            max-width: 800px;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
+        }
 
-    @media(max-width: 768px) {
-      .scroll-signature { right: 10px; }
-      .lang-nav { top: 25px; right: 20px; gap: 10px; }
-      header { padding: 0 20px; min-height: 100vh; } 
-      
-      @keyframes moveLogo {
-        0% { top: 50vh; letter-spacing: 2px; filter: blur(4px); }
-        45% { top: 50vh; letter-spacing: 3px; filter: blur(2px); }
-        100% { top: 12vh; letter-spacing: 8px; filter: blur(0px); } 
-      }
+        .hero-locations {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards;
+        }
 
-      .hero-statement { 
-        font-size: clamp(0.8rem, 4vw, 1.2rem); 
-        line-height: 1.5; 
-        margin-bottom: 20px;
-        letter-spacing: 2px; 
-        white-space: nowrap; 
-      }
-      
-      .header-gallery { 
-        flex-direction: column; 
-        gap: 8vh;
-        margin-bottom: 30px;
-        margin-top: 2vh;
-        padding: 0;
-      } 
-      
-      .gallery-item { 
-        width: 100vw; 
-        padding: 0 20px; 
-      }
-      .gallery-image {
-        height: 70vh;           /* também aumentado no mobile */
-        aspect-ratio: auto;
-        object-fit: cover;
-      }
-      .gallery-caption {
-        padding: 0 10px 20px 10px;
-      }
-      .caption-title {
-        font-size: 1.2rem;
-      }
-      .caption-desc {
-        font-size: 0.8rem;
-      }
+        .header-gallery {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 4vw;
+            margin-top: 2vh;
+            margin-bottom: 50px;
+            padding: 0 5vw;
+        }
 
-      .content-section { 
-        max-width: 100%; 
-        padding: 50px 20px;
-      }
-      
-      .profile-photo { height: 50vh; width: 100%; margin: 0 auto 60px auto; } 
-      
-      .sp-banner-wrapper { margin: 100px 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
-      .sp-banner-inner { width: 100%; display: block; } 
-      .sp-image { width: 100vw; height: 66vh; object-fit: cover; } 
-      
-      .sp-caption {
-        font-size: 24px;
-        margin-top: 40px;
-      }
-      
-      .btn { display: inline-block; width: auto; text-align: center; }
-      
-      .btn-container { padding-bottom: 40px; } 
-      
-      footer { padding: 60px 20px 80px 20px; } 
-    }
-  </style>
+        .gallery-item {
+            position: relative;
+            width: 26vw;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-image {
+            display: block;
+            width: 100%;
+            height: 75vh;
+            object-fit: cover;
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(85%) grayscale(20%);
+            transition: filter 1.2s var(--transition-smooth);
+        }
+
+        .gallery-item:hover .gallery-image {
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(105%) grayscale(0%);
+        }
+
+        .gallery-caption {
+            width: 100%;
+            text-align: center;
+            padding: 0 10px 30px 10px;
+        }
+        .caption-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0 0 6px 0;
+        }
+        .caption-desc {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font-sans);
+            color: var(--text);
+            background-color: transparent;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+        }
+        .btn:hover {
+            background-color: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+            opacity: 1;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
+            will-change: transform, opacity;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sp-banner-wrapper {
+            width: 100%;
+            text-align: center;
+            margin: 150px 0;
+        }
+
+        .sp-banner-inner {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .sp-image {
+            display: block;
+            width: 100%;
+            height: 78vh;
+            object-fit: cover;
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
+        }
+
+        .sp-caption {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            color: var(--text);
+            text-align: center;
+            margin-top: 50px;
+            font-size: 32px;
+        }
+
+        .content-section {
+            padding: 90px clamp(24px, 10vw, 120px);
+            max-width: 50vw;
+            margin: 0 auto;
+        }
+
+        .content {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content p {
+            font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            line-height: 2.2;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scroll-reveal-slow {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--text-light);
+            margin: 40px 0;
+            font-weight: 700;
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .scroll-reveal-slow.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .profile-photo {
+            display: block;
+            margin: 0 auto 100px auto;
+            height: 58vh;
+            width: auto;
+            object-fit: contain;
+            border: none;
+            padding: 0;
+            background: transparent;
+            filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
+        }
+
+        .btn-container {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .secure-alt-contact {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            color: var(--text) !important;
+            font-weight: bold !important;
+            letter-spacing: 0.5px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .faq-container {
+            margin-bottom: 100px;
+            text-align: left;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--line);
+        }
+        .faq-item summary {
+            padding: 30px 0;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            list-style: none;
+            position: relative;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+        .faq-item[open] summary {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .faq-item[open] summary::after {
+            content: '–';
+            color: var(--text);
+        }
+        .faq-answer {
+            padding-bottom: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 24px 100px 24px;
+            font-family: var(--font-sans);
+            margin: 0 auto;
+            background-color: transparent;
+            color: var(--text-muted);
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-brand {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+        .footer-luxury-tag {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .footer-creds {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            margin-bottom: 35px;
+        }
+        .footer-email {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .footer-email:hover {
+            color: var(--accent);
+        }
+
+        /* Regra global de negrito (mantida) */
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a,
+        span,
+        div,
+        section,
+        footer,
+        header,
+        nav,
+        .btn,
+        .hero-statement,
+        .hero-locations,
+        .content p,
+        .faq-answer,
+        .secure-alt-contact,
+        .sp-caption,
+        .scroll-reveal-slow,
+        .footer-brand,
+        .footer-luxury-tag,
+        .footer-creds,
+        .footer-email,
+        .lang-nav a,
+        .content-section,
+        .sp-banner-wrapper,
+        .site-wrapper,
+        .gallery-item,
+        .hero-text-block {
+            font-weight: 700 !important;
+        }
+        h1 {
+            font-weight: 700 !important;
+        }
+
+        .faq-item summary,
+        .faq-item summary::after {
+            font-weight: 400 !important;
+        }
+
+        @media(min-width: 769px) {
+            .header-gallery {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                padding: 0 20px;
+                margin-top: 2vh;
+                margin-bottom: 50px;
+            }
+            .gallery-item {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .gallery-image {
+                height: 75vh;
+                aspect-ratio: auto;
+                object-fit: cover;
+            }
+            .gallery-caption {
+                padding: 0 10px 30px 10px;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .scroll-signature {
+                right: 10px;
+            }
+            .lang-nav {
+                top: 25px;
+                right: 20px;
+                gap: 10px;
+            }
+            header {
+                padding: 0 20px;
+                min-height: 100vh;
+            }
+
+            @keyframes moveLogo {
+                0% {
+                    top: 50vh;
+                    letter-spacing: 2px;
+                    filter: blur(4px);
+                }
+                45% {
+                    top: 50vh;
+                    letter-spacing: 3px;
+                    filter: blur(2px);
+                }
+                100% {
+                    top: 12vh;
+                    letter-spacing: 8px;
+                    filter: blur(0px);
+                }
+            }
+
+            .hero-statement {
+                font-size: clamp(0.8rem, 4vw, 1.2rem);
+                line-height: 1.5;
+                margin-bottom: 20px;
+                letter-spacing: 2px;
+                white-space: nowrap;
+            }
+
+            .header-gallery {
+                flex-direction: column;
+                gap: 8vh;
+                margin-bottom: 30px;
+                margin-top: 2vh;
+                padding: 0;
+            }
+
+            .gallery-item {
+                width: 100vw;
+                padding: 0 20px;
+            }
+            .gallery-image {
+                height: 70vh;
+                aspect-ratio: auto;
+                object-fit: cover;
+            }
+            .gallery-caption {
+                padding: 0 10px 20px 10px;
+            }
+            .caption-title {
+                font-size: 1.2rem;
+            }
+            .caption-desc {
+                font-size: 0.8rem;
+            }
+
+            .content-section {
+                max-width: 100%;
+                padding: 50px 20px;
+            }
+
+            .profile-photo {
+                height: 50vh;
+                width: 100%;
+                margin: 0 auto 60px auto;
+            }
+
+            .sp-banner-wrapper {
+                margin: 100px 0;
+                width: 100vw;
+                position: relative;
+                left: 50%;
+                right: 50%;
+                margin-left: -50vw;
+                margin-right: -50vw;
+            }
+            .sp-banner-inner {
+                width: 100%;
+                display: block;
+            }
+            .sp-image {
+                width: 100vw;
+                height: 66vh;
+                object-fit: cover;
+            }
+
+            .sp-caption {
+                font-size: 24px;
+                margin-top: 40px;
+            }
+
+            .btn {
+                display: inline-block;
+                width: auto;
+                text-align: center;
+            }
+
+            .btn-container {
+                padding-bottom: 40px;
+            }
+
+            footer {
+                padding: 60px 20px 80px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div class="noise-overlay"></div>
+    <div class="noise-overlay"></div>
 
-<div class="site-wrapper">
-  
-  <div class="breathing-bg"></div>
-  <div class="scroll-signature"></div>
+    <div class="site-wrapper">
 
-  <nav class="lang-nav" id="langNav">
-    <a href="/" class="active">PT</a>
-    <a href="/en/">EN</a>
-  </nav>
-  
-  <header>
-    <h1>ANGMER</h1>
-    <div class="hero-text-block">
-      <p class="hero-statement">Um psiquiatra vai até você.</p>
-      <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
-    </div>
-  </header>
+        <div class="breathing-bg"></div>
+        <div class="scroll-signature"></div>
 
-  <div class="header-gallery">
-    <!-- RESIDÊNCIA -->
-    <div class="gallery-item scroll-reveal">
-      <!-- LEGENDA ACIMA DA FOTO -->
-      <div class="gallery-caption">
-        <p class="caption-title">Na sua residência</p>
-        <p class="caption-desc">Para quem não pode ou não quer sair de casa.<br>Se os sintomas paralisam sua rotina ou o simples ato de sair gera angústia, o tratamento começa no conforto do seu lar.</p>
-      </div>
-      <img src="foto1.jpg?v=novo" alt="Atendimento em residência" class="gallery-image">
-    </div>
+        <nav class="lang-nav" id="langNav">
+            <a href="/" class="active">PT</a>
+            <a href="/en/">EN</a>
+        </nav>
 
-    <!-- ESCRITÓRIO -->
-    <div class="gallery-item scroll-reveal">
-      <div class="gallery-caption">
-        <p class="caption-title">No seu escritório</p>
-        <p class="caption-desc">Para quem não quer interromper a rotina ou precisa de sigilo.<br>Atendo no seu ambiente profissional, com total discrição, para que ninguém precise saber que você está em tratamento.</p>
-      </div>
-      <img src="foto2.jpg?v=novo" alt="Atendimento em escritório" class="gallery-image">
-    </div>
+        <header>
+            <h1>ANGMER</h1>
+            <div class="hero-text-block">
+                <p class="hero-statement">Um psiquiatra vai até você.</p>
+                <p class="hero-locations">Residência &bull; Escritório &bull; Hotel</p>
+            </div>
+        </header>
 
-    <!-- HOTEL -->
-    <div class="gallery-item scroll-reveal">
-      <div class="gallery-caption">
-        <p class="caption-title">No seu hotel</p>
-        <p class="caption-desc">Para quem busca anonimato ou viaja com frequência.<br>Se você não quer ser visto, prefere um local neutro ou está fora de casa, garantimos total privacidade e conforto.</p>
-      </div>
-      <img src="foto3.jpg?v=novo" alt="Atendimento em hotel" class="gallery-image">
-    </div>
-  </div>
+        <div class="header-gallery">
+            <!-- RESIDÊNCIA -->
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">Na sua residência</p>
+                    <p class="caption-desc">Para quem não pode ou não quer sair de casa.<br>Se os sintomas paralisam sua rotina ou o simples ato de sair gera angústia, o tratamento começa no conforto do seu lar.</p>
+                </div>
+                <img src="foto1.jpg?v=novo" alt="Atendimento em residência" class="gallery-image">
+            </div>
 
-  <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); color: var(--text-muted);">
-    <div class="content">
-      <p style="font-family: var(--font-serif); font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--text) !important; font-weight: 600; line-height: 1.4; margin-bottom: 50px;">
-        Psiquiatra concierge.
-      </p>
-      <p style="font-family: var(--font-serif); font-size: clamp(1.15rem, 3.2vw, 1.45rem); color: var(--text); font-weight: 400; margin-bottom: 80px; line-height: 1.6;">
-        Atendimento presencial no local de sua escolha.
-      </p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.4s;">Sem deslocamentos</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 0.8s;">Sem exposição pública</p>
-      <p class="scroll-reveal-slow" style="transition-delay: 1.2s;">Discrição absoluta</p>
-    </div>
-  </section>
+            <!-- ESCRITÓRIO -->
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">No seu escritório</p>
+                    <p class="caption-desc">Para quem não quer interromper a rotina ou precisa de sigilo.<br>Atendo no seu ambiente profissional, com total discrição, para que ninguém precise saber que você está em tratamento.</p>
+                </div>
+                <img src="foto2.jpg?v=novo" alt="Atendimento em escritório" class="gallery-image">
+            </div>
 
-  <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
-    <div class="content">
-      <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
-      <p>Eu sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
-      <p>Atuo exclusivamente como psiquiatra há mais de doze anos. Todo o atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
-    </div>
-  </section>
-  
-  <div class="sp-banner-wrapper scroll-reveal">
-    <div class="sp-banner-inner">
-      <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
-      <p class="sp-caption">Atendimento em São Paulo.</p>
-    </div>
-  </div>
-  
-  <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
-    <div class="content">
-      
-      <div class="faq-container">
-        <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center;">Informações</h3>
-        <details class="faq-item">
-          <summary>Para quem é este serviço?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Destinado a pacientes que necessitam de atendimento presencial com máxima discrição, conveniência e continuidade do cuidado, no local onde eles se sentem mais confortáveis e seguros.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Como funciona o atendimento?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0 0 15px 0; text-align: left;">Após a confirmação do agendamento e pagamento, eu vou até você.</p>
-            <p style="margin: 0 0 15px 0; text-align: left;">A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico. Avaliação clínica completa, diagnóstico e prescrição.</p>
-            <p style="margin: 0; text-align: left;">Por se tratar de um serviço médico particular e altamente personalizado, com tempo reservado exclusivamente para o paciente, todas as consultas são previamente agendadas e pagas. Não há consultas de retorno gratuitas.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Onde os atendimentos são realizados?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>Como é feito o agendamento?</summary>
-          <div class="faq-answer">
-            <p style="margin: 0; text-align: left;">A solicitação inicial é feita via WhatsApp. Após uma breve análise de disponibilidade clínica e geográfica, o horário da consulta é confirmado diretamente com o médico.</p>
-          </div>
-        </details>
-      </div>
+            <!-- HOTEL -->
+            <div class="gallery-item scroll-reveal">
+                <div class="gallery-caption">
+                    <p class="caption-title">No seu hotel</p>
+                    <p class="caption-desc">Para quem busca anonimato ou viaja com frequência.<br>Se você não quer ser visto, prefere um local neutro ou está fora de casa, garantimos total privacidade e conforto.</p>
+                </div>
+                <img src="foto3.jpg?v=novo" alt="Atendimento em hotel" class="gallery-image">
+            </div>
+        </div>
 
-      <div class="btn-container">
-          <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20ANGMER." 
-             target="_blank" 
-             class="btn"
-             aria-label="Marque o silêncio – agende sua consulta">
-            Verificar disponibilidade
-          </a>
-          <span class="secure-alt-contact">
-            Agenda limitada.<br>Atendimento sujeito à disponibilidade geográfica.
-          </span>
-      </div>
-      
-    </div>
-  </section>
-  
-  <footer>
-    <div class="footer-brand">ANGMER</div>
-    <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
-    <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
-    <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
-  </footer>
+        <!-- SEÇÃO ATUALIZADA: título grande + três frases -->
+        <section class="content-section scroll-reveal" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-alt); color: var(--text-muted);">
+            <div class="content">
+                <!-- TÍTULO GRANDE -->
+                <p style="font-family: var(--font-serif); font-size: clamp(2.2rem, 5.5vw, 3.8rem); color: var(--text); font-weight: 600; line-height: 1.2; margin-bottom: 30px; letter-spacing: 2px;">
+                    atendimento <span style="display: inline-block;">ONDE VOCÊ PRECISAR</span>
+                </p>
+
+                <!-- TRÊS FRASES – um pouco menores que o título -->
+                <p class="scroll-reveal-slow" style="font-size: clamp(1rem, 1.8vw, 1.25rem); font-family: var(--font-sans); letter-spacing: 4px; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">
+                    Sem deslocamentos
+                </p>
+                <p class="scroll-reveal-slow" style="font-size: clamp(1rem, 1.8vw, 1.25rem); font-family: var(--font-sans); letter-spacing: 4px; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">
+                    Sem exposição pública
+                </p>
+                <p class="scroll-reveal-slow" style="font-size: clamp(1rem, 1.8vw, 1.25rem); font-family: var(--font-sans); letter-spacing: 4px; color: var(--text-muted); margin-bottom: 0; text-transform: uppercase;">
+                    Discrição absoluta
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
+            <div class="content">
+                <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
+                <p>Eu sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></p>
+                <p>Atuo exclusivamente como psiquiatra há mais de doze anos. Todo o atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
+            </div>
+        </section>
+
+        <div class="sp-banner-wrapper scroll-reveal">
+            <div class="sp-banner-inner">
+                <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
+                <p class="sp-caption">Atendimento em São Paulo.</p>
+            </div>
+        </div>
+
+        <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
+            <div class="content">
+
+                <div class="faq-container">
+                    <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center;">Informações</h3>
+                    <details class="faq-item">
+                        <summary>Para quem é este serviço?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0; text-align: left;">Destinado a pacientes que necessitam de atendimento presencial com máxima discrição, conveniência e continuidade do cuidado, no local onde eles se sentem mais confortáveis e seguros.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Como funciona o atendimento?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0 0 15px 0; text-align: left;">Após a confirmação do agendamento e pagamento, eu vou até você.</p>
+                            <p style="margin: 0 0 15px 0; text-align: left;">A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico. Avaliação clínica completa, diagnóstico e prescrição.</p>
+                            <p style="margin: 0; text-align: left;">Por se tratar de um serviço médico particular e altamente personalizado, com tempo reservado exclusivamente para o paciente, todas as consultas são previamente agendadas e pagas. Não há consultas de retorno gratuitas.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Onde os atendimentos são realizados?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Como é feito o agendamento?</summary>
+                        <div class="faq-answer">
+                            <p style="margin: 0; text-align: left;">A solicitação inicial é feita via WhatsApp. Após uma breve análise de disponibilidade clínica e geográfica, o horário da consulta é confirmado diretamente com o médico.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="btn-container">
+                    <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20ANGMER."
+                    target="_blank"
+                    class="btn"
+                    aria-label="Marque o silêncio – agende sua consulta">
+                    Verificar disponibilidade
+                </a>
+                <span class="secure-alt-contact">
+                    Agenda limitada.<br>Atendimento sujeito à disponibilidade geográfica.
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">ANGMER</div>
+        <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE LUXURY</div>
+        <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
+        <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
+    </footer>
 </div>
 
 <script>
     const details = document.querySelectorAll('details');
     details.forEach((targetDetail) => {
-      targetDetail.addEventListener('click', () => {
-        details.forEach((detail) => {
-          if (detail !== targetDetail) {
-            detail.removeAttribute('open');
-          }
+        targetDetail.addEventListener('click', () => {
+            details.forEach((detail) => {
+                if (detail !== targetDetail) {
+                    detail.removeAttribute('open');
+                }
+            });
         });
-      });
     });
 
     (function() {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
         });
-      }, { 
-        threshold: 0.15, 
-        rootMargin: '0px 0px -50px 0px' 
-      });
-      
-      document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow').forEach(function(el) {
-        if(!el.classList.contains('scroll-reveal-slow')) {
-            el.classList.add('scroll-reveal');
-        }
-        observer.observe(el);
-      });
+
+        document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .scroll-reveal-slow')
+        .forEach(function(el) {
+            if (!el.classList.contains('scroll-reveal-slow')) {
+                el.classList.add('scroll-reveal');
+            }
+            observer.observe(el);
+        });
     })();
 
     (function() {
-      const langNav = document.getElementById('langNav');
-      let alreadyVisible = false;
-      
-      window.addEventListener('scroll', function() {
-        if (!alreadyVisible && window.scrollY > window.innerHeight * 0.1) {
-          langNav.classList.add('visible');
-          alreadyVisible = true;
-        }
-      });
-    })();
+        const langNav = document.getElementById('langNav');
+        let alreadyVisible = false;
 
-    // Parallax removido completamente para evitar que a legenda seja coberta
+        window.addEventListener('scroll', function() {
+            if (!alreadyVisible && window.scrollY > window.innerHeight * 0.1) {
+                langNav.classList.add('visible');
+                alreadyVisible = true;
+            }
+        });
+    })();
 
     const langLinks = document.querySelectorAll('.lang-nav a');
     const siteWrapper = document.querySelector('.site-wrapper');
-    
+
     langLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             if (link.classList.contains('active')) return;
@@ -777,7 +945,7 @@
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const maxScroll = document.body.scrollHeight - window.innerHeight;
-        if(maxScroll > 0) {
+        if (maxScroll > 0) {
             const progress = Math.min((scrolled / maxScroll) * 100, 100);
             scrollSignature.style.height = progress + '%';
         }
