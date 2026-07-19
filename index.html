@@ -398,18 +398,13 @@
       letter-spacing: 0.5px;
       cursor: pointer;
     }
-    /* Remove o negrito das perguntas */
-    .faq-item summary,
-    .faq-item summary::after {
-      font-weight: 400 !important;
-    }
     .faq-item summary::-webkit-details-marker { display: none; } 
     .faq-item summary::after {
       content: '+';
       position: absolute;
       right: 0;
       color: var(--text-light);
-      font-weight: 400 !important;
+      font-weight: 500;
       font-size: 1.2rem;
     }
     .faq-item[open] summary { color: var(--text); font-weight: 600; }
@@ -438,16 +433,25 @@
     .footer-email { display: inline-block; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; font-weight: 500; }
     .footer-email:hover { color: var(--accent); }
     
-    /* Regra global de negrito (mantida) */
+    /* 
+      Regra global de negrito (mantida) 
+      ATENÇÃO: removi .faq-item summary e ::after daqui para que as perguntas possam ficar sem negrito.
+    */
     body, p, h1, h2, h3, h4, h5, h6, a, span, div, section, footer, header, nav,
     .btn, .hero-statement, .hero-locations, .content p, .faq-answer, .secure-alt-contact,
     .sp-caption, .scroll-reveal-slow, .footer-brand, .footer-luxury-tag, .footer-creds,
-    .footer-email, .lang-nav a, .faq-item summary, .faq-item summary::after,
+    .footer-email, .lang-nav a, 
     .content-section, .sp-banner-wrapper, .site-wrapper, .gallery-item, .hero-text-block {
       font-weight: 700 !important;
     }
     h1 {
       font-weight: 700 !important;
+    }
+
+    /* AGORA: forçamos as perguntas a ficarem com peso normal (sem negrito) */
+    .faq-item summary,
+    .faq-item summary::after {
+      font-weight: 400 !important;
     }
     
     @media(min-width: 769px) {
