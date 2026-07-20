@@ -162,8 +162,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: transparent; /* Alterado para transparente para o vídeo aparecer */
-            overflow: hidden; /* Mantém o vídeo contido dentro do header */
+            background: transparent;
+            overflow: hidden;
         }
 
         /* VÍDEO NO HEADER */
@@ -175,8 +175,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            filter: blur(6px); /* Diminui a nitidez */
-            transform: scale(1.05); /* Evita bordas brancas vazando devido ao blur */
+            filter: blur(4.2px); /* Reduzido para 70% do original de 6px */
+            transform: scale(1.05);
         }
 
         .hero-overlay {
@@ -185,7 +185,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(244, 241, 234, 0.7); /* Mesma cor de fundo do site com transparência */
+            background-color: rgba(244, 241, 234, 0.7);
             z-index: 1;
         }
 
@@ -204,7 +204,7 @@
             opacity: 0;
             transform: translateY(30px);
             animation: elegantFadeUp 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
-            position: relative; /* Mantém o texto acima do vídeo */
+            position: relative;
             z-index: 2;
         }
 
@@ -215,14 +215,14 @@
             margin: 24px auto 30px auto;
             opacity: 0;
             animation: elegantFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
-            position: relative; /* Mantém acima do vídeo */
+            position: relative;
             z-index: 2;
         }
 
         .hero-text-block {
             width: 100%;
             max-width: 800px;
-            position: relative; /* Mantém acima do vídeo */
+            position: relative;
             z-index: 2;
         }
 
@@ -640,7 +640,7 @@
             font-weight: 400 !important;
         }
         .chic-box {
-            font-weight: 300 !important;
+            font-weight: 700 !important; /* Alterado para negrito */
         }
 
         .faq-item summary,
