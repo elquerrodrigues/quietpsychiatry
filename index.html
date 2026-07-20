@@ -34,7 +34,7 @@
     </script>
     <style>
         :root {
-            --bg: #F4F1EA;      /* off-white uniforme */
+            --bg: #F4F1EA;
             --bg-alt: #F4F1EA;
             --text: #2C2B2A;
             --text-muted: #5A5A5A;
@@ -165,10 +165,13 @@
             background: var(--bg);
         }
 
+        /* TÍTULO – agora controlado por classes e transição */
         .title-box {
-            display: inline-block;
-            background-color: transparent;
-            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
             font-family: var(--font-serif);
             font-size: clamp(1.6rem, 3.5vw, 2.8rem);
             color: var(--text);
@@ -177,9 +180,20 @@
             letter-spacing: 6px;
             line-height: 1.3;
             text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: elegantFadeUp 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+            transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+            padding: 0;
+            margin: 0;
+            will-change: transform, opacity, top, font-size;
+        }
+        .title-box.visible {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+        .title-box.title-up {
+            top: 40px;
+            transform: translateX(-50%);
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            letter-spacing: 4px;
         }
 
         .title-divider {
@@ -242,7 +256,6 @@
             align-items: center;
         }
 
-        /* GALERIA */
         .header-gallery {
             width: 100vw;
             margin-left: calc(50% - 50vw);
@@ -545,7 +558,6 @@
             color: var(--accent);
         }
 
-        /* Regra global de negrito (mantida) */
         body,
         p,
         h1,
@@ -593,7 +605,6 @@
             font-weight: 400 !important;
         }
 
-        /* Ajustes para a seção "ONDE VOCÊ PRECISAR" – sem as palavras removidas */
         .onde-section .frase-destaque {
             font-family: var(--font-serif);
             font-size: clamp(1.6rem, 3.2vw, 2.8rem);
@@ -760,6 +771,10 @@
                 font-size: clamp(1.2rem, 4vw, 1.8rem);
                 letter-spacing: 3px;
             }
+            .title-box.title-up {
+                font-size: clamp(1rem, 3vw, 1.4rem);
+                top: 30px;
+            }
         }
     </style>
 </head>
@@ -777,7 +792,7 @@
         </nav>
 
         <header>
-            <div class="title-box">PSIQUIATRA<br>PRIVATIVO</div>
+            <div class="title-box" id="mainTitle">PSIQUIATRA<br>PRIVATIVO</div>
             <div class="title-divider"></div>
             <div class="hero-text-block">
                 <p class="hero-statement">Um psiquiatra vai até você.</p>
@@ -785,11 +800,9 @@
             </div>
         </header>
 
-        <!-- SEÇÃO "ONDE VOCÊ PRECISAR" – removidas as palavras AGORA e AINDA HOJE -->
         <section class="onde-section scroll-reveal">
             <div class="content" style="max-width: 800px; margin: 0 auto;">
                 <p class="frase-destaque primeira">ONDE VOCÊ PRECISAR</p>
-
                 <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
                     Sem deslocamentos
                 </p>
@@ -802,7 +815,6 @@
             </div>
         </section>
 
-        <!-- GALERIA DE FOTOS -->
         <div class="header-gallery">
             <div class="gallery-item scroll-reveal">
                 <div class="gallery-caption">
@@ -829,7 +841,6 @@
             </div>
         </div>
 
-        <!-- PERFIL -->
         <section class="content-section profile-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
             <div class="content">
                 <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
@@ -838,7 +849,6 @@
             </div>
         </section>
 
-        <!-- BANNER SÃO PAULO -->
         <div class="sp-banner-wrapper scroll-reveal">
             <div class="sp-banner-inner">
                 <img src="foto5.jpg?v=novo" class="sp-image" alt="São Paulo">
@@ -846,7 +856,6 @@
             </div>
         </div>
 
-        <!-- FAQ E BOTÃO -->
         <section class="content-section scroll-reveal" style="background-color: transparent; color: var(--text-muted);">
             <div class="content">
 
@@ -973,6 +982,22 @@
                 scrollSignature.style.height = progress + '%';
             }
         });
+
+        // NOVO: controle do título – aparece no centro e depois sobe para o topo
+        (function() {
+            const title = document.getElementById('mainTitle');
+            if (!title) return;
+
+            // 1. Torna visível após um breve delay (para dar tempo da animação de entrada do site)
+            setTimeout(() => {
+                title.classList.add('visible');
+            }, 600);
+
+            // 2. Após a leitura inicial, sobe para o topo
+            setTimeout(() => {
+                title.classList.add('title-up');
+            }, 4000);
+        })();
     </script>
 </body>
 </html>
