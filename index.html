@@ -242,6 +242,28 @@
             align-items: center;
         }
 
+        /* CAIXA CHIQUE ESTILO "THE ROW" */
+        .chic-box-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 80px;
+        }
+
+        .chic-box {
+            display: inline-block;
+            border: 1px solid var(--text);
+            padding: 40px 60px;
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            line-height: 1.6;
+            text-align: center;
+            background-color: transparent;
+        }
+
         /* GALERIA */
         .header-gallery {
             width: 100vw;
@@ -587,25 +609,13 @@
         .footer-brand {
             font-weight: 400 !important;
         }
+        .chic-box {
+            font-weight: 300 !important;
+        }
 
         .faq-item summary,
         .faq-item summary::after {
             font-weight: 400 !important;
-        }
-
-        /* Ajustes para a seção "ONDE VOCÊ PRECISAR" – sem as palavras removidas */
-        .onde-section .frase-destaque {
-            font-family: var(--font-serif);
-            font-size: clamp(1.6rem, 3.2vw, 2.8rem);
-            color: var(--text);
-            font-weight: 300;
-            line-height: 1.2;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            margin: 0;
-        }
-        .onde-section .frase-destaque.primeira {
-            margin-bottom: 60px;
         }
 
         @media(min-width: 769px) {
@@ -657,11 +667,16 @@
                 padding-bottom: 140px;
                 margin: 10px 0 30px 0;
             }
-            .onde-section .frase-destaque {
-                font-size: clamp(1.4rem, 5vw, 2rem);
+            
+            .chic-box-wrapper {
+                padding: 0 20px;
+                margin-bottom: 50px;
             }
-            .onde-section .frase-destaque.primeira {
-                margin-bottom: 40px;
+            
+            .chic-box {
+                padding: 30px 20px;
+                font-size: clamp(1rem, 4.5vw, 1.3rem);
+                letter-spacing: 0.15em;
             }
 
             .header-gallery {
@@ -785,10 +800,15 @@
             </div>
         </header>
 
-        <!-- SEÇÃO "ONDE VOCÊ PRECISAR" – removidas as palavras AGORA e AINDA HOJE -->
+        <!-- SEÇÃO "ONDE VOCÊ PRECISAR" -->
         <section class="onde-section scroll-reveal">
             <div class="content" style="max-width: 800px; margin: 0 auto;">
-                <p class="frase-destaque primeira">ONDE VOCÊ PRECISAR</p>
+                
+                <div class="chic-box-wrapper">
+                    <div class="chic-box">
+                        Atendimento presencial,<br>onde você precisar
+                    </div>
+                </div>
 
                 <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
                     Sem deslocamentos
