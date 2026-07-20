@@ -34,7 +34,7 @@
     </script>
     <style>
         :root {
-            --bg: #F4F1EA;
+            --bg: #F4F1EA;      /* off-white uniforme */
             --bg-alt: #F4F1EA;
             --text: #2C2B2A;
             --text-muted: #5A5A5A;
@@ -73,7 +73,7 @@
             background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* removido o breathing-bg com gradiente – agora fundo uniforme */
+        /* removido qualquer gradiente ou breathing-bg */
 
         .scroll-signature {
             position: fixed;
@@ -164,7 +164,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: var(--bg); /* fundo uniforme */
+            background: var(--bg); /* fundo uniforme off-white */
         }
 
         .badge {
@@ -258,8 +258,6 @@
             justify-content: center;
             align-items: center;
         }
-
-        /* DIVISÓRIA REMOVIDA – não usaremos mais */
 
         /* GALERIA */
         .header-gallery {
@@ -615,6 +613,27 @@
             font-weight: 400 !important;
         }
 
+        /* Ajustes para a seção "ONDE VOCÊ PRECISAR" com espaçamento entre as frases */
+        .onde-section .frase-destaque {
+            font-family: var(--font-serif);
+            font-size: clamp(1.6rem, 3.2vw, 2.8rem);
+            color: var(--text);
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .onde-section .frase-destaque.primeira {
+            margin-bottom: 60px;
+        }
+        .onde-section .frase-destaque.segunda {
+            margin-bottom: 60px;
+        }
+        .onde-section .frase-destaque.terceira {
+            margin-bottom: 80px;
+        }
+
         @media(min-width: 769px) {
             .header-gallery {
                 flex-direction: column;
@@ -663,6 +682,18 @@
                 padding-top: 140px;
                 padding-bottom: 140px;
                 margin: 30px 0;
+            }
+            .onde-section .frase-destaque {
+                font-size: clamp(1.4rem, 5vw, 2rem);
+            }
+            .onde-section .frase-destaque.primeira {
+                margin-bottom: 40px;
+            }
+            .onde-section .frase-destaque.segunda {
+                margin-bottom: 40px;
+            }
+            .onde-section .frase-destaque.terceira {
+                margin-bottom: 60px;
             }
 
             .header-gallery {
@@ -775,7 +806,7 @@
 
     <div class="site-wrapper">
 
-        <!-- fundo agora uniforme, sem gradiente -->
+        <!-- fundo uniforme off-white em todo o site -->
 
         <div class="scroll-signature"></div>
 
@@ -794,12 +825,12 @@
             </div>
         </header>
 
-        <!-- SEÇÃO "ONDE VOCÊ PRECISAR" -->
+        <!-- SEÇÃO "ONDE VOCÊ PRECISAR" com frases separadas e espaçamento -->
         <section class="onde-section scroll-reveal">
             <div class="content" style="max-width: 800px; margin: 0 auto;">
-                <p style="font-family: var(--font-serif); font-size: clamp(1.6rem, 3.2vw, 2.8rem); color: var(--text); font-weight: 300; line-height: 1.2; margin-bottom: 80px; letter-spacing: 0.4em; text-transform: uppercase;">
-                    AGORA<br> AINDA HOJE<br>ONDE VOCÊ PRECISAR
-                </p>
+                <p class="frase-destaque primeira">AGORA</p>
+                <p class="frase-destaque segunda">AINDA HOJE</p>
+                <p class="frase-destaque terceira">ONDE VOCÊ PRECISAR</p>
 
                 <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
                     Sem deslocamentos
