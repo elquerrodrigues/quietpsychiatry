@@ -37,8 +37,8 @@
             --bg: #F4F1EA;
             --bg-alt: #F4F1EA;
             --text: #1A1A1A;
-            --text-muted: #5A5A5A;
-            --text-light: #8A8A8A;
+            --text-muted: #3A3A3A;   /* escurecido para melhor contraste */
+            --text-light: #5A5A5A;   /* também mais escuro que antes */
             --accent: #9B856A;
             --line: rgba(26, 26, 26, 0.12);
             --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
@@ -100,7 +100,7 @@
             display: flex;
             gap: 15px;
             font-family: var(--font-primary);
-            font-size: 0.65rem;
+            font-size: 0.75rem;      /* ligeiramente maior */
             letter-spacing: 1px;
             z-index: 10;
             opacity: 0;
@@ -164,7 +164,7 @@
             background-color: transparent;
             padding: 0;
             font-family: var(--font-primary);
-            font-size: clamp(1.92rem, 4.2vw, 3.36rem);
+            font-size: clamp(2.2rem, 5vw, 4rem);
             color: var(--text);
             text-transform: uppercase;
             font-weight: 700;
@@ -180,7 +180,7 @@
 
         .hero-luxury-tag {
             font-family: var(--font-primary);
-            font-size: 0.7rem;
+            font-size: 0.85rem;      /* maior */
             letter-spacing: 6px;
             text-transform: uppercase;
             color: var(--text-light);
@@ -220,7 +220,7 @@
 
         .hero-statement {
             font-family: var(--font-primary);
-            font-size: clamp(1.0rem, 2.4vw, 1.6rem);
+            font-size: clamp(1.2rem, 2.8vw, 2rem);  /* maior */
             font-weight: 300;
             color: var(--text);
             margin: 0 auto 20px auto;
@@ -235,7 +235,7 @@
 
         .hero-locations {
             font-family: var(--font-primary);
-            font-size: 0.6rem;
+            font-size: 0.8rem;       /* maior */
             font-weight: 300;
             letter-spacing: 5px;
             color: var(--text-muted);
@@ -269,7 +269,7 @@
             border: 1px solid var(--text);
             padding: 40px 60px;
             font-family: var(--font-primary);
-            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            font-size: clamp(1.4rem, 2.5vw, 2.2rem);
             color: var(--text);
             text-transform: uppercase;
             letter-spacing: 0.25em;
@@ -331,7 +331,7 @@
         }
         .caption-title {
             font-family: var(--font-primary);
-            font-size: 1.4rem;
+            font-size: 1.8rem;        /* maior */
             font-weight: 600;
             color: var(--text);
             letter-spacing: 4px;
@@ -340,14 +340,12 @@
         }
         .caption-desc {
             font-family: var(--font-primary);
-            font-size: 0.85rem;
+            font-size: 1.1rem;        /* maior e mais legível */
             font-weight: 300;
             color: var(--text-muted);
             line-height: 1.8;
             margin: 0 auto;
-            max-width: 32ch;
-            word-break: normal;
-            overflow-wrap: normal;
+            max-width: 36ch;
         }
 
         .btn {
@@ -355,9 +353,9 @@
             font-family: var(--font-primary);
             background-color: #000;
             color: #fff;
-            padding: 14px 28px;
+            padding: 16px 36px;
             text-decoration: none;
-            font-size: 0.7rem;
+            font-size: 0.85rem;       /* maior */
             text-transform: uppercase;
             letter-spacing: 4px;
             font-weight: 400;
@@ -411,13 +409,13 @@
             color: var(--text);
             text-align: center;
             margin-top: 50px;
-            font-size: 32px;
+            font-size: 2.2rem;        /* maior */
             letter-spacing: 2px;
         }
 
         .content-section {
             padding: 120px clamp(24px, 10vw, 120px);
-            max-width: 50vw;
+            max-width: 55vw;           /* um pouco mais largo para conforto */
             margin: 0 auto;
         }
 
@@ -432,7 +430,7 @@
             text-align: center;
         }
         .content p {
-            font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+            font-size: clamp(1.1rem, 1.8vw, 1.3rem);  /* maior */
             color: var(--text-muted);
             margin-bottom: 60px;
             line-height: 2.2;
@@ -445,7 +443,7 @@
 
         .scroll-reveal-slow {
             font-family: var(--font-primary);
-            font-size: 0.65rem;
+            font-size: 0.85rem;       /* maior */
             text-transform: uppercase;
             letter-spacing: 5px;
             color: var(--text-light);
@@ -484,7 +482,7 @@
         .secure-alt-contact {
             display: block;
             font-family: var(--font-primary);
-            font-size: 0.75rem;
+            font-size: 0.95rem;       /* maior */
             color: var(--text-muted);
             font-weight: 300;
             letter-spacing: 0.5px;
@@ -506,7 +504,7 @@
         }
         .faq-question {
             font-family: var(--font-primary);
-            font-size: 1rem;
+            font-size: 1.2rem;        /* maior */
             font-weight: 500;
             color: var(--text);
             margin: 0 0 12px 0;
@@ -515,7 +513,7 @@
         .faq-answer {
             font-family: var(--font-primary);
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 1rem;          /* maior */
             line-height: 1.9;
             font-weight: 300;
             margin: 0;
@@ -533,7 +531,7 @@
 
         .footer-brand {
             font-family: var(--font-primary);
-            font-size: 1.6rem;
+            font-size: 2rem;          /* maior */
             letter-spacing: 6px;
             color: var(--text);
             margin-bottom: 30px;
@@ -541,7 +539,7 @@
         }
         .footer-luxury-tag {
             font-family: var(--font-primary);
-            font-size: 0.65rem;
+            font-size: 0.85rem;       /* maior */
             letter-spacing: 3px;
             color: var(--text-light);
             margin-bottom: 35px;
@@ -550,7 +548,7 @@
         }
         .footer-email {
             display: inline-block;
-            font-size: 0.7rem;
+            font-size: 0.9rem;        /* maior */
             letter-spacing: 2px;
             color: var(--text-muted);
             text-decoration: none;
@@ -569,6 +567,9 @@
             .gallery-caption {
                 padding: 48px 10px 20px 10px;
             }
+            .content-section {
+                max-width: 55vw;
+            }
         }
 
         @media(max-width: 768px) {
@@ -576,6 +577,7 @@
                 top: 25px;
                 right: 20px;
                 gap: 10px;
+                font-size: 0.7rem;
             }
             header {
                 padding: 30px 20px 60px 20px;
@@ -584,9 +586,9 @@
             }
 
             .hero-statement {
-                font-size: clamp(0.7rem, 3.5vw, 1.0rem);
+                font-size: clamp(0.9rem, 4vw, 1.2rem);
                 letter-spacing: 4px;
-                white-space: nowrap;
+                white-space: normal;
             }
 
             .onde-section {
@@ -602,7 +604,7 @@
             
             .chic-box {
                 padding: 30px 20px;
-                font-size: clamp(1rem, 4.5vw, 1.3rem);
+                font-size: clamp(1.1rem, 5vw, 1.5rem);
                 letter-spacing: 0.15em;
             }
 
@@ -618,15 +620,18 @@
                 padding: 32px 16px 20px 16px;
             }
             .caption-title {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             .caption-desc {
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
 
             .content-section {
                 max-width: 100%;
                 padding: 80px 20px;
+            }
+            .content p {
+                font-size: 1rem;
             }
 
             .profile-section {
@@ -660,7 +665,7 @@
             }
 
             .sp-caption {
-                font-size: 24px;
+                font-size: 1.8rem;
                 margin-top: 40px;
             }
 
@@ -668,6 +673,8 @@
                 display: inline-block;
                 width: auto;
                 text-align: center;
+                font-size: 0.8rem;
+                padding: 14px 28px;
             }
 
             .btn-container {
@@ -679,9 +686,24 @@
             .faq-container {
                 margin-bottom: 80px;
             }
+            .faq-question {
+                font-size: 1.1rem;
+            }
+            .faq-answer {
+                font-size: 0.95rem;
+            }
 
             footer {
                 padding: 60px 20px 80px 20px;
+            }
+            .footer-brand {
+                font-size: 1.6rem;
+            }
+            .footer-luxury-tag {
+                font-size: 0.75rem;
+            }
+            .footer-email {
+                font-size: 0.8rem;
             }
 
             .title-divider {
@@ -690,12 +712,15 @@
             }
             .title-box {
                 padding: 0;
-                font-size: clamp(1.44rem, 4.8vw, 2.16rem);
+                font-size: clamp(1.8rem, 6vw, 2.8rem);
                 letter-spacing: 3px;
             }
             .hero-luxury-tag {
-                font-size: 0.6rem;
+                font-size: 0.7rem;
                 letter-spacing: 4px;
+            }
+            .secure-alt-contact {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -735,13 +760,13 @@
                     </div>
                 </div>
 
-                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.9rem, 1.4vw, 1.1rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
                     Sem deslocamentos
                 </p>
-                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.9rem, 1.4vw, 1.1rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
                     Sem exposição pública
                 </p>
-                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 0; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.9rem, 1.4vw, 1.1rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 0; text-transform: uppercase;">
                     Discrição absoluta
                 </p>
             </div>
@@ -792,7 +817,7 @@
             <div class="content">
 
                 <div class="faq-container">
-                    <h3 style="font-family: var(--font-primary); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center; font-weight: 400;">Informações</h3>
+                    <h3 style="font-family: var(--font-primary); font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center; font-weight: 400;">Informações</h3>
                     
                     <div class="faq-item">
                         <h4 class="faq-question">Para quem é este serviço?</h4>
