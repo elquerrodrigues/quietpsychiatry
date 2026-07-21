@@ -14,7 +14,7 @@
     <link rel="alternate" hreflang="x-default" href="https://angmer.com.br/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -36,14 +36,13 @@
         :root {
             --bg: #F4F1EA;
             --bg-alt: #F4F1EA;
-            --text: #2C2B2A;
+            --text: #1A1A1A;
             --text-muted: #5A5A5A;
             --text-light: #8A8A8A;
             --accent: #9B856A;
-            --line: rgba(44, 43, 42, 0.12);
+            --line: rgba(26, 26, 26, 0.12);
             --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
-            --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-primary: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
         }
         * {
             box-sizing: border-box;
@@ -52,10 +51,11 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             background: var(--bg);
             color: var(--text-muted);
             line-height: 2.1;
+            font-weight: 300;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
@@ -73,54 +73,23 @@
             background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        .scroll-signature {
-            position: fixed;
-            top: 0;
-            right: 24px;
-            width: 1px;
-            height: 0%;
-            background-color: var(--line);
-            z-index: 9999;
-            pointer-events: none;
-            transition: height 0.1s linear;
-        }
-
         .site-wrapper {
             background: var(--bg);
             width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            transform-origin: center top;
-            animation: expandSite 2.4s cubic-bezier(0.8, 0, 0.2, 1) forwards, unlockScroll 0s 2.4s forwards;
-            transition: opacity 0.4s ease;
+            min-height: 100vh;
+            opacity: 0;
+            transform: scale(1.02);
+            animation: expandSite 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
+
         @keyframes expandSite {
             0% {
-                clip-path: inset(50% 50%);
-                transform: scale(1.04);
-                background: var(--bg);
-            }
-            15% {
-                clip-path: inset(calc(50% - 90px));
+                opacity: 0;
                 transform: scale(1.02);
-                background: var(--bg);
-            }
-            45% {
-                clip-path: inset(calc(50% - 90px));
-                transform: scale(1.02);
-                background: var(--bg);
             }
             100% {
-                clip-path: inset(0%);
+                opacity: 1;
                 transform: scale(1);
-                background: var(--bg);
-            }
-        }
-        @keyframes unlockScroll {
-            to {
-                height: auto;
-                overflow: visible;
-                clip-path: none;
             }
         }
 
@@ -130,7 +99,7 @@
             right: 24px;
             display: flex;
             gap: 15px;
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             font-size: 0.65rem;
             letter-spacing: 1px;
             z-index: 10;
@@ -146,11 +115,12 @@
             color: var(--text-light);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 300;
         }
         .lang-nav a:hover,
         .lang-nav a.active {
             color: var(--text);
-            font-weight: 600;
+            font-weight: 500;
         }
 
         header {
@@ -193,17 +163,32 @@
             display: inline-block;
             background-color: transparent;
             padding: 0;
-            font-family: var(--font-serif);
+            font-family: var(--font-primary);
             font-size: clamp(1.92rem, 4.2vw, 3.36rem);
             color: var(--text);
             text-transform: uppercase;
-            font-weight: 700 !important;
+            font-weight: 700;
             letter-spacing: 6px;
             line-height: 1.3;
             text-align: center;
             opacity: 0;
-            transform: translateY(30px);
-            animation: elegantFadeUp 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+            transform: translateY(20px);
+            animation: elegantFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-luxury-tag {
+            font-family: var(--font-primary);
+            font-size: 0.7rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin: 0 0 8px 0;
+            font-weight: 300;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: elegantFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
             position: relative;
             z-index: 2;
         }
@@ -212,9 +197,9 @@
             width: 60px;
             height: 1px;
             background-color: var(--text);
-            margin: 24px auto 30px auto;
+            margin: 16px auto 30px auto;
             opacity: 0;
-            animation: elegantFadeUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
+            animation: elegantFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.0s forwards;
             position: relative;
             z-index: 2;
         }
@@ -234,9 +219,9 @@
         }
 
         .hero-statement {
-            font-family: var(--font-serif);
+            font-family: var(--font-primary);
             font-size: clamp(1.0rem, 2.4vw, 1.6rem);
-            font-weight: bold;
+            font-weight: 300;
             color: var(--text);
             margin: 0 auto 20px auto;
             line-height: 1.5;
@@ -244,21 +229,21 @@
             text-transform: uppercase;
             letter-spacing: 10px;
             opacity: 0;
-            transform: translateY(30px);
-            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+            transform: translateY(20px);
+            animation: elegantFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
         }
 
         .hero-locations {
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             font-size: 0.6rem;
-            font-weight: bold;
+            font-weight: 300;
             letter-spacing: 5px;
             color: var(--text-muted);
             text-transform: uppercase;
             margin-bottom: 0;
             opacity: 0;
-            transform: translateY(30px);
-            animation: elegantFadeUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2.7s forwards;
+            transform: translateY(20px);
+            animation: elegantFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
         }
 
         .onde-section {
@@ -283,7 +268,7 @@
             display: inline-block;
             border: 1px solid var(--text);
             padding: 40px 60px;
-            font-family: var(--font-serif);
+            font-family: var(--font-primary);
             font-size: clamp(1.2rem, 2vw, 1.8rem);
             color: var(--text);
             text-transform: uppercase;
@@ -291,31 +276,32 @@
             line-height: 1.6;
             text-align: center;
             background-color: transparent;
-            font-weight: 700 !important;
+            font-weight: 600;
         }
 
         .header-gallery {
             width: 100vw;
             margin-left: calc(50% - 50vw);
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 12vw;
-            margin-top: 100px;
-            margin-bottom: 60px;
-            padding: 0 5vw;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
         }
 
         .gallery-item {
             position: relative;
-            width: 26vw;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
+            width: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
+            padding: 40px 24px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s var(--transition-smooth), transform 1.2s var(--transition-smooth);
         }
 
         .gallery-item.visible {
@@ -326,10 +312,11 @@
         .gallery-image {
             display: block;
             width: 100%;
-            height: 75vh;
+            max-width: 800px;
+            height: 70vh;
             object-fit: cover;
             filter: contrast(102%) brightness(96%) sepia(3%) saturate(85%) grayscale(20%);
-            transition: filter 1.2s var(--transition-smooth);
+            transition: filter 0.8s var(--transition-smooth);
         }
 
         .gallery-item:hover .gallery-image {
@@ -338,11 +325,12 @@
 
         .gallery-caption {
             width: 100%;
+            max-width: 800px;
             text-align: center;
-            padding: 0 10px 48px 10px;
+            padding: 48px 10px 20px 10px;
         }
         .caption-title {
-            font-family: var(--font-serif);
+            font-family: var(--font-primary);
             font-size: 1.4rem;
             font-weight: 600;
             color: var(--text);
@@ -351,7 +339,7 @@
             margin: 0 0 24px 0;
         }
         .caption-desc {
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             font-size: 0.85rem;
             font-weight: 300;
             color: var(--text-muted);
@@ -364,7 +352,7 @@
 
         .btn {
             display: inline-block;
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             background-color: #000;
             color: #fff;
             padding: 14px 28px;
@@ -375,7 +363,7 @@
             font-weight: 400;
             transition: all 0.3s ease;
             border: 1px solid #000;
-            border-radius: 2px;
+            border-radius: 1px;
         }
         .btn:hover {
             background-color: #fff;
@@ -387,7 +375,7 @@
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 1.5s var(--transition-smooth), transform 1.5s var(--transition-smooth);
+            transition: opacity 1.2s var(--transition-smooth), transform 1.2s var(--transition-smooth);
             will-change: transform, opacity;
         }
 
@@ -418,12 +406,13 @@
         }
 
         .sp-caption {
-            font-family: var(--font-serif);
+            font-family: var(--font-primary);
             font-weight: 300;
             color: var(--text);
             text-align: center;
             margin-top: 50px;
             font-size: 32px;
+            letter-spacing: 2px;
         }
 
         .content-section {
@@ -455,17 +444,17 @@
         }
 
         .scroll-reveal-slow {
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 5px;
             color: var(--text-light);
             margin: 40px 0;
-            font-weight: 700;
+            font-weight: 300;
             opacity: 0;
             transform: translateY(20px) scale(0.98);
-            transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: transform, opacity;
         }
         .scroll-reveal-slow.visible {
@@ -494,10 +483,10 @@
 
         .secure-alt-contact {
             display: block;
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             font-size: 0.75rem;
-            color: var(--text) !important;
-            font-weight: bold !important;
+            color: var(--text-muted);
+            font-weight: 300;
             letter-spacing: 0.5px;
             margin-top: 25px;
             margin-bottom: 25px;
@@ -510,49 +499,32 @@
         }
         .faq-item {
             border-bottom: 1px solid var(--line);
-        }
-        .faq-item summary {
             padding: 30px 0;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-family: var(--font-primary);
+            font-size: 1rem;
             font-weight: 500;
             color: var(--text);
-            list-style: none;
-            position: relative;
+            margin: 0 0 12px 0;
             letter-spacing: 0.5px;
-            cursor: pointer;
-        }
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-        .faq-item summary::after {
-            content: '+';
-            position: absolute;
-            right: 0;
-            color: var(--text-light);
-            font-weight: 500;
-            font-size: 1.2rem;
-        }
-        .faq-item[open] summary {
-            color: var(--text);
-            font-weight: 600;
-        }
-        .faq-item[open] summary::after {
-            content: '–';
-            color: var(--text);
         }
         .faq-answer {
-            padding-bottom: 30px;
+            font-family: var(--font-primary);
             color: var(--text-muted);
             font-size: 0.85rem;
             line-height: 1.9;
             font-weight: 300;
+            margin: 0;
         }
 
         footer {
             text-align: center;
             padding: 80px 24px 100px 24px;
-            font-family: var(--font-sans);
+            font-family: var(--font-primary);
             margin: 0 auto;
             background-color: transparent;
             color: var(--text-muted);
@@ -560,7 +532,7 @@
         }
 
         .footer-brand {
-            font-family: var(--font-serif);
+            font-family: var(--font-primary);
             font-size: 1.6rem;
             letter-spacing: 6px;
             color: var(--text);
@@ -568,18 +540,13 @@
             font-weight: 400;
         }
         .footer-luxury-tag {
-            font-family: var(--font-sans);
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-        .footer-creds {
+            font-family: var(--font-primary);
             font-size: 0.65rem;
             letter-spacing: 3px;
             color: var(--text-light);
             margin-bottom: 35px;
+            text-transform: uppercase;
+            font-weight: 300;
         }
         .footer-email {
             display: inline-block;
@@ -587,92 +554,24 @@
             letter-spacing: 2px;
             color: var(--text-muted);
             text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        .footer-email:hover {
-            color: var(--accent);
-        }
-
-        body,
-        p,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        a,
-        span,
-        div,
-        section,
-        footer,
-        header,
-        nav,
-        .btn,
-        .hero-statement,
-        .hero-locations,
-        .content p,
-        .faq-answer,
-        .secure-alt-contact,
-        .sp-caption,
-        .scroll-reveal-slow,
-        .footer-brand,
-        .footer-luxury-tag,
-        .footer-creds,
-        .footer-email,
-        .lang-nav a,
-        .content-section,
-        .sp-banner-wrapper,
-        .site-wrapper,
-        .gallery-item,
-        .hero-text-block {
-            font-weight: 700 !important;
-        }
-        .title-box {
-            font-weight: 700 !important;
-            font-size: clamp(1.92rem, 4.2vw, 3.36rem) !important;
-        }
-        .footer-brand {
-            font-weight: 400 !important;
-        }
-        .chic-box {
-            font-weight: 700 !important;
-        }
-
-        .faq-item summary,
-        .faq-item summary::after {
-            font-weight: 400 !important;
+            font-weight: 300;
+            cursor: default;
         }
 
         @media(min-width: 769px) {
-            .header-gallery {
-                flex-direction: column;
-                align-items: center;
-                gap: 100px;
-                padding: 0 20px;
-                margin-top: 100px;
-                margin-bottom: 60px;
-            }
             .gallery-item {
-                width: 100%;
-                max-width: 600px;
-                margin: 0 auto;
+                padding: 40px 40px;
             }
             .gallery-image {
+                max-width: 800px;
                 height: 75vh;
-                aspect-ratio: auto;
-                object-fit: cover;
             }
             .gallery-caption {
-                padding: 0 10px 48px 10px;
+                padding: 48px 10px 20px 10px;
             }
         }
 
         @media(max-width: 768px) {
-            .scroll-signature {
-                right: 10px;
-            }
             .lang-nav {
                 top: 25px;
                 right: 20px;
@@ -707,25 +606,16 @@
                 letter-spacing: 0.15em;
             }
 
-            .header-gallery {
-                flex-direction: column;
-                gap: 16vh;
-                margin-bottom: 30px;
-                margin-top: 60px;
-                padding: 0;
-            }
-
             .gallery-item {
-                width: 100vw;
-                padding: 0 20px;
+                min-height: 100vh;
+                padding: 20px 0;
             }
             .gallery-image {
+                max-width: 100%;
                 height: 70vh;
-                aspect-ratio: auto;
-                object-fit: cover;
             }
             .gallery-caption {
-                padding: 0 10px 40px 10px;
+                padding: 32px 16px 20px 16px;
             }
             .caption-title {
                 font-size: 1.2rem;
@@ -796,12 +686,16 @@
 
             .title-divider {
                 width: 40px;
-                margin: 18px auto 22px auto;
+                margin: 12px auto 22px auto;
             }
             .title-box {
                 padding: 0;
-                font-size: clamp(1.44rem, 4.8vw, 2.16rem) !important;
+                font-size: clamp(1.44rem, 4.8vw, 2.16rem);
                 letter-spacing: 3px;
+            }
+            .hero-luxury-tag {
+                font-size: 0.6rem;
+                letter-spacing: 4px;
             }
         }
     </style>
@@ -811,8 +705,6 @@
     <div class="noise-overlay"></div>
 
     <div class="site-wrapper">
-
-        <div class="scroll-signature"></div>
 
         <nav class="lang-nav" id="langNav">
             <a href="/" class="active">PT</a>
@@ -826,6 +718,7 @@
             <div class="hero-overlay"></div>
 
             <div class="title-box">PSIQUIATRA<br>CONFIDENCIAL</div>
+            <p class="hero-luxury-tag">PSYCHIATRIST CONCIERGE</p>
             <div class="title-divider"></div>
             <div class="hero-text-block">
                 <p class="hero-statement">Um psiquiatra vai até você.</p>
@@ -842,13 +735,13 @@
                     </div>
                 </div>
 
-                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
                     Sem deslocamentos
                 </p>
-                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 48px; text-transform: uppercase;">
                     Sem exposição pública
                 </p>
-                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-sans); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 0; text-transform: uppercase;">
+                <p class="scroll-reveal-slow" style="font-size: clamp(0.8rem, 1.2vw, 1.0rem); font-family: var(--font-primary); font-weight: 300; letter-spacing: 0.3em; color: var(--text-light); margin-bottom: 0; text-transform: uppercase;">
                     Discrição absoluta
                 </p>
             </div>
@@ -899,41 +792,35 @@
             <div class="content">
 
                 <div class="faq-container">
-                    <h3 style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center;">Informações</h3>
-                    <details class="faq-item">
-                        <summary>Para quem é este serviço?</summary>
-                        <div class="faq-answer">
-                            <p style="margin: 0; text-align: left;">Destinado a pacientes que necessitam de atendimento presencial com máxima discrição, conveniência e continuidade do cuidado, no local onde eles se sentem mais confortáveis e seguros.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Como funciona o atendimento?</summary>
-                        <div class="faq-answer">
-                            <p style="margin: 0 0 15px 0; text-align: left;">Após a confirmação do agendamento e pagamento, eu vou até você.</p>
-                            <p style="margin: 0 0 15px 0; text-align: left;">A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico. Avaliação clínica completa, diagnóstico e prescrição.</p>
-                            <p style="margin: 0; text-align: left;">Por se tratar de um serviço médico particular e altamente personalizado, com tempo reservado exclusivamente para o paciente, todas as consultas são previamente agendadas e pagas. Não há consultas de retorno gratuitas.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Onde os atendimentos são realizados?</summary>
-                        <div class="faq-answer">
-                            <p style="margin: 0; text-align: left;">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Como é feito o agendamento?</summary>
-                        <div class="faq-answer">
-                            <p style="margin: 0; text-align: left;">A solicitação inicial é feita via WhatsApp. Após uma breve análise de disponibilidade clínica e geográfica, o horário da consulta é confirmado diretamente com o médico.</p>
-                        </div>
-                    </details>
+                    <h3 style="font-family: var(--font-primary); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 60px; text-align: center; font-weight: 400;">Informações</h3>
+                    
+                    <div class="faq-item">
+                        <h4 class="faq-question">Para quem é este serviço?</h4>
+                        <p class="faq-answer">Destinado a pacientes que necessitam de atendimento presencial com máxima discrição, conveniência e continuidade do cuidado, no local onde eles se sentem mais confortáveis e seguros.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4 class="faq-question">Como funciona o atendimento?</h4>
+                        <p class="faq-answer">Após a confirmação do agendamento e pagamento, eu vou até você. A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico. Avaliação clínica completa, diagnóstico e prescrição. Por se tratar de um serviço médico particular e altamente personalizado, com tempo reservado exclusivamente para o paciente, todas as consultas são previamente agendadas e pagas. Não há consultas de retorno gratuitas.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4 class="faq-question">Onde os atendimentos são realizados?</h4>
+                        <p class="faq-answer">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4 class="faq-question">Como é feito o agendamento?</h4>
+                        <p class="faq-answer">A solicitação inicial é feita via WhatsApp. Após uma breve análise de disponibilidade clínica e geográfica, o horário da consulta é confirmado diretamente com o médico.</p>
+                    </div>
                 </div>
 
                 <div class="btn-container">
                     <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20PSIQUIATRA%20CONFIDENCIAL."
                        target="_blank"
                        class="btn"
-                       aria-label="Marque o silêncio – agende sua consulta">
-                        Verificar disponibilidade
+                       aria-label="Agende sua consulta">
+                        Agendar
                     </a>
                     <span class="secure-alt-contact">
                         Agenda limitada.<br>Atendimento sujeito à disponibilidade geográfica.
@@ -945,24 +832,12 @@
 
         <footer>
             <div class="footer-brand">PSIQUIATRA CONFIDENCIAL</div>
-            <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE </div>
-            <div class="footer-creds"><span style="white-space: nowrap;">CRM-SP 157303 • RQE 85941</span></div>
-            <a href="mailto:drelquer@quietpsychiatry.com" class="footer-email">drelquer@quietpsychiatry.com</a>
+            <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE</div>
+            <span class="footer-email">drelquer@quietpsychiatry.com</span>
         </footer>
     </div>
 
     <script>
-        const details = document.querySelectorAll('details');
-        details.forEach((targetDetail) => {
-            targetDetail.addEventListener('click', () => {
-                details.forEach((detail) => {
-                    if (detail !== targetDetail) {
-                        detail.removeAttribute('open');
-                    }
-                });
-            });
-        });
-
         (function() {
             var observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -1010,16 +885,6 @@
                     window.location.href = targetUrl;
                 }, 400);
             });
-        });
-
-        const scrollSignature = document.querySelector('.scroll-signature');
-        window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            const maxScroll = document.body.scrollHeight - window.innerHeight;
-            if (maxScroll > 0) {
-                const progress = Math.min((scrolled / maxScroll) * 100, 100);
-                scrollSignature.style.height = progress + '%';
-            }
         });
     </script>
 </body>
