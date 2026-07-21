@@ -34,7 +34,7 @@
     </script>
     <style>
         :root {
-            --bg: #F4F1EA;      /* off-white uniforme */
+            --bg: #F4F1EA;
             --bg-alt: #F4F1EA;
             --text: #2C2B2A;
             --text-muted: #5A5A5A;
@@ -155,7 +155,7 @@
 
         header {
             text-align: center;
-            padding: 40px 24px 140px 24px; /* Aumentado para dar mais respiro */
+            padding: 40px 24px 80px 24px;
             position: relative;
             min-height: 100vh;
             display: flex;
@@ -164,9 +164,9 @@
             justify-content: center;
             background: transparent;
             overflow: hidden;
+            margin-bottom: 80px; /* Espaço extra real abaixo do vídeo */
         }
 
-        /* VÍDEO NO HEADER */
         .hero-video {
             position: absolute;
             top: 0;
@@ -175,7 +175,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            filter: blur(3.57px); /* Reduzido em 15% do valor original de 4.2px */
+            filter: blur(3.57px); /* 15% menor que 4.2px */
             transform: scale(1.05);
         }
 
@@ -194,11 +194,9 @@
             background-color: transparent;
             padding: 0;
             font-family: var(--font-serif);
-            /* TAMANHO AUMENTADO EM 20% */
             font-size: clamp(1.92rem, 4.2vw, 3.36rem);
             color: var(--text);
             text-transform: uppercase;
-            /* NEGRITO */
             font-weight: 700 !important;
             letter-spacing: 6px;
             line-height: 1.3;
@@ -264,7 +262,7 @@
         }
 
         .onde-section {
-            padding-top: 80px; /* Aumentado para dar mais respiro */
+            padding-top: 80px;
             padding-bottom: 200px;
             margin: 0 0 40px 0;
             background-color: var(--bg-alt);
@@ -274,7 +272,6 @@
             align-items: center;
         }
 
-        /* CAIXA CHIQUE ESTILO "THE ROW" */
         .chic-box-wrapper {
             width: 100%;
             display: flex;
@@ -294,10 +291,9 @@
             line-height: 1.6;
             text-align: center;
             background-color: transparent;
-            font-weight: 700 !important; /* Alterado para negrito */
+            font-weight: 700 !important;
         }
 
-        /* GALERIA */
         .header-gallery {
             width: 100vw;
             margin-left: calc(50% - 50vw);
@@ -600,7 +596,7 @@
             color: var(--accent);
         }
 
-        /* Regra global de negrito (mantida) */
+        /* Regra global de negrito mantida */
         body,
         p,
         h1,
@@ -636,10 +632,9 @@
         .hero-text-block {
             font-weight: 700 !important;
         }
-        /* Título agora fica em negrito (700) e maior */
         .title-box {
-            font-weight: 700 !important; /* negrito */
-            font-size: clamp(1.92rem, 4.2vw, 3.36rem) !important; /* 20% maior */
+            font-weight: 700 !important;
+            font-size: clamp(1.92rem, 4.2vw, 3.36rem) !important;
         }
         .footer-brand {
             font-weight: 400 !important;
@@ -687,8 +682,9 @@
                 gap: 10px;
             }
             header {
-                padding: 30px 20px 100px 20px; /* Aumentado para dar mais respiro no mobile */
+                padding: 30px 20px 60px 20px;
                 min-height: 100vh;
+                margin-bottom: 60px; /* Espaço extra no mobile */
             }
 
             .hero-statement {
@@ -698,7 +694,7 @@
             }
 
             .onde-section {
-                padding-top: 60px; /* Aumentado para dar mais respiro no mobile */
+                padding-top: 60px;
                 padding-bottom: 140px;
                 margin: 0 0 30px 0;
             }
@@ -807,7 +803,7 @@
             }
             .title-box {
                 padding: 0;
-                font-size: clamp(1.44rem, 4.8vw, 2.16rem) !important; /* 20% maior que o mobile original */
+                font-size: clamp(1.44rem, 4.8vw, 2.16rem) !important;
                 letter-spacing: 3px;
             }
         }
