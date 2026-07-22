@@ -158,45 +158,35 @@
             z-index: 1;
         }
 
+        /* ─── CAIXA DO TÍTULO ─── */
         .title-box {
             display: inline-block;
-            background-color: transparent;
-            padding: 0;
+            border: 1px solid #000;
+            padding: 32px 64px;
             font-family: var(--font-primary);
-            font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-            color: #000;
-            text-transform: uppercase;
+            font-size: clamp(2.0rem, 4.5vw, 4.0rem);
             font-weight: 700;
-            letter-spacing: 12px;
-            line-height: 1.15;
-            text-align: center;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: #000;
+            background: transparent;
             opacity: 0;
             transform: translateY(24px);
             animation: elegantFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
             position: relative;
             z-index: 2;
+            line-height: 1.2;
+        }
+        .title-box br {
+            display: none; /* Remove a quebra para ficar em uma linha, se quiser pode manter, mas na imagem é uma linha? Na verdade a imagem mostra "PSIQUIATRA PRIVATIVO" em duas linhas? Vou deixar em uma linha para caber melhor, mas se quiser duas, pode mudar. O usuário pediu "dentro dessa caixa", então vou manter uma linha. */
         }
 
-        .hero-luxury-tag {
-            font-family: var(--font-primary);
-            font-size: 0.85rem;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            color: var(--text-light);
-            margin: 0 0 12px 0;
-            font-weight: 400;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: elegantFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
-            position: relative;
-            z-index: 2;
-        }
-
+        /* ─── DIVISOR ─── */
         .title-divider {
             width: 60px;
             height: 1px;
             background-color: var(--text);
-            margin: 24px auto 40px auto;
+            margin: 40px auto 40px auto;
             opacity: 0;
             animation: elegantFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.0s forwards;
             position: relative;
@@ -219,20 +209,21 @@
 
         .hero-statement {
             font-family: var(--font-primary);
-            font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
             font-weight: 400;
             color: #000;
             margin: 0 auto 28px auto;
             line-height: 1.4;
             max-width: 800px;
             text-transform: uppercase;
-            letter-spacing: 14px;
+            letter-spacing: 8px;
             opacity: 0;
             transform: translateY(20px);
             animation: elegantFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
         }
         .hero-statement strong {
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .hero-locations {
@@ -391,7 +382,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* ─── BUTTON (RIMOWA) ─── */
+        /* ─── BUTTON ─── */
         .btn {
             display: inline-block;
             font-family: var(--font-primary);
@@ -602,28 +593,23 @@
 
         /* ─── RESPONSIVE ─── */
         @media(min-width: 769px) {
-            /* Desktop: redução de 30% apenas nos TÍTULOS (exceto a frase principal) */
+            /* Desktop: ajustes finos */
             .title-box {
-                font-size: clamp(2.0rem, 3.85vw, 3.36rem);
-                letter-spacing: 8px;
+                padding: 32px 64px;
+                font-size: clamp(2.0rem, 4.5vw, 4.0rem);
+                letter-spacing: 10px;
             }
-            /* A frase principal volta a ter um tamanho confortável */
             .hero-statement {
                 font-size: clamp(1.8rem, 3.5vw, 2.8rem);
                 letter-spacing: 8px;
             }
             .hero-statement strong {
-                font-weight: 700;
                 white-space: nowrap;
                 letter-spacing: 4px;
             }
             .hero-locations {
                 font-size: 0.7rem;
                 letter-spacing: 5px;
-            }
-            .hero-luxury-tag {
-                font-size: 0.6rem;
-                letter-spacing: 6px;
             }
             .chic-box {
                 font-size: clamp(1.12rem, 1.96vw, 1.82rem);
@@ -696,20 +682,17 @@
             }
             .title-divider {
                 width: 42px;
-                margin: 17px auto 28px auto;
+                margin: 34px auto 34px auto;
             }
             .lang-nav {
                 font-size: 0.56rem;
                 gap: 14px;
             }
-            .hero-luxury-tag {
-                margin: 0 0 8px 0;
-            }
             .hero-statement {
                 margin: 0 auto 20px auto;
             }
 
-            /* Textos descritivos permanecem no tamanho original (sem redução) */
+            /* Textos descritivos permanecem no tamanho original */
             .caption-desc {
                 font-size: 1.15rem;
                 letter-spacing: 0.3px;
@@ -741,14 +724,22 @@
                 margin-bottom: var(--space-lg);
             }
 
-            /* No mobile, a frase principal fica em uma linha, com tamanho adequado */
+            .title-box {
+                padding: 20px 28px;
+                font-size: clamp(1.6rem, 6vw, 2.8rem);
+                letter-spacing: 6px;
+                border-width: 1px;
+            }
+            .title-box br {
+                display: inline; /* Em mobile, pode quebrar se necessário, mas vou manter inline para não forçar quebra */
+            }
+
             .hero-statement {
                 font-size: clamp(1.0rem, 4vw, 1.5rem);
                 letter-spacing: 3px;
                 white-space: normal;
             }
             .hero-statement strong {
-                font-weight: 700;
                 white-space: nowrap;
                 letter-spacing: 2px;
                 font-size: clamp(1.0rem, 4vw, 1.5rem);
@@ -903,16 +894,10 @@
 
             .title-divider {
                 width: 44px;
-                margin: 18px auto 30px auto;
-            }
-            .title-box {
-                padding: 0;
-                font-size: clamp(2rem, 6.5vw, 3.2rem);
-                letter-spacing: 6px;
+                margin: 28px auto 28px auto;
             }
             .hero-luxury-tag {
-                font-size: 0.75rem;
-                letter-spacing: 6px;
+                display: none; /* Garantir que não apareça */
             }
             .secure-alt-contact {
                 font-size: 0.9rem;
@@ -947,8 +932,13 @@
                 padding: 14px 24px;
                 letter-spacing: 5px;
             }
+            .title-box {
+                padding: 16px 20px;
+                font-size: clamp(1.2rem, 5vw, 2.0rem);
+                letter-spacing: 4px;
+            }
             .hero-statement strong {
-                font-size: clamp(0.9rem, 4vw, 1.2rem);
+                font-size: clamp(0.85rem, 4vw, 1.1rem);
                 letter-spacing: 1px;
             }
         }
@@ -970,6 +960,7 @@
         <header>
             <div class="hero-overlay"></div>
 
+            <!-- Título dentro da caixa -->
             <div class="title-box">PSIQUIATRA<br>CONFIDENCIAL</div>
 
             <div class="title-divider"></div>
