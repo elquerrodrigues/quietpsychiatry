@@ -143,21 +143,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: transparent;
+            background: #F4F1EA;
             overflow: hidden;
             margin-bottom: var(--space-xl);
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            filter: blur(3.57px);
-            transform: scale(1.05);
         }
 
         .hero-overlay {
@@ -242,6 +230,9 @@
             opacity: 0;
             transform: translateY(20px);
             animation: elegantFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+        }
+        .hero-statement strong {
+            font-weight: 700;
         }
 
         .hero-locations {
@@ -452,7 +443,7 @@
             display: block;
             width: 100%;
             height: 78vh;
-            object-fit: cover;
+            object-fit: contain;
             filter: contrast(105%) brightness(97%);
         }
         .sp-caption {
@@ -611,24 +602,122 @@
 
         /* ─── RESPONSIVE ─── */
         @media(min-width: 769px) {
+            /* Desktop: redução de 30% nos tamanhos */
+            .title-box {
+                font-size: clamp(2.0rem, 3.85vw, 3.36rem);
+                letter-spacing: 8px;
+            }
+            .hero-statement {
+                font-size: clamp(1.05rem, 2.24vw, 1.82rem);
+                letter-spacing: 6px;
+            }
+            .hero-statement strong {
+                font-weight: 700;
+                white-space: nowrap;
+                letter-spacing: 4px;
+            }
+            .hero-locations {
+                font-size: 0.63rem;
+                letter-spacing: 5px;
+            }
+            .hero-luxury-tag {
+                font-size: 0.6rem;
+                letter-spacing: 6px;
+            }
+            .chic-box {
+                font-size: clamp(1.12rem, 1.96vw, 1.82rem);
+                padding: 34px 56px;
+            }
+            .onde-tagline {
+                font-size: clamp(0.63rem, 0.98vw, 0.77rem);
+            }
+            .caption-title {
+                font-size: 1.4rem;
+                letter-spacing: 6px;
+            }
+            .caption-desc {
+                font-size: 0.8rem;
+            }
+            .sp-caption {
+                font-size: 1.82rem;
+                letter-spacing: 4px;
+            }
+            .content p {
+                font-size: 0.84rem;
+            }
+            .faq-question {
+                font-size: 0.875rem;
+            }
+            .faq-answer {
+                font-size: 0.735rem;
+            }
+            .faq-heading {
+                font-size: 0.63rem;
+                letter-spacing: 5px;
+            }
+            .footer-brand {
+                font-size: 1.54rem;
+                letter-spacing: 7px;
+            }
+            .footer-luxury-tag {
+                font-size: 0.6rem;
+                letter-spacing: 4px;
+            }
+            .footer-email {
+                font-size: 0.665rem;
+                letter-spacing: 3px;
+            }
+            .btn {
+                font-size: 0.63rem;
+                padding: 13px 31px;
+                letter-spacing: 5px;
+            }
+            .secure-alt-contact {
+                font-size: 0.665rem;
+            }
             .gallery-item {
-                padding: 60px 40px;
+                padding: 42px 28px;
             }
             .gallery-item::after {
-                top: 60px;
-                left: 40px;
-                right: 40px;
-                bottom: 60px;
+                top: 42px;
+                left: 28px;
+                right: 28px;
+                bottom: 42px;
             }
             .gallery-image {
-                max-width: 800px;
-                height: 75vh;
+                max-width: 560px;
+                height: 52vh;
             }
             .gallery-caption {
-                padding: 56px 20px 24px 20px;
+                padding: 39px 14px 17px 14px;
             }
             .content-section {
                 max-width: 52vw;
+                padding: var(--space-xl) clamp(22px, 8.4vw, 98px);
+            }
+            .profile-photo {
+                height: 40vh;
+            }
+            .sp-image {
+                height: 55vh;
+                object-fit: contain;
+            }
+            .sp-banner-wrapper {
+                margin: calc(var(--space-xxl) * 0.7) 0;
+            }
+            .title-divider {
+                width: 42px;
+                margin: 17px auto 28px auto;
+            }
+            .lang-nav {
+                font-size: 0.56rem;
+                gap: 14px;
+            }
+            .hero-luxury-tag {
+                margin: 0 0 8px 0;
+            }
+            .hero-statement {
+                margin: 0 auto 20px auto;
             }
         }
 
@@ -719,6 +808,7 @@
                 height: 50vh;
                 width: 100%;
                 margin: 0 auto var(--space-xl) auto;
+                object-fit: contain;
             }
 
             .sp-banner-wrapper {
@@ -860,13 +950,10 @@
 
         <!-- ─── HERO ─── -->
         <header>
-            <video class="hero-video" autoplay loop muted playsinline>
-                <source src="Eu_quero_um_vídeo_que_vai_ser.mp4" type="video/mp4">
-            </video>
             <div class="hero-overlay"></div>
 
             <div class="title-box">PSIQUIATRA<br>CONFIDENCIAL</div>
-            
+
             <div class="title-divider"></div>
             <div class="hero-text-block">
                 <p class="hero-statement"><strong>Um psiquiatra vai até você.</strong></p>
