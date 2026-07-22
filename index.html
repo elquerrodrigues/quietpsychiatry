@@ -13,7 +13,6 @@
     <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
     <link rel="alternate" hreflang="x-default" href="https://angmer.com.br/" />
     
-    <!-- PRÉ-CARREGAMENTO DAS IMAGENS CRÍTICAS -->
     <link rel="preload" as="image" href="foto1s.jpg" />
     <link rel="preload" as="image" href="foto2.jpg" />
     <link rel="preload" as="image" href="foto3.jpg" />
@@ -42,7 +41,6 @@
         }
     </script>
     <style>
-        /* ─── ROOT ─── */
         :root {
             --bg: #F4F1EA;
             --bg-alt: #F4F1EA;
@@ -111,7 +109,6 @@
             }
         }
 
-        /* ─── LANG NAV ─── */
         .lang-nav {
             position: fixed;
             top: 44px;
@@ -142,7 +139,6 @@
             font-weight: 500;
         }
 
-        /* ─── HEADER / HERO ─── */
         header {
             text-align: center;
             padding: 60px 40px 100px 40px;
@@ -266,7 +262,6 @@
             animation: elegantFadeUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
         }
 
-        /* ─── ONDE SECTION ─── */
         .onde-section {
             padding-top: var(--space-xl);
             padding-bottom: var(--space-xxl);
@@ -323,43 +318,27 @@
             margin-bottom: 0;
         }
 
-        /* ─── GALLERY ─── */
+        /* ════════════ GALLERY - CORREÇÃO TOTAL ════════════ */
         .header-gallery {
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 0;
-            margin-top: 0;
-            margin-bottom: 0;
+            margin: 0;
             padding: 0;
         }
 
         .gallery-item {
             position: relative;
             width: 100%;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 60px 40px;
+            padding: 60px 0;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1.4s var(--transition-smooth), transform 1.4s var(--transition-smooth);
-        }
-
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 60px;
-            left: 40px;
-            right: 40px;
-            bottom: 60px;
-            pointer-events: none;
-            z-index: 1;
-            background: radial-gradient(ellipse at center, transparent 65%, rgba(0, 0, 0, 0.06) 100%);
-            border-radius: 0;
         }
 
         .gallery-item.visible {
@@ -367,12 +346,13 @@
             transform: translateY(0);
         }
 
+        /* FOTOS INTEIRAS, SEM CORTE */
         .gallery-image {
             display: block;
             width: 100%;
-            max-width: 800px;
-            height: 70vh;
-            object-fit: cover;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
             image-rendering: auto;
         }
 
@@ -404,7 +384,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* ─── BUTTON ─── */
         .btn {
             display: inline-block;
             font-family: var(--font-primary);
@@ -428,7 +407,6 @@
             color: #fff;
         }
 
-        /* ─── SCROLL REVEAL ─── */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -440,19 +418,17 @@
             transform: translateY(0);
         }
 
-        /* ─── SP BANNER ─── */
-        /* CORREÇÃO: IMAGEM INTEIRA, SEM CORTE E SEM OCUPAR TELA TODA */
+        /* ════════════ SP BANNER ════════════ */
         .sp-banner-wrapper {
             width: 100%;
             text-align: center;
             margin: var(--space-xxl) 0;
-            padding: 0 40px;
+            padding: 0;
         }
         .sp-banner-inner {
             position: relative;
             display: block;
             width: 100%;
-            max-width: 900px;
             margin: 0 auto;
         }
         
@@ -460,10 +436,9 @@
             display: block;
             width: 100%;
             height: auto;
-            max-height: 75vh;
+            max-height: 85vh;
             object-fit: contain;
             image-rendering: auto;
-            border-radius: 2px;
         }
         
         .sp-caption {
@@ -476,8 +451,7 @@
             letter-spacing: 6px;
         }
 
-        /* ─── PROFILE PHOTO ─── */
-        /* CORREÇÃO: FOTO INTEIRA, SEM CORTE EM NENHUMA TELA */
+        /* ════════════ PROFILE PHOTO ════════════ */
         .profile-photo {
             display: block;
             margin: 0 auto var(--space-xl) auto;
@@ -489,10 +463,8 @@
             padding: 0;
             background: transparent;
             image-rendering: auto;
-            border-radius: 2px;
         }
 
-        /* ─── CONTENT SECTIONS ─── */
         .content-section {
             padding: var(--space-xl) clamp(32px, 12vw, 140px);
             max-width: 52vw;
@@ -543,7 +515,6 @@
             margin-right: auto;
         }
 
-        /* ─── FAQ ─── */
         .faq-container {
             margin-bottom: var(--space-xxl);
             text-align: left;
@@ -586,7 +557,6 @@
             font-weight: 400;
         }
 
-        /* ─── FOOTER ─── */
         footer {
             text-align: center;
             padding: var(--space-xl) 32px var(--space-xxl) 32px;
@@ -624,20 +594,13 @@
             cursor: default;
         }
 
-        /* ─── RESPONSIVE ─── */
+        /* ════════════ RESPONSIVE ════════════ */
         @media(min-width: 769px) {
             .gallery-item {
-                padding: 60px 40px;
-            }
-            .gallery-item::after {
-                top: 60px;
-                left: 40px;
-                right: 40px;
-                bottom: 60px;
+                padding: 80px 0;
             }
             .gallery-image {
-                max-width: 800px;
-                height: 75vh;
+                max-height: 80vh;
             }
             .gallery-caption {
                 padding: 56px 20px 24px 20px;
@@ -645,9 +608,11 @@
             .content-section {
                 max-width: 52vw;
             }
-            
             .profile-photo {
                 max-width: 450px;
+            }
+            .sp-image {
+                max-height: 85vh;
             }
         }
 
@@ -691,20 +656,23 @@
                 line-height: 1.5;
             }
 
+            /* ─── MOBILE: FOTOS OCUPAM 100% DA LARGURA ─── */
+            .header-gallery {
+                width: 100%;
+                margin: 0;
+            }
+
             .gallery-item {
-                min-height: 100vh;
-                padding: 24px 0;
+                padding: 40px 0;
+                min-height: auto;
             }
-            .gallery-item::after {
-                top: 24px;
-                left: 0;
-                right: 0;
-                bottom: 24px;
-            }
+
             .gallery-image {
-                max-width: 100%;
-                height: 60vh;
+                width: 100%;
+                max-height: 70vh;
+                object-fit: contain;
             }
+
             .gallery-caption {
                 padding: 40px 20px 20px 20px;
             }
@@ -739,15 +707,19 @@
                 margin: 0 auto var(--space-lg) auto;
             }
 
+            /* ─── SP BANNER MOBILE: OCUPA TELA TODA ─── */
             .sp-banner-wrapper {
                 margin: var(--space-xl) 0;
-                padding: 0 20px;
+                padding: 0;
+                width: 100%;
             }
             .sp-banner-inner {
-                max-width: 100%;
+                width: 100%;
             }
             .sp-image {
-                max-height: 60vh;
+                width: 100%;
+                max-height: 70vh;
+                object-fit: contain;
             }
             .sp-caption {
                 font-size: 2rem;
@@ -843,10 +815,13 @@
                 padding: 32px 14px 16px 14px;
             }
             .gallery-image {
-                height: 50vh;
+                max-height: 60vh;
             }
             .sp-caption {
                 font-size: 1.6rem;
+            }
+            .sp-image {
+                max-height: 60vh;
             }
             .btn {
                 font-size: 0.8rem;
@@ -865,13 +840,11 @@
 
     <div class="site-wrapper">
 
-        <!-- ─── LANG NAV ─── -->
         <nav class="lang-nav" id="langNav">
             <a href="/" class="active">PT</a>
             <a href="/en/">EN</a>
         </nav>
 
-        <!-- ─── HERO ─── -->
         <header>
             <video class="hero-video" autoplay loop muted playsinline>
                 <source src="Eu_quero_um_vídeo_que_vai_ser.mp4" type="video/mp4">
@@ -887,7 +860,6 @@
             </div>
         </header>
 
-        <!-- ─── ONDE ─── -->
         <section class="onde-section scroll-reveal">
             <div class="content" style="max-width:800px;margin:0 auto;">
 
@@ -930,7 +902,6 @@
             </div>
         </div>
 
-        <!-- ─── PERFIL ─── -->
         <section class="content-section profile-section scroll-reveal" style="background-color:transparent;color:var(--text-muted);">
             <div class="content">
                 <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal" loading="lazy" decoding="async">
@@ -939,7 +910,6 @@
             </div>
         </section>
 
-        <!-- ─── SP BANNER ─── -->
         <div class="sp-banner-wrapper scroll-reveal">
             <div class="sp-banner-inner">
                 <img src="foto5s.jpg" class="sp-image" alt="São Paulo" loading="lazy" decoding="async">
@@ -947,7 +917,6 @@
             </div>
         </div>
 
-        <!-- ─── FAQ + CTA ─── -->
         <section class="content-section scroll-reveal" style="background-color:transparent;color:var(--text-muted);">
             <div class="content">
 
@@ -990,7 +959,6 @@
             </div>
         </section>
 
-        <!-- ─── FOOTER ─── -->
         <footer>
             <div class="footer-brand">PSIQUIATRA CONFIDENCIAL</div>
             <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE</div>
@@ -999,7 +967,6 @@
 
     </div>
 
-    <!-- ─── SCRIPTS ─── -->
     <script>
         (function() {
             var observer = new IntersectionObserver(function(entries) {
