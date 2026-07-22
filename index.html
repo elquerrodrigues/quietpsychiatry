@@ -12,9 +12,16 @@
     <link rel="alternate" hreflang="pt-BR" href="https://angmer.com.br/" />
     <link rel="alternate" hreflang="en" href="https://angmer.com.br/en/" />
     <link rel="alternate" hreflang="x-default" href="https://angmer.com.br/" />
+    
+    <!-- PRÉ-CARREGAMENTO DAS IMAGENS CRÍTICAS -->
+    <link rel="preload" as="image" href="foto1s.jpg" />
+    <link rel="preload" as="image" href="foto2.jpg" />
+    <link rel="preload" as="image" href="foto3.jpg" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+    
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -358,18 +365,16 @@
             transform: translateY(0);
         }
 
+        /* ════════════ CORREÇÃO PRINCIPAL ════════════ */
+        /* REMOVIDOS TODOS OS FILTROS QUE DEGRADAM A IMAGEM */
         .gallery-image {
             display: block;
             width: 100%;
             max-width: 800px;
             height: 70vh;
             object-fit: cover;
-            filter: contrast(105%) brightness(97%);
-            transition: filter 0.8s var(--transition-smooth);
-        }
-
-        .gallery-item:hover .gallery-image {
-            filter: contrast(108%) brightness(98%);
+            /* FILTROS REMOVIDOS PARA MÁXIMA QUALIDADE */
+            image-rendering: auto;
         }
 
         .gallery-caption {
@@ -400,7 +405,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* ─── BUTTON (RIMOWA) ─── */
+        /* ─── BUTTON ─── */
         .btn {
             display: inline-block;
             font-family: var(--font-primary);
@@ -448,13 +453,17 @@
             width: 100%;
             margin: 0 auto;
         }
+        
+        /* ════════════ CORREÇÃO PRINCIPAL ════════════ */
         .sp-image {
             display: block;
             width: 100%;
             height: 78vh;
             object-fit: cover;
-            filter: contrast(105%) brightness(97%);
+            /* FILTROS REMOVIDOS - QUALIDADE MÁXIMA */
+            image-rendering: auto;
         }
+        
         .sp-caption {
             font-family: var(--font-primary);
             font-weight: 400;
@@ -463,6 +472,21 @@
             margin-top: 60px;
             font-size: 2.6rem;
             letter-spacing: 6px;
+        }
+
+        /* ─── PROFILE PHOTO ─── */
+        /* ════════════ CORREÇÃO PRINCIPAL ════════════ */
+        .profile-photo {
+            display: block;
+            margin: 0 auto var(--space-xxl) auto;
+            height: 58vh;
+            width: auto;
+            object-fit: contain;
+            border: none;
+            padding: 0;
+            background: transparent;
+            /* FILTROS REMOVIDOS */
+            image-rendering: auto;
         }
 
         /* ─── CONTENT SECTIONS ─── */
@@ -492,18 +516,6 @@
         }
         .content p:last-child {
             margin-bottom: 0;
-        }
-
-        .profile-photo {
-            display: block;
-            margin: 0 auto var(--space-xxl) auto;
-            height: 58vh;
-            width: auto;
-            object-fit: contain;
-            border: none;
-            padding: 0;
-            background: transparent;
-            filter: contrast(105%) brightness(97%);
         }
 
         .btn-container {
@@ -719,6 +731,7 @@
                 height: 50vh;
                 width: 100%;
                 margin: 0 auto var(--space-xl) auto;
+                object-fit: cover;
             }
 
             .sp-banner-wrapper {
@@ -897,7 +910,7 @@
                     <p class="caption-title">Na sua residência</p>
                     <p class="caption-desc">Quando sair deixa de ser uma opção, o cuidado vai até você. Tratamento psiquiátrico realizado no conforto da sua residência, preservando sua privacidade desde o primeiro encontro.</p>
                 </div>
-                <img src="foto1s.jpg?v=novo" alt="Atendimento em residência" class="gallery-image">
+                <img src="foto1s.jpg" alt="Atendimento em residência" class="gallery-image" loading="lazy" decoding="async">
             </div>
 
             <div class="gallery-item scroll-reveal">
@@ -905,7 +918,7 @@
                     <p class="caption-title">No seu hotel</p>
                     <p class="caption-desc">Discrição absoluta, onde você estiver. Atendimentos em hotéis para quem prefere um ambiente neutro ou necessita de total confidencialidade durante viagens.</p>
                 </div>
-                <img src="foto2.jpg?v=novo" alt="Atendimento em escritório" class="gallery-image">
+                <img src="foto2.jpg" alt="Atendimento em escritório" class="gallery-image" loading="lazy" decoding="async">
             </div>
 
             <div class="gallery-item scroll-reveal">
@@ -913,14 +926,14 @@
                     <p class="caption-title">No seu escritório</p>
                     <p class="caption-desc">A continuidade da sua rotina, sem abrir mão do cuidado. Consultas realizadas no ambiente profissional com absoluto sigilo e discrição.</p>
                 </div>
-                <img src="foto3.jpg?v=novo" alt="Atendimento em hotel" class="gallery-image">
+                <img src="foto3.jpg" alt="Atendimento em hotel" class="gallery-image" loading="lazy" decoding="async">
             </div>
         </div>
 
         <!-- ─── PERFIL ─── -->
         <section class="content-section profile-section scroll-reveal" style="background-color:transparent;color:var(--text-muted);">
             <div class="content">
-                <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal">
+                <img src="foto-perfil-elquer.jpg" alt="Dr. Elquer Rodrigues" class="profile-photo scroll-reveal" loading="lazy" decoding="async">
                 <p>Eu sou o Dr. Elquer Rodrigues, médico psiquiatra <span style="white-space:nowrap;">CRM-SP 157303 • RQE 85941</span></p>
                 <p>Atuo exclusivamente como psiquiatra há mais de doze anos. Todo o atendimento é realizado pessoalmente por mim, desde o primeiro contato até o acompanhamento clínico.</p>
             </div>
@@ -929,7 +942,7 @@
         <!-- ─── SP BANNER ─── -->
         <div class="sp-banner-wrapper scroll-reveal">
             <div class="sp-banner-inner">
-                <img src="foto5s.jpg?v=novo" class="sp-image" alt="São Paulo">
+                <img src="foto5s.jpg" class="sp-image" alt="São Paulo" loading="lazy" decoding="async">
                 <p class="sp-caption">Atendimento em São Paulo.</p>
             </div>
         </div>
@@ -948,95 +961,4 @@
 
                     <div class="faq-item">
                         <h4 class="faq-question">Como funciona o atendimento?</h4>
-                        <p class="faq-answer">Após a confirmação do agendamento e pagamento, eu vou até você. A consulta ocorre com a mesma profundidade e rigor técnico de um consultório médico. Por se tratar de um serviço médico particular e altamente personalizado, com tempo reservado exclusivamente para o paciente, todas as consultas são previamente agendadas e pagas. Não há consultas de retorno gratuitas.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4 class="faq-question">Onde os atendimentos são realizados?</h4>
-                        <p class="faq-answer">Residências, empresas, escritórios e hotéis localizados exclusivamente na cidade de São Paulo.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4 class="faq-question">Como é feito o agendamento?</h4>
-                        <p class="faq-answer">A solicitação inicial é feita via WhatsApp. Após uma breve análise de disponibilidade clínica e geográfica, o horário da consulta é confirmado diretamente com o médico.</p>
-                    </div>
-                </div>
-
-                <div class="btn-container">
-                    <a href="https://wa.me/5511977335683?text=Gostaria%20de%20verificar%20a%20disponibilidade%20da%20PSIQUIATRA%20CONFIDENCIAL."
-                       target="_blank"
-                       class="btn"
-                       aria-label="Acessar">
-                        ACESSAR
-                    </a>
-                    <span class="secure-alt-contact">
-                        Atendimento presencial em São Paulo (capital). Deslocamentos fora da região metropolitana são avaliados caso a caso.
-                    </span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ─── FOOTER ─── -->
-        <footer>
-            <div class="footer-brand">PSIQUIATRA CONFIDENCIAL</div>
-            <div class="footer-luxury-tag">PSYCHIATRIST CONCIERGE</div>
-            <span class="footer-email">drelquer@quietpsychiatry.com</span>
-        </footer>
-
-    </div>
-
-    <!-- ─── SCRIPTS ─── -->
-    <script>
-        (function() {
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.15,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            document.querySelectorAll('.scroll-reveal, .content-section, .sp-banner-wrapper, .onde-section, .onde-tagline')
-                .forEach(function(el) {
-                    if (!el.classList.contains('scroll-reveal-slow')) {
-                        el.classList.add('scroll-reveal');
-                    }
-                    observer.observe(el);
-                });
-        })();
-
-        (function() {
-            const langNav = document.getElementById('langNav');
-            let alreadyVisible = false;
-
-            window.addEventListener('scroll', function() {
-                if (!alreadyVisible && window.scrollY > window.innerHeight * 0.1) {
-                    langNav.classList.add('visible');
-                    alreadyVisible = true;
-                }
-            });
-        })();
-
-        const langLinks = document.querySelectorAll('.lang-nav a');
-        const siteWrapper = document.querySelector('.site-wrapper');
-
-        langLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.classList.contains('active')) return;
-                e.preventDefault();
-                const targetUrl = link.href;
-                siteWrapper.style.opacity = '0';
-                setTimeout(() => {
-                    window.location.href = targetUrl;
-                }, 400);
-            });
-        });
-    </script>
-
-</body>
-</html>
+                        <p class="faq-answer">Após a confirmação do agendamento e pagamento, eu vou até você. A consulta ocorre com
