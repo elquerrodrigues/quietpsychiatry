@@ -602,14 +602,15 @@
 
         /* ─── RESPONSIVE ─── */
         @media(min-width: 769px) {
-            /* Desktop: redução de 30% apenas nos TÍTULOS */
+            /* Desktop: redução de 30% apenas nos TÍTULOS (exceto a frase principal) */
             .title-box {
                 font-size: clamp(2.0rem, 3.85vw, 3.36rem);
                 letter-spacing: 8px;
             }
+            /* A frase principal volta a ter um tamanho confortável */
             .hero-statement {
-                font-size: clamp(1.05rem, 2.24vw, 1.82rem);
-                letter-spacing: 6px;
+                font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+                letter-spacing: 8px;
             }
             .hero-statement strong {
                 font-weight: 700;
@@ -617,7 +618,7 @@
                 letter-spacing: 4px;
             }
             .hero-locations {
-                font-size: 0.63rem;
+                font-size: 0.7rem;
                 letter-spacing: 5px;
             }
             .hero-luxury-tag {
@@ -708,7 +709,7 @@
                 margin: 0 auto 20px auto;
             }
 
-            /* Textos descritivos voltam ao tamanho original (sem redução de 30%) */
+            /* Textos descritivos permanecem no tamanho original (sem redução) */
             .caption-desc {
                 font-size: 1.15rem;
                 letter-spacing: 0.3px;
@@ -740,8 +741,9 @@
                 margin-bottom: var(--space-lg);
             }
 
+            /* No mobile, a frase principal fica em uma linha, com tamanho adequado */
             .hero-statement {
-                font-size: clamp(0.75rem, 3.2vw, 1.1rem);
+                font-size: clamp(1.0rem, 4vw, 1.5rem);
                 letter-spacing: 3px;
                 white-space: normal;
             }
@@ -749,7 +751,7 @@
                 font-weight: 700;
                 white-space: nowrap;
                 letter-spacing: 2px;
-                font-size: clamp(0.75rem, 3.2vw, 1.1rem);
+                font-size: clamp(1.0rem, 4vw, 1.5rem);
             }
             .hero-locations {
                 font-size: 0.75rem;
@@ -946,7 +948,7 @@
                 letter-spacing: 5px;
             }
             .hero-statement strong {
-                font-size: clamp(0.7rem, 3vw, 0.9rem);
+                font-size: clamp(0.9rem, 4vw, 1.2rem);
                 letter-spacing: 1px;
             }
         }
