@@ -318,7 +318,7 @@
             margin-bottom: 0;
         }
 
-        /* ════════════ GALLERY - CORREÇÃO TOTAL ════════════ */
+        /* ════════════ GALLERY - PADRONIZADA ════════════ */
         .header-gallery {
             width: 100%;
             display: flex;
@@ -346,13 +346,13 @@
             transform: translateY(0);
         }
 
-        /* FOTOS INTEIRAS, SEM CORTE */
+        /* ─── TODAS AS FOTOS COM O MESMO TAMANHO ─── */
         .gallery-image {
             display: block;
             width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
+            max-width: 900px;
+            height: 500px;
+            object-fit: cover;
             image-rendering: auto;
         }
 
@@ -429,15 +429,15 @@
             position: relative;
             display: block;
             width: 100%;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .sp-image {
             display: block;
             width: 100%;
-            height: auto;
-            max-height: 85vh;
-            object-fit: contain;
+            height: 500px;
+            object-fit: cover;
             image-rendering: auto;
         }
         
@@ -456,9 +456,9 @@
             display: block;
             margin: 0 auto var(--space-xl) auto;
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            object-fit: contain;
+            max-width: 450px;
+            height: 500px;
+            object-fit: cover;
             border: none;
             padding: 0;
             background: transparent;
@@ -600,7 +600,8 @@
                 padding: 80px 0;
             }
             .gallery-image {
-                max-height: 80vh;
+                height: 600px;
+                max-width: 1000px;
             }
             .gallery-caption {
                 padding: 56px 20px 24px 20px;
@@ -610,9 +611,11 @@
             }
             .profile-photo {
                 max-width: 450px;
+                height: 600px;
             }
             .sp-image {
-                max-height: 85vh;
+                height: 600px;
+                max-width: 1000px;
             }
         }
 
@@ -656,7 +659,7 @@
                 line-height: 1.5;
             }
 
-            /* ─── MOBILE: FOTOS OCUPAM 100% DA LARGURA ─── */
+            /* ─── MOBILE: FOTOS PADRONIZADAS ─── */
             .header-gallery {
                 width: 100%;
                 margin: 0;
@@ -669,8 +672,8 @@
 
             .gallery-image {
                 width: 100%;
-                max-height: 70vh;
-                object-fit: contain;
+                height: 350px;
+                object-fit: cover;
             }
 
             .gallery-caption {
@@ -704,10 +707,11 @@
 
             .profile-photo {
                 max-width: 100%;
+                height: 400px;
                 margin: 0 auto var(--space-lg) auto;
+                object-fit: cover;
             }
 
-            /* ─── SP BANNER MOBILE: OCUPA TELA TODA ─── */
             .sp-banner-wrapper {
                 margin: var(--space-xl) 0;
                 padding: 0;
@@ -715,11 +719,12 @@
             }
             .sp-banner-inner {
                 width: 100%;
+                max-width: 100%;
             }
             .sp-image {
                 width: 100%;
-                max-height: 70vh;
-                object-fit: contain;
+                height: 400px;
+                object-fit: cover;
             }
             .sp-caption {
                 font-size: 2rem;
@@ -815,13 +820,13 @@
                 padding: 32px 14px 16px 14px;
             }
             .gallery-image {
-                max-height: 60vh;
+                height: 280px;
             }
             .sp-caption {
                 font-size: 1.6rem;
             }
             .sp-image {
-                max-height: 60vh;
+                height: 300px;
             }
             .btn {
                 font-size: 0.8rem;
@@ -829,7 +834,7 @@
                 letter-spacing: 5px;
             }
             .profile-photo {
-                max-width: 100%;
+                height: 350px;
             }
         }
     </style>
