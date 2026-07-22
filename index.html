@@ -17,6 +17,8 @@
     <link rel="preload" as="image" href="foto1s.jpg" />
     <link rel="preload" as="image" href="foto2.jpg" />
     <link rel="preload" as="image" href="foto3.jpg" />
+    <link rel="preload" as="image" href="foto5s.jpg" />
+    <link rel="preload" as="image" href="foto-perfil-elquer.jpg" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -365,8 +367,6 @@
             transform: translateY(0);
         }
 
-        /* ════════════ CORREÇÃO PRINCIPAL ════════════ */
-        /* REMOVIDOS TODOS OS FILTROS QUE DEGRADAM A IMAGEM */
         .gallery-image {
             display: block;
             width: 100%;
@@ -441,24 +441,29 @@
         }
 
         /* ─── SP BANNER ─── */
+        /* CORREÇÃO: IMAGEM INTEIRA, SEM CORTE E SEM OCUPAR TELA TODA */
         .sp-banner-wrapper {
             width: 100%;
             text-align: center;
             margin: var(--space-xxl) 0;
+            padding: 0 40px;
         }
         .sp-banner-inner {
             position: relative;
             display: block;
             width: 100%;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .sp-image {
             display: block;
             width: 100%;
-            height: 78vh;
-            object-fit: cover;
+            height: auto;
+            max-height: 75vh;
+            object-fit: contain;
             image-rendering: auto;
+            border-radius: 2px;
         }
         
         .sp-caption {
@@ -466,22 +471,25 @@
             font-weight: 400;
             color: #000;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px;
             font-size: 2.6rem;
             letter-spacing: 6px;
         }
 
         /* ─── PROFILE PHOTO ─── */
+        /* CORREÇÃO: FOTO INTEIRA, SEM CORTE EM NENHUMA TELA */
         .profile-photo {
             display: block;
-            margin: 0 auto var(--space-xxl) auto;
-            height: 58vh;
-            width: auto;
+            margin: 0 auto var(--space-xl) auto;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
             object-fit: contain;
             border: none;
             padding: 0;
             background: transparent;
             image-rendering: auto;
+            border-radius: 2px;
         }
 
         /* ─── CONTENT SECTIONS ─── */
@@ -637,6 +645,10 @@
             .content-section {
                 max-width: 52vw;
             }
+            
+            .profile-photo {
+                max-width: 450px;
+            }
         }
 
         @media(max-width: 768px) {
@@ -691,7 +703,7 @@
             }
             .gallery-image {
                 max-width: 100%;
-                height: 70vh;
+                height: 60vh;
             }
             .gallery-caption {
                 padding: 40px 20px 20px 20px;
@@ -723,33 +735,23 @@
             }
 
             .profile-photo {
-                height: 50vh;
-                width: 100%;
-                margin: 0 auto var(--space-xl) auto;
-                object-fit: cover;
+                max-width: 100%;
+                margin: 0 auto var(--space-lg) auto;
             }
 
             .sp-banner-wrapper {
                 margin: var(--space-xl) 0;
-                width: 100vw;
-                position: relative;
-                left: 50%;
-                right: 50%;
-                margin-left: -50vw;
-                margin-right: -50vw;
+                padding: 0 20px;
             }
             .sp-banner-inner {
-                width: 100%;
-                display: block;
+                max-width: 100%;
             }
             .sp-image {
-                width: 100vw;
-                height: 66vh;
-                object-fit: cover;
+                max-height: 60vh;
             }
             .sp-caption {
                 font-size: 2rem;
-                margin-top: 44px;
+                margin-top: 40px;
                 letter-spacing: 4px;
             }
 
@@ -840,8 +842,8 @@
             .gallery-caption {
                 padding: 32px 14px 16px 14px;
             }
-            .profile-photo {
-                height: 42vh;
+            .gallery-image {
+                height: 50vh;
             }
             .sp-caption {
                 font-size: 1.6rem;
@@ -850,6 +852,9 @@
                 font-size: 0.8rem;
                 padding: 14px 24px;
                 letter-spacing: 5px;
+            }
+            .profile-photo {
+                max-width: 100%;
             }
         }
     </style>
