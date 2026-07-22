@@ -602,7 +602,7 @@
 
         /* ─── RESPONSIVE ─── */
         @media(min-width: 769px) {
-            /* Desktop: redução de 30% nos tamanhos */
+            /* Desktop: redução de 30% apenas nos TÍTULOS */
             .title-box {
                 font-size: clamp(2.0rem, 3.85vw, 3.36rem);
                 letter-spacing: 8px;
@@ -635,21 +635,9 @@
                 font-size: 1.4rem;
                 letter-spacing: 6px;
             }
-            .caption-desc {
-                font-size: 0.8rem;
-            }
             .sp-caption {
                 font-size: 1.82rem;
                 letter-spacing: 4px;
-            }
-            .content p {
-                font-size: 0.84rem;
-            }
-            .faq-question {
-                font-size: 0.875rem;
-            }
-            .faq-answer {
-                font-size: 0.735rem;
             }
             .faq-heading {
                 font-size: 0.63rem;
@@ -719,6 +707,24 @@
             .hero-statement {
                 margin: 0 auto 20px auto;
             }
+
+            /* Textos descritivos voltam ao tamanho original (sem redução de 30%) */
+            .caption-desc {
+                font-size: 1.15rem;
+                letter-spacing: 0.3px;
+            }
+            .content p {
+                font-size: 1.2rem;
+                letter-spacing: 0.5px;
+            }
+            .faq-question {
+                font-size: 1.25rem;
+                letter-spacing: 0.5px;
+            }
+            .faq-answer {
+                font-size: 1.05rem;
+                letter-spacing: 0px;
+            }
         }
 
         @media(max-width: 768px) {
@@ -735,9 +741,15 @@
             }
 
             .hero-statement {
-                font-size: clamp(1rem, 4.5vw, 1.5rem);
-                letter-spacing: 6px;
+                font-size: clamp(0.75rem, 3.2vw, 1.1rem);
+                letter-spacing: 3px;
                 white-space: normal;
+            }
+            .hero-statement strong {
+                font-weight: 700;
+                white-space: nowrap;
+                letter-spacing: 2px;
+                font-size: clamp(0.75rem, 3.2vw, 1.1rem);
             }
             .hero-locations {
                 font-size: 0.75rem;
@@ -932,6 +944,10 @@
                 font-size: 0.8rem;
                 padding: 14px 24px;
                 letter-spacing: 5px;
+            }
+            .hero-statement strong {
+                font-size: clamp(0.7rem, 3vw, 0.9rem);
+                letter-spacing: 1px;
             }
         }
     </style>
