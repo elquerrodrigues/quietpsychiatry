@@ -305,7 +305,7 @@
             transition: opacity 1.2s var(--transition-smooth), transform 1.2s var(--transition-smooth);
         }
 
-        /* ---- OVERLAY GRADIENTE NAS FOTOS DA GALERIA ---- */
+        /* Overlay gradiente (vinheta) mantido */
         .gallery-item::after {
             content: '';
             position: absolute;
@@ -318,25 +318,25 @@
             background: radial-gradient(ellipse at center, transparent 65%, rgba(0, 0, 0, 0.06) 100%);
             border-radius: 0;
         }
-        /* ----------------------------------------------- */
 
         .gallery-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
+        /* FILTRO CINEMATOGRÁFICO LIMPO — sem sepia, sem grayscale, sem saturação reduzida */
         .gallery-image {
             display: block;
             width: 100%;
             max-width: 800px;
             height: 70vh;
             object-fit: cover;
-            filter: contrast(102%) brightness(96%) sepia(3%) saturate(85%) grayscale(20%);
+            filter: contrast(105%) brightness(97%);
             transition: filter 0.8s var(--transition-smooth);
         }
 
         .gallery-item:hover .gallery-image {
-            filter: contrast(102%) brightness(96%) sepia(3%) saturate(105%) grayscale(0%);
+            filter: contrast(108%) brightness(98%); /* leve ajuste no hover, sem perder a naturalidade */
         }
 
         .gallery-caption {
@@ -345,7 +345,7 @@
             text-align: center;
             padding: 48px 10px 20px 10px;
             position: relative;
-            z-index: 2; /* garante que a legenda fique acima do overlay */
+            z-index: 2;
         }
         .caption-title {
             font-family: var(--font-primary);
@@ -418,7 +418,7 @@
             width: 100%;
             height: 78vh;
             object-fit: cover;
-            filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
+            filter: contrast(105%) brightness(97%); /* mesmo filtro limpo */
         }
 
         .sp-caption {
@@ -487,7 +487,7 @@
             border: none;
             padding: 0;
             background: transparent;
-            filter: contrast(102%) brightness(96%) sepia(3%) saturate(90%);
+            filter: contrast(105%) brightness(97%); /* consistência visual */
         }
 
         .btn-container {
