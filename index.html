@@ -410,15 +410,15 @@
 
         .sp-banner-inner {
             position: relative;
-            display: block;
-            width: 50%; /* METADE DO TAMANHO NO DESKTOP */
+            display: inline-block; /* Permitirá que a imagem tenha seu tamanho nativo */
             margin: 0 auto;
         }
 
         .sp-image {
             display: block;
-            width: 100%;
-            height: 39vh; /* METADE DA ALTURA NO DESKTOP (era 78vh) */
+            width: auto; /* Tamanho exato natural */
+            height: auto; /* Tamanho exato natural */
+            max-width: 100%; /* Proteção para não vazar a tela no desktop */
             object-fit: cover;
             filter: contrast(105%) brightness(97%);
         }
